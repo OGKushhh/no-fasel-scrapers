@@ -6,19 +6,32 @@ from urllib.parse import quote
 from typing import Optional, Callable, Union
 import json
 import re
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from undetected_chromedriver import Chrome
 from threading import Lock
 from requests.exceptions import ConnectionError, TooManyRedirects, ReadTimeout, ChunkedEncodingError
 from requests import Response
 from os import environ
 from PIL import Image
 
+# curl_cffi for bypassing Cloudflare
+try:
+    from curl_cffi import requests as curl_requests
+    CURL_CFFI_AVAILABLE = True
+except ImportError:
+    CURL_CFFI_AVAILABLE = False
+    print("Warning: curl_cffi not installed. Install with: pip install curl_cffi")
+
+# Playwright for video source extraction (JavaScript heavy pages)
+try:
+    from playwright.sync_api import sync_playwright
+    PLAYWRIGHT_AVAILABLE = True
+except ImportError:
+    PLAYWRIGHT_AVAILABLE = False
+    print("Warning: Playwright not installed. Run: pip install playwright && playwright install chromium")
+
 DEBUG = False
 
-CIMA_NOW_SELECTOR = (By.CLASS_NAME, "owl-head.owl-loaded.owl-drag")
+# For other sites (CimaNow, HDW) – using strings instead of Selenium's By
+CIMA_NOW_SELECTOR = ("class name", "owl-head.owl-loaded.owl-drag")
 
 FILE_NAMES = ["movies", "anime", "asian-series",
               "series", "tvshows", "arabic-series",
@@ -26,10 +39,9 @@ FILE_NAMES = ["movies", "anime", "asian-series",
 
 HDW_FILE_NAMES = ["hdwmovies", "series", "arabic-movies", "arabic-series"]
 
-# Updated base URL to the new domain
 FASEL_BASE_URL = "https://www.fasel-hd.cam/"
 
-DEFAULT_HDW_SELECTOR = (By.CLASS_NAME, "top-brand")
+DEFAULT_HDW_SELECTOR = ("class name", "top-brand")
 
 AKWAM_GENRES = {
     "87": "Ramadan",
@@ -86,11 +98,9 @@ except FileNotFoundError:
 
 cookie_lock = Lock()
 
-# Initialize cookies and headers with defaults (will be updated by get_cookies)
-# This prevents NameError if get_website_safe is called before get_cookies
-cookies_dict: dict = {}
+# Default headers (fallback)
 headers: dict = {
-    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36",
+    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
     "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
     "accept-language": "en-US,en;q=0.9,ar;q=0.8",
     "accept-encoding": "gzip, deflate, br",
@@ -98,489 +108,463 @@ headers: dict = {
     "upgrade-insecure-requests": "1",
 }
 
+# ========== REQUEST HANDLER USING curl_cffi ==========
+def get_website_safe(webpage_url: str, max_retries: int = 3) -> Optional[Response]:
+    """
+    Fetch a webpage using curl_cffi (impersonates Chrome) to bypass Cloudflare.
+    Returns a requests.Response-like object for compatibility.
+    """
+    if not CURL_CFFI_AVAILABLE:
+        raise ImportError("curl_cffi not installed. Run: pip install curl_cffi")
+    
+    for attempt in range(max_retries):
+        try:
+            response = curl_requests.get(
+                webpage_url,
+                impersonate="chrome",
+                timeout=30,
+                allow_redirects=True
+            )
+            if response.status_code == 200:
+                # Convert to requests.Response-like object
+                resp = requests.Response()
+                resp.status_code = 200
+                resp._content = response.content
+                return resp
+            else:
+                if DEBUG:
+                    print(f"curl_cffi status {response.status_code}, retrying...")
+        except Exception as e:
+            if DEBUG:
+                print(f"curl_cffi error: {e}")
+        
+        if attempt < max_retries - 1:
+            sleep(2 ** attempt)
+    
+    if DEBUG:
+        print(f"Failed to fetch {webpage_url} after {max_retries} retries")
+    return None
 
-def get_cookies(url: str, selector: tuple[By, str]) -> None:
-    """Gets new cookies to bypass cloudfalre"""
-    global cookies_dict, headers
+# ========== VIDEO SOURCE EXTRACTION (PLAYWRIGHT ONLY) ==========
+def extract_video_source(video_page_url: str, timeout: int = 30) -> Optional[str]:
+    """
+    Use Playwright (headless Chromium) to load the video page and extract
+    the actual stream URL from JavaScript variables, iframes, or video elements.
+    
+    Returns a direct video URL (mp4, m3u8) or embed URL if found.
+    """
+    if not PLAYWRIGHT_AVAILABLE:
+        raise ImportError("Playwright not installed. Run: pip install playwright && playwright install chromium")
 
-    driver = Chrome(use_subprocess=True, version_main=113)
-    driver.minimize_window()
-    driver.get(url)
+    try:
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            page = browser.new_page()
+            page.goto(video_page_url, timeout=timeout * 1000)
 
-    WebDriverWait(driver, 120).until(EC.presence_of_element_located(selector))
+            page.wait_for_selector("video, iframe, script[src*='player'], .player, #player", timeout=timeout * 1000)
 
-    cookies = driver.get_cookies()
+            html = page.content()
+            patterns = [
+                r'(?:file|source|src|video_url|mp4|m3u8)["\']?\s*[:=]\s*["\']([^"\']+\.(?:mp4|m3u8|m3u)[^"\']*)',
+                r'["\'](https?://[^"\']+\.(?:mp4|m3u8|m3u)[^"\']*)["\']',
+                r'data-(?:src|file)=["\']([^"\']+\.(?:mp4|m3u8))',
+                r'<video[^>]+src=["\']([^"\']+)["\']',
+                r'<source[^>]+src=["\']([^"\']+)["\']',
+            ]
 
-    cookies_dict = {cookie["name"]: cookie["value"] for cookie in cookies}
-    headers = {
-        "user-agent": driver.execute_script("return window.navigator.userAgent;"),
-        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
-        "accept-language": "en-US,en;q=0.9,ar;q=0.8",
-        "accept-encoding": "gzip, deflate, br",
-        "connection": "keep-alive",
-        "upgrade-insecure-requests": "1",
-    }
+            for pattern in patterns:
+                matches = re.findall(pattern, html, re.IGNORECASE)
+                if matches:
+                    browser.close()
+                    return matches[0]
 
-    driver.quit()
+            iframes = page.query_selector_all("iframe")
+            for iframe in iframes:
+                src = iframe.get_attribute("src")
+                if src and ("embed" in src or "player" in src):
+                    browser.close()
+                    return src
 
-    return
+            browser.close()
+            return None
 
+    except Exception as e:
+        if DEBUG:
+            print(f"Playwright extraction error: {e}")
+        return None
 
+# ========== PAGINATION HELPERS ==========
 def get_paginated_url(category_url: str, page: int) -> str:
-    """
-    Returns the paginated URL for a given category base URL.
-    
-    FaselHD uses category-specific pagination:
-    - Page 1: /all-movies
-    - Page 2+: /all-movies/page/2
-    
-    Args:
-        category_url: The base category URL (e.g., "https://www.fasel-hd.cam/all-movies")
-        page: The page number (1-indexed)
-    
-    Returns:
-        The full URL for that page
-    """
-    # Remove trailing slash and any existing /page/X
     base = re.sub(r'/page/\d+/?$', '', category_url.rstrip('/'))
     if page == 1:
         return base
     return f"{base}/page/{page}/"
 
-
-# Updated selector to match new HTML structure
-def get_website_safe(webpage_url: str, selector: tuple[By, str] = (By.CLASS_NAME, "logo"), max_retries: int = 3) -> Optional[Response]:
-    """
-    Get the webpage at the url provided; automatically gets new cookies when needed.
+def get_number_of_pages(url: str) -> int:
+    webpage = get_website_safe(url)
+    if not webpage:
+        return 1
+    soup = BeautifulSoup(webpage.content, "html.parser")
     
-    Features:
-    - Exponential backoff on failures
-    - Cloudflare detection and cookie refresh
-    - Maximum retry limit to prevent infinite loops
-    - Proper session handling with cookies and headers
+    # Find pagination container
+    pagination = soup.select_one("ul.pagination")
+    if pagination:
+        page_links = pagination.find_all("a", class_="page-link")
+        numbers = []
+        for link in page_links:
+            text = link.text.strip()
+            if text.isdigit():
+                numbers.append(int(text))
+        if numbers:
+            return max(numbers)
+        # Also check for a "»" link which may point to last page
+        last_link = pagination.find("a", string="»")
+        if last_link and last_link.get("href"):
+            import re
+            match = re.search(r'/page/(\d+)', last_link["href"])
+            if match:
+                return int(match.group(1))
     
-    Returns None if the page was impossible to reach due to too many redirects or max retries exceeded.
-    """
-    global cookies_dict, headers
+    # Fallback to original method
+    max_page = 1
+    for link in soup.find_all('a', href=True):
+        match = re.search(r'/page/(\d+)', link['href'])
+        if match:
+            max_page = max(max_page, int(match.group(1)))
+    return max_page if max_page > 1 else 1
+
+# ========== FASELHD METADATA EXTRACTION (BEAUTIFULSOUP) ==========
+def get_latest_movies(soup: BeautifulSoup) -> list[dict]:
+    """Extract movies from homepage (.blockMovie) or category page (.postDiv)."""
+    movies = []
     
-    webpage = None
-    retries = 0
+    # Try both selectors
+    movie_divs = soup.select(".blockMovie") or soup.select(".postDiv")
     
-    while retries < max_retries and webpage is None:
-        try:
-            webpage = requests.get(
-                webpage_url, 
-                headers=headers, 
-                cookies=cookies_dict, 
-                timeout=30,
-                allow_redirects=True
-            )
-
-            # Check for Cloudflare or other protection
-            page_text = webpage.text.lower()
-            if "cloudflare" in page_text or "captcha" in page_text or "just a moment" in page_text:
-                if not cookie_lock.locked():
-                    with cookie_lock:
-                        get_cookies(webpage_url, selector)
-                else:
-                    # Wait for another thread to refresh cookies
-                    wait_count = 0
-                    while cookie_lock.locked() and wait_count < 30:
-                        sleep(1)
-                        wait_count += 1
-                
-                webpage = None
-                retries += 1
-                sleep(2 ** retries)  # Exponential backoff: 2, 4, 8 seconds
-                continue
-            
-            # Check for rate limiting or blocking
-            if webpage.status_code == 403 or webpage.status_code == 429:
-                if DEBUG:
-                    print(f"Rate limited (status {webpage.status_code}), retrying...")
-                webpage = None
-                retries += 1
-                sleep(2 ** retries)  # Exponential backoff
-                continue
-                
-        except ConnectionError as e:
-            if DEBUG:
-                print(f"Connection error for {webpage_url}: {e}")
-            webpage = None
-            retries += 1
-            sleep(2 ** retries)
-
-        except ReadTimeout as e:
-            if DEBUG:
-                print(f"Timeout error for {webpage_url}: {e}")
-            webpage = None
-            retries += 1
-            sleep(2 ** retries)
-
-        except ChunkedEncodingError as e:
-            if DEBUG:
-                print(f"Chunked encoding error for {webpage_url}: {e}")
-            webpage = None
-            retries += 1
-            sleep(2 ** retries)
-
-        except TooManyRedirects:
-            if DEBUG:
-                print(f"Too many redirects for {webpage_url}")
-            return None
-        
-        except Exception as e:
-            if DEBUG:
-                print(f"Unexpected error for {webpage_url}: {e}")
-            webpage = None
-            retries += 1
-            sleep(2 ** retries)
-
-    if webpage is None and DEBUG:
-        print(f"Failed to fetch {webpage_url} after {max_retries} retries")
-    
-    return webpage
-
-
-def check_content_links(urls: list[str], sample_size: int = 30) -> list[tuple[str, str]]:
-    """
-    Check if content links are accessible using the same session/cookies.
-    
-    Args:
-        urls: List of URLs to check
-        sample_size: Maximum number of URLs to check
-    
-    Returns:
-        List of tuples (url, error) for broken/inaccessible links
-    """
-    broken = []
-    
-    for url in urls[:sample_size]:
-        if not url:
+    for movie_div in movie_divs:
+        link_tag = movie_div.find("a")
+        if not link_tag:
             continue
-        try:
-            # Use GET with the same session handling
-            resp = requests.get(
-                url, 
-                headers=headers, 
-                cookies=cookies_dict, 
-                timeout=15,
-                stream=True  # Don't download the entire page
-            )
-            
-            if resp.status_code != 200:
-                broken.append((url, f"Status {resp.status_code}"))
-            else:
-                # Read just a small sample to check if blocked
-                content_sample = next(resp.iter_content(500), b'').decode('utf-8', errors='ignore')
-                if "cloudflare" in content_sample.lower() or "captcha" in content_sample.lower():
-                    broken.append((url, "Blocked"))
-            
-            resp.close()
-            
-        except Exception as e:
-            broken.append((url, str(e)[:50]))
         
-        sleep(0.3)  # Small delay to avoid rate limiting
-    
-    return broken
+        # Image extraction
+        img = link_tag.find("img")
+        image_url = ""
+        if img:
+            image_url = img.get("data-src", img.get("src", ""))
+        
+        # Title: different locations
+        title_div = link_tag.find("div", class_="h5")  # homepage
+        if not title_div:
+            title_div = link_tag.find("div", class_="h1")  # category page
+        title = title_div.text.strip() if title_div else ""
+        
+        # Quality
+        quality_span = link_tag.find("span", class_="quality")
+        quality = quality_span.text.strip() if quality_span else ""
+        
+        # IMDB rating
+        imdb_span = link_tag.find("span", class_="pImdb") or link_tag.find("span", class_="bimdb")
+        imdb_rating = None
+        if imdb_span:
+            try:
+                rating_text = imdb_span.text.strip()
+                if rating_text and rating_text != "N/A":
+                    imdb_rating = float(rating_text)
+            except ValueError:
+                pass
+        
+        # Views
+        views_span = link_tag.find("span", class_="pViews") or link_tag.find("span", class_="bviews")
+        views = 0
+        if views_span:
+            views_text = views_span.text.strip().replace("٬", "").replace(",", "")
+            try:
+                views = int(views_text)
+            except ValueError:
+                pass
+        
+        link = link_tag.get("href", "")
+        content_type = "movies"
+        if "anime-movies" in link:
+            content_type = "anime-movies"
+        elif "asian-movies" in link:
+            content_type = "asian-movies"
+        elif "hindi" in link:
+            content_type = "hindi-movies"
+        
+        movies.append({
+            "title": title,
+            "link": link,
+            "image": image_url,
+            "quality": quality,
+            "imdb_rating": imdb_rating,
+            "views": views,
+            "content_type": content_type
+        })
+    return movies
 
+def get_latest_episodes(soup: BeautifulSoup) -> list[dict]:
+    episodes = []
+    for ep_div in soup.select(".epDivHome"):
+        link_tag = ep_div.find("a", class_="epHomeImg")
+        content_div = ep_div.find("div", class_="epHomeContent")
+        link = ""
+        image_url = ""
+        if link_tag:
+            link = link_tag.get("href", "")
+            img = link_tag.find("img")
+            if img:
+                image_url = img.get("data-src", img.get("src", ""))
+        elif content_div and content_div.find("a"):
+            link = content_div.find("a").get("href", "")
+        if not link:
+            continue
+        title = ""
+        if content_div:
+            title_div = content_div.find("div", class_="h4")
+            if title_div:
+                title = title_div.text.strip()
+        if not title:
+            title_div = ep_div.find("div", class_="h4")
+            if title_div:
+                title = title_div.text.strip()
+        status_span = ep_div.find("span", class_="epStatus")
+        status = status_span.text.strip() if status_span else ""
+        content_type = "series"
+        if "anime-episodes" in link:
+            content_type = "anime"
+        elif "asian-episodes" in link:
+            content_type = "asian-series"
+        episodes.append({
+            "title": title,
+            "link": link,
+            "image": image_url,
+            "status": status,
+            "content_type": content_type
+        })
+    return episodes
 
+def get_featured_content(soup: BeautifulSoup) -> list[dict]:
+    featured = []
+    for slide in soup.select(".swiper-slide"):
+        title_div = slide.find("div", class_="h1 mb-1")
+        if not title_div:
+            continue
+        title_link = title_div.find("a")
+        if not title_link:
+            continue
+        title = title_link.text.strip()
+        link = title_link.get("href", "")
+        poster_div = slide.find("div", class_="poster")
+        image_url = ""
+        if poster_div:
+            img = poster_div.find("img")
+            if img:
+                image_url = img.get("src", "")
+        if not image_url:
+            slide_img = slide.find("div", class_="slideImg")
+            if slide_img and slide_img.get("style"):
+                style = slide_img.get("style", "")
+                if "url(" in style:
+                    image_url = style.split("url(")[1].split(")")[0].strip("\"'")
+        imdb_span = slide.find("span", class_="imdbRate")
+        imdb_rating = None
+        if imdb_span:
+            try:
+                imdb_rating = float(imdb_span.text.strip())
+            except ValueError:
+                pass
+        categories = [cat.text.strip() for cat in slide.select(".slideCats span")]
+        description = ""
+        desc_p = slide.find("p")
+        if desc_p:
+            description = desc_p.text.strip()
+        content_type = "movies"
+        if "/anime" in link:
+            content_type = "anime"
+        elif "/asian" in link:
+            content_type = "asian-series"
+        elif "/series" in link or "/episodes" in link:
+            content_type = "series"
+        featured.append({
+            "title": title,
+            "link": link,
+            "image": image_url,
+            "imdb_rating": imdb_rating,
+            "categories": categories,
+            "description": description,
+            "content_type": content_type
+        })
+    return featured
+
+def get_latest_movies_from_homepage() -> list[dict]:
+    resp = get_website_safe(FASEL_BASE_URL + "main")
+    if not resp:
+        return []
+    soup = BeautifulSoup(resp.content, "html.parser")
+    return get_latest_movies(soup)
+
+def get_latest_episodes_from_homepage() -> list[dict]:
+    resp = get_website_safe(FASEL_BASE_URL + "main")
+    if not resp:
+        return []
+    soup = BeautifulSoup(resp.content, "html.parser")
+    return get_latest_episodes(soup)
+
+def get_featured_content_from_homepage() -> list[dict]:
+    resp = get_website_safe(FASEL_BASE_URL + "main")
+    if not resp:
+        return []
+    soup = BeautifulSoup(resp.content, "html.parser")
+    return get_featured_content(soup)
+
+def get_all_homepage_content() -> dict:
+    resp = get_website_safe(FASEL_BASE_URL + "main")
+    if not resp:
+        return {"movies": [], "episodes": [], "featured": []}
+    soup = BeautifulSoup(resp.content, "html.parser")
+    return {
+        "movies": get_latest_movies(soup),
+        "episodes": get_latest_episodes(soup),
+        "featured": get_featured_content(soup)
+    }
+
+def get_category_page_rendered(category_url: str, page: int = 1) -> list[dict]:
+    url = get_paginated_url(category_url, page)
+    resp = get_website_safe(url)
+    if not resp:
+        return []
+    soup = BeautifulSoup(resp.content, "html.parser")
+    return get_latest_movies(soup)
+
+# ========== LEGACY HELPER FUNCTIONS (for other sites) ==========
 def split_into_ranges(number_of_ranges: int, range_end: int, range_start: int = 0) -> list[tuple[int, int]]:
-    """Splits the number into (more or less) equal intervals"""
     number_to_be_split = range_end - range_start
     number_per_chunk = number_to_be_split // number_of_ranges
     ranges_list = []
-
     for number in range(number_of_ranges):
         begin = range_start + (number_per_chunk * number)
-
         if number == number_of_ranges - 1:
             end = range_end
         else:
             end = range_start + (number_per_chunk * (number + 1))
-
         if (begin + 1, end + 1) in ranges_list or (begin + 1 == end + 1):
             continue
         else:
             ranges_list.append((begin + 1, end + 1))
-
     return ranges_list
 
-
 def remove_arabic_chars(string: str) -> str:
-    """Removes the Arabic characters from the string provided"""
     return string.encode("ascii", "ignore").decode().strip()
 
-
-def get_number_of_pages(url: str) -> int:
-    """
-    Gets the total number of pages for the category using multiple fallback strategies.
-    
-    Strategy:
-    1. First, look for the highest page number in pagination links (most reliable)
-    2. Fall back to the 'rel="next"' link and traverse to find the last page
-    3. Finally, look for pagination elements with class-based selectors
-    """
-    webpage = get_website_safe(url)
-    soup = BeautifulSoup(webpage.content, "html.parser")
-    
-    # Strategy 1: Find the highest page number from all pagination links
-    # This is the most reliable method as it scans all page links
-    max_page = 1
-    
-    # Look for all links that contain /page/ in their href
-    all_page_links = soup.find_all('a', href=re.compile(r'/page/\d+'))
-    for link in all_page_links:
-        match = re.search(r'/page/(\d+)', link.get('href', ''))
-        if match:
-            max_page = max(max_page, int(match.group(1)))
-    
-    # Also check for page numbers in the link text (e.g., "2", "3", "»")
-    pagination_links = soup.select('.page-numbers, .page-link, .page-item a')
-    for link in pagination_links:
-        # Check href for page number
-        href = link.get('href', '')
-        match = re.search(r'/page/(\d+)', href)
-        if match:
-            max_page = max(max_page, int(match.group(1)))
-        
-        # Also check if the link text is a number
-        text = link.text.strip()
-        if text.isdigit():
-            max_page = max(max_page, int(text))
-    
-    if max_page > 1:
-        return max_page
-    
-    # Strategy 2: Check for "last page" button (»)
-    last_page_button = soup.find("a", string="»") or soup.find("a", text="»")
-    if last_page_button and last_page_button.get("href"):
-        match = re.search(r'/page/(\d+)', last_page_button["href"])
-        if match:
-            return int(match.group(1))
-        # Fallback to old method
-        try:
-            return int(last_page_button["href"].split("/")[-1])
-        except (ValueError, IndexError):
-            pass
-    
-    # Strategy 3: Check rel="next" link and traverse to find total
-    # This is useful when we're not on the first page
-    next_link = soup.find('link', rel='next')
-    if next_link and next_link.get('href'):
-        # If there's a next link, we know there are at least 2 pages
-        # Extract current page from URL and next page from link
-        current_match = re.search(r'/page/(\d+)/?$', url)
-        next_match = re.search(r'/page/(\d+)/?$', next_link['href'])
-        
-        if current_match and next_match:
-            current_page = int(current_match.group(1))
-            next_page = int(next_match.group(1))
-            
-            # If next page is current + 1, we need to find the total
-            # by checking for the last page link
-            if next_page == current_page + 1:
-                # Look for the highest page link we can find
-                for link in soup.find_all('a', href=True):
-                    match = re.search(r'/page/(\d+)', link['href'])
-                    if match:
-                        max_page = max(max_page, int(match.group(1)))
-                
-                if max_page > 1:
-                    return max_page
-    
-    # Strategy 4: Check for page list items (old method as fallback)
-    try:
-        pages_list = soup.find_all("li", class_="page-item")
-        if pages_list:
-            for item in pages_list:
-                text = item.text.strip()
-                if text.isdigit():
-                    max_page = max(max_page, int(text))
-            if max_page > 1:
-                return max_page
-    except:
-        pass
-    
-    return max_page if max_page > 1 else 1
-
-
 def fix_url(url: str) -> str:
-    """Fixes the url by changing the encoded characters back to their original form"""
     return quote(url.split("?")[0]).replace("%3A", ":")
 
-
 def get_content_format(soup: BeautifulSoup) -> str:
-    """Gets the format of the content, returns N/A if no format was found"""
     try:
-        content_format = (
-            soup.find("i", class_="fas fa-play-circle").find_next_sibling().text
-        )
-
-        if content_format.isascii():
-            return content_format
-        else:
-            return "N/A"
-
+        content_format = soup.find("i", class_="fas fa-play-circle").find_next_sibling().text
+        return content_format if content_format.isascii() else "N/A"
     except AttributeError:
         return "N/A"
 
-
 def get_content_id(soup: BeautifulSoup) -> Optional[str]:
-    """Gets the ID of the content"""
     try:
-        return remove_arabic_chars(
-            soup.find("i", class_="fas fa-dot-circle")
-            .parent.text.replace(":", "")
-            .replace("#", "")
-        )
+        return remove_arabic_chars(soup.find("i", class_="fas fa-dot-circle").parent.text.replace(":", "").replace("#", ""))
     except AttributeError:
         return None
-
 
 def upload_image(image_url: str, content_id: str, get_image: Callable[[str], Response]) -> str:
     if DEBUG:
         print(content_id)
-    else:
-        pass
-
     if content_id in IMAGE_SOURCES:
         return IMAGE_SOURCES[content_id]
-    else:
-        pass
-
     if image_url == "":
         return "https://imgpile.com/images/TPDrVl.jpg"
-    else:
-        pass
-
     image = get_image(image_url)
     image_path = f"./output/{content_id}"
-
     if ".webp" in image_url:
         with open(image_path + ".webp", "wb") as handler:
             handler.write(image.content)
-
         jpg_image = Image.open(image_path + ".webp").convert("RGB")
         jpg_image.save(image_path + ".jpg", "jpeg")
-
         with open(image_path + ".jpg", "rb") as fp:
             base64_image = fp.read()
     else:
         base64_image = b64encode(image.content).decode("utf8")
-
-    headers = {"Authorization": f"Client-ID {environ.get('IMGUR_CLIENT_ID')}"}
+    headers_imgur = {"Authorization": f"Client-ID {environ.get('IMGUR_CLIENT_ID')}"}
     data = {"image": base64_image}
-
     try:
-        return requests.post("https://api.imgur.com/3/image", headers=headers, data=data).json()["data"]["link"]
+        return requests.post("https://api.imgur.com/3/image", headers=headers_imgur, data=data).json()["data"]["link"]
     except Exception:
         return "https://imgpile.com/images/TPDrVl.jpg"
 
-
 def remove_year(title: str) -> str:
-    """Removes the production year from the content title"""
     if title[-4:].isdigit() and len(title) > 4:
         title = title.replace(title[-5:], "")
-    else:
-        pass
-
     return title
-
 
 def get_content_title(soup_result: ResultSet) -> str:
-    """Gets the title of the content"""
-    title = remove_year(remove_arabic_chars(
-        soup_result.find("div", class_="h1").text
-    ))
+    title = remove_year(remove_arabic_chars(soup_result.find("div", class_="h1").text))
     return title
-
 
 def get_genres(soup: BeautifulSoup) -> Union[list[str], str]:
     try:
-        genre_tags = soup.find(
-            "i", class_="far fa-folders").find_next_siblings("a")
-
-        genres = [tag["href"].split("/")[-1].capitalize()
-                  for tag in genre_tags]
+        genre_tags = soup.find("i", class_="far fa-folders").find_next_siblings("a")
+        genres = [tag["href"].split("/")[-1].capitalize() for tag in genre_tags]
     except AttributeError:
         genres = []
-
     return genres
-
 
 def akwam_get_website_safe(url: str) -> Response:
     response = None
-
     while response is None:
         try:
             response = requests.get(url)
-        except ConnectionError:
+        except (ConnectionError, ChunkedEncodingError):
             response = None
-        except ChunkedEncodingError:
-            response = None
-
     return response
-
 
 def akwam_get_last_page_number(url: str) -> int:
     main_page_source = akwam_get_website_safe(url)
     soup = BeautifulSoup(main_page_source.content, "html.parser")
     last_page = int(soup.find_all("a", class_="page-link")[-3].text)
-
     return last_page
 
-
-def split_anchor_links(respone: Response) -> list[list[str]]:
-    soup = BeautifulSoup(respone.content, "html.parser")
+def split_anchor_links(response: Response) -> list[list[str]]:
+    soup = BeautifulSoup(response.content, "html.parser")
     anchor_tags = soup.find_all("a", class_="icn play")
     links = [tag["href"] for tag in anchor_tags]
     links_ranges = split_into_ranges(6, len(links))
-
-    splitted_links = [links[links_range[0] - 1: links_range[1] - 1]
-                      for links_range in links_ranges]
-
+    splitted_links = [links[links_range[0] - 1: links_range[1] - 1] for links_range in links_ranges]
     return splitted_links
-
 
 def akwam_get_genres(soup: BeautifulSoup) -> Union[list[str], str]:
     genre_tags = soup.find_all("a", class_="badge badge-pill badge-light ml-2")
-
     try:
         genre_ids = [tag["href"].split("=")[-1] for tag in genre_tags]
     except TypeError:
         return []
-
     genres = [AKWAM_GENRES[key] for key in genre_ids]
-
     return genres
 
-
-def hdw_get_last_page_number(url: str, selector: tuple[By, str] = DEFAULT_HDW_SELECTOR) -> int:
-    webpage = get_website_safe(url, selector)
+def hdw_get_last_page_number(url: str, selector: tuple[str, str] = DEFAULT_HDW_SELECTOR) -> int:
+    webpage = get_website_safe(url)
     soup = BeautifulSoup(webpage.content, "html.parser")
-
     return int(soup.find_all("a", class_="page-link")[-2].text)
-
 
 def hdw_get_image_source(div: Tag) -> str:
     return div.find_previous_sibling("a").find("img")["src"]
 
-
 def hdw_get_rating(div: Tag) -> Optional[str]:
     try:
-        rating = div.find_previous_sibling("a").find(
-            "span", class_="float-left yellow").text.replace(",", ".").strip()
+        rating = div.find_previous_sibling("a").find("span", class_="float-left yellow").text.replace(",", ".").strip()
     except AttributeError:
         rating = None
-
     return rating
-
 
 def hdw_get_genres(div: Tag) -> list[str]:
     return list(map(lambda genre: genre.strip(), div.find("span", class_="content-views").text.split(", ")))
-
 
 def clean_iframe_source(iframe_source: str) -> str:
     try:
@@ -588,264 +572,19 @@ def clean_iframe_source(iframe_source: str) -> str:
     except IndexError:
         return ""
 
-
 def get_tmdb_id(title: str, genre: str) -> Optional[str]:
-    params = {
-        "query": title,
-        "api_key": environ.get("TMDB_API_KEY")
-    }
-
-    if genre == "movies":
-        request_url = "https://api.themoviedb.org/3/search/movie"
-    else:
-        request_url = "https://api.themoviedb.org/3/search/tv"
-
+    params = {"query": title, "api_key": environ.get("TMDB_API_KEY")}
+    request_url = "https://api.themoviedb.org/3/search/movie" if genre == "movies" else "https://api.themoviedb.org/3/search/tv"
     resp = requests.get(request_url, params=params)
-
     try:
         tmdb_id = resp.json().get("results")[0].get("id")
     except IndexError:
         tmdb_id = None
-
     return tmdb_id
-
 
 def cima_now_get_last_page(soup: BeautifulSoup):
     return int(soup.find_all("ul")[-1].find_all("li")[-1].text)
 
-
 def cima_now_get_sources(soup: BeautifulSoup):
     anchors = soup.find("ul", {"id": "download"}).find("li").find_all("a")
     return [{anchor.text.split()[0]: anchor["href"]} for anchor in anchors]
-
-
-# New helper functions for updated FaselHD structure
-
-def get_featured_content(soup: BeautifulSoup) -> list[dict]:
-    """Extract featured content from the Swiper slider on the homepage"""
-    featured_items = []
-    
-    # Find all swiper slides
-    swiper_slides = soup.find_all("div", class_="swiper-slide")
-    
-    for slide in swiper_slides:
-        try:
-            # Get the title link and text
-            title_div = slide.find("div", class_="h1 mb-1")
-            if title_div:
-                title_link = title_div.find("a")
-                if title_link:
-                    title = title_link.text.strip()
-                    link = title_link.get("href", "")
-                    
-                    # Get poster image
-                    poster_div = slide.find("div", class_="poster")
-                    image_url = ""
-                    if poster_div:
-                        img = poster_div.find("img")
-                        if img:
-                            image_url = img.get("src", "")
-                    
-                    # Get background image from slideImg div
-                    slide_img = slide.find("div", class_="slideImg")
-                    bg_image = ""
-                    if slide_img and slide_img.get("style"):
-                        style = slide_img.get("style", "")
-                        if "url(" in style:
-                            bg_image = style.split("url(")[1].split(")")[0].strip("\"'")
-                    
-                    # Get IMDb rating
-                    imdb_rate = None
-                    rate_span = slide.find("span", class_="imdbRate")
-                    if rate_span:
-                        rate_text = rate_span.text.strip()
-                        try:
-                            imdb_rate = float(rate_text)
-                        except ValueError:
-                            imdb_rate = None
-                    
-                    # Get categories/genres
-                    categories = []
-                    cats_div = slide.find("div", class_="slideCats")
-                    if cats_div:
-                        cat_spans = cats_div.find_all("span")
-                        categories = [span.text.strip() for span in cat_spans]
-                    
-                    # Get description
-                    description = ""
-                    desc_p = slide.find("p")
-                    if desc_p:
-                        description = desc_p.text.strip()
-                    
-                    # Determine content type from link
-                    content_type = "movies"
-                    if "/anime" in link:
-                        content_type = "anime"
-                    elif "/asian" in link:
-                        content_type = "asian-series"
-                    elif "/series" in link or "/episodes" in link:
-                        content_type = "series"
-                    
-                    featured_items.append({
-                        "title": title,
-                        "link": link,
-                        "image": image_url or bg_image,
-                        "imdb_rating": imdb_rate,
-                        "categories": categories,
-                        "description": description,
-                        "content_type": content_type
-                    })
-        except Exception as e:
-            if DEBUG:
-                print(f"Error parsing featured content: {e}")
-            continue
-    
-    return featured_items
-
-
-def get_latest_episodes(soup: BeautifulSoup) -> list[dict]:
-    """Extract latest episodes from the homepage"""
-    episodes = []
-    
-    # Find episode divs
-    ep_divs = soup.find_all("div", class_="epDivHome")
-    
-    for ep_div in ep_divs:
-        try:
-            # Get episode link and image from epHomeImg anchor
-            link_tag = ep_div.find("a", class_="epHomeImg")
-            
-            # Also try to get the content link (for title)
-            content_div = ep_div.find("div", class_="epHomeContent")
-            content_link = None
-            if content_div:
-                content_link = content_div.find("a")
-            
-            # Determine primary link
-            if link_tag:
-                link = link_tag.get("href", "")
-                # Get image from epHomeImg link
-                img = link_tag.find("img")
-                image_url = ""
-                if img:
-                    image_url = img.get("data-src", img.get("src", ""))
-            elif content_link:
-                link = content_link.get("href", "")
-                image_url = ""
-            else:
-                continue
-            
-            # Get title - look in epHomeContent > h4
-            title = ""
-            if content_div:
-                title_div = content_div.find("div", class_="h4")
-                if title_div:
-                    title = title_div.text.strip()
-            
-            # Fallback: try finding h4 anywhere in ep_div
-            if not title:
-                title_div = ep_div.find("div", class_="h4")
-                if title_div:
-                    title = title_div.text.strip()
-            
-            # Get status
-            status_span = ep_div.find("span", class_="epStatus")
-            status = status_span.text.strip() if status_span else ""
-            
-            # Determine content type from link
-            content_type = "series"
-            if "anime-episodes" in link:
-                content_type = "anime"
-            elif "asian-episodes" in link:
-                content_type = "asian-series"
-            
-            episodes.append({
-                "title": title,
-                "link": link,
-                "image": image_url,
-                "status": status,
-                "content_type": content_type
-            })
-        except Exception as e:
-            if DEBUG:
-                print(f"Error parsing episode: {e}")
-            continue
-    
-    return episodes
-
-
-def get_latest_movies(soup: BeautifulSoup) -> list[dict]:
-    """Extract latest movies from the homepage"""
-    movies = []
-    
-    # Find movie divs
-    movie_divs = soup.find_all("div", class_="blockMovie")
-    
-    for movie_div in movie_divs:
-        try:
-            # Get movie link
-            link_tag = movie_div.find("a")
-            if link_tag:
-                link = link_tag.get("href", "")
-                
-                # Get image
-                img = link_tag.find("img")
-                image_url = ""
-                if img:
-                    image_url = img.get("data-src", img.get("src", ""))
-                
-                # Get title
-                title_div = link_tag.find("div", class_="h5")
-                title = title_div.text.strip() if title_div else ""
-                
-                # Get quality
-                quality = ""
-                quality_span = link_tag.find("span", class_="quality")
-                if quality_span:
-                    quality = quality_span.text.strip()
-                
-                # Get IMDB rating
-                imdb_rating = None
-                imdb_span = link_tag.find("span", class_="bimdb")
-                if imdb_span:
-                    try:
-                        imdb_rating = float(imdb_span.text.strip())
-                    except ValueError:
-                        pass
-                
-                # Get views
-                views = 0
-                views_span = link_tag.find("span", class_="bviews")
-                if views_span:
-                    views_text = views_span.text.strip()
-                    # Handle Arabic numerals
-                    views_text = views_text.replace("٬", "").replace(",", "")
-                    try:
-                        views = int(views_text)
-                    except ValueError:
-                        pass
-                
-                # Determine content type from link
-                content_type = "movies"
-                if "anime-movies" in link:
-                    content_type = "anime-movies"
-                elif "asian-movies" in link:
-                    content_type = "asian-movies"
-                elif "hindi" in link:
-                    content_type = "hindi-movies"
-                
-                movies.append({
-                    "title": title,
-                    "link": link,
-                    "image": image_url,
-                    "quality": quality,
-                    "imdb_rating": imdb_rating,
-                    "views": views,
-                    "content_type": content_type
-                })
-        except Exception as e:
-            if DEBUG:
-                print(f"Error parsing movie: {e}")
-            continue
-    
-    return movies
