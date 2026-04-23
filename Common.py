@@ -30,6 +30,11 @@ except ImportError:
 
 DEBUG = False
 
+# ---------- RATE LIMITING SETTINGS ----------
+REQUEST_DELAY = 1.5          # seconds between requests (adjust as needed)
+MAX_RETRIES = 3              # max retries on failure
+BACKOFF_FACTOR = 2           # exponential backoff: 2, 4, 8 seconds
+
 # For other sites (CimaNow, HDW) – using strings instead of Selenium's By
 CIMA_NOW_SELECTOR = ("class name", "owl-head.owl-loaded.owl-drag")
 
@@ -108,11 +113,11 @@ headers: dict = {
     "upgrade-insecure-requests": "1",
 }
 
-# ========== REQUEST HANDLER USING curl_cffi ==========
-def get_website_safe(webpage_url: str, max_retries: int = 3) -> Optional[Response]:
+# ========== REQUEST HANDLER WITH RATE LIMITING ==========
+def get_website_safe(webpage_url: str, max_retries: int = MAX_RETRIES) -> Optional[Response]:
     """
     Fetch a webpage using curl_cffi (impersonates Chrome) to bypass Cloudflare.
-    Returns a requests.Response-like object for compatibility.
+    Implements exponential backoff on failure/rate limit.
     """
     if not CURL_CFFI_AVAILABLE:
         raise ImportError("curl_cffi not installed. Run: pip install curl_cffi")
@@ -131,6 +136,14 @@ def get_website_safe(webpage_url: str, max_retries: int = 3) -> Optional[Respons
                 resp.status_code = 200
                 resp._content = response.content
                 return resp
+            elif response.status_code == 403:
+                # Rate limit or temporary block – wait and retry
+                if DEBUG:
+                    print(f"Rate limit (403) on {webpage_url}, attempt {attempt+1}/{max_retries}")
+                if attempt < max_retries - 1:
+                    wait_time = BACKOFF_FACTOR ** attempt
+                    sleep(wait_time)
+                continue
             else:
                 if DEBUG:
                     print(f"curl_cffi status {response.status_code}, retrying...")
@@ -139,7 +152,7 @@ def get_website_safe(webpage_url: str, max_retries: int = 3) -> Optional[Respons
                 print(f"curl_cffi error: {e}")
         
         if attempt < max_retries - 1:
-            sleep(2 ** attempt)
+            sleep(BACKOFF_FACTOR ** attempt)
     
     if DEBUG:
         print(f"Failed to fetch {webpage_url} after {max_retries} retries")
@@ -150,8 +163,6 @@ def extract_video_source(video_page_url: str, timeout: int = 30) -> Optional[str
     """
     Use Playwright (headless Chromium) to load the video page and extract
     the actual stream URL from JavaScript variables, iframes, or video elements.
-    
-    Returns a direct video URL (mp4, m3u8) or embed URL if found.
     """
     if not PLAYWRIGHT_AVAILABLE:
         raise ImportError("Playwright not installed. Run: pip install playwright && playwright install chromium")
@@ -202,6 +213,7 @@ def get_paginated_url(category_url: str, page: int) -> str:
     return f"{base}/page/{page}/"
 
 def get_number_of_pages(url: str) -> int:
+    """Get total pages for a category using pagination HTML."""
     webpage = get_website_safe(url)
     if not webpage:
         return 1
@@ -218,15 +230,13 @@ def get_number_of_pages(url: str) -> int:
                 numbers.append(int(text))
         if numbers:
             return max(numbers)
-        # Also check for a "»" link which may point to last page
         last_link = pagination.find("a", string="»")
         if last_link and last_link.get("href"):
-            import re
             match = re.search(r'/page/(\d+)', last_link["href"])
             if match:
                 return int(match.group(1))
     
-    # Fallback to original method
+    # Fallback to scanning all links
     max_page = 1
     for link in soup.find_all('a', href=True):
         match = re.search(r'/page/(\d+)', link['href'])
@@ -234,12 +244,31 @@ def get_number_of_pages(url: str) -> int:
             max_page = max(max_page, int(match.group(1)))
     return max_page if max_page > 1 else 1
 
-# ========== FASELHD METADATA EXTRACTION (BEAUTIFULSOUP) ==========
+def scrape_category_pages(category_name: str, start_page: int = 1, end_page: Optional[int] = None) -> list[dict]:
+    """
+    Scrape all pages of a category (e.g., 'movies') with rate limiting.
+    Returns a list of movie dictionaries.
+    """
+    base_url = FASEL_BASE_URL + category_name
+    if end_page is None:
+        end_page = get_number_of_pages(base_url)
+    
+    all_movies = []
+    for page in range(start_page, end_page + 1):
+        url = get_paginated_url(base_url, page)
+        if DEBUG:
+            print(f"Scraping {category_name} page {page}/{end_page}: {url}")
+        movies = get_category_page_rendered(base_url, page)
+        all_movies.extend(movies)
+        # Respect rate limiting between pages
+        if page < end_page:
+            sleep(REQUEST_DELAY)
+    return all_movies
+
+# ========== FASELHD METADATA EXTRACTION ==========
 def get_latest_movies(soup: BeautifulSoup) -> list[dict]:
     """Extract movies from homepage (.blockMovie) or category page (.postDiv)."""
     movies = []
-    
-    # Try both selectors
     movie_divs = soup.select(".blockMovie") or soup.select(".postDiv")
     
     for movie_div in movie_divs:
@@ -247,23 +276,17 @@ def get_latest_movies(soup: BeautifulSoup) -> list[dict]:
         if not link_tag:
             continue
         
-        # Image extraction
         img = link_tag.find("img")
-        image_url = ""
-        if img:
-            image_url = img.get("data-src", img.get("src", ""))
+        image_url = img.get("data-src", img.get("src", "")) if img else ""
         
-        # Title: different locations
         title_div = link_tag.find("div", class_="h5")  # homepage
         if not title_div:
             title_div = link_tag.find("div", class_="h1")  # category page
         title = title_div.text.strip() if title_div else ""
         
-        # Quality
         quality_span = link_tag.find("span", class_="quality")
         quality = quality_span.text.strip() if quality_span else ""
         
-        # IMDB rating
         imdb_span = link_tag.find("span", class_="pImdb") or link_tag.find("span", class_="bimdb")
         imdb_rating = None
         if imdb_span:
@@ -274,7 +297,6 @@ def get_latest_movies(soup: BeautifulSoup) -> list[dict]:
             except ValueError:
                 pass
         
-        # Views
         views_span = link_tag.find("span", class_="pViews") or link_tag.find("span", class_="bviews")
         views = 0
         if views_span:
@@ -314,8 +336,7 @@ def get_latest_episodes(soup: BeautifulSoup) -> list[dict]:
         if link_tag:
             link = link_tag.get("href", "")
             img = link_tag.find("img")
-            if img:
-                image_url = img.get("data-src", img.get("src", ""))
+            image_url = img.get("data-src", img.get("src", "")) if img else ""
         elif content_div and content_div.find("a"):
             link = content_div.find("a").get("href", "")
         if not link:
@@ -360,8 +381,7 @@ def get_featured_content(soup: BeautifulSoup) -> list[dict]:
         image_url = ""
         if poster_div:
             img = poster_div.find("img")
-            if img:
-                image_url = img.get("src", "")
+            image_url = img.get("src", "") if img else ""
         if not image_url:
             slide_img = slide.find("div", class_="slideImg")
             if slide_img and slide_img.get("style"):
@@ -398,6 +418,7 @@ def get_featured_content(soup: BeautifulSoup) -> list[dict]:
         })
     return featured
 
+# ========== CONVENIENCE FUNCTIONS ==========
 def get_latest_movies_from_homepage() -> list[dict]:
     resp = get_website_safe(FASEL_BASE_URL + "main")
     if not resp:
@@ -438,7 +459,7 @@ def get_category_page_rendered(category_url: str, page: int = 1) -> list[dict]:
     soup = BeautifulSoup(resp.content, "html.parser")
     return get_latest_movies(soup)
 
-# ========== LEGACY HELPER FUNCTIONS (for other sites) ==========
+# ========== LEGACY FUNCTIONS (unchanged for other sites) ==========
 def split_into_ranges(number_of_ranges: int, range_end: int, range_start: int = 0) -> list[tuple[int, int]]:
     number_to_be_split = range_end - range_start
     number_per_chunk = number_to_be_split // number_of_ranges
