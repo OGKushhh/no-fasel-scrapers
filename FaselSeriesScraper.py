@@ -214,13 +214,29 @@ def scrape_page(series_divs: list[ResultSet], path: str) -> dict:
 
 
 def scrape_all_series(page_range: tuple, path: str) -> dict:
-    """Scrapes all the series in the page range provided"""
-    global old_series_dict, url
+    """Scrapes all the series in the page range provided
+    
+    Args:
+        page_range: Tuple of (start_page, end_page)
+        path: The category path (e.g., "series", "tvshows", "asian-series")
+    """
+    global old_series_dict
     all_series_dict = {}
+    
+    # Build the category URL
+    category_url = FASEL_BASE_URL + path
 
     for page in range(page_range[0], page_range[1]):
         try:
-            main_page = get_website_safe(f"{url}/page/{page}")
+            # Use get_paginated_url for correct URL construction
+            page_url = get_paginated_url(category_url, page)
+            main_page = get_website_safe(page_url)
+            
+            if main_page is None:
+                if DEBUG:
+                    print(f"Failed to fetch page {page}: {page_url}")
+                continue
+                
             soup = BeautifulSoup(main_page.content, "html.parser")
             
             # Updated to match new HTML structure

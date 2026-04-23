@@ -107,14 +107,30 @@ def scrape_episodes(current_number_of_episodes: int, episodes_sources: list[str]
     return master_dict
 
 
-def scrape_anime(page_range: tuple) -> dict:
-    """Scrapes all the animes in the page range provided"""
+def scrape_anime(page_range: tuple, category_url: str = None) -> dict:
+    """Scrapes all the animes in the page range provided
+    
+    Args:
+        page_range: Tuple of (start_page, end_page)
+        category_url: The base category URL (e.g., "https://www.fasel-hd.cam/anime")
+    """
     anime_dict = {}
+    
+    # Use provided category URL or default to /anime
+    if category_url is None:
+        category_url = FASEL_BASE_URL + "anime"
 
     for page in range(page_range[0], page_range[1]):
         try:
-            main_page = get_website_safe(
-                FASEL_BASE_URL + f"anime/page/{page}")
+            # Use get_paginated_url for correct URL construction
+            page_url = get_paginated_url(category_url, page)
+            main_page = get_website_safe(page_url)
+            
+            if main_page is None:
+                if DEBUG:
+                    print(f"Failed to fetch page {page}: {page_url}")
+                continue
+                
             soup = BeautifulSoup(main_page.content, "html.parser")
             
             # Updated to match new HTML structure
@@ -220,8 +236,11 @@ def main() -> None:
     # Updated selector to match new HTML structure
     get_cookies(FASEL_BASE_URL, (By.CLASS_NAME, "logo"))
     
+    # Use the correct category URL (page 1)
+    category_url = FASEL_BASE_URL + "anime"
+    
     try:
-        total_pages = get_number_of_pages(FASEL_BASE_URL + "anime")
+        total_pages = get_number_of_pages(category_url)
     except Exception as e:
         if DEBUG:
             print(f"Error getting number of pages: {e}")
@@ -230,12 +249,19 @@ def main() -> None:
     page_ranges_list = split_into_ranges(8, total_pages)
 
     if DEBUG:
-        print(page_ranges_list)
+        print(f"Total pages: {total_pages}")
+        print(f"Page ranges: {page_ranges_list}")
     else:
         pass
 
+    # Pass category_url to scrape_anime
+    from itertools import repeat
     with ThreadPoolExecutor() as executor:
-        results = executor.map(scrape_anime, page_ranges_list)
+        results = executor.map(
+            scrape_anime, 
+            page_ranges_list,
+            repeat(category_url)
+        )
 
     for result in results:
         old_animes.update(result)

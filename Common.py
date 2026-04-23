@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup, ResultSet, Tag
 from urllib.parse import quote
 from typing import Optional, Callable, Union
 import json
+import re
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -85,6 +86,18 @@ except FileNotFoundError:
 
 cookie_lock = Lock()
 
+# Initialize cookies and headers with defaults (will be updated by get_cookies)
+# This prevents NameError if get_website_safe is called before get_cookies
+cookies_dict: dict = {}
+headers: dict = {
+    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36",
+    "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
+    "accept-language": "en-US,en;q=0.9,ar;q=0.8",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "upgrade-insecure-requests": "1",
+}
+
 
 def get_cookies(url: str, selector: tuple[By, str]) -> None:
     """Gets new cookies to bypass cloudfalre"""
@@ -100,7 +113,12 @@ def get_cookies(url: str, selector: tuple[By, str]) -> None:
 
     cookies_dict = {cookie["name"]: cookie["value"] for cookie in cookies}
     headers = {
-        "user-agent": driver.execute_script("return window.navigator.userAgent;")
+        "user-agent": driver.execute_script("return window.navigator.userAgent;"),
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
+        "accept-language": "en-US,en;q=0.9,ar;q=0.8",
+        "accept-encoding": "gzip, deflate, br",
+        "connection": "keep-alive",
+        "upgrade-insecure-requests": "1",
     }
 
     driver.quit()
@@ -108,39 +126,164 @@ def get_cookies(url: str, selector: tuple[By, str]) -> None:
     return
 
 
+def get_paginated_url(category_url: str, page: int) -> str:
+    """
+    Returns the paginated URL for a given category base URL.
+    
+    FaselHD uses category-specific pagination:
+    - Page 1: /all-movies
+    - Page 2+: /all-movies/page/2
+    
+    Args:
+        category_url: The base category URL (e.g., "https://www.fasel-hd.cam/all-movies")
+        page: The page number (1-indexed)
+    
+    Returns:
+        The full URL for that page
+    """
+    # Remove trailing slash and any existing /page/X
+    base = re.sub(r'/page/\d+/?$', '', category_url.rstrip('/'))
+    if page == 1:
+        return base
+    return f"{base}/page/{page}/"
+
+
 # Updated selector to match new HTML structure
-def get_website_safe(webpage_url: str, selector: tuple[By, str] = (By.CLASS_NAME, "logo")) -> Optional[Response]:
-    """Get the webpage at the url provided; automatically gets new cookies when needed, returns None if the page where impossible to reach due to too many redirects"""
+def get_website_safe(webpage_url: str, selector: tuple[By, str] = (By.CLASS_NAME, "logo"), max_retries: int = 3) -> Optional[Response]:
+    """
+    Get the webpage at the url provided; automatically gets new cookies when needed.
+    
+    Features:
+    - Exponential backoff on failures
+    - Cloudflare detection and cookie refresh
+    - Maximum retry limit to prevent infinite loops
+    - Proper session handling with cookies and headers
+    
+    Returns None if the page was impossible to reach due to too many redirects or max retries exceeded.
+    """
+    global cookies_dict, headers
+    
     webpage = None
-    while webpage is None:
+    retries = 0
+    
+    while retries < max_retries and webpage is None:
         try:
             webpage = requests.get(
-                webpage_url, headers=headers, cookies=cookies_dict, timeout=30)
+                webpage_url, 
+                headers=headers, 
+                cookies=cookies_dict, 
+                timeout=30,
+                allow_redirects=True
+            )
 
-            if "Cloudflare" in str(webpage.text):
+            # Check for Cloudflare or other protection
+            page_text = webpage.text.lower()
+            if "cloudflare" in page_text or "captcha" in page_text or "just a moment" in page_text:
                 if not cookie_lock.locked():
                     with cookie_lock:
                         get_cookies(webpage_url, selector)
                 else:
-                    while cookie_lock.locked():
+                    # Wait for another thread to refresh cookies
+                    wait_count = 0
+                    while cookie_lock.locked() and wait_count < 30:
                         sleep(1)
+                        wait_count += 1
+                
                 webpage = None
-            else:
-                pass
-
-        except ConnectionError:
+                retries += 1
+                sleep(2 ** retries)  # Exponential backoff: 2, 4, 8 seconds
+                continue
+            
+            # Check for rate limiting or blocking
+            if webpage.status_code == 403 or webpage.status_code == 429:
+                if DEBUG:
+                    print(f"Rate limited (status {webpage.status_code}), retrying...")
+                webpage = None
+                retries += 1
+                sleep(2 ** retries)  # Exponential backoff
+                continue
+                
+        except ConnectionError as e:
+            if DEBUG:
+                print(f"Connection error for {webpage_url}: {e}")
             webpage = None
+            retries += 1
+            sleep(2 ** retries)
 
-        except ReadTimeout:
+        except ReadTimeout as e:
+            if DEBUG:
+                print(f"Timeout error for {webpage_url}: {e}")
             webpage = None
+            retries += 1
+            sleep(2 ** retries)
 
-        except ChunkedEncodingError:
+        except ChunkedEncodingError as e:
+            if DEBUG:
+                print(f"Chunked encoding error for {webpage_url}: {e}")
             webpage = None
+            retries += 1
+            sleep(2 ** retries)
 
         except TooManyRedirects:
+            if DEBUG:
+                print(f"Too many redirects for {webpage_url}")
             return None
+        
+        except Exception as e:
+            if DEBUG:
+                print(f"Unexpected error for {webpage_url}: {e}")
+            webpage = None
+            retries += 1
+            sleep(2 ** retries)
 
+    if webpage is None and DEBUG:
+        print(f"Failed to fetch {webpage_url} after {max_retries} retries")
+    
     return webpage
+
+
+def check_content_links(urls: list[str], sample_size: int = 30) -> list[tuple[str, str]]:
+    """
+    Check if content links are accessible using the same session/cookies.
+    
+    Args:
+        urls: List of URLs to check
+        sample_size: Maximum number of URLs to check
+    
+    Returns:
+        List of tuples (url, error) for broken/inaccessible links
+    """
+    broken = []
+    
+    for url in urls[:sample_size]:
+        if not url:
+            continue
+        try:
+            # Use GET with the same session handling
+            resp = requests.get(
+                url, 
+                headers=headers, 
+                cookies=cookies_dict, 
+                timeout=15,
+                stream=True  # Don't download the entire page
+            )
+            
+            if resp.status_code != 200:
+                broken.append((url, f"Status {resp.status_code}"))
+            else:
+                # Read just a small sample to check if blocked
+                content_sample = next(resp.iter_content(500), b'').decode('utf-8', errors='ignore')
+                if "cloudflare" in content_sample.lower() or "captcha" in content_sample.lower():
+                    broken.append((url, "Blocked"))
+            
+            resp.close()
+            
+        except Exception as e:
+            broken.append((url, str(e)[:50]))
+        
+        sleep(0.3)  # Small delay to avoid rate limiting
+    
+    return broken
 
 
 def split_into_ranges(number_of_ranges: int, range_end: int, range_start: int = 0) -> list[tuple[int, int]]:
@@ -171,19 +314,96 @@ def remove_arabic_chars(string: str) -> str:
 
 
 def get_number_of_pages(url: str) -> int:
-    """Gets the total number of pages for the category"""
+    """
+    Gets the total number of pages for the category using multiple fallback strategies.
+    
+    Strategy:
+    1. First, look for the highest page number in pagination links (most reliable)
+    2. Fall back to the 'rel="next"' link and traverse to find the last page
+    3. Finally, look for pagination elements with class-based selectors
+    """
     webpage = get_website_safe(url)
     soup = BeautifulSoup(webpage.content, "html.parser")
-    last_page_button = soup.find("a", string="»")
-
-    if last_page_button is not None:
-        last_page_url = last_page_button["href"]
-        last_page_number = int(last_page_url.split("/")[-1])
-    else:
+    
+    # Strategy 1: Find the highest page number from all pagination links
+    # This is the most reliable method as it scans all page links
+    max_page = 1
+    
+    # Look for all links that contain /page/ in their href
+    all_page_links = soup.find_all('a', href=re.compile(r'/page/\d+'))
+    for link in all_page_links:
+        match = re.search(r'/page/(\d+)', link.get('href', ''))
+        if match:
+            max_page = max(max_page, int(match.group(1)))
+    
+    # Also check for page numbers in the link text (e.g., "2", "3", "»")
+    pagination_links = soup.select('.page-numbers, .page-link, .page-item a')
+    for link in pagination_links:
+        # Check href for page number
+        href = link.get('href', '')
+        match = re.search(r'/page/(\d+)', href)
+        if match:
+            max_page = max(max_page, int(match.group(1)))
+        
+        # Also check if the link text is a number
+        text = link.text.strip()
+        if text.isdigit():
+            max_page = max(max_page, int(text))
+    
+    if max_page > 1:
+        return max_page
+    
+    # Strategy 2: Check for "last page" button (»)
+    last_page_button = soup.find("a", string="»") or soup.find("a", text="»")
+    if last_page_button and last_page_button.get("href"):
+        match = re.search(r'/page/(\d+)', last_page_button["href"])
+        if match:
+            return int(match.group(1))
+        # Fallback to old method
+        try:
+            return int(last_page_button["href"].split("/")[-1])
+        except (ValueError, IndexError):
+            pass
+    
+    # Strategy 3: Check rel="next" link and traverse to find total
+    # This is useful when we're not on the first page
+    next_link = soup.find('link', rel='next')
+    if next_link and next_link.get('href'):
+        # If there's a next link, we know there are at least 2 pages
+        # Extract current page from URL and next page from link
+        current_match = re.search(r'/page/(\d+)/?$', url)
+        next_match = re.search(r'/page/(\d+)/?$', next_link['href'])
+        
+        if current_match and next_match:
+            current_page = int(current_match.group(1))
+            next_page = int(next_match.group(1))
+            
+            # If next page is current + 1, we need to find the total
+            # by checking for the last page link
+            if next_page == current_page + 1:
+                # Look for the highest page link we can find
+                for link in soup.find_all('a', href=True):
+                    match = re.search(r'/page/(\d+)', link['href'])
+                    if match:
+                        max_page = max(max_page, int(match.group(1)))
+                
+                if max_page > 1:
+                    return max_page
+    
+    # Strategy 4: Check for page list items (old method as fallback)
+    try:
         pages_list = soup.find_all("li", class_="page-item")
-        last_page_number = int(pages_list[-1].text)
-
-    return last_page_number
+        if pages_list:
+            for item in pages_list:
+                text = item.text.strip()
+                if text.isdigit():
+                    max_page = max(max_page, int(text))
+            if max_page > 1:
+                return max_page
+    except:
+        pass
+    
+    return max_page if max_page > 1 else 1
 
 
 def fix_url(url: str) -> str:

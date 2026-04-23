@@ -83,14 +83,29 @@ def scrape_page(movie_divs: list[ResultSet]) -> dict:
     return movies_dict
 
 
-def scrape_all_movies(page_range: tuple) -> dict:
-    """Scrapes all the movies in the page range provided"""
+def scrape_all_movies(page_range: tuple, category_url: str = None) -> dict:
+    """Scrapes all the movies in the page range provided
+    
+    Args:
+        page_range: Tuple of (start_page, end_page)
+        category_url: The base category URL (e.g., "https://www.fasel-hd.cam/movies")
+    """
     movies_dict = {}
+    
+    # Use provided category URL or default to /movies
+    if category_url is None:
+        category_url = FASEL_BASE_URL + "movies"
 
     for page in range(page_range[0], page_range[1]):
         try:
-            main_page = get_website_safe(
-                FASEL_BASE_URL + f"movies/page/{page}")
+            # Use get_paginated_url for correct URL construction
+            page_url = get_paginated_url(category_url, page)
+            main_page = get_website_safe(page_url)
+
+            if main_page is None:
+                if DEBUG:
+                    print(f"Failed to fetch page {page}: {page_url}")
+                continue
 
             soup = BeautifulSoup(main_page.content, "html.parser")
 
@@ -131,9 +146,12 @@ def main() -> None:
     """Scapes all the movies from fasel"""
     # Updated selector to match new HTML structure
     get_cookies(FASEL_BASE_URL, (By.CLASS_NAME, "logo"))
+    
+    # Use the correct category URL (page 1)
+    category_url = FASEL_BASE_URL + "movies"
 
     try:
-        total_pages = get_number_of_pages(FASEL_BASE_URL + "movies")
+        total_pages = get_number_of_pages(category_url)
     except Exception as e:
         if DEBUG:
             print(f"Error getting number of pages: {e}")
@@ -145,12 +163,19 @@ def main() -> None:
     )
 
     if DEBUG:
-        print(page_ranges_list)
+        print(f"Total pages: {total_pages}")
+        print(f"Page ranges: {page_ranges_list}")
     else:
         pass
 
+    # Pass category_url to scrape_all_movies
+    from itertools import repeat
     with ThreadPoolExecutor() as executor:
-        results = executor.map(scrape_all_movies, page_ranges_list)
+        results = executor.map(
+            scrape_all_movies, 
+            page_ranges_list,
+            repeat(category_url)
+        )
 
     for result in results:
         old_movies_dict.update(result)
