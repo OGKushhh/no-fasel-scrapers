@@ -18,29 +18,43 @@ PATHS_TO_SCRAPE = [
 def scrape_episodes(episode_list: ResultSet, last_episode_number: int = 0) -> dict:
     episodes_dict = {}
     for index, episode in enumerate(episode_list, start=1):
-        episode_page = get_website_safe(episode["href"])
-
-        if episode_page is None:
-            continue
-        else:
-            soup = BeautifulSoup(episode_page.content, "html.parser")
-
         try:
-            episode_id = soup.find(
-                "span", {"id": "liskSh"}).text.split("=")[-1]
+            episode_page = get_website_safe(episode["href"])
 
-            iframe_source = soup.find("iframe")["src"]
+            if episode_page is None:
+                continue
+            else:
+                soup = BeautifulSoup(episode_page.content, "html.parser")
 
-        except AttributeError:
+            try:
+                # Try to find episode ID from span
+                episode_id_span = soup.find("span", {"id": "liskSh"})
+                if episode_id_span:
+                    episode_id = episode_id_span.text.split("=")[-1]
+                else:
+                    # Alternative: get from content ID
+                    episode_id = get_content_id(soup)
+                    if episode_id is None:
+                        # Fallback: use URL-based ID
+                        episode_id = episode["href"].split("/")[-1]
+
+                iframe_source = soup.find("iframe")["src"]
+
+            except AttributeError:
+                continue
+
+            except TypeError:
+                continue
+
+            episodes_dict[episode_id] = {
+                "Episode Number": last_episode_number + index,
+                "Source": clean_iframe_source(iframe_source),
+            }
+
+        except Exception as e:
+            if DEBUG:
+                print(f"Error scraping episode: {e}")
             continue
-
-        except TypeError:
-            continue
-
-        episodes_dict[episode_id] = {
-            "Episode Number": last_episode_number + index,
-            "Source": clean_iframe_source(iframe_source),
-        }
 
     return episodes_dict
 
@@ -53,15 +67,32 @@ def scrape_season(season: Tag, series_id: str) -> dict:
         season_id = season.find("div")["data-href"]
     except KeyError:
         return {}
+    except Exception:
+        return {}
 
-    season_number = int(remove_arabic_chars(
-        season.find("div", class_="title").text).lstrip())
+    try:
+        season_number = int(remove_arabic_chars(
+            season.find("div", class_="title").text).lstrip())
+    except:
+        # Try alternative season number extraction
+        try:
+            season_text = season.find("div", class_="title").text
+            # Extract number from text
+            import re
+            numbers = re.findall(r'\d+', remove_arabic_chars(season_text))
+            season_number = int(numbers[0]) if numbers else 1
+        except:
+            season_number = 1
 
     season_page = get_website_safe(FASEL_BASE_URL + f"?p={season_id}")
     soup = BeautifulSoup(season_page.content, "html.parser")
 
     try:
-        all_season_episodes = soup.find("div", class_="epAll").find_all("a")
+        ep_all_div = soup.find("div", class_="epAll")
+        if ep_all_div:
+            all_season_episodes = ep_all_div.find_all("a")
+        else:
+            return {}
     except AttributeError:
         return {}
 
@@ -105,43 +136,79 @@ def scrape_page(series_divs: list[ResultSet], path: str) -> dict:
     series_dict = {}
 
     for series_div in series_divs:
-        series_page = get_website_safe(series_div.find("a")["href"])
-        soup = BeautifulSoup(series_page.content, "html.parser")
+        try:
+            series_page = get_website_safe(series_div.find("a")["href"])
+            soup = BeautifulSoup(series_page.content, "html.parser")
 
-        series_id = get_content_id(soup)
+            series_id = get_content_id(soup)
 
-        if series_id is None:
-            return {}
-        else:
-            pass
+            if series_id is None:
+                continue
+            else:
+                pass
 
-        series_dict[series_id] = {
-            "Title": get_content_title(series_div),
-            "Category": path,
-            "Format": get_content_format(soup),
-            "Genres": get_genres(soup),
-            "Number Of Episodes": 0,
-            "Image Source": upload_image(series_div.img.attrs['data-src'], series_id + "-fasel", get_website_safe),
-            "Seasons": {}
-        }
+            # Get title - updated for new HTML structure
+            try:
+                title_div = series_div.find("div", class_="h5")
+                if title_div:
+                    title = get_content_title(series_div)
+                else:
+                    # Alternative title extraction
+                    h1_title = soup.find("div", class_="h1 title")
+                    if h1_title:
+                        title = remove_year(remove_arabic_chars(
+                            h1_title.text.split('\n')[1].strip() if '\n' in h1_title.text else h1_title.text.strip()
+                        ))
+                    else:
+                        title = "Unknown Series"
+            except Exception:
+                title = "Unknown Series"
 
-        season_divs = soup.find_all("div", class_="col-xl-2 col-lg-3 col-md-6")
+            # Get image - updated for new HTML structure
+            try:
+                img = series_div.find("img")
+                if img:
+                    img_src = img.get("data-src", img.get("src", ""))
+                else:
+                    img_src = ""
+            except:
+                img_src = ""
 
-        with ThreadPoolExecutor() as executor:
-            seasons_dicts = executor.map(
-                scrape_season,
-                season_divs,
-                repeat(series_id)
-            )
+            series_dict[series_id] = {
+                "Title": title,
+                "Category": path,
+                "Format": get_content_format(soup),
+                "Genres": get_genres(soup),
+                "Number Of Episodes": 0,
+                "Image Source": upload_image(img_src, series_id + "-fasel", get_website_safe),
+                "Seasons": {}
+            }
 
-        total_number_of_episodes = 0
-        for season_dict in seasons_dicts:
-            series_dict[series_id]["Seasons"].update(season_dict)
+            # Find season divs - updated for new HTML structure
+            season_divs = soup.find_all("div", class_="col-xl-2 col-lg-3 col-md-6")
+            if not season_divs:
+                season_divs = soup.find_all("div", class_="col-xl-3 col-lg-3 col-md-6")
 
-            for season_key in season_dict:
-                total_number_of_episodes += season_dict[season_key]["Number Of Episodes"]
+            with ThreadPoolExecutor() as executor:
+                seasons_dicts = executor.map(
+                    scrape_season,
+                    season_divs,
+                    repeat(series_id)
+                )
 
-        series_dict[series_id]["Number Of Episodes"] = total_number_of_episodes
+            total_number_of_episodes = 0
+            for season_dict in seasons_dicts:
+                series_dict[series_id]["Seasons"].update(season_dict)
+
+                for season_key in season_dict:
+                    total_number_of_episodes += season_dict[season_key]["Number Of Episodes"]
+
+            series_dict[series_id]["Number Of Episodes"] = total_number_of_episodes
+
+        except Exception as e:
+            if DEBUG:
+                print(f"Error scraping series: {e}")
+            continue
 
     return series_dict
 
@@ -152,31 +219,43 @@ def scrape_all_series(page_range: tuple, path: str) -> dict:
     all_series_dict = {}
 
     for page in range(page_range[0], page_range[1]):
-        main_page = get_website_safe(f"{url}/page/{page}")
-        soup = BeautifulSoup(main_page.content, "html.parser")
-        series_divs = soup.find_all(
-            "div", class_="col-xl-2 col-lg-2 col-md-3 col-sm-3")
+        try:
+            main_page = get_website_safe(f"{url}/page/{page}")
+            soup = BeautifulSoup(main_page.content, "html.parser")
+            
+            # Updated to match new HTML structure
+            series_divs = soup.find_all(
+                "div", class_="col-xl-2 col-lg-2 col-md-3 col-sm-3")
 
-        series_divs_ranges = split_into_ranges(6, len(series_divs))
-        splitted_series_divs_list = [
-            series_divs[series_divs_range[0] - 1: series_divs_range[1] - 1]
-            for series_divs_range in series_divs_ranges
-        ]
+            if not series_divs:
+                # Fallback to blockMovie divs for series
+                series_divs = soup.find_all("div", class_="blockMovie")
 
-        with ThreadPoolExecutor() as executor:
-            results = executor.map(
-                scrape_page,
-                splitted_series_divs_list,
-                repeat(path)
-            )
+            series_divs_ranges = split_into_ranges(6, len(series_divs))
+            splitted_series_divs_list = [
+                series_divs[series_divs_range[0] - 1: series_divs_range[1] - 1]
+                for series_divs_range in series_divs_ranges
+            ]
 
-        for result in results:
-            all_series_dict.update(result)
+            with ThreadPoolExecutor() as executor:
+                results = executor.map(
+                    scrape_page,
+                    splitted_series_divs_list,
+                    repeat(path)
+                )
 
-        if DEBUG:
-            print(f'Done scraping page {page}')
-        else:
-            pass
+            for result in results:
+                all_series_dict.update(result)
+
+            if DEBUG:
+                print(f'Done scraping page {page}')
+            else:
+                pass
+
+        except Exception as e:
+            if DEBUG:
+                print(f"Error scraping series page {page}: {e}")
+            continue
 
     return all_series_dict
 
@@ -191,12 +270,23 @@ def main() -> None:
         url = FASEL_BASE_URL + path
         file_path = f"./output/{path}.json"
 
-        get_cookies(FASEL_BASE_URL, (By.CLASS_NAME, "logo.ml-3"))
+        # Updated selector to match new HTML structure
+        get_cookies(FASEL_BASE_URL, (By.CLASS_NAME, "logo"))
 
-        with open(file_path, "r") as fp:
-            old_series_dict = json.load(fp)
+        try:
+            with open(file_path, "r") as fp:
+                old_series_dict = json.load(fp)
+        except FileNotFoundError:
+            old_series_dict = {}
 
-        page_ranges_list = split_into_ranges(8, get_number_of_pages(url))
+        try:
+            total_pages = get_number_of_pages(url)
+        except Exception as e:
+            if DEBUG:
+                print(f"Error getting number of pages: {e}")
+            total_pages = 1
+
+        page_ranges_list = split_into_ranges(8, total_pages)
 
         if DEBUG:
             print(page_ranges_list)

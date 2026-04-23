@@ -25,7 +25,8 @@ FILE_NAMES = ["movies", "anime", "asian-series",
 
 HDW_FILE_NAMES = ["hdwmovies", "series", "arabic-movies", "arabic-series"]
 
-FASEL_BASE_URL = "https://www.faselhd.vip/"
+# Updated base URL to the new domain
+FASEL_BASE_URL = "https://www.fasel-hd.cam/"
 
 DEFAULT_HDW_SELECTOR = (By.CLASS_NAME, "top-brand")
 
@@ -76,8 +77,11 @@ CIMA_NOW_GENRES = {
     "درامى": "Drama"
 }
 
-with open("./output/image-indices.json", "r") as fp:
-    IMAGE_SOURCES = json.load(fp)
+try:
+    with open("./output/image-indices.json", "r") as fp:
+        IMAGE_SOURCES = json.load(fp)
+except FileNotFoundError:
+    IMAGE_SOURCES = {}
 
 cookie_lock = Lock()
 
@@ -104,13 +108,14 @@ def get_cookies(url: str, selector: tuple[By, str]) -> None:
     return
 
 
-def get_website_safe(webpage_url: str, selector: tuple[By, str] = (By.CLASS_NAME, "logo.ml-3")) -> Optional[Response]:
+# Updated selector to match new HTML structure
+def get_website_safe(webpage_url: str, selector: tuple[By, str] = (By.CLASS_NAME, "logo")) -> Optional[Response]:
     """Get the webpage at the url provided; automatically gets new cookies when needed, returns None if the page where impossible to reach due to too many redirects"""
     webpage = None
     while webpage is None:
         try:
             webpage = requests.get(
-                webpage_url, headers=headers, cookies=cookies_dict)
+                webpage_url, headers=headers, cookies=cookies_dict, timeout=30)
 
             if "Cloudflare" in str(webpage.text):
                 if not cookie_lock.locked():
@@ -392,3 +397,235 @@ def cima_now_get_last_page(soup: BeautifulSoup):
 def cima_now_get_sources(soup: BeautifulSoup):
     anchors = soup.find("ul", {"id": "download"}).find("li").find_all("a")
     return [{anchor.text.split()[0]: anchor["href"]} for anchor in anchors]
+
+
+# New helper functions for updated FaselHD structure
+
+def get_featured_content(soup: BeautifulSoup) -> list[dict]:
+    """Extract featured content from the Swiper slider on the homepage"""
+    featured_items = []
+    
+    # Find all swiper slides
+    swiper_slides = soup.find_all("div", class_="swiper-slide")
+    
+    for slide in swiper_slides:
+        try:
+            # Get the title link and text
+            title_div = slide.find("div", class_="h1 mb-1")
+            if title_div:
+                title_link = title_div.find("a")
+                if title_link:
+                    title = title_link.text.strip()
+                    link = title_link.get("href", "")
+                    
+                    # Get poster image
+                    poster_div = slide.find("div", class_="poster")
+                    image_url = ""
+                    if poster_div:
+                        img = poster_div.find("img")
+                        if img:
+                            image_url = img.get("src", "")
+                    
+                    # Get background image from slideImg div
+                    slide_img = slide.find("div", class_="slideImg")
+                    bg_image = ""
+                    if slide_img and slide_img.get("style"):
+                        style = slide_img.get("style", "")
+                        if "url(" in style:
+                            bg_image = style.split("url(")[1].split(")")[0].strip("\"'")
+                    
+                    # Get IMDb rating
+                    imdb_rate = None
+                    rate_span = slide.find("span", class_="imdbRate")
+                    if rate_span:
+                        rate_text = rate_span.text.strip()
+                        try:
+                            imdb_rate = float(rate_text)
+                        except ValueError:
+                            imdb_rate = None
+                    
+                    # Get categories/genres
+                    categories = []
+                    cats_div = slide.find("div", class_="slideCats")
+                    if cats_div:
+                        cat_spans = cats_div.find_all("span")
+                        categories = [span.text.strip() for span in cat_spans]
+                    
+                    # Get description
+                    description = ""
+                    desc_p = slide.find("p")
+                    if desc_p:
+                        description = desc_p.text.strip()
+                    
+                    # Determine content type from link
+                    content_type = "movies"
+                    if "/anime" in link:
+                        content_type = "anime"
+                    elif "/asian" in link:
+                        content_type = "asian-series"
+                    elif "/series" in link or "/episodes" in link:
+                        content_type = "series"
+                    
+                    featured_items.append({
+                        "title": title,
+                        "link": link,
+                        "image": image_url or bg_image,
+                        "imdb_rating": imdb_rate,
+                        "categories": categories,
+                        "description": description,
+                        "content_type": content_type
+                    })
+        except Exception as e:
+            if DEBUG:
+                print(f"Error parsing featured content: {e}")
+            continue
+    
+    return featured_items
+
+
+def get_latest_episodes(soup: BeautifulSoup) -> list[dict]:
+    """Extract latest episodes from the homepage"""
+    episodes = []
+    
+    # Find episode divs
+    ep_divs = soup.find_all("div", class_="epDivHome")
+    
+    for ep_div in ep_divs:
+        try:
+            # Get episode link and image from epHomeImg anchor
+            link_tag = ep_div.find("a", class_="epHomeImg")
+            
+            # Also try to get the content link (for title)
+            content_div = ep_div.find("div", class_="epHomeContent")
+            content_link = None
+            if content_div:
+                content_link = content_div.find("a")
+            
+            # Determine primary link
+            if link_tag:
+                link = link_tag.get("href", "")
+                # Get image from epHomeImg link
+                img = link_tag.find("img")
+                image_url = ""
+                if img:
+                    image_url = img.get("data-src", img.get("src", ""))
+            elif content_link:
+                link = content_link.get("href", "")
+                image_url = ""
+            else:
+                continue
+            
+            # Get title - look in epHomeContent > h4
+            title = ""
+            if content_div:
+                title_div = content_div.find("div", class_="h4")
+                if title_div:
+                    title = title_div.text.strip()
+            
+            # Fallback: try finding h4 anywhere in ep_div
+            if not title:
+                title_div = ep_div.find("div", class_="h4")
+                if title_div:
+                    title = title_div.text.strip()
+            
+            # Get status
+            status_span = ep_div.find("span", class_="epStatus")
+            status = status_span.text.strip() if status_span else ""
+            
+            # Determine content type from link
+            content_type = "series"
+            if "anime-episodes" in link:
+                content_type = "anime"
+            elif "asian-episodes" in link:
+                content_type = "asian-series"
+            
+            episodes.append({
+                "title": title,
+                "link": link,
+                "image": image_url,
+                "status": status,
+                "content_type": content_type
+            })
+        except Exception as e:
+            if DEBUG:
+                print(f"Error parsing episode: {e}")
+            continue
+    
+    return episodes
+
+
+def get_latest_movies(soup: BeautifulSoup) -> list[dict]:
+    """Extract latest movies from the homepage"""
+    movies = []
+    
+    # Find movie divs
+    movie_divs = soup.find_all("div", class_="blockMovie")
+    
+    for movie_div in movie_divs:
+        try:
+            # Get movie link
+            link_tag = movie_div.find("a")
+            if link_tag:
+                link = link_tag.get("href", "")
+                
+                # Get image
+                img = link_tag.find("img")
+                image_url = ""
+                if img:
+                    image_url = img.get("data-src", img.get("src", ""))
+                
+                # Get title
+                title_div = link_tag.find("div", class_="h5")
+                title = title_div.text.strip() if title_div else ""
+                
+                # Get quality
+                quality = ""
+                quality_span = link_tag.find("span", class_="quality")
+                if quality_span:
+                    quality = quality_span.text.strip()
+                
+                # Get IMDB rating
+                imdb_rating = None
+                imdb_span = link_tag.find("span", class_="bimdb")
+                if imdb_span:
+                    try:
+                        imdb_rating = float(imdb_span.text.strip())
+                    except ValueError:
+                        pass
+                
+                # Get views
+                views = 0
+                views_span = link_tag.find("span", class_="bviews")
+                if views_span:
+                    views_text = views_span.text.strip()
+                    # Handle Arabic numerals
+                    views_text = views_text.replace("٬", "").replace(",", "")
+                    try:
+                        views = int(views_text)
+                    except ValueError:
+                        pass
+                
+                # Determine content type from link
+                content_type = "movies"
+                if "anime-movies" in link:
+                    content_type = "anime-movies"
+                elif "asian-movies" in link:
+                    content_type = "asian-movies"
+                elif "hindi" in link:
+                    content_type = "hindi-movies"
+                
+                movies.append({
+                    "title": title,
+                    "link": link,
+                    "image": image_url,
+                    "quality": quality,
+                    "imdb_rating": imdb_rating,
+                    "views": views,
+                    "content_type": content_type
+                })
+        except Exception as e:
+            if DEBUG:
+                print(f"Error parsing movie: {e}")
+            continue
+    
+    return movies
