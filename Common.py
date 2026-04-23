@@ -3,16 +3,27 @@ from time import sleep
 import requests
 from bs4 import BeautifulSoup, ResultSet, Tag
 from urllib.parse import quote
-from typing import Optional, Callable, Union
+from typing import Optional, Callable, Union, List, Dict
 import json
 import re
+import random
+import asyncio
+from concurrent.futures import ThreadPoolExecutor
 from threading import Lock
 from requests.exceptions import ConnectionError, TooManyRedirects, ReadTimeout, ChunkedEncodingError
 from requests import Response
 from os import environ
 from PIL import Image
 
-# curl_cffi for bypassing Cloudflare
+# Scrapling for undetectable browser automation (primary)
+try:
+    from scrapling.fetchers import StealthyFetcher
+    SCRAPLING_AVAILABLE = True
+except ImportError:
+    SCRAPLING_AVAILABLE = False
+    print("Warning: scrapling not installed. Install with: pip install scrapling[all]")
+
+# curl_cffi as fast fallback (sometimes works)
 try:
     from curl_cffi import requests as curl_requests
     CURL_CFFI_AVAILABLE = True
@@ -20,7 +31,7 @@ except ImportError:
     CURL_CFFI_AVAILABLE = False
     print("Warning: curl_cffi not installed. Install with: pip install curl_cffi")
 
-# Playwright for video source extraction (JavaScript heavy pages)
+# Playwright for video source extraction (only used directly)
 try:
     from playwright.sync_api import sync_playwright
     PLAYWRIGHT_AVAILABLE = True
@@ -28,12 +39,15 @@ except ImportError:
     PLAYWRIGHT_AVAILABLE = False
     print("Warning: Playwright not installed. Run: pip install playwright && playwright install chromium")
 
-DEBUG = False
+# ========== RATE LIMITING & IMPERSONATION SETTINGS ==========
+DEBUG = True                     # Set to True for verbose output
+REQUEST_DELAY = 3.0               # Base seconds between page requests
+JITTER = 0.5                      # Random +/- seconds added to delay
+MAX_RETRIES = 3
+BACKOFF_FACTOR = 2
 
-# ---------- RATE LIMITING SETTINGS ----------
-REQUEST_DELAY = 1.5          # seconds between requests (adjust as needed)
-MAX_RETRIES = 3              # max retries on failure
-BACKOFF_FACTOR = 2           # exponential backoff: 2, 4, 8 seconds
+# Rotating impersonations for curl_cffi (fallback)
+IMPERSONATIONS = ["chrome", "chrome110", "chrome124", "edge101", "safari15_5"]
 
 # For other sites (CimaNow, HDW) – using strings instead of Selenium's By
 CIMA_NOW_SELECTOR = ("class name", "owl-head.owl-loaded.owl-drag")
@@ -103,7 +117,7 @@ except FileNotFoundError:
 
 cookie_lock = Lock()
 
-# Default headers (fallback)
+# Default headers (fallback for curl_cffi)
 headers: dict = {
     "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
     "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
@@ -113,52 +127,147 @@ headers: dict = {
     "upgrade-insecure-requests": "1",
 }
 
-# ========== REQUEST HANDLER WITH RATE LIMITING ==========
+# ========== SYNC REQUEST HANDLER (Scrapling with .body.decode) ==========
+
 def get_website_safe(webpage_url: str, max_retries: int = MAX_RETRIES) -> Optional[Response]:
     """
-    Fetch a webpage using curl_cffi (impersonates Chrome) to bypass Cloudflare.
-    Implements exponential backoff on failure/rate limit.
+    Fetch a webpage using Scrapling's StealthyFetcher with wait_for_selector.
+    Falls back to curl_cffi if Scrapling fails.
+    Returns a requests.Response-like object for compatibility.
     """
-    if not CURL_CFFI_AVAILABLE:
-        raise ImportError("curl_cffi not installed. Run: pip install curl_cffi")
-    
-    for attempt in range(max_retries):
-        try:
-            response = curl_requests.get(
-                webpage_url,
-                impersonate="chrome",
-                timeout=30,
-                allow_redirects=True
-            )
-            if response.status_code == 200:
-                # Convert to requests.Response-like object
-                resp = requests.Response()
-                resp.status_code = 200
-                resp._content = response.content
-                return resp
-            elif response.status_code == 403:
-                # Rate limit or temporary block – wait and retry
+    # Try Scrapling first (with proper waiting for dynamic content)
+    if SCRAPLING_AVAILABLE:
+        for attempt in range(max_retries):
+            try:
+                resp = StealthyFetcher.fetch(
+                    webpage_url,
+                    headless=True,
+                    wait_for_selector=".blockMovie, .postDiv, body",
+                    timeout=60000  # 60 seconds
+                )
+                if resp and resp.status == 200:
+                    # Extract HTML from .body (bytes) or fallback
+                    html = resp.body.decode('utf-8') if hasattr(resp, 'body') else resp.text
+                    if html:
+                        fake_resp = requests.Response()
+                        fake_resp.status_code = 200
+                        fake_resp._content = html.encode('utf-8')
+                        return fake_resp
                 if DEBUG:
-                    print(f"Rate limit (403) on {webpage_url}, attempt {attempt+1}/{max_retries}")
-                if attempt < max_retries - 1:
-                    wait_time = BACKOFF_FACTOR ** attempt
-                    sleep(wait_time)
-                continue
-            else:
+                    print(f"Scrapling attempt {attempt+1} status {resp.status if resp else 'None'}")
+            except Exception as e:
                 if DEBUG:
-                    print(f"curl_cffi status {response.status_code}, retrying...")
-        except Exception as e:
-            if DEBUG:
-                print(f"curl_cffi error: {e}")
-        
-        if attempt < max_retries - 1:
-            sleep(BACKOFF_FACTOR ** attempt)
-    
+                    print(f"Scrapling error on attempt {attempt+1}: {e}")
+            if attempt < max_retries - 1:
+                sleep(BACKOFF_FACTOR ** attempt)
+        if DEBUG:
+            print("Scrapling failed, falling back to curl_cffi")
+
+    # Fallback to curl_cffi
+    if CURL_CFFI_AVAILABLE:
+        for attempt in range(max_retries):
+            impersonation = IMPERSONATIONS[attempt % len(IMPERSONATIONS)]
+            try:
+                response = curl_requests.get(
+                    webpage_url,
+                    impersonate=impersonation,
+                    timeout=30,
+                    allow_redirects=True
+                )
+                if response.status_code == 200:
+                    resp = requests.Response()
+                    resp.status_code = 200
+                    resp._content = response.content
+                    return resp
+                elif response.status_code == 403:
+                    if DEBUG:
+                        print(f"curl_cffi 403 with {impersonation} on {webpage_url}, attempt {attempt+1}")
+                    if attempt < max_retries - 1:
+                        sleep(BACKOFF_FACTOR ** attempt)
+                else:
+                    if DEBUG:
+                        print(f"curl_cffi status {response.status_code} with {impersonation}")
+            except Exception as e:
+                if DEBUG:
+                    print(f"curl_cffi error with {impersonation}: {e}")
+            if attempt < max_retries - 1:
+                sleep(BACKOFF_FACTOR ** attempt)
     if DEBUG:
         print(f"Failed to fetch {webpage_url} after {max_retries} retries")
     return None
 
+# ========== ASYNC HELPERS (for scrapers that need async) ==========
+
+async def get_website_safe_async(url: str, max_retries: int = MAX_RETRIES) -> Optional[str]:
+    """Async wrapper for get_website_safe (runs sync fetcher in thread)."""
+    loop = asyncio.get_running_loop()
+    with ThreadPoolExecutor(max_workers=1) as executor:
+        resp = await loop.run_in_executor(
+            executor,
+            get_website_safe,
+            url,
+            max_retries
+        )
+    if resp:
+        return resp.text
+    return None
+
+async def get_number_of_pages_async(url: str) -> int:
+    """Async version: get total pages using Scrapling directly."""
+    html = await get_website_safe_async(url)
+    if not html:
+        return 1
+    soup = BeautifulSoup(html, "html.parser")
+    pagination = soup.select_one("ul.pagination")
+    if pagination:
+        page_links = pagination.find_all("a", class_="page-link")
+        numbers = []
+        for link in page_links:
+            text = link.text.strip()
+            if text.isdigit():
+                numbers.append(int(text))
+        if numbers:
+            return max(numbers)
+        last_link = pagination.find("a", string="»")
+        if last_link and last_link.get("href"):
+            match = re.search(r'/page/(\d+)', last_link["href"])
+            if match:
+                return int(match.group(1))
+    max_page = 1
+    for link in soup.find_all('a', href=True):
+        match = re.search(r'/page/(\d+)', link['href'])
+        if match:
+            max_page = max(max_page, int(match.group(1)))
+    return max_page if max_page > 1 else 1
+
+async def get_category_page_async(category_url: str, page: int = 1) -> List[dict]:
+    """Async version: fetch a category page and extract movies."""
+    page_url = get_paginated_url(category_url, page)
+    html = await get_website_safe_async(page_url)
+    if not html:
+        return []
+    soup = BeautifulSoup(html, "html.parser")
+    return get_latest_movies(soup)
+
+async def scrape_category_pages_async(category_name: str, start_page: int = 1, end_page: Optional[int] = None) -> List[dict]:
+    """Async version: scrape all pages of a category with rate limiting."""
+    base_url = FASEL_BASE_URL + category_name
+    if end_page is None:
+        end_page = await get_number_of_pages_async(base_url)
+    all_movies = []
+    for page in range(start_page, end_page + 1):
+        delay = REQUEST_DELAY + random.uniform(-JITTER, JITTER)
+        if delay < 0.5:
+            delay = 0.5
+        await asyncio.sleep(delay)
+        movies = await get_category_page_async(base_url, page)
+        all_movies.extend(movies)
+        if DEBUG:
+            print(f"Scraped {category_name} page {page}/{end_page}, found {len(movies)} movies")
+    return all_movies
+
 # ========== VIDEO SOURCE EXTRACTION (PLAYWRIGHT ONLY) ==========
+
 def extract_video_source(video_page_url: str, timeout: int = 30) -> Optional[str]:
     """
     Use Playwright (headless Chromium) to load the video page and extract
@@ -205,7 +314,8 @@ def extract_video_source(video_page_url: str, timeout: int = 30) -> Optional[str
             print(f"Playwright extraction error: {e}")
         return None
 
-# ========== PAGINATION HELPERS ==========
+# ========== PAGINATION HELPERS (SYNC) ==========
+
 def get_paginated_url(category_url: str, page: int) -> str:
     base = re.sub(r'/page/\d+/?$', '', category_url.rstrip('/'))
     if page == 1:
@@ -213,13 +323,10 @@ def get_paginated_url(category_url: str, page: int) -> str:
     return f"{base}/page/{page}/"
 
 def get_number_of_pages(url: str) -> int:
-    """Get total pages for a category using pagination HTML."""
     webpage = get_website_safe(url)
     if not webpage:
         return 1
     soup = BeautifulSoup(webpage.content, "html.parser")
-    
-    # Find pagination container
     pagination = soup.select_one("ul.pagination")
     if pagination:
         page_links = pagination.find_all("a", class_="page-link")
@@ -235,8 +342,6 @@ def get_number_of_pages(url: str) -> int:
             match = re.search(r'/page/(\d+)', last_link["href"])
             if match:
                 return int(match.group(1))
-    
-    # Fallback to scanning all links
     max_page = 1
     for link in soup.find_all('a', href=True):
         match = re.search(r'/page/(\d+)', link['href'])
@@ -244,49 +349,39 @@ def get_number_of_pages(url: str) -> int:
             max_page = max(max_page, int(match.group(1)))
     return max_page if max_page > 1 else 1
 
-def scrape_category_pages(category_name: str, start_page: int = 1, end_page: Optional[int] = None) -> list[dict]:
-    """
-    Scrape all pages of a category (e.g., 'movies') with rate limiting.
-    Returns a list of movie dictionaries.
-    """
+def scrape_category_pages(category_name: str, start_page: int = 1, end_page: Optional[int] = None) -> List[dict]:
     base_url = FASEL_BASE_URL + category_name
     if end_page is None:
         end_page = get_number_of_pages(base_url)
-    
     all_movies = []
     for page in range(start_page, end_page + 1):
+        delay = REQUEST_DELAY + random.uniform(-JITTER, JITTER)
+        if delay < 0.5:
+            delay = 0.5
+        sleep(delay)
         url = get_paginated_url(base_url, page)
         if DEBUG:
             print(f"Scraping {category_name} page {page}/{end_page}: {url}")
         movies = get_category_page_rendered(base_url, page)
         all_movies.extend(movies)
-        # Respect rate limiting between pages
-        if page < end_page:
-            sleep(REQUEST_DELAY)
     return all_movies
 
 # ========== FASELHD METADATA EXTRACTION ==========
+
 def get_latest_movies(soup: BeautifulSoup) -> list[dict]:
     """Extract movies from homepage (.blockMovie) or category page (.postDiv)."""
     movies = []
     movie_divs = soup.select(".blockMovie") or soup.select(".postDiv")
-    
     for movie_div in movie_divs:
         link_tag = movie_div.find("a")
         if not link_tag:
             continue
-        
         img = link_tag.find("img")
         image_url = img.get("data-src", img.get("src", "")) if img else ""
-        
-        title_div = link_tag.find("div", class_="h5")  # homepage
-        if not title_div:
-            title_div = link_tag.find("div", class_="h1")  # category page
+        title_div = link_tag.find("div", class_="h5") or link_tag.find("div", class_="h1")
         title = title_div.text.strip() if title_div else ""
-        
         quality_span = link_tag.find("span", class_="quality")
         quality = quality_span.text.strip() if quality_span else ""
-        
         imdb_span = link_tag.find("span", class_="pImdb") or link_tag.find("span", class_="bimdb")
         imdb_rating = None
         if imdb_span:
@@ -296,7 +391,6 @@ def get_latest_movies(soup: BeautifulSoup) -> list[dict]:
                     imdb_rating = float(rating_text)
             except ValueError:
                 pass
-        
         views_span = link_tag.find("span", class_="pViews") or link_tag.find("span", class_="bviews")
         views = 0
         if views_span:
@@ -305,7 +399,6 @@ def get_latest_movies(soup: BeautifulSoup) -> list[dict]:
                 views = int(views_text)
             except ValueError:
                 pass
-        
         link = link_tag.get("href", "")
         content_type = "movies"
         if "anime-movies" in link:
@@ -314,7 +407,6 @@ def get_latest_movies(soup: BeautifulSoup) -> list[dict]:
             content_type = "asian-movies"
         elif "hindi" in link:
             content_type = "hindi-movies"
-        
         movies.append({
             "title": title,
             "link": link,
@@ -418,7 +510,6 @@ def get_featured_content(soup: BeautifulSoup) -> list[dict]:
         })
     return featured
 
-# ========== CONVENIENCE FUNCTIONS ==========
 def get_latest_movies_from_homepage() -> list[dict]:
     resp = get_website_safe(FASEL_BASE_URL + "main")
     if not resp:
@@ -459,7 +550,8 @@ def get_category_page_rendered(category_url: str, page: int = 1) -> list[dict]:
     soup = BeautifulSoup(resp.content, "html.parser")
     return get_latest_movies(soup)
 
-# ========== LEGACY FUNCTIONS (unchanged for other sites) ==========
+# ========== LEGACY HELPER FUNCTIONS (unchanged) ==========
+
 def split_into_ranges(number_of_ranges: int, range_end: int, range_start: int = 0) -> list[tuple[int, int]]:
     number_to_be_split = range_end - range_start
     number_per_chunk = number_to_be_split // number_of_ranges
@@ -536,6 +628,8 @@ def get_genres(soup: BeautifulSoup) -> Union[list[str], str]:
     except AttributeError:
         genres = []
     return genres
+
+# --- Akwam, HDW, CimaNow legacy functions (kept for compatibility) ---
 
 def akwam_get_website_safe(url: str) -> Response:
     response = None

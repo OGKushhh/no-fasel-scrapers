@@ -1,195 +1,98 @@
-from sys import setrecursionlimit
-from bs4 import BeautifulSoup, ResultSet
-from Common import *
-from concurrent.futures import ThreadPoolExecutor
+import asyncio
 import json
-from time import perf_counter
+import random
+from bs4 import BeautifulSoup
+from Common import (
+    DEBUG, FASEL_BASE_URL, REQUEST_DELAY, JITTER,
+    get_paginated_url, get_number_of_pages_async, get_category_page_async,
+    get_website_safe_async, get_content_id, upload_image, clean_iframe_source,
+    get_content_format, get_genres
+)
 
-setrecursionlimit(25000)
-
+# Load existing movies
 try:
     with open("./output/movies.json") as fp:
         old_movies_dict = json.load(fp)
-except FileNotFoundError:
+except (FileNotFoundError, json.JSONDecodeError):
     old_movies_dict = {}
 
 
-def scrape_page(movie_divs: list[ResultSet]) -> dict:
-    """Scrapes all the movies in the page provided"""
-    movies_dict = {}
-    for movie_div in movie_divs:
-        try:
-            movie_page_url = movie_div.find("a")["href"]
-            movie_page = get_website_safe(movie_page_url)
+async def scrape_all_movies():
+    """Scrape all movie pages using async helpers (Scrapling)."""
+    category_url = FASEL_BASE_URL + "movies"
+    total_pages = await get_number_of_pages_async(category_url)
+    if DEBUG:
+        print(f"Total movie pages: {total_pages}")
 
-            if movie_page is not None:
-                soup = BeautifulSoup(movie_page.content, "html.parser")
-            else:
+    all_movies = {}
+    for page in range(1, total_pages + 1):
+        delay = REQUEST_DELAY + random.uniform(-JITTER, JITTER)
+        if delay < 0.5:
+            delay = 0.5
+        await asyncio.sleep(delay)
+
+        page_url = get_paginated_url(category_url, page)
+        if DEBUG:
+            print(f"Scraping page {page}/{total_pages}: {page_url}")
+
+        # Fetch page HTML using async helper
+        html = await get_website_safe_async(page_url)
+        if not html:
+            if DEBUG:
+                print(f"Failed to fetch page {page}")
+            continue
+
+        soup = BeautifulSoup(html, "html.parser")
+        movie_divs = soup.select('.col-xl-2.col-lg-2.col-md-3.col-sm-3') or soup.select('.blockMovie')
+        if not movie_divs:
+            continue
+
+        # Process each movie on this page
+        page_movies = {}
+        for movie in movie_divs:
+            link = movie.select_one('a')
+            if not link or not link.get('href'):
                 continue
-
-            movie_id = get_content_id(soup)
-
-            if (movie_id in old_movies_dict) or (movie_id is None):
+            detail_url = link['href']
+            # Fetch detail page HTML
+            detail_html = await get_website_safe_async(detail_url)
+            if not detail_html:
                 continue
-            else:
-                pass
-
-            try:
-                iframe_source = soup.find("iframe")["src"]
-            except TypeError:
+            detail_soup = BeautifulSoup(detail_html, "html.parser")
+            # Extract movie ID
+            movie_id = get_content_id(detail_soup)
+            if not movie_id or movie_id in old_movies_dict:
                 continue
-
-            # Get title - updated for new HTML structure
-            try:
-                title_div = movie_div.find("div", class_="h5")
-                if title_div:
-                    title = get_content_title(movie_div)
-                else:
-                    # Alternative title extraction
-                    h1_title = soup.find("div", class_="h1 title")
-                    if h1_title:
-                        title = remove_year(remove_arabic_chars(
-                            h1_title.text.split('\n')[1].strip() if '\n' in h1_title.text else h1_title.text.strip()
-                        ))
-                    else:
-                        title = "Unknown Movie"
-            except Exception:
-                title = "Unknown Movie"
-
-            # Get image - updated for new HTML structure
-            try:
-                img = movie_div.find("img")
-                if img:
-                    img_src = img.get("data-src", img.get("src", ""))
-                else:
-                    img_src = ""
-            except:
-                img_src = ""
-
-            movies_dict[movie_id] = {
+            # Extract iframe source
+            iframe = detail_soup.find('iframe')
+            if not iframe or not iframe.get('src'):
+                continue
+            source = clean_iframe_source(iframe['src'])
+            # Extract data from list page element
+            title_elem = movie.select_one('.h5') or movie.select_one('.h1')
+            title = title_elem.text.strip() if title_elem else "Unknown Movie"
+            img = movie.select_one('img')
+            img_src = img.get('data-src') or img.get('src', '') if img else ""
+            # Assemble movie dict
+            page_movies[movie_id] = {
                 "Title": title,
                 "Category": "movies",
-                "Genres": get_genres(soup),
-                "Format": get_content_format(soup),
-                "Image Source": upload_image(img_src, movie_id + "-fasel", get_website_safe),
-                "Source": clean_iframe_source(iframe_source),
+                "Image Source": img_src,
+                "Source": source,
+                "Genres": get_genres(detail_soup),
+                "Format": get_content_format(detail_soup),
             }
-
-        except Exception as e:
-            if DEBUG:
-                print(f"Error scraping movie: {e}")
-            continue
-
-    return movies_dict
-
-
-def scrape_all_movies(page_range: tuple, category_url: str = None) -> dict:
-    """Scrapes all the movies in the page range provided
-    
-    Args:
-        page_range: Tuple of (start_page, end_page)
-        category_url: The base category URL (e.g., "https://www.fasel-hd.cam/movies")
-    """
-    movies_dict = {}
-    
-    # Use provided category URL or default to /movies
-    if category_url is None:
-        category_url = FASEL_BASE_URL + "movies"
-
-    for page in range(page_range[0], page_range[1]):
-        try:
-            # Use get_paginated_url for correct URL construction
-            page_url = get_paginated_url(category_url, page)
-            main_page = get_website_safe(page_url)
-
-            if main_page is None:
-                if DEBUG:
-                    print(f"Failed to fetch page {page}: {page_url}")
-                continue
-
-            soup = BeautifulSoup(main_page.content, "html.parser")
-
-            # Updated to match new HTML structure
-            movie_divs = soup.find_all(
-                "div", class_="col-xl-2 col-lg-2 col-md-3 col-sm-3")
-
-            if not movie_divs:
-                # Fallback to blockMovie divs
-                movie_divs = soup.find_all("div", class_="blockMovie")
-
-            movie_divs_ranges = split_into_ranges(6, len(movie_divs))
-            splitted_movie_divs_list = [
-                movie_divs[movie_divs_range[0] - 1: movie_divs_range[1] - 1]
-                for movie_divs_range in movie_divs_ranges
-            ]
-
-            with ThreadPoolExecutor() as executor:
-                results = executor.map(scrape_page, splitted_movie_divs_list)
-
-            for result in results:
-                movies_dict.update(result)
-
-            if DEBUG:
-                print(f'Done scraping page {page}')
-            else:
-                pass
-
-        except Exception as e:
-            if DEBUG:
-                print(f"Error scraping movies page {page}: {e}")
-            continue
-
-    return movies_dict
-
-
-def main() -> None:
-    """Scapes all the movies from fasel"""
-    # Updated selector to match new HTML structure
-    get_cookies(FASEL_BASE_URL, (By.CLASS_NAME, "logo"))
-    
-    # Use the correct category URL (page 1)
-    category_url = FASEL_BASE_URL + "movies"
-
-    try:
-        total_pages = get_number_of_pages(category_url)
-    except Exception as e:
+        all_movies.update(page_movies)
         if DEBUG:
-            print(f"Error getting number of pages: {e}")
-        total_pages = 1
+            print(f"Page {page} done, new movies: {len(page_movies)}")
 
-    page_ranges_list = split_into_ranges(
-        8,
-        total_pages,
-    )
-
-    if DEBUG:
-        print(f"Total pages: {total_pages}")
-        print(f"Page ranges: {page_ranges_list}")
-    else:
-        pass
-
-    # Pass category_url to scrape_all_movies
-    from itertools import repeat
-    with ThreadPoolExecutor() as executor:
-        results = executor.map(
-            scrape_all_movies, 
-            page_ranges_list,
-            repeat(category_url)
-        )
-
-    for result in results:
-        old_movies_dict.update(result)
-
+    # Merge and save
+    old_movies_dict.update(all_movies)
     with open("./output/movies.json", "w") as fp:
         json.dump(old_movies_dict, fp, indent=4)
+    if DEBUG:
+        print(f"Total movies now: {len(old_movies_dict)}")
 
 
 if __name__ == "__main__":
-    start_time = perf_counter()
-    main()
-    end_time = perf_counter()
-    print(
-        f"Finished scraping all movies from fasel in about {round((end_time - start_time) / 60)} minute(s)"
-    )
-else:
-    pass
+    asyncio.run(scrape_all_movies())
