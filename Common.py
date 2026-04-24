@@ -1,115 +1,125 @@
-from base64 import b64encode
-from time import sleep
-import requests
-from bs4 import BeautifulSoup, ResultSet, Tag
-from urllib.parse import quote
-from typing import Optional, Callable, Union, List, Dict
-import json
-import re
-import random
 import asyncio
+import json
+import logging
 import os
+import random
+import re
 import time
+from base64 import b64encode
 from concurrent.futures import ThreadPoolExecutor
 from threading import Lock
-from requests.exceptions import ConnectionError, TooManyRedirects, ReadTimeout, ChunkedEncodingError
-from requests import Response
-from os import environ
+from typing import Optional, Callable, Union, List, Dict
+from urllib.parse import quote, unquote
 from PIL import Image
+import requests
+from bs4 import BeautifulSoup, ResultSet, Tag
+from requests import Response
+from requests.exceptions import ConnectionError, TooManyRedirects, ReadTimeout, ChunkedEncodingError
 
-# Scrapling for undetectable browser automation (primary for metadata)
+# ----------------------------------------------------------------------
+#  Logging configuration
+# ----------------------------------------------------------------------
+logging.basicConfig(
+    filename='scraper_errors.log',
+    level=logging.WARNING,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+
+# ----------------------------------------------------------------------
+#  Stealth fetching – Scrapling (primary) + curl_cffi (fallback)
+# ----------------------------------------------------------------------
 try:
     from scrapling.fetchers import StealthyFetcher
     SCRAPLING_AVAILABLE = True
 except ImportError:
     SCRAPLING_AVAILABLE = False
-    print("Warning: scrapling not installed. Install with: pip install scrapling[all]")
+    print("Warning: scrapling not installed. Run: pip install scrapling[all]")
 
-# curl_cffi as fast fallback (sometimes works)
 try:
     from curl_cffi import requests as curl_requests
     CURL_CFFI_AVAILABLE = True
 except ImportError:
     CURL_CFFI_AVAILABLE = False
-    print("Warning: curl_cffi not installed. Install with: pip install curl_cffi")
+    print("Warning: curl_cffi not installed. Run: pip install curl_cffi")
 
-# Video extraction: try Patchright (stealth), fallback to Playwright
+# Video extraction – Patchright (stealth) or Playwright
 try:
     from patchright.sync_api import sync_playwright
     PATCHRIGHT_AVAILABLE = True
 except ImportError:
     from playwright.sync_api import sync_playwright
     PATCHRIGHT_AVAILABLE = False
-    print("Warning: patchright not installed. Using standard Playwright. Install with: pip install patchright && patchright install chromium")
+    print("Warning: patchright not installed, using standard Playwright. Run: pip install patchright && patchright install chromium")
 
-# ========== RATE LIMITING & IMPERSONATION SETTINGS ==========
-DEBUG = False                     # Set to True for verbose output
-REQUEST_DELAY = 3.0               # Base seconds between page requests
-JITTER = 0.5                      # Random +/- seconds added to delay
+# ----------------------------------------------------------------------
+#  Constants & settings
+# ----------------------------------------------------------------------
+DEBUG = True                       # Set False for production runs
+REQUEST_DELAY = 2.0                # seconds between page requests
+JITTER = 0.5                       # random ± seconds
 MAX_RETRIES = 3
 BACKOFF_FACTOR = 2
-
-# Rotating impersonations for curl_cffi (fallback)
 IMPERSONATIONS = ["chrome", "chrome110", "chrome124", "edge101", "safari15_5"]
-
-# For other sites (CimaNow, HDW) – using strings instead of Selenium's By
-CIMA_NOW_SELECTOR = ("class name", "owl-head.owl-loaded.owl-drag")
-
-FILE_NAMES = ["movies", "anime", "asian-series",
-              "series", "tvshows", "arabic-series",
-              "arabic-movies"]
-
-HDW_FILE_NAMES = ["hdwmovies", "series", "arabic-movies", "arabic-series"]
 
 FASEL_BASE_URL = "https://www.fasel-hd.cam/"
 
+# For other sites (leave as is)
+CIMA_NOW_SELECTOR = ("class name", "owl-head.owl-loaded.owl-drag")
+FILE_NAMES = ["movies", "anime", "asian-series", "series", "tvshows", "arabic-series", "arabic-movies"]
+HDW_FILE_NAMES = ["hdwmovies", "series", "arabic-movies", "arabic-series"]
 DEFAULT_HDW_SELECTOR = ("class name", "top-brand")
 
 AKWAM_GENRES = {
-    "87": "Ramadan",
-    "30": "Animated",
-    "18": "Action",
-    "71": "Dubbed",
-    "72": "Netflix",
-    "20": "Comedy",
-    "35": "Thriller",
-    "34": "Mystery",
-    "33": "Family",
-    "88": "Kids",
-    "32": "Sports",
-    "25": "War",
-    "89": "Short",
-    "43": "Fantasy",
-    "24": "Science Fiction",
-    "31": "Musical",
-    "29": "Biography",
-    "28": "Documentary",
-    "27": "Romance",
-    "26": "History",
-    "23": "Drama",
-    "22": "Horror",
-    "21": "Crime",
-    "19": "Adventure",
-    "91": "Western"
+    "87": "Ramadan", "30": "Animated", "18": "Action", "71": "Dubbed",
+    "72": "Netflix", "20": "Comedy", "35": "Thriller", "34": "Mystery",
+    "33": "Family", "88": "Kids", "32": "Sports", "25": "War", "89": "Short",
+    "43": "Fantasy", "24": "Science Fiction", "31": "Musical", "29": "Biography",
+    "28": "Documentary", "27": "Romance", "26": "History", "23": "Drama",
+    "22": "Horror", "21": "Crime", "19": "Adventure", "91": "Western"
 }
 
 CIMA_NOW_GENRES = {
-    "تشويق": "Suspense",
-    "درامي": "Drama",
+    "تشويق": "Suspense", "درامي": "Drama", "اكشن": "Action", "رعب": "Horror",
+    "كوميدى": "Comedy", "مغامرة": "Adventure", "ترفيهي": "Entertainment",
+    "غنائي": "Musical", "مسابقات": "Competitions", "اجتماعي": "Social",
+    "جريمة": "Crime", "اثارة": "Thriller", "رومانسى": "Romance",
+    "عائلي": "Family", "كوميدي": "Comedy", "درامى": "Drama"
+}
+
+# Genre mapping for FaselHD (Arabic -> English)
+FASEL_GENRE_MAP = {
+    "أكشن": "Action",
     "اكشن": "Action",
-    "رعب": "Horror",
-    "كوميدى": "Comedy",
-    "مغامرة": "Adventure",
-    "ترفيهي": "Entertainment",
-    "غنائي": "Musical",
-    "مسابقات": "Competitions",
-    "اجتماعي": "Social",
-    "جريمة": "Crime",
-    "اثارة": "Thriller",
-    "رومانسى": "Romance",
-    "عائلي": "Family",
+    "دراما": "Drama",
     "كوميدي": "Comedy",
-    "درامى": "Drama"
+    "كوميدى": "Comedy",
+    "رعب": "Horror",
+    "إثارة": "Thriller",
+    "اثارة": "Thriller",
+    "مغامرات": "Adventure",
+    "مغامرة": "Adventure",
+    "خيال علمي": "Science Fiction",
+    "جريمة": "Crime",
+    "رومانسية": "Romance",
+    "رومانسي": "Romance",
+    "رومانسى": "Romance",
+    "تاريخي": "History",
+    "سيرة ذاتية": "Biography",
+    "وثائقي": "Documentary",
+    "عائلي": "Family",
+    "رياضي": "Sports",
+    "حرب": "War",
+    "غموض": "Mystery",
+    "فانتازيا": "Fantasy",
+    "موسيقى": "Music",
+    "موسيقي": "Music",
+    "أنميشن": "Animation",
+    "انيميشن": "Animation",
+    "غربي": "Western",
+    "مسابقات": "Competitions",
+    "تلفزيون الواقع": "Reality-TV",
+    "ترفيهي": "Entertainment",
+    "اجتماعي": "Social",
 }
 
 try:
@@ -119,25 +129,17 @@ except FileNotFoundError:
     IMAGE_SOURCES = {}
 
 cookie_lock = Lock()
-
-# Default headers (fallback for curl_cffi)
-headers: dict = {
+headers = {
     "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
     "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
     "accept-language": "en-US,en;q=0.9,ar;q=0.8",
-    "accept-encoding": "gzip, deflate, br",
-    "connection": "keep-alive",
-    "upgrade-insecure-requests": "1",
 }
 
-# ========== SYNC REQUEST HANDLER (Scrapling + curl_cffi fallback) ==========
-
+# ----------------------------------------------------------------------
+#  Core fetching function (synchronous, returns Response‑like object)
+# ----------------------------------------------------------------------
 def get_website_safe(webpage_url: str, max_retries: int = MAX_RETRIES) -> Optional[Response]:
-    """
-    Fetch a webpage using Scrapling's StealthyFetcher with wait_for_selector.
-    Falls back to curl_cffi if Scrapling fails.
-    Returns a requests.Response-like object for compatibility.
-    """
+    """Fetch a page using Scrapling (stealth) or fallback to curl_cffi."""
     if SCRAPLING_AVAILABLE:
         for attempt in range(max_retries):
             try:
@@ -145,128 +147,202 @@ def get_website_safe(webpage_url: str, max_retries: int = MAX_RETRIES) -> Option
                     webpage_url,
                     headless=True,
                     wait_for_selector=".blockMovie, .postDiv, body",
-                    timeout=60000  # 60 seconds
+                    timeout=60000
                 )
                 if resp and resp.status == 200:
                     html = resp.body.decode('utf-8') if hasattr(resp, 'body') else resp.text
                     if html:
-                        fake_resp = requests.Response()
-                        fake_resp.status_code = 200
-                        fake_resp._content = html.encode('utf-8')
-                        return fake_resp
-                if DEBUG:
-                    print(f"Scrapling attempt {attempt+1} status {resp.status if resp else 'None'}")
+                        fake = requests.Response()
+                        fake.status_code = 200
+                        fake._content = html.encode('utf-8')
+                        return fake
             except Exception as e:
                 if DEBUG:
-                    print(f"Scrapling error on attempt {attempt+1}: {e}")
+                    print(f"Scrapling error: {e}")
             if attempt < max_retries - 1:
-                sleep(BACKOFF_FACTOR ** attempt)
+                time.sleep(BACKOFF_FACTOR ** attempt)
         if DEBUG:
             print("Scrapling failed, falling back to curl_cffi")
 
     if CURL_CFFI_AVAILABLE:
         for attempt in range(max_retries):
-            impersonation = IMPERSONATIONS[attempt % len(IMPERSONATIONS)]
+            imp = IMPERSONATIONS[attempt % len(IMPERSONATIONS)]
             try:
-                response = curl_requests.get(
-                    webpage_url,
-                    impersonate=impersonation,
-                    timeout=30,
-                    allow_redirects=True
-                )
-                if response.status_code == 200:
-                    resp = requests.Response()
-                    resp.status_code = 200
-                    resp._content = response.content
-                    return resp
-                elif response.status_code == 403:
-                    if DEBUG:
-                        print(f"curl_cffi 403 with {impersonation} on {webpage_url}, attempt {attempt+1}")
-                    if attempt < max_retries - 1:
-                        sleep(BACKOFF_FACTOR ** attempt)
-                else:
-                    if DEBUG:
-                        print(f"curl_cffi status {response.status_code} with {impersonation}")
+                r = curl_requests.get(webpage_url, impersonate=imp, timeout=30)
+                if r.status_code == 200:
+                    fake = requests.Response()
+                    fake.status_code = 200
+                    fake._content = r.content
+                    return fake
             except Exception as e:
                 if DEBUG:
-                    print(f"curl_cffi error with {impersonation}: {e}")
+                    print(f"curl_cffi error: {e}")
             if attempt < max_retries - 1:
-                sleep(BACKOFF_FACTOR ** attempt)
-    if DEBUG:
-        print(f"Failed to fetch {webpage_url} after {max_retries} retries")
+                time.sleep(BACKOFF_FACTOR ** attempt)
+
+    logging.warning(f"Failed to fetch {webpage_url}")
     return None
 
-# ========== ASYNC HELPERS (for scrapers that need async) ==========
+# ----------------------------------------------------------------------
+#  Pagination helpers
+# ----------------------------------------------------------------------
+def get_paginated_url(category_url: str, page: int) -> str:
+    base = re.sub(r'/page/\d+/?$', '', category_url.rstrip('/'))
+    return base if page == 1 else f"{base}/page/{page}/"
 
-async def get_website_safe_async(url: str, max_retries: int = MAX_RETRIES) -> Optional[str]:
-    """Async wrapper for get_website_safe (runs sync fetcher in thread)."""
-    loop = asyncio.get_running_loop()
-    with ThreadPoolExecutor(max_workers=1) as executor:
-        resp = await loop.run_in_executor(
-            executor,
-            get_website_safe,
-            url,
-            max_retries
-        )
-    if resp:
-        return resp.text
-    return None
-
-async def get_number_of_pages_async(url: str) -> int:
-    """Async version: get total pages using Scrapling directly."""
-    html = await get_website_safe_async(url)
-    if not html:
+def get_number_of_pages(url: str) -> int:
+    resp = get_website_safe(url)
+    if not resp:
         return 1
-    soup = BeautifulSoup(html, "html.parser")
+    soup = BeautifulSoup(resp.text, "html.parser")
     pagination = soup.select_one("ul.pagination")
     if pagination:
         last_link = pagination.find("a", string="»")
         if last_link and last_link.get("href"):
-            match = re.search(r'/page/(\d+)', last_link["href"])
-            if match:
-                return int(match.group(1))
-        numbers = [int(link.text.strip()) for link in pagination.find_all("a", class_="page-link") if link.text.strip().isdigit()]
+            m = re.search(r'/page/(\d+)', last_link["href"])
+            if m:
+                return int(m.group(1))
+        numbers = [int(a.text.strip()) for a in pagination.find_all("a", class_="page-link") if a.text.strip().isdigit()]
         if numbers:
             return max(numbers)
+    # fallback
     max_page = 1
-    for link in soup.find_all('a', href=True):
-        match = re.search(r'/page/(\d+)', link['href'])
-        if match:
-            max_page = max(max_page, int(match.group(1)))
+    for a in soup.find_all('a', href=True):
+        m = re.search(r'/page/(\d+)', a['href'])
+        if m:
+            max_page = max(max_page, int(m.group(1)))
     return max_page if max_page > 1 else 1
 
-async def get_category_page_async(category_url: str, page: int = 1) -> List[dict]:
-    """Async version: fetch a category page and extract movies."""
-    page_url = get_paginated_url(category_url, page)
-    html = await get_website_safe_async(page_url)
-    if not html:
+# ----------------------------------------------------------------------
+#  Metadata extraction from detail pages
+# ----------------------------------------------------------------------
+def clean_genre(genre: str) -> str:
+    """Decode percent‑encoded Arabic strings."""
+    try:
+        decoded = unquote(genre)
+        return decoded if '%' not in decoded else genre
+    except:
+        return genre
+
+def get_content_id(soup: BeautifulSoup) -> Optional[str]:
+    try:
+        return remove_arabic_chars(soup.find("i", class_="fas fa-dot-circle").parent.text.replace(":", "").replace("#", ""))
+    except AttributeError:
+        return None
+
+def get_content_format(soup: BeautifulSoup) -> str:
+    try:
+        cf = soup.find("i", class_="fas fa-play-circle").find_next_sibling().text
+        return cf if cf.isascii() else "N/A"
+    except AttributeError:
+        return "N/A"
+
+def get_genres(soup: BeautifulSoup) -> List[str]:
+    """Legacy function: returns only English mapped genres."""
+    try:
+        genre_tags = soup.find("i", class_="far fa-folders").find_next_siblings("a")
+        raw = [tag["href"].split("/")[-1].capitalize() for tag in genre_tags]
+        ar = [clean_genre(g) for g in raw]
+        en = [FASEL_GENRE_MAP.get(g, g) for g in ar]
+        return en
+    except AttributeError:
         return []
-    soup = BeautifulSoup(html, "html.parser")
-    return get_latest_movies(soup)
 
-async def scrape_category_pages_async(category_name: str, start_page: int = 1, end_page: Optional[int] = None) -> List[dict]:
-    """Async version: scrape all pages of a category with rate limiting."""
-    base_url = FASEL_BASE_URL + category_name
-    if end_page is None:
-        end_page = await get_number_of_pages_async(base_url)
-    all_movies = []
-    for page in range(start_page, end_page + 1):
-        delay = REQUEST_DELAY + random.uniform(-JITTER, JITTER)
-        if delay < 0.5:
-            delay = 0.5
-        await asyncio.sleep(delay)
-        movies = await get_category_page_async(base_url, page)
-        all_movies.extend(movies)
-        if DEBUG:
-            print(f"Scraped {category_name} page {page}/{end_page}, found {len(movies)} movies")
-    return all_movies
+def get_genres_both(soup: BeautifulSoup) -> dict:
+    """Return dict with 'en' (English) and 'ar' (Arabic decoded) genre lists."""
+    try:
+        genre_tags = soup.find("i", class_="far fa-folders").find_next_siblings("a")
+        raw_genres = [tag["href"].split("/")[-1].capitalize() for tag in genre_tags]
+        ar_genres = [clean_genre(g) for g in raw_genres]          # decoded Arabic
+        en_genres = [FASEL_GENRE_MAP.get(g, g) for g in ar_genres] # mapped to English
+        return {"ar": ar_genres, "en": en_genres}
+    except AttributeError:
+        return {"ar": [], "en": []}
 
-# ========== VIDEO SOURCE EXTRACTION (PATCHRIGHT / PLAYWRIGHT) ==========
+def clean_iframe_source(iframe_src):
+    """Safely extract the actual video URL from an iframe src attribute."""
+    if not iframe_src or "=" not in iframe_src:
+        return ""
+    try:
+        return iframe_src.split("=")[2].replace("&img", "")
+    except (IndexError, AttributeError):
+        return ""
 
-# Temporary fresh profile directory (created once per run)
+def remove_arabic_chars(s: str) -> str:
+    return s.encode("ascii", "ignore").decode().strip()
+
+def remove_year(title: str) -> str:
+    if title[-4:].isdigit() and len(title) > 4:
+        title = title.replace(title[-5:], "")
+    return title
+
+def get_content_title(soup_result: ResultSet) -> str:
+    title = remove_year(remove_arabic_chars(soup_result.find("div", class_="h1").text))
+    return title
+
+def extract_country(soup: BeautifulSoup) -> Optional[str]:
+    flag_icon = soup.find('i', class_='far fa-flag')
+    if flag_icon:
+        parent_span = flag_icon.find_parent('span')
+        if parent_span:
+            link = parent_span.find('a', rel='tag')
+            if link:
+                return link.text.strip()
+    text = soup.get_text()
+    match = re.search(r'دول الأنتاج\s*:\s*([^\n]+)', text)
+    return match.group(1).strip() if match else None
+
+def extract_runtime(soup: BeautifulSoup) -> Optional[int]:
+    clock = soup.find('i', class_='far fa-clock')
+    if clock:
+        parent = clock.find_parent('span')
+        if parent:
+            m = re.search(r'(\d+)', parent.get_text())
+            if m:
+                return int(m.group(1))
+    meta = soup.find('meta', attrs={'itemprop': 'duration'})
+    if meta and meta.get('content'):
+        dur = meta['content']
+        m = re.match(r'PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?', dur)
+        if m:
+            h = int(m.group(1)) if m.group(1) else 0
+            mn = int(m.group(2)) if m.group(2) else 0
+            return h * 60 + mn
+    return None
+
+# ----------------------------------------------------------------------
+#  Image upload (Imgur)
+# ----------------------------------------------------------------------
+def upload_image(image_url: str, content_id: str, get_image: Callable[[str], Response]) -> str:
+    if DEBUG:
+        print(content_id)
+    if content_id in IMAGE_SOURCES:
+        return IMAGE_SOURCES[content_id]
+    if not image_url:
+        return "https://imgpile.com/images/TPDrVl.jpg"
+    image = get_image(image_url)
+    image_path = f"./output/{content_id}"
+    if ".webp" in image_url:
+        with open(image_path + ".webp", "wb") as f:
+            f.write(image.content)
+        jpg = Image.open(image_path + ".webp").convert("RGB")
+        jpg.save(image_path + ".jpg", "jpeg")
+        with open(image_path + ".jpg", "rb") as f:
+            b64 = f.read()
+    else:
+        b64 = b64encode(image.content).decode("utf8")
+    imgur_headers = {"Authorization": f"Client-ID {environ.get('IMGUR_CLIENT_ID')}"}
+    data = {"image": b64}
+    try:
+        res = requests.post("https://api.imgur.com/3/image", headers=imgur_headers, data=data)
+        return res.json()["data"]["link"]
+    except Exception:
+        return "https://imgpile.com/images/TPDrVl.jpg"
+
+# ----------------------------------------------------------------------
+#  Video source extraction (on‑demand) – using browser with ad blocking
+# ----------------------------------------------------------------------
 TEMP_PROFILE = os.path.abspath("./chrome_fresh_profile")
-
-# List of ad/popup domains to block at network level
 AD_DOMAINS = [
     "googletagmanager.com", "doubleclick.net", "googleadservices.com",
     "google-analytics.com", "popads.net", "adsterra.com", "exponential.com",
@@ -275,14 +351,9 @@ AD_DOMAINS = [
 ]
 
 def get_video_stream_url(page_url: str, headless: bool = True, max_attempts: int = 7) -> Optional[str]:
-    """
-    Launch a stealth Chrome profile, block ads, click play button, capture .m3u8 stream.
-    Returns the master.m3u8 URL or None.
-    """
+    """Launch a stealth browser, intercept .m3u8 request, click play button."""
     captured_url = None
-
     with sync_playwright() as p:
-        # Launch persistent context with a fresh profile (avoids bot detection)
         context = p.chromium.launch_persistent_context(
             user_data_dir=TEMP_PROFILE,
             headless=headless,
@@ -297,91 +368,75 @@ def get_video_stream_url(page_url: str, headless: bool = True, max_attempts: int
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
         )
         page = context.new_page()
-
-        # Block ad requests
+        # block ads
         def block_ads(route, request):
             if any(domain in request.url for domain in AD_DOMAINS):
                 route.abort()
                 return
             route.continue_()
         page.route("**/*", block_ads)
-
-        # Auto‑close any popup windows
         page.on("popup", lambda popup: popup.close())
 
         if DEBUG:
-            print(f"[VideoExtract] Loading page: {page_url}")
+            print(f"[Video] Loading {page_url}")
         page.goto(page_url, wait_until="domcontentloaded", timeout=60000)
-
-        # Scroll a bit to trigger lazy‑loaded elements
         page.evaluate("window.scrollTo(0, document.body.scrollHeight/2);")
         time.sleep(2)
 
-        # Locate the video iframe (JWPlayer is inside iframe[name='player_iframe'])
+        # locate player iframe
         iframe = page.frame(name="player_iframe")
         if not iframe:
-            # Fallback to locating by selector
-            iframe_element = page.query_selector("iframe[name='player_iframe']")
-            if iframe_element:
-                iframe = iframe_element.content_frame()
+            iframe_elem = page.query_selector("iframe[name='player_iframe']")
+            if iframe_elem:
+                iframe = iframe_elem.content_frame()
         if not iframe:
             if DEBUG:
-                print("[VideoExtract] Could not find player iframe")
+                print("[Video] Could not find player iframe")
             context.close()
             return None
 
-        # Wait for the iframe body to load
         try:
             iframe.wait_for_selector("body", timeout=15000)
         except:
             context.close()
             return None
 
-        # Play button selector (JWPlayer typical class)
         play_selector = ".jw-icon.jw-icon-display.jw-button-color.jw-reset"
-        # Alternative: try to click the video area
         video_selector = "video"
 
-        # Intercept .m3u8 requests
-        def intercept_m3u8(route, request):
+        # intercept .m3u8
+        def intercept(route, request):
             nonlocal captured_url
             if ".m3u8" in request.url:
-                # Prefer master.m3u8 over quality playlists
                 if "master.m3u8" in request.url:
                     captured_url = request.url
                     if DEBUG:
-                        print(f"[VideoExtract] MASTER M3U8 captured: {captured_url}")
+                        print(f"[Video] MASTER m3u8: {captured_url}")
                 elif captured_url is None and "playlist.m3u8" in request.url:
                     captured_url = request.url
                     if DEBUG:
-                        print(f"[VideoExtract] Quality playlist captured (fallback): {captured_url}")
+                        print(f"[Video] Fallback playlist: {captured_url}")
             route.continue_()
-        page.route("**/*", intercept_m3u8)
+        page.route("**/*", intercept)
 
-        # Click the play button repeatedly (overcomes popup ads)
         for attempt in range(max_attempts):
             if captured_url:
                 break
             if DEBUG:
-                print(f"[VideoExtract] Click attempt {attempt+1}/{max_attempts}")
+                print(f"[Video] Click attempt {attempt+1}")
             try:
                 iframe.click(play_selector, force=True, timeout=3000)
-                if DEBUG:
-                    print("  -> Clicked play button")
             except:
                 try:
                     iframe.click(video_selector, force=True)
-                    if DEBUG:
-                        print("  -> Clicked video element")
                 except:
                     pass
             time.sleep(1.5)
-            # Close any new popups that might have appeared
             for p in context.pages:
                 if p != page:
                     p.close()
 
-        # Wait a few seconds for the stream request to complete
+        # wait a few seconds after clicks
         for _ in range(30):
             if captured_url:
                 break
@@ -391,157 +446,63 @@ def get_video_stream_url(page_url: str, headless: bool = True, max_attempts: int
         return captured_url
 
 def extract_video_source(page_url: str, headless: bool = True) -> str:
-    """
-    Synchronous wrapper – returns the .m3u8 stream URL or empty string.
-    Compatible with existing code.
-    """
+    """Synchronous wrapper – returns m3u8 URL or empty string."""
     url = get_video_stream_url(page_url, headless=headless)
     return url if url else ""
 
-# Optional: download using yt-dlp (if you want to offer offline download)
-def download_video_from_page(page_url: str, output_path: str = "video.mp4", quality: str = "best") -> bool:
-    """
-    Download video directly from the page using yt-dlp after extracting stream URL.
-    Quality: 'best', '1080p', '720p', '480p', '360p'
-    """
-    stream_url = get_video_stream_url(page_url, headless=True)
-    if not stream_url:
-        return False
-    # Use yt-dlp to download
-    import subprocess
-    quality_map = {
-        "best": "bestvideo+bestaudio/best",
-        "1080p": "bestvideo[height<=1080]+bestaudio/best[height<=1080]",
-        "720p":  "bestvideo[height<=720]+bestaudio/best[height<=720]",
-        "480p":  "bestvideo[height<=480]+bestaudio/best[height<=480]",
-        "360p":  "bestvideo[height<=360]+bestaudio/best[height<=360]",
-    }
-    format_sel = quality_map.get(quality, quality_map["best"])
-    cmd = [
-        "yt-dlp",
-        "-f", format_sel,
-        "-o", output_path,
-        "--no-continue",
-        "--hls-use-mpegts",
-        "--retries", "10",
-        stream_url
-    ]
-    try:
-        subprocess.run(cmd, check=True)
-        return True
-    except:
-        return False
-
-# ========== PAGINATION HELPERS (SYNC) ==========
-
-def get_paginated_url(category_url: str, page: int) -> str:
-    base = re.sub(r'/page/\d+/?$', '', category_url.rstrip('/'))
-    if page == 1:
-        return base
-    return f"{base}/page/{page}/"
-
-def get_number_of_pages(url: str) -> int:
-    webpage = get_website_safe(url)
-    if not webpage:
-        return 1
-    soup = BeautifulSoup(webpage.text, "html.parser")  # using .text from fake response
-    pagination = soup.select_one("ul.pagination")
-    if pagination:
-        last_link = pagination.find("a", string="»")
-        if last_link and last_link.get("href"):
-            match = re.search(r'/page/(\d+)', last_link["href"])
-            if match:
-                return int(match.group(1))
-        numbers = [int(link.text.strip()) for link in pagination.find_all("a", class_="page-link") if link.text.strip().isdigit()]
-        if numbers:
-            return max(numbers)
-    max_page = 1
-    for link in soup.find_all('a', href=True):
-        match = re.search(r'/page/(\d+)', link['href'])
-        if match:
-            max_page = max(max_page, int(match.group(1)))
-    return max_page if max_page > 1 else 1
-
-def scrape_category_pages(category_name: str, start_page: int = 1, end_page: Optional[int] = None) -> List[dict]:
-    base_url = FASEL_BASE_URL + category_name
-    if end_page is None:
-        end_page = get_number_of_pages(base_url)
-    all_movies = []
-    for page in range(start_page, end_page + 1):
-        delay = REQUEST_DELAY + random.uniform(-JITTER, JITTER)
-        if delay < 0.5:
-            delay = 0.5
-        sleep(delay)
-        url = get_paginated_url(base_url, page)
-        if DEBUG:
-            print(f"Scraping {category_name} page {page}/{end_page}: {url}")
-        movies = get_category_page_rendered(base_url, page)
-        all_movies.extend(movies)
-    return all_movies
-
-# ========== FASELHD METADATA EXTRACTION (SYNC, BEAUTIFULSOUP) ==========
-
-def get_latest_movies(soup: BeautifulSoup) -> list[dict]:
-    """Extract movies from homepage (.blockMovie) or category page (.postDiv)."""
+# ----------------------------------------------------------------------
+#  Convenience sync functions for metadata scraping
+# ----------------------------------------------------------------------
+def get_latest_movies(soup: BeautifulSoup) -> List[dict]:
     movies = []
-    movie_divs = soup.select(".blockMovie") or soup.select(".postDiv")
-    for movie_div in movie_divs:
-        link_tag = movie_div.find("a")
-        if not link_tag:
+    divs = soup.select(".blockMovie") or soup.select(".postDiv")
+    for div in divs:
+        link = div.find("a")
+        if not link:
             continue
-        img = link_tag.find("img")
-        image_url = img.get("data-src", img.get("src", "")) if img else ""
-        title_div = link_tag.find("div", class_="h5") or link_tag.find("div", class_="h1")
-        title = title_div.text.strip() if title_div else ""
-        quality_span = link_tag.find("span", class_="quality")
+        img = link.find("img")
+        img_src = img.get("data-src") or img.get("src", "") if img else ""
+        title_elem = link.find("div", class_="h5") or link.find("div", class_="h1")
+        title = title_elem.text.strip() if title_elem else ""
+        quality_span = link.find("span", class_="quality")
         quality = quality_span.text.strip() if quality_span else ""
-        imdb_span = link_tag.find("span", class_="pImdb") or link_tag.find("span", class_="bimdb")
+        imdb_span = link.find("span", class_="pImdb") or link.find("span", class_="bimdb")
         imdb_rating = None
         if imdb_span:
             try:
-                rating_text = imdb_span.text.strip()
-                if rating_text and rating_text != "N/A":
-                    imdb_rating = float(rating_text)
-            except ValueError:
+                imdb_rating = float(imdb_span.text.strip())
+            except:
                 pass
-        views_span = link_tag.find("span", class_="pViews") or link_tag.find("span", class_="bviews")
+        views_span = link.find("span", class_="pViews") or link.find("span", class_="bviews")
         views = 0
         if views_span:
             views_text = views_span.text.strip().replace("٬", "").replace(",", "")
             try:
                 views = int(views_text)
-            except ValueError:
+            except:
                 pass
-        link = link_tag.get("href", "")
-        content_type = "movies"
-        if "anime-movies" in link:
-            content_type = "anime-movies"
-        elif "asian-movies" in link:
-            content_type = "asian-movies"
-        elif "hindi" in link:
-            content_type = "hindi-movies"
         movies.append({
             "title": title,
-            "link": link,
-            "image": image_url,
+            "link": link["href"],
+            "image": img_src,
             "quality": quality,
             "imdb_rating": imdb_rating,
             "views": views,
-            "content_type": content_type
+            "content_type": "movies"
         })
     return movies
 
-def get_latest_episodes(soup: BeautifulSoup) -> list[dict]:
+def get_latest_episodes(soup: BeautifulSoup) -> List[dict]:
     episodes = []
-    for ep_div in soup.select(".epDivHome"):
-        link_tag = ep_div.find("a", class_="epHomeImg")
-        content_div = ep_div.find("div", class_="epHomeContent")
+    for ep in soup.select(".epDivHome"):
+        link_tag = ep.find("a", class_="epHomeImg")
+        content_div = ep.find("div", class_="epHomeContent")
         link = ""
-        image_url = ""
+        image = ""
         if link_tag:
             link = link_tag.get("href", "")
             img = link_tag.find("img")
-            image_url = img.get("data-src", img.get("src", "")) if img else ""
+            image = img.get("data-src") or img.get("src", "") if img else ""
         elif content_div and content_div.find("a"):
             link = content_div.find("a").get("href", "")
         if not link:
@@ -552,10 +513,10 @@ def get_latest_episodes(soup: BeautifulSoup) -> list[dict]:
             if title_div:
                 title = title_div.text.strip()
         if not title:
-            title_div = ep_div.find("div", class_="h4")
+            title_div = ep.find("div", class_="h4")
             if title_div:
                 title = title_div.text.strip()
-        status_span = ep_div.find("span", class_="epStatus")
+        status_span = ep.find("span", class_="epStatus")
         status = status_span.text.strip() if status_span else ""
         content_type = "series"
         if "anime-episodes" in link:
@@ -565,46 +526,46 @@ def get_latest_episodes(soup: BeautifulSoup) -> list[dict]:
         episodes.append({
             "title": title,
             "link": link,
-            "image": image_url,
+            "image": image,
             "status": status,
             "content_type": content_type
         })
     return episodes
 
-def get_featured_content(soup: BeautifulSoup) -> list[dict]:
+def get_featured_content(soup: BeautifulSoup) -> List[dict]:
     featured = []
     for slide in soup.select(".swiper-slide"):
         title_div = slide.find("div", class_="h1 mb-1")
         if not title_div:
             continue
-        title_link = title_div.find("a")
-        if not title_link:
+        a = title_div.find("a")
+        if not a:
             continue
-        title = title_link.text.strip()
-        link = title_link.get("href", "")
-        poster_div = slide.find("div", class_="poster")
-        image_url = ""
-        if poster_div:
-            img = poster_div.find("img")
-            image_url = img.get("src", "") if img else ""
-        if not image_url:
+        title = a.text.strip()
+        link = a.get("href", "")
+        poster = slide.find("div", class_="poster")
+        img_url = ""
+        if poster:
+            img = poster.find("img")
+            img_url = img.get("src", "") if img else ""
+        if not img_url:
             slide_img = slide.find("div", class_="slideImg")
             if slide_img and slide_img.get("style"):
                 style = slide_img.get("style", "")
                 if "url(" in style:
-                    image_url = style.split("url(")[1].split(")")[0].strip("\"'")
+                    img_url = style.split("url(")[1].split(")")[0].strip("\"'")
         imdb_span = slide.find("span", class_="imdbRate")
-        imdb_rating = None
+        imdb = None
         if imdb_span:
             try:
-                imdb_rating = float(imdb_span.text.strip())
-            except ValueError:
+                imdb = float(imdb_span.text.strip())
+            except:
                 pass
-        categories = [cat.text.strip() for cat in slide.select(".slideCats span")]
-        description = ""
-        desc_p = slide.find("p")
-        if desc_p:
-            description = desc_p.text.strip()
+        categories = [c.text.strip() for c in slide.select(".slideCats span")]
+        desc = ""
+        p = slide.find("p")
+        if p:
+            desc = p.text.strip()
         content_type = "movies"
         if "/anime" in link:
             content_type = "anime"
@@ -615,29 +576,29 @@ def get_featured_content(soup: BeautifulSoup) -> list[dict]:
         featured.append({
             "title": title,
             "link": link,
-            "image": image_url,
-            "imdb_rating": imdb_rating,
+            "image": img_url,
+            "imdb_rating": imdb,
             "categories": categories,
-            "description": description,
+            "description": desc,
             "content_type": content_type
         })
     return featured
 
-def get_latest_movies_from_homepage() -> list[dict]:
+def get_latest_movies_from_homepage() -> List[dict]:
     resp = get_website_safe(FASEL_BASE_URL + "main")
     if not resp:
         return []
     soup = BeautifulSoup(resp.text, "html.parser")
     return get_latest_movies(soup)
 
-def get_latest_episodes_from_homepage() -> list[dict]:
+def get_latest_episodes_from_homepage() -> List[dict]:
     resp = get_website_safe(FASEL_BASE_URL + "main")
     if not resp:
         return []
     soup = BeautifulSoup(resp.text, "html.parser")
     return get_latest_episodes(soup)
 
-def get_featured_content_from_homepage() -> list[dict]:
+def get_featured_content_from_homepage() -> List[dict]:
     resp = get_website_safe(FASEL_BASE_URL + "main")
     if not resp:
         return []
@@ -655,7 +616,7 @@ def get_all_homepage_content() -> dict:
         "featured": get_featured_content(soup)
     }
 
-def get_category_page_rendered(category_url: str, page: int = 1) -> list[dict]:
+def get_category_page_rendered(category_url: str, page: int = 1) -> List[dict]:
     url = get_paginated_url(category_url, page)
     resp = get_website_safe(url)
     if not resp:
@@ -663,122 +624,50 @@ def get_category_page_rendered(category_url: str, page: int = 1) -> list[dict]:
     soup = BeautifulSoup(resp.text, "html.parser")
     return get_latest_movies(soup)
 
-# ========== LEGACY HELPER FUNCTIONS (for other sites) ==========
-
-def split_into_ranges(number_of_ranges: int, range_end: int, range_start: int = 0) -> list[tuple[int, int]]:
-    number_to_be_split = range_end - range_start
-    number_per_chunk = number_to_be_split // number_of_ranges
-    ranges_list = []
-    for number in range(number_of_ranges):
-        begin = range_start + (number_per_chunk * number)
-        if number == number_of_ranges - 1:
-            end = range_end
-        else:
-            end = range_start + (number_per_chunk * (number + 1))
-        if (begin + 1, end + 1) in ranges_list or (begin + 1 == end + 1):
-            continue
-        else:
-            ranges_list.append((begin + 1, end + 1))
-    return ranges_list
-
-def remove_arabic_chars(string: str) -> str:
-    return string.encode("ascii", "ignore").decode().strip()
+# ----------------------------------------------------------------------
+#  Legacy functions – Akwam, HDW, CimaNow (unchanged)
+# ----------------------------------------------------------------------
+def split_into_ranges(num_ranges: int, end: int, start: int = 0) -> list:
+    step = (end - start) // num_ranges
+    ranges = []
+    for i in range(num_ranges):
+        b = start + step * i
+        e = end if i == num_ranges - 1 else start + step * (i + 1)
+        if (b+1, e+1) not in ranges and b+1 != e+1:
+            ranges.append((b+1, e+1))
+    return ranges
 
 def fix_url(url: str) -> str:
     return quote(url.split("?")[0]).replace("%3A", ":")
 
-def get_content_format(soup: BeautifulSoup) -> str:
-    try:
-        content_format = soup.find("i", class_="fas fa-play-circle").find_next_sibling().text
-        return content_format if content_format.isascii() else "N/A"
-    except AttributeError:
-        return "N/A"
-
-def get_content_id(soup: BeautifulSoup) -> Optional[str]:
-    try:
-        return remove_arabic_chars(soup.find("i", class_="fas fa-dot-circle").parent.text.replace(":", "").replace("#", ""))
-    except AttributeError:
-        return None
-
-def upload_image(image_url: str, content_id: str, get_image: Callable[[str], Response]) -> str:
-    if DEBUG:
-        print(content_id)
-    if content_id in IMAGE_SOURCES:
-        return IMAGE_SOURCES[content_id]
-    if image_url == "":
-        return "https://imgpile.com/images/TPDrVl.jpg"
-    image = get_image(image_url)
-    image_path = f"./output/{content_id}"
-    if ".webp" in image_url:
-        with open(image_path + ".webp", "wb") as handler:
-            handler.write(image.content)
-        jpg_image = Image.open(image_path + ".webp").convert("RGB")
-        jpg_image.save(image_path + ".jpg", "jpeg")
-        with open(image_path + ".jpg", "rb") as fp:
-            base64_image = fp.read()
-    else:
-        base64_image = b64encode(image.content).decode("utf8")
-    headers_imgur = {"Authorization": f"Client-ID {environ.get('IMGUR_CLIENT_ID')}"}
-    data = {"image": base64_image}
-    try:
-        return requests.post("https://api.imgur.com/3/image", headers=headers_imgur, data=data).json()["data"]["link"]
-    except Exception:
-        return "https://imgpile.com/images/TPDrVl.jpg"
-
-def remove_year(title: str) -> str:
-    if title[-4:].isdigit() and len(title) > 4:
-        title = title.replace(title[-5:], "")
-    return title
-
-def get_content_title(soup_result: ResultSet) -> str:
-    title = remove_year(remove_arabic_chars(soup_result.find("div", class_="h1").text))
-    return title
-
-def get_genres(soup: BeautifulSoup) -> Union[list[str], str]:
-    try:
-        genre_tags = soup.find("i", class_="far fa-folders").find_next_siblings("a")
-        genres = [tag["href"].split("/")[-1].capitalize() for tag in genre_tags]
-    except AttributeError:
-        genres = []
-    return genres
-
-# ===== AKWAM, HDW, CIMA NOW legacy functions =====
-
 def akwam_get_website_safe(url: str) -> Response:
-    response = None
-    while response is None:
+    while True:
         try:
-            response = requests.get(url)
+            return requests.get(url)
         except (ConnectionError, ChunkedEncodingError):
-            response = None
-    return response
+            continue
 
 def akwam_get_last_page_number(url: str) -> int:
-    main_page_source = akwam_get_website_safe(url)
-    soup = BeautifulSoup(main_page_source.content, "html.parser")
-    last_page = int(soup.find_all("a", class_="page-link")[-3].text)
-    return last_page
+    soup = BeautifulSoup(akwam_get_website_safe(url).content, "html.parser")
+    return int(soup.find_all("a", class_="page-link")[-3].text)
 
-def split_anchor_links(response: Response) -> list[list[str]]:
+def split_anchor_links(response: Response) -> list:
     soup = BeautifulSoup(response.content, "html.parser")
-    anchor_tags = soup.find_all("a", class_="icn play")
-    links = [tag["href"] for tag in anchor_tags]
-    links_ranges = split_into_ranges(6, len(links))
-    splitted_links = [links[links_range[0] - 1: links_range[1] - 1] for links_range in links_ranges]
-    return splitted_links
+    links = [a["href"] for a in soup.find_all("a", class_="icn play")]
+    ranges = split_into_ranges(6, len(links))
+    return [links[r[0]-1 : r[1]-1] for r in ranges]
 
-def akwam_get_genres(soup: BeautifulSoup) -> Union[list[str], str]:
-    genre_tags = soup.find_all("a", class_="badge badge-pill badge-light ml-2")
+def akwam_get_genres(soup: BeautifulSoup) -> list:
+    tags = soup.find_all("a", class_="badge badge-pill badge-light ml-2")
     try:
-        genre_ids = [tag["href"].split("=")[-1] for tag in genre_tags]
-    except TypeError:
+        ids = [t["href"].split("=")[-1] for t in tags]
+        return [AKWAM_GENRES[i] for i in ids]
+    except:
         return []
-    genres = [AKWAM_GENRES[key] for key in genre_ids]
-    return genres
 
-def hdw_get_last_page_number(url: str, selector: tuple[str, str] = DEFAULT_HDW_SELECTOR) -> int:
-    webpage = get_website_safe(url)
-    soup = BeautifulSoup(webpage.content, "html.parser")
+def hdw_get_last_page_number(url: str, selector=None) -> int:
+    resp = get_website_safe(url)
+    soup = BeautifulSoup(resp.content, "html.parser")
     return int(soup.find_all("a", class_="page-link")[-2].text)
 
 def hdw_get_image_source(div: Tag) -> str:
@@ -786,33 +675,28 @@ def hdw_get_image_source(div: Tag) -> str:
 
 def hdw_get_rating(div: Tag) -> Optional[str]:
     try:
-        rating = div.find_previous_sibling("a").find("span", class_="float-left yellow").text.replace(",", ".").strip()
-    except AttributeError:
-        rating = None
-    return rating
+        return div.find_previous_sibling("a").find("span", class_="float-left yellow").text.replace(",", ".").strip()
+    except:
+        return None
 
-def hdw_get_genres(div: Tag) -> list[str]:
-    return list(map(lambda genre: genre.strip(), div.find("span", class_="content-views").text.split(", ")))
-
-def clean_iframe_source(iframe_source: str) -> str:
-    try:
-        return iframe_source.split("=")[2].replace("&img", "")
-    except IndexError:
-        return ""
+def hdw_get_genres(div: Tag) -> list:
+    return [g.strip() for g in div.find("span", class_="content-views").text.split(", ")]
 
 def get_tmdb_id(title: str, genre: str) -> Optional[str]:
-    params = {"query": title, "api_key": environ.get("TMDB_API_KEY")}
-    request_url = "https://api.themoviedb.org/3/search/movie" if genre == "movies" else "https://api.themoviedb.org/3/search/tv"
-    resp = requests.get(request_url, params=params)
+    api_key = environ.get("TMDB_API_KEY")
+    if not api_key:
+        return None
+    url = "https://api.themoviedb.org/3/search/movie" if genre == "movies" else "https://api.themoviedb.org/3/search/tv"
+    params = {"query": title, "api_key": api_key}
     try:
-        tmdb_id = resp.json().get("results")[0].get("id")
-    except IndexError:
-        tmdb_id = None
-    return tmdb_id
+        resp = requests.get(url, params=params, timeout=10)
+        return resp.json().get("results", [{}])[0].get("id")
+    except:
+        return None
 
-def cima_now_get_last_page(soup: BeautifulSoup):
+def cima_now_get_last_page(soup: BeautifulSoup) -> int:
     return int(soup.find_all("ul")[-1].find_all("li")[-1].text)
 
-def cima_now_get_sources(soup: BeautifulSoup):
+def cima_now_get_sources(soup: BeautifulSoup) -> list:
     anchors = soup.find("ul", {"id": "download"}).find("li").find_all("a")
-    return [{anchor.text.split()[0]: anchor["href"]} for anchor in anchors]
+    return [{a.text.split()[0]: a["href"]} for a in anchors]

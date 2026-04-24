@@ -1,5 +1,7 @@
 import json
 import random
+import re
+import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from time import sleep
 from bs4 import BeautifulSoup
@@ -7,30 +9,23 @@ from Common import (
     DEBUG, FASEL_BASE_URL, REQUEST_DELAY, JITTER,
     get_website_safe, get_number_of_pages, get_paginated_url,
     get_content_id, clean_iframe_source, get_content_format, get_genres,
-    upload_image, remove_arabic_chars
+    extract_country, extract_runtime
 )
 
-# Load existing anime data
-try:
-    with open("./output/anime.json") as fp:
-        old_anime_dict = json.load(fp)
-except (FileNotFoundError, json.JSONDecodeError):
-    old_anime_dict = {}
+FAILED_DETAIL_URLS = set()
 
-
-def fetch_detail_page(detail_url: str):
-    """Fetch a single anime series detail page."""
+def fetch_detail(detail_url: str):
     resp = get_website_safe(detail_url)
     if resp and resp.status_code == 200:
         return detail_url, resp.text
-    return None, None
+    else:
+        FAILED_DETAIL_URLS.add(detail_url)
+        return None, None
 
-
-def scrape_all_anime():
+def scrape_anime_full():
     category_url = FASEL_BASE_URL + "anime"
     total_pages = get_number_of_pages(category_url)
-    if DEBUG:
-        print(f"Total anime pages: {total_pages}")
+    print(f"Total anime pages: {total_pages}")
 
     all_anime = {}
     for page in range(1, total_pages + 1):
@@ -40,86 +35,121 @@ def scrape_all_anime():
         sleep(delay)
 
         page_url = get_paginated_url(category_url, page)
-        if DEBUG:
-            print(f"Scraping anime page {page}/{total_pages}: {page_url}")
-
-        main_resp = get_website_safe(page_url)
-        if not main_resp:
-            if DEBUG:
-                print(f"Failed to fetch page {page}")
+        print(f"\nPage {page}/{total_pages}: {page_url}")
+        main = get_website_safe(page_url)
+        if not main:
+            print("  Failed to fetch list page")
             continue
 
-        soup = BeautifulSoup(main_resp.text, "html.parser")
-        anime_divs = soup.select('.col-xl-2.col-lg-2.col-md-3.col-sm-3')
-        if not anime_divs:
-            anime_divs = soup.select('.blockMovie')
-        if not anime_divs:
+        soup = BeautifulSoup(main.text, "html.parser")
+        divs = soup.select('.col-xl-2.col-lg-2.col-md-3.col-sm-3') or \
+               soup.select('.blockMovie') or \
+               soup.select('.postDiv')
+        if not divs:
+            print("  No anime containers found")
             continue
 
-        # Collect detail URLs for all anime on this page
-        detail_urls = []
-        for anime in anime_divs:
-            link = anime.select_one('a')
-            if link and link.get('href'):
-                detail_urls.append(link['href'])
+        detail_urls = [d.find("a")["href"] for d in divs if d.find("a")]
+        if not detail_urls:
+            print("  No detail URLs found")
+            continue
 
-        # Fetch all detail pages concurrently
         detail_map = {}
-        with ThreadPoolExecutor(max_workers=5) as executor:
-            future_to_url = {executor.submit(fetch_detail_page, url): url for url in detail_urls}
-            for future in as_completed(future_to_url):
-                url, html = future.result()
+        with ThreadPoolExecutor(max_workers=5) as ex:
+            futures = {ex.submit(fetch_detail, url): url for url in detail_urls}
+            for fut in as_completed(futures):
+                url, html = fut.result()
                 if url and html:
                     detail_map[url] = html
 
-        # Process each anime on this page
-        page_anime = {}
-        for anime in anime_divs:
-            link = anime.select_one('a')
-            if not link or not link.get('href'):
+        new_anime = {}
+        for div in divs:
+            link = div.find("a")
+            if not link:
                 continue
-            detail_url = link['href']
+            detail_url = link["href"]
             detail_html = detail_map.get(detail_url)
             if not detail_html:
                 continue
-            detail_soup = BeautifulSoup(detail_html, "html.parser")
-            anime_id = get_content_id(detail_soup)
-            if not anime_id or anime_id in old_anime_dict:
+            dsoup = BeautifulSoup(detail_html, "html.parser")
+
+            # Anime ID
+            anime_id = get_content_id(dsoup)
+            if not anime_id:
+                match = re.search(r'-(\d+)$', detail_url.rstrip('/'))
+                if match:
+                    anime_id = match.group(1)
+                else:
+                    anime_id = detail_url.split('/')[-2]
+            if not anime_id:
                 continue
 
-            # Extract episode list
-            ep_all_div = detail_soup.find("div", class_="epAll")
-            episodes_list = ep_all_div.find_all("a") if ep_all_div else []
-            total_episodes = len(episodes_list)
+            # Title from list page
+            title_elem = div.find("div", class_="h5") or div.find("div", class_="h1")
+            title = title_elem.text.strip() if title_elem else "Unknown"
 
-            # Extract title from list page
-            title_elem = anime.select_one('.h5') or anime.select_one('.h1')
-            title = title_elem.text.strip() if title_elem else "Unknown Anime"
-            img = anime.select_one('img')
-            img_src = img.get('data-src') or img.get('src', '') if img else ""
+            # Image from list page
+            img = div.find("img")
+            img_src = img.get("data-src") or img.get("src", "") if img else ""
 
-            # Optional: extract episode sources (complicated – you can skip or implement later)
-            # For now, store empty episodes dict; you can add a separate episode scraper.
-            page_anime[anime_id] = {
+            # Episode count
+            ep_div = dsoup.find("div", class_="epAll")
+            episode_count = len(ep_div.find_all("a")) if ep_div else 0
+
+            # Optional iframe source (usually empty – will be fetched on‑demand)
+            iframe = dsoup.find("iframe")
+            source = ""
+            if iframe and iframe.get("src"):
+                source = clean_iframe_source(iframe["src"])
+
+            new_anime[anime_id] = {
                 "Title": title,
                 "Category": "anime",
-                "Number Of Episodes": total_episodes,
+                "Number Of Episodes": episode_count,
                 "Image Source": img_src,
-                "Format": get_content_format(detail_soup),
-                "Genres": get_genres(detail_soup),
-                "Episodes": {}   # To be filled by a separate episode scraper if needed
+                "Source": source,
+                "Format": get_content_format(dsoup),
+                genres_info = get_genres_both(dsoup)
+                "Runtime": extract_runtime(dsoup),
+                "Country": extract_country(dsoup),
+                "Episodes": {}
             }
-        all_anime.update(page_anime)
-        if DEBUG:
-            print(f"Page {page} done, new anime: {len(page_anime)}")
+            if DEBUG:
+                print(f"    Added {anime_id}: {title} (eps={episode_count})")
 
-    # Merge and save
-    old_anime_dict.update(all_anime)
-    with open("./output/anime.json", "w") as fp:
-        json.dump(old_anime_dict, fp, indent=4)
-    if DEBUG:
-        print(f"Total anime now: {len(old_anime_dict)}")
+        all_anime.update(new_anime)
+        print(f"  Page {page} done: added {len(new_anime)} anime, total {len(all_anime)}")
 
+        os.makedirs("./output", exist_ok=True)
+        with open("./output/anime.json", "w", encoding="utf-8") as f:
+            json.dump(all_anime, f, indent=4, ensure_ascii=False)
+        print("  Saved to ./output/anime.json")
+
+    if FAILED_DETAIL_URLS:
+        print(f"\nRetrying {len(FAILED_DETAIL_URLS)} failed detail URLs...")
+        for url in FAILED_DETAIL_URLS:
+            resp = get_website_safe(url)
+            if resp:
+                dsoup = BeautifulSoup(resp.text, "html.parser")
+                anime_id = get_content_id(dsoup) or url.split('/')[-2]
+                if anime_id not in all_anime:
+                    all_anime[anime_id] = {
+                        "Title": "Unknown (retried)",
+                        "Category": "anime",
+                        "Number Of Episodes": 0,
+                        "Image Source": "",
+                        "Source": "",
+                        "Format": get_content_format(dsoup),
+                        genres_info = get_genres_both(dsoup)
+                        "Runtime": extract_runtime(dsoup),
+                        "Country": extract_country(dsoup),
+                        "Episodes": {}
+                    }
+            sleep(1)
+        with open("./output/anime.json", "w", encoding="utf-8") as f:
+            json.dump(all_anime, f, indent=4, ensure_ascii=False)
+
+    print(f"\nFinished. Total anime: {len(all_anime)}")
 
 if __name__ == "__main__":
-    scrape_all_anime()
+    scrape_anime_full()
