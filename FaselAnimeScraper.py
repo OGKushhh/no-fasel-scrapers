@@ -8,9 +8,31 @@ from bs4 import BeautifulSoup
 from Common import (
     DEBUG, FASEL_BASE_URL, REQUEST_DELAY, JITTER,
     get_website_safe, get_number_of_pages, get_paginated_url,
-    get_content_id, clean_iframe_source, get_content_format, get_genres,
+    get_content_id, clean_iframe_source, get_content_format, get_genres_both,
     extract_country, extract_runtime
 )
+
+def load_progress():
+    progress_file = "./output/last_page_anime.txt"
+    if os.path.exists(progress_file):
+        with open(progress_file, "r") as f:
+            try:
+                return int(f.read().strip())
+            except:
+                return 0
+    return 0
+
+def save_progress(page_num):
+    os.makedirs("./output", exist_ok=True)
+    with open("./output/last_page_anime.txt", "w") as f:
+        f.write(str(page_num))
+
+try:
+    with open("./output/anime.json", "r", encoding="utf-8") as f:
+        existing_anime = json.load(f)
+except (FileNotFoundError, json.JSONDecodeError):
+    existing_anime = {}
+existing_ids = set(existing_anime.keys())
 
 FAILED_DETAIL_URLS = set()
 
@@ -22,13 +44,19 @@ def fetch_detail(detail_url: str):
         FAILED_DETAIL_URLS.add(detail_url)
         return None, None
 
-def scrape_anime_full():
+def scrape_anime_resumable():
     category_url = FASEL_BASE_URL + "anime"
     total_pages = get_number_of_pages(category_url)
-    print(f"Total anime pages: {total_pages}")
+    start_page = load_progress() + 1
+    if start_page > total_pages:
+        print("All anime pages already completed.")
+        return
 
-    all_anime = {}
-    for page in range(1, total_pages + 1):
+    print(f"Total anime pages: {total_pages}")
+    print(f"Resuming from page {start_page}")
+
+    all_anime = existing_anime.copy()
+    for page in range(start_page, total_pages + 1):
         delay = REQUEST_DELAY + random.uniform(-JITTER, JITTER)
         if delay < 0.5:
             delay = 0.5
@@ -49,9 +77,29 @@ def scrape_anime_full():
             print("  No anime containers found")
             continue
 
-        detail_urls = [d.find("a")["href"] for d in divs if d.find("a")]
+        page_ids = []
+        for div in divs:
+            link = div.find("a")
+            if link and link.get("href"):
+                anime_id = link["href"].split('/')[-2]
+                page_ids.append(anime_id)
+
+        if all(mid in existing_ids for mid in page_ids):
+            print(f"  Page {page} contains only already scraped anime. Stopping.")
+            save_progress(page)
+            break
+
+        detail_urls = []
+        for div in divs:
+            link = div.find("a")
+            if link:
+                detail_url = link["href"]
+                anime_id = detail_url.split('/')[-2]
+                if anime_id not in existing_ids:
+                    detail_urls.append(detail_url)
         if not detail_urls:
-            print("  No detail URLs found")
+            print("  No new anime on this page")
+            save_progress(page)
             continue
 
         detail_map = {}
@@ -73,7 +121,6 @@ def scrape_anime_full():
                 continue
             dsoup = BeautifulSoup(detail_html, "html.parser")
 
-            # Anime ID
             anime_id = get_content_id(dsoup)
             if not anime_id:
                 match = re.search(r'-(\d+)$', detail_url.rstrip('/'))
@@ -81,26 +128,23 @@ def scrape_anime_full():
                     anime_id = match.group(1)
                 else:
                     anime_id = detail_url.split('/')[-2]
-            if not anime_id:
+            if not anime_id or anime_id in existing_ids:
                 continue
 
-            # Title from list page
             title_elem = div.find("div", class_="h5") or div.find("div", class_="h1")
             title = title_elem.text.strip() if title_elem else "Unknown"
-
-            # Image from list page
             img = div.find("img")
             img_src = img.get("data-src") or img.get("src", "") if img else ""
 
-            # Episode count
             ep_div = dsoup.find("div", class_="epAll")
             episode_count = len(ep_div.find_all("a")) if ep_div else 0
 
-            # Optional iframe source (usually empty – will be fetched on‑demand)
             iframe = dsoup.find("iframe")
             source = ""
             if iframe and iframe.get("src"):
                 source = clean_iframe_source(iframe["src"])
+
+            genres_info = get_genres_both(dsoup)
 
             new_anime[anime_id] = {
                 "Title": title,
@@ -108,14 +152,14 @@ def scrape_anime_full():
                 "Number Of Episodes": episode_count,
                 "Image Source": img_src,
                 "Source": source,
+                "Genres": genres_info["en"],
+                "GenresAr": genres_info["ar"],
                 "Format": get_content_format(dsoup),
-                genres_info = get_genres_both(dsoup)
                 "Runtime": extract_runtime(dsoup),
                 "Country": extract_country(dsoup),
                 "Episodes": {}
             }
-            if DEBUG:
-                print(f"    Added {anime_id}: {title} (eps={episode_count})")
+            existing_ids.add(anime_id)
 
         all_anime.update(new_anime)
         print(f"  Page {page} done: added {len(new_anime)} anime, total {len(all_anime)}")
@@ -123,7 +167,8 @@ def scrape_anime_full():
         os.makedirs("./output", exist_ok=True)
         with open("./output/anime.json", "w", encoding="utf-8") as f:
             json.dump(all_anime, f, indent=4, ensure_ascii=False)
-        print("  Saved to ./output/anime.json")
+        save_progress(page)
+        print("  Saved progress and JSON")
 
     if FAILED_DETAIL_URLS:
         print(f"\nRetrying {len(FAILED_DETAIL_URLS)} failed detail URLs...")
@@ -132,15 +177,16 @@ def scrape_anime_full():
             if resp:
                 dsoup = BeautifulSoup(resp.text, "html.parser")
                 anime_id = get_content_id(dsoup) or url.split('/')[-2]
-                if anime_id not in all_anime:
+                if anime_id not in existing_ids:
                     all_anime[anime_id] = {
                         "Title": "Unknown (retried)",
                         "Category": "anime",
                         "Number Of Episodes": 0,
                         "Image Source": "",
                         "Source": "",
+                        "Genres": [],
+                        "GenresAr": [],
                         "Format": get_content_format(dsoup),
-                        genres_info = get_genres_both(dsoup)
                         "Runtime": extract_runtime(dsoup),
                         "Country": extract_country(dsoup),
                         "Episodes": {}
@@ -152,4 +198,4 @@ def scrape_anime_full():
     print(f"\nFinished. Total anime: {len(all_anime)}")
 
 if __name__ == "__main__":
-    scrape_anime_full()
+    scrape_anime_resumable()

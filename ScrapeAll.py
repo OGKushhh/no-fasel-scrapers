@@ -1,33 +1,51 @@
 import os
-from subprocess import Popen
+import subprocess
 from time import perf_counter
 from datetime import date
+
+start_time = perf_counter()
 
 # Create output directory if it doesn't exist
 os.makedirs("./output", exist_ok=True)
 
-start_time = perf_counter()
+print("==========================================")
+print("Starting FaselHD scrapers (sequential)")
+print("==========================================")
 
-movies_process = Popen(["python", "FaselMoviesScraper.py"])
-series_process = Popen(["python", "FaselSeriesScraper.py"])
-anime_process = Popen(["python", "FaselAnimeScraper.py"])
+# 1. Movies
+print("\n[1/3] Running FaselMoviesScraper.py ...")
+result = subprocess.run(["python", "FaselMoviesScraper.py"])
+if result.returncode != 0:
+    print("Movies scraper failed. Exiting.")
+    exit(1)
 
-movies_process.wait()
-series_process.wait()
-anime_process.wait()
+# 2. Anime
+print("\n[2/3] Running FaselAnimeScraper.py ...")
+result = subprocess.run(["python", "FaselAnimeScraper.py"])
+if result.returncode != 0:
+    print("Anime scraper failed. Exiting.")
+    exit(1)
 
-trending_process = Popen(["python", "TrendingScraper.py"])
-post_processing_process = Popen(["python", "Postprocessing.py"])
+# 3. Series (covers series, tvshows, asian-series)
+print("\n[3/3] Running FaselSeriesScraper.py ...")
+result = subprocess.run(["python", "FaselSeriesScraper.py"])
+if result.returncode != 0:
+    print("Series scraper failed. Exiting.")
+    exit(1)
 
-trending_process.wait()
-post_processing_process.wait()
+# Post‑processing
+print("\nRunning TrendingScraper.py ...")
+subprocess.run(["python", "TrendingScraper.py"])
 
-all_content_indexing_process = Popen(["python", "AllContentIndexer.py"])
-all_content_indexing_process.wait()
+print("\nRunning Postprocessing.py ...")
+subprocess.run(["python", "Postprocessing.py"])
+
+print("\nRunning AllContentIndexer.py ...")
+subprocess.run(["python", "AllContentIndexer.py"])
 
 end_time = perf_counter()
 
 with open("./output/last-scraped.txt", "w") as fp:
     fp.write(date.today().strftime("%Y-%m-%d"))
 
-print(f"Finished scraping all content in about {round((end_time - start_time) / 60)} minute(s)")
+print(f"\nFinished scraping all content in about {round((end_time - start_time) / 60)} minutes")

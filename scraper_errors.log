@@ -319,3 +319,382 @@ Call log:
 Call log:
   - navigating to "https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-28-years-later-bone-temple-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
 . Retrying in 1s...
+2026-04-24 15:55:33,859 - WARNING - Failed to fetch https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-mahou-no-shimai-lulutto-lilly
+2026-04-24 15:55:33,861 - WARNING - Failed to fetch https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-cocomelon-lane-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%b3%d8%a7%d8%a8%d8%b9
+2026-04-24 15:55:33,887 - WARNING - Failed to fetch https://www.fasel-hd.cam/anime/%d9%85%d8%b3%d9%84%d8%b3%d9%84-stranger-things-tales-85-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84
+2026-04-24 15:55:33,908 - WARNING - Failed to fetch https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-cocomelon-lane-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%b3%d8%a7%d8%af%d8%b3
+2026-04-24 15:55:33,963 - WARNING - Failed to fetch https://www.fasel-hd.cam/anime/%d9%85%d8%b3%d9%84%d8%b3%d9%84-brother-minotaur-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84
+2026-04-24 15:55:36,137 - WARNING - Failed to fetch https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-primavera-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85
+2026-04-24 15:55:36,167 - WARNING - Failed to fetch https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-nikki-glaser-good-girl-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85
+2026-04-24 15:55:36,190 - WARNING - Failed to fetch https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-cora-2024-%d9%85%d8%aa%d8%b1%d8%ac%d9%85
+2026-04-24 15:55:36,236 - WARNING - Failed to fetch https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-yiya-murano-muerte-la-hora-del-te-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85
+2026-04-24 15:55:36,284 - WARNING - Failed to fetch https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-apex-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85
+2026-04-24 15:55:42,350 - WARNING - Failed to fetch https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-kaattaan
+2026-04-24 15:55:42,351 - WARNING - Failed to fetch https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-witches-essex
+2026-04-24 15:55:42,368 - WARNING - Failed to fetch https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-unchosen
+2026-04-24 15:55:42,411 - WARNING - Failed to fetch https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-gardening-show
+2026-04-24 15:55:42,436 - WARNING - Failed to fetch https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-santita
+2026-04-24 15:55:43,951 - WARNING - Failed to fetch https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-yowayowa-sensei
+2026-04-24 15:55:44,004 - WARNING - Failed to fetch https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-yozakura-san-chi-no-daisakusen-2nd-season
+2026-04-24 15:55:44,037 - WARNING - Failed to fetch https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-avatar-last-airbender-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%ab%d8%a7%d9%84%d8%ab
+2026-04-24 15:55:44,070 - WARNING - Failed to fetch https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-avatar-last-airbender-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%ab%d8%a7%d9%86%d9%8a
+2026-04-24 15:55:44,098 - WARNING - Failed to fetch https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-kamiina-botan-yoeru-sugata-wa-yuri-no-hana
+2026-04-24 15:55:46,232 - WARNING - Failed to fetch https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-moses-black-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85
+2026-04-24 15:55:46,252 - WARNING - Failed to fetch https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-protector-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85
+2026-04-24 15:55:46,253 - WARNING - Failed to fetch https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-lainey-wilson-keepin-country-cool-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85
+2026-04-24 15:55:46,357 - WARNING - Failed to fetch https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-ride-away-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85
+2026-04-24 15:55:46,376 - WARNING - Failed to fetch https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-shooting-hawthorne-hill-%d9%85%d8%aa%d8%b1%d8%ac%d9%85
+2026-04-24 15:55:54,045 - WARNING - Failed to fetch https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-dandelion
+2026-04-24 15:55:54,067 - WARNING - Failed to fetch https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-avatar-last-airbender-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84
+2026-04-24 15:55:54,077 - WARNING - Failed to fetch https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-replica-datte-koi-wo-suru
+2026-04-24 15:55:54,161 - WARNING - Failed to fetch https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-aishiteru-game-wo-owarasetai
+2026-04-24 15:55:54,177 - WARNING - Failed to fetch https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-kuroneko-majo-no-kyoushitsu
+2026-04-24 16:08:29,761 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series> (referer: https://www.google.com/)
+2026-04-24 16:08:29,828 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies> (referer: https://www.google.com/)
+2026-04-24 16:08:33,073 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/anime> (referer: https://www.google.com/)
+2026-04-24 16:08:57,504 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series> (referer: https://www.google.com/)
+2026-04-24 16:08:58,971 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies> (referer: https://www.google.com/)
+2026-04-24 16:08:59,403 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/anime> (referer: https://www.google.com/)
+2026-04-24 16:10:11,245 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-hulk-hogan-real-american", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:10:13,621 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-apex-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:10:14,740 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-vantara-sanctuary-stories", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:10:15,122 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-naughty-business", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:10:18,403 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-flunked", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:10:21,122 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-cora-2024-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:10:23,086 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-half-man", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:10:25,240 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-nikki-glaser-good-girl-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-24 16:10:25,277 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-nikki-glaser-good-girl-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-24 16:10:28,964 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-cocomelon-lane-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%b3%d8%a7%d8%a8%d8%b9", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:10:33,583 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-cora-2024-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-24 16:10:33,618 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-cora-2024-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-24 16:10:34,305 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-cocomelon-lane-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%b3%d8%a7%d8%af%d8%b3> (referer: https://www.google.com/)
+2026-04-24 16:10:34,354 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-cocomelon-lane-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%b3%d8%a7%d8%af%d8%b3> (referer: https://www.google.com/)
+2026-04-24 16:10:35,266 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-hulk-hogan-real-american> (referer: https://www.google.com/)
+2026-04-24 16:10:36,195 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-yiya-murano-muerte-la-hora-del-te-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:10:41,812 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/anime/%d9%85%d8%b3%d9%84%d8%b3%d9%84-brother-minotaur-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:10:44,750 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-primavera-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-24 16:10:44,826 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-primavera-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-24 16:10:45,131 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-yiya-murano-muerte-la-hora-del-te-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-24 16:10:45,202 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-yiya-murano-muerte-la-hora-del-te-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-24 16:10:45,704 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/anime/%d9%85%d8%b3%d9%84%d8%b3%d9%84-stranger-things-tales-85-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-04-24 16:10:45,743 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/anime/%d9%85%d8%b3%d9%84%d8%b3%d9%84-stranger-things-tales-85-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-04-24 16:10:46,045 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-mahou-no-shimai-lulutto-lilly> (referer: https://www.google.com/)
+2026-04-24 16:10:46,078 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-mahou-no-shimai-lulutto-lilly> (referer: https://www.google.com/)
+2026-04-24 16:10:52,506 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-naughty-business> (referer: https://www.google.com/)
+2026-04-24 16:10:58,326 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-vantara-sanctuary-stories> (referer: https://www.google.com/)
+2026-04-24 16:10:58,417 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-vantara-sanctuary-stories> (referer: https://www.google.com/)
+2026-04-24 16:11:02,769 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-flunked> (referer: https://www.google.com/)
+2026-04-24 16:11:02,810 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-flunked> (referer: https://www.google.com/)
+2026-04-24 16:11:06,941 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-apex-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-24 16:11:22,836 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-cocomelon-lane-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%b3%d8%a7%d8%a8%d8%b9> (referer: https://www.google.com/)
+2026-04-24 16:11:24,233 - WARNING - Attempt 2 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-half-man", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:11:29,156 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/anime/%d9%85%d8%b3%d9%84%d8%b3%d9%84-brother-minotaur-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-04-24 16:11:29,198 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/anime/%d9%85%d8%b3%d9%84%d8%b3%d9%84-brother-minotaur-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-04-24 16:11:31,442 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-half-man> (referer: https://www.google.com/)
+2026-04-24 16:12:02,351 - WARNING - Attempt 1 failed: Page.goto: net::ERR_ABORTED; maybe frame was detached?
+Call log:
+  - navigating to "https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-primavera-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:12:09,933 - WARNING - Attempt 1 failed: Page.goto: net::ERR_ABORTED; maybe frame was detached?
+Call log:
+  - navigating to "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-witches-essex", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:12:14,957 - WARNING - Attempt 1 failed: Page.goto: net::ERR_ABORTED; maybe frame was detached?
+Call log:
+  - navigating to "https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-mahou-no-shimai-lulutto-lilly", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:12:19,980 - WARNING - Attempt 1 failed: Page.goto: net::ERR_ABORTED; maybe frame was detached?
+Call log:
+  - navigating to "https://www.fasel-hd.cam/anime/%d9%85%d8%b3%d9%84%d8%b3%d9%84-stranger-things-tales-85-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:12:25,002 - WARNING - Attempt 1 failed: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-santita", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:12:29,470 - WARNING - Failed to fetch https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-lunatics
+2026-04-24 16:12:29,611 - WARNING - Failed to fetch https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-yowayowa-sensei
+2026-04-24 16:12:30,530 - WARNING - Attempt 1 failed: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-cora-2024-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:12:35,574 - WARNING - Attempt 1 failed: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-gardening-show", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:18:04,052 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies> (referer: https://www.google.com/)
+2026-04-24 16:18:06,207 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series> (referer: https://www.google.com/)
+2026-04-24 16:18:06,921 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/anime> (referer: https://www.google.com/)
+2026-04-24 16:18:34,681 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies> (referer: https://www.google.com/)
+2026-04-24 16:18:37,900 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series> (referer: https://www.google.com/)
+2026-04-24 16:18:39,760 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/anime> (referer: https://www.google.com/)
+2026-04-24 16:19:47,190 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-naughty-business> (referer: https://www.google.com/)
+2026-04-24 16:19:47,230 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-naughty-business> (referer: https://www.google.com/)
+2026-04-24 16:19:47,913 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-primavera-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:19:47,929 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-yiya-murano-muerte-la-hora-del-te-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:19:49,047 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-cora-2024-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:19:52,116 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-apex-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:19:52,545 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-nikki-glaser-good-girl-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:19:54,308 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-mahou-no-shimai-lulutto-lilly> (referer: https://www.google.com/)
+2026-04-24 16:19:54,349 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-mahou-no-shimai-lulutto-lilly> (referer: https://www.google.com/)
+2026-04-24 16:20:03,028 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-yiya-murano-muerte-la-hora-del-te-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-24 16:20:03,109 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-yiya-murano-muerte-la-hora-del-te-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-24 16:20:05,347 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-nikki-glaser-good-girl-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-24 16:20:05,429 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-nikki-glaser-good-girl-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-24 16:20:06,590 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-cocomelon-lane-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%b3%d8%a7%d8%a8%d8%b9", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:20:08,886 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-vantara-sanctuary-stories> (referer: https://www.google.com/)
+2026-04-24 16:20:09,020 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-vantara-sanctuary-stories> (referer: https://www.google.com/)
+2026-04-24 16:20:09,732 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-half-man", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:20:09,803 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/anime/%d9%85%d8%b3%d9%84%d8%b3%d9%84-brother-minotaur-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-04-24 16:20:09,854 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/anime/%d9%85%d8%b3%d9%84%d8%b3%d9%84-brother-minotaur-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-04-24 16:20:10,405 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-cocomelon-lane-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%b3%d8%a7%d8%af%d8%b3> (referer: https://www.google.com/)
+2026-04-24 16:20:10,467 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-cocomelon-lane-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%b3%d8%a7%d8%af%d8%b3> (referer: https://www.google.com/)
+2026-04-24 16:20:16,182 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-hulk-hogan-real-american", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:20:17,722 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-flunked", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:20:17,722 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/anime/%d9%85%d8%b3%d9%84%d8%b3%d9%84-stranger-things-tales-85-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:20:31,348 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-primavera-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-24 16:20:31,518 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-cora-2024-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-24 16:20:34,748 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-cocomelon-lane-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%b3%d8%a7%d8%a8%d8%b9> (referer: https://www.google.com/)
+2026-04-24 16:20:37,294 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-apex-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-24 16:20:37,555 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-half-man> (referer: https://www.google.com/)
+2026-04-24 16:20:46,223 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-hulk-hogan-real-american> (referer: https://www.google.com/)
+2026-04-24 16:20:53,753 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/anime/%d9%85%d8%b3%d9%84%d8%b3%d9%84-stranger-things-tales-85-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-04-24 16:20:55,867 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-flunked> (referer: https://www.google.com/)
+2026-04-24 16:20:55,924 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-flunked> (referer: https://www.google.com/)
+2026-04-24 16:21:51,807 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-naughty-business", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:21:53,098 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-mahou-no-shimai-lulutto-lilly", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:21:59,974 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-yozakura-san-chi-no-daisakusen-2nd-season> (referer: https://www.google.com/)
+2026-04-24 16:22:00,065 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-yozakura-san-chi-no-daisakusen-2nd-season> (referer: https://www.google.com/)
+2026-04-24 16:22:04,052 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-yiya-murano-muerte-la-hora-del-te-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:22:05,335 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/anime/%d9%85%d8%b3%d9%84%d8%b3%d9%84-brother-minotaur-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:22:06,536 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-vantara-sanctuary-stories", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:22:07,034 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-nikki-glaser-good-girl-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:22:09,254 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-cocomelon-lane-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%b3%d8%a7%d8%af%d8%b3", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:22:12,574 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-cocomelon-lane-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%b3%d8%a7%d8%af%d8%b3> (referer: https://www.google.com/)
+2026-04-24 16:22:12,636 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-cocomelon-lane-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%b3%d8%a7%d8%af%d8%b3> (referer: https://www.google.com/)
+2026-04-24 16:22:15,954 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/anime/%d9%85%d8%b3%d9%84%d8%b3%d9%84-brother-minotaur-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-04-24 16:22:16,021 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/anime/%d9%85%d8%b3%d9%84%d8%b3%d9%84-brother-minotaur-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-04-24 16:22:17,191 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-mahou-no-shimai-lulutto-lilly> (referer: https://www.google.com/)
+2026-04-24 16:22:19,044 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-lainey-wilson-keepin-country-cool-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:22:23,270 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-protector-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:22:32,057 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-naughty-business> (referer: https://www.google.com/)
+2026-04-24 16:22:32,817 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-vantara-sanctuary-stories> (referer: https://www.google.com/)
+2026-04-24 16:22:34,724 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-yiya-murano-muerte-la-hora-del-te-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-24 16:22:35,274 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-nikki-glaser-good-girl-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-24 16:22:40,296 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-moses-black-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:22:48,545 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-gardening-show", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:22:56,497 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-protector-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-24 16:23:02,693 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-moses-black-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-24 16:23:05,435 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-gardening-show> (referer: https://www.google.com/)
+2026-04-24 16:23:06,565 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-lainey-wilson-keepin-country-cool-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-24 16:23:17,180 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-yowayowa-sensei", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:23:27,564 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-yowayowa-sensei> (referer: https://www.google.com/)
+2026-04-24 16:23:35,459 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-santita", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:23:54,580 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-santita> (referer: https://www.google.com/)
+2026-04-24 16:24:32,028 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-kaattaan", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:24:32,514 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-kamiina-botan-yoeru-sugata-wa-yuri-no-hana", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:24:36,101 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-yozakura-san-chi-no-daisakusen-2nd-season", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:24:38,688 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-shooting-hawthorne-hill-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:24:39,453 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/anime/%d9%85%d8%b3%d9%84%d8%b3%d9%84-brother-minotaur-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:24:42,616 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-yozakura-san-chi-no-daisakusen-2nd-season> (referer: https://www.google.com/)
+2026-04-24 16:24:42,670 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-yozakura-san-chi-no-daisakusen-2nd-season> (referer: https://www.google.com/)
+2026-04-24 16:24:44,891 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-kamiina-botan-yoeru-sugata-wa-yuri-no-hana> (referer: https://www.google.com/)
+2026-04-24 16:24:46,596 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-kaattaan> (referer: https://www.google.com/)
+2026-04-24 16:24:46,667 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-kaattaan> (referer: https://www.google.com/)
+2026-04-24 16:24:49,554 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-cocomelon-lane-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%b3%d8%a7%d8%af%d8%b3", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:24:49,820 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-witches-essex", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:24:53,391 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-bone-keeper-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-24 16:24:53,464 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-bone-keeper-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-24 16:24:53,673 - WARNING - Attempt 1 failed: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-ride-away-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:24:53,686 - WARNING - Attempt 2 failed: Page.goto: net::ERR_ABORTED; maybe frame was detached?
+Call log:
+  - navigating to "https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-cocomelon-lane-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%b3%d8%a7%d8%af%d8%b3", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:24:53,698 - WARNING - Attempt 1 failed: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-unchosen", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:24:53,723 - WARNING - Attempt 2 failed: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.fasel-hd.cam/anime/%d9%85%d8%b3%d9%84%d8%b3%d9%84-brother-minotaur-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:24:53,720 - WARNING - Attempt 2 failed: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-shooting-hawthorne-hill-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:24:53,723 - WARNING - Attempt 2 failed: Page.goto: net::ERR_ABORTED; maybe frame was detached?
+Call log:
+  - navigating to "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-witches-essex", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:24:59,430 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-366' coro=<Connection.run.<locals>.init() done, defined at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py:271> exception=Exception('Connection.init: Connection closed while reading from the driver')>
+Traceback (most recent call last):
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 272, in init
+    self.playwright_future.set_result(await self._root_object.initialize())
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 219, in initialize
+    await self._channel.send("initialize", None, {"sdkLanguage": "python"})
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 52, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 500, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+Exception: Connection.init: Connection closed while reading from the driver
+2026-04-24 16:24:59,431 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-369' coro=<Connection.run.<locals>.init() done, defined at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py:271> exception=Exception('Connection.init: Connection closed while reading from the driver')>
+Traceback (most recent call last):
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 272, in init
+    self.playwright_future.set_result(await self._root_object.initialize())
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 219, in initialize
+    await self._channel.send("initialize", None, {"sdkLanguage": "python"})
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 52, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 500, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+Exception: Connection.init: Connection closed while reading from the driver
+2026-04-24 16:25:02,678 - WARNING - Attempt 1 failed: Page.goto: net::ERR_ABORTED; maybe frame was detached?
+Call log:
+  - navigating to "https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-ramy-youssef-love-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:25:06,058 - WARNING - Attempt 1 failed: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-ballistic-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-24 16:25:35,221 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-ballistic-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-24 16:25:35,283 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-ballistic-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-24 16:25:37,116 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-lunatics> (referer: https://www.google.com/)
+2026-04-24 16:25:43,898 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-shooting-hawthorne-hill-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-24 16:25:43,965 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-shooting-hawthorne-hill-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-24 16:25:45,620 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-brothers-fire-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-24 16:25:45,994 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-avatar-last-airbender-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%ab%d8%a7%d9%84%d8%ab> (referer: https://www.google.com/)
+2026-04-24 16:25:46,068 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-avatar-last-airbender-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%ab%d8%a7%d9%84%d8%ab> (referer: https://www.google.com/)
+2026-04-24 16:25:53,587 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-witches-essex> (referer: https://www.google.com/)
+2026-04-24 16:29:35,415 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies> (referer: https://www.google.com/)
+2026-04-24 16:29:50,459 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies> (referer: https://www.google.com/)

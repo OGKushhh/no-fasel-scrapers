@@ -8,9 +8,35 @@ from bs4 import BeautifulSoup
 from Common import (
     DEBUG, FASEL_BASE_URL, REQUEST_DELAY, JITTER,
     get_website_safe, get_number_of_pages, get_paginated_url,
-    get_content_id, clean_iframe_source, get_content_format,
-    extract_country, extract_runtime, get_genres_both
+    get_content_id, clean_iframe_source, get_content_format, get_genres_both,
+    extract_country, extract_runtime
 )
+
+# ----------------------------------------------------------------------
+#  Progress helpers
+# ----------------------------------------------------------------------
+def load_progress():
+    progress_file = "./output/last_page_movies.txt"
+    if os.path.exists(progress_file):
+        with open(progress_file, "r") as f:
+            try:
+                return int(f.read().strip())
+            except:
+                return 0
+    return 0
+
+def save_progress(page_num):
+    os.makedirs("./output", exist_ok=True)
+    with open("./output/last_page_movies.txt", "w") as f:
+        f.write(str(page_num))
+
+# Load existing movies
+try:
+    with open("./output/movies.json", "r", encoding="utf-8") as f:
+        existing_movies = json.load(f)
+except (FileNotFoundError, json.JSONDecodeError):
+    existing_movies = {}
+existing_ids = set(existing_movies.keys())
 
 FAILED_DETAIL_URLS = set()
 
@@ -22,13 +48,19 @@ def fetch_detail(detail_url: str):
         FAILED_DETAIL_URLS.add(detail_url)
         return None, None
 
-def scrape_movies_full():
+def scrape_movies_resumable():
     category_url = FASEL_BASE_URL + "movies"
     total_pages = get_number_of_pages(category_url)
-    print(f"Total movie pages: {total_pages}")
+    start_page = load_progress() + 1
+    if start_page > total_pages:
+        print("All pages already completed.")
+        return
 
-    all_movies = {}
-    for page in range(1, total_pages + 1):
+    print(f"Total movie pages: {total_pages}")
+    print(f"Resuming from page {start_page}")
+
+    all_movies = existing_movies.copy()
+    for page in range(start_page, total_pages + 1):
         delay = REQUEST_DELAY + random.uniform(-JITTER, JITTER)
         if delay < 0.5:
             delay = 0.5
@@ -49,9 +81,32 @@ def scrape_movies_full():
             print("  No movie containers found")
             continue
 
-        detail_urls = [d.find("a")["href"] for d in divs if d.find("a")]
+        # Extract IDs from the page (without detail fetch)
+        page_ids = []
+        for div in divs:
+            link = div.find("a")
+            if link and link.get("href"):
+                movie_id = link["href"].split('/')[-2]
+                page_ids.append(movie_id)
+
+        # If all IDs are already known, stop incremental
+        if all(mid in existing_ids for mid in page_ids):
+            print(f"  Page {page} contains only already scraped movies. Stopping.")
+            save_progress(page)
+            break
+
+        # Collect detail URLs only for new movies
+        detail_urls = []
+        for div in divs:
+            link = div.find("a")
+            if link:
+                detail_url = link["href"]
+                movie_id = detail_url.split('/')[-2]
+                if movie_id not in existing_ids:
+                    detail_urls.append(detail_url)
         if not detail_urls:
-            print("  No detail URLs found")
+            print("  No new movies on this page")
+            save_progress(page)
             continue
 
         detail_map = {}
@@ -80,19 +135,18 @@ def scrape_movies_full():
                     movie_id = match.group(1)
                 else:
                     movie_id = detail_url.split('/')[-2]
-            if not movie_id:
+            if not movie_id or movie_id in existing_ids:
                 continue
-
-            title_elem = div.find("div", class_="h5") or div.find("div", class_="h1")
-            title = title_elem.text.strip() if title_elem else "Unknown"
-
-            img = div.find("img")
-            img_src = img.get("data-src") or img.get("src", "") if img else ""
 
             iframe = dsoup.find("iframe")
             source = ""
             if iframe and iframe.get("src"):
                 source = clean_iframe_source(iframe["src"])
+
+            title_elem = div.find("div", class_="h5") or div.find("div", class_="h1")
+            title = title_elem.text.strip() if title_elem else "Unknown"
+            img = div.find("img")
+            img_src = img.get("data-src") or img.get("src", "") if img else ""
 
             genres_info = get_genres_both(dsoup)
 
@@ -107,8 +161,7 @@ def scrape_movies_full():
                 "Runtime": extract_runtime(dsoup),
                 "Country": extract_country(dsoup),
             }
-            if DEBUG:
-                print(f"    Added {movie_id}: {title} (source={'Yes' if source else 'No'})")
+            existing_ids.add(movie_id)
 
         all_movies.update(new_movies)
         print(f"  Page {page} done: added {len(new_movies)} movies, total {len(all_movies)}")
@@ -116,7 +169,8 @@ def scrape_movies_full():
         os.makedirs("./output", exist_ok=True)
         with open("./output/movies.json", "w", encoding="utf-8") as f:
             json.dump(all_movies, f, indent=4, ensure_ascii=False)
-        print("  Saved to ./output/movies.json")
+        save_progress(page)
+        print("  Saved progress and JSON")
 
     if FAILED_DETAIL_URLS:
         print(f"\nRetrying {len(FAILED_DETAIL_URLS)} failed detail URLs...")
@@ -125,7 +179,7 @@ def scrape_movies_full():
             if resp:
                 dsoup = BeautifulSoup(resp.text, "html.parser")
                 movie_id = get_content_id(dsoup) or url.split('/')[-2]
-                if movie_id not in all_movies:
+                if movie_id not in existing_ids:
                     all_movies[movie_id] = {
                         "Title": "Unknown (retried)",
                         "Category": "movies",
@@ -144,4 +198,4 @@ def scrape_movies_full():
     print(f"\nFinished. Total movies: {len(all_movies)}")
 
 if __name__ == "__main__":
-    scrape_movies_full()
+    scrape_movies_resumable()

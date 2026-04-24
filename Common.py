@@ -1,4 +1,3 @@
-import asyncio
 import json
 import logging
 import os
@@ -27,6 +26,7 @@ logging.basicConfig(
 
 # ----------------------------------------------------------------------
 #  Stealth fetching – Scrapling (primary) + curl_cffi (fallback)
+#  NO Playwright here – this is thread‑safe.
 # ----------------------------------------------------------------------
 try:
     from scrapling.fetchers import StealthyFetcher
@@ -42,14 +42,11 @@ except ImportError:
     CURL_CFFI_AVAILABLE = False
     print("Warning: curl_cffi not installed. Run: pip install curl_cffi")
 
-# Video extraction – Patchright (stealth) or Playwright
-try:
-    from patchright.sync_api import sync_playwright
-    PATCHRIGHT_AVAILABLE = True
-except ImportError:
-    from playwright.sync_api import sync_playwright
-    PATCHRIGHT_AVAILABLE = False
-    print("Warning: patchright not installed, using standard Playwright. Run: pip install patchright && patchright install chromium")
+# Playwright ONLY for video extraction – will be imported only inside that function.
+# Not imported at top level to avoid greenlet issues.
+# try:
+#     from playwright.sync_api import sync_playwright
+# except ImportError: ...
 
 # ----------------------------------------------------------------------
 #  Constants & settings
@@ -136,10 +133,11 @@ headers = {
 }
 
 # ----------------------------------------------------------------------
-#  Core fetching function (synchronous, returns Response‑like object)
+#  Core fetching function (synchronous, thread‑safe: Scrapling + curl_cffi)
 # ----------------------------------------------------------------------
 def get_website_safe(webpage_url: str, max_retries: int = MAX_RETRIES) -> Optional[Response]:
     """Fetch a page using Scrapling (stealth) or fallback to curl_cffi."""
+    # Try Scrapling first (stateless, thread‑safe)
     if SCRAPLING_AVAILABLE:
         for attempt in range(max_retries):
             try:
@@ -158,12 +156,13 @@ def get_website_safe(webpage_url: str, max_retries: int = MAX_RETRIES) -> Option
                         return fake
             except Exception as e:
                 if DEBUG:
-                    print(f"Scrapling error: {e}")
+                    print(f"Scrapling error (attempt {attempt+1}): {e}")
             if attempt < max_retries - 1:
                 time.sleep(BACKOFF_FACTOR ** attempt)
         if DEBUG:
             print("Scrapling failed, falling back to curl_cffi")
 
+    # Fallback to curl_cffi (thread‑safe)
     if CURL_CFFI_AVAILABLE:
         for attempt in range(max_retries):
             imp = IMPERSONATIONS[attempt % len(IMPERSONATIONS)]
@@ -237,24 +236,13 @@ def get_content_format(soup: BeautifulSoup) -> str:
     except AttributeError:
         return "N/A"
 
-def get_genres(soup: BeautifulSoup) -> List[str]:
-    """Legacy function: returns only English mapped genres."""
-    try:
-        genre_tags = soup.find("i", class_="far fa-folders").find_next_siblings("a")
-        raw = [tag["href"].split("/")[-1].capitalize() for tag in genre_tags]
-        ar = [clean_genre(g) for g in raw]
-        en = [FASEL_GENRE_MAP.get(g, g) for g in ar]
-        return en
-    except AttributeError:
-        return []
-
 def get_genres_both(soup: BeautifulSoup) -> dict:
     """Return dict with 'en' (English) and 'ar' (Arabic decoded) genre lists."""
     try:
         genre_tags = soup.find("i", class_="far fa-folders").find_next_siblings("a")
         raw_genres = [tag["href"].split("/")[-1].capitalize() for tag in genre_tags]
-        ar_genres = [clean_genre(g) for g in raw_genres]          # decoded Arabic
-        en_genres = [FASEL_GENRE_MAP.get(g, g) for g in ar_genres] # mapped to English
+        ar_genres = [clean_genre(g) for g in raw_genres]
+        en_genres = [FASEL_GENRE_MAP.get(g, g) for g in ar_genres]
         return {"ar": ar_genres, "en": en_genres}
     except AttributeError:
         return {"ar": [], "en": []}
@@ -340,7 +328,8 @@ def upload_image(image_url: str, content_id: str, get_image: Callable[[str], Res
         return "https://imgpile.com/images/TPDrVl.jpg"
 
 # ----------------------------------------------------------------------
-#  Video source extraction (on‑demand) – using browser with ad blocking
+#  Video source extraction (on‑demand) – uses Playwright, separate from metadata
+#  This function is called only when a user requests a video.
 # ----------------------------------------------------------------------
 TEMP_PROFILE = os.path.abspath("./chrome_fresh_profile")
 AD_DOMAINS = [
@@ -352,6 +341,7 @@ AD_DOMAINS = [
 
 def get_video_stream_url(page_url: str, headless: bool = True, max_attempts: int = 7) -> Optional[str]:
     """Launch a stealth browser, intercept .m3u8 request, click play button."""
+    from playwright.sync_api import sync_playwright  # imported only here
     captured_url = None
     with sync_playwright() as p:
         context = p.chromium.launch_persistent_context(

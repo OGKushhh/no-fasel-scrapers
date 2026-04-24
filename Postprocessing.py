@@ -111,15 +111,22 @@ def main() -> None:
                     del content[key]
 
         # Clean invalid entries for movies (index 0)
+        # ORIGINAL BLOCK (commented out because we keep movies with empty Source)
+        # elif index == 0:
+        #     for key in list(content.keys()):
+        #         try:
+        #             if content[key].get("Source", "") == "":
+        #                 del content[key]
+        #             else:
+        #                 continue
+        #         except KeyError:
+        #             del content[key]
+
+        # NEW: No cleanup for movies – keep them even if Source is empty.
+        # (Video source will be fetched on‑demand.)
         elif index == 0:
-            for key in list(content.keys()):
-                try:
-                    if content[key].get("Source", "") == "":
-                        del content[key]
-                    else:
-                        continue
-                except KeyError:
-                    del content[key]
+            # Do nothing – keep all movies
+            pass
 
         else:
             pass
