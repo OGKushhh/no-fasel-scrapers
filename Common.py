@@ -8,6 +8,8 @@ import json
 import re
 import random
 import asyncio
+import os
+import time
 from concurrent.futures import ThreadPoolExecutor
 from threading import Lock
 from requests.exceptions import ConnectionError, TooManyRedirects, ReadTimeout, ChunkedEncodingError
@@ -15,7 +17,7 @@ from requests import Response
 from os import environ
 from PIL import Image
 
-# Scrapling for undetectable browser automation (primary)
+# Scrapling for undetectable browser automation (primary for metadata)
 try:
     from scrapling.fetchers import StealthyFetcher
     SCRAPLING_AVAILABLE = True
@@ -31,16 +33,17 @@ except ImportError:
     CURL_CFFI_AVAILABLE = False
     print("Warning: curl_cffi not installed. Install with: pip install curl_cffi")
 
-# Playwright for video source extraction (only used directly)
+# Video extraction: try Patchright (stealth), fallback to Playwright
 try:
-    from playwright.sync_api import sync_playwright
-    PLAYWRIGHT_AVAILABLE = True
+    from patchright.sync_api import sync_playwright
+    PATCHRIGHT_AVAILABLE = True
 except ImportError:
-    PLAYWRIGHT_AVAILABLE = False
-    print("Warning: Playwright not installed. Run: pip install playwright && playwright install chromium")
+    from playwright.sync_api import sync_playwright
+    PATCHRIGHT_AVAILABLE = False
+    print("Warning: patchright not installed. Using standard Playwright. Install with: pip install patchright && patchright install chromium")
 
 # ========== RATE LIMITING & IMPERSONATION SETTINGS ==========
-DEBUG = True                     # Set to True for verbose output
+DEBUG = False                     # Set to True for verbose output
 REQUEST_DELAY = 3.0               # Base seconds between page requests
 JITTER = 0.5                      # Random +/- seconds added to delay
 MAX_RETRIES = 3
@@ -127,7 +130,7 @@ headers: dict = {
     "upgrade-insecure-requests": "1",
 }
 
-# ========== SYNC REQUEST HANDLER (Scrapling with .body.decode) ==========
+# ========== SYNC REQUEST HANDLER (Scrapling + curl_cffi fallback) ==========
 
 def get_website_safe(webpage_url: str, max_retries: int = MAX_RETRIES) -> Optional[Response]:
     """
@@ -135,7 +138,6 @@ def get_website_safe(webpage_url: str, max_retries: int = MAX_RETRIES) -> Option
     Falls back to curl_cffi if Scrapling fails.
     Returns a requests.Response-like object for compatibility.
     """
-    # Try Scrapling first (with proper waiting for dynamic content)
     if SCRAPLING_AVAILABLE:
         for attempt in range(max_retries):
             try:
@@ -146,7 +148,6 @@ def get_website_safe(webpage_url: str, max_retries: int = MAX_RETRIES) -> Option
                     timeout=60000  # 60 seconds
                 )
                 if resp and resp.status == 200:
-                    # Extract HTML from .body (bytes) or fallback
                     html = resp.body.decode('utf-8') if hasattr(resp, 'body') else resp.text
                     if html:
                         fake_resp = requests.Response()
@@ -163,7 +164,6 @@ def get_website_safe(webpage_url: str, max_retries: int = MAX_RETRIES) -> Option
         if DEBUG:
             print("Scrapling failed, falling back to curl_cffi")
 
-    # Fallback to curl_cffi
     if CURL_CFFI_AVAILABLE:
         for attempt in range(max_retries):
             impersonation = IMPERSONATIONS[attempt % len(IMPERSONATIONS)]
@@ -220,19 +220,14 @@ async def get_number_of_pages_async(url: str) -> int:
     soup = BeautifulSoup(html, "html.parser")
     pagination = soup.select_one("ul.pagination")
     if pagination:
-        page_links = pagination.find_all("a", class_="page-link")
-        numbers = []
-        for link in page_links:
-            text = link.text.strip()
-            if text.isdigit():
-                numbers.append(int(text))
-        if numbers:
-            return max(numbers)
         last_link = pagination.find("a", string="»")
         if last_link and last_link.get("href"):
             match = re.search(r'/page/(\d+)', last_link["href"])
             if match:
                 return int(match.group(1))
+        numbers = [int(link.text.strip()) for link in pagination.find_all("a", class_="page-link") if link.text.strip().isdigit()]
+        if numbers:
+            return max(numbers)
     max_page = 1
     for link in soup.find_all('a', href=True):
         match = re.search(r'/page/(\d+)', link['href'])
@@ -266,53 +261,176 @@ async def scrape_category_pages_async(category_name: str, start_page: int = 1, e
             print(f"Scraped {category_name} page {page}/{end_page}, found {len(movies)} movies")
     return all_movies
 
-# ========== VIDEO SOURCE EXTRACTION (PLAYWRIGHT ONLY) ==========
+# ========== VIDEO SOURCE EXTRACTION (PATCHRIGHT / PLAYWRIGHT) ==========
 
-def extract_video_source(video_page_url: str, timeout: int = 30) -> Optional[str]:
+# Temporary fresh profile directory (created once per run)
+TEMP_PROFILE = os.path.abspath("./chrome_fresh_profile")
+
+# List of ad/popup domains to block at network level
+AD_DOMAINS = [
+    "googletagmanager.com", "doubleclick.net", "googleadservices.com",
+    "google-analytics.com", "popads.net", "adsterra.com", "exponential.com",
+    "outbrain.com", "taboola.com", "scorecardresearch.com", "madurird.com",
+    "acscdn.com", "crumpetprankerstench.com", "propellerads.com", "clickadu.com"
+]
+
+def get_video_stream_url(page_url: str, headless: bool = True, max_attempts: int = 7) -> Optional[str]:
     """
-    Use Playwright (headless Chromium) to load the video page and extract
-    the actual stream URL from JavaScript variables, iframes, or video elements.
+    Launch a stealth Chrome profile, block ads, click play button, capture .m3u8 stream.
+    Returns the master.m3u8 URL or None.
     """
-    if not PLAYWRIGHT_AVAILABLE:
-        raise ImportError("Playwright not installed. Run: pip install playwright && playwright install chromium")
+    captured_url = None
 
-    try:
-        with sync_playwright() as p:
-            browser = p.chromium.launch(headless=True)
-            page = browser.new_page()
-            page.goto(video_page_url, timeout=timeout * 1000)
+    with sync_playwright() as p:
+        # Launch persistent context with a fresh profile (avoids bot detection)
+        context = p.chromium.launch_persistent_context(
+            user_data_dir=TEMP_PROFILE,
+            headless=headless,
+            args=[
+                "--disable-blink-features=AutomationControlled",
+                "--disable-gpu",
+                "--disable-dev-shm-usage",
+                "--no-sandbox",
+                "--window-size=1280,720"
+            ],
+            viewport={"width": 1280, "height": 720},
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+        )
+        page = context.new_page()
 
-            page.wait_for_selector("video, iframe, script[src*='player'], .player, #player", timeout=timeout * 1000)
+        # Block ad requests
+        def block_ads(route, request):
+            if any(domain in request.url for domain in AD_DOMAINS):
+                route.abort()
+                return
+            route.continue_()
+        page.route("**/*", block_ads)
 
-            html = page.content()
-            patterns = [
-                r'(?:file|source|src|video_url|mp4|m3u8)["\']?\s*[:=]\s*["\']([^"\']+\.(?:mp4|m3u8|m3u)[^"\']*)',
-                r'["\'](https?://[^"\']+\.(?:mp4|m3u8|m3u)[^"\']*)["\']',
-                r'data-(?:src|file)=["\']([^"\']+\.(?:mp4|m3u8))',
-                r'<video[^>]+src=["\']([^"\']+)["\']',
-                r'<source[^>]+src=["\']([^"\']+)["\']',
-            ]
+        # Auto‑close any popup windows
+        page.on("popup", lambda popup: popup.close())
 
-            for pattern in patterns:
-                matches = re.findall(pattern, html, re.IGNORECASE)
-                if matches:
-                    browser.close()
-                    return matches[0]
+        if DEBUG:
+            print(f"[VideoExtract] Loading page: {page_url}")
+        page.goto(page_url, wait_until="domcontentloaded", timeout=60000)
 
-            iframes = page.query_selector_all("iframe")
-            for iframe in iframes:
-                src = iframe.get_attribute("src")
-                if src and ("embed" in src or "player" in src):
-                    browser.close()
-                    return src
+        # Scroll a bit to trigger lazy‑loaded elements
+        page.evaluate("window.scrollTo(0, document.body.scrollHeight/2);")
+        time.sleep(2)
 
-            browser.close()
+        # Locate the video iframe (JWPlayer is inside iframe[name='player_iframe'])
+        iframe = page.frame(name="player_iframe")
+        if not iframe:
+            # Fallback to locating by selector
+            iframe_element = page.query_selector("iframe[name='player_iframe']")
+            if iframe_element:
+                iframe = iframe_element.content_frame()
+        if not iframe:
+            if DEBUG:
+                print("[VideoExtract] Could not find player iframe")
+            context.close()
             return None
 
-    except Exception as e:
-        if DEBUG:
-            print(f"Playwright extraction error: {e}")
-        return None
+        # Wait for the iframe body to load
+        try:
+            iframe.wait_for_selector("body", timeout=15000)
+        except:
+            context.close()
+            return None
+
+        # Play button selector (JWPlayer typical class)
+        play_selector = ".jw-icon.jw-icon-display.jw-button-color.jw-reset"
+        # Alternative: try to click the video area
+        video_selector = "video"
+
+        # Intercept .m3u8 requests
+        def intercept_m3u8(route, request):
+            nonlocal captured_url
+            if ".m3u8" in request.url:
+                # Prefer master.m3u8 over quality playlists
+                if "master.m3u8" in request.url:
+                    captured_url = request.url
+                    if DEBUG:
+                        print(f"[VideoExtract] MASTER M3U8 captured: {captured_url}")
+                elif captured_url is None and "playlist.m3u8" in request.url:
+                    captured_url = request.url
+                    if DEBUG:
+                        print(f"[VideoExtract] Quality playlist captured (fallback): {captured_url}")
+            route.continue_()
+        page.route("**/*", intercept_m3u8)
+
+        # Click the play button repeatedly (overcomes popup ads)
+        for attempt in range(max_attempts):
+            if captured_url:
+                break
+            if DEBUG:
+                print(f"[VideoExtract] Click attempt {attempt+1}/{max_attempts}")
+            try:
+                iframe.click(play_selector, force=True, timeout=3000)
+                if DEBUG:
+                    print("  -> Clicked play button")
+            except:
+                try:
+                    iframe.click(video_selector, force=True)
+                    if DEBUG:
+                        print("  -> Clicked video element")
+                except:
+                    pass
+            time.sleep(1.5)
+            # Close any new popups that might have appeared
+            for p in context.pages:
+                if p != page:
+                    p.close()
+
+        # Wait a few seconds for the stream request to complete
+        for _ in range(30):
+            if captured_url:
+                break
+            time.sleep(0.5)
+
+        context.close()
+        return captured_url
+
+def extract_video_source(page_url: str, headless: bool = True) -> str:
+    """
+    Synchronous wrapper – returns the .m3u8 stream URL or empty string.
+    Compatible with existing code.
+    """
+    url = get_video_stream_url(page_url, headless=headless)
+    return url if url else ""
+
+# Optional: download using yt-dlp (if you want to offer offline download)
+def download_video_from_page(page_url: str, output_path: str = "video.mp4", quality: str = "best") -> bool:
+    """
+    Download video directly from the page using yt-dlp after extracting stream URL.
+    Quality: 'best', '1080p', '720p', '480p', '360p'
+    """
+    stream_url = get_video_stream_url(page_url, headless=True)
+    if not stream_url:
+        return False
+    # Use yt-dlp to download
+    import subprocess
+    quality_map = {
+        "best": "bestvideo+bestaudio/best",
+        "1080p": "bestvideo[height<=1080]+bestaudio/best[height<=1080]",
+        "720p":  "bestvideo[height<=720]+bestaudio/best[height<=720]",
+        "480p":  "bestvideo[height<=480]+bestaudio/best[height<=480]",
+        "360p":  "bestvideo[height<=360]+bestaudio/best[height<=360]",
+    }
+    format_sel = quality_map.get(quality, quality_map["best"])
+    cmd = [
+        "yt-dlp",
+        "-f", format_sel,
+        "-o", output_path,
+        "--no-continue",
+        "--hls-use-mpegts",
+        "--retries", "10",
+        stream_url
+    ]
+    try:
+        subprocess.run(cmd, check=True)
+        return True
+    except:
+        return False
 
 # ========== PAGINATION HELPERS (SYNC) ==========
 
@@ -326,25 +444,17 @@ def get_number_of_pages(url: str) -> int:
     webpage = get_website_safe(url)
     if not webpage:
         return 1
-    soup = BeautifulSoup(webpage.text, "html.parser")
+    soup = BeautifulSoup(webpage.text, "html.parser")  # using .text from fake response
     pagination = soup.select_one("ul.pagination")
     if pagination:
-        # Look for the » link (last page)
         last_link = pagination.find("a", string="»")
         if last_link and last_link.get("href"):
-            import re
             match = re.search(r'/page/(\d+)', last_link["href"])
             if match:
                 return int(match.group(1))
-        # Fallback to highest visible page number
-        numbers = []
-        for link in pagination.find_all("a", class_="page-link"):
-            text = link.text.strip()
-            if text.isdigit():
-                numbers.append(int(text))
+        numbers = [int(link.text.strip()) for link in pagination.find_all("a", class_="page-link") if link.text.strip().isdigit()]
         if numbers:
             return max(numbers)
-    # Fallback to scanning all links
     max_page = 1
     for link in soup.find_all('a', href=True):
         match = re.search(r'/page/(\d+)', link['href'])
@@ -369,7 +479,7 @@ def scrape_category_pages(category_name: str, start_page: int = 1, end_page: Opt
         all_movies.extend(movies)
     return all_movies
 
-# ========== FASELHD METADATA EXTRACTION ==========
+# ========== FASELHD METADATA EXTRACTION (SYNC, BEAUTIFULSOUP) ==========
 
 def get_latest_movies(soup: BeautifulSoup) -> list[dict]:
     """Extract movies from homepage (.blockMovie) or category page (.postDiv)."""
@@ -517,28 +627,28 @@ def get_latest_movies_from_homepage() -> list[dict]:
     resp = get_website_safe(FASEL_BASE_URL + "main")
     if not resp:
         return []
-    soup = BeautifulSoup(resp.content, "html.parser")
+    soup = BeautifulSoup(resp.text, "html.parser")
     return get_latest_movies(soup)
 
 def get_latest_episodes_from_homepage() -> list[dict]:
     resp = get_website_safe(FASEL_BASE_URL + "main")
     if not resp:
         return []
-    soup = BeautifulSoup(resp.content, "html.parser")
+    soup = BeautifulSoup(resp.text, "html.parser")
     return get_latest_episodes(soup)
 
 def get_featured_content_from_homepage() -> list[dict]:
     resp = get_website_safe(FASEL_BASE_URL + "main")
     if not resp:
         return []
-    soup = BeautifulSoup(resp.content, "html.parser")
+    soup = BeautifulSoup(resp.text, "html.parser")
     return get_featured_content(soup)
 
 def get_all_homepage_content() -> dict:
     resp = get_website_safe(FASEL_BASE_URL + "main")
     if not resp:
         return {"movies": [], "episodes": [], "featured": []}
-    soup = BeautifulSoup(resp.content, "html.parser")
+    soup = BeautifulSoup(resp.text, "html.parser")
     return {
         "movies": get_latest_movies(soup),
         "episodes": get_latest_episodes(soup),
@@ -550,10 +660,10 @@ def get_category_page_rendered(category_url: str, page: int = 1) -> list[dict]:
     resp = get_website_safe(url)
     if not resp:
         return []
-    soup = BeautifulSoup(resp.content, "html.parser")
+    soup = BeautifulSoup(resp.text, "html.parser")
     return get_latest_movies(soup)
 
-# ========== LEGACY HELPER FUNCTIONS (unchanged) ==========
+# ========== LEGACY HELPER FUNCTIONS (for other sites) ==========
 
 def split_into_ranges(number_of_ranges: int, range_end: int, range_start: int = 0) -> list[tuple[int, int]]:
     number_to_be_split = range_end - range_start
@@ -632,7 +742,7 @@ def get_genres(soup: BeautifulSoup) -> Union[list[str], str]:
         genres = []
     return genres
 
-# --- Akwam, HDW, CimaNow legacy functions (kept for compatibility) ---
+# ===== AKWAM, HDW, CIMA NOW legacy functions =====
 
 def akwam_get_website_safe(url: str) -> Response:
     response = None
