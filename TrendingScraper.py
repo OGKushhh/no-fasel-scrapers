@@ -1,20 +1,22 @@
-import asyncio
 import json
-from scrapling.fetchers import StealthySession
-from Common import FASEL_BASE_URL, DEBUG
+from bs4 import BeautifulSoup
+from Common import get_website_safe, FASEL_BASE_URL, get_latest_movies, get_latest_episodes, get_featured_content
 
-async def scrape_trending():
-    async with StealthySession(headless=True, network_idle=True) as session:
-        resp = await session.fetch_async(FASEL_BASE_URL + "main", headless=True)
-        if not resp or resp.status != 200:
-            if DEBUG:
-                print("Failed to fetch homepage for trending content")
-            return
+def scrape_trending():
+    resp = get_website_safe(FASEL_BASE_URL + "main")
+    if not resp:
+        print("Failed to fetch homepage")
+        return
+    soup = BeautifulSoup(resp.text, "html.parser")
+    trending_movies = get_latest_movies(soup)
+    trending_episodes = get_latest_episodes(soup)
+    featured = get_featured_content(soup)
 
-        # Extract trending items using Scrapling's CSS selector
-        featured = resp.css('.featured-item')  # adjust selector if needed
-        # Process and save trending-content.json
-        # (similar to original logic but using Scrapling's API)
+    # Save to output files (adapt to your existing format)
+    with open("./output/trending-content.json", "w", encoding="utf-8") as fp:
+        json.dump({"movies": trending_movies, "episodes": trending_episodes}, fp, indent=4, ensure_ascii=False)
+    with open("./output/featured-content.json", "w", encoding="utf-8") as fp:
+        json.dump({"content": featured}, fp, indent=4, ensure_ascii=False)
 
 if __name__ == "__main__":
-    asyncio.run(scrape_trending())
+    scrape_trending()

@@ -1,97 +1,108 @@
-import asyncio
 import json
 import random
-from scrapling.fetchers import StealthySession
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from time import sleep
+from bs4 import BeautifulSoup
 from Common import (
-    DEBUG, FASEL_BASE_URL, REQUEST_DELAY, JITTER, upload_image,
-    get_paginated_url, get_number_of_pages, remove_arabic_chars
+    DEBUG, FASEL_BASE_URL, REQUEST_DELAY, JITTER,
+    get_website_safe, get_number_of_pages, get_paginated_url,
+    get_content_id, get_content_format, get_genres, upload_image
 )
 
 PATHS_TO_SCRAPE = ["series", "tvshows", "asian-series"]
 
 
-async def fetch_series_details(session: StealthySession, detail_url: str) -> tuple:
-    try:
-        resp = await session.fetch_async(detail_url, headless=True)
-        return (detail_url, resp.html, resp.status) if resp and resp.status == 200 else (None, None, None)
-    except Exception as e:
-        if DEBUG:
-            print(f"Error fetching {detail_url}: {e}")
-        return None, None, None
+def fetch_detail_page(detail_url: str):
+    resp = get_website_safe(detail_url)
+    if resp and resp.status_code == 200:
+        return detail_url, resp.text
+    return None, None
 
 
-async def scrape_all_series(path: str):
+def scrape_all_series(path: str):
     category_url = FASEL_BASE_URL + path
     total_pages = get_number_of_pages(category_url)
-
     if DEBUG:
         print(f"Total pages for {path}: {total_pages}")
 
     all_series = {}
-    async with StealthySession(headless=True, network_idle=True) as session:
-        for page in range(1, total_pages + 1):
-            delay = REQUEST_DELAY + random.uniform(-JITTER, JITTER)
-            if delay < 0.5:
-                delay = 0.5
-            await asyncio.sleep(delay)
+    for page in range(1, total_pages + 1):
+        delay = REQUEST_DELAY + random.uniform(-JITTER, JITTER)
+        if delay < 0.5:
+            delay = 0.5
+        sleep(delay)
 
-            page_url = get_paginated_url(category_url, page)
-            if DEBUG:
-                print(f"Scraping {path} page {page}/{total_pages}: {page_url}")
+        page_url = get_paginated_url(category_url, page)
+        if DEBUG:
+            print(f"Scraping {path} page {page}/{total_pages}: {page_url}")
 
-            main_resp = await session.fetch_async(page_url, headless=True)
-            if not main_resp or main_resp.status != 200:
+        main_resp = get_website_safe(page_url)
+        if not main_resp:
+            continue
+
+        soup = BeautifulSoup(main_resp.text, "html.parser")
+        series_divs = soup.select('.col-xl-2.col-lg-2.col-md-3.col-sm-3')
+        if not series_divs:
+            series_divs = soup.select('.blockMovie')
+        if not series_divs:
+            continue
+
+        detail_urls = []
+        for s in series_divs:
+            link = s.select_one('a')
+            if link and link.get('href'):
+                detail_urls.append(link['href'])
+
+        detail_map = {}
+        with ThreadPoolExecutor(max_workers=5) as executor:
+            future_to_url = {executor.submit(fetch_detail_page, url): url for url in detail_urls}
+            for future in as_completed(future_to_url):
+                url, html = future.result()
+                if url and html:
+                    detail_map[url] = html
+
+        page_series = {}
+        for s in series_divs:
+            link = s.select_one('a')
+            if not link or not link.get('href'):
+                continue
+            detail_url = link['href']
+            detail_html = detail_map.get(detail_url)
+            if not detail_html:
+                continue
+            detail_soup = BeautifulSoup(detail_html, "html.parser")
+            series_id = get_content_id(detail_soup)
+            if not series_id:
                 continue
 
-            series_divs = main_resp.css('.col-xl-2.col-lg-2.col-md-3.col-sm-3')
-            if not series_divs:
-                series_divs = main_resp.css('.blockMovie')
-            if not series_divs:
+            title_elem = s.select_one('.h5') or s.select_one('.h1')
+            title = title_elem.text.strip() if title_elem else "Unknown Series"
+            img = s.select_one('img')
+            img_src = img.get('data-src') or img.get('src', '') if img else ""
+
+            # Load existing data for this path
+            file_path = f"./output/{path}.json"
+            try:
+                with open(file_path, "r") as fp:
+                    existing = json.load(fp)
+            except:
+                existing = {}
+
+            if series_id in existing:
                 continue
 
-            detail_urls = [div.css('a').first.attrs.get('href') for div in series_divs if div.css('a').first]
-            tasks = [fetch_series_details(session, url) for url in detail_urls]
-            detail_pages = await asyncio.gather(*tasks)
-            html_map = {url: html for url, html, _ in detail_pages if url and html}
-
-            for series in series_divs:
-                link = series.css('a').first
-                if not link:
-                    continue
-                detail_url = link.attrs.get('href')
-                detail_html = html_map.get(detail_url)
-                if not detail_html:
-                    continue
-
-                from bs4 import BeautifulSoup
-                soup = BeautifulSoup(detail_html, "html.parser")
-                series_id = soup.find('span', id='liskSh')
-                series_id = series_id.text.split('=')[-1] if series_id else None
-                if not series_id:
-                    continue
-
-                title_elem = series.css('.h5').first or series.css('.h1').first
-                title = title_elem.text.strip() if title_elem else "Unknown Series"
-                img = series.css('img').first
-                img_src = img.attrs.get('data-src') or img.attrs.get('src', '') if img else ""
-
-                # Load existing data if present
-                file_path = f"./output/{path}.json"
-                try:
-                    with open(file_path, "r") as fp:
-                        old_series = json.load(fp)
-                except:
-                    old_series = {}
-
-                if series_id in old_series:
-                    # Skip if already scraped
-                    continue
-
-                all_series[series_id] = {
-                    "Title": title,
-                    "Category": path,
-                    "Image Source": img_src,
-                }
+            # Basic info (seasons and episodes can be added later)
+            page_series[series_id] = {
+                "Title": title,
+                "Category": path,
+                "Image Source": img_src,
+                "Format": get_content_format(detail_soup),
+                "Genres": get_genres(detail_soup),
+                "Seasons": {}
+            }
+        all_series.update(page_series)
+        if DEBUG:
+            print(f"{path} page {page} done, new series: {len(page_series)}")
 
     # Merge and save
     file_path = f"./output/{path}.json"
@@ -103,15 +114,14 @@ async def scrape_all_series(path: str):
     existing.update(all_series)
     with open(file_path, "w") as fp:
         json.dump(existing, fp, indent=4)
-
     if DEBUG:
-        print(f"Finished {path}, total: {len(existing)}")
+        print(f"Total {path} now: {len(existing)}")
 
 
-async def main():
+def main():
     for path in PATHS_TO_SCRAPE:
-        await scrape_all_series(path)
+        scrape_all_series(path)
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()

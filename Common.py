@@ -326,22 +326,25 @@ def get_number_of_pages(url: str) -> int:
     webpage = get_website_safe(url)
     if not webpage:
         return 1
-    soup = BeautifulSoup(webpage.content, "html.parser")
+    soup = BeautifulSoup(webpage.text, "html.parser")
     pagination = soup.select_one("ul.pagination")
     if pagination:
-        page_links = pagination.find_all("a", class_="page-link")
+        # Look for the » link (last page)
+        last_link = pagination.find("a", string="»")
+        if last_link and last_link.get("href"):
+            import re
+            match = re.search(r'/page/(\d+)', last_link["href"])
+            if match:
+                return int(match.group(1))
+        # Fallback to highest visible page number
         numbers = []
-        for link in page_links:
+        for link in pagination.find_all("a", class_="page-link"):
             text = link.text.strip()
             if text.isdigit():
                 numbers.append(int(text))
         if numbers:
             return max(numbers)
-        last_link = pagination.find("a", string="»")
-        if last_link and last_link.get("href"):
-            match = re.search(r'/page/(\d+)', last_link["href"])
-            if match:
-                return int(match.group(1))
+    # Fallback to scanning all links
     max_page = 1
     for link in soup.find_all('a', href=True):
         match = re.search(r'/page/(\d+)', link['href'])
