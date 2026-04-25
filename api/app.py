@@ -1,21 +1,22 @@
 """
-AbdoBest Video Extraction API
-Flask wrapper around Common.py's extract_video_source()
+AbdoBest API – Metadata + Video Extraction
+Serves JSON files from /data and extracts video streams.
 """
 
 import os
 import time
 import threading
+import json
 from typing import Optional
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from datetime import datetime, timezone
 
 # ----------------------------------------------------------------------
-#  In‑memory cache with TTL
+#  In‑memory cache for video extraction (TTL 6 hours)
 # ----------------------------------------------------------------------
 class Cache:
-    def __init__(self, default_ttl: int = 21600):  # 6 hours
+    def __init__(self, default_ttl: int = 21600):
         self._store = {}
         self._default_ttl = default_ttl
         self._lock = threading.Lock()
@@ -47,27 +48,142 @@ class Cache:
             return {"total_entries": len(self._store), "valid_entries": valid, "default_ttl": self._default_ttl}
 
 # ----------------------------------------------------------------------
+#  Helper to load JSON files from the data folder
+# ----------------------------------------------------------------------
+DATA_DIR = os.environ.get("DATA_DIR", "./data")
+
+def load_json(filename: str):
+    """Load a JSON file from the data directory."""
+    filepath = os.path.join(DATA_DIR, filename)
+    if not os.path.exists(filepath):
+        return None
+    with open(filepath, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+# ----------------------------------------------------------------------
 #  App setup
 # ----------------------------------------------------------------------
 app = Flask(__name__)
 app.config["JSON_SORT_KEYS"] = False
-CORS(app, resources={r"/*": {"origins": "*"}})  # Allow all origins (React frontend)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 cache = Cache(default_ttl=21600)
 
-# Import the video extraction function
 try:
     from Common import extract_video_source
     SCRAPER_READY = True
 except ImportError as e:
     SCRAPER_READY = False
     print(f"[ERROR] Cannot import Common.py: {e}")
-    # Define a dummy function to avoid crashes
     def extract_video_source(url, headless=True):
         raise NotImplementedError("Common.py not available")
 
 # ----------------------------------------------------------------------
-#  Health check endpoint (used by frontend)
+#  Root endpoint – friendly JSON message
+# ----------------------------------------------------------------------
+@app.route("/", methods=["GET"])
+def index():
+    return jsonify({
+        "message": "✅ AbdoBest API is running!",
+        "endpoints": {
+            "health": "/health",
+            "extract (POST)": "/extract",
+            "movies": "/api/movies",
+            "anime": "/api/anime",
+            "series": "/api/series",
+            "tvshows": "/api/tvshows",
+            "asian_series": "/api/asian-series",
+            "featured": "/api/featured",
+            "search": "/api/search?q=..."
+        },
+        "status": "online",
+        "timestamp": datetime.now(timezone.utc).isoformat()
+    })
+
+# ----------------------------------------------------------------------
+#  Metadata endpoints
+# ----------------------------------------------------------------------
+@app.route("/api/movies", methods=["GET"])
+def get_movies():
+    data = load_json("movies.json")
+    if data is None:
+        return jsonify({"error": "movies.json not found"}), 404
+    movie_id = request.args.get("id")
+    if movie_id:
+        return jsonify(data.get(movie_id, {"error": "Not found"}))
+    return jsonify(data)
+
+@app.route("/api/anime", methods=["GET"])
+def get_anime():
+    data = load_json("anime.json")
+    if data is None:
+        return jsonify({"error": "anime.json not found"}), 404
+    anime_id = request.args.get("id")
+    if anime_id:
+        return jsonify(data.get(anime_id, {"error": "Not found"}))
+    return jsonify(data)
+
+@app.route("/api/series", methods=["GET"])
+def get_series():
+    data = load_json("series.json")
+    if data is None:
+        return jsonify({"error": "series.json not found"}), 404
+    series_id = request.args.get("id")
+    if series_id:
+        return jsonify(data.get(series_id, {"error": "Not found"}))
+    return jsonify(data)
+
+@app.route("/api/tvshows", methods=["GET"])
+def get_tvshows():
+    data = load_json("tvshows.json")
+    if data is None:
+        return jsonify({"error": "tvshows.json not found"}), 404
+    show_id = request.args.get("id")
+    if show_id:
+        return jsonify(data.get(show_id, {"error": "Not found"}))
+    return jsonify(data)
+
+@app.route("/api/asian-series", methods=["GET"])
+def get_asian_series():
+    data = load_json("asian-series.json")
+    if data is None:
+        return jsonify({"error": "asian-series.json not found"}), 404
+    series_id = request.args.get("id")
+    if series_id:
+        return jsonify(data.get(series_id, {"error": "Not found"}))
+    return jsonify(data)
+
+@app.route("/api/featured", methods=["GET"])
+def get_featured():
+    data = load_json("featured-content.json")
+    if data is None:
+        return jsonify({"error": "featured-content.json not found"}), 404
+    return jsonify(data)
+
+@app.route("/api/search", methods=["GET"])
+def search():
+    query = request.args.get("q", "").lower()
+    if not query:
+        return jsonify([])
+    results = []
+    categories = ["movies", "anime", "series", "tvshows", "asian-series"]
+    for cat in categories:
+        data = load_json(f"{cat}.json")
+        if not data:
+            continue
+        for item_id, item in data.items():
+            title = item.get("Title", "").lower()
+            if query in title:
+                results.append({
+                    "id": item_id,
+                    "title": item.get("Title"),
+                    "image": item.get("Image Source"),
+                    "category": cat
+                })
+    return jsonify(results[:50])
+
+# ----------------------------------------------------------------------
+#  Health and video extraction endpoints
 # ----------------------------------------------------------------------
 @app.route("/health", methods=["GET"])
 def health():
@@ -78,9 +194,6 @@ def health():
         "timestamp": datetime.now(timezone.utc).isoformat(),
     })
 
-# ----------------------------------------------------------------------
-#  Main extraction endpoint (matches frontend expectations)
-# ----------------------------------------------------------------------
 @app.route("/extract", methods=["POST"])
 def extract():
     data = request.get_json(silent=True)
@@ -91,7 +204,6 @@ def extract():
     if not page_url:
         return jsonify({"error": "Empty URL"}), 400
 
-    # Use the page URL as cache key (stable for the video page)
     cache_key = page_url
     cached = cache.get(cache_key)
     if cached:
@@ -106,12 +218,11 @@ def extract():
         return jsonify({"error": "Scraper not available"}), 503
 
     try:
-        # Call the extraction function (returns .m3u8 URL)
         stream_url = extract_video_source(page_url, headless=True)
         if not stream_url:
             return jsonify({"error": "Could not extract video stream"}), 404
 
-        # Basic quality options (can be improved by inspecting the m3u8)
+        # Simple quality detection – can be improved
         quality_options = ["Auto"]
         if "master.m3u8" in stream_url:
             quality_options = ["1080p", "720p", "480p", "360p"]
