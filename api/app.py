@@ -1,138 +1,115 @@
-import json
+"""
+AbdoBest Video Extraction API
+Flask wrapper around Common.py's get_video_stream_url()
+"""
+
 import os
-import sys
-from flask import Flask, jsonify, request
+import time
+import threading
+import email.utils  # Added to replace broken Werkzeug functions
+from typing import Optional
+from flask import Flask, request, jsonify
 from flask_cors import CORS
+from datetime import datetime, timedelta, timezone
 
-# Add current directory to path so we can import Common.py
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-from Common import extract_video_source
+# --- Replacement for removed Werkzeug functions ---
+def dump_date(d):
+    """Replaces werkzeug.http.dump_date"""
+    return email.utils.format_datetime(d)
 
+def parse_date(s):
+    """Replaces werkzeug.http.parse_date"""
+    return email.utils.parsedate_to_datetime(s)
+
+# ─── In-memory cache with TTL ───────────────────────────────────────────
+class Cache:
+    def __init__(self, default_ttl: int = 21600):
+        self._store: dict = {}
+        self._locks: dict = {}
+        self._default_ttl = default_ttl
+        self._mutex = threading.Lock()
+
+    def get(self, key: str) -> Optional[dict]:
+        with self._mutex:
+            entry = self._store.get(key)
+            if entry is None:
+                return None
+            if time.time() > entry["expires_at"]:
+                del self._store[key]
+                return None
+            return {"video_url": entry["video_url"], "quality_options": entry["quality_options"]}
+
+    def set(self, key: str, video_url: str, quality_options: list = None, ttl: int = None):
+        ttl = ttl or self._default_ttl
+        with self._mutex:
+            self._store[key] = {
+                "video_url": video_url,
+                "quality_options": quality_options or [],
+                "expires_at": time.time() + ttl,
+                "created_at": time.time(),
+            }
+
+    def stats(self) -> dict:
+        with self._mutex:
+            now = time.time()
+            valid = sum(1 for e in self._store.values() if now < e["expires_at"])
+            return {"total_entries": len(self._store), "valid_entries": valid, "default_ttl": self._default_ttl}
+
+# ─── App setup ──────────────────────────────────────────────────────────
 app = Flask(__name__)
-CORS(app)  # Allow all origins (for development; restrict later if needed)
+app.config["JSON_SORT_KEYS"] = False
+CORS(app, resources={r"/*": {"origins": "*"}})
+cache = Cache(default_ttl=21600)
 
-# The data is stored in the 'data' folder at the project root
-DATA_DIR = "./data"
+try:
+    from Common import get_video_stream_url
+    SCRAPER_READY = True
+except ImportError as e:
+    SCRAPER_READY = False
+    print(f"[WARN] Cannot import Common.py: {e}")
 
-def load_json_file(filename):
-    filepath = os.path.join(DATA_DIR, filename)
-    if not os.path.exists(filepath):
-        return {"error": f"File {filename} not found"}
-    with open(filepath, "r", encoding="utf-8") as f:
-        return json.load(f)
-
-@app.route("/", methods=["GET"])
-def home():
+@app.route("/health", methods=["GET"])
+def health():
     return jsonify({
-        "status": "FaselHD API (abdobest-api) is running",
-        "endpoints": [
-            "/api/movies",
-            "/api/anime",
-            "/api/series",
-            "/api/tvshows",
-            "/api/asian-series",
-            "/api/featured",
-            "/api/search?q=...",
-            "/api/stream?url=..."
-        ]
+        "status": "healthy",
+        "scraper_ready": SCRAPER_READY,
+        "cache": cache.stats(),
+        "timestamp": datetime.now(timezone.utc).isoformat(),
     })
 
-# ---------- Static data endpoints ----------
-@app.route("/api/movies", methods=["GET"])
-def get_movies():
-    movie_id = request.args.get("id")
-    data = load_json_file("movies.json")
-    if "error" in data:
-        return jsonify(data), 404
-    if movie_id:
-        return jsonify(data.get(movie_id, {"error": "Movie not found"}))
-    return jsonify(data)
+@app.route("/extract", methods=["POST"])
+def extract():
+    data = request.get_json(silent=True)
+    if not data or "url" not in data:
+        return jsonify({"error": "Missing 'url' field"}), 400
 
-@app.route("/api/anime", methods=["GET"])
-def get_anime():
-    anime_id = request.args.get("id")
-    data = load_json_file("anime.json")
-    if "error" in data:
-        return jsonify(data), 404
-    if anime_id:
-        return jsonify(data.get(anime_id, {"error": "Anime not found"}))
-    return jsonify(data)
+    url = data.get("url", "").strip()
+    cache_key = str(hash(url))
 
-@app.route("/api/series", methods=["GET"])
-def get_series():
-    series_id = request.args.get("id")
-    data = load_json_file("series.json")
-    if "error" in data:
-        return jsonify(data), 404
-    if series_id:
-        return jsonify(data.get(series_id, {"error": "Series not found"}))
-    return jsonify(data)
+    cached = cache.get(cache_key)
+    if cached:
+        return jsonify({**cached, "cache_key": cache_key, "cached": True})
 
-@app.route("/api/tvshows", methods=["GET"])
-def get_tvshows():
-    show_id = request.args.get("id")
-    data = load_json_file("tvshows.json")
-    if "error" in data:
-        return jsonify(data), 404
-    if show_id:
-        return jsonify(data.get(show_id, {"error": "TV show not found"}))
-    return jsonify(data)
+    if not SCRAPER_READY:
+        return jsonify({"error": "Scraper not available"}), 503
 
-@app.route("/api/asian-series", methods=["GET"])
-def get_asian_series():
-    series_id = request.args.get("id")
-    data = load_json_file("asian-series.json")
-    if "error" in data:
-        return jsonify(data), 404
-    if series_id:
-        return jsonify(data.get(series_id, {"error": "Asian series not found"}))
-    return jsonify(data)
-
-@app.route("/api/featured", methods=["GET"])
-def get_featured():
-    data = load_json_file("featured-content.json")
-    if "error" in data:
-        return jsonify(data), 404
-    return jsonify(data)
-
-@app.route("/api/search", methods=["GET"])
-def search():
-    query = request.args.get("q", "").lower()
-    if not query:
-        return jsonify([])
-    results = []
-    categories = ["movies", "anime", "series", "tvshows", "asian-series"]
-    for cat in categories:
-        data = load_json_file(f"{cat}.json")
-        if "error" in data:
-            continue
-        for item_id, item in data.items():
-            title = item.get("Title", "").lower()
-            if query in title:
-                results.append({
-                    "id": item_id,
-                    "title": item.get("Title"),
-                    "image": item.get("Image Source"),
-                    "category": cat
-                })
-    return jsonify(results[:50])
-
-# ---------- Video stream extraction endpoint (on‑demand) ----------
-@app.route("/api/stream", methods=["GET"])
-def get_stream():
-    video_url = request.args.get("url")
-    if not video_url:
-        return jsonify({"error": "Missing 'url' parameter"}), 400
-    
     try:
-        stream_url = extract_video_source(video_url, headless=True)
-        if stream_url:
-            return jsonify({"stream_url": stream_url})
-        else:
-            return jsonify({"error": "Could not extract stream URL"}), 404
+        video_url = get_video_stream_url(url, headless=True)
+        if not video_url:
+            return jsonify({"error": "Could not extract video URL"}), 404
+
+        quality_options = ["1080p", "720p", "480p", "360p"] if "master.m3u8" in video_url else ["Auto"]
+        cache.set(cache_key, video_url, quality_options)
+
+        return jsonify({
+            "video_url": video_url,
+            "quality_options": quality_options,
+            "cache_key": cache_key,
+            "cached": False
+        })
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port, debug=False)
+    port = int(os.environ.get("PORT", 7860))
+    app.run(host="0.0.0.0", port=port)
