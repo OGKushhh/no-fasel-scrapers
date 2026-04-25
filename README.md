@@ -76,14 +76,6 @@ from fasel_downloader_final import capture_m3u8
 stream_url = capture_m3u8("https://www.fasel-hd.cam/movies/...")
 ```
 
-For downloading with quality selection:
-
-```bash
-python fasel_downloader_final.py "https://www.fasel-hd.cam/movies/..." --quality 1080p
-```
-
-Quality options: `best`, `1080p`, `720p`, `480p`, `360p`. Add `--headless` for silent operation.
-
 ## 📁 File Structure
 
 | File | Purpose |
