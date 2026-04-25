@@ -574,6 +574,52 @@ def get_featured_content(soup: BeautifulSoup) -> List[dict]:
         })
     return featured
 
+def get_most_viewed_movies(soup: BeautifulSoup) -> List[dict]:
+    """Extract the 'الأفلام الاكثر مشاهدة' (most viewed movies) slider from homepage."""
+    most_viewed = []
+    slider = soup.select_one('.viewsOrderSlider')
+    if not slider:
+        return most_viewed
+    items = slider.select('.itemviews')
+    for item in items:
+        post_div = item.select_one('.postDiv')
+        if not post_div:
+            continue
+        link_tag = post_div.find('a')
+        if not link_tag:
+            continue
+        link = link_tag.get('href', '')
+        title_elem = post_div.select_one('.h1')
+        title = title_elem.text.strip() if title_elem else 'Unknown'
+        img = post_div.find('img')
+        img_src = img.get('data-src', img.get('src', '')) if img else ''
+        quality_span = post_div.select_one('.quality')
+        quality = quality_span.text.strip() if quality_span else ''
+        imdb_span = post_div.select_one('.pImdb')
+        imdb_rating = None
+        if imdb_span:
+            try:
+                imdb_rating = float(imdb_span.text.strip())
+            except:
+                pass
+        views_span = post_div.select_one('.pViews')
+        views = 0
+        if views_span:
+            views_text = views_span.text.strip().replace('٬', '').replace(',', '')
+            try:
+                views = int(views_text)
+            except:
+                pass
+        most_viewed.append({
+            "title": title,
+            "link": link,
+            "image": img_src,
+            "quality": quality,
+            "imdb_rating": imdb_rating,
+            "views": views,
+        })
+    return most_viewed
+
 def get_latest_movies_from_homepage() -> List[dict]:
     resp = get_website_safe(FASEL_BASE_URL + "main")
     if not resp:

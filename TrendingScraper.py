@@ -1,6 +1,10 @@
 import json
 from bs4 import BeautifulSoup
-from Common import get_website_safe, FASEL_BASE_URL, get_latest_movies, get_latest_episodes, get_featured_content
+from Common import (
+    get_website_safe, FASEL_BASE_URL,
+    get_latest_movies, get_latest_episodes,
+    get_featured_content, get_most_viewed_movies
+)
 
 def scrape_trending():
     resp = get_website_safe(FASEL_BASE_URL + "main")
@@ -8,13 +12,19 @@ def scrape_trending():
         print("Failed to fetch homepage")
         return
     soup = BeautifulSoup(resp.text, "html.parser")
-    trending_movies = get_latest_movies(soup)
-    trending_episodes = get_latest_episodes(soup)
-    featured = get_featured_content(soup)
+    trending_movies = get_latest_movies(soup)        # latest movies grid
+    trending_episodes = get_latest_episodes(soup)    # latest episodes
+    featured = get_featured_content(soup)            # main slider
+    most_viewed = get_most_viewed_movies(soup)       # most viewed slider
 
-    # Save to output files (adapt to your existing format)
+    # Save combined trending content
     with open("./output/trending-content.json", "w", encoding="utf-8") as fp:
-        json.dump({"movies": trending_movies, "episodes": trending_episodes}, fp, indent=4, ensure_ascii=False)
+        json.dump({
+            "movies": trending_movies,
+            "episodes": trending_episodes,
+            "most_viewed": most_viewed
+        }, fp, indent=4, ensure_ascii=False)
+
     with open("./output/featured-content.json", "w", encoding="utf-8") as fp:
         json.dump({"content": featured}, fp, indent=4, ensure_ascii=False)
 
