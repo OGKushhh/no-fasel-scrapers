@@ -110,7 +110,7 @@ def scrape_movies_resumable():
             continue
 
         detail_map = {}
-        with ThreadPoolExecutor(max_workers=5) as ex:
+        with ThreadPoolExecutor(max_workers=6) as ex:
             futures = {ex.submit(fetch_detail, url): url for url in detail_urls}
             for fut in as_completed(futures):
                 url, html = fut.result()

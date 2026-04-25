@@ -1,29 +1,175 @@
 import json
+import os
+import shutil
 import re
+import logging
+from typing import Optional
 
-# Load movies.json
-with open("./output/movies.json", "r", encoding="utf-8") as f:
-    movies = json.load(f)
+# Setup logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# Normalisation rules
-country_replacements = {
+# Files to clean
+FILES_TO_CLEAN = [
+    "movies.json",
+    "anime.json",
+    "series.json",
+    "tvshows.json",
+    "asian-series.json"
+]
+
+# Country normalisation
+COUNTRY_REPLACEMENTS = {
     "Also known as": "International",
     "United States": "USA",
     "United Kingdom": "UK",
-    # add more as needed
+    "U.S.": "USA",
+    "U.K.": "UK",
+    "N/A": None,
+    "": None,
 }
 
-for movie_id, data in movies.items():
-    # Clean genres (replace hyphen with space)
-    if "Genres" in data:
-        data["Genres"] = [g.replace("-", " ") for g in data["Genres"]]
-    if "GenresAr" in data:
-        data["GenresAr"] = [g.replace("-", " ") for g in data["GenresAr"]]
+# English → Arabic genre map (used only if TRANSLATE_MISSING = True)
+EN_TO_AR_GENRE = {
+    "Action": "أكشن",
+    "Comedy": "كوميدي",
+    "Drama": "دراما",
+    "Horror": "رعب",
+    "Thriller": "إثارة",
+    "Adventure": "مغامرة",
+    "Crime": "جريمة",
+    "Romance": "رومانسية",
+    "Science Fiction": "خيال علمي",
+    "Fantasy": "فانتازيا",
+    "Animation": "أنميشن",
+    "Documentary": "وثائقي",
+    "Biography": "سيرة ذاتية",
+    "History": "تاريخي",
+    "Music": "موسيقى",
+    "Family": "عائلي",
+    "Mystery": "غموض",
+    "War": "حرب",
+    "Western": "غربي",
+    "Sport": "رياضي",
+    "Reality-TV": "تلفزيون الواقع",
+    "News": "أخبار",
+    "Talk-Show": "برامج حوارية",
+    "Game-Show": "برامج مسابقات",
+    "Musical": "موسيقي",
+}
 
-    # Normalise country
-    if "Country" in data and data["Country"] in country_replacements:
-        data["Country"] = country_replacements[data["Country"]]
+def backup_file(file_path: str) -> None:
+    """Create a backup of the original file before modifying."""
+    if os.path.exists(file_path):
+        backup_path = file_path + ".bak"
+        shutil.copy2(file_path, backup_path)
+        logging.info(f"Backup created: {backup_path}")
 
-# Write back
-with open("./output/movies.json", "w", encoding="utf-8") as f:
-    json.dump(movies, f, indent=4, ensure_ascii=False)
+def clean_genre_string(genre: str) -> str:
+    """Replace hyphens with spaces in a single genre string."""
+    return genre.replace("-", " ")
+
+def clean_genre_list(genres: list) -> list:
+    """Apply hyphen→space replacement to each genre in the list."""
+    if not genres:
+        return genres
+    return [clean_genre_string(g) for g in genres]
+
+def clean_country(country: str) -> Optional[str]:
+    """Normalise country name; return None for invalid."""
+    if not country or country == "N/A":
+        return None
+    return COUNTRY_REPLACEMENTS.get(country, country)
+
+def clean_runtime(runtime):
+    """Ensure runtime is int or None."""
+    if runtime is None:
+        return None
+    if isinstance(runtime, int):
+        return runtime
+    if isinstance(runtime, str):
+        cleaned = re.sub(r'[^0-9]', '', runtime)
+        if cleaned.isdigit():
+            return int(cleaned)
+    return None
+
+def translate_missing_arabic_genres(data: dict) -> bool:
+    """
+    If GenresAr is empty or identical to Genres (English), replace GenresAr
+    with translated Arabic using the map. Returns True if changed.
+    """
+    genres_en = data.get("Genres", [])
+    genres_ar = data.get("GenresAr", [])
+    if not genres_ar or genres_ar == genres_en:
+        translated = [EN_TO_AR_GENRE.get(g, g) for g in genres_en]
+        data["GenresAr"] = translated
+        return True
+    return False
+
+def clean_json_file(file_name: str, translate_missing_ar: bool = False) -> None:
+    """Load, clean, and save a JSON file (replace hyphens, normalise country/runtime)."""
+    file_path = f"./output/{file_name}"
+    if not os.path.exists(file_path):
+        logging.warning(f"{file_path} not found, skipping.")
+        return
+
+    try:
+        with open(file_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except json.JSONDecodeError as e:
+        logging.error(f"Invalid JSON in {file_path}: {e}")
+        return
+
+    # Backup original
+    backup_file(file_path)
+
+    modified = False
+    for content_id, content in data.items():
+        # Replace hyphens in genres
+        if "Genres" in content and isinstance(content["Genres"], list):
+            new_genres = clean_genre_list(content["Genres"])
+            if new_genres != content["Genres"]:
+                content["Genres"] = new_genres
+                modified = True
+        if "GenresAr" in content and isinstance(content["GenresAr"], list):
+            new_ar_genres = clean_genre_list(content["GenresAr"])
+            if new_ar_genres != content["GenresAr"]:
+                content["GenresAr"] = new_ar_genres
+                modified = True
+
+        # Optional: fill missing Arabic genres
+        if translate_missing_ar and "Genres" in content:
+            if translate_missing_arabic_genres(content):
+                modified = True
+
+        # Clean country
+        if "Country" in content:
+            new_country = clean_country(content["Country"])
+            if new_country != content["Country"]:
+                content["Country"] = new_country
+                modified = True
+
+        # Clean runtime
+        if "Runtime" in content:
+            new_runtime = clean_runtime(content["Runtime"])
+            if new_runtime != content["Runtime"]:
+                content["Runtime"] = new_runtime
+                modified = True
+
+    if modified:
+        with open(file_path, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=4, ensure_ascii=False)
+        logging.info(f"Cleaned and saved {file_path}")
+    else:
+        logging.info(f"No changes needed for {file_path}")
+
+def main():
+    # Set to True if you want to add Arabic translations for missing GenresAr
+    TRANSLATE_MISSING = False   # Keep False to preserve original Arabic data
+
+    for file_name in FILES_TO_CLEAN:
+        clean_json_file(file_name, translate_missing_ar=TRANSLATE_MISSING)
+
+    logging.info("Metadata cleaning complete.")
+
+if __name__ == "__main__":
+    main()
