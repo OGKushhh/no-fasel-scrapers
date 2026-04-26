@@ -93,8 +93,9 @@ def index():
             "series": "/api/series",
             "tvshows": "/api/tvshows",
             "asian_series": "/api/asian-series",
+            "trending": "/api/trending",
             "featured": "/api/featured",
-            "search": "/api/search?q=..."
+            "search": "/api/search?q=...",
         },
         "status": "online",
         "timestamp": datetime.now(timezone.utc).isoformat()
@@ -151,6 +152,13 @@ def get_asian_series():
     series_id = request.args.get("id")
     if series_id:
         return jsonify(data.get(series_id, {"error": "Not found"}))
+    return jsonify(data)
+
+@app.route("/api/trending", methods=["GET"])
+def get_trending():
+    data = load_json("trending-content.json")
+    if data is None:
+        return jsonify({"error": "trending-content.json not found"}), 404
     return jsonify(data)
 
 @app.route("/api/featured", methods=["GET"])
@@ -222,7 +230,6 @@ def extract():
         if not stream_url:
             return jsonify({"error": "Could not extract video stream"}), 404
 
-        # Simple quality detection – can be improved
         quality_options = ["Auto"]
         if "master.m3u8" in stream_url:
             quality_options = ["1080p", "720p", "480p", "360p"]
