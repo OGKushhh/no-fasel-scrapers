@@ -660,6 +660,47 @@ def get_category_page_rendered(category_url: str, page: int = 1) -> List[dict]:
     soup = BeautifulSoup(resp.text, "html.parser")
     return get_latest_movies(soup)
 
+def get_seasons_url_from_detail(detail_url: str) -> str:
+    """
+    Given a movie/series/tvshow/asian-series detail URL,
+    fetches the page and extracts the URL to the "all seasons" page (if any).
+    For series/tvshows/asian-series, this will be the /seasons/, /tvseasons/, or /asian_seasons/ URL.
+    For movies, returns None (no seasons).
+    """
+    # If it's already a seasons/tvseasons/asian_seasons URL, return it as is.
+    if any(prefix in detail_url for prefix in ['/seasons/', '/tvseasons/', '/asian_seasons/']):
+        return detail_url
+
+    resp = get_website_safe(detail_url)
+    if not resp:
+        return None
+
+    soup = BeautifulSoup(resp.text, 'html.parser')
+    # Look for the season list container
+    season_div = soup.select_one('#seasonList .seasonDiv')
+    if not season_div:
+        # No seasons – probably a movie or a single‑season series without a hub.
+        # For single‑season, the detail page itself is the season page.
+        # We'll return the detail URL as the season page.
+        return detail_url
+
+    # Extract the onclick URL from the first season div
+    onclick = season_div.get('onclick')
+    if not onclick:
+        return detail_url
+
+    import re
+    match = re.search(r"location\.href\s*=\s*['\"]([^'\"]+)['\"]", onclick)
+    if match:
+        season_url = match.group(1)
+        if season_url.startswith('?'):
+            return FASEL_BASE_URL.rstrip('/') + season_url
+        elif season_url.startswith('/'):
+            return FASEL_BASE_URL.rstrip('/') + season_url
+        else:
+            return season_url
+
+    return detail_url
 # ----------------------------------------------------------------------
 #  Legacy functions – Akwam, HDW, CimaNow (unchanged)
 # ----------------------------------------------------------------------

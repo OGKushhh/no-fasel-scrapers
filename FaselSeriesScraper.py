@@ -2,6 +2,7 @@ import json
 import random
 import re
 import os
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from time import sleep
 from bs4 import BeautifulSoup
@@ -9,9 +10,10 @@ from Common import (
     DEBUG, FASEL_BASE_URL, REQUEST_DELAY, JITTER,
     get_website_safe, get_number_of_pages, get_paginated_url,
     get_content_id, clean_iframe_source, get_content_format, get_genres_both,
-    extract_country, extract_runtime
+    extract_country, extract_runtime, get_seasons_url_from_detail
 )
 
+# Categories that have episodes (series, tvshows, asian-series)
 PATHS = ["series", "tvshows", "asian-series"]
 
 def load_progress(path):
@@ -39,6 +41,78 @@ def fetch_detail(detail_url: str):
         FAILED_DETAIL_URLS.add(detail_url)
         return None, None
 
+# --------------------------------------------------------------
+# Season & episode extraction functions
+# --------------------------------------------------------------
+def extract_seasons_from_page(soup: BeautifulSoup, base_url: str) -> list:
+    """Extract season numbers and their dedicated page URLs from a /seasons/ hub page."""
+    seasons = []
+    season_list_div = soup.select_one('#seasonList')
+    if not season_list_div:
+        return seasons
+
+    for season_div in season_list_div.select('.seasonDiv'):
+        title_elem = season_div.select_one('.title')
+        if not title_elem:
+            continue
+        title_text = title_elem.get_text(strip=True)
+        match = re.search(r'(\d+)', title_text)
+        if not match:
+            continue
+        season_num = int(match.group(1))
+
+        onclick = season_div.get('onclick')
+        if not onclick:
+            continue
+        url_match = re.search(r'[\'"]([^\'"]+)[\'"]', onclick)
+        if not url_match:
+            continue
+        season_url = url_match.group(1)
+        if season_url.startswith('?'):
+            season_url = base_url.rstrip('/') + season_url
+        elif season_url.startswith('/'):
+            season_url = base_url.rstrip('/') + season_url
+        else:
+            season_url = season_url
+
+        seasons.append({
+            'number': season_num,
+            'page_url': season_url
+        })
+    return seasons
+
+def extract_episodes_from_season_page(soup: BeautifulSoup) -> list:
+    """Extract episode page URLs from a season detail page."""
+    episode_links = []
+    ep_all = soup.select_one('#epAll, .epAll')
+    if not ep_all:
+        return episode_links
+    for a in ep_all.find_all('a', href=True):
+        href = a['href'].strip()
+        if href and ('episodes' in href or '/?p=' in href):
+            episode_links.append(href)
+    return episode_links
+
+def save_episodes_for_series(category: str, series_id: str, seasons_data: dict):
+    """Save episodes for a single series to a separate JSON file."""
+    if not seasons_data:
+        return
+    episodes_dir = f"./output/episodes/{category}"
+    os.makedirs(episodes_dir, exist_ok=True)
+    file_path = os.path.join(episodes_dir, f"{series_id}.json")
+    output = {
+        "content_id": series_id,
+        "category": category,
+        "seasons": seasons_data
+    }
+    with open(file_path, "w", encoding="utf-8") as f:
+        json.dump(output, f, indent=4, ensure_ascii=False)
+    if DEBUG:
+        print(f"💾 Saved episodes for {category}/{series_id} ({len(seasons_data)} seasons)")
+
+# --------------------------------------------------------------
+# Main scraping function
+# --------------------------------------------------------------
 def scrape_series_resumable(path: str):
     category_url = FASEL_BASE_URL + path
     total_pages = get_number_of_pages(category_url)
@@ -50,7 +124,7 @@ def scrape_series_resumable(path: str):
     print(f"[{path}] Total pages: {total_pages}")
     print(f"[{path}] Resuming from page {start_page}")
 
-    # Load existing series for this path
+    # Load existing series for this category
     try:
         with open(f"./output/{path}.json", "r", encoding="utf-8") as f:
             existing_series = json.load(f)
@@ -78,6 +152,7 @@ def scrape_series_resumable(path: str):
         if not divs:
             continue
 
+        # Extract IDs from page cards
         page_ids = []
         for div in divs:
             link = div.find("a")
@@ -90,6 +165,7 @@ def scrape_series_resumable(path: str):
             save_progress(path, page)
             break
 
+        # Collect detail URLs for new series
         detail_urls = []
         for div in divs:
             link = div.find("a")
@@ -103,6 +179,7 @@ def scrape_series_resumable(path: str):
             save_progress(path, page)
             continue
 
+        # Fetch detail pages in parallel
         detail_map = {}
         with ThreadPoolExecutor(max_workers=5) as ex:
             futures = {ex.submit(fetch_detail, url): url for url in detail_urls}
@@ -122,6 +199,7 @@ def scrape_series_resumable(path: str):
                 continue
             dsoup = BeautifulSoup(detail_html, "html.parser")
 
+            # Extract series ID
             series_id = get_content_id(dsoup)
             if not series_id:
                 match = re.search(r'-(\d+)$', detail_url.rstrip('/'))
@@ -132,6 +210,7 @@ def scrape_series_resumable(path: str):
             if not series_id or series_id in existing_ids:
                 continue
 
+            # Basic metadata
             title_elem = div.find("div", class_="h5") or div.find("div", class_="h1")
             title = title_elem.text.strip() if title_elem else "Unknown"
             img = div.find("img")
@@ -144,6 +223,41 @@ def scrape_series_resumable(path: str):
 
             genres_info = get_genres_both(dsoup)
 
+            # Get the seasons/hub URL (the detail_url itself after redirect)
+            seasons_hub_url = get_seasons_url_from_detail(detail_url)
+
+            # Extract seasons and episodes (if any)
+            seasons_with_episodes = {}
+            if seasons_hub_url:
+                # If seasons_hub_url is the same as detail_url, we already have the page.
+                # Otherwise fetch it.
+                if seasons_hub_url == detail_url:
+                    hub_soup = dsoup
+                else:
+                    hub_resp = get_website_safe(seasons_hub_url)
+                    if hub_resp:
+                        hub_soup = BeautifulSoup(hub_resp.text, 'html.parser')
+                    else:
+                        hub_soup = None
+
+                if hub_soup:
+                    seasons_list = extract_seasons_from_page(hub_soup, FASEL_BASE_URL)
+                    for season in seasons_list:
+                        season_num = season['number']
+                        season_url = season['page_url']
+                        season_resp = get_website_safe(season_url)
+                        if season_resp:
+                            season_soup = BeautifulSoup(season_resp.text, 'html.parser')
+                            episode_urls = extract_episodes_from_season_page(season_soup)
+                            if episode_urls:
+                                seasons_with_episodes[season_num] = episode_urls
+                        time.sleep(REQUEST_DELAY / 2)  # polite delay
+
+            # Save episodes to separate file
+            if seasons_with_episodes:
+                save_episodes_for_series(path, series_id, seasons_with_episodes)
+
+            # Main series entry
             new_series[series_id] = {
                 "Title": title,
                 "Category": path,
@@ -154,7 +268,7 @@ def scrape_series_resumable(path: str):
                 "Format": get_content_format(dsoup),
                 "Runtime": extract_runtime(dsoup),
                 "Country": extract_country(dsoup),
-                "Seasons": {}
+                "SeasonsUrl": seasons_hub_url  # store the hub URL for future reference
             }
             existing_ids.add(series_id)
 
@@ -167,6 +281,7 @@ def scrape_series_resumable(path: str):
         save_progress(path, page)
         print(f"[{path}] Saved progress and JSON")
 
+    # Retry failed detail URLs
     if FAILED_DETAIL_URLS:
         print(f"[{path}] Retrying {len(FAILED_DETAIL_URLS)} failed detail URLs...")
         for url in FAILED_DETAIL_URLS:
@@ -185,7 +300,7 @@ def scrape_series_resumable(path: str):
                         "Format": get_content_format(dsoup),
                         "Runtime": extract_runtime(dsoup),
                         "Country": extract_country(dsoup),
-                        "Seasons": {}
+                        "SeasonsUrl": get_seasons_url_from_detail(url)
                     }
         with open(f"./output/{path}.json", "w", encoding="utf-8") as f:
             json.dump(all_series, f, indent=4, ensure_ascii=False)

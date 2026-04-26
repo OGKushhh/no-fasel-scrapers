@@ -1,6 +1,6 @@
 """
-AbdoBest API – Metadata + Video Extraction
-Serves JSON files from /data and extracts video streams.
+AbdoBest API – Metadata + Video Extraction + Episodes
+Serves JSON files from /data and /data/episodes, extracts video streams.
 """
 
 import os
@@ -60,6 +60,17 @@ def load_json(filename: str):
     with open(filepath, "r", encoding="utf-8") as f:
         return json.load(f)
 
+def load_episodes(category: str, content_id: str):
+    """
+    Load episodes for a specific content (series/tvshows/asian-series).
+    Expected path: DATA_DIR/episodes/{category}/{content_id}.json
+    """
+    filepath = os.path.join(DATA_DIR, "episodes", category, f"{content_id}.json")
+    if not os.path.exists(filepath):
+        return None
+    with open(filepath, "r", encoding="utf-8") as f:
+        return json.load(f)
+
 # ----------------------------------------------------------------------
 #  App setup
 # ----------------------------------------------------------------------
@@ -96,6 +107,7 @@ def index():
             "trending": "/api/trending",
             "featured": "/api/featured",
             "search": "/api/search?q=...",
+            "episodes (for series/tvshows/asian-series)": "/api/episodes/<category>/<id>"
         },
         "status": "online",
         "timestamp": datetime.now(timezone.utc).isoformat()
@@ -189,6 +201,19 @@ def search():
                     "category": cat
                 })
     return jsonify(results[:50])
+
+# ----------------------------------------------------------------------
+#  Episodes endpoint (for series, tvshows, asian-series)
+# ----------------------------------------------------------------------
+@app.route("/api/episodes/<category>/<content_id>", methods=["GET"])
+def get_episodes(category: str, content_id: str):
+    """Return episodes for a specific content (series/tvshows/asian-series)."""
+    if category not in ["series", "tvshows", "asian-series"]:
+        return jsonify({"error": "Invalid category. Use series, tvshows, or asian-series"}), 400
+    episodes = load_episodes(category, content_id)
+    if episodes is None:
+        return jsonify({"error": f"Episodes not found for {category}/{content_id}"}), 404
+    return jsonify(episodes)
 
 # ----------------------------------------------------------------------
 #  Health and video extraction endpoints
