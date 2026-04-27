@@ -701,6 +701,13 @@ def get_seasons_url_from_detail(detail_url: str) -> str:
             return season_url
 
     return detail_url
+
+def extract_description(soup: BeautifulSoup) -> str:
+    """Extract the description/synopsis from a detail page."""
+    desc_elem = soup.select_one('.singleDesc p')
+    if desc_elem:
+        return desc_elem.text.strip()
+    return ""
 # ----------------------------------------------------------------------
 #  Legacy functions – Akwam, HDW, CimaNow (unchanged)
 # ----------------------------------------------------------------------
