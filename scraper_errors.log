@@ -17547,3 +17547,636 @@ Call log:
 2026-04-27 10:32:39,470 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-american-sniper-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-k> (referer: https://www.google.com/)
 2026-04-27 10:32:52,960 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-avengers-age-of-ultron-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-fty> (referer: https://www.google.com/)
 2026-04-27 10:35:21,278 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/main> (referer: https://www.google.com/)
+2026-04-27 10:47:39,081 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=298006> (referer: https://www.google.com/)
+2026-04-27 10:47:39,115 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-apex-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:47:53,331 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=298004> (referer: https://www.google.com/)
+2026-04-27 10:47:53,366 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-nikki-glaser-good-girl-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:48:09,837 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297902> (referer: https://www.google.com/)
+2026-04-27 10:48:09,870 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-yiya-murano-muerte-la-hora-del-te-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:48:23,954 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297900> (referer: https://www.google.com/)
+2026-04-27 10:48:23,990 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-cora-2024-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:48:38,515 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297898> (referer: https://www.google.com/)
+2026-04-27 10:48:38,550 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-primavera-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:48:52,983 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297812> (referer: https://www.google.com/)
+2026-04-27 10:48:53,016 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-lainey-wilson-keepin-country-cool-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:49:06,577 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296442> (referer: https://www.google.com/)
+2026-04-27 10:49:06,612 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-protector-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:49:21,079 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297743> (referer: https://www.google.com/)
+2026-04-27 10:49:21,117 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-moses-black-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:49:34,874 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297740> (referer: https://www.google.com/)
+2026-04-27 10:49:34,907 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-shooting-hawthorne-hill-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:49:52,039 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297628> (referer: https://www.google.com/)
+2026-04-27 10:49:52,072 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-ride-away-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:50:05,860 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297358> (referer: https://www.google.com/)
+2026-04-27 10:50:05,896 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-bone-keeper-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:50:20,773 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297360> (referer: https://www.google.com/)
+2026-04-27 10:50:20,808 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-ramy-youssef-love-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:50:34,588 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297307> (referer: https://www.google.com/)
+2026-04-27 10:50:34,645 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-ballistic-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:50:50,873 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297301> (referer: https://www.google.com/)
+2026-04-27 10:50:50,919 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-brothers-fire-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:51:05,546 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297297> (referer: https://www.google.com/)
+2026-04-27 10:51:05,582 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-hive-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:51:19,196 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297280> (referer: https://www.google.com/)
+2026-04-27 10:51:19,232 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-whistler-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:51:34,891 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297272> (referer: https://www.google.com/)
+2026-04-27 10:51:34,927 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-rise-red-hot-chili-peppers-brother-hillel-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:51:49,562 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297257> (referer: https://www.google.com/)
+2026-04-27 10:51:49,599 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-charlie-wonderdog-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:52:04,092 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297254> (referer: https://www.google.com/)
+2026-04-27 10:52:04,126 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-venganza-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:52:20,867 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297247> (referer: https://www.google.com/)
+2026-04-27 10:52:20,901 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-roommates-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:52:59,915 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=298006> (referer: https://www.google.com/)
+2026-04-27 10:52:59,949 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-apex-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:53:14,901 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=298004> (referer: https://www.google.com/)
+2026-04-27 10:53:14,933 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-nikki-glaser-good-girl-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:53:29,222 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297902> (referer: https://www.google.com/)
+2026-04-27 10:53:29,255 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-yiya-murano-muerte-la-hora-del-te-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:53:43,571 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297900> (referer: https://www.google.com/)
+2026-04-27 10:53:43,605 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-cora-2024-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:53:59,859 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297898> (referer: https://www.google.com/)
+2026-04-27 10:53:59,893 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-primavera-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:54:13,069 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297812> (referer: https://www.google.com/)
+2026-04-27 10:54:13,103 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-lainey-wilson-keepin-country-cool-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:54:27,875 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296442> (referer: https://www.google.com/)
+2026-04-27 10:54:27,909 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-protector-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:54:42,797 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297743> (referer: https://www.google.com/)
+2026-04-27 10:54:42,841 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-moses-black-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:55:02,358 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-214' coro=<Page.goto() done, defined at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_page.py:526> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[SyncBase._sync.<locals>.<lambda>() at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_sync_base.py:90, ProtocolCallback.__init__.<locals>.cb() at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py:198]>
+2026-04-27 10:55:02,368 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-215' coro=<Page.close() running at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_page.py:783> cb=[SyncBase._sync.<locals>.<lambda>() at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_sync_base.py:90]>
+2026-04-27 10:55:02,369 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-216' coro=<BrowserContext.close() running at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_browser_context.py:548> cb=[SyncBase._sync.<locals>.<lambda>() at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_sync_base.py:90]>
+2026-04-27 10:57:09,919 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=4307> (referer: https://www.google.com/)
+2026-04-27 10:57:09,956 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/the-walking-dead-all-seasons> (referer: https://www.google.com/)
+2026-04-27 10:57:47,466 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=298006> (referer: https://www.google.com/)
+2026-04-27 10:57:47,500 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-apex-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:58:00,348 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=298004> (referer: https://www.google.com/)
+2026-04-27 10:58:00,382 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-nikki-glaser-good-girl-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:58:15,095 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297902> (referer: https://www.google.com/)
+2026-04-27 10:58:15,129 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-yiya-murano-muerte-la-hora-del-te-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:58:30,037 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297900> (referer: https://www.google.com/)
+2026-04-27 10:58:30,071 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-cora-2024-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:58:43,831 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297898> (referer: https://www.google.com/)
+2026-04-27 10:58:43,865 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-primavera-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:58:58,889 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297812> (referer: https://www.google.com/)
+2026-04-27 10:58:58,924 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-lainey-wilson-keepin-country-cool-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:59:13,223 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296442> (referer: https://www.google.com/)
+2026-04-27 10:59:13,258 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-protector-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:59:28,400 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297743> (referer: https://www.google.com/)
+2026-04-27 10:59:28,434 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-moses-black-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:59:41,971 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297740> (referer: https://www.google.com/)
+2026-04-27 10:59:42,001 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-shooting-hawthorne-hill-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:59:57,431 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297628> (referer: https://www.google.com/)
+2026-04-27 10:59:57,464 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-ride-away-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:00:16,519 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297358> (referer: https://www.google.com/)
+2026-04-27 11:00:16,554 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-bone-keeper-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:00:32,574 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297360> (referer: https://www.google.com/)
+2026-04-27 11:00:32,613 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-ramy-youssef-love-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:00:47,342 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297307> (referer: https://www.google.com/)
+2026-04-27 11:00:47,376 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-ballistic-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:01:01,873 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297301> (referer: https://www.google.com/)
+2026-04-27 11:01:01,907 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-brothers-fire-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:01:17,428 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297297> (referer: https://www.google.com/)
+2026-04-27 11:01:17,460 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-hive-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:01:32,529 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297280> (referer: https://www.google.com/)
+2026-04-27 11:01:32,564 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-whistler-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:01:47,879 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297272> (referer: https://www.google.com/)
+2026-04-27 11:01:47,913 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-rise-red-hot-chili-peppers-brother-hillel-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:02:02,694 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297257> (referer: https://www.google.com/)
+2026-04-27 11:02:02,728 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-charlie-wonderdog-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:02:17,103 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297254> (referer: https://www.google.com/)
+2026-04-27 11:02:17,136 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-venganza-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:02:32,044 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297247> (referer: https://www.google.com/)
+2026-04-27 11:02:32,079 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-roommates-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:02:45,687 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297244> (referer: https://www.google.com/)
+2026-04-27 11:02:45,722 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-gorilla-story-told-david-attenborough-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:03:01,236 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=297242> (referer: https://www.google.com/)
+2026-04-27 11:03:01,269 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-180-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:03:14,911 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296993> (referer: https://www.google.com/)
+2026-04-27 11:03:14,947 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-slanted-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:03:29,770 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296989> (referer: https://www.google.com/)
+2026-04-27 11:03:29,806 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-love-amazon-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:03:43,909 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296909> (referer: https://www.google.com/)
+2026-04-27 11:03:43,943 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-legend-aang-last-airbender-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:03:59,333 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296905> (referer: https://www.google.com/)
+2026-04-27 11:03:59,368 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-balls-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:04:13,847 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296896> (referer: https://www.google.com/)
+2026-04-27 11:04:13,880 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-untold-jail-blazers-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:04:28,764 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296894> (referer: https://www.google.com/)
+2026-04-27 11:04:28,798 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-undertone-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:04:42,501 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296890> (referer: https://www.google.com/)
+2026-04-27 11:04:42,534 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-gates-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:04:56,860 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296624> (referer: https://www.google.com/)
+2026-04-27 11:04:56,904 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-reminders-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:05:13,440 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296621> (referer: https://www.google.com/)
+2026-04-27 11:05:13,473 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-noah-kahan-body-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:05:27,992 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296526> (referer: https://www.google.com/)
+2026-04-27 11:05:28,025 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-ready-not-2-come-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:05:42,463 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296527> (referer: https://www.google.com/)
+2026-04-27 11:05:42,498 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-super-mario-galaxy-movie-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:05:56,651 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296524> (referer: https://www.google.com/)
+2026-04-27 11:05:56,686 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-worse-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:06:13,080 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296505> (referer: https://www.google.com/)
+2026-04-27 11:06:13,114 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-project-hail-mary-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:06:28,519 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296491> (referer: https://www.google.com/)
+2026-04-27 11:06:28,556 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-mile-666-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:06:44,030 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296482> (referer: https://www.google.com/)
+2026-04-27 11:06:44,065 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-infiltrate-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:07:00,858 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296458> (referer: https://www.google.com/)
+2026-04-27 11:07:00,891 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-wasteman-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:07:15,452 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296452> (referer: https://www.google.com/)
+2026-04-27 11:07:15,489 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-containment-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:07:30,618 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296445> (referer: https://www.google.com/)
+2026-04-27 11:07:30,657 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-psycho-killer-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:07:45,329 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296440> (referer: https://www.google.com/)
+2026-04-27 11:07:45,363 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-pinecone-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:07:59,126 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296438> (referer: https://www.google.com/)
+2026-04-27 11:07:59,158 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-sheng-wang-purple-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:08:14,803 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296420> (referer: https://www.google.com/)
+2026-04-27 11:08:14,837 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-epic-elvis-presley-concert-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:08:28,607 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296418> (referer: https://www.google.com/)
+2026-04-27 11:08:28,640 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-capture-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:08:43,614 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296416> (referer: https://www.google.com/)
+2026-04-27 11:08:43,661 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-calle-malaga-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:08:58,492 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296351> (referer: https://www.google.com/)
+2026-04-27 11:08:58,535 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-yeti-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:09:13,486 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296348> (referer: https://www.google.com/)
+2026-04-27 11:09:13,523 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-thrash-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:09:27,220 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296312> (referer: https://www.google.com/)
+2026-04-27 11:09:27,254 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-outcome-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:09:43,138 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296135> (referer: https://www.google.com/)
+2026-04-27 11:09:43,169 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-sniper-no-nation-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:09:58,127 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296110> (referer: https://www.google.com/)
+2026-04-27 11:09:58,161 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-untold-chess-mates-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:10:14,204 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=296103> (referer: https://www.google.com/)
+2026-04-27 11:10:14,251 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-bride-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:10:28,934 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=286810> (referer: https://www.google.com/)
+2026-04-27 11:10:28,968 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-die-love-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:10:43,974 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295847> (referer: https://www.google.com/)
+2026-04-27 11:10:44,008 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-touch-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:11:00,001 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295750> (referer: https://www.google.com/)
+2026-04-27 11:11:00,035 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-truth-tragedy-moriah-wilson-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:11:14,621 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295740> (referer: https://www.google.com/)
+2026-04-27 11:11:14,657 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-pizza-movie-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:11:29,490 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295733> (referer: https://www.google.com/)
+2026-04-27 11:11:29,527 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-black-creek-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:11:44,311 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295735> (referer: https://www.google.com/)
+2026-04-27 11:11:44,344 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-feel-voice-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:12:00,626 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295452> (referer: https://www.google.com/)
+2026-04-27 11:12:00,663 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-takes-village-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:12:15,875 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295460> (referer: https://www.google.com/)
+2026-04-27 11:12:15,909 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-sarah-millican-late-bloomer-live-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:12:30,151 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295455> (referer: https://www.google.com/)
+2026-04-27 11:12:30,184 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-starbright-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:12:44,331 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295457> (referer: https://www.google.com/)
+2026-04-27 11:12:44,366 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-giant-falls-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:12:58,035 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295448> (referer: https://www.google.com/)
+2026-04-27 11:12:58,068 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-crime-101-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-2> (referer: https://www.google.com/)
+2026-04-27 11:13:13,377 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295450> (referer: https://www.google.com/)
+2026-04-27 11:13:13,417 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-eat-pray-bark-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:13:28,044 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295377> (referer: https://www.google.com/)
+2026-04-27 11:13:28,078 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-red-riding-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:13:42,247 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295375> (referer: https://www.google.com/)
+2026-04-27 11:13:42,281 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-dolly-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:13:56,734 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295372> (referer: https://www.google.com/)
+2026-04-27 11:13:56,766 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-death-life-lamar-odom-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:14:10,713 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295240> (referer: https://www.google.com/)
+2026-04-27 11:14:10,750 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-avatar-fire-ash-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:14:25,325 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295234> (referer: https://www.google.com/)
+2026-04-27 11:14:25,359 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-storm-rider-legend-hammerhead-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:14:39,667 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295222> (referer: https://www.google.com/)
+2026-04-27 11:14:39,702 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-mr-nobody-putin-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:14:54,533 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295224> (referer: https://www.google.com/)
+2026-04-27 11:14:54,567 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-two-people-exchanging-saliva-2024-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:15:10,957 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=272195> (referer: https://www.google.com/)
+2026-04-27 11:15:10,991 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-sinners-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:15:25,418 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295184> (referer: https://www.google.com/)
+2026-04-27 11:15:25,451 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-beneath-light-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:15:40,316 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295156> (referer: https://www.google.com/)
+2026-04-27 11:15:40,352 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-hoppers-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:15:54,436 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295148> (referer: https://www.google.com/)
+2026-04-27 11:15:54,472 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-refuge-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:16:08,776 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295135> (referer: https://www.google.com/)
+2026-04-27 11:16:08,810 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-wardriver-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:16:23,672 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295127> (referer: https://www.google.com/)
+2026-04-27 11:16:23,705 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-mortuary-assistant-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:16:38,028 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295108> (referer: https://www.google.com/)
+2026-04-27 11:16:38,063 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-53-sundays-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:16:54,734 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295112> (referer: https://www.google.com/)
+2026-04-27 11:16:54,767 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-mike-nick-nick-alice-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:17:09,039 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295077> (referer: https://www.google.com/)
+2026-04-27 11:17:09,071 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-can-imagine-2-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:17:23,078 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295069> (referer: https://www.google.com/)
+2026-04-27 11:17:23,120 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-nirvanna-band-show-movie-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:17:38,807 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295065> (referer: https://www.google.com/)
+2026-04-27 11:17:38,841 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-cure-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:17:54,228 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295011> (referer: https://www.google.com/)
+2026-04-27 11:17:54,262 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-poet-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:18:08,292 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294982> (referer: https://www.google.com/)
+2026-04-27 11:18:08,324 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-pretty-lethal-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:18:22,705 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294892> (referer: https://www.google.com/)
+2026-04-27 11:18:22,739 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-jeff-ross-take-banana-ride-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:18:36,470 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294890> (referer: https://www.google.com/)
+2026-04-27 11:18:36,511 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-hannah-montana-20th-anniversary-special-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:18:49,865 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294882> (referer: https://www.google.com/)
+2026-04-27 11:18:49,899 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-goat-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:19:06,065 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294884> (referer: https://www.google.com/)
+2026-04-27 11:19:06,108 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-make-killing-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:19:21,016 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294856> (referer: https://www.google.com/)
+2026-04-27 11:19:21,050 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-send-help-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:19:35,908 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294857> (referer: https://www.google.com/)
+2026-04-27 11:19:35,942 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-well-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:19:49,656 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294802> (referer: https://www.google.com/)
+2026-04-27 11:19:49,690 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-gunfighters-deal-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:20:05,332 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294804> (referer: https://www.google.com/)
+2026-04-27 11:20:05,366 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-batman-azteca-choque-de-imperios-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:20:20,947 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294807> (referer: https://www.google.com/)
+2026-04-27 11:20:21,006 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-stranger-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:20:35,655 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294748> (referer: https://www.google.com/)
+2026-04-27 11:20:35,691 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-not-enter-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:20:50,037 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294717> (referer: https://www.google.com/)
+2026-04-27 11:20:50,073 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-peaky-blinders-immortal-man-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:21:04,879 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294723> (referer: https://www.google.com/)
+2026-04-27 11:21:04,915 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-meal-ticket-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:21:19,386 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294721> (referer: https://www.google.com/)
+2026-04-27 11:21:19,420 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-zeta-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:21:33,753 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294708> (referer: https://www.google.com/)
+2026-04-27 11:21:33,786 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-preschool-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:21:48,674 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294707> (referer: https://www.google.com/)
+2026-04-27 11:21:48,708 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-design-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:22:02,757 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294655> (referer: https://www.google.com/)
+2026-04-27 11:22:02,791 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-scream-7-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:22:18,953 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294565> (referer: https://www.google.com/)
+2026-04-27 11:22:18,988 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-plastic-detox-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:22:33,889 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294538> (referer: https://www.google.com/)
+2026-04-27 11:22:33,924 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d8%ad%d9%81%d9%84-%d8%ac%d9%88%d8%a7%d8%a6%d8%b2-%d8%a7%d9%84%d8%a7%d9%88%d8%b3%d9%83%d8%a7%d8%b1-%d9%84%d8%b9%d8%a7%d9%85-oscars-2026> (referer: https://www.google.com/)
+2026-04-27 11:22:49,526 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294521> (referer: https://www.google.com/)
+2026-04-27 11:22:49,561 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-truce-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:23:03,576 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294519> (referer: https://www.google.com/)
+2026-04-27 11:23:03,614 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-mexicali-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:23:21,288 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294517> (referer: https://www.google.com/)
+2026-04-27 11:23:21,322 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-bodycam-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:23:35,510 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294422> (referer: https://www.google.com/)
+2026-04-27 11:23:35,546 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-not-test-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:23:50,359 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294343> (referer: https://www.google.com/)
+2026-04-27 11:23:50,393 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-wuthering-heights-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:24:03,691 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294341> (referer: https://www.google.com/)
+2026-04-27 11:24:03,724 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-worldbreaker-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:24:17,789 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294328> (referer: https://www.google.com/)
+2026-04-27 11:24:17,822 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-crime-101-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:24:32,126 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294255> (referer: https://www.google.com/)
+2026-04-27 11:24:32,158 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-midwinter-break-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:24:46,115 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294190> (referer: https://www.google.com/)
+2026-04-27 11:24:46,151 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-louis-theroux-inside-manosphere-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:25:00,670 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294136> (referer: https://www.google.com/)
+2026-04-27 11:25:00,704 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-testament-ann-lee-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:25:17,341 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294114> (referer: https://www.google.com/)
+2026-04-27 11:25:17,374 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-good-luck-fun-dont-die-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:25:32,610 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294120> (referer: https://www.google.com/)
+2026-04-27 11:25:32,645 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-hermit-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:25:49,619 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294118> (referer: https://www.google.com/)
+2026-04-27 11:25:49,661 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-solo-mio-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:26:05,685 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294116> (referer: https://www.google.com/)
+2026-04-27 11:26:05,719 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-harry-styles-one-night-manchester-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:26:19,398 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294088> (referer: https://www.google.com/)
+2026-04-27 11:26:19,438 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-melania-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:26:34,011 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294086> (referer: https://www.google.com/)
+2026-04-27 11:26:34,045 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-atropia-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:26:48,449 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=293980> (referer: https://www.google.com/)
+2026-04-27 11:26:48,482 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-nachtvlinders-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:27:03,014 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=293978> (referer: https://www.google.com/)
+2026-04-27 11:27:03,048 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-ghost-elephants-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:27:16,738 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=293974> (referer: https://www.google.com/)
+2026-04-27 11:27:16,783 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-franz-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:27:33,549 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=293960> (referer: https://www.google.com/)
+2026-04-27 11:27:33,585 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-match-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:27:47,765 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=293958> (referer: https://www.google.com/)
+2026-04-27 11:27:47,800 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-anna-kiri-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:28:02,851 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=293954> (referer: https://www.google.com/)
+2026-04-27 11:28:02,886 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-13-days-13-nights-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:28:17,123 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=293952> (referer: https://www.google.com/)
+2026-04-27 11:28:17,157 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-7-steg-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:28:32,448 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=293956> (referer: https://www.google.com/)
+2026-04-27 11:28:32,488 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-afterlight-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:28:48,794 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=293921> (referer: https://www.google.com/)
+2026-04-27 11:28:48,834 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-mothers-baby-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:29:24,452 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295460> (referer: https://www.google.com/)
+2026-04-27 11:29:24,487 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-sarah-millican-late-bloomer-live-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:30:04,522 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294517> (referer: https://www.google.com/)
+2026-04-27 11:30:04,563 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-bodycam-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:30:05,059 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294519> (referer: https://www.google.com/)
+2026-04-27 11:30:05,098 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-mexicali-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:30:05,519 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294521> (referer: https://www.google.com/)
+2026-04-27 11:30:05,556 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-truce-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:30:07,930 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294538> (referer: https://www.google.com/)
+2026-04-27 11:30:07,964 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d8%ad%d9%81%d9%84-%d8%ac%d9%88%d8%a7%d8%a6%d8%b2-%d8%a7%d9%84%d8%a7%d9%88%d8%b3%d9%83%d8%a7%d8%b1-%d9%84%d8%b9%d8%a7%d9%85-oscars-2026> (referer: https://www.google.com/)
+2026-04-27 11:30:42,924 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-testament-ann-lee-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:30:42,932 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294136> (referer: https://www.google.com/)
+2026-04-27 11:30:42,962 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/?p=294136> (referer: https://www.google.com/)
+2026-04-27 11:30:43,401 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-crime-101-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:30:43,412 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294328> (referer: https://www.google.com/)
+2026-04-27 11:30:43,438 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/?p=294328> (referer: https://www.google.com/)
+2026-04-27 11:30:51,244 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/?p=294190> (referer: https://www.google.com/)
+2026-04-27 11:30:51,287 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/?p=294190> (referer: https://www.google.com/)
+2026-04-27 11:30:51,533 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/?p=294422> (referer: https://www.google.com/)
+2026-04-27 11:30:51,564 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/?p=294422> (referer: https://www.google.com/)
+2026-04-27 11:30:57,098 - WARNING - Attempt 1 failed: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.fasel-hd.cam/?p=294341", waiting until "load"
+. Retrying in 1s...
+2026-04-27 11:30:57,106 - WARNING - Attempt 1 failed: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.fasel-hd.cam/?p=294114", waiting until "load"
+. Retrying in 1s...
+2026-04-27 11:30:57,116 - WARNING - Attempt 1 failed: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.fasel-hd.cam/?p=294343", waiting until "load"
+. Retrying in 1s...
+2026-04-27 11:30:57,120 - WARNING - Attempt 1 failed: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.fasel-hd.cam/?p=294255", waiting until "load"
+. Retrying in 1s...
+2026-04-27 11:31:03,522 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-300' coro=<Connection.run.<locals>.init() done, defined at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py:271> exception=Exception('Connection.init: Connection closed while reading from the driver')>
+Traceback (most recent call last):
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 272, in init
+    self.playwright_future.set_result(await self._root_object.initialize())
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 219, in initialize
+    await self._channel.send("initialize", None, {"sdkLanguage": "python"})
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 52, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 500, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+Exception: Connection.init: Connection closed while reading from the driver
+2026-04-27 11:31:06,983 - WARNING - Failed to fetch https://www.fasel-hd.cam/?p=294136
+2026-04-27 11:31:07,031 - WARNING - Failed to fetch https://www.fasel-hd.cam/?p=294328
+2026-04-27 11:31:07,278 - WARNING - Failed to fetch https://www.fasel-hd.cam/?p=294422
+2026-04-27 11:31:07,477 - WARNING - Failed to fetch https://www.fasel-hd.cam/?p=294190
+2026-04-27 11:31:08,158 - WARNING - Failed to fetch https://www.fasel-hd.cam/?p=294114
+2026-04-27 11:31:08,189 - WARNING - Failed to fetch https://www.fasel-hd.cam/?p=294255
+2026-04-27 11:31:08,203 - WARNING - Failed to fetch https://www.fasel-hd.cam/?p=294341
+2026-04-27 11:31:08,235 - WARNING - Failed to fetch https://www.fasel-hd.cam/?p=294343
+2026-04-27 11:31:08,326 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-316' coro=<Connection.run.<locals>.init() done, defined at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py:271> exception=Exception('Connection.init: Connection closed while reading from the driver')>
+Traceback (most recent call last):
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 272, in init
+    self.playwright_future.set_result(await self._root_object.initialize())
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 219, in initialize
+    await self._channel.send("initialize", None, {"sdkLanguage": "python"})
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 52, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 500, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+Exception: Connection.init: Connection closed while reading from the driver
+2026-04-27 11:31:08,328 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-318' coro=<Connection.run.<locals>.init() done, defined at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py:271> exception=Exception('Connection.init: Connection closed while reading from the driver')>
+Traceback (most recent call last):
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 272, in init
+    self.playwright_future.set_result(await self._root_object.initialize())
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 219, in initialize
+    await self._channel.send("initialize", None, {"sdkLanguage": "python"})
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 52, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 500, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+Exception: Connection.init: Connection closed while reading from the driver
+2026-04-27 11:31:08,329 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-322' coro=<Connection.run.<locals>.init() done, defined at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py:271> exception=Exception('Connection.init: Connection closed while reading from the driver')>
+Traceback (most recent call last):
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 272, in init
+    self.playwright_future.set_result(await self._root_object.initialize())
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 219, in initialize
+    await self._channel.send("initialize", None, {"sdkLanguage": "python"})
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 52, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 500, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+Exception: Connection.init: Connection closed while reading from the driver
+2026-04-27 11:31:08,330 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-324' coro=<Connection.run.<locals>.init() done, defined at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py:271> exception=Exception('Connection.init: Connection closed while reading from the driver')>
+Traceback (most recent call last):
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 272, in init
+    self.playwright_future.set_result(await self._root_object.initialize())
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 219, in initialize
+    await self._channel.send("initialize", None, {"sdkLanguage": "python"})
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 52, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 500, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+Exception: Connection.init: Connection closed while reading from the driver
+2026-04-27 11:31:08,331 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-291' coro=<Connection.run.<locals>.init() done, defined at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py:271> exception=Exception('Connection.init: Connection closed while reading from the driver')>
+Traceback (most recent call last):
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 272, in init
+    self.playwright_future.set_result(await self._root_object.initialize())
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 219, in initialize
+    await self._channel.send("initialize", None, {"sdkLanguage": "python"})
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 52, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 500, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+Exception: Connection.init: Connection closed while reading from the driver
+2026-04-27 11:31:08,331 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-294' coro=<Connection.run.<locals>.init() done, defined at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py:271> exception=Exception('Connection.init: Connection closed while reading from the driver')>
+Traceback (most recent call last):
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 272, in init
+    self.playwright_future.set_result(await self._root_object.initialize())
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 219, in initialize
+    await self._channel.send("initialize", None, {"sdkLanguage": "python"})
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 52, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 500, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+Exception: Connection.init: Connection closed while reading from the driver
+2026-04-27 11:31:08,332 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-297' coro=<Connection.run.<locals>.init() done, defined at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py:271> exception=Exception('Connection.init: Connection closed while reading from the driver')>
+Traceback (most recent call last):
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 272, in init
+    self.playwright_future.set_result(await self._root_object.initialize())
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 219, in initialize
+    await self._channel.send("initialize", None, {"sdkLanguage": "python"})
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 52, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 500, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+Exception: Connection.init: Connection closed while reading from the driver
+2026-04-27 11:33:53,166 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295460> (referer: https://www.google.com/)
+2026-04-27 11:33:53,201 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-sarah-millican-late-bloomer-live-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:34:20,409 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294521> (referer: https://www.google.com/)
+2026-04-27 11:34:20,448 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-truce-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:34:21,912 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294538> (referer: https://www.google.com/)
+2026-04-27 11:34:21,947 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d8%ad%d9%81%d9%84-%d8%ac%d9%88%d8%a7%d8%a6%d8%b2-%d8%a7%d9%84%d8%a7%d9%88%d8%b3%d9%83%d8%a7%d8%b1-%d9%84%d8%b9%d8%a7%d9%85-oscars-2026> (referer: https://www.google.com/)
+2026-04-27 11:34:53,038 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/?p=294255> (referer: https://www.google.com/)
+2026-04-27 11:34:53,097 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/?p=294255> (referer: https://www.google.com/)
+2026-04-27 11:34:54,138 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-bodycam-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:34:54,151 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294517> (referer: https://www.google.com/)
+2026-04-27 11:34:54,178 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/?p=294517> (referer: https://www.google.com/)
+2026-04-27 11:34:56,239 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/?p=294328> (referer: https://www.google.com/)
+2026-04-27 11:34:56,276 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/?p=294328> (referer: https://www.google.com/)
+2026-04-27 11:35:02,130 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-worldbreaker-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:35:02,143 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294341> (referer: https://www.google.com/)
+2026-04-27 11:35:02,178 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/?p=294341> (referer: https://www.google.com/)
+2026-04-27 11:35:10,682 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294343> (referer: https://www.google.com/)
+2026-04-27 11:35:10,770 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-wuthering-heights-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:35:11,071 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294422> (referer: https://www.google.com/)
+2026-04-27 11:35:11,154 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-not-test-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:35:12,975 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294519> (referer: https://www.google.com/)
+2026-04-27 11:35:13,015 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-mexicali-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:35:31,631 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294190> (referer: https://www.google.com/)
+2026-04-27 11:35:31,670 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-louis-theroux-inside-manosphere-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:35:51,765 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294517> (referer: https://www.google.com/)
+2026-04-27 11:35:51,818 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-bodycam-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:35:56,353 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294328> (referer: https://www.google.com/)
+2026-04-27 11:35:56,398 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-crime-101-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:35:58,018 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294255> (referer: https://www.google.com/)
+2026-04-27 11:35:58,057 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-midwinter-break-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:36:14,928 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294341> (referer: https://www.google.com/)
+2026-04-27 11:36:14,976 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-worldbreaker-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:36:48,840 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-good-luck-fun-dont-die-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:36:48,854 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294114> (referer: https://www.google.com/)
+2026-04-27 11:36:48,885 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/?p=294114> (referer: https://www.google.com/)
+2026-04-27 11:36:49,145 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-hermit-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:36:49,157 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294120> (referer: https://www.google.com/)
+2026-04-27 11:36:49,185 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/?p=294120> (referer: https://www.google.com/)
+2026-04-27 11:36:49,553 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-nachtvlinders-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:36:49,562 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=293980> (referer: https://www.google.com/)
+2026-04-27 11:36:49,590 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/?p=293980> (referer: https://www.google.com/)
+2026-04-27 11:36:52,774 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/?p=294088> (referer: https://www.google.com/)
+2026-04-27 11:36:52,806 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/?p=294086> (referer: https://www.google.com/)
+2026-04-27 11:36:52,814 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/?p=294088> (referer: https://www.google.com/)
+2026-04-27 11:36:52,857 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/?p=294086> (referer: https://www.google.com/)
+2026-04-27 11:37:01,176 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294118> (referer: https://www.google.com/)
+2026-04-27 11:37:01,236 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-solo-mio-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:37:03,221 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294116> (referer: https://www.google.com/)
+2026-04-27 11:37:03,256 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-harry-styles-one-night-manchester-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:37:09,764 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294136> (referer: https://www.google.com/)
+2026-04-27 11:37:09,802 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-testament-ann-lee-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:37:43,085 - WARNING - Attempt 1 failed: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.fasel-hd.cam/?p=294088", waiting until "load"
+. Retrying in 1s...
+2026-04-27 11:37:43,086 - WARNING - Attempt 1 failed: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.fasel-hd.cam/?p=294114", waiting until "load"
+. Retrying in 1s...
+2026-04-27 11:37:43,092 - WARNING - Attempt 1 failed: Page.goto: net::ERR_ABORTED; maybe frame was detached?
+Call log:
+  - navigating to "https://www.fasel-hd.cam/?p=294086", waiting until "load"
+. Retrying in 1s...
+2026-04-27 11:37:43,093 - WARNING - Attempt 1 failed: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.fasel-hd.cam/?p=294120", waiting until "load"
+. Retrying in 1s...
+2026-04-27 11:37:43,117 - WARNING - Attempt 1 failed: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.fasel-hd.cam/?p=293980", waiting until "load"
+. Retrying in 1s...
+2026-04-27 11:38:07,096 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-atropia-2025-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:38:07,104 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294086> (referer: https://www.google.com/)
+2026-04-27 11:38:07,132 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/?p=294086> (referer: https://www.google.com/)
+2026-04-27 11:38:08,926 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/?p=294114> (referer: https://www.google.com/)
+2026-04-27 11:38:08,952 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/?p=294114> (referer: https://www.google.com/)
+2026-04-27 11:38:23,079 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=293980> (referer: https://www.google.com/)
+2026-04-27 11:38:23,123 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-nachtvlinders-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:38:23,139 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294088> (referer: https://www.google.com/)
+2026-04-27 11:38:23,200 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-melania-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:38:24,657 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294120> (referer: https://www.google.com/)
+2026-04-27 11:38:24,693 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-hermit-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:39:36,034 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295460> (referer: https://www.google.com/)
+2026-04-27 11:39:36,070 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-sarah-millican-late-bloomer-live-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:40:05,950 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-bodycam-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 11:40:05,964 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294517> (referer: https://www.google.com/)
+2026-04-27 11:40:05,994 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/?p=294517> (referer: https://www.google.com/)
+2026-04-27 11:40:06,391 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/movies/%d8%ad%d9%81%d9%84-%d8%ac%d9%88%d8%a7%d8%a6%d8%b2-%d8%a7%d9%84%d8%a7%d9%88%d8%b3%d9%83%d8%a7%d8%b1-%d9%84%d8%b9%d8%a7%d9%85-oscars-2026> (referer: https://www.google.com/)
+2026-04-27 11:40:06,415 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=294538> (referer: https://www.google.com/)
+2026-04-27 11:40:06,535 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/?p=294538> (referer: https://www.google.com/)
+2026-04-27 11:40:15,877 - WARNING - Attempt 1 failed: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.fasel-hd.cam/?p=294422", waiting until "load"
+. Retrying in 1s...
+2026-04-27 11:40:15,878 - WARNING - Attempt 1 failed: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.fasel-hd.cam/?p=294521", waiting until "load"
+. Retrying in 1s...
+2026-04-27 11:40:15,967 - WARNING - Attempt 1 failed: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.fasel-hd.cam/?p=294519", waiting until "load"
+. Retrying in 1s...
+2026-04-27 11:40:21,949 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-131' coro=<Connection.run.<locals>.init() done, defined at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py:271> exception=Exception('Connection.init: Connection closed while reading from the driver')>
+Traceback (most recent call last):
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 272, in init
+    self.playwright_future.set_result(await self._root_object.initialize())
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 219, in initialize
+    await self._channel.send("initialize", None, {"sdkLanguage": "python"})
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 52, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 500, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+Exception: Connection.init: Connection closed while reading from the driver
+2026-04-27 11:40:24,886 - WARNING - Failed to fetch https://www.fasel-hd.cam/?p=294538
+2026-04-27 11:40:24,931 - WARNING - Failed to fetch https://www.fasel-hd.cam/?p=294517
+2026-04-27 11:40:28,985 - WARNING - Attempt 1 failed: Page.goto: net::ERR_ABORTED; maybe frame was detached?
+Call log:
+  - navigating to "https://www.fasel-hd.cam/?p=294422", waiting until "load"
+. Retrying in 1s...
+2026-04-27 11:40:28,986 - WARNING - Attempt 1 failed: Page.goto: net::ERR_ABORTED; maybe frame was detached?
+Call log:
+  - navigating to "https://www.fasel-hd.cam/?p=294519", waiting until "load"
+. Retrying in 1s...
+2026-04-27 11:40:28,989 - WARNING - Attempt 1 failed: Page.goto: net::ERR_ABORTED; maybe frame was detached?
+Call log:
+  - navigating to "https://www.fasel-hd.cam/?p=294521", waiting until "load"
+. Retrying in 1s...
+2026-04-27 11:40:34,694 - WARNING - Failed to fetch https://www.fasel-hd.cam/?p=294422
+2026-04-27 11:40:34,788 - WARNING - Failed to fetch https://www.fasel-hd.cam/?p=294519
+2026-04-27 11:40:34,876 - WARNING - Failed to fetch https://www.fasel-hd.cam/?p=294521
+2026-04-27 11:40:34,931 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-125' coro=<Connection.run.<locals>.init() done, defined at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py:271> exception=Exception('Connection.init: Connection closed while reading from the driver')>
+Traceback (most recent call last):
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 272, in init
+    self.playwright_future.set_result(await self._root_object.initialize())
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 219, in initialize
+    await self._channel.send("initialize", None, {"sdkLanguage": "python"})
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 52, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 500, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+Exception: Connection.init: Connection closed while reading from the driver
+2026-04-27 11:40:34,932 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-128' coro=<Connection.run.<locals>.init() done, defined at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py:271> exception=Exception('Connection.init: Connection closed while reading from the driver')>
+Traceback (most recent call last):
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 272, in init
+    self.playwright_future.set_result(await self._root_object.initialize())
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 219, in initialize
+    await self._channel.send("initialize", None, {"sdkLanguage": "python"})
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 52, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 500, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+Exception: Connection.init: Connection closed while reading from the driver

@@ -10,7 +10,7 @@ from Common import (
     DEBUG, FASEL_BASE_URL, REQUEST_DELAY, JITTER,
     get_website_safe, get_number_of_pages, get_paginated_url,
     get_content_id, clean_iframe_source, get_content_format, get_genres_both,
-    extract_country, extract_runtime
+    extract_country, extract_runtime, extract_description
 )
 
 def load_progress():
@@ -60,8 +60,8 @@ try:
         existing_anime = json.load(f)
 except (FileNotFoundError, json.JSONDecodeError):
     existing_anime = {}
-existing_ids = set(existing_anime.keys())
 
+existing_ids = set(existing_anime.keys())
 FAILED_DETAIL_URLS = set()
 
 def fetch_detail(detail_url: str):
@@ -177,6 +177,7 @@ def scrape_anime_resumable():
                 source = clean_iframe_source(iframe["src"])
 
             genres_info = get_genres_both(dsoup)
+            description = extract_description(dsoup)
 
             new_anime[anime_id] = {
                 "Title": title,
@@ -190,6 +191,7 @@ def scrape_anime_resumable():
                 "Format": get_content_format(dsoup),
                 "Runtime": extract_runtime(dsoup),
                 "Country": extract_country(dsoup),
+                "Description": description,
                 "SeasonsUrl": detail_url
             }
             existing_ids.add(anime_id)
@@ -211,14 +213,11 @@ def scrape_anime_resumable():
                 dsoup = BeautifulSoup(resp.text, "html.parser")
                 anime_id = get_content_id(dsoup) or url.split('/')[-2]
                 if anime_id not in existing_ids:
-                    # For retries we don't fetch episodes again
-                    episode_count = 0
-                    content_type = "Movie"
                     all_anime[anime_id] = {
                         "Title": "Unknown (retried)",
                         "Category": "anime",
-                        "Type": content_type,
-                        "Number Of Episodes": episode_count,
+                        "Type": "Movie",
+                        "Number Of Episodes": 0,
                         "Image Source": "",
                         "Source": "",
                         "Genres": [],
@@ -226,6 +225,7 @@ def scrape_anime_resumable():
                         "Format": get_content_format(dsoup),
                         "Runtime": extract_runtime(dsoup),
                         "Country": extract_country(dsoup),
+                        "Description": extract_description(dsoup),
                         "SeasonsUrl": url
                     }
             sleep(1)

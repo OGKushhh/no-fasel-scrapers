@@ -10,7 +10,7 @@ from Common import (
     DEBUG, FASEL_BASE_URL, REQUEST_DELAY, JITTER,
     get_website_safe, get_number_of_pages, get_paginated_url,
     get_content_id, clean_iframe_source, get_content_format, get_genres_both,
-    extract_country, extract_runtime
+    extract_country, extract_runtime, extract_description
 )
 
 # ----------------------------------------------------------------------
@@ -172,6 +172,7 @@ def scrape_anime_incremental():
                 source = clean_iframe_source(iframe["src"])
 
             genres_info = get_genres_both(dsoup)
+            description = extract_description(dsoup)
 
             new_anime[anime_id] = {
                 "Title": title,
@@ -185,7 +186,8 @@ def scrape_anime_incremental():
                 "Format": get_content_format(dsoup),
                 "Runtime": extract_runtime(dsoup),
                 "Country": extract_country(dsoup),
-                "SeasonsUrl": detail_url   # store detail URL for future use
+                "Description": description,
+                "SeasonsUrl": detail_url
             }
             existing_ids.add(anime_id)
 
@@ -219,6 +221,7 @@ def scrape_anime_incremental():
                         "Format": get_content_format(dsoup),
                         "Runtime": extract_runtime(dsoup),
                         "Country": extract_country(dsoup),
+                        "Description": extract_description(dsoup),
                         "SeasonsUrl": url
                     }
             sleep(1)

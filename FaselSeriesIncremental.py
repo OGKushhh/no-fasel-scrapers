@@ -10,7 +10,7 @@ from Common import (
     DEBUG, FASEL_BASE_URL, REQUEST_DELAY, JITTER,
     get_website_safe, get_number_of_pages, get_paginated_url,
     get_content_id, clean_iframe_source, get_content_format, get_genres_both,
-    extract_country, extract_runtime
+    extract_country, extract_runtime, extract_description
 )
 
 PATHS = ["series", "tvshows", "asian-series"]
@@ -80,8 +80,6 @@ def save_episodes_for_series(category: str, series_id: str, seasons_data: dict):
         print(f"  💾 Saved episodes for {category}/{series_id} ({len(seasons_data)} seasons)")
 
 def get_seasons_url_from_detail(detail_url: str) -> str:
-    """Fetch the detail page and extract the canonical seasons page URL."""
-    # If already a seasons/tvseasons/asian_seasons URL, return as is
     if any(prefix in detail_url for prefix in ['/seasons/', '/tvseasons/', '/asian_seasons/']):
         return detail_url
     resp = get_website_safe(detail_url)
@@ -90,7 +88,6 @@ def get_seasons_url_from_detail(detail_url: str) -> str:
     soup = BeautifulSoup(resp.text, 'html.parser')
     season_div = soup.select_one('#seasonList .seasonDiv')
     if not season_div:
-        # No season list – probably single‑season or movie
         return detail_url
     onclick = season_div.get('onclick')
     if not onclick:
@@ -227,12 +224,12 @@ def scrape_series_incremental(path: str):
                 source = clean_iframe_source(iframe["src"])
 
             genres_info = get_genres_both(dsoup)
+            description = extract_description(dsoup)
 
             # Get seasons hub URL and extract episodes
             seasons_hub_url = get_seasons_url_from_detail(detail_url)
             seasons_with_episodes = {}
             if seasons_hub_url:
-                # If the hub is the same as the detail page, reuse dsoup
                 if seasons_hub_url == detail_url:
                     hub_soup = dsoup
                 else:
@@ -249,7 +246,7 @@ def scrape_series_incremental(path: str):
                             episode_urls = extract_episodes_from_season_page(season_soup)
                             if episode_urls:
                                 seasons_with_episodes[season_num] = episode_urls
-                        time.sleep(REQUEST_DELAY / 2)  # polite delay
+                        time.sleep(REQUEST_DELAY / 2)
 
             # Save episodes separately
             if seasons_with_episodes:
@@ -266,6 +263,7 @@ def scrape_series_incremental(path: str):
                 "Format": get_content_format(dsoup),
                 "Runtime": extract_runtime(dsoup),
                 "Country": extract_country(dsoup),
+                "Description": description,
                 "SeasonsUrl": seasons_hub_url
             }
             existing_ids.add(series_id)
@@ -299,6 +297,7 @@ def scrape_series_incremental(path: str):
                         "Format": get_content_format(dsoup),
                         "Runtime": extract_runtime(dsoup),
                         "Country": extract_country(dsoup),
+                        "Description": extract_description(dsoup),
                         "SeasonsUrl": get_seasons_url_from_detail(url)
                     }
             sleep(1)
