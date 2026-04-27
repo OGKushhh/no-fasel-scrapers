@@ -17079,3 +17079,345 @@ Exception: Connection.init: Connection closed while reading from the driver
 2026-04-27 00:59:43,848 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-spotlight-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-1> (referer: https://www.google.com/)
 2026-04-27 01:00:32,979 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/movies/page/566/> (referer: https://www.google.com/)
 2026-04-27 01:00:33,021 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/page/566> (referer: https://www.google.com/)
+2026-04-27 01:01:16,002 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-jackass-presents-bad-grandpa-2013-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-g> (referer: https://www.google.com/)
+2026-04-27 01:01:16,968 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-nightcrawler-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-4> (referer: https://www.google.com/)
+2026-04-27 01:01:18,616 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-%d9%81%d9%8a%d9%84%d9%85-the-fault-in-our-stars-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-gt> (referer: https://www.google.com/)
+2026-04-27 01:01:20,142 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-%d9%81%d9%8a%d9%84%d9%85-frozen-2013-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:01:24,452 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-%d9%81%d9%8a%d9%84%d9%85-godzilla-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:01:24,631 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-%d9%81%d9%8a%d9%84%d9%85-noah-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-ww> (referer: https://www.google.com/)
+2026-04-27 01:02:18,769 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-elysium-2013-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:02:20,965 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-burnt-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:02:25,752 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-in-the-heart-of-the-sea-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-tt> (referer: https://www.google.com/)
+2026-04-27 01:02:36,046 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-joy-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:02:38,233 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-visit-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-o> (referer: https://www.google.com/)
+2026-04-27 01:02:54,764 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-suffragette-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:03:25,436 - INFO - Fetched (302) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-paranormal-activity-the-ghost-dimension-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:03:25,589 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-paranormal-activity-the-ghost-dimension-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:03:33,770 - INFO - Fetched (302) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-penguins-of-madagascar-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:03:33,809 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-penguins-of-madagascar-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:03:40,907 - INFO - Fetched (302) <GET https://www.fasel-hd.cam/movies/1-%d9%81%d9%8a%d9%84%d9%85-legend-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-hue> (referer: https://www.google.com/)
+2026-04-27 01:03:40,946 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-%d9%81%d9%8a%d9%84%d9%85-legend-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-hue> (referer: https://www.google.com/)
+2026-04-27 01:03:44,891 - INFO - Fetched (302) <GET https://www.fasel-hd.cam/movies/1-1-1%d9%81%d9%8a%d9%84%d9%85-creed-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-8> (referer: https://www.google.com/)
+2026-04-27 01:03:45,000 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1-1%d9%81%d9%8a%d9%84%d9%85-creed-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-8> (referer: https://www.google.com/)
+2026-04-27 01:04:12,035 - INFO - Fetched (302) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-intern-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-j> (referer: https://www.google.com/)
+2026-04-27 01:04:12,072 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-intern-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-j> (referer: https://www.google.com/)
+2026-04-27 01:04:13,091 - INFO - Fetched (302) <GET https://www.fasel-hd.cam/movies/1-1-1%d9%81%d9%8a%d9%84%d9%85-concussion-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:04:13,126 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1-1%d9%81%d9%8a%d9%84%d9%85-concussion-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:04:30,979 - INFO - Fetched (302) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-wolf-of-wall-street-2013-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-kio> (referer: https://www.google.com/)
+2026-04-27 01:04:31,016 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-wolf-of-wall-street-2013-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-kio> (referer: https://www.google.com/)
+2026-04-27 01:04:49,793 - INFO - Fetched (302) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-2015-the-good-dinosaur-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:04:49,871 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-2015-the-good-dinosaur-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:04:55,522 - INFO - Fetched (302) <GET https://www.fasel-hd.cam/movies/1-%d9%81%d9%8a%d9%84%d9%85-room-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-qw> (referer: https://www.google.com/)
+2026-04-27 01:04:55,547 - INFO - Fetched (302) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-spectre-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-k> (referer: https://www.google.com/)
+2026-04-27 01:04:55,565 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-%d9%81%d9%8a%d9%84%d9%85-room-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-qw> (referer: https://www.google.com/)
+2026-04-27 01:04:55,591 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-spectre-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-k> (referer: https://www.google.com/)
+2026-04-27 01:05:05,067 - INFO - Fetched (302) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-brooklyn-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:05:05,285 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-brooklyn-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:05:05,419 - INFO - Fetched (302) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-american-heist-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:05:05,492 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-american-heist-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:06:02,132 - INFO - Fetched (301) <GET https://web42618x.faselhdx.bid/movies/page/567/> (referer: https://www.google.com/)
+2026-04-27 01:06:02,141 - INFO - Fetched (302) <GET https://www.fasel-hd.cam/movies/page/567/> (referer: https://www.google.com/)
+2026-04-27 01:06:02,186 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/page/567> (referer: https://www.google.com/)
+2026-04-27 01:07:01,362 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-gone-girl-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-rt> (referer: https://www.google.com/)
+2026-04-27 01:07:07,919 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-operator-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-27 01:07:07,934 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-martian-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-bre", waiting until "load"
+. Retrying in 1s...
+2026-04-27 01:07:09,680 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-hateful-eight-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-jk", waiting until "load"
+. Retrying in 1s...
+2026-04-27 01:07:14,282 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-bridge-spies-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-7", waiting until "load"
+. Retrying in 1s...
+2026-04-27 01:07:15,168 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-revenant-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-b", waiting until "load"
+. Retrying in 1s...
+2026-04-27 01:07:17,482 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-operator-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:07:20,061 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-martian-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-bre> (referer: https://www.google.com/)
+2026-04-27 01:07:22,528 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-revenant-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-b> (referer: https://www.google.com/)
+2026-04-27 01:07:23,006 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-bridge-spies-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-7> (referer: https://www.google.com/)
+2026-04-27 01:07:24,744 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-hateful-eight-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-jk> (referer: https://www.google.com/)
+2026-04-27 01:08:33,244 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-teenage-mutant-ninja-turtles-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:08:35,674 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-thor-the-dark-world-2013-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-aw> (referer: https://www.google.com/)
+2026-04-27 01:08:51,739 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-transformers-age-extinction-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-27 01:08:56,965 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://web42618x.faselhdx.bid/movies/1-%d9%81%d9%8a%d9%84%d9%85-2014-22-jump-street-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-27 01:08:58,412 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-hunger-games-catching-fire-2013-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-27 01:08:59,244 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-transformers-age-extinction-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:09:10,172 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-%d9%81%d9%8a%d9%84%d9%85-2014-22-jump-street-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:09:10,715 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-hunger-games-catching-fire-2013-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:09:10,961 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-escape-plan-2013-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-vt> (referer: https://www.google.com/)
+2026-04-27 01:10:42,677 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-x-men-days-of-future-past-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:10:44,763 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-hobbit-the-desolation-of-smaug-2013-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-df> (referer: https://www.google.com/)
+2026-04-27 01:10:45,190 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1%d9%81%d9%8a%d9%84%d9%85-need-for-speed-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:10:45,510 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-lets-cops-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-w> (referer: https://www.google.com/)
+2026-04-27 01:10:46,207 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-fast-furious-6-2013-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-cr> (referer: https://www.google.com/)
+2026-04-27 01:10:47,611 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-minions-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:11:21,952 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-sicario-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-we> (referer: https://www.google.com/)
+2026-04-27 01:11:52,941 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-john-wick-2014-1-1g-mk> (referer: https://www.google.com/)
+2026-04-27 01:11:53,146 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-homefront-2013-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-c> (referer: https://www.google.com/)
+2026-04-27 01:11:54,551 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-world-war-z-2013-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-t> (referer: https://www.google.com/)
+2026-04-27 01:11:55,117 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-hercules-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-b> (referer: https://www.google.com/)
+2026-04-27 01:11:56,239 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-captain-phillips-2013-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-qw> (referer: https://www.google.com/)
+2026-04-27 01:12:21,184 - INFO - Fetched (301) <GET https://web42618x.faselhdx.bid/movies/page/568/> (referer: https://www.google.com/)
+2026-04-27 01:12:21,196 - INFO - Fetched (302) <GET https://www.fasel-hd.cam/movies/page/568/> (referer: https://www.google.com/)
+2026-04-27 01:12:21,254 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/page/568> (referer: https://www.google.com/)
+2026-04-27 01:13:13,603 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-goosebumps-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-b> (referer: https://www.google.com/)
+2026-04-27 01:13:19,075 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-ride-along-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-tt> (referer: https://www.google.com/)
+2026-04-27 01:13:19,903 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-12rounds-3-lockdown-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:13:22,550 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-wave-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-l> (referer: https://www.google.com/)
+2026-04-27 01:13:22,564 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-equalizer-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-zr> (referer: https://www.google.com/)
+2026-04-27 01:13:24,446 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1%d9%81%d9%8a%d9%84%d9%85-a-good-day-to-die-hard-2013-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:13:49,578 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-earl-dying-girl-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:14:03,306 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1%d9%81%d9%8a%d9%84%d9%85-neighbors-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:14:20,254 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-trash-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:14:20,525 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-legend-2007-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-k> (referer: https://www.google.com/)
+2026-04-27 01:14:37,935 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-walk-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-u> (referer: https://www.google.com/)
+2026-04-27 01:14:38,454 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-pan-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:15:17,057 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-curse-of-chucky-2013-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:15:17,593 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-seed-chucky-2004-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:15:18,826 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-bride-of-chucky-1998-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:15:21,698 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/%d9%81%d9%8a%d9%84%d9%85-childs-play-3-1991-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:15:32,048 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1%d9%81%d9%8a%d9%84%d9%85-the-scorpion-king-4-quest-for-power-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:15:33,772 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-justice-league-throne-of-atlantis-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:16:01,791 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-captain-america-the-winter-soldier-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-h> (referer: https://www.google.com/)
+2026-04-27 01:16:08,631 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-non-stop-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-sf> (referer: https://www.google.com/)
+2026-04-27 01:16:21,981 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-guardians-of-the-galaxy-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-tr> (referer: https://www.google.com/)
+2026-04-27 01:16:34,368 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-vanish-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-l> (referer: https://www.google.com/)
+2026-04-27 01:16:34,604 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-october-gale-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:16:35,525 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-marine-4-moving-target-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:16:54,331 - INFO - Fetched (301) <GET https://web42618x.faselhdx.bid/movies/page/569/> (referer: https://www.google.com/)
+2026-04-27 01:16:54,339 - INFO - Fetched (302) <GET https://www.fasel-hd.cam/movies/page/569/> (referer: https://www.google.com/)
+2026-04-27 01:16:54,388 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/page/569> (referer: https://www.google.com/)
+2026-04-27 01:17:36,576 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1%d9%81%d9%8a%d9%84%d9%85-cellular-2004-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-gt> (referer: https://www.google.com/)
+2026-04-27 01:17:42,956 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1%d9%81%d9%8a%d9%84%d9%85-wolf-warrior-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:17:46,020 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-%d9%81%d9%8a%d9%84%d9%85-batman-vs-robin-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:17:47,018 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-pyramid-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:17:47,554 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1%d9%81%d9%8a%d9%84%d9%85-pound-of-flesh-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:17:51,527 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-burning-dead-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:18:37,081 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1%d9%81%d9%8a%d9%84%d9%85-dragon-blade-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:18:38,614 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1%d9%81%d9%8a%d9%84%d9%85-insurgent-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-yy> (referer: https://www.google.com/)
+2026-04-27 01:18:45,018 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1%d9%81%d9%8a%d9%84%d9%85-return-to-sender-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:18:47,791 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1%d9%81%d9%8a%d9%84%d9%85-lila-eve-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:19:14,142 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1%d9%81%d9%8a%d9%84%d9%85-extinction-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:19:16,625 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1%d9%81%d9%8a%d9%84%d9%85-dark-places-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:19:27,300 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1%d9%81%d9%8a%d9%84%d9%85-chloe-and-theo-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:19:49,233 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1%d9%81%d9%8a%d9%84%d9%85-absolutely-anything-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:19:51,249 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1%d9%81%d9%8a%d9%84%d9%85-the-transporter-refueled-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-b7> (referer: https://www.google.com/)
+2026-04-27 01:19:55,319 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1%d9%81%d9%8a%d9%84%d9%85-sinister-2-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:20:14,066 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-%d9%81%d9%8a%d9%84%d9%85-diabolical-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:20:18,051 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-11%d9%81%d9%8a%d9%84%d9%85-the-secret-in-their-eyes-2009-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-o> (referer: https://www.google.com/)
+2026-04-27 01:20:23,592 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-little-prince-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-mm> (referer: https://www.google.com/)
+2026-04-27 01:20:51,213 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-exorcism-of-molly-hartley-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-o> (referer: https://www.google.com/)
+2026-04-27 01:21:06,814 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-howl-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:21:07,157 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-mississippi-grind-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:21:07,504 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-maze-runner-scorch-trials-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-6-xt> (referer: https://www.google.com/)
+2026-04-27 01:21:12,212 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-bound-vengeance-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:21:40,933 - INFO - Fetched (301) <GET https://web42618x.faselhdx.bid/movies/page/570/> (referer: https://www.google.com/)
+2026-04-27 01:21:40,940 - INFO - Fetched (302) <GET https://www.fasel-hd.cam/movies/page/570/> (referer: https://www.google.com/)
+2026-04-27 01:21:40,984 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/page/570> (referer: https://www.google.com/)
+2026-04-27 01:22:26,901 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-33-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-vu> (referer: https://www.google.com/)
+2026-04-27 01:22:28,375 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-criminal-activities-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-ll> (referer: https://www.google.com/)
+2026-04-27 01:22:32,449 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-close-range-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:22:33,882 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-far-from-the-madding-crowd-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:22:34,571 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-hotel-transylvania-2-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-b> (referer: https://www.google.com/)
+2026-04-27 01:22:35,599 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-heist-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:23:18,944 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-%d9%81%d9%8a%d9%84%d9%85-black-mass-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:23:22,464 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/%d9%81%d9%8a%d9%84%d9%85-true-grit-2010-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-u> (referer: https://www.google.com/)
+2026-04-27 01:23:24,482 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/%d9%81%d9%8a%d9%84%d9%85-grey-2011-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-vi> (referer: https://www.google.com/)
+2026-04-27 01:23:54,470 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-last-rescue-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-n> (referer: https://www.google.com/)
+2026-04-27 01:23:55,519 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/%d9%81%d9%8a%d9%84%d9%85-hard-day-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:23:56,643 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-lost-in-the-sun-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:24:20,753 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-american-ultra-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:24:27,740 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-brothers-2009-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-ae> (referer: https://www.google.com/)
+2026-04-27 01:24:34,346 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-zero-dark-thirty-2012-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:25:13,614 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1%d9%81%d9%8a%d9%84%d9%85-the-day-after-tomorrow-2004-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-ss> (referer: https://www.google.com/)
+2026-04-27 01:25:17,527 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-public-enemies-2009-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-l> (referer: https://www.google.com/)
+2026-04-27 01:25:18,895 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-shooter-2007-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-cvg> (referer: https://www.google.com/)
+2026-04-27 01:25:33,231 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1%d9%81%d9%8a%d9%84%d9%85-prince-of-persia-2010-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:25:37,815 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-max-payne-2008-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:25:43,580 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1%d9%81%d9%8a%d9%84%d9%85-man-on-fire-2004-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-6> (referer: https://www.google.com/)
+2026-04-27 01:26:11,729 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-date-night-2010-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:26:13,019 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-end-of-watch-2012-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:26:13,879 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-american-gangster-2007-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-t> (referer: https://www.google.com/)
+2026-04-27 01:26:34,745 - INFO - Fetched (301) <GET https://web42618x.faselhdx.bid/movies/page/571/> (referer: https://www.google.com/)
+2026-04-27 01:26:34,756 - INFO - Fetched (302) <GET https://www.fasel-hd.cam/movies/page/571/> (referer: https://www.google.com/)
+2026-04-27 01:26:34,810 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/page/571> (referer: https://www.google.com/)
+2026-04-27 01:27:29,368 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-mr-and-mrith-2005-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-t> (referer: https://www.google.com/)
+2026-04-27 01:27:36,078 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-hard-candy-2006-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:27:36,861 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1-1%d9%81%d9%8a%d9%84%d9%85-21-grams-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:27:37,474 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/11%d9%81%d9%8a%d9%84%d9%85-this-means-war-2012-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:27:37,584 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-street-kings-2008-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-bb> (referer: https://www.google.com/)
+2026-04-27 01:27:38,469 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-italian-job-2003-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-r> (referer: https://www.google.com/)
+2026-04-27 01:28:11,273 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-broken-city-2013-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:29:20,207 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://web42618x.faselhdx.bid/movies/1-11-%d9%81%d9%8a%d9%84%d9%85-zodiac-2007-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-hu", waiting until "load"
+. Retrying in 1s...
+2026-04-27 01:29:21,285 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://web42618x.faselhdx.bid/movies/%d9%81%d9%8a%d9%84%d9%85-the-tourist-2010-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-27 01:29:24,702 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://web42618x.faselhdx.bid/movies/1-%d9%81%d9%8a%d9%84%d9%85-source-code-2011-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-27 01:29:28,556 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-haywire-2011-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-e", waiting until "load"
+. Retrying in 1s...
+2026-04-27 01:29:30,400 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://web42618x.faselhdx.bid/movies/11-1%d9%81%d9%8a%d9%84%d9%85-harsh-times-2005-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-27 01:29:33,888 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://web42618x.faselhdx.bid/movies/1%d9%81%d9%8a%d9%84%d9%85-coach-carter-2005-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-27 01:29:36,091 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-11-%d9%81%d9%8a%d9%84%d9%85-zodiac-2007-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-hu> (referer: https://www.google.com/)
+2026-04-27 01:29:51,927 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-%d9%81%d9%8a%d9%84%d9%85-source-code-2011-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:29:53,061 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/11-1%d9%81%d9%8a%d9%84%d9%85-harsh-times-2005-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:29:53,199 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-haywire-2011-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-e> (referer: https://www.google.com/)
+2026-04-27 01:29:56,431 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/%d9%81%d9%8a%d9%84%d9%85-the-tourist-2010-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:30:03,834 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1%d9%81%d9%8a%d9%84%d9%85-coach-carter-2005-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:30:54,031 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-youth-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:30:57,065 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-chariot-2013-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:30:59,015 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-starred-up-2013-%d9%85%d8%aa%d8%b1%d8%acl> (referer: https://www.google.com/)
+2026-04-27 01:31:01,091 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-gift-2000-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:31:18,525 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1%d9%81%d9%8a%d9%84%d9%85-kill-them-softly-2012-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:31:21,912 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/11%d9%81%d9%8a%d9%84%d9%85-law-abiding-citizen-2009-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-ghk> (referer: https://www.google.com/)
+2026-04-27 01:31:57,367 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-body-of-lies-2008-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-nj> (referer: https://www.google.com/)
+2026-04-27 01:31:57,407 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-argo-2012-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:31:57,565 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-13-sins-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:32:11,335 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/11%d9%81%d9%8a%d9%84%d9%85-2-guns-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:32:12,917 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-cristiano-ronaldo-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-k> (referer: https://www.google.com/)
+2026-04-27 01:32:46,255 - INFO - Fetched (301) <GET https://web42618x.faselhdx.bid/movies/page/572/> (referer: https://www.google.com/)
+2026-04-27 01:32:46,266 - INFO - Fetched (302) <GET https://www.fasel-hd.cam/movies/page/572/> (referer: https://www.google.com/)
+2026-04-27 01:32:46,343 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/page/572> (referer: https://www.google.com/)
+2026-04-27 01:33:38,618 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-sweeney-2012-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:33:48,257 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-robin-hood-2010-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:33:49,990 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1%d9%81%d9%8a%d9%84%d9%85-ninja-assassin-2009-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-bh> (referer: https://www.google.com/)
+2026-04-27 01:33:51,424 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-tinker-tailor-soldier-spy-2011-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:33:56,244 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-vacation-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-p", waiting until "load"
+. Retrying in 1s...
+2026-04-27 01:33:59,777 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1%d9%81%d9%8a%d9%84%d9%85-gladiator-2000-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-4> (referer: https://www.google.com/)
+2026-04-27 01:34:07,430 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-vacation-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-p> (referer: https://www.google.com/)
+2026-04-27 01:34:46,602 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-next-three-days-2010-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-1> (referer: https://www.google.com/)
+2026-04-27 01:35:05,561 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-last-stand-2013-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:35:10,981 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-interview-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:35:14,136 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-lockout-2012-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:35:16,800 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-collector-2009-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-ko> (referer: https://www.google.com/)
+2026-04-27 01:35:23,869 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-stolen-2012-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-o> (referer: https://www.google.com/)
+2026-04-27 01:35:46,077 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-alex-cross-2012-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:35:56,537 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-man-on-a-ledge-2012-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-qw> (referer: https://www.google.com/)
+2026-04-27 01:36:04,957 - WARNING - Attempt 1 failed: Page.goto: net::ERR_ABORTED; maybe frame was detached?
+Call log:
+  - navigating to "https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-dawn-of-the-planet-of-the-apes-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-27 01:36:09,929 - WARNING - Attempt 1 failed: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-welcome-to-the-punch-2013-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-27 01:36:10,862 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-edge-of-tomorrow-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 01:36:11,611 - INFO - Fetched (200) <GET https://web42618x.faselhdx.bid/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-bourne-legacy-2012-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 09:58:48,049 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies> (referer: https://www.google.com/)
+2026-04-27 09:59:01,366 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/movies/page/572/> (referer: https://www.google.com/)
+2026-04-27 09:59:01,414 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/page/572> (referer: https://www.google.com/)
+2026-04-27 09:59:37,692 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-robin-hood-2010-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 09:59:39,056 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-ninja-assassin-2009-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-bh> (referer: https://www.google.com/)
+2026-04-27 09:59:41,024 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-tinker-tailor-soldier-spy-2011-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 09:59:42,341 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-sweeney-2012-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 09:59:42,821 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-vacation-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-p> (referer: https://www.google.com/)
+2026-04-27 09:59:45,547 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-gladiator-2000-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-4> (referer: https://www.google.com/)
+2026-04-27 10:00:13,836 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-next-three-days-2010-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-1> (referer: https://www.google.com/)
+2026-04-27 10:00:16,864 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-last-stand-2013-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:00:39,489 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-interview-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:00:50,634 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-lockout-2012-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:00:51,784 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-stolen-2012-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-o> (referer: https://www.google.com/)
+2026-04-27 10:00:54,527 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-collector-2009-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-ko> (referer: https://www.google.com/)
+2026-04-27 10:01:02,710 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-alex-cross-2012-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:01:08,811 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-man-on-a-ledge-2012-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-qw> (referer: https://www.google.com/)
+2026-04-27 10:01:23,736 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-edge-of-tomorrow-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:01:27,536 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-the-bourne-legacy-2012-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:01:48,331 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-welcome-to-the-punch-2013-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:01:52,985 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-dawn-of-the-planet-of-the-apes-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:01:53,747 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-the-november-man-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:02:18,053 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-london-boulevard-2010-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:02:22,603 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-kill-the-messenger-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-t> (referer: https://www.google.com/)
+2026-04-27 10:02:24,157 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-fantastic-four-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:02:34,839 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-contraband-2012-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:02:41,991 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-1%d9%81%d9%8a%d9%84%d9%85-dope-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-w> (referer: https://www.google.com/)
+2026-04-27 10:02:58,679 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/movies/page/573/> (referer: https://www.google.com/)
+2026-04-27 10:02:58,722 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/page/573> (referer: https://www.google.com/)
+2026-04-27 10:03:47,085 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-the-final-girls-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:03:47,109 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-the-cobbler-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:03:47,109 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-the-raid-redemption-2011-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:03:47,110 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/11%d9%81%d9%8a%d9%84%d9%85-everest-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:03:47,122 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/11%d9%81%d9%8a%d9%84%d9%85-the-young-victoria-2009-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:03:49,334 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/11%d9%81%d9%8a%d9%84%d9%85-straight-outta-compton-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-jk> (referer: https://www.google.com/)
+2026-04-27 10:04:26,880 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-kill-list-2011-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-2> (referer: https://www.google.com/)
+2026-04-27 10:04:27,899 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-paddington-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:04:33,328 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-colombiana-2011-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-ll> (referer: https://www.google.com/)
+2026-04-27 10:04:39,261 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-sorority-row-2009-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:04:44,500 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-ant-man-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-1-rt> (referer: https://www.google.com/)
+2026-04-27 10:04:46,786 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-pain-gain-2013-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:05:48,464 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-the-gambler-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:05:52,317 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/11%d9%81%d9%8a%d9%84%d9%85-the-book-of-eli-2010-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:05:52,733 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/11%d9%81%d9%8a%d9%84%d9%85-the-best-of-me-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:05:53,906 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/11%d9%81%d9%8a%d9%84%d9%85-dracula-untold-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:05:54,985 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-serenity-2005-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:05:59,050 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/111%d9%81%d9%8a%d9%84%d9%85-divergent-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-fgj> (referer: https://www.google.com/)
+2026-04-27 10:06:19,904 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-sabotage-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-kk> (referer: https://www.google.com/)
+2026-04-27 10:06:23,110 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-into-the-woods-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:06:45,744 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-begin-again-2013-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:06:52,586 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-project-almanac-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:06:53,867 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-two-night-stand-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:06:54,215 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-clown-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:07:13,467 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/movies/page/574/> (referer: https://www.google.com/)
+2026-04-27 10:07:13,510 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/page/574> (referer: https://www.google.com/)
+2026-04-27 10:07:53,275 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-foxcatcher-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:07:55,241 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-fury-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-8i> (referer: https://www.google.com/)
+2026-04-27 10:07:56,828 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1-%d9%81%d9%8a%d9%84%d9%85-71-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:08:00,381 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-exodus-gods-and-kings-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:08:03,814 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-blended-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-w> (referer: https://www.google.com/)
+2026-04-27 10:08:04,309 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-the-hobbit-the-battle-of-the-five-armies-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:08:39,265 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-interstellar-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-vt> (referer: https://www.google.com/)
+2026-04-27 10:08:57,968 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-love-rosie-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-67> (referer: https://www.google.com/)
+2026-04-27 10:09:00,145 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-the-maze-runner-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-gyu> (referer: https://www.google.com/)
+2026-04-27 10:09:41,987 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-night-at-the-museum-secret-of-the-tomb-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-27 10:09:48,547 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-big-hero-6-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-04-27 10:09:55,637 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-big-hero-6-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:09:56,378 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-seventh-son-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:09:59,038 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-kingsman-the-secret-service-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-j> (referer: https://www.google.com/)
+2026-04-27 10:10:00,586 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-night-at-the-museum-secret-of-the-tomb-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:11:12,536 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-the-imitation-game-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:11:20,406 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-paper-towns-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:11:23,721 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-san-andreas-quake-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-c4> (referer: https://www.google.com/)
+2026-04-27 10:11:25,966 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-hot-pursuit-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-w> (referer: https://www.google.com/)
+2026-04-27 10:11:26,623 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-it-follows-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:11:31,534 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-taken-3-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-bluray-1> (referer: https://www.google.com/)
+2026-04-27 10:11:55,251 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-home-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-04-27 10:11:57,312 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/1%d9%81%d9%8a%d9%84%d9%85-hitman-agent-47-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-2> (referer: https://www.google.com/)
