@@ -2,6 +2,7 @@ import json
 import random
 import re
 import os
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from time import sleep
 from bs4 import BeautifulSoup
@@ -26,6 +27,33 @@ def save_progress(page_num):
     os.makedirs("./output", exist_ok=True)
     with open("./output/last_page_anime.txt", "w") as f:
         f.write(str(page_num))
+
+def extract_episodes_from_detail_page(soup: BeautifulSoup) -> list:
+    episode_links = []
+    ep_all = soup.select_one('#epAll, .epAll')
+    if not ep_all:
+        return episode_links
+    for a in ep_all.find_all('a', href=True):
+        href = a['href'].strip()
+        if href and ('episodes' in href or '/?p=' in href):
+            episode_links.append(href)
+    return episode_links
+
+def save_episodes_for_anime(anime_id: str, episodes: list):
+    if not episodes:
+        return
+    episodes_dir = "./output/episodes/anime"
+    os.makedirs(episodes_dir, exist_ok=True)
+    file_path = os.path.join(episodes_dir, f"{anime_id}.json")
+    output = {
+        "content_id": anime_id,
+        "category": "anime",
+        "seasons": {1: episodes}
+    }
+    with open(file_path, "w", encoding="utf-8") as f:
+        json.dump(output, f, indent=4, ensure_ascii=False)
+    if DEBUG:
+        print(f"  💾 Saved {len(episodes)} episodes for anime/{anime_id}")
 
 try:
     with open("./output/anime.json", "r", encoding="utf-8") as f:
@@ -136,8 +164,12 @@ def scrape_anime_resumable():
             img = div.find("img")
             img_src = img.get("data-src") or img.get("src", "") if img else ""
 
-            ep_div = dsoup.find("div", class_="epAll")
-            episode_count = len(ep_div.find_all("a")) if ep_div else 0
+            episode_urls = extract_episodes_from_detail_page(dsoup)
+            episode_count = len(episode_urls)
+            content_type = "Series" if episode_count > 0 else "Movie"
+
+            if episode_urls:
+                save_episodes_for_anime(anime_id, episode_urls)
 
             iframe = dsoup.find("iframe")
             source = ""
@@ -149,6 +181,7 @@ def scrape_anime_resumable():
             new_anime[anime_id] = {
                 "Title": title,
                 "Category": "anime",
+                "Type": content_type,
                 "Number Of Episodes": episode_count,
                 "Image Source": img_src,
                 "Source": source,
@@ -157,7 +190,7 @@ def scrape_anime_resumable():
                 "Format": get_content_format(dsoup),
                 "Runtime": extract_runtime(dsoup),
                 "Country": extract_country(dsoup),
-                "Episodes": {}
+                "SeasonsUrl": detail_url
             }
             existing_ids.add(anime_id)
 
@@ -178,10 +211,14 @@ def scrape_anime_resumable():
                 dsoup = BeautifulSoup(resp.text, "html.parser")
                 anime_id = get_content_id(dsoup) or url.split('/')[-2]
                 if anime_id not in existing_ids:
+                    # For retries we don't fetch episodes again
+                    episode_count = 0
+                    content_type = "Movie"
                     all_anime[anime_id] = {
                         "Title": "Unknown (retried)",
                         "Category": "anime",
-                        "Number Of Episodes": 0,
+                        "Type": content_type,
+                        "Number Of Episodes": episode_count,
                         "Image Source": "",
                         "Source": "",
                         "Genres": [],
@@ -189,7 +226,7 @@ def scrape_anime_resumable():
                         "Format": get_content_format(dsoup),
                         "Runtime": extract_runtime(dsoup),
                         "Country": extract_country(dsoup),
-                        "Episodes": {}
+                        "SeasonsUrl": url
                     }
             sleep(1)
         with open("./output/anime.json", "w", encoding="utf-8") as f:

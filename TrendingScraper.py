@@ -1,4 +1,5 @@
 import json
+from datetime import datetime, timezone
 from bs4 import BeautifulSoup
 from Common import (
     get_website_safe, FASEL_BASE_URL,
@@ -17,16 +18,30 @@ def scrape_trending():
     featured = get_featured_content(soup)            # main slider
     most_viewed = get_most_viewed_movies(soup)       # most viewed slider
 
-    # Save combined trending content
+    # Ensure all items have a content_type field for frontend routing
+    for movie in trending_movies:
+        if "content_type" not in movie:
+            movie["content_type"] = "movies"
+    for item in most_viewed:
+        if "content_type" not in item:
+            item["content_type"] = "movies"
+
+    # Add timestamp to both outputs
+    now = datetime.now(timezone.utc).isoformat()
+
     with open("./output/trending-content.json", "w", encoding="utf-8") as fp:
         json.dump({
             "movies": trending_movies,
             "episodes": trending_episodes,
-            "most_viewed": most_viewed
+            "most_viewed": most_viewed,
+            "generated_at": now
         }, fp, indent=4, ensure_ascii=False)
 
     with open("./output/featured-content.json", "w", encoding="utf-8") as fp:
-        json.dump({"content": featured}, fp, indent=4, ensure_ascii=False)
+        json.dump({
+            "content": featured,
+            "generated_at": now
+        }, fp, indent=4, ensure_ascii=False)
 
 if __name__ == "__main__":
     scrape_trending()
