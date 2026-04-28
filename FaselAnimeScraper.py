@@ -10,7 +10,10 @@ from Common import (
     DEBUG, FASEL_BASE_URL, REQUEST_DELAY, JITTER,
     get_website_safe, get_number_of_pages, get_paginated_url,
     get_content_id, clean_iframe_source, get_content_format, get_genres_both,
-    extract_country, extract_runtime, extract_description
+    extract_country, extract_runtime, extract_description,
+    extract_status, extract_viewing_level, extract_language,
+    extract_release_date, extract_episode_duration,
+    extract_episode_count_text
 )
 
 def load_progress():
@@ -105,18 +108,7 @@ def scrape_anime_resumable():
             print("  No anime containers found")
             continue
 
-        page_ids = []
-        for div in divs:
-            link = div.find("a")
-            if link and link.get("href"):
-                anime_id = link["href"].split('/')[-2]
-                page_ids.append(anime_id)
-
-        if all(mid in existing_ids for mid in page_ids):
-            print(f"  Page {page} contains only already scraped anime. Stopping.")
-            save_progress(page)
-            break
-
+        # Collect detail URLs for all anime on this page (including possibly already scraped)
         detail_urls = []
         for div in divs:
             link = div.find("a")
@@ -164,6 +156,7 @@ def scrape_anime_resumable():
             img = div.find("img")
             img_src = img.get("data-src") or img.get("src", "") if img else ""
 
+            # Extract episode URLs directly from the detail page
             episode_urls = extract_episodes_from_detail_page(dsoup)
             episode_count = len(episode_urls)
             content_type = "Series" if episode_count > 0 else "Movie"
@@ -179,11 +172,20 @@ def scrape_anime_resumable():
             genres_info = get_genres_both(dsoup)
             description = extract_description(dsoup)
 
+            # New metadata fields
+            status = extract_status(dsoup)
+            viewing_level = extract_viewing_level(dsoup)
+            language = extract_language(dsoup)
+            release_date = extract_release_date(dsoup)
+            episode_duration = extract_episode_duration(dsoup)
+            episode_count_text = extract_episode_count_text(dsoup)  # optional numeric count
+
             new_anime[anime_id] = {
                 "Title": title,
                 "Category": "anime",
                 "Type": content_type,
                 "Number Of Episodes": episode_count,
+                "Number Of Episodes Text": episode_count_text,  # optional
                 "Image Source": img_src,
                 "Source": source,
                 "Genres": genres_info["en"],
@@ -192,7 +194,12 @@ def scrape_anime_resumable():
                 "Runtime": extract_runtime(dsoup),
                 "Country": extract_country(dsoup),
                 "Description": description,
-                "SeasonsUrl": detail_url
+                "SeasonsUrl": detail_url,
+                "Status": status,
+                "ViewingLevel": viewing_level,
+                "Language": language,
+                "ReleaseDate": release_date,
+                "EpisodeDuration": episode_duration,
             }
             existing_ids.add(anime_id)
 
@@ -218,6 +225,7 @@ def scrape_anime_resumable():
                         "Category": "anime",
                         "Type": "Movie",
                         "Number Of Episodes": 0,
+                        "Number Of Episodes Text": 0,
                         "Image Source": "",
                         "Source": "",
                         "Genres": [],
@@ -226,7 +234,12 @@ def scrape_anime_resumable():
                         "Runtime": extract_runtime(dsoup),
                         "Country": extract_country(dsoup),
                         "Description": extract_description(dsoup),
-                        "SeasonsUrl": url
+                        "SeasonsUrl": url,
+                        "Status": extract_status(dsoup),
+                        "ViewingLevel": extract_viewing_level(dsoup),
+                        "Language": extract_language(dsoup),
+                        "ReleaseDate": extract_release_date(dsoup),
+                        "EpisodeDuration": extract_episode_duration(dsoup),
                     }
             sleep(1)
         with open("./output/anime.json", "w", encoding="utf-8") as f:

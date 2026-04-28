@@ -62,7 +62,7 @@ def load_json(filename: str):
 
 def load_episodes(category: str, content_id: str):
     """
-    Load episodes for a specific content (series/tvshows/asian-series).
+    Load episodes for a specific content (series/tvshows/asian-series/anime).
     Expected path: DATA_DIR/episodes/{category}/{content_id}.json
     """
     filepath = os.path.join(DATA_DIR, "episodes", category, f"{content_id}.json")
@@ -107,14 +107,15 @@ def index():
             "trending": "/api/trending",
             "featured": "/api/featured",
             "search": "/api/search?q=...",
-            "episodes (for series/tvshows/asian-series)": "/api/episodes/<category>/<id>"
+            "episodes (series/tvshows/asian-series)": "/api/episodes/<category>/<id>",
+            "anime_episodes": "/api/anime-episodes/<id>"
         },
         "status": "online",
         "timestamp": datetime.now(timezone.utc).isoformat()
     })
 
 # ----------------------------------------------------------------------
-#  Metadata endpoints
+#  Metadata endpoints (return full JSON objects including new fields)
 # ----------------------------------------------------------------------
 @app.route("/api/movies", methods=["GET"])
 def get_movies():
@@ -203,16 +204,24 @@ def search():
     return jsonify(results[:50])
 
 # ----------------------------------------------------------------------
-#  Episodes endpoint (for series, tvshows, asian-series)
+#  Episodes endpoints
 # ----------------------------------------------------------------------
 @app.route("/api/episodes/<category>/<content_id>", methods=["GET"])
 def get_episodes(category: str, content_id: str):
-    """Return episodes for a specific content (series/tvshows/asian-series)."""
+    """Return episodes for series, tvshows, or asian-series."""
     if category not in ["series", "tvshows", "asian-series"]:
         return jsonify({"error": "Invalid category. Use series, tvshows, or asian-series"}), 400
     episodes = load_episodes(category, content_id)
     if episodes is None:
         return jsonify({"error": f"Episodes not found for {category}/{content_id}"}), 404
+    return jsonify(episodes)
+
+@app.route("/api/anime-episodes/<anime_id>", methods=["GET"])
+def get_anime_episodes(anime_id: str):
+    """Return episodes for an anime (stored in episodes/anime/{id}.json)."""
+    episodes = load_episodes("anime", anime_id)
+    if episodes is None:
+        return jsonify({"error": f"Episodes not found for anime/{anime_id}"}), 404
     return jsonify(episodes)
 
 # ----------------------------------------------------------------------

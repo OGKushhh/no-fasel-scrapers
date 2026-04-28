@@ -702,12 +702,97 @@ def get_seasons_url_from_detail(detail_url: str) -> str:
 
     return detail_url
 
+# ----------------------------------------------------------------------
+#  Description extraction (improved with fallbacks)
+# ----------------------------------------------------------------------
 def extract_description(soup: BeautifulSoup) -> str:
     """Extract the description/synopsis from a detail page."""
-    desc_elem = soup.select_one('.singleDesc p')
-    if desc_elem:
-        return desc_elem.text.strip()
+    selectors = ['.singleDesc p', '.desc p', '.film-description']
+    for selector in selectors:
+        desc_elem = soup.select_one(selector)
+        if desc_elem and desc_elem.text.strip():
+            return desc_elem.text.strip()
+    meta_desc = soup.find('meta', attrs={'name': 'description'})
+    if meta_desc and meta_desc.get('content'):
+        return meta_desc['content'].strip()
     return ""
+
+# ----------------------------------------------------------------------
+#  NEW helper functions for extra anime metadata
+# ----------------------------------------------------------------------
+def extract_status(soup: BeautifulSoup) -> str:
+    """Extract series status (e.g., 'مستمر', 'مكتمل')."""
+    check_icons = soup.find_all('i', class_='far fa-check-double')
+    if len(check_icons) >= 1:
+        parent = check_icons[0].find_parent('span')
+        if parent:
+            text = parent.get_text(separator=' ', strip=True)
+            if ':' in text:
+                return text.split(':', 1)[1].strip()
+    return ""
+
+def extract_viewing_level(soup: BeautifulSoup) -> str:
+    """Extract age rating (e.g., '+13', 'TV-14')."""
+    check_icons = soup.find_all('i', class_='far fa-check-double')
+    if len(check_icons) >= 2:
+        parent = check_icons[1].find_parent('span')
+        if parent:
+            text = parent.get_text(separator=' ', strip=True)
+            if ':' in text:
+                return text.split(':', 1)[1].strip()
+    return ""
+
+def extract_language(soup: BeautifulSoup) -> str:
+    """Extract language (e.g., 'اليابانية', 'English')."""
+    icon = soup.find('i', class_='fal fa-language')
+    if icon:
+        parent = icon.find_parent('span')
+        if parent:
+            text = parent.get_text(separator=' ', strip=True)
+            if ':' in text:
+                return text.split(':', 1)[1].strip()
+    return ""
+
+def extract_release_date(soup: BeautifulSoup) -> str:
+    """Extract release date (e.g., 'شتاء 1996', '2021')."""
+    icon = soup.find('i', class_='far fa-calendar-alt')
+    if icon:
+        parent = icon.find_parent('span')
+        if parent:
+            text = parent.get_text(separator=' ', strip=True)
+            if ':' in text:
+                return text.split(':', 1)[1].strip()
+    return ""
+
+def extract_episode_duration(soup: BeautifulSoup) -> str:
+    """Extract episode duration (e.g., '24د', '25د')."""
+    icon = soup.find('i', class_='far fa-clock')
+    if icon:
+        parent = icon.find_parent('span')
+        if parent:
+            text = parent.get_text(separator=' ', strip=True)
+            if ':' in text:
+                return text.split(':', 1)[1].strip()
+    return ""
+
+def extract_episode_count_text(soup: BeautifulSoup) -> int:
+    """
+    Optional: extract numeric episode count from the 'الحلقات : 101 حلقة' text.
+    Returns integer (0 if none found).
+    """
+    icon = soup.find('i', class_='far fa-film')
+    if icon:
+        parent = icon.find_parent('span')
+        if parent:
+            text = parent.get_text(separator=' ', strip=True)
+            if ':' in text:
+                count_part = text.split(':', 1)[1].strip()
+                # Extract digits
+                match = re.search(r'(\d+)', count_part)
+                if match:
+                    return int(match.group(1))
+    return 0
+
 # ----------------------------------------------------------------------
 #  Legacy functions – Akwam, HDW, CimaNow (unchanged)
 # ----------------------------------------------------------------------

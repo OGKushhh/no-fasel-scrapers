@@ -10,7 +10,10 @@ from Common import (
     DEBUG, FASEL_BASE_URL, REQUEST_DELAY, JITTER,
     get_website_safe, get_number_of_pages, get_paginated_url,
     get_content_id, clean_iframe_source, get_content_format, get_genres_both,
-    extract_country, extract_runtime, extract_description
+    extract_country, extract_runtime, extract_description,
+    extract_status, extract_viewing_level, extract_language,
+    extract_release_date, extract_episode_duration,
+    extract_episode_count_text
 )
 
 PATHS = ["series", "tvshows", "asian-series"]
@@ -70,9 +73,17 @@ def extract_seasons_from_page(soup: BeautifulSoup, base_url: str) -> list:
             season_url = base_url.rstrip('/') + season_url
         else:
             season_url = season_url
+        # Extract poster image
+        img = season_div.find('img')
+        poster = ""
+        if img:
+            poster = img.get('data-src') or img.get('src', '')
+            if poster and not poster.startswith(('http://', 'https://')):
+                poster = base_url.rstrip('/') + poster
         seasons.append({
             'number': season_num,
-            'page_url': season_url
+            'page_url': season_url,
+            'poster': poster
         })
     return seasons
 
@@ -238,7 +249,15 @@ def scrape_series_resumable(path: str):
             genres_info = get_genres_both(dsoup)
             description = extract_description(dsoup)
 
-            # Get seasons hub URL and extract episodes
+            # Extract metadata (reusing anime helpers)
+            status = extract_status(dsoup)
+            viewing_level = extract_viewing_level(dsoup)   # works for series, may be empty for tvshows/asian
+            language = extract_language(dsoup)
+            release_date = extract_release_date(dsoup)
+            episode_duration = extract_episode_duration(dsoup)
+            episode_count_text = extract_episode_count_text(dsoup)
+
+            # Get seasons hub URL and extract episodes (with posters)
             seasons_hub_url = get_seasons_url_from_detail(detail_url)
             seasons_with_episodes = {}
             if seasons_hub_url:
@@ -252,12 +271,16 @@ def scrape_series_resumable(path: str):
                     for season in seasons_list:
                         season_num = season['number']
                         season_url = season['page_url']
+                        poster = season['poster']
                         season_resp = get_website_safe(season_url)
                         if season_resp:
                             season_soup = BeautifulSoup(season_resp.text, 'html.parser')
                             episode_urls = extract_episodes_from_season_page(season_soup)
                             if episode_urls:
-                                seasons_with_episodes[season_num] = episode_urls
+                                seasons_with_episodes[season_num] = {
+                                    "poster": poster,
+                                    "episodes": episode_urls
+                                }
                         time.sleep(REQUEST_DELAY / 2)
 
             # Save episodes separately
@@ -275,7 +298,13 @@ def scrape_series_resumable(path: str):
                 "Runtime": extract_runtime(dsoup),
                 "Country": extract_country(dsoup),
                 "Description": description,
-                "SeasonsUrl": seasons_hub_url
+                "SeasonsUrl": seasons_hub_url,
+                "Status": status,
+                "ViewingLevel": viewing_level,
+                "Language": language,
+                "ReleaseDate": release_date,
+                "EpisodeDuration": episode_duration,
+                "Number Of Episodes Text": episode_count_text,
             }
             existing_ids.add(series_id)
 
@@ -307,7 +336,13 @@ def scrape_series_resumable(path: str):
                         "Runtime": extract_runtime(dsoup),
                         "Country": extract_country(dsoup),
                         "Description": extract_description(dsoup),
-                        "SeasonsUrl": get_seasons_url_from_detail(url)
+                        "SeasonsUrl": get_seasons_url_from_detail(url),
+                        "Status": extract_status(dsoup),
+                        "ViewingLevel": extract_viewing_level(dsoup),
+                        "Language": extract_language(dsoup),
+                        "ReleaseDate": extract_release_date(dsoup),
+                        "EpisodeDuration": extract_episode_duration(dsoup),
+                        "Number Of Episodes Text": extract_episode_count_text(dsoup),
                     }
         with open(f"./output/{path}.json", "w", encoding="utf-8") as f:
             json.dump(all_series, f, indent=4, ensure_ascii=False)

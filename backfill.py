@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup
 # ----------------------------------------------------------------------
 JSON_FILE = "./output/movies.json"          # change to series.json, anime.json, etc.
 PROGRESS_FILE = "./output/backfill_progress.txt"
-MAX_WORKERS = 7
+MAX_WORKERS = 6
 SAVE_INTERVAL = 50                          # save after every N successful updates
 REQUEST_DELAY_BATCH = 2                     # seconds to wait between batches (optional)
 # ----------------------------------------------------------------------
