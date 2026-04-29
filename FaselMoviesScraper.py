@@ -2,6 +2,7 @@ import json
 import random
 import re
 import os
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from time import sleep
 from bs4 import BeautifulSoup
@@ -9,12 +10,10 @@ from Common import (
     DEBUG, FASEL_BASE_URL, REQUEST_DELAY, JITTER,
     get_website_safe, get_number_of_pages, get_paginated_url,
     get_content_id, clean_iframe_source, get_content_format, get_genres_both,
-    extract_country, extract_runtime, extract_description
+    extract_country, extract_runtime, extract_description,
+    extract_release_date, extract_language
 )
 
-# ----------------------------------------------------------------------
-#  Progress helpers
-# ----------------------------------------------------------------------
 def load_progress():
     progress_file = "./output/last_page_movies.txt"
     if os.path.exists(progress_file):
@@ -30,14 +29,13 @@ def save_progress(page_num):
     with open("./output/last_page_movies.txt", "w") as f:
         f.write(str(page_num))
 
-# Load existing movies
 try:
     with open("./output/movies.json", "r", encoding="utf-8") as f:
         existing_movies = json.load(f)
 except (FileNotFoundError, json.JSONDecodeError):
     existing_movies = {}
-existing_ids = set(existing_movies.keys())
 
+existing_ids = set(existing_movies.keys())
 FAILED_DETAIL_URLS = set()
 
 def fetch_detail(detail_url: str):
@@ -53,7 +51,7 @@ def scrape_movies_resumable():
     total_pages = get_number_of_pages(category_url)
     start_page = load_progress() + 1
     if start_page > total_pages:
-        print("All pages already completed.")
+        print("All movie pages already completed.")
         return
 
     print(f"Total movie pages: {total_pages}")
@@ -81,7 +79,6 @@ def scrape_movies_resumable():
             print("  No movie containers found")
             continue
 
-        # Extract IDs from the page (without detail fetch)
         page_ids = []
         for div in divs:
             link = div.find("a")
@@ -89,13 +86,11 @@ def scrape_movies_resumable():
                 movie_id = link["href"].split('/')[-2]
                 page_ids.append(movie_id)
 
-        # If all IDs are already known, stop incremental
         if all(mid in existing_ids for mid in page_ids):
             print(f"  Page {page} contains only already scraped movies. Stopping.")
             save_progress(page)
             break
 
-        # Collect detail URLs only for new movies
         detail_urls = []
         for div in divs:
             link = div.find("a")
@@ -151,6 +146,10 @@ def scrape_movies_resumable():
             genres_info = get_genres_both(dsoup)
             description = extract_description(dsoup)
 
+            release_date = extract_release_date(dsoup)
+            language = extract_language(dsoup)
+            country = extract_country(dsoup)
+
             new_movies[movie_id] = {
                 "Title": title,
                 "Category": "movies",
@@ -160,8 +159,10 @@ def scrape_movies_resumable():
                 "GenresAr": genres_info["ar"],
                 "Format": get_content_format(dsoup),
                 "Runtime": extract_runtime(dsoup),
-                "Country": extract_country(dsoup),
-                "Description": description
+                "Country": country,
+                "Description": description,
+                "ReleaseDate": release_date,
+                "Language": language,
             }
             existing_ids.add(movie_id)
 
@@ -192,7 +193,9 @@ def scrape_movies_resumable():
                         "Format": get_content_format(dsoup),
                         "Runtime": extract_runtime(dsoup),
                         "Country": extract_country(dsoup),
-                        "Description": extract_description(dsoup)
+                        "Description": extract_description(dsoup),
+                        "ReleaseDate": extract_release_date(dsoup),
+                        "Language": extract_language(dsoup),
                     }
             sleep(1)
         with open("./output/movies.json", "w", encoding="utf-8") as f:

@@ -108,7 +108,6 @@ def scrape_anime_resumable():
             print("  No anime containers found")
             continue
 
-        # Collect detail URLs for all anime on this page (including possibly already scraped)
         detail_urls = []
         for div in divs:
             link = div.find("a")
@@ -156,7 +155,6 @@ def scrape_anime_resumable():
             img = div.find("img")
             img_src = img.get("data-src") or img.get("src", "") if img else ""
 
-            # Extract episode URLs directly from the detail page
             episode_urls = extract_episodes_from_detail_page(dsoup)
             episode_count = len(episode_urls)
             content_type = "Series" if episode_count > 0 else "Movie"
@@ -172,20 +170,20 @@ def scrape_anime_resumable():
             genres_info = get_genres_both(dsoup)
             description = extract_description(dsoup)
 
-            # New metadata fields
+            # Extra metadata
             status = extract_status(dsoup)
             viewing_level = extract_viewing_level(dsoup)
             language = extract_language(dsoup)
             release_date = extract_release_date(dsoup)
             episode_duration = extract_episode_duration(dsoup)
-            episode_count_text = extract_episode_count_text(dsoup)  # optional numeric count
+            episode_count_text = extract_episode_count_text(dsoup)
 
             new_anime[anime_id] = {
                 "Title": title,
                 "Category": "anime",
                 "Type": content_type,
                 "Number Of Episodes": episode_count,
-                "Number Of Episodes Text": episode_count_text,  # optional
+                "Number Of Episodes Text": episode_count_text,
                 "Image Source": img_src,
                 "Source": source,
                 "Genres": genres_info["en"],

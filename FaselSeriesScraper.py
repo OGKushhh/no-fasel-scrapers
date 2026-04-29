@@ -44,7 +44,7 @@ def fetch_detail(detail_url: str):
         return None, None
 
 # ----------------------------------------------------------------------
-# Season & episode extraction functions
+# Season & episode extraction functions (same as incremental)
 # ----------------------------------------------------------------------
 def extract_seasons_from_page(soup: BeautifulSoup, base_url: str) -> list:
     seasons = []
@@ -73,7 +73,6 @@ def extract_seasons_from_page(soup: BeautifulSoup, base_url: str) -> list:
             season_url = base_url.rstrip('/') + season_url
         else:
             season_url = season_url
-        # Extract poster image
         img = season_div.find('img')
         poster = ""
         if img:
@@ -188,7 +187,7 @@ def scrape_series_resumable(path: str):
                 series_id = link["href"].split('/')[-2]
                 page_ids.append(series_id)
 
-        # If all IDs already known, stop early (optional)
+        # If all IDs already known, stop early
         if all(mid in existing_ids for mid in page_ids):
             print(f"[{path}] Page {page} contains only already scraped series. Stopping.")
             save_progress(path, page)
@@ -249,15 +248,15 @@ def scrape_series_resumable(path: str):
             genres_info = get_genres_both(dsoup)
             description = extract_description(dsoup)
 
-            # Extract metadata (reusing anime helpers)
+            # Extract metadata
             status = extract_status(dsoup)
-            viewing_level = extract_viewing_level(dsoup)   # works for series, may be empty for tvshows/asian
+            viewing_level = extract_viewing_level(dsoup)
             language = extract_language(dsoup)
             release_date = extract_release_date(dsoup)
             episode_duration = extract_episode_duration(dsoup)
             episode_count_text = extract_episode_count_text(dsoup)
 
-            # Get seasons hub URL and extract episodes (with posters)
+            # Get seasons hub URL and extract episodes
             seasons_hub_url = get_seasons_url_from_detail(detail_url)
             seasons_with_episodes = {}
             if seasons_hub_url:

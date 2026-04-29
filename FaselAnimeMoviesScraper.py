@@ -1,8 +1,8 @@
-# FaselAnimeMoviesScraper.py
 import json
 import random
 import re
 import os
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from time import sleep
 from bs4 import BeautifulSoup
@@ -10,7 +10,8 @@ from Common import (
     DEBUG, FASEL_BASE_URL, REQUEST_DELAY, JITTER,
     get_website_safe, get_number_of_pages, get_paginated_url,
     get_content_id, clean_iframe_source, get_content_format, get_genres_both,
-    extract_country, extract_runtime, extract_description
+    extract_country, extract_runtime, extract_description,
+    extract_release_date, extract_language
 )
 
 def load_progress():
@@ -78,7 +79,6 @@ def scrape_anime_movies_resumable():
             print("  No anime movie containers found")
             continue
 
-        # Collect detail URLs for all movies on this page (including possibly already scraped)
         detail_urls = []
         for div in divs:
             link = div.find("a")
@@ -132,7 +132,11 @@ def scrape_anime_movies_resumable():
             img_src = img.get("data-src") or img.get("src", "") if img else ""
 
             genres_info = get_genres_both(dsoup)
-            description = extract_description(dsoup)   # ← description added
+            description = extract_description(dsoup)
+
+            release_date = extract_release_date(dsoup)
+            language = extract_language(dsoup)
+            country = extract_country(dsoup)
 
             new_movies[movie_id] = {
                 "Title": title,
@@ -143,13 +147,15 @@ def scrape_anime_movies_resumable():
                 "GenresAr": genres_info["ar"],
                 "Format": get_content_format(dsoup),
                 "Runtime": extract_runtime(dsoup),
-                "Country": extract_country(dsoup),
-                "Description": description
+                "Country": country,
+                "Description": description,
+                "ReleaseDate": release_date,
+                "Language": language,
             }
             existing_ids.add(movie_id)
 
         all_movies.update(new_movies)
-        print(f"  Page {page} done: added {len(new_movies)} movies, total {len(all_movies)}")
+        print(f"  Page {page} done: added {len(new_movies)} anime movies, total {len(all_movies)}")
 
         os.makedirs("./output", exist_ok=True)
         with open("./output/anime-movies.json", "w", encoding="utf-8") as f:
@@ -175,7 +181,9 @@ def scrape_anime_movies_resumable():
                         "Format": get_content_format(dsoup),
                         "Runtime": extract_runtime(dsoup),
                         "Country": extract_country(dsoup),
-                        "Description": extract_description(dsoup)
+                        "Description": extract_description(dsoup),
+                        "ReleaseDate": extract_release_date(dsoup),
+                        "Language": extract_language(dsoup),
                     }
             sleep(1)
         with open("./output/anime-movies.json", "w", encoding="utf-8") as f:

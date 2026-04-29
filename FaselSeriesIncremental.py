@@ -49,7 +49,6 @@ def extract_seasons_from_page(soup: BeautifulSoup, base_url: str) -> list:
             season_url = base_url.rstrip('/') + season_url
         else:
             season_url = season_url
-        # Extract poster image
         img = season_div.find('img')
         poster = ""
         if img:
@@ -114,9 +113,6 @@ def get_seasons_url_from_detail(detail_url: str) -> str:
             return season_url
     return detail_url
 
-# ----------------------------------------------------------------------
-# Incremental scraper
-# ----------------------------------------------------------------------
 def fetch_detail(detail_url: str):
     resp = get_website_safe(detail_url)
     if resp and resp.status_code == 200:
@@ -130,7 +126,6 @@ def scrape_series_incremental(path: str):
     total_pages = get_number_of_pages(category_url)
     print(f"\n[{path}] Total pages: {total_pages}")
 
-    # Load existing series
     try:
         with open(f"./output/{path}.json", "r", encoding="utf-8") as f:
             existing_series = json.load(f)
@@ -165,7 +160,6 @@ def scrape_series_incremental(path: str):
             page += 1
             continue
 
-        # Extract IDs from the page
         page_ids = []
         for div in divs:
             link = div.find("a")
@@ -173,13 +167,11 @@ def scrape_series_incremental(path: str):
                 series_id = link["href"].split('/')[-2]
                 page_ids.append(series_id)
 
-        # If all IDs on this page are already known → stop
         if all(mid in existing_ids for mid in page_ids):
             print(f"  Page {page} contains only already scraped series. Stopping.")
             stop = True
             break
 
-        # Collect detail URLs only for new series
         detail_urls = []
         for div in divs:
             link = div.find("a")
@@ -193,7 +185,6 @@ def scrape_series_incremental(path: str):
             page += 1
             continue
 
-        # Fetch new detail pages concurrently
         detail_map = {}
         with ThreadPoolExecutor(max_workers=5) as ex:
             futures = {ex.submit(fetch_detail, url): url for url in detail_urls}
@@ -223,7 +214,6 @@ def scrape_series_incremental(path: str):
             if not series_id or series_id in existing_ids:
                 continue
 
-            # Basic metadata
             title_elem = div.find("div", class_="h5") or div.find("div", class_="h1")
             title = title_elem.text.strip() if title_elem else "Unknown"
             img = div.find("img")
@@ -237,7 +227,6 @@ def scrape_series_incremental(path: str):
             genres_info = get_genres_both(dsoup)
             description = extract_description(dsoup)
 
-            # Extract metadata (reusing anime helpers)
             status = extract_status(dsoup)
             viewing_level = extract_viewing_level(dsoup)
             language = extract_language(dsoup)
@@ -245,7 +234,6 @@ def scrape_series_incremental(path: str):
             episode_duration = extract_episode_duration(dsoup)
             episode_count_text = extract_episode_count_text(dsoup)
 
-            # Get seasons hub URL and extract episodes (with posters)
             seasons_hub_url = get_seasons_url_from_detail(detail_url)
             seasons_with_episodes = {}
             if seasons_hub_url:
@@ -271,11 +259,9 @@ def scrape_series_incremental(path: str):
                                 }
                         time.sleep(REQUEST_DELAY / 2)
 
-            # Save episodes separately
             if seasons_with_episodes:
                 save_episodes_for_series(path, series_id, seasons_with_episodes)
 
-            # Main series entry
             new_series[series_id] = {
                 "Title": title,
                 "Category": path,
@@ -307,7 +293,6 @@ def scrape_series_incremental(path: str):
 
         page += 1
 
-    # Retry failed detail URLs
     if FAILED_DETAIL_URLS:
         print(f"\n[{path}] Retrying {len(FAILED_DETAIL_URLS)} failed detail URLs...")
         for url in list(FAILED_DETAIL_URLS):

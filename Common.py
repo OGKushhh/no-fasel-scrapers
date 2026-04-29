@@ -794,6 +794,67 @@ def extract_episode_count_text(soup: BeautifulSoup) -> int:
     return 0
 
 # ----------------------------------------------------------------------
+#  IMDb rating helper using OMDb API
+# ----------------------------------------------------------------------
+import requests
+import time
+
+OMDB_API_KEY = "b7fc5b44"
+OMDB_BASE_URL = "http://www.omdbapi.com/"
+IMDB_CACHE = {}  # Simple in‑memory cache for current run
+
+def fetch_imdb_rating_by_id(imdb_id: str) -> Optional[str]:
+    """Fetch IMDb rating using direct IMDb ID (e.g., 'tt0111161')."""
+    if not imdb_id or not imdb_id.startswith('tt'):
+        return None
+    # Check cache
+    if imdb_id in IMDB_CACHE:
+        return IMDB_CACHE[imdb_id]
+    url = f"{OMDB_BASE_URL}?i={imdb_id}&apikey={OMDB_API_KEY}"
+    try:
+        resp = requests.get(url, timeout=10)
+        data = resp.json()
+        if data.get("Response") == "True":
+            rating = data.get("imdbRating")
+            if rating and rating != "N/A":
+                IMDB_CACHE[imdb_id] = rating
+                return rating
+    except Exception as e:
+        print(f"IMDb API error for {imdb_id}: {e}")
+    IMDB_CACHE[imdb_id] = None
+    return None
+
+def search_imdb_by_title(title: str, year: Optional[str] = None, content_type: str = "movie") -> Optional[str]:
+    """Search for a title and return the best‑matching IMDb ID."""
+    search_title = title
+    if year:
+        search_title += f" {year}"
+    url = f"{OMDB_BASE_URL}?t={search_title}&apikey={OMDB_API_KEY}"
+    # Optionally add type parameter: &type=movie, series, episode
+    if content_type in ["movie", "series", "episode"]:
+        url += f"&type={content_type}"
+    try:
+        resp = requests.get(url, timeout=10)
+        data = resp.json()
+        if data.get("Response") == "True":
+            return data.get("imdbID")
+    except Exception as e:
+        print(f"IMDb search error for '{title}': {e}")
+    return None
+
+def get_imdb_rating(title: str, year: Optional[str] = None, content_type: str = "movie", known_imdb_id: Optional[str] = None) -> Optional[str]:
+    """
+    High‑level function: if known_imdb_id provided, use it; otherwise search by title.
+    Returns rating string (e.g., '8.5') or None.
+    """
+    if known_imdb_id and known_imdb_id.startswith('tt'):
+        return fetch_imdb_rating_by_id(known_imdb_id)
+    imdb_id = search_imdb_by_title(title, year, content_type)
+    if imdb_id:
+        return fetch_imdb_rating_by_id(imdb_id)
+    return None
+
+# ----------------------------------------------------------------------
 #  Legacy functions – Akwam, HDW, CimaNow (unchanged)
 # ----------------------------------------------------------------------
 def split_into_ranges(num_ranges: int, end: int, start: int = 0) -> list:

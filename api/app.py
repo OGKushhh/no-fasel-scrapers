@@ -101,6 +101,7 @@ def index():
             "extract (POST)": "/extract",
             "movies": "/api/movies",
             "anime": "/api/anime",
+            "anime_movies": "/api/anime-movies",
             "series": "/api/series",
             "tvshows": "/api/tvshows",
             "asian_series": "/api/asian-series",
@@ -165,6 +166,16 @@ def get_asian_series():
     series_id = request.args.get("id")
     if series_id:
         return jsonify(data.get(series_id, {"error": "Not found"}))
+    return jsonify(data)
+
+@app.route("/api/anime-movies", methods=["GET"])
+def get_anime_movies():
+    data = load_json("anime-movies.json")
+    if data is None:
+        return jsonify({"error": "anime-movies.json not found"}), 404
+    movie_id = request.args.get("id")
+    if movie_id:
+        return jsonify(data.get(movie_id, {"error": "Not found"}))
     return jsonify(data)
 
 @app.route("/api/trending", methods=["GET"])

@@ -177,7 +177,7 @@ def scrape_anime_incremental():
             genres_info = get_genres_both(dsoup)
             description = extract_description(dsoup)
 
-            # New metadata fields
+            # Extra metadata
             status = extract_status(dsoup)
             viewing_level = extract_viewing_level(dsoup)
             language = extract_language(dsoup)

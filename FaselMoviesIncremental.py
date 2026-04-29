@@ -2,6 +2,7 @@ import json
 import random
 import re
 import os
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from time import sleep
 from bs4 import BeautifulSoup
@@ -9,10 +10,10 @@ from Common import (
     DEBUG, FASEL_BASE_URL, REQUEST_DELAY, JITTER,
     get_website_safe, get_number_of_pages, get_paginated_url,
     get_content_id, clean_iframe_source, get_content_format, get_genres_both,
-    extract_country, extract_runtime
+    extract_country, extract_runtime, extract_description,
+    extract_release_date, extract_language
 )
 
-# Load existing movies
 try:
     with open("./output/movies.json", "r", encoding="utf-8") as f:
         existing_movies = json.load(f)
@@ -62,7 +63,7 @@ def scrape_movies_incremental():
             page += 1
             continue
 
-        # Extract IDs from the page (fast, no extra requests)
+        # Extract IDs from the page (fast)
         page_ids = []
         for div in divs:
             link = div.find("a")
@@ -76,7 +77,7 @@ def scrape_movies_incremental():
             stop = True
             break
 
-        # Collect detail URLs only for movies not yet in database
+        # Collect detail URLs only for new movies
         detail_urls = []
         for div in divs:
             link = div.find("a")
@@ -92,7 +93,7 @@ def scrape_movies_incremental():
 
         # Fetch new detail pages concurrently
         detail_map = {}
-        with ThreadPoolExecutor(max_workers=5) as ex:
+        with ThreadPoolExecutor(max_workers=6) as ex:
             futures = {ex.submit(fetch_detail, url): url for url in detail_urls}
             for fut in as_completed(futures):
                 url, html = fut.result()
@@ -131,6 +132,12 @@ def scrape_movies_incremental():
             img_src = img.get("data-src") or img.get("src", "") if img else ""
 
             genres_info = get_genres_both(dsoup)
+            description = extract_description(dsoup)
+
+            # Metadata (no IMDb)
+            release_date = extract_release_date(dsoup)
+            language = extract_language(dsoup)
+            country = extract_country(dsoup)
 
             new_movies[movie_id] = {
                 "Title": title,
@@ -141,7 +148,10 @@ def scrape_movies_incremental():
                 "GenresAr": genres_info["ar"],
                 "Format": get_content_format(dsoup),
                 "Runtime": extract_runtime(dsoup),
-                "Country": extract_country(dsoup),
+                "Country": country,
+                "Description": description,
+                "ReleaseDate": release_date,
+                "Language": language
             }
             existing_ids.add(movie_id)
 
@@ -157,7 +167,7 @@ def scrape_movies_incremental():
 
     if FAILED_DETAIL_URLS:
         print(f"\nRetrying {len(FAILED_DETAIL_URLS)} failed detail URLs...")
-        for url in FAILED_DETAIL_URLS:
+        for url in list(FAILED_DETAIL_URLS):
             resp = get_website_safe(url)
             if resp:
                 dsoup = BeautifulSoup(resp.text, "html.parser")
@@ -173,10 +183,14 @@ def scrape_movies_incremental():
                         "Format": get_content_format(dsoup),
                         "Runtime": extract_runtime(dsoup),
                         "Country": extract_country(dsoup),
+                        "Description": extract_description(dsoup),
+                        "ReleaseDate": extract_release_date(dsoup),
+                        "Language": extract_language(dsoup)
                     }
             sleep(1)
         with open("./output/movies.json", "w", encoding="utf-8") as f:
             json.dump(all_movies, f, indent=4, ensure_ascii=False)
+        FAILED_DETAIL_URLS.clear()
 
     print(f"\nFinished. Total movies: {len(all_movies)}")
 
