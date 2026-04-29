@@ -100,6 +100,9 @@ def index():
             "health": "/health",
             "extract (POST)": "/extract",
             "movies": "/api/movies",
+            "dubbed_movies": "/api/dubbed-movies",
+            "hindi": "/api/hindi",
+            "asian_movies": "/api/asian-movies",
             "anime": "/api/anime",
             "anime_movies": "/api/anime-movies",
             "series": "/api/series",
@@ -108,6 +111,7 @@ def index():
             "trending": "/api/trending",
             "featured": "/api/featured",
             "search": "/api/search?q=...",
+            "ratings": "/api/ratings/<category>/<id>",
             "episodes (series/tvshows/asian-series)": "/api/episodes/<category>/<id>",
             "anime_episodes": "/api/anime-episodes/<id>"
         },
@@ -123,6 +127,36 @@ def get_movies():
     data = load_json("movies.json")
     if data is None:
         return jsonify({"error": "movies.json not found"}), 404
+    movie_id = request.args.get("id")
+    if movie_id:
+        return jsonify(data.get(movie_id, {"error": "Not found"}))
+    return jsonify(data)
+
+@app.route("/api/dubbed-movies", methods=["GET"])
+def get_dubbed_movies():
+    data = load_json("dubbed-movies.json")
+    if data is None:
+        return jsonify({"error": "dubbed-movies.json not found"}), 404
+    movie_id = request.args.get("id")
+    if movie_id:
+        return jsonify(data.get(movie_id, {"error": "Not found"}))
+    return jsonify(data)
+
+@app.route("/api/hindi", methods=["GET"])
+def get_hindi_movies():
+    data = load_json("hindi.json")
+    if data is None:
+        return jsonify({"error": "hindi.json not found"}), 404
+    movie_id = request.args.get("id")
+    if movie_id:
+        return jsonify(data.get(movie_id, {"error": "Not found"}))
+    return jsonify(data)
+
+@app.route("/api/asian-movies", methods=["GET"])
+def get_asian_movies():
+    data = load_json("asian-movies.json")
+    if data is None:
+        return jsonify({"error": "asian-movies.json not found"}), 404
     movie_id = request.args.get("id")
     if movie_id:
         return jsonify(data.get(movie_id, {"error": "Not found"}))
@@ -192,13 +226,28 @@ def get_featured():
         return jsonify({"error": "featured-content.json not found"}), 404
     return jsonify(data)
 
+# ----------------------------------------------------------------------
+#  Ratings endpoint
+# ----------------------------------------------------------------------
+@app.route("/api/ratings/<category>/<content_id>", methods=["GET"])
+def get_rating(category: str, content_id: str):
+    """Return IMDb rating from separate ratings file."""
+    rating_file = os.path.join(DATA_DIR, "ratings", category, f"{content_id}.json")
+    if not os.path.exists(rating_file):
+        return jsonify({"error": "Rating not found"}), 404
+    with open(rating_file, "r", encoding="utf-8") as f:
+        return jsonify(json.load(f))
+
+# ----------------------------------------------------------------------
+#  Search endpoint (includes new categories)
+# ----------------------------------------------------------------------
 @app.route("/api/search", methods=["GET"])
 def search():
     query = request.args.get("q", "").lower()
     if not query:
         return jsonify([])
     results = []
-    categories = ["movies", "anime", "series", "tvshows", "asian-series"]
+    categories = ["movies", "dubbed-movies", "hindi", "asian-movies", "anime", "series", "tvshows", "asian-series"]
     for cat in categories:
         data = load_json(f"{cat}.json")
         if not data:

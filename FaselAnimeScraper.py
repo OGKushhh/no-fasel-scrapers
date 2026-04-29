@@ -1,3 +1,16 @@
+#!/usr/bin/env python3
+"""
+FaselAnimeScraper.py
+
+Scrapes FaselHD anime category.
+
+Features:
+- Resumable (saves last page)
+- Incremental (stops when a page contains only known anime)
+- Extracts episodes from detail page (#epAll) and saves to ./output/episodes/anime/
+- Concurrent detail fetching (max_workers=5)
+"""
+
 import json
 import random
 import re
@@ -16,7 +29,7 @@ from Common import (
     extract_episode_count_text
 )
 
-def load_progress():
+def load_progress() -> int:
     progress_file = "./output/last_page_anime.txt"
     if os.path.exists(progress_file):
         with open(progress_file, "r") as f:
@@ -26,7 +39,7 @@ def load_progress():
                 return 0
     return 0
 
-def save_progress(page_num):
+def save_progress(page_num: int):
     os.makedirs("./output", exist_ok=True)
     with open("./output/last_page_anime.txt", "w") as f:
         f.write(str(page_num))
@@ -58,35 +71,40 @@ def save_episodes_for_anime(anime_id: str, episodes: list):
     if DEBUG:
         print(f"  💾 Saved {len(episodes)} episodes for anime/{anime_id}")
 
-try:
-    with open("./output/anime.json", "r", encoding="utf-8") as f:
-        existing_anime = json.load(f)
-except (FileNotFoundError, json.JSONDecodeError):
-    existing_anime = {}
-
-existing_ids = set(existing_anime.keys())
-FAILED_DETAIL_URLS = set()
-
-def fetch_detail(detail_url: str):
+def fetch_detail(detail_url: str, failed_set: set):
     resp = get_website_safe(detail_url)
     if resp and resp.status_code == 200:
         return detail_url, resp.text
     else:
-        FAILED_DETAIL_URLS.add(detail_url)
+        failed_set.add(detail_url)
         return None, None
 
-def scrape_anime_resumable():
+def scrape_anime():
+    print(f"\n{'='*60}")
+    print(f"🎌 Processing anime")
+    print(f"{'='*60}")
+
     category_url = FASEL_BASE_URL + "anime"
     total_pages = get_number_of_pages(category_url)
     start_page = load_progress() + 1
+
     if start_page > total_pages:
-        print("All anime pages already completed.")
+        print(f"✅ Anime: Already completed (no new pages).")
         return
 
-    print(f"Total anime pages: {total_pages}")
-    print(f"Resuming from page {start_page}")
+    print(f"📄 Total pages: {total_pages}, resuming from page {start_page}")
 
+    output_file = "./output/anime.json"
+    try:
+        with open(output_file, "r", encoding="utf-8") as f:
+            existing_anime = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        existing_anime = {}
+
+    existing_ids = set(existing_anime.keys())
     all_anime = existing_anime.copy()
+    failed_detail_urls = set()
+
     for page in range(start_page, total_pages + 1):
         delay = REQUEST_DELAY + random.uniform(-JITTER, JITTER)
         if delay < 0.5:
@@ -94,10 +112,10 @@ def scrape_anime_resumable():
         sleep(delay)
 
         page_url = get_paginated_url(category_url, page)
-        print(f"\nPage {page}/{total_pages}: {page_url}")
+        print(f"\n📄 Page {page}/{total_pages}: {page_url}")
         main = get_website_safe(page_url)
         if not main:
-            print("  Failed to fetch list page")
+            print("  ❌ Failed to fetch list page, skipping")
             continue
 
         soup = BeautifulSoup(main.text, "html.parser")
@@ -105,9 +123,24 @@ def scrape_anime_resumable():
                soup.select('.blockMovie') or \
                soup.select('.postDiv')
         if not divs:
-            print("  No anime containers found")
+            print("  ⚠️ No anime containers found on this page")
             continue
 
+        # Extract IDs from the page
+        page_ids = []
+        for div in divs:
+            link = div.find("a")
+            if link and link.get("href"):
+                anime_id = link["href"].split('/')[-2]
+                page_ids.append(anime_id)
+
+        # INCREMENTAL STOP
+        if all(mid in existing_ids for mid in page_ids):
+            print(f"  🛑 Page {page} contains only already scraped anime. Stopping incremental scan.")
+            save_progress(page)
+            break
+
+        # Collect detail URLs for new anime
         detail_urls = []
         for div in divs:
             link = div.find("a")
@@ -116,14 +149,16 @@ def scrape_anime_resumable():
                 anime_id = detail_url.split('/')[-2]
                 if anime_id not in existing_ids:
                     detail_urls.append(detail_url)
+
         if not detail_urls:
-            print("  No new anime on this page")
+            print("  ℹ️ No new anime on this page")
             save_progress(page)
             continue
 
+        # Fetch detail pages concurrently
         detail_map = {}
         with ThreadPoolExecutor(max_workers=5) as ex:
-            futures = {ex.submit(fetch_detail, url): url for url in detail_urls}
+            futures = {ex.submit(fetch_detail, url, failed_detail_urls): url for url in detail_urls}
             for fut in as_completed(futures):
                 url, html = fut.result()
                 if url and html:
@@ -155,6 +190,7 @@ def scrape_anime_resumable():
             img = div.find("img")
             img_src = img.get("data-src") or img.get("src", "") if img else ""
 
+            # Extract episodes from detail page (anime-specific)
             episode_urls = extract_episodes_from_detail_page(dsoup)
             episode_count = len(episode_urls)
             content_type = "Series" if episode_count > 0 else "Movie"
@@ -170,7 +206,6 @@ def scrape_anime_resumable():
             genres_info = get_genres_both(dsoup)
             description = extract_description(dsoup)
 
-            # Extra metadata
             status = extract_status(dsoup)
             viewing_level = extract_viewing_level(dsoup)
             language = extract_language(dsoup)
@@ -201,18 +236,22 @@ def scrape_anime_resumable():
             }
             existing_ids.add(anime_id)
 
-        all_anime.update(new_anime)
-        print(f"  Page {page} done: added {len(new_anime)} anime, total {len(all_anime)}")
+        if new_anime:
+            all_anime.update(new_anime)
+            print(f"  ✅ Page {page} done: added {len(new_anime)} anime, total {len(all_anime)}")
 
-        os.makedirs("./output", exist_ok=True)
-        with open("./output/anime.json", "w", encoding="utf-8") as f:
-            json.dump(all_anime, f, indent=4, ensure_ascii=False)
+            os.makedirs("./output", exist_ok=True)
+            with open(output_file, "w", encoding="utf-8") as f:
+                json.dump(all_anime, f, indent=4, ensure_ascii=False)
+        else:
+            print(f"  ℹ️ Page {page}: no new anime extracted")
+
         save_progress(page)
-        print("  Saved progress and JSON")
 
-    if FAILED_DETAIL_URLS:
-        print(f"\nRetrying {len(FAILED_DETAIL_URLS)} failed detail URLs...")
-        for url in FAILED_DETAIL_URLS:
+    # Retry failed detail URLs
+    if failed_detail_urls:
+        print(f"\n🔄 Retrying {len(failed_detail_urls)} failed detail URLs for anime...")
+        for url in list(failed_detail_urls):
             resp = get_website_safe(url)
             if resp:
                 dsoup = BeautifulSoup(resp.text, "html.parser")
@@ -240,10 +279,10 @@ def scrape_anime_resumable():
                         "EpisodeDuration": extract_episode_duration(dsoup),
                     }
             sleep(1)
-        with open("./output/anime.json", "w", encoding="utf-8") as f:
+        with open(output_file, "w", encoding="utf-8") as f:
             json.dump(all_anime, f, indent=4, ensure_ascii=False)
 
-    print(f"\nFinished. Total anime: {len(all_anime)}")
+    print(f"\n🏁 Anime finished. Total anime: {len(all_anime)}")
 
 if __name__ == "__main__":
-    scrape_anime_resumable()
+    scrape_anime()

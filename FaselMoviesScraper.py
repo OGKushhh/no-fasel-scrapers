@@ -1,3 +1,21 @@
+#!/usr/bin/env python3
+"""
+FaselMoviesScraper.py
+
+Scrapes ALL FaselHD movie categories sequentially:
+- movies
+- dubbed-movies
+- hindi
+- asian-movies
+- anime-movies
+
+Features:
+- Resumable: saves last successful page per category
+- Incremental: stops when a page contains only already‑scraped movies
+- Concurrent detail page fetching (max_workers=6)
+- Retries failed detail URLs at the end
+"""
+
 import json
 import random
 import re
@@ -14,8 +32,12 @@ from Common import (
     extract_release_date, extract_language
 )
 
-def load_progress():
-    progress_file = "./output/last_page_movies.txt"
+# ========== ALL MOVIE CATEGORIES ==========
+MOVIE_PATHS = ["movies", "dubbed-movies", "hindi", "asian-movies", "anime-movies"]
+# ==========================================
+
+def load_progress(path: str) -> int:
+    progress_file = f"./output/last_page_{path}.txt"
     if os.path.exists(progress_file):
         with open(progress_file, "r") as f:
             try:
@@ -24,40 +46,45 @@ def load_progress():
                 return 0
     return 0
 
-def save_progress(page_num):
+def save_progress(path: str, page_num: int):
     os.makedirs("./output", exist_ok=True)
-    with open("./output/last_page_movies.txt", "w") as f:
+    with open(f"./output/last_page_{path}.txt", "w") as f:
         f.write(str(page_num))
 
-try:
-    with open("./output/movies.json", "r", encoding="utf-8") as f:
-        existing_movies = json.load(f)
-except (FileNotFoundError, json.JSONDecodeError):
-    existing_movies = {}
-
-existing_ids = set(existing_movies.keys())
-FAILED_DETAIL_URLS = set()
-
-def fetch_detail(detail_url: str):
+def fetch_detail(detail_url: str, failed_set: set):
     resp = get_website_safe(detail_url)
     if resp and resp.status_code == 200:
         return detail_url, resp.text
     else:
-        FAILED_DETAIL_URLS.add(detail_url)
+        failed_set.add(detail_url)
         return None, None
 
-def scrape_movies_resumable():
-    category_url = FASEL_BASE_URL + "movies"
+def scrape_category(path: str):
+    print(f"\n{'='*60}")
+    print(f"🎬 Processing category: {path}")
+    print(f"{'='*60}")
+
+    category_url = FASEL_BASE_URL + path
     total_pages = get_number_of_pages(category_url)
-    start_page = load_progress() + 1
+    start_page = load_progress(path) + 1
+
     if start_page > total_pages:
-        print("All movie pages already completed.")
+        print(f"✅ {path}: Already completed (no new pages).")
         return
 
-    print(f"Total movie pages: {total_pages}")
-    print(f"Resuming from page {start_page}")
+    print(f"📄 Total pages: {total_pages}, resuming from page {start_page}")
 
+    output_file = f"./output/{path}.json"
+    try:
+        with open(output_file, "r", encoding="utf-8") as f:
+            existing_movies = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        existing_movies = {}
+
+    existing_ids = set(existing_movies.keys())
     all_movies = existing_movies.copy()
+    failed_detail_urls = set()
+
     for page in range(start_page, total_pages + 1):
         delay = REQUEST_DELAY + random.uniform(-JITTER, JITTER)
         if delay < 0.5:
@@ -65,10 +92,10 @@ def scrape_movies_resumable():
         sleep(delay)
 
         page_url = get_paginated_url(category_url, page)
-        print(f"\nPage {page}/{total_pages}: {page_url}")
+        print(f"\n📄 Page {page}/{total_pages}: {page_url}")
         main = get_website_safe(page_url)
         if not main:
-            print("  Failed to fetch list page")
+            print("  ❌ Failed to fetch list page, skipping")
             continue
 
         soup = BeautifulSoup(main.text, "html.parser")
@@ -76,9 +103,10 @@ def scrape_movies_resumable():
                soup.select('.blockMovie') or \
                soup.select('.postDiv')
         if not divs:
-            print("  No movie containers found")
+            print("  ⚠️ No movie containers found on this page")
             continue
 
+        # Extract IDs from the page
         page_ids = []
         for div in divs:
             link = div.find("a")
@@ -86,11 +114,13 @@ def scrape_movies_resumable():
                 movie_id = link["href"].split('/')[-2]
                 page_ids.append(movie_id)
 
+        # INCREMENTAL STOP: if all IDs on this page are already known
         if all(mid in existing_ids for mid in page_ids):
-            print(f"  Page {page} contains only already scraped movies. Stopping.")
-            save_progress(page)
+            print(f"  🛑 Page {page} contains only already scraped movies. Stopping incremental scan.")
+            save_progress(path, page)
             break
 
+        # Collect detail URLs for new movies only
         detail_urls = []
         for div in divs:
             link = div.find("a")
@@ -99,14 +129,16 @@ def scrape_movies_resumable():
                 movie_id = detail_url.split('/')[-2]
                 if movie_id not in existing_ids:
                     detail_urls.append(detail_url)
+
         if not detail_urls:
-            print("  No new movies on this page")
-            save_progress(page)
+            print("  ℹ️ No new movies on this page")
+            save_progress(path, page)
             continue
 
+        # Fetch detail pages concurrently
         detail_map = {}
         with ThreadPoolExecutor(max_workers=6) as ex:
-            futures = {ex.submit(fetch_detail, url): url for url in detail_urls}
+            futures = {ex.submit(fetch_detail, url, failed_detail_urls): url for url in detail_urls}
             for fut in as_completed(futures):
                 url, html = fut.result()
                 if url and html:
@@ -152,7 +184,7 @@ def scrape_movies_resumable():
 
             new_movies[movie_id] = {
                 "Title": title,
-                "Category": "movies",
+                "Category": path,
                 "Image Source": img_src,
                 "Source": source,
                 "Genres": genres_info["en"],
@@ -166,18 +198,22 @@ def scrape_movies_resumable():
             }
             existing_ids.add(movie_id)
 
-        all_movies.update(new_movies)
-        print(f"  Page {page} done: added {len(new_movies)} movies, total {len(all_movies)}")
+        if new_movies:
+            all_movies.update(new_movies)
+            print(f"  ✅ Page {page} done: added {len(new_movies)} movies, total {len(all_movies)}")
 
-        os.makedirs("./output", exist_ok=True)
-        with open("./output/movies.json", "w", encoding="utf-8") as f:
-            json.dump(all_movies, f, indent=4, ensure_ascii=False)
-        save_progress(page)
-        print("  Saved progress and JSON")
+            os.makedirs("./output", exist_ok=True)
+            with open(output_file, "w", encoding="utf-8") as f:
+                json.dump(all_movies, f, indent=4, ensure_ascii=False)
+        else:
+            print(f"  ℹ️ Page {page}: no new movies extracted")
 
-    if FAILED_DETAIL_URLS:
-        print(f"\nRetrying {len(FAILED_DETAIL_URLS)} failed detail URLs...")
-        for url in FAILED_DETAIL_URLS:
+        save_progress(path, page)
+
+    # Retry failed detail URLs
+    if failed_detail_urls:
+        print(f"\n🔄 Retrying {len(failed_detail_urls)} failed detail URLs for {path}...")
+        for url in list(failed_detail_urls):
             resp = get_website_safe(url)
             if resp:
                 dsoup = BeautifulSoup(resp.text, "html.parser")
@@ -185,7 +221,7 @@ def scrape_movies_resumable():
                 if movie_id not in existing_ids:
                     all_movies[movie_id] = {
                         "Title": "Unknown (retried)",
-                        "Category": "movies",
+                        "Category": path,
                         "Image Source": "",
                         "Source": "",
                         "Genres": [],
@@ -198,10 +234,15 @@ def scrape_movies_resumable():
                         "Language": extract_language(dsoup),
                     }
             sleep(1)
-        with open("./output/movies.json", "w", encoding="utf-8") as f:
+        with open(output_file, "w", encoding="utf-8") as f:
             json.dump(all_movies, f, indent=4, ensure_ascii=False)
 
-    print(f"\nFinished. Total movies: {len(all_movies)}")
+    print(f"\n🏁 {path} finished. Total movies: {len(all_movies)}")
+
+def main():
+    for path in MOVIE_PATHS:
+        scrape_category(path)
+    print("\n🎉 All movie categories processed successfully!")
 
 if __name__ == "__main__":
-    scrape_movies_resumable()
+    main()
