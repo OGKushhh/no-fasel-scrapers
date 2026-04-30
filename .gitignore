@@ -1,19 +1,38 @@
-output/images/*
-backup/*
+# Output folder (scraped data, ratings, episodes, progress files, etc.)
+/output/
+output/
 
+# Backup folder
+/backup/
+backup/
+
+# Specific files
 ImageIndexer.py
 test.py
 DataDecoder.py
 test.json
 
-Lib/*
-Scripts/*
-Include/*
+# Virtual environment / Python cache
+Lib/
+Scripts/
+Include/
 pyvenv.cfg
-__pycache__/*
-.vscode
+__pycache__/
+*.pyc
+
+# Editor / IDE
+.vscode/
+
+# Browser / scraping utilities
 ublock.zip
-uBlock0.chromium/*
+uBlock0.chromium/
 chromedriver.zip
 chromedriver.exe
 LICENSE.chromedriver
+
+# Any other common temporary or sensitive files
+*.log
+*.bak
+*.tmp
+.DS_Store
+Thumbs.db

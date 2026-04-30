@@ -8,9 +8,13 @@ from typing import Optional
 # Setup logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# Files to clean
+# Files to clean (all metadata JSONs produced by scrapers)
 FILES_TO_CLEAN = [
     "movies.json",
+    "dubbed-movies.json",
+    "hindi.json",
+    "asian-movies.json",
+    "anime-movies.json",
     "anime.json",
     "series.json",
     "tvshows.json",
