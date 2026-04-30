@@ -296,6 +296,69 @@ def health():
         "timestamp": datetime.now(timezone.utc).isoformat(),
     })
 
+@app.route("/api/health/detailed", methods=["GET"])
+def detailed_health():
+    """
+    Returns detailed health information:
+    - Last scrape date (from last-scraped.txt)
+    - Number of items per category (movies, anime, series, etc.)
+    - Number of rating files per category
+    - Cache statistics (from video extraction cache)
+    """
+    from pathlib import Path
+    import json
+    from datetime import datetime
+
+    data_dir = Path(DATA_DIR)
+    stats = {
+        "status": "healthy",
+        "last_scrape": None,
+        "metadata_counts": {},
+        "rating_counts": {},
+        "episode_counts": {},
+        "cache": cache.stats(),
+        "timestamp": datetime.now(timezone.utc).isoformat()
+    }
+
+    # Last scrape date
+    last_scrape_file = data_dir / "last-scraped.txt"
+    if last_scrape_file.exists():
+        with open(last_scrape_file, "r") as f:
+            stats["last_scrape"] = f.read().strip()
+
+    # Metadata counts
+    metadata_files = [
+        "movies.json", "dubbed-movies.json", "hindi.json", "asian-movies.json", "anime-movies.json",
+        "anime.json", "series.json", "tvshows.json", "asian-series.json"
+    ]
+    for fname in metadata_files:
+        path = data_dir / fname
+        if path.exists():
+            try:
+                with open(path, "r") as f:
+                    data = json.load(f)
+                stats["metadata_counts"][fname.replace(".json", "")] = len(data)
+            except:
+                stats["metadata_counts"][fname.replace(".json", "")] = "error reading"
+
+    # Rating files counts (per category folder under ratings/)
+    ratings_dir = data_dir / "ratings"
+    if ratings_dir.exists():
+        for category_dir in ratings_dir.iterdir():
+            if category_dir.is_dir():
+                count = len(list(category_dir.glob("*.json")))
+                stats["rating_counts"][category_dir.name] = count
+
+    # Episode counts (per category under episodes/)
+    episodes_dir = data_dir / "episodes"
+    if episodes_dir.exists():
+        for category_dir in episodes_dir.iterdir():
+            if category_dir.is_dir():
+                count = len(list(category_dir.glob("*.json")))
+                stats["episode_counts"][category_dir.name] = count
+
+    return jsonify(stats)
+
 @app.route("/extract", methods=["POST"])
 def extract():
     data = request.get_json(silent=True)
