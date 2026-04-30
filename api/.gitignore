@@ -12,3 +12,4 @@ data/*.tmp
 *.db
 *.sqlite
 *.sqlite3
+chrome_fresh_profile/

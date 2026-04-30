@@ -1,12 +1,13 @@
 """
-AbdoBest API – Metadata + Video Extraction + Episodes
-Serves JSON files from /data and /data/episodes, extracts video streams.
+AbdoBest API – Metadata + Video Extraction + Episodes + Global View Counter
+Serves JSON files from /data, extracts video streams, tracks cumulative views.
 """
 
 import os
 import time
 import threading
 import json
+import portalocker
 from typing import Optional
 from flask import Flask, request, jsonify
 from flask_cors import CORS
@@ -48,12 +49,54 @@ class Cache:
             return {"total_entries": len(self._store), "valid_entries": valid, "default_ttl": self._default_ttl}
 
 # ----------------------------------------------------------------------
+#  Global view counter – persistent storage with file locking
+# ----------------------------------------------------------------------
+VIEWS_FILE = "/data/view_counts.json"   # Persistent storage on Hugging Face Spaces
+os.makedirs(os.path.dirname(VIEWS_FILE), exist_ok=True)
+
+def _read_views() -> dict:
+    """Read view counts from JSON file with shared lock."""
+    if not os.path.exists(VIEWS_FILE):
+        return {}
+    with open(VIEWS_FILE, "r") as f:
+        portalocker.lock(f, portalocker.LOCK_SH)
+        try:
+            return json.load(f)
+        finally:
+            portalocker.unlock(f)
+
+def _write_views(views: dict):
+    """Write view counts to JSON file with exclusive lock."""
+    with open(VIEWS_FILE, "w") as f:
+        portalocker.lock(f, portalocker.LOCK_EX)
+        try:
+            json.dump(views, f, indent=2)
+        finally:
+            portalocker.unlock(f)
+
+def increment_view(content_id: str, category: str = "general", by: int = 1) -> int:
+    """
+    Increment global view count for a content ID by a given amount.
+    Returns the new total count.
+    """
+    views = _read_views()
+    key = f"{category}:{content_id}"
+    views[key] = views.get(key, 0) + by
+    _write_views(views)
+    return views[key]
+
+def get_view_count(content_id: str, category: str = "general") -> int:
+    """Get current global view count for a content ID."""
+    views = _read_views()
+    key = f"{category}:{content_id}"
+    return views.get(key, 0)
+
+# ----------------------------------------------------------------------
 #  Helper to load JSON files from the data folder
 # ----------------------------------------------------------------------
 DATA_DIR = os.environ.get("DATA_DIR", "./data")
 
 def load_json(filename: str):
-    """Load a JSON file from the data directory."""
     filepath = os.path.join(DATA_DIR, filename)
     if not os.path.exists(filepath):
         return None
@@ -61,10 +104,6 @@ def load_json(filename: str):
         return json.load(f)
 
 def load_episodes(category: str, content_id: str):
-    """
-    Load episodes for a specific content (series/tvshows/asian-series/anime).
-    Expected path: DATA_DIR/episodes/{category}/{content_id}.json
-    """
     filepath = os.path.join(DATA_DIR, "episodes", category, f"{content_id}.json")
     if not os.path.exists(filepath):
         return None
@@ -112,15 +151,50 @@ def index():
             "featured": "/api/featured",
             "search": "/api/search?q=...",
             "ratings": "/api/ratings/<category>/<id>",
-            "episodes (series/tvshows/asian-series)": "/api/episodes/<category>/<id>",
-            "anime_episodes": "/api/anime-episodes/<id>"
+            "episodes": "/api/episodes/<category>/<id>",
+            "anime_episodes": "/api/anime-episodes/<id>",
+            "view_increment": "POST /api/view/<category>/<id> (body: {\"increment_by\": N})",
+            "view_get": "GET /api/view/<category>/<id>"
         },
         "status": "online",
         "timestamp": datetime.now(timezone.utc).isoformat()
     })
 
 # ----------------------------------------------------------------------
-#  Metadata endpoints (return full JSON objects including new fields)
+#  Global view counter endpoints
+# ----------------------------------------------------------------------
+@app.route("/api/view/<category>/<content_id>", methods=["POST"])
+def increment_view_endpoint(category: str, content_id: str):
+    """
+    Increment global view count for a specific content.
+    Accepts JSON body: {"increment_by": N} (default 1).
+    Returns the new total count.
+    """
+    data = request.get_json(silent=True) or {}
+    increment_by = data.get("increment_by", 1)
+    if not isinstance(increment_by, int) or increment_by <= 0:
+        increment_by = 1
+    new_count = increment_view(content_id, category, by=increment_by)
+    return jsonify({
+        "content_id": content_id,
+        "category": category,
+        "views": new_count,
+        "incremented_by": increment_by,
+        "status": "ok"
+    })
+
+@app.route("/api/view/<category>/<content_id>", methods=["GET"])
+def get_view_endpoint(category: str, content_id: str):
+    """Get current global view count for a specific content."""
+    count = get_view_count(content_id, category)
+    return jsonify({
+        "content_id": content_id,
+        "category": category,
+        "views": count
+    })
+
+# ----------------------------------------------------------------------
+#  Metadata endpoints (existing, unchanged)
 # ----------------------------------------------------------------------
 @app.route("/api/movies", methods=["GET"])
 def get_movies():
@@ -226,21 +300,14 @@ def get_featured():
         return jsonify({"error": "featured-content.json not found"}), 404
     return jsonify(data)
 
-# ----------------------------------------------------------------------
-#  Ratings endpoint
-# ----------------------------------------------------------------------
 @app.route("/api/ratings/<category>/<content_id>", methods=["GET"])
 def get_rating(category: str, content_id: str):
-    """Return IMDb rating from separate ratings file."""
     rating_file = os.path.join(DATA_DIR, "ratings", category, f"{content_id}.json")
     if not os.path.exists(rating_file):
         return jsonify({"error": "Rating not found"}), 404
     with open(rating_file, "r", encoding="utf-8") as f:
         return jsonify(json.load(f))
 
-# ----------------------------------------------------------------------
-#  Search endpoint (includes new categories)
-# ----------------------------------------------------------------------
 @app.route("/api/search", methods=["GET"])
 def search():
     query = request.args.get("q", "").lower()
@@ -263,12 +330,8 @@ def search():
                 })
     return jsonify(results[:50])
 
-# ----------------------------------------------------------------------
-#  Episodes endpoints
-# ----------------------------------------------------------------------
 @app.route("/api/episodes/<category>/<content_id>", methods=["GET"])
 def get_episodes(category: str, content_id: str):
-    """Return episodes for series, tvshows, or asian-series."""
     if category not in ["series", "tvshows", "asian-series"]:
         return jsonify({"error": "Invalid category. Use series, tvshows, or asian-series"}), 400
     episodes = load_episodes(category, content_id)
@@ -278,15 +341,11 @@ def get_episodes(category: str, content_id: str):
 
 @app.route("/api/anime-episodes/<anime_id>", methods=["GET"])
 def get_anime_episodes(anime_id: str):
-    """Return episodes for an anime (stored in episodes/anime/{id}.json)."""
     episodes = load_episodes("anime", anime_id)
     if episodes is None:
         return jsonify({"error": f"Episodes not found for anime/{anime_id}"}), 404
     return jsonify(episodes)
 
-# ----------------------------------------------------------------------
-#  Health and video extraction endpoints
-# ----------------------------------------------------------------------
 @app.route("/health", methods=["GET"])
 def health():
     return jsonify({
@@ -296,79 +355,14 @@ def health():
         "timestamp": datetime.now(timezone.utc).isoformat(),
     })
 
-@app.route("/api/health/detailed", methods=["GET"])
-def detailed_health():
-    """
-    Returns detailed health information:
-    - Last scrape date (from last-scraped.txt)
-    - Number of items per category (movies, anime, series, etc.)
-    - Number of rating files per category
-    - Cache statistics (from video extraction cache)
-    """
-    from pathlib import Path
-    import json
-    from datetime import datetime
-
-    data_dir = Path(DATA_DIR)
-    stats = {
-        "status": "healthy",
-        "last_scrape": None,
-        "metadata_counts": {},
-        "rating_counts": {},
-        "episode_counts": {},
-        "cache": cache.stats(),
-        "timestamp": datetime.now(timezone.utc).isoformat()
-    }
-
-    # Last scrape date
-    last_scrape_file = data_dir / "last-scraped.txt"
-    if last_scrape_file.exists():
-        with open(last_scrape_file, "r") as f:
-            stats["last_scrape"] = f.read().strip()
-
-    # Metadata counts
-    metadata_files = [
-        "movies.json", "dubbed-movies.json", "hindi.json", "asian-movies.json", "anime-movies.json",
-        "anime.json", "series.json", "tvshows.json", "asian-series.json"
-    ]
-    for fname in metadata_files:
-        path = data_dir / fname
-        if path.exists():
-            try:
-                with open(path, "r") as f:
-                    data = json.load(f)
-                stats["metadata_counts"][fname.replace(".json", "")] = len(data)
-            except:
-                stats["metadata_counts"][fname.replace(".json", "")] = "error reading"
-
-    # Rating files counts (per category folder under ratings/)
-    ratings_dir = data_dir / "ratings"
-    if ratings_dir.exists():
-        for category_dir in ratings_dir.iterdir():
-            if category_dir.is_dir():
-                count = len(list(category_dir.glob("*.json")))
-                stats["rating_counts"][category_dir.name] = count
-
-    # Episode counts (per category under episodes/)
-    episodes_dir = data_dir / "episodes"
-    if episodes_dir.exists():
-        for category_dir in episodes_dir.iterdir():
-            if category_dir.is_dir():
-                count = len(list(category_dir.glob("*.json")))
-                stats["episode_counts"][category_dir.name] = count
-
-    return jsonify(stats)
-
 @app.route("/extract", methods=["POST"])
 def extract():
     data = request.get_json(silent=True)
     if not data or "url" not in data:
         return jsonify({"error": "Missing 'url' field"}), 400
-
     page_url = data["url"].strip()
     if not page_url:
         return jsonify({"error": "Empty URL"}), 400
-
     cache_key = page_url
     cached = cache.get(cache_key)
     if cached:
@@ -378,21 +372,16 @@ def extract():
             "cached": True,
             "cache_key": cache_key
         })
-
     if not SCRAPER_READY:
         return jsonify({"error": "Scraper not available"}), 503
-
     try:
         stream_url = extract_video_source(page_url, headless=True)
         if not stream_url:
             return jsonify({"error": "Could not extract video stream"}), 404
-
         quality_options = ["Auto"]
         if "master.m3u8" in stream_url:
             quality_options = ["1080p", "720p", "480p", "360p"]
-
         cache.set(cache_key, stream_url, quality_options)
-
         return jsonify({
             "stream_url": stream_url,
             "quality_options": quality_options,

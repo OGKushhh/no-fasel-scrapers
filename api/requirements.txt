@@ -9,3 +9,4 @@ lxml>=5.2.0
 requests==2.33.1
 beautifulsoup4==4.11.1
 Pillow==10.3.0
+portalocker==2.10.1

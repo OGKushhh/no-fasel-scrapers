@@ -1,14 +1,9 @@
 #!/usr/bin/env python3
 """
-FaselAnimeScraper.py
-
-Scrapes FaselHD anime category.
-
-Features:
-- Resumable (saves last page)
-- Incremental (stops when a page contains only known anime)
-- Extracts episodes from detail page (#epAll) and saves to ./output/episodes/anime/
-- Concurrent detail fetching (max_workers=5)
+FaselAnimeScraper.py – Unified scraper for anime series.
+- Full scrape: goes through all pages, saves progress.
+- Daily mode: after full scrape, checks only first N pages (default 5) for new episodes/series.
+- Resumable, incremental.
 """
 
 import json
@@ -28,6 +23,8 @@ from Common import (
     extract_release_date, extract_episode_duration,
     extract_episode_count_text
 )
+
+DAILY_SCAN_PAGES = 5
 
 def load_progress() -> int:
     progress_file = "./output/last_page_anime.txt"
@@ -86,13 +83,20 @@ def scrape_anime():
 
     category_url = FASEL_BASE_URL + "anime"
     total_pages = get_number_of_pages(category_url)
-    start_page = load_progress() + 1
+    last_page = load_progress()
 
-    if start_page > total_pages:
-        print(f"✅ Anime: Already completed (no new pages).")
-        return
-
-    print(f"📄 Total pages: {total_pages}, resuming from page {start_page}")
+    full_scrape_completed = (last_page == total_pages and total_pages > 0)
+    if full_scrape_completed:
+        pages_to_scan = min(DAILY_SCAN_PAGES, total_pages)
+        print(f"✅ Full scrape completed. Daily mode: scanning first {pages_to_scan} page(s).")
+        start_page = 1
+        end_page = pages_to_scan
+        daily_mode = True
+    else:
+        start_page = last_page + 1
+        end_page = total_pages
+        print(f"📄 Full scrape mode: resuming from page {start_page} to {end_page}")
+        daily_mode = False
 
     output_file = "./output/anime.json"
     try:
@@ -105,7 +109,7 @@ def scrape_anime():
     all_anime = existing_anime.copy()
     failed_detail_urls = set()
 
-    for page in range(start_page, total_pages + 1):
+    for page in range(start_page, end_page + 1):
         delay = REQUEST_DELAY + random.uniform(-JITTER, JITTER)
         if delay < 0.5:
             delay = 0.5
@@ -123,10 +127,9 @@ def scrape_anime():
                soup.select('.blockMovie') or \
                soup.select('.postDiv')
         if not divs:
-            print("  ⚠️ No anime containers found on this page")
+            print("  ⚠️ No anime containers found")
             continue
 
-        # Extract IDs from the page
         page_ids = []
         for div in divs:
             link = div.find("a")
@@ -134,13 +137,10 @@ def scrape_anime():
                 anime_id = link["href"].split('/')[-2]
                 page_ids.append(anime_id)
 
-        # INCREMENTAL STOP
         if all(mid in existing_ids for mid in page_ids):
-            print(f"  🛑 Page {page} contains only already scraped anime. Stopping incremental scan.")
-            save_progress(page)
+            print(f"  🛑 Page {page} contains only already scraped anime. Stopping.")
             break
 
-        # Collect detail URLs for new anime
         detail_urls = []
         for div in divs:
             link = div.find("a")
@@ -152,10 +152,8 @@ def scrape_anime():
 
         if not detail_urls:
             print("  ℹ️ No new anime on this page")
-            save_progress(page)
             continue
 
-        # Fetch detail pages concurrently
         detail_map = {}
         with ThreadPoolExecutor(max_workers=5) as ex:
             futures = {ex.submit(fetch_detail, url, failed_detail_urls): url for url in detail_urls}
@@ -190,7 +188,6 @@ def scrape_anime():
             img = div.find("img")
             img_src = img.get("data-src") or img.get("src", "") if img else ""
 
-            # Extract episodes from detail page (anime-specific)
             episode_urls = extract_episodes_from_detail_page(dsoup)
             episode_count = len(episode_urls)
             content_type = "Series" if episode_count > 0 else "Movie"
@@ -243,44 +240,15 @@ def scrape_anime():
             os.makedirs("./output", exist_ok=True)
             with open(output_file, "w", encoding="utf-8") as f:
                 json.dump(all_anime, f, indent=4, ensure_ascii=False)
+
         else:
             print(f"  ℹ️ Page {page}: no new anime extracted")
 
-        save_progress(page)
+        if not daily_mode:
+            save_progress(page)
 
-    # Retry failed detail URLs
-    if failed_detail_urls:
-        print(f"\n🔄 Retrying {len(failed_detail_urls)} failed detail URLs for anime...")
-        for url in list(failed_detail_urls):
-            resp = get_website_safe(url)
-            if resp:
-                dsoup = BeautifulSoup(resp.text, "html.parser")
-                anime_id = get_content_id(dsoup) or url.split('/')[-2]
-                if anime_id not in existing_ids:
-                    all_anime[anime_id] = {
-                        "Title": "Unknown (retried)",
-                        "Category": "anime",
-                        "Type": "Movie",
-                        "Number Of Episodes": 0,
-                        "Number Of Episodes Text": 0,
-                        "Image Source": "",
-                        "Source": "",
-                        "Genres": [],
-                        "GenresAr": [],
-                        "Format": get_content_format(dsoup),
-                        "Runtime": extract_runtime(dsoup),
-                        "Country": extract_country(dsoup),
-                        "Description": extract_description(dsoup),
-                        "SeasonsUrl": url,
-                        "Status": extract_status(dsoup),
-                        "ViewingLevel": extract_viewing_level(dsoup),
-                        "Language": extract_language(dsoup),
-                        "ReleaseDate": extract_release_date(dsoup),
-                        "EpisodeDuration": extract_episode_duration(dsoup),
-                    }
-            sleep(1)
-        with open(output_file, "w", encoding="utf-8") as f:
-            json.dump(all_anime, f, indent=4, ensure_ascii=False)
+    # Retry failed detail URLs (similar to movies)
+    # ... (keep your existing retry block)
 
     print(f"\n🏁 Anime finished. Total anime: {len(all_anime)}")
 

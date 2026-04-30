@@ -23,13 +23,12 @@ print("==========================================")
 print("Starting FaselHD scraping pipeline")
 print("==========================================")
 
-# List of scripts in order of execution
+# List of scripts in order of execution (TrendingScraper.py removed)
 scripts = [
     "FaselMoviesScraper.py",
     "FaselAnimeScraper.py",
     "FaselSeriesScraper.py",
     "update_ratings.py",
-    "TrendingScraper.py",
     "update_episodes.py",
 ]
 
