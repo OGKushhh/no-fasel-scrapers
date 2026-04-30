@@ -1,22 +1,23 @@
 #!/usr/bin/env python3
 """
-update_ratings.py - Fetch IMDb ratings and votes, maintain mapping, resumable.
-Exits gracefully when daily API limit is reached (no null writes for skipped items).
+update_ratings.py
+
+Fetches IMDb ratings + vote counts using OMDb API.
+Maintains a local mapping from Fasel content_id -> IMDb ID.
+Outputs rating files to ./output/ratings/{category}/{id}.json
+Respects daily API limit (1000). Caches results. Resumable.
+When API limit is reached, exits cleanly WITHOUT writing null ratings.
 """
 
-import sys
 import json
 import re
+import sys
 from pathlib import Path
 from typing import Dict, Optional, Set, Tuple
 from datetime import datetime, timezone
 
-print("🚀 Starting update_ratings.py...", flush=True)
-
 sys.path.insert(0, str(Path(__file__).parent))
 from Common import get_imdb_details
-
-print("✅ Imports complete", flush=True)
 
 # ========== CONFIG ==========
 OUTPUT_DIR = Path("./output")
@@ -122,18 +123,17 @@ def get_rating_and_votes(category: str, content_id: str, title: str, year: Optio
 
     # Check daily limit BEFORE making API call
     if api_calls_made >= DAILY_LIMIT:
-        print(f"\n🔴 DAILY API LIMIT REACHED ({api_calls_made} calls). Stopping. No further ratings will be fetched.", flush=True)
+        print(f"\n🔴 DAILY API LIMIT EXCEEDED ({api_calls_made} calls). Exiting without writing any further ratings.", flush=True)
         sys.exit(0)
     if api_calls_made + REQUEST_SAFETY_MARGIN >= DAILY_LIMIT:
-        print(f"⚠️ Approaching daily limit ({api_calls_made}/{DAILY_LIMIT}) – will stop soon.", flush=True)
+        print(f"⚠️ Approaching daily limit ({api_calls_made}/{DAILY_LIMIT})", flush=True)
 
     known_id = imdb_map.get(content_id)
-    # get_imdb_details now returns (rating, votes, imdb_id, limit_reached)
     rating, votes, found_id, limit_reached = get_imdb_details(cleaned, year, content_type, known_imdb_id=known_id)
     api_calls_made += 1
 
     if limit_reached:
-        print("   🛑 API limit error from OMDb. Stopping immediately.", flush=True)
+        print(f"\n🚫 API limit error from OMDb. Exiting without writing rating for {category}/{content_id}.", flush=True)
         sys.exit(0)
 
     print(f"  🌐 API #{api_calls_made}: {cleaned} ({year}) -> rating={rating}, votes={votes}, id={found_id}", flush=True)
@@ -183,6 +183,7 @@ def process_file(file_path: Path, category: str, processed_set: Set[Tuple[str, s
         year = extract_year(title, item.get("ReleaseDate"))
 
         rating_file = rating_dir / f"{content_id}.json"
+        # Skip if rating already exists and has a non-null value
         if rating_file.exists():
             try:
                 with open(rating_file, "r") as rf:
@@ -198,6 +199,7 @@ def process_file(file_path: Path, category: str, processed_set: Set[Tuple[str, s
 
         rating, votes = get_rating_and_votes(category, content_id, title, year, content_type)
 
+        # Write rating file (only if we got here without exiting)
         rating_data = {
             "content_id": content_id,
             "title": title,
@@ -218,7 +220,7 @@ def process_file(file_path: Path, category: str, processed_set: Set[Tuple[str, s
             save_cache()
 
 def main():
-    print("🔧 Loading data...", flush=True)
+    print("🚀 Starting update_ratings.py (limit-aware)...", flush=True)
     load_cache()
     load_imdb_map()
     processed = load_progress()
@@ -233,8 +235,6 @@ def main():
     save_cache()
     save_imdb_map()
     print(f"\n✅ Finished. Total API calls: {api_calls_made}", flush=True)
-    if api_calls_made >= DAILY_LIMIT:
-        print("🔴 Daily limit was reached or exceeded. Some items may still need ratings – run again tomorrow.", flush=True)
 
 if __name__ == "__main__":
     main()

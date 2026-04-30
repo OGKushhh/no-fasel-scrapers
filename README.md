@@ -1,165 +1,191 @@
-# 🎬 NoFasel Scraper
+# 🎬 NoFasel Scraper – Complete Scraping & API System
 
-A complete, production‑ready Python library that scrapes movie and series metadata from [FaselHD](https://www.fasel-hd.cam/), extracts episodes, and fetches IMDb ratings & vote counts – all without storing ratings inside your main JSONs.
+A production‑ready Python tool that scrapes all movies and series from FaselHD, extracts IMDb ratings and votes, stores episodes separately, and serves everything via a Flask API with persistent view counters.
 
-## ✨ Features
+## 📦 What’s Inside
 
-- ✅ Bypasses Cloudflare using **Scrapling** (stealth browser) + **curl_cffi** fallback – no Playwright in metadata fetching.
-- 🎞️ Scrapes **all movie categories**: `movies`, `dubbed-movies`, `hindi`, `asian-movies`, `anime-movies`.
-- 📺 Scrapes **series, TV shows, Asian series, and anime** (with episodes).
-- 📝 Extracts **titles, images, quality, runtime, country, dual‑language genres** (English & Arabic decoded).
-- 💾 Saves metadata as **separate JSON files** (`movies.json`, `dubbed-movies.json`, `hindi.json`, `asian-movies.json`, `anime-movies.json`, `anime.json`, `series.json`, `tvshows.json`, `asian-series.json`).
-- 🎥 **On‑demand video source extraction** (`.m3u8`) using Playwright – no pre‑scraping of video URLs.
-- ⭐ **Separate IMDb ratings & vote counts** stored in `./output/ratings/{category}/{id}.json` – never touches original metadata.
-- 🔁 **Unified scrapers** (one per content type) that are both **resumable** and **incremental** – they stop when all content on a page is already known.
-- 🆕 **Daily episode updater** (`update_episodes.py`) that checks all series for new episodes and updates the episode files **and** the `Status` field (handles the “completed with new episodes” loophole).
-- 📈 **Rating updater** (`update_ratings.py`) fetches IMDb ratings + vote counts from OMDb API – respects 1000/day limit, caches results, resumable.
-- 📆 **Orchestrator script** (`ScrapeAll.py`) runs the entire pipeline in the correct order.
+- **3 unified scrapers** (movies, anime, series) – resumable, incremental, and sequential.
+- **Separate rating system** – OMDb API fetches ratings + votes; stored in individual JSON files (no pollution of main metadata).
+- **Episode updater** – checks all series for new episodes daily, updates episode JSONs and series `Status`.
+- **Trending scraper** – enriches homepage content with fresh ratings.
+- **Flask API** – serves metadata, ratings, episodes, and video stream extraction.
+- **Global view counter** – cumulative per content, stored persistently (works on Hugging Face Spaces).
 
-## 📋 Requirements
+---
 
-- 🐍 Python 3.12+
-- 🌐 Google Chrome (for Playwright video extraction)
-- An [OMDb API](http://www.omdbapi.com/) key (free tier: 1000 requests/day) – already included in `Common.py` (you can replace it with your own).
+## 📂 Output File Structure
 
-## 🚀 Installation
-
-```bash
-git clone https://github.com/yourusername/no-fasel-scrapers.git
-cd no-fasel-scrapers
-pip install -r requirements.txt
-playwright install chromium
-```
-
-## 🧪 Usage
-
-### 🔁 Full scrape (initial seed)
-
-Run the unified orchestrator to build the initial JSON files and episode/rating folders:
-
-```bash
-python ScrapeAll.py
-```
-
-This will:
-1. Scrape all movie categories, anime, and series (metadata only)
-2. Fetch IMDb ratings & votes (separate files)
-3. Generate trending and featured content (using fresh ratings)
-4. Check for episodes and update statuses
-
-### 📆 Daily incremental updates
-
-After the first full run, `ScrapeAll.py` (with its built‑in incremental logic) will automatically:
-- Start from the last saved page for each category
-- Stop when a page contains only already known IDs
-- Only fetch new IMDb ratings for missing items
-- Only check ongoing series for new episodes
-
-No separate incremental script needed – the unified scrapers do it all.
-
-### 🧽 Optional: Clean metadata
-
-Run `clean_metadata.py` occasionally to normalise country names, runtime, and replace hyphens in genres:
-
-```bash
-python clean_metadata.py
-```
-
-### 🎯 On‑demand video source extraction
-
-To get the direct `.m3u8` stream URL for a movie or episode page (without downloading), use the `/extract` endpoint in `app.py` or call `extract_video_source(page_url)` directly:
-
-```python
-from Common import extract_video_source
-stream_url = extract_video_source("https://www.fasel-hd.cam/movies/...")
-```
-
-## 📁 File Structure
-
-| File | Purpose |
-|------|---------|
-| `Common.py` | Core fetching + extraction (thread‑safe) |
-| `FaselMoviesScraper.py` | Unified scraper for all movie categories |
-| `FaselAnimeScraper.py` | Unified scraper for anime series |
-| `FaselSeriesScraper.py` | Unified scraper for series, tvshows, asian-series |
-| `TrendingScraper.py` | Extracts homepage trending content and enriches with fresh ratings |
-| `update_ratings.py` | Fetches IMDb ratings & votes → `./output/ratings/` |
-| `update_episodes.py` | Checks for new episodes, updates episode files & status |
-| `clean_metadata.py` | (Optional) manual normalisation of genres, country, runtime |
-| `AllContentIndexer.py` | (Optional) creates unified `all-content.json` for fast search |
-| `ScrapeAll.py` | Orchestrator – runs all steps in correct order |
-| `app.py` | Flask API to serve metadata, episodes, and ratings |
-| `fasel_downloader_final.py` | Legacy video extraction + download (Playwright + yt‑dlp) |
-
-## 📂 Output Structure
+All generated files go into `./output/` (or `./data/` for the API). The structure is:
 
 ```
-./output/
-├── movies.json
-├── dubbed-movies.json
-├── hindi.json
-├── asian-movies.json
-├── anime-movies.json
-├── anime.json
-├── series.json
-├── tvshows.json
-├── asian-series.json
-├── trending-content.json
-├── featured-content.json
-├── all-content.json (optional)
+output/
+├── content/ (main metadata)
+│   ├── movies.json
+│   ├── dubbed-movies.json
+│   ├── hindi.json
+│   ├── asian-movies.json
+│   ├── anime-movies.json
+│   ├── anime.json
+│   ├── series.json
+│   ├── tvshows.json
+│   └── asian-series.json
+│
+├── episodes/
+│   ├── anime/
+│   ├── series/
+│   ├── tvshows/
+│   └── asian-series/
+│
 ├── ratings/
 │   ├── movies/
-│   │   └── {id}.json
 │   ├── anime/
 │   ├── series/
 │   └── ...
-├── episodes/
-│   ├── series/
-│   ├── tvshows/
-│   ├── asian-series/
-│   └── anime/
-└── last_page_*.txt (progress files)
+│
+├── trending-content.json
+├── featured-content.json
+├── all-content.json (optional search index)
+├── imdb_id_map.json
+├── omdb_cache.json
+├── last_page_*.txt (progress files)
+├── last-scraped.txt
+├── failed_scripts.log
+└── scraper_errors.log
 ```
 
-Each rating file contains:
-```json
-{
-  "content_id": "12345",
-  "title": "Ambulance",
-  "year": "2022",
-  "rating": "6.2",
-  "votes": 123456,
-  "source": "omdb",
-  "last_updated": "2026-04-30T12:00:00Z"
-}
-```
+---
 
-## 🗺️ Next Steps for Your Project
+## 🛠️ Scripts & What They Do
 
-1. 🏃 **Run `ScrapeAll.py` once** – it will scrape everything (may take hours). You can stop and resume anytime.
-2. 🔄 **Set up a daily cron job** (or use cron‑job.org) to run `ScrapeAll.py` every day – the incremental logic ensures it only fetches new content and ratings.
-3. ⚛️ **Build your React frontend** to consume the JSON files (or use `app.py` as an API).
-4. ▶️ **For video playback**, call `/extract` with the content URL or use the `extract_video_source()` function.
+| Script | Reads from | Writes / Updates | Notes |
+|--------|------------|------------------|-------|
+| `FaselMoviesScraper.py` | FaselHD movie categories | `movies.json`, `dubbed-movies.json`, `hindi.json`, `asian-movies.json`, `anime-movies.json` | Resumable, incremental. Never writes ratings. |
+| `FaselAnimeScraper.py` | `/anime` (series) | `anime.json` + `episodes/anime/*.json` | Same as above. |
+| `FaselSeriesScraper.py` | `/series`, `/tvshows`, `/asian-series` | `series.json`, `tvshows.json`, `asian-series.json` + episodes | Also extracts seasons & episodes. |
+| `update_ratings.py` | All main content JSONs | `ratings/*/*.json`, `imdb_id_map.json`, `omdb_cache.json` | Fetches IMDb rating+votes. Exits cleanly on API limit – never writes `null`. |
+| `update_episodes.py` | Main series/anime JSONs + existing episodes | Updates `episodes/*.json` (appends new episodes) and `Status` in main JSONs | Runs daily. Ignores `Status` when checking episodes – closes the loophole. |
+| `TrendingScraper.py` | FaselHD homepage + rating files | `trending-content.json`, `featured-content.json` | Enriches with fresh ratings from `ratings/`. |
+| `AllContentIndexer.py` (optional) | All main JSONs | `all-content.json` | Lightweight search index (id, title, image, category, genres). |
+| `clean_metadata.py` (optional) | Main JSONs | Same files (in‑place) | Normalises country names, runtime, replaces hyphens in genres. |
+| `ScrapeAll.py` | – | Orchestrates the pipeline. Creates `last-scraped.txt` and `failed_scripts.log`. | Runs scrapers → ratings → episodes in correct order. |
+| `app.py` | `./data/` (or `./output/`) | Serves metadata, ratings, episodes. Also `/extract` (video) and `/api/view/*` (view counter). | Uses persistent storage (`/data`) for view counts. |
 
-## 🔮 Future Enhancements (Parked)
+---
 
-- 🎌 Group anime seasons using external metadata (MyAnimeList) or title‑based heuristics.
-- 🌐 Proxy rotation and persistent browser session (optional).
-- 🗄️ SQLite storage instead of JSON files.
+## 🔁 Pipeline Execution Order (Daily)
+
+1. **Scrape new content** – `FaselMoviesScraper.py`, `FaselAnimeScraper.py`, `FaselSeriesScraper.py`
+2. **Fetch/update ratings** – `update_ratings.py`
+3. **Update episodes & status** – `update_episodes.py`
+4. *(Optional)* **Rebuild trending content** – `TrendingScraper.py`
+5. *(Optional)* **Build search index** – `AllContentIndexer.py`
+
+Run `python ScrapeAll.py` to execute the full daily pipeline automatically.
+
+---
+
+## 🧠 Core Logic Explained
+
+### Incremental Scraping (Daily Mode)
+- After the first full scrape, each scraper stores `last_page_*.txt = total_pages`.
+- On subsequent runs, it starts from **page 1**, checks **only the first 5 pages** (configurable), and stops as soon as a page contains **only already known IDs**. This catches all new releases without wasting time.
+- During the **initial full scrape**, progress is saved so you can resume if interrupted.
+
+### Separate Ratings
+- Main metadata JSONs contain **no `IMDb_Rating`** field – they stay clean.
+- Ratings are stored as `ratings/{category}/{id}.json`:
+  ```json
+  {
+    "content_id": "12345",
+    "title": "Ambulance",
+    "year": "2022",
+    "rating": "6.2",
+    "votes": 123456,
+    "source": "omdb",
+    "imdb_id": "tt1234567",
+    "last_updated": "2026-05-01T..."
+  }
+  ```
+- If OMDb API daily limit (1000) is reached, the script **exits without writing any `null`** – no corrupt data.
+
+### Episode & Status Loophole Fix
+- `update_episodes.py` **ignores** the `Status` field – it always fetches the latest episode pages.
+- If new episodes are found, it **forces `Status` back to `مستمر`** (ongoing).
+- Then it updates the status from Fasel’s detail page. This prevents marking a series completed while new episodes exist.
+
+### View Counter (Global)
+- Endpoints: `POST /api/view/<category>/<id>` (with `{"increment_by": N}`) and `GET /api/view/<category>/<id>`.
+- Data stored in `/data/view_counts.json` with file locking (`portalocker`).
+- Cumulative, no reset.
+
+---
+
+## 🚀 Deployment on Hugging Face Spaces
+
+1. **Create a Space** (Docker or Python). Choose a persistent storage tier (mounts `/data`).
+2. **Upload your code** (all `.py` files, `requirements.txt`).
+3. **Set `requirements.txt`** (minimal, no pinned versions – let pip resolve):
+   ```
+   requests
+   beautifulsoup4
+   flask
+   flask-cors
+   Pillow
+   scrapling[all]
+   curl_cffi
+   playwright
+   portalocker
+   gunicorn
+   ```
+4. **Install Playwright browsers** – add a `Dockerfile`:
+   ```dockerfile
+   FROM python:3.12-slim
+   WORKDIR /app
+   COPY requirements.txt .
+   RUN pip install --no-cache-dir -r requirements.txt
+   RUN playwright install chromium && playwright install-deps
+   COPY . .
+   ENV PORT=7860
+   CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:7860", "--workers", "1", "--threads", "8"]
+   ```
+5. **Enable persistent storage** in Space settings (mounts `/data`). Put your pre‑scraped JSONs into `/data` (or copy via `hf sync`).
+6. **Set environment variables** (optional): `OMDB_API_KEY`, `DATA_DIR` (defaults to `./data`).
+
+After deployment, your API is live at `https://your-space.hf.space`.
+
+---
+
+## 🧪 Local Development (Windows / Linux)
+
+- Use Python 3.11+.
+- Install dependencies: `pip install -r requirements.txt` (use the same file as above).
+- Run `playwright install chromium`.
+- Set `DATA_DIR=./output` in your environment or let `app.py` default to `./data` (then symlink/copy `./output` to `./data`).
+- Run the pipeline: `python ScrapeAll.py`.
+- Start the API: `python app.py` (listens on `http://localhost:7860`).
+
+---
+
+## 📌 Important Notes
+
+- **First run** will take a long time (scrapes all pages). Use `ScrapeAll.py` – it is resumable.
+- **Daily runs** after that finish in minutes (only first few pages + new ratings).
+- **OMDb API key** is free (1000 requests/day). The script respects the limit and never writes `null`.
+- **FaselHD domain** may change. Update `FASEL_BASE_URL` in `Common.py` if the site moves.
+- **Do not edit the JSON files manually** – they are overwritten. Use `clean_metadata.py` for normalisation.
+
+---
 
 ## 🤝 Contributing
 
-Thanks for taking the time to contribute!
+Pull requests are welcome. Before contributing, understand the data flow above and ensure changes respect the incremental logic and rate limits.
 
-#### Prerequisites
-
-Before you start, please note that the ability to use the following technologies is **required**:
-
-- 🐍 Python
-- 🕸️ Web scraping (BeautifulSoup, Scrapling, Playwright)
+---
 
 ## ⚖️ DMCA Disclaimer
 
-The developers of this application **do not** have any affiliation with the content available in the app. It is collected from sources freely available through any web browser.
+This tool does **not** host any content. It only scrapes publicly available web pages and uses the OMDb API for ratings. The developers are not affiliated with FaselHD or IMDb.
 
-<h4 align='center'>© 2026 OGKushhh</h4>
+---
+
+**Enjoy your fully automated media library!** 🎉
