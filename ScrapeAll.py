@@ -5,47 +5,42 @@ from datetime import date
 
 start_time = perf_counter()
 
-# Create output directory if it doesn't exist
 os.makedirs("./output", exist_ok=True)
 
 print("==========================================")
-print("Starting FaselHD scrapers (sequential)")
+print("Starting FaselHD scraping pipeline")
 print("==========================================")
 
-# 1. Movies
-print("\n[1/3] Running FaselMoviesScraper.py ...")
-result = subprocess.run(["python", "FaselMoviesScraper.py"])
-if result.returncode != 0:
-    print("Movies scraper failed. Exiting.")
-    exit(1)
+# 1. Scrape new content (metadata only)
+print("\n[1/6] Running FaselMoviesScraper.py ...")
+subprocess.run(["python", "FaselMoviesScraper.py"], check=True)
 
-# 2. Anime
-print("\n[2/3] Running FaselAnimeScraper.py ...")
-result = subprocess.run(["python", "FaselAnimeScraper.py"])
-if result.returncode != 0:
-    print("Anime scraper failed. Exiting.")
-    exit(1)
+print("\n[2/6] Running FaselAnimeScraper.py ...")
+subprocess.run(["python", "FaselAnimeScraper.py"], check=True)
 
-# 3. Series (covers series, tvshows, asian-series)
-print("\n[3/3] Running FaselSeriesScraper.py ...")
-result = subprocess.run(["python", "FaselSeriesScraper.py"])
-if result.returncode != 0:
-    print("Series scraper failed. Exiting.")
-    exit(1)
+print("\n[3/6] Running FaselSeriesScraper.py ...")
+subprocess.run(["python", "FaselSeriesScraper.py"], check=True)
 
-# Post‑processing
-print("\nRunning TrendingScraper.py ...")
-subprocess.run(["python", "TrendingScraper.py"])
+# 2. Fetch fresh IMDb ratings + votes (separate files)
+print("\n[4/6] Running update_ratings.py ...")
+subprocess.run(["python", "update_ratings.py"], check=True)
 
-print("\nRunning Postprocessing.py ...")
-subprocess.run(["python", "Postprocessing.py"])
+# 3. Build trending & featured content (uses rating files)
+print("\n[5/6] Running TrendingScraper.py ...")
+subprocess.run(["python", "TrendingScraper.py"], check=True)
 
-print("\nRunning AllContentIndexer.py ...")
-subprocess.run(["python", "AllContentIndexer.py"])
+# 4. Update episodes & status for ongoing series
+print("\n[6/6] Running update_episodes.py ...")
+subprocess.run(["python", "update_episodes.py"], check=True)
+
+# 5. (Optional) Build global search index
+if os.path.exists("AllContentIndexer.py"):
+    print("\n[7/7] Running AllContentIndexer.py ...")
+    subprocess.run(["python", "AllContentIndexer.py"])
 
 end_time = perf_counter()
 
 with open("./output/last-scraped.txt", "w") as fp:
     fp.write(date.today().strftime("%Y-%m-%d"))
 
-print(f"\nFinished scraping all content in about {round((end_time - start_time) / 60)} minutes")
+print(f"\n✅ All tasks completed in about {round((end_time - start_time) / 60)} minutes")

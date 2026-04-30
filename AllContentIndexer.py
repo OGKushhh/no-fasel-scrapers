@@ -1,39 +1,45 @@
 import json
-from Common import FILE_NAMES
+import os
 
+# All content JSON files produced by scrapers (excluding trending/featured)
+CONTENT_FILES = [
+    "movies.json", "dubbed-movies.json", "hindi.json", "asian-movies.json", "anime-movies.json",
+    "anime.json", "series.json", "tvshows.json", "asian-series.json"
+]
 
 def main() -> None:
     all_content = []
 
-    for name in FILE_NAMES:
-        with open(f"./output/{name}.json", "r", encoding="utf-8") as file:
-            data = json.load(file)
+    for filename in CONTENT_FILES:
+        filepath = f"./output/{filename}"
+        if not os.path.exists(filepath):
+            print(f"Warning: {filename} not found, skipping...")
+            continue
 
-        for key in data:
-            if "Rating" in data[key]:
-                rating = data[key]["Rating"]
-            else:
-                rating = "N/A"
+        with open(filepath, "r", encoding="utf-8") as f:
+            data = json.load(f)
 
-            if "Genres" in data[key]:
-                genres = data[key]["Genres"]
-            else:
-                genres = []
+        # Infer content_type from filename
+        if "movie" in filename or filename == "anime-movies.json":
+            content_type = "movie"
+        elif filename == "anime.json":
+            content_type = "anime"
+        else:
+            content_type = "series"
 
-            all_content += [{"key": key,
-                            "Title": data[key]["Title"],
-                             "Image Source": data[key]["Image Source"],
-                             "Category": data[key]["Category"],
-                             "Rating": rating,
-                             "Genres": genres
-                             }]
+        for item_id, item in data.items():
+            entry = {
+                "id": item_id,
+                "title": item.get("Title", ""),
+                "image": item.get("Image Source", ""),
+                "category": content_type,
+                "genres": item.get("Genres", [])
+            }
+            all_content.append(entry)
 
-        with open(f"./output/all-content.json", "w", encoding="utf-8") as fp:
-            json.dump({"content": all_content}, fp,
-                      indent=4, ensure_ascii=False)
-
+    # Write aggregated index
+    with open("./output/all-content.json", "w", encoding="utf-8") as fp:
+        json.dump({"content": all_content, "total": len(all_content)}, fp, indent=4, ensure_ascii=False)
 
 if __name__ == "__main__":
     main()
-else:
-    pass

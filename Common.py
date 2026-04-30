@@ -854,6 +854,41 @@ def get_imdb_rating(title: str, year: Optional[str] = None, content_type: str = 
         return fetch_imdb_rating_by_id(imdb_id)
     return None
 
+def get_imdb_details(title: str, year: Optional[str] = None, content_type: str = "movie", known_imdb_id: Optional[str] = None) -> tuple:
+    """
+    Returns (rating, votes) where rating is a string like '8.5', votes is an integer.
+    If not found, returns (None, None).
+    """
+    imdb_id = None
+    if known_imdb_id and known_imdb_id.startswith('tt'):
+        imdb_id = known_imdb_id
+    else:
+        imdb_id = search_imdb_by_title(title, year, content_type)
+        if not imdb_id:
+            return (None, None)
+
+    # Check cache (IMDB_CACHE is a dict defined above)
+    if imdb_id in IMDB_CACHE:
+        cached = IMDB_CACHE[imdb_id]
+        if isinstance(cached, dict):
+            return (cached.get("rating"), cached.get("votes"))
+
+    url = f"{OMDB_BASE_URL}?i={imdb_id}&apikey={OMDB_API_KEY}"
+    try:
+        resp = requests.get(url, timeout=10)
+        data = resp.json()
+        if data.get("Response") == "True":
+            rating = data.get("imdbRating")
+            votes_str = data.get("imdbVotes", "0")
+            votes = int(votes_str.replace(",", "")) if votes_str and votes_str != "N/A" else 0
+            if rating and rating != "N/A":
+                IMDB_CACHE[imdb_id] = {"rating": rating, "votes": votes}
+                return (rating, votes)
+    except Exception as e:
+        print(f"IMDb API error for {imdb_id}: {e}")
+    IMDB_CACHE[imdb_id] = {"rating": None, "votes": None}
+    return (None, None)
+
 # ----------------------------------------------------------------------
 #  Legacy functions – Akwam, HDW, CimaNow (unchanged)
 # ----------------------------------------------------------------------

@@ -1,25 +1,29 @@
 import json
-from Common import FILE_NAMES
+import os
 from os import remove, listdir
 import requests
 from os import environ
 from hashlib import md5
 
+# List of all JSON files produced by the unified scrapers + trending
+OUTPUT_FILES = [
+    "movies.json", "dubbed-movies.json", "hindi.json", "asian-movies.json", "anime-movies.json",
+    "anime.json", "series.json", "tvshows.json", "asian-series.json",
+    "trending-content.json", "featured-content.json"
+]
+
+ALL_FILES = OUTPUT_FILES + ["all-content.json", "last-scraped.txt", "image-indices.json", "file-hashes.json"]
 
 def main() -> None:
     file_hashes = {}
-    ALL_FILES = ["all-content.json", "anime.json", "arabic-movies.json", "arabic-series.json", "asian-series.json",
-                 "featured-content.json", "movies.json", "series.json", "trending-content.json", "tvshows.json", "last-scraped.txt"]
 
-    # Clean up temporary image files
+    # Clean up temporary image files (scraped images stored as .jpg/.webp)
     for file in listdir("./output"):
-        if ".jpg" in file or ".webp" in file:
+        if file.endswith(".jpg") or file.endswith(".webp"):
             try:
                 remove(f"./output/{file}")
             except:
                 continue
-        else:
-            continue
 
     # Load existing image indices
     try:
@@ -28,110 +32,63 @@ def main() -> None:
     except FileNotFoundError:
         image_indices = {}
 
-    for index, file in enumerate(FILE_NAMES):
+    # Process each content JSON
+    for filename in OUTPUT_FILES:
+        filepath = f'./output/{filename}'
+        if not os.path.exists(filepath):
+            print(f"Warning: {filename} not found, skipping...")
+            continue
+
         try:
-            with open(f'./output/{file}.json', 'r', encoding='utf-8') as fp:
+            with open(filepath, 'r', encoding='utf-8') as fp:
                 content = json.load(fp)
-        except FileNotFoundError:
-            if file in ["arabic-movies", "arabic-series"]:
-                continue  # These are optional
-            print(f"Warning: {file}.json not found, skipping...")
-            continue
         except json.JSONDecodeError:
-            print(f"Warning: {file}.json is not valid JSON, skipping...")
+            print(f"Warning: {filename} is not valid JSON, skipping...")
             continue
 
-        for key in content:
-            # Handle image indices
-            if "Image Source" in content[key]:
-                if "arabic" in file:
-                    image_indices[key + "-akwam-" +
-                                  file.split("-")[-1]] = content[key]["Image Source"]
-                elif "hdw" in file:
-                    image_indices[key + "-hdw"] = content[key]["Image Source"]
-                else:
-                    image_indices[key + "-fasel"] = content[key]["Image Source"]
+        # Determine category from filename (for image indices)
+        category = filename.replace(".json", "")
 
-            # Clean genres
-            try:
-                genres = content[key]["Genres"]
+        for key, item in content.items():
+            # Store image source mapping (for legacy or frontend)
+            if "Image Source" in item:
+                image_indices[f"{key}-{category}"] = item["Image Source"]
 
-                for genre in list(genres):
-                    if "%" in genre or genre == "/":
-                        genres.remove(genre)
-                    else:
-                        continue
-
-                    content[key]["Genres"] = genres
-                else:
-                    pass
-            except KeyError:
-                content[key]["Genres"] = []
-            except TypeError:
-                content[key]["Genres"] = []
-
-            # Add TMDb ID if not present
-            if "TMDb ID" in content[key] and content[key]["TMDb ID"] != None:
-                continue
+            # Clean genres: remove entries containing '%' or '/'
+            if "Genres" in item and isinstance(item["Genres"], list):
+                clean_genres = [g for g in item["Genres"] if "%" not in g and g != "/"]
+                if clean_genres != item["Genres"]:
+                    item["Genres"] = clean_genres
             else:
-                params = {
-                    "query": content[key]["Title"],
-                    "api_key": environ.get("TMDB_API_KEY")
-                }
+                item["Genres"] = []
 
-                if "movies" in file:
-                    request_url = "https://api.themoviedb.org/3/search/movie"
-                else:
-                    request_url = "https://api.themoviedb.org/3/search/tv"
+            # (Optional) TMDb ID fetching – disabled by default to save API calls
+            # if "TMDb ID" not in item or item["TMDb ID"] is None:
+            #     params = {"query": item["Title"], "api_key": environ.get("TMDB_API_KEY")}
+            #     request_url = "https://api.themoviedb.org/3/search/movie" if "movie" in category else "https://api.themoviedb.org/3/search/tv"
+            #     try:
+            #         resp = requests.get(request_url, params=params, timeout=10)
+            #         resp.raise_for_status()
+            #         tmdb_id = resp.json()["results"][0]["id"] if resp.json()["results"] else None
+            #         item["TMDb ID"] = tmdb_id
+            #     except:
+            #         item["TMDb ID"] = None
 
-                try:
-                    resp = requests.get(request_url, params=params, timeout=10)
-                    resp.raise_for_status()
-                    
-                    try:
-                        tmdb_id = resp.json()["results"][0]["id"]
-                    except IndexError:
-                        tmdb_id = None
-                    except KeyError:
-                        tmdb_id = None
-                except Exception as e:
-                    tmdb_id = None
-
-                content[key]["TMDb ID"] = tmdb_id
-
-        # Clean invalid entries for series (indices 2-5)
-        if index in range(2, 5):
+        # Special handling for series: remove entries with no seasons (if they exist)
+        if category in ["series", "tvshows", "asian-series", "anime"]:
             for key in list(content.keys()):
-                try:
-                    if len(content[key].get("Seasons", {})) == 0:
-                        del content[key]
-                    else:
-                        continue
-                except KeyError:
+                if "Number Of Episodes" in content[key] and content[key]["Number Of Episodes"] == 0:
+                    # This is likely a movie misclassified, but we keep it? We'll delete.
+                    del content[key]
+                elif "SeasonsUrl" not in content[key]:
+                    # No episode data, maybe not a series
                     del content[key]
 
-        # Clean invalid entries for movies (index 0)
-        # ORIGINAL BLOCK (commented out because we keep movies with empty Source)
-        # elif index == 0:
-        #     for key in list(content.keys()):
-        #         try:
-        #             if content[key].get("Source", "") == "":
-        #                 del content[key]
-        #             else:
-        #                 continue
-        #         except KeyError:
-        #             del content[key]
+        # For movies: no deletion (keep even if Source is empty; video extraction is on-demand)
+        # (The old deletion block is removed.)
 
-        # NEW: No cleanup for movies – keep them even if Source is empty.
-        # (Video source will be fetched on‑demand.)
-        elif index == 0:
-            # Do nothing – keep all movies
-            pass
-
-        else:
-            pass
-
-        with open(f'./output/{file}.json', 'w', encoding='utf-8') as fp:
+        # Write back cleaned content
+        with open(filepath, 'w', encoding='utf-8') as fp:
             json.dump(content, fp, indent=4, ensure_ascii=False)
 
     # Save updated image indices
@@ -140,19 +97,18 @@ def main() -> None:
 
     # Calculate file hashes for change detection
     for file in ALL_FILES:
-        try:
-            with open(f"./output/{file}", "r", encoding="utf-8") as fp:
-                file_name = file.split(".")[0]
-                if ".json" in file:
-                    content = json.load(fp)
-                    file_hashes[file_name] = md5(json.dumps(
-                        content).encode("utf-8")).hexdigest()
-                else:
-                    file_hashes[file_name] = md5(
-                        fp.read().encode("utf-8")).hexdigest()
-        except FileNotFoundError:
+        filepath = f"./output/{file}"
+        if not os.path.exists(filepath):
             continue
-        except json.JSONDecodeError:
+        try:
+            with open(filepath, "r", encoding="utf-8") as fp:
+                name = file.split(".")[0]
+                if file.endswith(".json"):
+                    content = json.load(fp)
+                    file_hashes[name] = md5(json.dumps(content, sort_keys=True).encode("utf-8")).hexdigest()
+                else:
+                    file_hashes[name] = md5(fp.read().encode("utf-8")).hexdigest()
+        except (json.JSONDecodeError, IOError):
             continue
 
     with open("./output/file-hashes.json", "w") as fp:
@@ -161,5 +117,3 @@ def main() -> None:
 
 if __name__ == '__main__':
     main()
-else:
-    pass

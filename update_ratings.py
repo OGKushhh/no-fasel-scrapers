@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """
-update_imdb_ratings.py
+update_ratings.py
 
 Reads all content JSON files (movies, anime, series, etc.),
-fetches IMDb ratings from OMDb API (using cleaned title + year),
+fetches IMDb ratings AND vote counts from OMDb API,
 and writes each rating to a separate JSON file in ./output/ratings/{category}/{id}.json
 
 Does NOT modify the original content JSONs.
+Respects daily API limit (1000). Caches results. Resumable.
 """
 
 import json
@@ -17,7 +18,7 @@ from pathlib import Path
 from typing import Optional, Dict, Any, Set, Tuple
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from Common import get_imdb_rating
+from Common import get_imdb_details
 
 # ========== CONFIG ==========
 OUTPUT_DIR = Path("./output")
@@ -26,19 +27,22 @@ DAILY_LIMIT = 1000
 REQUEST_SAFETY_MARGIN = 10
 PROGRESS_FILE = OUTPUT_DIR / "rating_update_progress.txt"
 
-# Files to process (map filename -> category folder name)
+# Files to process (map filename -> category folder name under ratings/)
 CONTENT_FILES = {
     "movies.json": "movies",
+    "dubbed-movies.json": "movies",
+    "hindi.json": "movies",
+    "asian-movies.json": "movies",
+    "anime-movies.json": "movies",
     "anime.json": "anime",
     "series.json": "series",
     "tvshows.json": "tvshows",
     "asian-series.json": "asian-series",
-    "anime-movies.json": "anime-movies",
 }
 # ============================
 
 api_calls_made = 0
-cache: Dict[str, Optional[str]] = {}  # key -> rating or None
+cache: Dict[str, dict] = {}  # key -> {"rating": ..., "votes": ...}
 
 def load_cache():
     global cache
@@ -87,7 +91,7 @@ def extract_year_from_release_date(release_date: Any) -> Optional[str]:
     match = re.search(r'\b(19|20)\d{2}\b', release_date)
     return match.group(0) if match else None
 
-def get_rating_for_item(category: str, content_id: str, title: str, release_date: Any, content_type: str) -> Optional[str]:
+def get_rating_and_votes_for_item(category: str, content_id: str, title: str, release_date: Any, content_type: str) -> tuple:
     global api_calls_made
 
     year = extract_year_from_release_date(release_date)
@@ -95,26 +99,27 @@ def get_rating_for_item(category: str, content_id: str, title: str, release_date
     cache_key = f"{clean_title}|{year}|{content_type}"
 
     if cache_key in cache:
-        return cache[cache_key]
+        rating = cache[cache_key].get("rating")
+        votes = cache[cache_key].get("votes")
+        return rating, votes
 
     if api_calls_made + REQUEST_SAFETY_MARGIN >= DAILY_LIMIT:
         print(f"⚠️ Daily limit approaching ({api_calls_made} calls). Stopping.")
+        print("   Run again tomorrow to continue.")
         sys.exit(0)
 
     try:
-        rating = get_imdb_rating(clean_title, year, content_type, known_imdb_id=None)
+        rating, votes = get_imdb_details(clean_title, year, content_type, known_imdb_id=None)
         api_calls_made += 1
-        print(f"  🔵 {category}/{content_id}: '{clean_title}' -> {rating} (call #{api_calls_made})")
-        cache[cache_key] = rating
-        return rating
+        print(f"  🔵 {category}/{content_id}: '{clean_title}' -> rating={rating}, votes={votes} (call #{api_calls_made})")
+        cache[cache_key] = {"rating": rating, "votes": votes}
+        return rating, votes
     except Exception as e:
         print(f"  ❌ Error for {clean_title}: {e}")
-        cache[cache_key] = None
-        return None
+        cache[cache_key] = {"rating": None, "votes": None}
+        return None, None
 
 def process_file(file_path: Path, category: str, processed_set: Set[Tuple[str, str]]):
-    global api_calls_made
-
     print(f"\n📁 Processing {file_path.name} (category: {category})")
     try:
         with open(file_path, "r", encoding="utf-8") as f:
@@ -142,16 +147,16 @@ def process_file(file_path: Path, category: str, processed_set: Set[Tuple[str, s
             continue
 
         release_date = item.get("ReleaseDate")
-        # Determine content type for OMDb: movie or series
+        # Determine content type for OMDb
         content_type = "movie"
-        if "series" in category or "anime" in category:
-            # For anime, check if it's a movie or series (use 'Type' field if present)
+        if category in ["anime", "series", "tvshows", "asian-series"]:
+            # For anime, check explicit Type field (can be "Movie" or "Series")
             if item.get("Type") == "Movie":
                 content_type = "movie"
             else:
                 content_type = "series"
 
-        rating = get_rating_for_item(category, content_id, title, release_date, content_type)
+        rating, votes = get_rating_and_votes_for_item(category, content_id, title, release_date, content_type)
 
         # Write rating file
         rating_file = rating_category_dir / f"{content_id}.json"
@@ -160,6 +165,7 @@ def process_file(file_path: Path, category: str, processed_set: Set[Tuple[str, s
             "title": title,
             "year": extract_year_from_release_date(release_date),
             "rating": rating,
+            "votes": votes,
             "source": "omdb",
             "last_updated": __import__("datetime").datetime.now(
                 __import__("datetime").timezone.utc
@@ -189,6 +195,8 @@ def main():
     print(f"\n✅ Done. Total API calls: {api_calls_made}")
     if api_calls_made + REQUEST_SAFETY_MARGIN >= DAILY_LIMIT:
         print("⚠️ Approached daily limit. Run again tomorrow for remaining items.")
+    elif api_calls_made == 0:
+        print("No new ratings needed. All up to date.")
 
 if __name__ == "__main__":
     main()
