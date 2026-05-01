@@ -6,6 +6,11 @@ output/
 /backup/
 backup/
 
+# Baks
+/baks/
+baks/
+*.bak
+
 # Specific files
 ImageIndexer.py
 test.py

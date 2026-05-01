@@ -31484,3 +31484,298 @@ Call log:
 2026-05-01 02:39:36,011 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-qala-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
 2026-05-01 02:39:54,666 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/hindi/page/15/> (referer: https://www.google.com/)
 2026-05-01 02:39:54,709 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/page/15> (referer: https://www.google.com/)
+2026-05-01 02:40:41,816 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-godfather-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:40:48,214 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/1-%d9%81%d9%8a%d9%84%d9%85-padavettu-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-8> (referer: https://www.google.com/)
+2026-05-01 02:40:50,697 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-dhokha-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:40:51,134 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-monica-o-darling-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:40:51,845 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-brahmastra-part-one-shiva-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:41:01,508 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-ammu-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 02:41:21,291 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-ammu-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:42:25,023 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-dobaaraa-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 02:42:39,050 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/1-%d9%81%d9%8a%d9%84%d9%85-ranga-ranga-vaibhavanga-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 02:42:41,155 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-oru-thekkan-thallu-case-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 02:42:50,093 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-plan-plan-b-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-nn> (referer: https://www.google.com/)
+2026-05-01 02:42:50,126 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-plan-plan-b-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-nn> (referer: https://www.google.com/)
+2026-05-01 02:42:57,830 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-laal-singh-chaddha-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 02:43:01,038 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-dongalunnaru-jagratta-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 02:43:06,941 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-dobaaraa-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:43:06,995 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/1-%d9%81%d9%8a%d9%84%d9%85-ranga-ranga-vaibhavanga-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:43:07,628 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-oru-thekkan-thallu-case-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:43:19,055 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-dongalunnaru-jagratta-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:43:19,693 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-laal-singh-chaddha-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:44:27,637 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-mat-kilau-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:44:32,358 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-heropanti-2-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-s> (referer: https://www.google.com/)
+2026-05-01 02:44:36,405 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-plan-plan-b-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-nn> (referer: https://www.google.com/)
+2026-05-01 02:44:39,696 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-jogi-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:44:47,439 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-khuda-haafiz-chapter-2-agni-pariksha-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-j> (referer: https://www.google.com/)
+2026-05-01 02:44:48,094 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/2-%d9%81%d9%8a%d9%84%d9%85-ek-villain-returns-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:45:11,028 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-kaatteri-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:45:45,079 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/1-%d9%81%d9%8a%d9%84%d9%85-darlings-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:45:48,085 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-gehraiyaan-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:45:54,822 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-pathinettam-padi-2019-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:46:10,524 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/1-%d9%81%d9%8a%d9%84%d9%85-vikram-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-j> (referer: https://www.google.com/)
+2026-05-01 02:46:12,376 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-mardaani-2-2019-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-t> (referer: https://www.google.com/)
+2026-05-01 02:46:19,841 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-jaadugar-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:47:15,956 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/hindi/page/16/> (referer: https://www.google.com/)
+2026-05-01 02:47:16,001 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/page/16> (referer: https://www.google.com/)
+2026-05-01 02:48:13,617 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/1-%d9%81%d9%8a%d9%84%d9%85-bunty-aur-babli-2-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-lo> (referer: https://www.google.com/)
+2026-05-01 02:48:22,530 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-bachchhan-paandey-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-v", waiting until "load"
+. Retrying in 1s...
+2026-05-01 02:48:22,979 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-bhool-bhulaiyaa-2-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 02:48:22,993 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-samrat-prithviraj-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 02:48:23,377 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-operation-romeo-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 02:48:24,026 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-cbi-5-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:48:28,535 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-samrat-prithviraj-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:48:29,093 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-bachchhan-paandey-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-v> (referer: https://www.google.com/)
+2026-05-01 02:48:29,338 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-operation-romeo-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:48:33,237 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-bhool-bhulaiyaa-2-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:48:59,849 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-jayeshbhai-jordaar-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-tre> (referer: https://www.google.com/)
+2026-05-01 02:49:45,375 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-dasvi-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:49:46,909 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-toolsidas-junior-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:49:57,272 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-rrr-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:49:58,332 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-jersey-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:49:59,507 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-radhe-shyam-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:50:03,757 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-thar-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:50:28,978 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-pushpa-rise-part-1-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:51:15,536 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-gangubai-kathiawadi-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:51:21,348 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-etharkkum-thunindhavan-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-3> (referer: https://www.google.com/)
+2026-05-01 02:51:22,147 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-cobalt-blue-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:51:23,321 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/1-%d9%81%d9%8a%d9%84%d9%85-evaru-2019-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:51:25,528 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-2018-96-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-k> (referer: https://www.google.com/)
+2026-05-01 02:51:29,139 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-83-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:52:11,583 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-jab-jab-phool-khile-1965-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:52:16,988 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-minnal-murali-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-1> (referer: https://www.google.com/)
+2026-05-01 02:52:17,918 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-kadaseela-biriyani-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:52:19,710 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-looop-lapeta-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:53:02,500 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/hindi/page/17/> (referer: https://www.google.com/)
+2026-05-01 02:53:02,545 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/page/17> (referer: https://www.google.com/)
+2026-05-01 02:53:47,612 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-dhamaka-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:53:47,946 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-sanak-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:53:48,578 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-pebbles-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:53:58,016 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-meenakshi-sundareshwar-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-vt> (referer: https://www.google.com/)
+2026-05-01 02:54:01,337 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-kurup-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:54:02,432 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-dybbuk-curse-real-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:54:38,988 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-ankahi-kahaniya-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-f> (referer: https://www.google.com/)
+2026-05-01 02:54:43,630 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/1-%d9%81%d9%8a%d9%84%d9%85-keshava-2017-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:54:54,711 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-mimi-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:55:19,028 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-chak-de-india-2007-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-t5> (referer: https://www.google.com/)
+2026-05-01 02:55:21,314 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-rab-ne-bana-di-jodi-2008-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-1> (referer: https://www.google.com/)
+2026-05-01 02:55:37,684 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-bajrangi-bhaijaan-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-u", waiting until "load"
+. Retrying in 1s...
+2026-05-01 02:55:42,810 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-bajrangi-bhaijaan-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-u> (referer: https://www.google.com/)
+2026-05-01 02:55:50,586 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/1-%d9%81%d9%8a%d9%84%d9%85-ramaiya-vastavaiya-2013-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-v> (referer: https://www.google.com/)
+2026-05-01 02:55:52,440 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-sooryavanshi-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-5> (referer: https://www.google.com/)
+2026-05-01 02:56:19,890 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-ittefaq-2017-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-l> (referer: https://www.google.com/)
+2026-05-01 02:56:34,342 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-netrikann-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:56:42,160 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-thittam-irandu-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-o> (referer: https://www.google.com/)
+2026-05-01 02:56:56,601 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-dial-100-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:57:11,427 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-jug-jugg-jeeyo-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-1> (referer: https://www.google.com/)
+2026-05-01 02:57:30,789 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-pakka-commercial-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-xx> (referer: https://www.google.com/)
+2026-05-01 02:57:54,442 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-state-siege-temple-attack-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:57:58,485 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-hasee-toh-phasee-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-1> (referer: https://www.google.com/)
+2026-05-01 02:58:00,619 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-haseen-dillruba-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:58:37,703 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-jagame-thandhiram-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 02:59:36,520 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/hindi/page/18/> (referer: https://www.google.com/)
+2026-05-01 02:59:36,565 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/page/18> (referer: https://www.google.com/)
+2026-05-01 03:00:44,242 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-teri-meri-kahaani-2012-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-o", waiting until "load"
+. Retrying in 1s...
+2026-05-01 03:00:44,336 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-sarbath-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 03:00:44,602 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-kismat-konnection-2008-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-2", waiting until "load"
+. Retrying in 1s...
+2026-05-01 03:00:44,742 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-haseena-maan-jayegi-1968-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 03:00:45,379 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-skater-girl-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-ft> (referer: https://www.google.com/)
+2026-05-01 03:00:49,650 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-teri-meri-kahaani-2012-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-o> (referer: https://www.google.com/)
+2026-05-01 03:00:51,570 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-dangerous-ishq-2012-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 03:00:53,173 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-sarbath-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:00:53,227 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-haseena-maan-jayegi-1968-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:01:04,736 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-kismat-konnection-2008-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-2> (referer: https://www.google.com/)
+2026-05-01 03:01:06,681 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-dangerous-ishq-2012-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:01:43,353 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-lage-raho-munna-bhai-2006-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:01:49,507 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-sardars-grandson-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:02:42,092 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-bhoothnath-returns-2014-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:02:45,416 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-shahenshah-1988-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:02:45,743 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-cinemabandi-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:02:46,594 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-milestone-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:02:54,232 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-time-dance-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 03:03:01,599 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-time-dance-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:03:06,957 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-sultan-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:04:15,956 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-one-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:04:26,174 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-mumbai-saga-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-q> (referer: https://www.google.com/)
+2026-05-01 03:04:28,572 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-searching-sheela-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:04:29,964 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-disciple-2020-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:04:40,078 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-strange-dastanas-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 03:04:56,174 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-uppena-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 03:05:06,387 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-uppena-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:05:10,353 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-strange-dastanas-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:06:01,142 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-tuesdays-fridays-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 03:06:06,472 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-tuesdays-fridays-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:06:08,182 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-hello-charlie-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 03:06:13,379 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-hello-charlie-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:06:14,273 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-roohi-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-ti8> (referer: https://www.google.com/)
+2026-05-01 03:06:23,122 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-irul-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:09:08,724 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/hindi/page/19/> (referer: https://www.google.com/)
+2026-05-01 03:09:08,769 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/page/19> (referer: https://www.google.com/)
+2026-05-01 03:10:47,225 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-aelay-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 03:11:05,769 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-pagglait-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 03:11:06,056 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-power-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 03:11:06,088 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-super-30-2019-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 03:11:07,257 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-indoo-ki-jawani-2020-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 03:11:08,060 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-nagin-1976-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 03:11:12,383 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-aelay-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:11:15,876 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-power-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:11:15,969 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-power-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:11:18,706 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-super-30-2019-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:11:32,522 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-nagin-1976-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:11:37,053 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-pagglait-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:11:37,951 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-indoo-ki-jawani-2020-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:13:27,576 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-girl-train-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 03:13:29,421 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-warrior-queen-jhansi-2019-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 03:13:35,355 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-power-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 03:13:47,738 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-warrior-queen-jhansi-2019-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:13:48,719 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-mundina-nildana-2019-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 03:13:49,646 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-girl-train-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:13:54,367 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-eeb-allay-ooo-2019-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 03:14:02,319 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-mundina-nildana-2019-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:14:02,904 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-red-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 03:14:04,235 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-eeb-allay-ooo-2019-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:14:08,316 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-power-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:14:25,673 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-red-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:14:34,465 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-kilometers-kilometers-2020-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:14:55,446 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/1-%d9%81%d9%8a%d9%84%d9%85-kaagaz-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-1> (referer: https://www.google.com/)
+2026-05-01 03:14:55,942 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-white-tiger-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:15:29,542 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-lovefucked-2018-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:15:39,032 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-tribhanga-2021-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:15:39,425 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-sonu-ke-titu-ki-sweety-2018-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:15:40,244 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-2-0-2018-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:15:55,764 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-sir-2018-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:16:02,356 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-ak-vs-ak-2020-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:16:32,433 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-chhapaak-2020-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:16:42,540 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-torbaaz-2020-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:16:44,981 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-soorarai-pottru-2020-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:16:48,019 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-shaandaar-2015-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:17:12,147 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/hindi/page/20/> (referer: https://www.google.com/)
+2026-05-01 03:17:12,189 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/page/20> (referer: https://www.google.com/)
+2026-05-01 03:18:04,089 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-laxmmi-2020-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:18:04,094 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-kaali-khuhi-2020-%d9%85%d8%aa%d8%b1%d8%ac%d9%85-qq> (referer: https://www.google.com/)
+2026-05-01 03:18:04,140 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-miss-india-2020-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:18:04,142 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/section-375-n> (referer: https://www.google.com/)
+2026-05-01 03:18:04,288 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-putham-pudhu-kaalai-2020-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-01 03:18:27,385 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-ludo-2020-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 03:18:40,045 - WARNING - Attempt 1 failed: Page.goto: net::ERR_ABORTED; maybe frame was detached?
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-ambili-2019-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 03:18:40,048 - WARNING - Attempt 1 failed: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-chintu-ka-birthday-2020-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 03:18:40,054 - WARNING - Attempt 1 failed: Page.goto: net::ERR_ABORTED; maybe frame was detached?
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-venky-mama-2019-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 03:18:40,055 - WARNING - Attempt 1 failed: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-mayabazar-2016-2020-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...
+2026-05-01 03:18:40,092 - WARNING - Attempt 2 failed: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.fasel-hd.cam/hindi/%d9%81%d9%8a%d9%84%d9%85-ludo-2020-%d9%85%d8%aa%d8%b1%d8%ac%d9%85", waiting until "load"
+. Retrying in 1s...

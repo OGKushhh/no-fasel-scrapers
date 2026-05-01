@@ -3,6 +3,7 @@ import os
 import shutil
 import re
 import logging
+from pathlib import Path
 from typing import Optional
 
 # Setup logging
@@ -62,11 +63,15 @@ EN_TO_AR_GENRE = {
 }
 
 def backup_file(file_path: str) -> None:
-    """Create a backup of the original file before modifying."""
-    if os.path.exists(file_path):
-        backup_path = file_path + ".bak"
-        shutil.copy2(file_path, backup_path)
-        logging.info(f"Backup created: {backup_path}")
+    """Create a backup copy in ./baks/ folder before modifying."""
+    if not os.path.exists(file_path):
+        return
+    baks_dir = Path("./baks")
+    baks_dir.mkdir(exist_ok=True)
+    filename = os.path.basename(file_path)
+    backup_path = baks_dir / f"{filename}.bak"
+    shutil.copy2(file_path, backup_path)
+    logging.info(f"Backup created: {backup_path}")
 
 def clean_genre_string(genre: str) -> str:
     """Replace hyphens with spaces in a single genre string."""
@@ -123,7 +128,7 @@ def clean_json_file(file_name: str, translate_missing_ar: bool = False) -> None:
         logging.error(f"Invalid JSON in {file_path}: {e}")
         return
 
-    # Backup original
+    # Backup original to ./baks/
     backup_file(file_path)
 
     modified = False
