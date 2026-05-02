@@ -4,7 +4,8 @@ update_episodes.py
 
 Unified script that:
 - Checks all known series (from JSON files) for new episodes.
-- If new episodes are found, updates the episodes JSON and ensures status is 'مستمر'.
+- If new episodes are found, updates the episodes JSON (adds a `last_updated` timestamp)
+  and ensures status is 'مستمر'.
 - Then, for series marked 'مستمر', re-fetches the detail page and updates status
   to 'مكتمل' if Fasel indicates completion (and no new episodes were found today).
 
@@ -15,6 +16,7 @@ import json
 import re
 import time
 from pathlib import Path
+from datetime import datetime, timezone
 from bs4 import BeautifulSoup
 from Common import (
     DEBUG, FASEL_BASE_URL, REQUEST_DELAY, get_website_safe,
@@ -61,10 +63,16 @@ def load_episodes(category: str, series_id: str) -> dict:
     return {"content_id": series_id, "category": category, "seasons": {}}
 
 def save_episodes(category: str, series_id: str, data: dict):
+    """
+    Save episodes JSON with a `last_updated` timestamp (UTC ISO format).
+    """
+    data["last_updated"] = datetime.now(timezone.utc).isoformat()
     path = Path(f"./output/episodes/{category}/{series_id}.json")
     path.parent.mkdir(parents=True, exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
+    if DEBUG:
+        print(f"  💾 Saved episodes for {category}/{series_id} (last_updated: {data['last_updated']})")
 
 def update_main_json_status(category: str, series_id: str, new_status: str):
     """Update the Status field in the main JSON file."""
@@ -141,7 +149,7 @@ def check_and_update_episodes(category: str, series_id: str, detail_url: str) ->
 
     if changed:
         existing["seasons"] = existing_seasons
-        save_episodes(category, series_id, existing)
+        save_episodes(category, series_id, existing)   # ← this adds last_updated
         # New episodes found → ensure status is 'مستمر' (ongoing)
         update_main_json_status(category, series_id, "مستمر")
         return True
@@ -194,13 +202,9 @@ def process_category(category: str, json_path: str, processed_set: set):
         print(f"\n🔍 {category}/{series_id}: {info.get('Title', 'Unknown')}")
 
         # Step 1: Check for new episodes
-        new_episodes_found = check_and_update_episodes(category, series_id, detail_url)
+        check_and_update_episodes(category, series_id, detail_url)
 
         # Step 2: Update status (if still ongoing)
-        # Only if no new episodes were found in this run? Actually we want to check status regardless,
-        # but we must not override a revert to 'مستمر' that happened in step 1.
-        # So fetch status after episode check, using the current (possibly updated) status.
-        # We'll call it always; the function checks the current status again.
         update_status_for_ongoing_series(category, series_id, detail_url)
 
         # Polite delay between series

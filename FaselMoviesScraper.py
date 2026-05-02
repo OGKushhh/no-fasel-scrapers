@@ -11,6 +11,7 @@ import random
 import re
 import os
 import time
+from datetime import datetime, timezone
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from time import sleep
 from bs4 import BeautifulSoup
@@ -194,6 +195,7 @@ def scrape_category(path: str):
                 "Description": description,
                 "ReleaseDate": release_date,
                 "Language": language,
+                "last_scraped": datetime.now(timezone.utc).isoformat()
             }
             existing_ids.add(movie_id)
 

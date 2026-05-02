@@ -11,6 +11,7 @@ import random
 import re
 import os
 import time
+from datetime import datetime, timezone
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from time import sleep
 from bs4 import BeautifulSoup
@@ -314,6 +315,7 @@ def scrape_series_category(path: str):
                 "ReleaseDate": release_date,
                 "EpisodeDuration": episode_duration,
                 "Number Of Episodes Text": episode_count_text,
+                "last_scraped": datetime.now(timezone.utc).isoformat()
             }
             existing_ids.add(series_id)
 

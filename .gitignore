@@ -34,6 +34,7 @@ uBlock0.chromium/
 chromedriver.zip
 chromedriver.exe
 LICENSE.chromedriver
+chrome_fresh_profile/
 
 # Any other common temporary or sensitive files
 *.log
