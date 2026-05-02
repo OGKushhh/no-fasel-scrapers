@@ -1,81 +1,58 @@
 #!/usr/bin/env python3
 """
-update_ratings.py
-
-Fetches IMDb ratings + vote counts using OMDb API.
-Maintains a local mapping from Fasel content_id -> IMDb ID.
-Outputs rating files to ./output/ratings/{category}/{id}.json
-Respects daily API limit (1000). Caches results. Resumable.
-When API limit is reached, exits cleanly WITHOUT writing null ratings.
+update_ratings.py – Two‑tier rating fetcher.
+Primary:   TMDb (unlimited, ~25 req/sec)
+Secondary: OMDb (1000/day, last resort)
+Output: ./output/ratings/{category}/{id}.json
 """
 
 import json
 import re
 import sys
+import time
 from pathlib import Path
 from typing import Dict, Optional, Set, Tuple
 from datetime import datetime, timezone
 
 sys.path.insert(0, str(Path(__file__).parent))
-from Common import get_imdb_details
+from Common import get_tmdb_details, get_imdb_details
 
-# ========== CONFIG ==========
 OUTPUT_DIR = Path("./output")
 RATINGS_DIR = OUTPUT_DIR / "ratings"
-MAP_FILE = OUTPUT_DIR / "imdb_id_map.json"
 PROGRESS_FILE = OUTPUT_DIR / "rating_update_progress.txt"
-DAILY_LIMIT = 1000
-REQUEST_SAFETY_MARGIN = 10
+TMDB_DELAY = 0.04               # 25 requests per second
+OMDB_DAILY_LIMIT = 1000
+CURRENT_YEAR = datetime.now().year
 
 CONTENT_FILES = {
-    "movies.json": "movies",
-    "dubbed-movies.json": "movies",
-    "hindi.json": "movies",
-    "asian-movies.json": "movies",
-    "anime-movies.json": "movies",
-    "anime.json": "anime",
-    "series.json": "series",
-    "tvshows.json": "tvshows",
-    "asian-series.json": "asian-series",
+    "movies.json": "movie",
+    "dubbed-movies.json": "movie",
+    "hindi.json": "movie",
+    "asian-movies.json": "movie",
+    "anime-movies.json": "movie",
+    "anime.json": "tv",
+    "series.json": "tv",
+    "tvshows.json": "tv",
+    "asian-series.json": "tv",
 }
-# ============================
 
-api_calls_made = 0
-cache: Dict[str, dict] = {}
-imdb_map: Dict[str, str] = {}
+tmdb_cache: Dict[str, tuple] = {}
+omdb_calls_today = 0
 
-def load_cache():
-    global cache
-    cache_file = RATINGS_DIR / "omdb_cache.json"
+def load_tmdb_cache():
+    global tmdb_cache
+    cache_file = RATINGS_DIR / "tmdb_cache.json"
     if cache_file.exists():
-        try:
-            with open(cache_file, "r") as f:
-                cache = json.load(f)
-            print(f"📦 Loaded {len(cache)} OMDb cache entries.", flush=True)
-        except Exception as e:
-            print(f"⚠️ Failed to load cache: {e}", flush=True)
+        with open(cache_file, "r") as f:
+            tmdb_cache = {k: tuple(v) for k, v in json.load(f).items()}
+        print(f"📦 Loaded {len(tmdb_cache)} TMDb cache entries.")
 
-def save_cache():
-    cache_file = RATINGS_DIR / "omdb_cache.json"
+def save_tmdb_cache():
+    cache_file = RATINGS_DIR / "tmdb_cache.json"
     RATINGS_DIR.mkdir(parents=True, exist_ok=True)
+    serializable = {k: list(v) for k, v in tmdb_cache.items()}
     with open(cache_file, "w") as f:
-        json.dump(cache, f, indent=2)
-    print(f"💾 Saved cache ({len(cache)} entries).", flush=True)
-
-def load_imdb_map():
-    global imdb_map
-    if MAP_FILE.exists():
-        try:
-            with open(MAP_FILE, "r") as f:
-                imdb_map = json.load(f)
-            print(f"🗺️ Loaded {len(imdb_map)} IMDb ID mappings.", flush=True)
-        except Exception as e:
-            print(f"⚠️ Failed to load map: {e}", flush=True)
-
-def save_imdb_map():
-    with open(MAP_FILE, "w") as f:
-        json.dump(imdb_map, f, indent=2)
-    print(f"💾 Saved {len(imdb_map)} mappings.", flush=True)
+        json.dump(serializable, f, indent=2)
 
 def load_progress() -> Set[Tuple[str, str]]:
     processed = set()
@@ -87,7 +64,6 @@ def load_progress() -> Set[Tuple[str, str]]:
                     parts = line.split("|", 1)
                     if len(parts) == 2:
                         processed.add((parts[0], parts[1]))
-    print(f"📋 Loaded {len(processed)} progress entries.", flush=True)
     return processed
 
 def save_progress(category: str, content_id: str):
@@ -112,129 +88,120 @@ def extract_year(title: str, release_date: Optional[str]) -> Optional[str]:
     return m.group(0) if m else None
 
 def get_rating_and_votes(category: str, content_id: str, title: str, year: Optional[str], content_type: str) -> tuple:
-    global api_calls_made
+    global omdb_calls_today
     cleaned = clean_title(title)
+
+    # Skip future years – no ratings exist
+    if year and int(year) > CURRENT_YEAR:
+        print(f"  ⏭️ Future year {year}, skipping API calls.")
+        return None, 0, "none"
+
+    # ----- 1. TMDb (primary) -----
     cache_key = f"{cleaned}|{year}|{content_type}"
-    if cache_key in cache:
-        rating = cache[cache_key].get("rating")
-        votes = cache[cache_key].get("votes")
-        print(f"  📦 Cache hit: {cleaned} -> rating={rating}", flush=True)
-        return rating, votes
+    if cache_key in tmdb_cache:
+        rating, votes = tmdb_cache[cache_key]
+        if rating is not None:
+            print(f"  📦 TMDb cache: '{cleaned}' -> rating={rating}, votes={votes}")
+            return rating, votes, "tmdb"
 
-    # Check daily limit BEFORE making API call
-    if api_calls_made >= DAILY_LIMIT:
-        print(f"\n🔴 DAILY API LIMIT EXCEEDED ({api_calls_made} calls). Exiting without writing any further ratings.", flush=True)
-        sys.exit(0)
-    if api_calls_made + REQUEST_SAFETY_MARGIN >= DAILY_LIMIT:
-        print(f"⚠️ Approaching daily limit ({api_calls_made}/{DAILY_LIMIT})", flush=True)
+    rating, votes = get_tmdb_details(cleaned, year, content_type)
+    tmdb_cache[cache_key] = (rating, votes)
+    if rating is not None:
+        print(f"  🎬 TMDb: '{cleaned}' -> rating={rating}, votes={votes}")
+        return rating, votes, "tmdb"
 
-    known_id = imdb_map.get(content_id)
-    rating, votes, found_id, limit_reached = get_imdb_details(cleaned, year, content_type, known_imdb_id=known_id)
-    api_calls_made += 1
+    # ----- 2. OMDb fallback (daily limit) -----
+    if omdb_calls_today >= OMDB_DAILY_LIMIT:
+        print(f"  ⚠️ OMDb daily limit reached ({omdb_calls_today}). Skipping.")
+        return None, 0, "none"
 
+    rating, votes, _, limit_reached = get_imdb_details(cleaned, year, content_type, known_imdb_id=None)
+    omdb_calls_today += 1
     if limit_reached:
-        print(f"\n🚫 API limit error from OMDb. Exiting without writing rating for {category}/{content_id}.", flush=True)
+        print(f"  🛑 OMDb limit reached – stopping further OMDb calls.")
         sys.exit(0)
+    if rating is not None:
+        print(f"  🎬 OMDb: '{cleaned}' -> rating={rating}, votes={votes}")
+        return rating, votes, "omdb"
 
-    print(f"  🌐 API #{api_calls_made}: {cleaned} ({year}) -> rating={rating}, votes={votes}, id={found_id}", flush=True)
+    print(f"  ❌ No rating found for '{cleaned}'.")
+    return None, 0, "none"
 
-    if found_id and found_id != known_id:
-        imdb_map[content_id] = found_id
-        save_imdb_map()
-        print(f"  🆕 Mapped {content_id} -> {found_id}", flush=True)
-
-    cache[cache_key] = {"rating": rating, "votes": votes}
-    return rating, votes
-
-def process_file(file_path: Path, category: str, processed_set: Set[Tuple[str, str]]):
-    print(f"\n📁 Processing {file_path.name} (category: {category})", flush=True)
+def process_file(file_path: Path, content_type: str, processed_set: Set[Tuple[str, str]]):
+    print(f"\n📁 Processing {file_path.name} (type: {content_type})")
     try:
         with open(file_path, "r", encoding="utf-8") as f:
             data = json.load(f)
     except Exception as e:
-        print(f"  ❌ Cannot load: {e}", flush=True)
+        print(f"  ❌ Cannot load: {e}")
         return
 
     if not isinstance(data, dict):
-        print("  ⚠️ Not a dictionary, skipping.", flush=True)
+        print("  ⚠️ Not a dictionary, skipping.")
         return
 
-    rating_dir = RATINGS_DIR / category
+    rating_dir = RATINGS_DIR / file_path.stem.split('.')[0]
     rating_dir.mkdir(parents=True, exist_ok=True)
 
     for content_id, item in data.items():
         if not isinstance(item, dict):
             continue
-        if (category, content_id) in processed_set:
+        if (file_path.name, content_id) in processed_set:
             continue
 
         title = item.get("Title")
         if not title:
-            save_progress(category, content_id)
+            save_progress(file_path.name, content_id)
             continue
-
-        content_type = "movie"
-        if category in ["anime", "series", "tvshows", "asian-series"]:
-            if item.get("Type") == "Movie":
-                content_type = "movie"
-            else:
-                content_type = "series"
 
         year = extract_year(title, item.get("ReleaseDate"))
 
         rating_file = rating_dir / f"{content_id}.json"
-        # Skip if rating already exists and has a non-null value
         if rating_file.exists():
             try:
                 with open(rating_file, "r") as rf:
                     existing = json.load(rf)
                 if existing.get("rating") not in (None, "N/A"):
-                    print(f"  ⏭️ {category}/{content_id} already rated ({existing['rating']}) – skipping", flush=True)
-                    save_progress(category, content_id)
+                    print(f"  ⏭️ {content_id} already rated ({existing['rating']}) – skipping")
+                    save_progress(file_path.name, content_id)
                     continue
                 else:
-                    print(f"  🔄 {category}/{content_id} existing rating is null, re‑fetching...", flush=True)
+                    print(f"  🔄 {content_id} existing rating is null, re‑fetching...")
             except:
                 pass
 
-        rating, votes = get_rating_and_votes(category, content_id, title, year, content_type)
+        rating, votes, source = get_rating_and_votes(file_path.name, content_id, title, year, content_type)
 
-        # Write rating file (only if we got here without exiting)
         rating_data = {
             "content_id": content_id,
             "title": title,
             "year": year,
             "rating": rating,
             "votes": votes,
-            "source": "omdb",
-            "imdb_id": imdb_map.get(content_id),
+            "source": source,
             "last_updated": datetime.now(timezone.utc).isoformat()
         }
         with open(rating_file, "w", encoding="utf-8") as f:
             json.dump(rating_data, f, indent=2, ensure_ascii=False)
-        print(f"  💾 Saved rating for {category}/{content_id}", flush=True)
+        print(f"  💾 Saved rating for {content_id} (source: {source})")
 
-        save_progress(category, content_id)
-
-        if api_calls_made % 20 == 0:
-            save_cache()
+        save_progress(file_path.name, content_id)
+        time.sleep(TMDB_DELAY)
 
 def main():
-    print("🚀 Starting update_ratings.py (limit-aware)...", flush=True)
-    load_cache()
-    load_imdb_map()
+    print("🚀 Starting update_ratings.py (TMDb primary, OMDb fallback)")
+    load_tmdb_cache()
     processed = load_progress()
 
-    for filename, category in CONTENT_FILES.items():
+    for filename, media_type in CONTENT_FILES.items():
         file_path = OUTPUT_DIR / filename
         if file_path.exists():
-            process_file(file_path, category, processed)
+            process_file(file_path, media_type, processed)
         else:
-            print(f"⚠️ {filename} not found, skipping.", flush=True)
+            print(f"⚠️ {filename} not found, skipping.")
 
-    save_cache()
-    save_imdb_map()
-    print(f"\n✅ Finished. Total API calls: {api_calls_made}", flush=True)
+    save_tmdb_cache()
+    print(f"\n✅ Finished. OMDb calls used today: {omdb_calls_today} (limit: {OMDB_DAILY_LIMIT})")
 
 if __name__ == "__main__":
     main()

@@ -891,6 +891,128 @@ def get_imdb_details(title: str, year: Optional[str] = None, content_type: str =
     return (None, None, imdb_id, False)
 
 # ----------------------------------------------------------------------
+#  TMDb API helpers (replaces OMDb for ratings)
+# ----------------------------------------------------------------------
+TMDB_API_KEY = "4b02f35b5faa266f6cb773e25ab50b7a"   # <-- INSERT YOUR KEY
+TMDB_BASE_URL = "https://api.themoviedb.org/3"
+TMDB_CACHE = {}  # cache for (title, year, type) -> (rating, votes)
+
+def _clean_title_tmdb(raw_title: str) -> str:
+    """Remove Arabic stop words and clutter for TMDb search."""
+    arabic_stop = ["فيلم", "مسلسل", "مترجم", "اون لاين", "اونلاين", "مدبلج", "الحلقة", "الفيلم"]
+    cleaned = raw_title
+    for word in arabic_stop:
+        cleaned = re.sub(rf'\b{word}\b', '', cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r'[^A-Za-z0-9\s:\'\.-]', ' ', cleaned)
+    cleaned = ' '.join(cleaned.split())
+    return cleaned if cleaned else raw_title
+
+def search_tmdb(title: str, year: Optional[str] = None, media_type: str = "movie") -> Optional[int]:
+    """Search TMDb for a movie or series, return the first result's ID."""
+    search_url = f"{TMDB_BASE_URL}/search/{media_type}"
+    params = {
+        "api_key": TMDB_API_KEY,
+        "query": title,
+        "language": "en-US"
+    }
+    if year:
+        if media_type == "movie":
+            params["year"] = year
+        else:
+            params["first_air_date_year"] = year
+    try:
+        resp = requests.get(search_url, params=params, timeout=10)
+        resp.raise_for_status()
+        data = resp.json()
+        if data.get("total_results", 0) > 0:
+            return data["results"][0]["id"]
+    except Exception as e:
+        print(f"TMDb search error for '{title}': {e}")
+    return None
+
+def fetch_tmdb_rating(tmdb_id: int, media_type: str) -> tuple:
+    """Fetch rating (vote_average) and vote_count for a TMDb ID."""
+    url = f"{TMDB_BASE_URL}/{media_type}/{tmdb_id}"
+    params = {
+        "api_key": TMDB_API_KEY,
+        "language": "en-US"
+    }
+    try:
+        resp = requests.get(url, params=params, timeout=10)
+        resp.raise_for_status()
+        data = resp.json()
+        rating = data.get("vote_average")
+        votes = data.get("vote_count", 0)
+        if rating:
+            return (str(round(rating, 1)), votes)
+        return (None, 0)
+    except Exception as e:
+        print(f"TMDb fetch error for ID {tmdb_id}: {e}")
+        return (None, 0)
+
+def get_tmdb_details(title: str, year: Optional[str] = None, content_type: str = "movie") -> tuple:
+    """
+    Returns (rating, votes) using TMDb.
+    content_type: 'movie' or 'tv'
+    """
+    cleaned = _clean_title_tmdb(title)
+    cache_key = f"{cleaned}|{year}|{content_type}"
+    if cache_key in TMDB_CACHE:
+        return TMDB_CACHE[cache_key]
+
+    tmdb_id = search_tmdb(cleaned, year, content_type)
+    if not tmdb_id:
+        TMDB_CACHE[cache_key] = (None, 0)
+        return (None, 0)
+
+    rating, votes = fetch_tmdb_rating(tmdb_id, content_type)
+    TMDB_CACHE[cache_key] = (rating, votes)
+    return rating, votes
+
+# ----------------------------------------------------------------------
+#  IMDBAPI.dev API Helpers (Primary Source – No API key, unlimited)
+# ----------------------------------------------------------------------
+IMDBAPI_BASE_URL = "https://api.imdbapi.dev"
+
+def search_imdbapi_dev(title: str, year: Optional[str] = None) -> tuple:
+    """
+    Search IMDBAPI.dev for a title and return (rating, votes).
+    Uses /search/titles endpoint with year filter and sorting by vote count.
+    Returns (rating_str, vote_count) where rating_str is e.g. "8.5" or None.
+    """
+    params = {
+        "query": title,
+        "limit": 5,
+        "sortBy": "SORT_BY_USER_RATING_COUNT",
+        "sortOrder": "DESC"
+    }
+    if year:
+        params["startYear"] = year
+        params["endYear"] = year
+
+    url = f"{IMDBAPI_BASE_URL}/search/titles"
+    try:
+        resp = requests.get(url, params=params, timeout=10)
+        resp.raise_for_status()
+        data = resp.json()
+        titles = data.get("titles", [])
+        if not titles:
+            return (None, 0)
+
+        # Pick the best match (first result, which is already sorted by vote count)
+        best = titles[0]
+        rating_info = best.get("ratingsSummary", {})
+        avg_rating = rating_info.get("aggregateRating")
+        vote_count = rating_info.get("voteCount", 0)
+        if avg_rating is not None:
+            # round to 1 decimal
+            rating_str = str(round(float(avg_rating), 1))
+            return (rating_str, vote_count)
+    except Exception as e:
+        print(f"  ⚠️ IMDBAPI.dev error for '{title}': {e}")
+    return (None, 0)
+
+# ----------------------------------------------------------------------
 #  Legacy functions – Akwam, HDW, CimaNow (unchanged)
 # ----------------------------------------------------------------------
 def split_into_ranges(num_ranges: int, end: int, start: int = 0) -> list:
