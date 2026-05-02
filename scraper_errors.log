@@ -35711,3 +35711,52 @@ Call log:
 2026-05-02 09:28:09,031 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-forbidden-fruits-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
 2026-05-02 09:28:09,829 - INFO - Fetched (302) <GET https://web526x.faselhdx.bid/movies/%d9%81%d9%8a%d9%84%d9%85-didnt-die-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
 2026-05-02 09:28:09,863 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-didnt-die-2026-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-03 02:23:13,797 - WARNING - Attempt 1 failed: Page.goto: net::ERR_ABORTED; maybe frame was detached?
+Call log:
+  - navigating to "https://www.fasel-hd.cam/?p=259797", waiting until "load"
+. Retrying in 1s...
+2026-05-03 02:23:18,825 - WARNING - Attempt 1 failed: Page.goto: net::ERR_ABORTED; maybe frame was detached?
+Call log:
+  - navigating to "https://www.fasel-hd.cam/?p=259883", waiting until "load"
+. Retrying in 1s...
+2026-05-03 02:23:23,866 - WARNING - Attempt 1 failed: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.fasel-hd.cam/?p=259793", waiting until "load"
+. Retrying in 1s...
+2026-05-03 02:23:23,916 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-colonials-2023-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-03 02:23:23,925 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=259870> (referer: https://www.google.com/)
+2026-05-03 02:23:23,953 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/?p=259870> (referer: https://www.google.com/)
+2026-05-03 02:23:28,876 - WARNING - Attempt 1 failed: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.fasel-hd.cam/?p=259868", waiting until "load"
+. Retrying in 1s...
+2026-05-03 02:23:34,150 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/?p=259867", waiting until "load"
+. Retrying in 1s...
+2026-05-03 02:23:34,167 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/?p=259801", waiting until "load"
+. Retrying in 1s...
+2026-05-03 02:23:38,947 - WARNING - Attempt 1 failed: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.fasel-hd.cam/?p=259790", waiting until "load"
+. Retrying in 1s...
+2026-05-03 02:23:39,246 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=259867> (referer: https://www.google.com/)
+2026-05-03 02:23:39,259 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-angry-neighbors-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-03 02:23:39,272 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=259867> (referer: https://www.google.com/)
+2026-05-03 02:23:39,302 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-angry-neighbors-2022-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-03 02:23:40,107 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=259801> (referer: https://www.google.com/)
+2026-05-03 02:23:40,121 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/?p=259801> (referer: https://www.google.com/)
+2026-05-03 02:23:40,154 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-radleys-2024-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-03 02:23:40,572 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/?p=259797> (referer: https://www.google.com/)
+2026-05-03 02:23:40,601 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/?p=259797> (referer: https://www.google.com/)
+2026-05-03 02:23:46,449 - WARNING - Failed to fetch https://www.fasel-hd.cam/?p=259870
+2026-05-03 02:23:47,986 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-ghost-game-2024-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-03 02:23:47,994 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=259883> (referer: https://www.google.com/)
+2026-05-03 02:23:48,019 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/?p=259883> (referer: https://www.google.com/)
+2026-05-03 02:23:51,639 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/movies/%d9%81%d9%8a%d9%84%d9%85-sugarcane-2024-%d9%85%d8%aa%d8%b1%d8%ac%d9%85> (referer: https://www.google.com/)
+2026-05-03 02:23:51,648 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=259793> (referer: https://www.google.com/)
+2026-05-03 02:23:51,673 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/?p=259793> (referer: https://www.google.com/)
+2026-05-03 02:23:52,055 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/?p=259868> (referer: https://www.google.com/)
+2026-05-03 02:23:52,078 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/?p=259868> (referer: https://www.google.com/)
