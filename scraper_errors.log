@@ -35760,3 +35760,772 @@ Call log:
 2026-05-03 02:23:51,673 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/?p=259793> (referer: https://www.google.com/)
 2026-05-03 02:23:52,055 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/?p=259868> (referer: https://www.google.com/)
 2026-05-03 02:23:52,078 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/?p=259868> (referer: https://www.google.com/)
+2026-05-03 05:03:26,126 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series> (referer: https://www.google.com/)
+2026-05-03 05:03:41,374 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/series/page/61/> (referer: https://www.google.com/)
+2026-05-03 05:03:41,427 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/page/61> (referer: https://www.google.com/)
+2026-05-03 05:03:56,191 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/tvshows> (referer: https://www.google.com/)
+2026-05-03 05:04:08,710 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/tvshows> (referer: https://www.google.com/)
+2026-05-03 05:04:19,923 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series> (referer: https://www.google.com/)
+2026-05-03 05:04:35,067 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/asian-series/page/21/> (referer: https://www.google.com/)
+2026-05-03 05:04:35,111 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/page/21> (referer: https://www.google.com/)
+2026-05-03 05:05:19,777 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-time-called> (referer: https://www.google.com/)
+2026-05-03 05:05:24,114 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-han-river-police> (referer: https://www.google.com/)
+2026-05-03 05:05:24,389 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-the-day> (referer: https://www.google.com/)
+2026-05-03 05:05:26,172 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-6ixtynin9-series> (referer: https://www.google.com/)
+2026-05-03 05:05:34,958 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-exclusive-fairytale> (referer: https://www.google.com/)
+2026-05-03 05:06:51,796 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-risque-business-taiwan> (referer: https://www.google.com/)
+2026-05-03 05:06:55,221 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-destined-with-you> (referer: https://www.google.com/)
+2026-05-03 05:06:55,418 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-lighthouse> (referer: https://www.google.com/)
+2026-05-03 05:06:56,079 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-is-she-the-wolf", waiting until "load"
+. Retrying in 1s...
+2026-05-03 05:07:01,321 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-lovely-boxer> (referer: https://www.google.com/)
+2026-05-03 05:07:09,502 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-is-she-the-wolf> (referer: https://www.google.com/)
+2026-05-03 05:07:31,555 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-mask-girl> (referer: https://www.google.com/)
+2026-05-03 05:07:52,611 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-behind-touch> (referer: https://www.google.com/)
+2026-05-03 05:07:54,610 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-cold-blooded-intern> (referer: https://www.google.com/)
+2026-05-03 05:08:14,309 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-elegant-empire> (referer: https://www.google.com/)
+2026-05-03 05:08:14,700 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-pending-train> (referer: https://www.google.com/)
+2026-05-03 05:08:43,506 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-killing-vote> (referer: https://www.google.com/)
+2026-05-03 05:08:43,898 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-moving> (referer: https://www.google.com/)
+2026-05-03 05:09:16,582 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-zombieverse> (referer: https://www.google.com/)
+2026-05-03 05:09:17,030 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-bro-marble> (referer: https://www.google.com/)
+2026-05-03 05:09:17,192 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-my-dearest> (referer: https://www.google.com/)
+2026-05-03 05:09:37,453 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-women-sun> (referer: https://www.google.com/)
+2026-05-03 05:09:38,957 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-fireworks-heart> (referer: https://www.google.com/)
+2026-05-03 05:10:09,385 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-lovely-liar> (referer: https://www.google.com/)
+2026-05-03 05:10:11,695 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-longing-for-you> (referer: https://www.google.com/)
+2026-05-03 05:10:28,617 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=223360> (referer: https://www.google.com/)
+2026-05-03 05:10:28,652 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-han-river-police-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:10:42,065 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=223351> (referer: https://www.google.com/)
+2026-05-03 05:10:42,099 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-day-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:10:56,685 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=223232> (referer: https://www.google.com/)
+2026-05-03 05:10:56,724 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-time-called-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:11:12,496 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=222985> (referer: https://www.google.com/)
+2026-05-03 05:11:12,529 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-exclusive-fairytale-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:11:26,433 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=222914> (referer: https://www.google.com/)
+2026-05-03 05:11:26,466 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-6ixtynin9-series-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:11:41,175 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=222823> (referer: https://www.google.com/)
+2026-05-03 05:11:41,211 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-wolf-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:11:54,344 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=222561> (referer: https://www.google.com/)
+2026-05-03 05:11:54,378 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-risque-business-taiwan-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:12:07,064 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=222059> (referer: https://www.google.com/)
+2026-05-03 05:12:07,109 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-lighthouse-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:12:22,691 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=222012> (referer: https://www.google.com/)
+2026-05-03 05:12:22,724 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-destined-with-you-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:12:36,148 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=221990> (referer: https://www.google.com/)
+2026-05-03 05:12:36,182 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-my-lovely-boxer-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:13:07,213 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=221806> (referer: https://www.google.com/)
+2026-05-03 05:13:07,250 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-mask-girl-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:13:39,136 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=221488> (referer: https://www.google.com/)
+2026-05-03 05:13:39,168 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-behind-touch-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:14:12,019 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=221442> (referer: https://www.google.com/)
+2026-05-03 05:14:12,055 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-cold-blooded-intern-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:14:49,173 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=221405> (referer: https://www.google.com/)
+2026-05-03 05:14:49,207 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-pending-train-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:15:22,851 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=221387> (referer: https://www.google.com/)
+2026-05-03 05:15:22,892 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-elegant-empire-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:15:46,977 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=221380> (referer: https://www.google.com/)
+2026-05-03 05:15:47,011 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-the-killing-vote-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:16:00,558 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=221141> (referer: https://www.google.com/)
+2026-05-03 05:16:00,597 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-moving-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:16:17,452 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=221023> (referer: https://www.google.com/)
+2026-05-03 05:16:17,491 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-zombieverse-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:16:32,580 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=258114> (referer: https://www.google.com/)
+2026-05-03 05:16:32,618 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-zombieverse-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%ab%d8%a7%d9%86%d9%8a> (referer: https://www.google.com/)
+2026-05-03 05:16:48,348 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=220879> (referer: https://www.google.com/)
+2026-05-03 05:16:48,384 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-bro-marble-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:17:03,066 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=220871> (referer: https://www.google.com/)
+2026-05-03 05:17:03,101 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-my-dearest-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:17:16,309 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=220640> (referer: https://www.google.com/)
+2026-05-03 05:17:16,345 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-women-sun-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:17:35,130 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=220610> (referer: https://www.google.com/)
+2026-05-03 05:17:35,167 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-fireworks-heart-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:17:49,210 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=220571> (referer: https://www.google.com/)
+2026-05-03 05:17:49,245 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-my-lovely-liar-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:18:02,364 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=220133> (referer: https://www.google.com/)
+2026-05-03 05:18:02,399 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-longing-for-you-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:18:18,087 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/asian-series/page/22/> (referer: https://www.google.com/)
+2026-05-03 05:18:18,130 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/page/22> (referer: https://www.google.com/)
+2026-05-03 05:18:59,685 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-yugure-ni-te-wo-tsunagu> (referer: https://www.google.com/)
+2026-05-03 05:19:00,346 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-burn-house> (referer: https://www.google.com/)
+2026-05-03 05:19:01,113 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-please-family> (referer: https://www.google.com/)
+2026-05-03 05:19:01,593 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-not-others> (referer: https://www.google.com/)
+2026-05-03 05:19:07,396 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-nineteen-twenty> (referer: https://www.google.com/)
+2026-05-03 05:19:37,689 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-alter-naratif> (referer: https://www.google.com/)
+2026-05-03 05:19:48,447 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-celebrity> (referer: https://www.google.com/)
+2026-05-03 05:20:10,940 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-miraculous-brothers> (referer: https://www.google.com/)
+2026-05-03 05:20:15,055 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-delete> (referer: https://www.google.com/)
+2026-05-03 05:20:18,167 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-adult-kids> (referer: https://www.google.com/)
+2026-05-03 05:20:37,070 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-heartbeat> (referer: https://www.google.com/)
+2026-05-03 05:20:45,219 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-durians-affair> (referer: https://www.google.com/)
+2026-05-03 05:21:13,705 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-revenant> (referer: https://www.google.com/)
+2026-05-03 05:21:20,655 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-numbers> (referer: https://www.google.com/)
+2026-05-03 05:21:27,317 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-lets-get-divorced> (referer: https://www.google.com/)
+2026-05-03 05:21:32,126 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-lies-hidden-garden> (referer: https://www.google.com/)
+2026-05-03 05:22:04,958 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-king-land> (referer: https://www.google.com/)
+2026-05-03 05:22:18,567 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-see-19th-life> (referer: https://www.google.com/)
+2026-05-03 05:22:22,468 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-bloodhounds> (referer: https://www.google.com/)
+2026-05-03 05:22:24,633 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-dream-begins> (referer: https://www.google.com/)
+2026-05-03 05:22:26,604 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-villain-romance> (referer: https://www.google.com/)
+2026-05-03 05:22:50,215 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-the-days> (referer: https://www.google.com/)
+2026-05-03 05:23:02,257 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-battle-happiness> (referer: https://www.google.com/)
+2026-05-03 05:23:09,103 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d8%a8%d8%b1%d9%86%d8%a7%d9%85%d8%ac-brother-ramyeon> (referer: https://www.google.com/)
+2026-05-03 05:23:21,416 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=220117> (referer: https://www.google.com/)
+2026-05-03 05:23:21,452 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-yugure-ni-te-wo-tsunagu-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:23:34,845 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=219760> (referer: https://www.google.com/)
+2026-05-03 05:23:34,879 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-not-others-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:23:48,242 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=219572> (referer: https://www.google.com/)
+2026-05-03 05:23:48,275 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-burn-house-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:24:02,503 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=219453> (referer: https://www.google.com/)
+2026-05-03 05:24:02,556 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-nineteen-twenty-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:24:15,129 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=219217> (referer: https://www.google.com/)
+2026-05-03 05:24:15,166 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-please-family-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:24:27,385 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=218776> (referer: https://www.google.com/)
+2026-05-03 05:24:27,418 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-alter-naratif-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:24:41,470 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=218757> (referer: https://www.google.com/)
+2026-05-03 05:24:41,505 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-celebrity-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:24:55,932 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=218581> (referer: https://www.google.com/)
+2026-05-03 05:24:55,969 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-miraculous-brothers-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:25:09,717 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=218546> (referer: https://www.google.com/)
+2026-05-03 05:25:09,757 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-delete-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:25:22,290 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=218486> (referer: https://www.google.com/)
+2026-05-03 05:25:22,324 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-adult-kids-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:25:35,497 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=218478> (referer: https://www.google.com/)
+2026-05-03 05:25:35,530 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-heartbeat-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84-2> (referer: https://www.google.com/)
+2026-05-03 05:25:49,297 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=218441> (referer: https://www.google.com/)
+2026-05-03 05:25:49,333 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-durians-affair-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:26:18,798 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=218387> (referer: https://www.google.com/)
+2026-05-03 05:26:18,832 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-revenant-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:26:31,963 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=218380> (referer: https://www.google.com/)
+2026-05-03 05:26:31,997 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-numbers-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:26:45,430 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=218285> (referer: https://www.google.com/)
+2026-05-03 05:26:45,466 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-lets-get-divorced-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:26:58,513 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=218067> (referer: https://www.google.com/)
+2026-05-03 05:26:58,547 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-lies-hidden-garden-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:27:11,983 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=217964> (referer: https://www.google.com/)
+2026-05-03 05:27:12,016 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-king-land-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:27:24,833 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=217958> (referer: https://www.google.com/)
+2026-05-03 05:27:24,867 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-see-19th-life-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:27:39,626 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=217365> (referer: https://www.google.com/)
+2026-05-03 05:27:39,660 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-bloodhounds-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:27:52,681 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=295723> (referer: https://www.google.com/)
+2026-05-03 05:27:52,716 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-bloodhounds-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%ab%d8%a7%d9%86%d9%8a> (referer: https://www.google.com/)
+2026-05-03 05:28:05,683 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=217282> (referer: https://www.google.com/)
+2026-05-03 05:28:05,723 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/the-villain-of-romance> (referer: https://www.google.com/)
+2026-05-03 05:28:18,972 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=217008> (referer: https://www.google.com/)
+2026-05-03 05:28:19,009 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-where-dream-begins-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:28:32,431 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=216882> (referer: https://www.google.com/)
+2026-05-03 05:28:32,465 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-days-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:28:46,309 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=216850> (referer: https://www.google.com/)
+2026-05-03 05:28:46,349 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-battle-for-happiness-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:29:01,397 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=216843> (referer: https://www.google.com/)
+2026-05-03 05:29:01,432 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d8%a8%d8%b1%d9%86%d8%a7%d9%85%d8%ac-brother-ramyeon-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:29:16,611 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/asian-series/page/23/> (referer: https://www.google.com/)
+2026-05-03 05:29:16,652 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/page/23> (referer: https://www.google.com/)
+2026-05-03 05:29:56,369 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-love-two-lives> (referer: https://www.google.com/)
+2026-05-03 05:29:58,884 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-one-day-off> (referer: https://www.google.com/)
+2026-05-03 05:30:02,132 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-delightfully-deceitful> (referer: https://www.google.com/)
+2026-05-03 05:30:02,399 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-bitch-x-rich> (referer: https://www.google.com/)
+2026-05-03 05:30:07,110 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-siren-survive-island> (referer: https://www.google.com/)
+2026-05-03 05:30:24,198 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-girlfriend-alien> (referer: https://www.google.com/)
+2026-05-03 05:30:37,108 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-oh-youngsim> (referer: https://www.google.com/)
+2026-05-03 05:31:12,626 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-race> (referer: https://www.google.com/)
+2026-05-03 05:31:15,404 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-lose-love> (referer: https://www.google.com/)
+2026-05-03 05:31:16,326 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-hyakuman-kai-ieba-yokatta> (referer: https://www.google.com/)
+2026-05-03 05:31:16,347 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-black-knight-2> (referer: https://www.google.com/)
+2026-05-03 05:31:21,421 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-family-unbreakable> (referer: https://www.google.com/)
+2026-05-03 05:32:05,014 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-all-that-we-loved> (referer: https://www.google.com/)
+2026-05-03 05:32:11,327 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-love-village> (referer: https://www.google.com/)
+2026-05-03 05:32:11,935 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-perfect-stranger> (referer: https://www.google.com/)
+2026-05-03 05:32:12,498 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-atom-no-ko> (referer: https://www.google.com/)
+2026-05-03 05:32:25,440 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-sanctuary-seiiki> (referer: https://www.google.com/)
+2026-05-03 05:32:49,746 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-finland-papa> (referer: https://www.google.com/)
+2026-05-03 05:33:01,788 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-20th-twenty> (referer: https://www.google.com/)
+2026-05-03 05:33:13,729 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-wave-makers> (referer: https://www.google.com/)
+2026-05-03 05:33:34,615 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-secret-affair> (referer: https://www.google.com/)
+2026-05-03 05:33:37,210 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-good-bad-mother> (referer: https://www.google.com/)
+2026-05-03 05:33:49,559 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-risque-business-japan> (referer: https://www.google.com/)
+2026-05-03 05:33:50,292 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-queen-masks> (referer: https://www.google.com/)
+2026-05-03 05:34:05,955 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=216828> (referer: https://www.google.com/)
+2026-05-03 05:34:06,011 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-bitch-x-rich-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:34:20,842 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=274282> (referer: https://www.google.com/)
+2026-05-03 05:34:20,877 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-bitch-x-rich-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%ab%d8%a7%d9%86%d9%8a> (referer: https://www.google.com/)
+2026-05-03 05:34:34,332 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=216668> (referer: https://www.google.com/)
+2026-05-03 05:34:37,368 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-siren-survive-island-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:34:50,931 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=216567> (referer: https://www.google.com/)
+2026-05-03 05:34:50,967 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-delightfully-deceitful-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:35:04,233 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=216244> (referer: https://www.google.com/)
+2026-05-03 05:35:04,266 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-one-day-off-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:35:18,239 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=216015> (referer: https://www.google.com/)
+2026-05-03 05:35:18,276 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-love-two-lives-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:35:33,998 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=215969> (referer: https://www.google.com/)
+2026-05-03 05:35:34,105 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-girlfriend-alien-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:35:47,269 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=216010> (referer: https://www.google.com/)
+2026-05-03 05:35:47,305 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-girlfriend-alien-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%ab%d8%a7%d9%86%d9%8a> (referer: https://www.google.com/)
+2026-05-03 05:36:01,100 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=215631> (referer: https://www.google.com/)
+2026-05-03 05:36:01,134 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-oh-youngsim-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:36:14,259 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=215428> (referer: https://www.google.com/)
+2026-05-03 05:36:14,294 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-lose-love-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:36:28,599 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=215340> (referer: https://www.google.com/)
+2026-05-03 05:36:28,635 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-hyakuman-kai-ieba-yokatta-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:36:44,961 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=215321> (referer: https://www.google.com/)
+2026-05-03 05:36:44,995 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-black-knight-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:36:59,640 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=215163> (referer: https://www.google.com/)
+2026-05-03 05:36:59,678 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-race-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:37:12,194 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=215002> (referer: https://www.google.com/)
+2026-05-03 05:37:12,227 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-family-unbreakable-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:37:25,300 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=214934> (referer: https://www.google.com/)
+2026-05-03 05:37:25,334 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-loved-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:37:39,288 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=214815> (referer: https://www.google.com/)
+2026-05-03 05:37:39,323 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-sanctuary-seiiki-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:37:54,556 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=214697> (referer: https://www.google.com/)
+2026-05-03 05:37:54,593 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-love-village-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:38:09,083 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=257110> (referer: https://www.google.com/)
+2026-05-03 05:38:09,121 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-love-village-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%ab%d8%a7%d9%86%d9%8a> (referer: https://www.google.com/)
+2026-05-03 05:38:21,950 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=214617> (referer: https://www.google.com/)
+2026-05-03 05:38:21,984 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-perfect-stranger-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:38:34,459 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=214479> (referer: https://www.google.com/)
+2026-05-03 05:38:34,492 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-atom-no-ko-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:38:48,053 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=214467> (referer: https://www.google.com/)
+2026-05-03 05:38:48,090 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-finland-papa-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:39:02,616 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=214457> (referer: https://www.google.com/)
+2026-05-03 05:39:02,651 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-my-20th-twenty-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:39:16,834 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=214229> (referer: https://www.google.com/)
+2026-05-03 05:39:16,872 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-wave-makers-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:39:29,814 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=83950> (referer: https://www.google.com/)
+2026-05-03 05:39:29,851 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-secret-affair-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:39:42,367 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=214142> (referer: https://www.google.com/)
+2026-05-03 05:39:42,416 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-the-good-bad-mother-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:39:54,697 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=214104> (referer: https://www.google.com/)
+2026-05-03 05:39:54,732 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-risque-business-japan-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:40:08,795 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=214040> (referer: https://www.google.com/)
+2026-05-03 05:40:08,831 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-queen-masks-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:40:22,331 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/asian-series/page/24/> (referer: https://www.google.com/)
+2026-05-03 05:40:22,371 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/asian-series/page/24> (referer: https://www.google.com/)
+2026-05-03 05:40:39,453 - WARNING - Attempt 1 failed: Page.goto: net::ERR_ABORTED; maybe frame was detached?
+Call log:
+  - navigating to "https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-doctor-cha", waiting until "load"
+. Retrying in 1s...
+2026-05-03 05:40:39,454 - WARNING - Attempt 1 failed: Page.goto: net::ERR_ABORTED; maybe frame was detached?
+Call log:
+  - navigating to "https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-queenmaker", waiting until "load"
+. Retrying in 1s...
+2026-05-03 05:40:39,465 - WARNING - Attempt 1 failed: Page.goto: net::ERR_ABORTED; maybe frame was detached?
+Call log:
+  - navigating to "https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-stealer-treasure-keeper", waiting until "load"
+. Retrying in 1s...
+2026-05-03 05:40:39,467 - WARNING - Attempt 1 failed: Page.goto: net::ERR_ABORTED; maybe frame was detached?
+Call log:
+  - navigating to "https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-bo-ra-deborah", waiting until "load"
+. Retrying in 1s...
+2026-05-03 05:40:39,469 - WARNING - Attempt 1 failed: Page.goto: net::ERR_ABORTED; maybe frame was detached?
+Call log:
+  - navigating to "https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-ex-addicts-club", waiting until "load"
+. Retrying in 1s...
+2026-05-03 05:41:01,131 - WARNING - Attempt 1 failed: Page.goto: net::ERR_ABORTED; maybe frame was detached?
+Call log:
+  - navigating to "https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-stealer-treasure-keeper", waiting until "load"
+. Retrying in 1s...
+2026-05-03 05:41:01,137 - WARNING - Attempt 1 failed: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-doctor-cha", waiting until "load"
+. Retrying in 1s...
+2026-05-03 05:41:01,138 - WARNING - Attempt 1 failed: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-queenmaker", waiting until "load"
+. Retrying in 1s...
+2026-05-03 05:41:01,142 - WARNING - Attempt 1 failed: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-ex-addicts-club", waiting until "load"
+. Retrying in 1s...
+2026-05-03 05:41:01,144 - WARNING - Attempt 1 failed: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-bo-ra-deborah", waiting until "load"
+. Retrying in 1s...
+2026-05-03 05:41:05,146 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-4016' coro=<Connection.run.<locals>.init() done, defined at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py:271> exception=Exception('Connection.init: Connection closed while reading from the driver')>
+Traceback (most recent call last):
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 272, in init
+    self.playwright_future.set_result(await self._root_object.initialize())
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 219, in initialize
+    await self._channel.send("initialize", None, {"sdkLanguage": "python"})
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 52, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 500, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+Exception: Connection.init: Connection closed while reading from the driver
+2026-05-03 05:41:05,226 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-4020' coro=<Connection.run.<locals>.init() done, defined at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py:271> exception=Exception('Connection.init: Connection closed while reading from the driver')>
+Traceback (most recent call last):
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 272, in init
+    self.playwright_future.set_result(await self._root_object.initialize())
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 219, in initialize
+    await self._channel.send("initialize", None, {"sdkLanguage": "python"})
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 52, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 500, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+Exception: Connection.init: Connection closed while reading from the driver
+2026-05-03 05:41:05,226 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-4022' coro=<Connection.run.<locals>.init() done, defined at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py:271> exception=Exception('Connection.init: Connection closed while reading from the driver')>
+Traceback (most recent call last):
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 272, in init
+    self.playwright_future.set_result(await self._root_object.initialize())
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 219, in initialize
+    await self._channel.send("initialize", None, {"sdkLanguage": "python"})
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 52, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 500, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+Exception: Connection.init: Connection closed while reading from the driver
+2026-05-03 05:41:05,227 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-4025' coro=<Connection.run.<locals>.init() done, defined at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py:271> exception=Exception('Connection.init: Connection closed while reading from the driver')>
+Traceback (most recent call last):
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 272, in init
+    self.playwright_future.set_result(await self._root_object.initialize())
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 219, in initialize
+    await self._channel.send("initialize", None, {"sdkLanguage": "python"})
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 52, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 500, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+Exception: Connection.init: Connection closed while reading from the driver
+2026-05-03 05:41:05,228 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-4028' coro=<Connection.run.<locals>.init() done, defined at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py:271> exception=Exception('Connection.init: Connection closed while reading from the driver')>
+Traceback (most recent call last):
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 272, in init
+    self.playwright_future.set_result(await self._root_object.initialize())
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 219, in initialize
+    await self._channel.send("initialize", None, {"sdkLanguage": "python"})
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 52, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 500, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+Exception: Connection.init: Connection closed while reading from the driver
+2026-05-03 05:41:05,229 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-4046' coro=<Connection.run.<locals>.init() done, defined at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py:271> exception=Exception('Connection.init: Connection closed while reading from the driver')>
+Traceback (most recent call last):
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 272, in init
+    self.playwright_future.set_result(await self._root_object.initialize())
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 219, in initialize
+    await self._channel.send("initialize", None, {"sdkLanguage": "python"})
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 52, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 500, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+Exception: Connection.init: Connection closed while reading from the driver
+2026-05-03 05:41:05,230 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-4049' coro=<Connection.run.<locals>.init() done, defined at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py:271> exception=Exception('Connection.init: Connection closed while reading from the driver')>
+Traceback (most recent call last):
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 272, in init
+    self.playwright_future.set_result(await self._root_object.initialize())
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 219, in initialize
+    await self._channel.send("initialize", None, {"sdkLanguage": "python"})
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 52, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 500, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+Exception: Connection.init: Connection closed while reading from the driver
+2026-05-03 05:41:05,230 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-4052' coro=<Connection.run.<locals>.init() done, defined at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py:271> exception=Exception('Connection.init: Connection closed while reading from the driver')>
+Traceback (most recent call last):
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 272, in init
+    self.playwright_future.set_result(await self._root_object.initialize())
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 219, in initialize
+    await self._channel.send("initialize", None, {"sdkLanguage": "python"})
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 52, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 500, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+Exception: Connection.init: Connection closed while reading from the driver
+2026-05-03 05:41:06,231 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-4078' coro=<Connection.run.<locals>.init() done, defined at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py:271> exception=Exception('Connection.init: Connection closed while reading from the driver')>
+Traceback (most recent call last):
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 272, in init
+    self.playwright_future.set_result(await self._root_object.initialize())
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 219, in initialize
+    await self._channel.send("initialize", None, {"sdkLanguage": "python"})
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 52, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 500, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+Exception: Connection.init: Connection closed while reading from the driver
+2026-05-03 05:41:06,231 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-4080' coro=<Connection.run.<locals>.init() done, defined at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py:271> exception=Exception('Connection.init: Connection closed while reading from the driver')>
+Traceback (most recent call last):
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 272, in init
+    self.playwright_future.set_result(await self._root_object.initialize())
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 219, in initialize
+    await self._channel.send("initialize", None, {"sdkLanguage": "python"})
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 52, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 500, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+Exception: Connection.init: Connection closed while reading from the driver
+2026-05-03 05:41:06,232 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-4082' coro=<Connection.run.<locals>.init() done, defined at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py:271> exception=Exception('Connection.init: Connection closed while reading from the driver')>
+Traceback (most recent call last):
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 272, in init
+    self.playwright_future.set_result(await self._root_object.initialize())
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 219, in initialize
+    await self._channel.send("initialize", None, {"sdkLanguage": "python"})
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 52, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 500, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+Exception: Connection.init: Connection closed while reading from the driver
+2026-05-03 05:41:08,099 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-4097' coro=<Connection.run.<locals>.init() done, defined at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py:271> exception=Exception('Connection.init: Connection closed while reading from the driver')>
+Traceback (most recent call last):
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 272, in init
+    self.playwright_future.set_result(await self._root_object.initialize())
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 219, in initialize
+    await self._channel.send("initialize", None, {"sdkLanguage": "python"})
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 52, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 500, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+Exception: Connection.init: Connection closed while reading from the driver
+2026-05-03 05:43:32,405 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series> (referer: https://www.google.com/)
+2026-05-03 05:43:47,129 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/series/page/61/> (referer: https://www.google.com/)
+2026-05-03 05:43:47,176 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/page/61> (referer: https://www.google.com/)
+2026-05-03 05:43:58,484 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/tvshows> (referer: https://www.google.com/)
+2026-05-03 05:43:59,757 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-67' coro=<BrowserContext.close() done, defined at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_browser_context.py:548> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[SyncBase._sync.<locals>.<lambda>() at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_sync_base.py:90, ProtocolCallback.__init__.<locals>.cb() at C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py:198]>
+2026-05-03 05:52:58,031 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series> (referer: https://www.google.com/)
+2026-05-03 05:53:12,330 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/series/page/61/> (referer: https://www.google.com/)
+2026-05-03 05:53:12,373 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/page/61> (referer: https://www.google.com/)
+2026-05-03 05:53:47,607 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-soprano-sing-die> (referer: https://www.google.com/)
+2026-05-03 05:53:48,323 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-yeh-kaali-kaali-ankhein> (referer: https://www.google.com/)
+2026-05-03 05:53:49,702 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-boundless> (referer: https://www.google.com/)
+2026-05-03 05:53:51,654 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-rebel-cheer-squad-get-even-series> (referer: https://www.google.com/)
+2026-05-03 05:53:51,763 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-pirate-gold-adak-island> (referer: https://www.google.com/)
+2026-05-03 05:54:31,131 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-first-kill> (referer: https://www.google.com/)
+2026-05-03 05:54:33,056 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-suzhal-vortex> (referer: https://www.google.com/)
+2026-05-03 05:54:35,375 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-adventure-time-distant-lands> (referer: https://www.google.com/)
+2026-05-03 05:54:37,635 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-sexy-beasts> (referer: https://www.google.com/)
+2026-05-03 05:54:53,022 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-bandish-bandits> (referer: https://www.google.com/)
+2026-05-03 05:54:55,639 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-john-god-crimes-spiritual-healer> (referer: https://www.google.com/)
+2026-05-03 05:55:18,227 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-reprisal> (referer: https://www.google.com/)
+2026-05-03 05:55:21,255 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-woman-suitcase> (referer: https://www.google.com/)
+2026-05-03 05:55:21,716 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-lenox-hill> (referer: https://www.google.com/)
+2026-05-03 05:55:25,282 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-a-teen> (referer: https://www.google.com/)
+2026-05-03 05:55:38,747 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-time-2> (referer: https://www.google.com/)
+2026-05-03 05:56:07,771 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-falsify> (referer: https://www.google.com/)
+2026-05-03 05:56:08,136 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-duel> (referer: https://www.google.com/)
+2026-05-03 05:56:13,782 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-the-guest> (referer: https://www.google.com/)
+2026-05-03 05:56:15,642 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-psychopath-diary> (referer: https://www.google.com/)
+2026-05-03 05:56:24,572 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-the-k2> (referer: https://www.google.com/)
+2026-05-03 05:56:44,534 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-search-www> (referer: https://www.google.com/)
+2026-05-03 05:56:47,278 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-chocolate> (referer: https://www.google.com/)
+2026-05-03 05:56:48,430 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-legend-hao-lan> (referer: https://www.google.com/)
+2026-05-03 05:57:05,257 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=153809> (referer: https://www.google.com/)
+2026-05-03 05:57:05,293 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-rebel-cheer-squad-get-even-series-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:57:19,427 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=153265> (referer: https://www.google.com/)
+2026-05-03 05:57:19,469 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-soprano-sing-die-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:57:32,392 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=152618> (referer: https://www.google.com/)
+2026-05-03 05:57:32,425 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-yeh-kaali-kaali-ankhein-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:57:49,091 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=152305> (referer: https://www.google.com/)
+2026-05-03 05:57:49,126 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-boundless-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:58:04,240 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=152251> (referer: https://www.google.com/)
+2026-05-03 05:58:04,276 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-pirate-gold-adak-island-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:58:19,938 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=151696> (referer: https://www.google.com/)
+2026-05-03 05:58:19,972 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-suzhal-vortex-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:58:32,954 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=266058> (referer: https://www.google.com/)
+2026-05-03 05:58:32,994 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-suzhal-vortex-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%ab%d8%a7%d9%86%d9%8a> (referer: https://www.google.com/)
+2026-05-03 05:58:46,459 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=151282> (referer: https://www.google.com/)
+2026-05-03 05:58:46,493 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-first-kill-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:59:01,015 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=132856> (referer: https://www.google.com/)
+2026-05-03 05:59:01,048 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-john-god-crimes-spiritual-healer-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:59:16,294 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=130700> (referer: https://www.google.com/)
+2026-05-03 05:59:16,328 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-sexy-beasts-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 05:59:31,170 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=135050> (referer: https://www.google.com/)
+2026-05-03 05:59:31,204 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-sexy-beasts-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%ab%d8%a7%d9%86%d9%8a> (referer: https://www.google.com/)
+2026-05-03 05:59:44,992 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=124534> (referer: https://www.google.com/)
+2026-05-03 05:59:45,029 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-adventure-time-distant-lands> (referer: https://www.google.com/)
+2026-05-03 06:00:01,271 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=106952> (referer: https://www.google.com/)
+2026-05-03 06:00:01,305 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-bandish-bandits-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:00:16,248 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=260037> (referer: https://www.google.com/)
+2026-05-03 06:00:16,285 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-bandish-bandits-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%ab%d8%a7%d9%86%d9%8a> (referer: https://www.google.com/)
+2026-05-03 06:00:31,889 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=105265> (referer: https://www.google.com/)
+2026-05-03 06:00:31,927 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-reprisal-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:00:49,023 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=104360> (referer: https://www.google.com/)
+2026-05-03 06:00:49,059 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-lenox-hill-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:01:04,382 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=103448> (referer: https://www.google.com/)
+2026-05-03 06:01:04,417 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-woman-suitcase-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:01:20,343 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=103027> (referer: https://www.google.com/)
+2026-05-03 06:01:20,377 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-teen-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:01:35,697 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=102677> (referer: https://www.google.com/)
+2026-05-03 06:01:35,733 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-the-time-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:01:50,255 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=102656> (referer: https://www.google.com/)
+2026-05-03 06:01:50,293 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-falsify-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:02:05,093 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=102635> (referer: https://www.google.com/)
+2026-05-03 06:02:05,128 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-duel-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:02:18,783 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=102542> (referer: https://www.google.com/)
+2026-05-03 06:02:18,817 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-guest-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:02:33,494 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=102511> (referer: https://www.google.com/)
+2026-05-03 06:02:33,529 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-psychopath-diary-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:02:48,316 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=102362> (referer: https://www.google.com/)
+2026-05-03 06:02:48,350 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-k2-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:03:02,877 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=102343> (referer: https://www.google.com/)
+2026-05-03 06:03:02,912 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-search-www-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:03:17,959 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=102324> (referer: https://www.google.com/)
+2026-05-03 06:03:17,994 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-chocolate-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:03:33,715 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=102066> (referer: https://www.google.com/)
+2026-05-03 06:03:33,752 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-legend-hao-lan> (referer: https://www.google.com/)
+2026-05-03 06:03:57,779 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/series/page/62/> (referer: https://www.google.com/)
+2026-05-03 06:03:57,823 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/page/62> (referer: https://www.google.com/)
+2026-05-03 06:04:27,448 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-born-again> (referer: https://www.google.com/)
+2026-05-03 06:04:30,173 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-love-destiny> (referer: https://www.google.com/)
+2026-05-03 06:04:38,509 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-explained> (referer: https://www.google.com/)
+2026-05-03 06:04:41,981 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-can-love> (referer: https://www.google.com/)
+2026-05-03 06:05:03,966 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-summers-desire", waiting until "load"
+. Retrying in 1s...
+2026-05-03 06:05:04,187 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-beautiful-goodbye-world> (referer: https://www.google.com/)
+2026-05-03 06:05:07,035 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-money-game> (referer: https://www.google.com/)
+2026-05-03 06:05:36,745 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-diary-prosecutor> (referer: https://www.google.com/)
+2026-05-03 06:05:40,667 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-crash-landing> (referer: https://www.google.com/)
+2026-05-03 06:05:42,510 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-cross> (referer: https://www.google.com/)
+2026-05-03 06:05:47,875 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-midnight-diner-tokyo-stories> (referer: https://www.google.com/)
+2026-05-03 06:06:05,037 - WARNING - Attempt 2 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-summers-desire", waiting until "load"
+. Retrying in 1s...
+2026-05-03 06:06:21,373 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-hymn-death> (referer: https://www.google.com/)
+2026-05-03 06:06:21,790 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-bad-guys> (referer: https://www.google.com/)
+2026-05-03 06:06:24,493 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-fated-love> (referer: https://www.google.com/)
+2026-05-03 06:06:29,935 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-45-revoluciones> (referer: https://www.google.com/)
+2026-05-03 06:06:51,741 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-love-rain> (referer: https://www.google.com/)
+2026-05-03 06:06:56,295 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-death-note> (referer: https://www.google.com/)
+2026-05-03 06:07:00,607 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-secret-queen-makers> (referer: https://www.google.com/)
+2026-05-03 06:07:06,130 - ERROR - Failed after 3 attempts: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-summers-desire", waiting until "load"
+
+2026-05-03 06:07:13,416 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-devilish-joy> (referer: https://www.google.com/)
+2026-05-03 06:07:17,138 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-clean-passion-now> (referer: https://www.google.com/)
+2026-05-03 06:07:30,739 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-kings-face> (referer: https://www.google.com/)
+2026-05-03 06:07:36,352 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-lets-eat> (referer: https://www.google.com/)
+2026-05-03 06:07:54,311 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-make-woman-cry> (referer: https://www.google.com/)
+2026-05-03 06:07:54,378 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-summers-desire> (referer: https://www.google.com/)
+2026-05-03 06:08:00,153 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-amazing-boyfriend> (referer: https://www.google.com/)
+2026-05-03 06:08:16,121 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=101414> (referer: https://www.google.com/)
+2026-05-03 06:08:17,750 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-born-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:08:32,420 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=101305> (referer: https://www.google.com/)
+2026-05-03 06:08:32,462 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-love-destiny-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:08:47,608 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=101129> (referer: https://www.google.com/)
+2026-05-03 06:08:47,645 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-can-love-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:09:00,277 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=97146> (referer: https://www.google.com/)
+2026-05-03 06:09:00,312 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-explained-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:09:15,623 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=96373> (referer: https://www.google.com/)
+2026-05-03 06:09:15,657 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-beautiful-goodbye-world> (referer: https://www.google.com/)
+2026-05-03 06:09:30,011 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=95141> (referer: https://www.google.com/)
+2026-05-03 06:09:30,044 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-money-game-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:09:42,881 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=95054> (referer: https://www.google.com/)
+2026-05-03 06:09:42,915 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-diary-prosecutor-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:09:57,336 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=93963> (referer: https://www.google.com/)
+2026-05-03 06:09:57,370 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-cross> (referer: https://www.google.com/)
+2026-05-03 06:10:12,081 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=93167> (referer: https://www.google.com/)
+2026-05-03 06:10:12,116 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-crash-landing> (referer: https://www.google.com/)
+2026-05-03 06:10:28,660 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=90926> (referer: https://www.google.com/)
+2026-05-03 06:10:28,696 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-midnight-diner-tokyo-stories-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:10:51,372 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=90949> (referer: https://www.google.com/)
+2026-05-03 06:10:51,406 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-midnight-diner-tokyo-stories-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%ab%d8%a7%d9%86%d9%8a> (referer: https://www.google.com/)
+2026-05-03 06:11:09,538 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=86215> (referer: https://www.google.com/)
+2026-05-03 06:11:09,572 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-45-rpm-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:11:25,928 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=85202> (referer: https://www.google.com/)
+2026-05-03 06:11:25,962 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-bad-guys-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:11:42,254 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=86294> (referer: https://www.google.com/)
+2026-05-03 06:11:42,292 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-bad-guys-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%ab%d8%a7%d9%86%d9%8a> (referer: https://www.google.com/)
+2026-05-03 06:11:58,991 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=83246> (referer: https://www.google.com/)
+2026-05-03 06:11:59,026 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-hymn-death-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:12:17,935 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=84418> (referer: https://www.google.com/)
+2026-05-03 06:12:18,051 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-fated-love> (referer: https://www.google.com/)
+2026-05-03 06:12:36,076 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=84010> (referer: https://www.google.com/)
+2026-05-03 06:12:36,111 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-love-rain-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:12:53,139 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=83283> (referer: https://www.google.com/)
+2026-05-03 06:12:53,173 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-death-note-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:13:19,905 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=83149> (referer: https://www.google.com/)
+2026-05-03 06:13:19,939 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-secret-queen-makers-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:13:35,085 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=82488> (referer: https://www.google.com/)
+2026-05-03 06:13:35,120 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-devilish-joy-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:13:48,972 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=80699> (referer: https://www.google.com/)
+2026-05-03 06:13:49,006 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-clean-passion-now-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:14:03,424 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=78489> (referer: https://www.google.com/)
+2026-05-03 06:14:03,459 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-kings-face-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:14:16,211 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=76971> (referer: https://www.google.com/)
+2026-05-03 06:14:16,245 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-lets-eat-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:14:31,780 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=76744> (referer: https://www.google.com/)
+2026-05-03 06:14:31,814 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-make-woman-cry-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:14:45,787 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=74306> (referer: https://www.google.com/)
+2026-05-03 06:14:45,823 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-amazing-boyfriend-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:15:01,135 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/series/page/63/> (referer: https://www.google.com/)
+2026-05-03 06:15:01,183 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/page/63> (referer: https://www.google.com/)
+2026-05-03 06:15:38,288 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-good-doctor-%d8%a7%d9%84%d9%83%d9%88%d8%b1%d9%8a> (referer: https://www.google.com/)
+2026-05-03 06:15:38,476 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-parades-end> (referer: https://www.google.com/)
+2026-05-03 06:15:45,778 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-trotsky> (referer: https://www.google.com/)
+2026-05-03 06:15:48,064 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-romance-bonus-book> (referer: https://www.google.com/)
+2026-05-03 06:15:50,711 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-hostages-3> (referer: https://www.google.com/)
+2026-05-03 06:16:09,593 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-inside-criminal-mind> (referer: https://www.google.com/)
+2026-05-03 06:16:22,321 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-kiss-first> (referer: https://www.google.com/)
+2026-05-03 06:16:41,434 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-rise> (referer: https://www.google.com/)
+2026-05-03 06:16:45,055 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-birdsong> (referer: https://www.google.com/)
+2026-05-03 06:16:51,495 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-terra-nova> (referer: https://www.google.com/)
+2026-05-03 06:16:51,846 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-stalker> (referer: https://www.google.com/)
+2026-05-03 06:17:11,637 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-freakish> (referer: https://www.google.com/)
+2026-05-03 06:17:16,276 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-dracula-2> (referer: https://www.google.com/)
+2026-05-03 06:17:33,461 - INFO - Fetched (307) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-one-mississippi> (referer: https://www.google.com/)
+2026-05-03 06:17:33,496 - INFO - Fetched (403) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-one-mississippi> (referer: https://www.google.com/)
+2026-05-03 06:17:42,572 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-bitten> (referer: https://www.google.com/)
+2026-05-03 06:17:43,078 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-prime-suspect-1973> (referer: https://www.google.com/)
+2026-05-03 06:17:43,508 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-comrade-detective> (referer: https://www.google.com/)
+2026-05-03 06:18:07,603 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-rellik> (referer: https://www.google.com/)
+2026-05-03 06:18:21,919 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-apple-tree-yard> (referer: https://www.google.com/)
+2026-05-03 06:18:26,314 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-one-mississippi> (referer: https://www.google.com/)
+2026-05-03 06:18:28,340 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-the-mist> (referer: https://www.google.com/)
+2026-05-03 06:18:36,307 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-paula> (referer: https://www.google.com/)
+2026-05-03 06:18:56,764 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-white-princess> (referer: https://www.google.com/)
+2026-05-03 06:19:04,000 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-waco-american-apocalypse> (referer: https://www.google.com/)
+2026-05-03 06:19:11,991 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-close-home-murder-coalfield> (referer: https://www.google.com/)
+2026-05-03 06:19:26,334 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=74213> (referer: https://www.google.com/)
+2026-05-03 06:19:26,368 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-romance-bonus-book-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:19:41,944 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=73976> (referer: https://www.google.com/)
+2026-05-03 06:19:41,980 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-good-doctor-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:19:56,243 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=70312> (referer: https://www.google.com/)
+2026-05-03 06:19:56,278 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-trotsky> (referer: https://www.google.com/)
+2026-05-03 06:20:10,166 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=67588> (referer: https://www.google.com/)
+2026-05-03 06:20:10,201 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/hostages> (referer: https://www.google.com/)
+2026-05-03 06:20:23,899 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=60302> (referer: https://www.google.com/)
+2026-05-03 06:20:23,932 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-parades-end-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:20:40,202 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=60294> (referer: https://www.google.com/)
+2026-05-03 06:20:40,236 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-inside-criminal-mind-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:20:54,691 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=55585> (referer: https://www.google.com/)
+2026-05-03 06:20:54,724 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-kiss-first-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:21:07,509 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=49542> (referer: https://www.google.com/)
+2026-05-03 06:21:07,546 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-rise-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:21:21,570 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=47985> (referer: https://www.google.com/)
+2026-05-03 06:21:21,604 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-birdsong-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:21:34,864 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=38943> (referer: https://www.google.com/)
+2026-05-03 06:21:34,921 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-terra-nova-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:21:50,967 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=38410> (referer: https://www.google.com/)
+2026-05-03 06:21:51,001 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-stalker-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:22:03,997 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=38322> (referer: https://www.google.com/)
+2026-05-03 06:22:04,030 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-freakish-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:22:18,206 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=38277> (referer: https://www.google.com/)
+2026-05-03 06:22:18,239 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-dracula-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:22:31,986 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=38094> (referer: https://www.google.com/)
+2026-05-03 06:22:32,023 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-bitten-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:22:46,252 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=38117> (referer: https://www.google.com/)
+2026-05-03 06:22:46,371 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-bitten-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%ab%d8%a7%d9%86%d9%8a> (referer: https://www.google.com/)
+2026-05-03 06:23:00,077 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=38131> (referer: https://www.google.com/)
+2026-05-03 06:23:00,113 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-bitten-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%ab%d8%a7%d9%84%d8%ab> (referer: https://www.google.com/)
+2026-05-03 06:23:16,727 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=32987> (referer: https://www.google.com/)
+2026-05-03 06:23:16,761 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-prime-suspect-1973-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:23:31,269 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=32893> (referer: https://www.google.com/)
+2026-05-03 06:23:31,313 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-comrade-detective-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:23:44,322 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=32776> (referer: https://www.google.com/)
+2026-05-03 06:23:44,355 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-one-mississippi-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:23:59,161 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=32717> (referer: https://www.google.com/)
+2026-05-03 06:23:59,193 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-rellik-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:24:12,860 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=30894> (referer: https://www.google.com/)
+2026-05-03 06:24:12,895 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-apple-tree-yard-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:24:29,052 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=26583> (referer: https://www.google.com/)
+2026-05-03 06:24:29,086 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-mist-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:24:43,666 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=26109> (referer: https://www.google.com/)
+2026-05-03 06:24:43,700 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-paula-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:24:57,849 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=22218> (referer: https://www.google.com/)
+2026-05-03 06:24:57,883 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-white-princess-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:25:11,584 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=211653> (referer: https://www.google.com/)
+2026-05-03 06:25:11,618 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-waco-american-apocalypse-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:25:26,503 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=211642> (referer: https://www.google.com/)
+2026-05-03 06:25:26,538 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-close-home-murder-coalfield-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:25:42,967 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/series/page/64/> (referer: https://www.google.com/)
+2026-05-03 06:25:43,009 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/page/64> (referer: https://www.google.com/)
+2026-05-03 06:26:33,975 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-sky-high-series> (referer: https://www.google.com/)
+2026-05-03 06:26:35,509 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-extrapolations> (referer: https://www.google.com/)
+2026-05-03 06:26:36,079 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-no-traces> (referer: https://www.google.com/)
+2026-05-03 06:26:39,530 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-mash> (referer: https://www.google.com/)
+2026-05-03 06:26:42,426 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-lucky-hank> (referer: https://www.google.com/)
+2026-05-03 06:27:07,628 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-maestro> (referer: https://www.google.com/)
+2026-05-03 06:27:54,925 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-class-07> (referer: https://www.google.com/)
+2026-05-03 06:27:56,720 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-swarm> (referer: https://www.google.com/)
+2026-05-03 06:28:04,809 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-rana-naidu> (referer: https://www.google.com/)
+2026-05-03 06:28:07,998 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-law-jungle> (referer: https://www.google.com/)
+2026-05-03 06:28:10,794 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-gotham-knights> (referer: https://www.google.com/)
+2026-05-03 06:29:12,079 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-real-madrid-end> (referer: https://www.google.com/)
+2026-05-03 06:29:12,237 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-el-grito-de-las-mariposas> (referer: https://www.google.com/)
+2026-05-03 06:29:17,451 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-outlast> (referer: https://www.google.com/)
+2026-05-03 06:29:24,892 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-unprisoned> (referer: https://www.google.com/)
+2026-05-03 06:29:41,392 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-mh370-plane-disappeared> (referer: https://www.google.com/)
+2026-05-03 06:29:46,967 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-mpower> (referer: https://www.google.com/)
+2026-05-03 06:30:26,974 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-playboy-murders> (referer: https://www.google.com/)
+2026-05-03 06:30:27,838 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-pimp-no-fing-fairytale> (referer: https://www.google.com/)
+2026-05-03 06:30:38,061 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-stolen-youth-inside-cult-sarah-lawrence> (referer: https://www.google.com/)
+2026-05-03 06:30:38,372 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-rain-dogs> (referer: https://www.google.com/)
+2026-05-03 06:30:42,907 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-daisy-jones-six> (referer: https://www.google.com/)
+2026-05-03 06:31:08,995 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-monique-olivier-accessory-evil> (referer: https://www.google.com/)
+2026-05-03 06:31:09,908 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-true-lies> (referer: https://www.google.com/)
+2026-05-03 06:31:24,987 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=210739> (referer: https://www.google.com/)
+2026-05-03 06:31:25,024 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-mash-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:31:37,598 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=210765> (referer: https://www.google.com/)
+2026-05-03 06:31:37,633 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-mash-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%ab%d8%a7%d9%86%d9%8a> (referer: https://www.google.com/)
+2026-05-03 06:31:51,066 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=210792> (referer: https://www.google.com/)
+2026-05-03 06:31:51,110 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-mash-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%ab%d8%a7%d9%84%d8%ab> (referer: https://www.google.com/)
+2026-05-03 06:32:04,964 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=210932> (referer: https://www.google.com/)
+2026-05-03 06:32:05,001 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-mash-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%b1%d8%a7%d8%a8%d8%b9> (referer: https://www.google.com/)
+2026-05-03 06:32:17,969 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=210958> (referer: https://www.google.com/)
+2026-05-03 06:32:18,006 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-mash-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%ae%d8%a7%d9%85%d8%b3> (referer: https://www.google.com/)
+2026-05-03 06:32:33,052 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=210984> (referer: https://www.google.com/)
+2026-05-03 06:32:33,090 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-mash-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%b3%d8%a7%d8%af%d8%b3> (referer: https://www.google.com/)
+2026-05-03 06:32:50,670 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=211010> (referer: https://www.google.com/)
+2026-05-03 06:32:50,706 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-mash-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%b3%d8%a7%d8%a8%d8%b9> (referer: https://www.google.com/)
+2026-05-03 06:33:03,700 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=211439> (referer: https://www.google.com/)
+2026-05-03 06:33:03,737 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-mash-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%ab%d8%a7%d9%85%d9%86> (referer: https://www.google.com/)
+2026-05-03 06:33:17,965 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=211466> (referer: https://www.google.com/)
+2026-05-03 06:33:18,002 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-mash-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%aa%d8%a7%d8%b3%d8%b9> (referer: https://www.google.com/)
+2026-05-03 06:33:33,321 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=211488> (referer: https://www.google.com/)
+2026-05-03 06:33:33,356 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-mash-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%b9%d8%a7%d8%b4%d8%b1> (referer: https://www.google.com/)
+2026-05-03 06:33:46,850 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=211512> (referer: https://www.google.com/)
+2026-05-03 06:33:46,887 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-mash-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%ad%d8%a7%d8%af%d9%8a-%d8%b9%d8%b4%d8%b1> (referer: https://www.google.com/)
+2026-05-03 06:34:00,378 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=211431> (referer: https://www.google.com/)
+2026-05-03 06:34:00,413 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-lucky-hank-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:34:16,171 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=211382> (referer: https://www.google.com/)
+2026-05-03 06:34:16,204 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-no-traces-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:34:30,236 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=211252> (referer: https://www.google.com/)
+2026-05-03 06:34:30,270 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-extrapolations-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:34:43,804 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=211227> (referer: https://www.google.com/)
+2026-05-03 06:34:43,838 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-sky-high-series-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:34:57,488 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=211203> (referer: https://www.google.com/)
+2026-05-03 06:34:57,522 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-maestro-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84> (referer: https://www.google.com/)
+2026-05-03 06:35:11,866 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=245985> (referer: https://www.google.com/)
+2026-05-03 06:35:11,904 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-maestro-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%ab%d8%a7%d9%86%d9%8a> (referer: https://www.google.com/)
+2026-05-03 06:35:26,609 - INFO - Fetched (301) <GET https://www.fasel-hd.cam/?p=260933> (referer: https://www.google.com/)
+2026-05-03 06:35:26,643 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/series/%d9%85%d8%b3%d9%84%d8%b3%d9%84-maestro-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%ab%d8%a7%d9%84%d8%ab> (referer: https://www.google.com/)

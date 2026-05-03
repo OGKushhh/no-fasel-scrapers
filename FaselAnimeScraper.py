@@ -2,8 +2,8 @@
 """
 FaselAnimeScraper.py – Unified scraper for anime series.
 - Full scrape: goes through all pages, saves progress.
-- Daily mode: after full scrape, checks only first N pages (default 5) for new episodes/series.
-- Resumable, incremental.
+- Daily mode: after full scrape, only first N pages (default 5).
+- Extracts numeric IDs when available to skip known items.
 """
 
 import json
@@ -41,6 +41,15 @@ def save_progress(page_num: int):
     os.makedirs("./output", exist_ok=True)
     with open("./output/last_page_anime.txt", "w") as f:
         f.write(str(page_num))
+
+def extract_numeric_id(url: str) -> str:
+    match = re.search(r'[?&]p=(\d+)', url)
+    if match:
+        return match.group(1)
+    match = re.search(r'/(\d+)/?$', url)
+    if match:
+        return match.group(1)
+    return None
 
 def extract_episodes_from_detail_page(soup: BeautifulSoup) -> list:
     episode_links = []
@@ -89,7 +98,7 @@ def scrape_anime():
     full_scrape_completed = (last_page == total_pages and total_pages > 0)
     if full_scrape_completed:
         pages_to_scan = min(DAILY_SCAN_PAGES, total_pages)
-        print(f"✅ Full scrape completed. Daily mode: scanning first {pages_to_scan} page(s).")
+        print(f"✅ Daily mode: scanning first {pages_to_scan} page(s).")
         start_page = 1
         end_page = pages_to_scan
         daily_mode = True
@@ -131,25 +140,16 @@ def scrape_anime():
             print("  ⚠️ No anime containers found")
             continue
 
-        page_ids = []
-        for div in divs:
-            link = div.find("a")
-            if link and link.get("href"):
-                anime_id = link["href"].split('/')[-2]
-                page_ids.append(anime_id)
-
-        if all(mid in existing_ids for mid in page_ids):
-            print(f"  🛑 Page {page} contains only already scraped anime. Stopping.")
-            break
-
         detail_urls = []
         for div in divs:
             link = div.find("a")
-            if link:
-                detail_url = link["href"]
-                anime_id = detail_url.split('/')[-2]
-                if anime_id not in existing_ids:
-                    detail_urls.append(detail_url)
+            if not link:
+                continue
+            detail_url = link["href"]
+            numeric_id = extract_numeric_id(detail_url)
+            if numeric_id and numeric_id in existing_ids:
+                continue
+            detail_urls.append(detail_url)
 
         if not detail_urls:
             print("  ℹ️ No new anime on this page")
@@ -169,6 +169,10 @@ def scrape_anime():
             if not link:
                 continue
             detail_url = link["href"]
+            numeric_id = extract_numeric_id(detail_url)
+            if numeric_id and numeric_id in existing_ids:
+                continue
+
             detail_html = detail_map.get(detail_url)
             if not detail_html:
                 continue
@@ -176,11 +180,13 @@ def scrape_anime():
 
             anime_id = get_content_id(dsoup)
             if not anime_id:
-                match = re.search(r'-(\d+)$', detail_url.rstrip('/'))
-                if match:
-                    anime_id = match.group(1)
-                else:
-                    anime_id = detail_url.split('/')[-2]
+                anime_id = numeric_id
+                if not anime_id:
+                    match = re.search(r'-(\d+)$', detail_url.rstrip('/'))
+                    if match:
+                        anime_id = match.group(1)
+                    else:
+                        anime_id = detail_url.split('/')[-2]
             if not anime_id or anime_id in existing_ids:
                 continue
 
@@ -238,19 +244,51 @@ def scrape_anime():
         if new_anime:
             all_anime.update(new_anime)
             print(f"  ✅ Page {page} done: added {len(new_anime)} anime, total {len(all_anime)}")
-
-            os.makedirs("./output", exist_ok=True)
             with open(output_file, "w", encoding="utf-8") as f:
                 json.dump(all_anime, f, indent=4, ensure_ascii=False)
-
         else:
             print(f"  ℹ️ Page {page}: no new anime extracted")
 
         if not daily_mode:
             save_progress(page)
 
-    # Retry failed detail URLs (similar to movies)
-    # ... (keep your existing retry block)
+    # Retry failed detail URLs
+    if failed_detail_urls:
+        print(f"\n🔄 Retrying {len(failed_detail_urls)} failed detail URLs for anime...")
+        for url in list(failed_detail_urls):
+            resp = get_website_safe(url)
+            if resp:
+                dsoup = BeautifulSoup(resp.text, "html.parser")
+                anime_id = get_content_id(dsoup) or extract_numeric_id(url)
+                if not anime_id:
+                    match = re.search(r'-(\d+)$', url.rstrip('/'))
+                    anime_id = match.group(1) if match else url.split('/')[-2]
+                if anime_id and anime_id not in existing_ids:
+                    all_anime[anime_id] = {
+                        "Title": "Unknown (retried)",
+                        "Category": "anime",
+                        "Type": "Movie",
+                        "Number Of Episodes": 0,
+                        "Number Of Episodes Text": 0,
+                        "Image Source": "",
+                        "Source": "",
+                        "Genres": [],
+                        "GenresAr": [],
+                        "Format": get_content_format(dsoup),
+                        "Runtime": extract_runtime(dsoup),
+                        "Country": extract_country(dsoup),
+                        "Description": extract_description(dsoup),
+                        "SeasonsUrl": url,
+                        "Status": extract_status(dsoup),
+                        "ViewingLevel": extract_viewing_level(dsoup),
+                        "Language": extract_language(dsoup),
+                        "ReleaseDate": extract_release_date(dsoup),
+                        "EpisodeDuration": extract_episode_duration(dsoup),
+                        "last_scraped": datetime.now(timezone.utc).isoformat()
+                    }
+            sleep(1)
+        with open(output_file, "w", encoding="utf-8") as f:
+            json.dump(all_anime, f, indent=4, ensure_ascii=False)
 
     print(f"\n🏁 Anime finished. Total anime: {len(all_anime)}")
 
