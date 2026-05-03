@@ -151,6 +151,7 @@ def index():
             "featured": "/api/featured",
             "search": "/api/search?q=...",
             "ratings": "/api/ratings/<category>/<id>",
+            "all_content": "/api/all-content",
             "episodes": "/api/episodes/<category>/<id>",
             "anime_episodes": "/api/anime-episodes/<id>",
             "view_increment": "POST /api/view/<category>/<id> (body: {\"increment_by\": N})",
@@ -308,6 +309,20 @@ def get_rating(category: str, content_id: str):
     with open(rating_file, "r", encoding="utf-8") as f:
         return jsonify(json.load(f))
 
+# ----------------------------------------------------------------------
+#  All content endpoint (aggregated search index)
+# ----------------------------------------------------------------------
+@app.route("/api/all-content", methods=["GET"])
+def get_all_content():
+    """Return the aggregated search index (all-content.json)."""
+    data = load_json("all-content.json")
+    if data is None:
+        return jsonify({"error": "all-content.json not found"}), 404
+    return jsonify(data)
+
+# ----------------------------------------------------------------------
+#  Search endpoint (still useful for advanced queries)
+# ----------------------------------------------------------------------
 @app.route("/api/search", methods=["GET"])
 def search():
     query = request.args.get("q", "").lower()
@@ -330,6 +345,9 @@ def search():
                 })
     return jsonify(results[:50])
 
+# ----------------------------------------------------------------------
+#  Episodes endpoints
+# ----------------------------------------------------------------------
 @app.route("/api/episodes/<category>/<content_id>", methods=["GET"])
 def get_episodes(category: str, content_id: str):
     if category not in ["series", "tvshows", "asian-series"]:
@@ -346,6 +364,9 @@ def get_anime_episodes(anime_id: str):
         return jsonify({"error": f"Episodes not found for anime/{anime_id}"}), 404
     return jsonify(episodes)
 
+# ----------------------------------------------------------------------
+#  Health and video extraction endpoints
+# ----------------------------------------------------------------------
 @app.route("/health", methods=["GET"])
 def health():
     return jsonify({

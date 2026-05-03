@@ -8,6 +8,19 @@ CONTENT_FILES = [
     "anime.json", "series.json", "tvshows.json", "asian-series.json"
 ]
 
+# Map filename → category key (must match app's CATEGORIES keys exactly)
+FILENAME_TO_CATEGORY = {
+    "movies.json":        "movies",
+    "dubbed-movies.json": "dubbed-movies",
+    "hindi.json":         "hindi",
+    "asian-movies.json":  "asian-movies",
+    "anime-movies.json":  "anime-movies",
+    "anime.json":         "anime",
+    "series.json":        "series",
+    "tvshows.json":       "tvshows",
+    "asian-series.json":  "asian-series",
+}
+
 def extract_year_from_item(item: dict) -> str:
     """Extract year from ReleaseDate or fallback to Title."""
     release_date = item.get("ReleaseDate")
@@ -31,13 +44,7 @@ def main() -> None:
         with open(filepath, "r", encoding="utf-8") as f:
             data = json.load(f)
 
-        # Infer content_type from filename
-        if "movie" in filename or filename == "anime-movies.json":
-            content_type = "movie"
-        elif filename == "anime.json":
-            content_type = "anime"
-        else:
-            content_type = "series"
+        content_type = FILENAME_TO_CATEGORY.get(filename, filename.replace(".json", ""))
 
         for item_id, item in data.items():
             entry = {
@@ -51,9 +58,9 @@ def main() -> None:
             }
             all_content.append(entry)
 
-    # Write aggregated index
+    # Write as a plain array — no wrapper object needed
     with open("./output/all-content.json", "w", encoding="utf-8") as fp:
-        json.dump({"content": all_content, "total": len(all_content)}, fp, indent=4, ensure_ascii=False)
+        json.dump(all_content, fp, indent=4, ensure_ascii=False)
 
     print(f"✅ all-content.json generated with {len(all_content)} items.")
 

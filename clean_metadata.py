@@ -101,6 +101,27 @@ def clean_runtime(runtime):
             return int(cleaned)
     return None
 
+def clean_release_date(date_str: str) -> str:
+    """
+    Normalise release date string.
+    Converts "20242025" -> "2024-2025"
+    Converts "2024 2025" -> "2024-2025"
+    Leaves "2024-2025", "2024", etc. unchanged.
+    """
+    if not isinstance(date_str, str):
+        return date_str
+    # Replace any non-digit separator (space, slash, etc.) with hyphen
+    # First, try to detect two four-digit years stuck together
+    match = re.match(r'^(\d{4})(\d{4})$', date_str.strip())
+    if match:
+        return f"{match.group(1)}-{match.group(2)}"
+    # Detect two four-digit years separated by whitespace or other non-digit
+    match = re.search(r'(\d{4})\s*[^\d]?\s*(\d{4})', date_str)
+    if match:
+        return f"{match.group(1)}-{match.group(2)}"
+    # Otherwise return as is
+    return date_str
+
 def translate_missing_arabic_genres(data: dict) -> bool:
     """
     If GenresAr is empty or identical to Genres (English), replace GenresAr
@@ -115,7 +136,7 @@ def translate_missing_arabic_genres(data: dict) -> bool:
     return False
 
 def clean_json_file(file_name: str, translate_missing_ar: bool = False) -> None:
-    """Load, clean, and save a JSON file (replace hyphens, normalise country/runtime)."""
+    """Load, clean, and save a JSON file (replace hyphens, normalise country/runtime/release date)."""
     file_path = f"./output/{file_name}"
     if not os.path.exists(file_path):
         logging.warning(f"{file_path} not found, skipping.")
@@ -162,6 +183,13 @@ def clean_json_file(file_name: str, translate_missing_ar: bool = False) -> None:
             new_runtime = clean_runtime(content["Runtime"])
             if new_runtime != content["Runtime"]:
                 content["Runtime"] = new_runtime
+                modified = True
+
+        # Clean release date
+        if "ReleaseDate" in content:
+            new_date = clean_release_date(content["ReleaseDate"])
+            if new_date != content["ReleaseDate"]:
+                content["ReleaseDate"] = new_date
                 modified = True
 
     if modified:
