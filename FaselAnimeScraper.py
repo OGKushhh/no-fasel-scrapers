@@ -4,6 +4,7 @@ FaselAnimeScraper.py – Unified scraper for anime series.
 - Full scrape: goes through all pages, saves progress.
 - Daily mode: after full scrape, only first N pages (default 5).
 - Extracts numeric IDs when available to skip known items.
+- Adds Sources (player token URLs) from server tabs.
 """
 
 import json
@@ -22,7 +23,7 @@ from Common import (
     extract_country, extract_runtime, extract_description,
     extract_status, extract_viewing_level, extract_language,
     extract_release_date, extract_episode_duration,
-    extract_episode_count_text
+    extract_episode_count_text, extract_sources
 )
 
 DAILY_SCAN_PAGES = 5
@@ -217,6 +218,8 @@ def scrape_anime():
             episode_duration = extract_episode_duration(dsoup)
             episode_count_text = extract_episode_count_text(dsoup)
 
+            sources = extract_sources(dsoup)
+
             new_anime[anime_id] = {
                 "Title": title,
                 "Category": "anime",
@@ -225,6 +228,7 @@ def scrape_anime():
                 "Number Of Episodes Text": episode_count_text,
                 "Image Source": img_src,
                 "Source": source,
+                "Sources": sources,
                 "Genres": genres_info["en"],
                 "GenresAr": genres_info["ar"],
                 "Format": get_content_format(dsoup),
@@ -252,7 +256,6 @@ def scrape_anime():
         if not daily_mode:
             save_progress(page)
 
-    # Retry failed detail URLs
     if failed_detail_urls:
         print(f"\n🔄 Retrying {len(failed_detail_urls)} failed detail URLs for anime...")
         for url in list(failed_detail_urls):
@@ -272,6 +275,7 @@ def scrape_anime():
                         "Number Of Episodes Text": 0,
                         "Image Source": "",
                         "Source": "",
+                        "Sources": [],
                         "Genres": [],
                         "GenresAr": [],
                         "Format": get_content_format(dsoup),

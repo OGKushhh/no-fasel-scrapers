@@ -4,6 +4,7 @@ FaselMoviesScraper.py – Unified scraper for all movie categories.
 - Full scrape: goes through all pages, saves progress.
 - Daily mode: after full scrape, checks only first N pages (default 5).
 - Extracts numeric IDs when available to skip known items.
+- Adds Sources (player token URLs) from server tabs.
 """
 
 import json
@@ -20,7 +21,7 @@ from Common import (
     get_website_safe, get_number_of_pages, get_paginated_url,
     get_content_id, clean_iframe_source, get_content_format, get_genres_both,
     extract_country, extract_runtime, extract_description,
-    extract_release_date, extract_language
+    extract_release_date, extract_language, extract_sources
 )
 
 MOVIE_PATHS = ["movies", "dubbed-movies", "hindi", "asian-movies", "anime-movies"]
@@ -42,7 +43,6 @@ def save_progress(path: str, page_num: int):
         f.write(str(page_num))
 
 def extract_numeric_id(url: str) -> str:
-    """Try to extract numeric post ID from URL (e.g., ?p=12345 or /12345/)."""
     match = re.search(r'[?&]p=(\d+)', url)
     if match:
         return match.group(1)
@@ -113,7 +113,6 @@ def scrape_category(path: str):
             print("  ⚠️ No movie containers found")
             continue
 
-        # Collect detail URLs only for movies we don't already have (by numeric ID if available)
         detail_urls = []
         for div in divs:
             link = div.find("a")
@@ -122,7 +121,7 @@ def scrape_category(path: str):
             detail_url = link["href"]
             numeric_id = extract_numeric_id(detail_url)
             if numeric_id and numeric_id in existing_ids:
-                continue  # already scraped, skip
+                continue
             detail_urls.append(detail_url)
 
         if not detail_urls:
@@ -143,7 +142,6 @@ def scrape_category(path: str):
             if not link:
                 continue
             detail_url = link["href"]
-            # Already have numeric ID and it's known? Could have been skipped, but we still check.
             numeric_id = extract_numeric_id(detail_url)
             if numeric_id and numeric_id in existing_ids:
                 continue
@@ -155,7 +153,6 @@ def scrape_category(path: str):
 
             movie_id = get_content_id(dsoup)
             if not movie_id:
-                # Fallback to numeric ID from URL if present
                 movie_id = numeric_id
                 if not movie_id:
                     match = re.search(r'-(\d+)$', detail_url.rstrip('/'))
@@ -178,16 +175,18 @@ def scrape_category(path: str):
 
             genres_info = get_genres_both(dsoup)
             description = extract_description(dsoup)
-
             release_date = extract_release_date(dsoup)
             language = extract_language(dsoup)
             country = extract_country(dsoup)
+
+            sources = extract_sources(dsoup)
 
             new_movies[movie_id] = {
                 "Title": title,
                 "Category": path,
                 "Image Source": img_src,
-                "Source": source,
+                "Source": source,          # old iframe URL (may be empty)
+                "Sources": sources,        # new array of player token URLs
                 "Genres": genres_info["en"],
                 "GenresAr": genres_info["ar"],
                 "Format": get_content_format(dsoup),
@@ -211,7 +210,6 @@ def scrape_category(path: str):
         if not daily_mode:
             save_progress(path, page)
 
-    # Retry failed detail URLs
     if failed_detail_urls:
         print(f"\n🔄 Retrying {len(failed_detail_urls)} failed detail URLs for {path}...")
         for url in list(failed_detail_urls):
@@ -228,6 +226,7 @@ def scrape_category(path: str):
                         "Category": path,
                         "Image Source": "",
                         "Source": "",
+                        "Sources": [],
                         "Genres": [],
                         "GenresAr": [],
                         "Format": get_content_format(dsoup),

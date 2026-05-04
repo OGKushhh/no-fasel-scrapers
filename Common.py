@@ -732,14 +732,27 @@ def extract_status(soup: BeautifulSoup) -> str:
     return ""
 
 def extract_viewing_level(soup: BeautifulSoup) -> str:
-    """Extract age rating (e.g., '+13', 'TV-14')."""
-    check_icons = soup.find_all('i', class_='far fa-check-double')
-    if len(check_icons) >= 2:
-        parent = check_icons[1].find_parent('span')
-        if parent:
-            text = parent.get_text(separator=' ', strip=True)
-            if ':' in text:
-                return text.split(':', 1)[1].strip()
+    """
+    Extract age rating (e.g., '+13', 'TV-14').
+    Looks for text containing 'مستوى المشاهدة' or 'فئة المشاهدة'.
+    Returns empty string if not found.
+    """
+    # Find all spans that contain the check-double icon and look for the label
+    for span in soup.find_all('span'):
+        icon = span.find('i', class_='far fa-check-double')
+        if icon:
+            text = span.get_text(separator=' ', strip=True)
+            # Check if this span contains the target labels
+            if 'مستوى المشاهدة' in text or 'فئة المشاهدة' in text:
+                # Extract after colon
+                if ':' in text:
+                    parts = text.split(':', 1)
+                    if len(parts) > 1:
+                        return parts[1].strip()
+                else:
+                    # Fallback: return the whole text after removing label
+                    # Not ideal, but keep as fallback
+                    return text.replace('مستوى المشاهدة', '').replace('فئة المشاهدة', '').strip()
     return ""
 
 def extract_language(soup: BeautifulSoup) -> str:
@@ -792,6 +805,16 @@ def extract_episode_count_text(soup: BeautifulSoup) -> int:
                 if match:
                     return int(match.group(1))
     return 0
+
+def extract_sources(soup: BeautifulSoup) -> List[str]:
+    """Extract server token URLs from .tabs-ul li elements."""
+    sources = []
+    for li in soup.select('.tabs-ul li'):
+        onclick = li.get('onclick', '')
+        match = re.search(r"player_iframe\.location\.href\s*=\s*['\"]([^'\"]+)['\"]", onclick)
+        if match:
+            sources.append(match.group(1))
+    return sources
 
 # ----------------------------------------------------------------------
 #  IMDb rating helper using OMDb API

@@ -243,7 +243,7 @@ def test_extract(page_url: str, headless: bool = False):
 
 if __name__ == "__main__":
     # Set headless=False to watch the browser — recommended for first run
-    result = test_extract(TEST_URL, headless=False)
+    result = test_extract(TEST_URL, headless=True)
 
     print(f"\n{'='*60}")
     if result:

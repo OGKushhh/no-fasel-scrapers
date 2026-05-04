@@ -3,6 +3,8 @@
 FaselSeriesScraper.py – Unified scraper for series, tvshows, asian-series.
 - Full scrape: goes through all pages (no early stop).
 - Daily mode: after full scrape, only first N pages (default 5).
+- Extracts episodes and seasons.
+- Adds Sources (player token URLs) for series detail pages.
 """
 
 import json
@@ -21,7 +23,7 @@ from Common import (
     extract_country, extract_runtime, extract_description,
     extract_status, extract_viewing_level, extract_language,
     extract_release_date, extract_episode_duration,
-    extract_episode_count_text
+    extract_episode_count_text, extract_sources
 )
 
 SERIES_PATHS = ["series", "tvshows", "asian-series"]
@@ -41,6 +43,15 @@ def save_progress(path: str, page_num: int):
     os.makedirs("./output", exist_ok=True)
     with open(f"./output/last_page_{path}.txt", "w") as f:
         f.write(str(page_num))
+
+def extract_numeric_id(url: str) -> str:
+    match = re.search(r'[?&]p=(\d+)', url)
+    if match:
+        return match.group(1)
+    match = re.search(r'/(\d+)/?$', url)
+    if match:
+        return match.group(1)
+    return None
 
 def extract_seasons_from_page(soup: BeautifulSoup, base_url: str) -> list:
     seasons = []
@@ -174,7 +185,6 @@ def scrape_series_category(path: str):
     all_series = existing_series.copy()
     failed_detail_urls = set()
 
-    # No incremental stop – just loop through all pages in range
     for page in range(start_page, end_page + 1):
         delay = REQUEST_DELAY + random.uniform(-JITTER, JITTER)
         if delay < 0.5:
@@ -196,30 +206,14 @@ def scrape_series_category(path: str):
             print("  ⚠️ No series containers found")
             continue
 
-        # Extract detail URLs only for new series (based on existing numeric IDs)
         detail_urls = []
         for div in divs:
             link = div.find("a")
             if link:
                 detail_url = link["href"]
-                # Try to extract numeric ID from the URL if possible, else use slug
-                # For early detection of new items, we rely on the numeric ID (if present)
-                # but since the list page often has slugs, we must fetch detail page to know the ID.
-                # So we collect all detail URLs and later check against existing_ids after fetching.
-                # To avoid fetching everything, we use a heuristic: if the URL contains a numeric ID,
-                # we can check now; otherwise we fetch and then decide.
-                # For simplicity, we always fetch detail pages for all items on the page.
-                # This is acceptable for daily mode (5 pages) and for full scrape (once).
-                # To reduce unnecessary fetches, we can still try to extract numeric ID.
-                # Let's extract numeric ID if present (e.g., ?p=12345 or /12345/)
-                numeric_id = None
-                match = re.search(r'[?&]p=(\d+)', detail_url)
-                if not match:
-                    match = re.search(r'/(\d+)/?$', detail_url)
-                if match:
-                    numeric_id = match.group(1)
+                numeric_id = extract_numeric_id(detail_url)
                 if numeric_id and numeric_id in existing_ids:
-                    continue  # already have it, skip fetching
+                    continue
                 detail_urls.append(detail_url)
 
         if not detail_urls:
@@ -247,13 +241,13 @@ def scrape_series_category(path: str):
 
             series_id = get_content_id(dsoup)
             if not series_id:
-                match = re.search(r'-(\d+)$', detail_url.rstrip('/'))
-                if match:
-                    series_id = match.group(1)
-                else:
-                    # fallback: try to extract from ?p=
-                    match = re.search(r'[?&]p=(\d+)', detail_url)
-                    series_id = match.group(1) if match else detail_url.split('/')[-2]
+                series_id = extract_numeric_id(detail_url)
+                if not series_id:
+                    match = re.search(r'-(\d+)$', detail_url.rstrip('/'))
+                    if match:
+                        series_id = match.group(1)
+                    else:
+                        series_id = detail_url.split('/')[-2]
             if not series_id or series_id in existing_ids:
                 continue
 
@@ -305,11 +299,14 @@ def scrape_series_category(path: str):
             if seasons_with_episodes:
                 save_episodes_for_series(path, series_id, seasons_with_episodes)
 
+            sources = extract_sources(dsoup)
+
             new_series[series_id] = {
                 "Title": title,
                 "Category": path,
                 "Image Source": img_src,
                 "Source": source,
+                "Sources": sources,
                 "Genres": genres_info["en"],
                 "GenresAr": genres_info["ar"],
                 "Format": get_content_format(dsoup),
@@ -338,20 +335,23 @@ def scrape_series_category(path: str):
         if not daily_mode:
             save_progress(path, page)
 
-    # Retry failed detail URLs
     if failed_detail_urls:
         print(f"\n🔄 Retrying {len(failed_detail_urls)} failed detail URLs for {path}...")
         for url in list(failed_detail_urls):
             resp = get_website_safe(url)
             if resp:
                 dsoup = BeautifulSoup(resp.text, "html.parser")
-                series_id = get_content_id(dsoup) or re.search(r'[?&]p=(\d+)', url).group(1) if re.search(r'[?&]p=(\d+)', url) else url.split('/')[-2]
-                if series_id not in existing_ids:
+                series_id = get_content_id(dsoup) or extract_numeric_id(url)
+                if not series_id:
+                    match = re.search(r'-(\d+)$', url.rstrip('/'))
+                    series_id = match.group(1) if match else url.split('/')[-2]
+                if series_id and series_id not in existing_ids:
                     all_series[series_id] = {
                         "Title": "Unknown (retried)",
                         "Category": path,
                         "Image Source": "",
                         "Source": "",
+                        "Sources": [],
                         "Genres": [],
                         "GenresAr": [],
                         "Format": get_content_format(dsoup),

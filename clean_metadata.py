@@ -5,6 +5,7 @@ import re
 import logging
 from pathlib import Path
 from typing import Optional
+from datetime import datetime
 
 # Setup logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -106,20 +107,26 @@ def clean_release_date(date_str: str) -> str:
     Normalise release date string.
     Converts "20242025" -> "2024-2025"
     Converts "2024 2025" -> "2024-2025"
-    Leaves "2024-2025", "2024", etc. unchanged.
+    Also if the string is a single 4‑digit year outside realistic range, return empty string.
     """
     if not isinstance(date_str, str):
         return date_str
-    # Replace any non-digit separator (space, slash, etc.) with hyphen
-    # First, try to detect two four-digit years stuck together
-    match = re.match(r'^(\d{4})(\d{4})$', date_str.strip())
+    # Handle concatenated years: 20242025 -> 2024-2025
+    match = re.fullmatch(r'^(\d{4})(\d{4})$', date_str.strip())
     if match:
         return f"{match.group(1)}-{match.group(2)}"
-    # Detect two four-digit years separated by whitespace or other non-digit
+    # Handle years separated by whitespace or non-digit
     match = re.search(r'(\d{4})\s*[^\d]?\s*(\d{4})', date_str)
     if match:
         return f"{match.group(1)}-{match.group(2)}"
-    # Otherwise return as is
+    
+    # If it's a single 4-digit year, validate it
+    match = re.fullmatch(r'^\s*(\d{4})\s*$', date_str)
+    if match:
+        year = int(match.group(1))
+        current_year = datetime.now().year
+        if not (1900 <= year <= current_year + 4):
+            return ""  # remove unrealistic year
     return date_str
 
 def translate_missing_arabic_genres(data: dict) -> bool:
