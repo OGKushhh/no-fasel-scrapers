@@ -319,7 +319,7 @@ def upload_image(image_url: str, content_id: str, get_image: Callable[[str], Res
             b64 = f.read()
     else:
         b64 = b64encode(image.content).decode("utf8")
-    imgur_headers = {"Authorization": f"Client-ID {environ.get('IMGUR_CLIENT_ID')}"}
+    imgur_headers = {"Authorization": f"Client-ID {os.environ.get('IMGUR_CLIENT_ID')}"}
     data = {"image": b64}
     try:
         res = requests.post("https://api.imgur.com/3/image", headers=imgur_headers, data=data)
@@ -817,6 +817,80 @@ def extract_sources(soup: BeautifulSoup) -> List[str]:
     return sources
 
 # ----------------------------------------------------------------------
+#  NEW: Season and episode extraction helpers (for fix_14506.py and update_episodes.py)
+# ----------------------------------------------------------------------
+def extract_seasons_from_page(soup: BeautifulSoup, base_url: str) -> List[dict]:
+    """
+    Parse a seasons hub page (or detail page that lists all seasons).
+    Returns a list of dicts with keys: 'number', 'page_url', 'poster'.
+    """
+    seasons = []
+    # Look for seasonDiv elements inside #seasonList
+    season_divs = soup.select('#seasonList .seasonDiv')
+    for div in season_divs:
+        # Extract season number from .title div (text like "موسم 1")
+        title_div = div.select_one('.title')
+        if not title_div:
+            continue
+        title_text = title_div.text.strip()
+        # Extract digits from text (e.g., "موسم 1" -> 1)
+        match = re.search(r'(\d+)', title_text)
+        if not match:
+            continue
+        season_num = int(match.group(1))
+        
+        # Extract season page URL from onclick attribute
+        onclick = div.get('onclick', '')
+        url_match = re.search(r"location\.href\s*=\s*['\"]([^'\"]+)['\"]", onclick)
+        if not url_match:
+            continue
+        season_url = url_match.group(1)
+        if not season_url.startswith('http'):
+            season_url = base_url.rstrip('/') + season_url
+        
+        # Poster image (use data-src if available, otherwise src)
+        img = div.find('img')
+        poster = ''
+        if img:
+            poster = img.get('data-src') or img.get('src', '')
+        
+        seasons.append({
+            'number': season_num,
+            'page_url': season_url,
+            'poster': poster
+        })
+    return seasons
+
+def extract_episodes_from_season_page(soup: BeautifulSoup) -> List[str]:
+    """
+    Parse a season page and return a list of episode detail URLs.
+    For Fasel-HD, episodes are inside #epAll as <a> tags.
+    """
+    episode_urls = []
+    # Primary selector: #epAll a
+    ep_links = soup.select('#epAll a')
+    for a in ep_links:
+        href = a.get('href')
+        if href:
+            # Ensure full URL
+            if href.startswith('/'):
+                href = FASEL_BASE_URL.rstrip('/') + href
+            episode_urls.append(href)
+    
+    # Fallback: look for common episode container selectors (for other site structures)
+    if not episode_urls:
+        for block in soup.select('.epDiv, .episode-item, .episodeDiv'):
+            link = block.find('a', href=True)
+            if link:
+                href = link['href']
+                if href.startswith('/'):
+                    href = FASEL_BASE_URL.rstrip('/') + href
+                episode_urls.append(href)
+    
+    # Remove duplicates while preserving order
+    return list(dict.fromkeys(episode_urls))
+
+# ----------------------------------------------------------------------
 #  IMDb rating helper using OMDb API
 # ----------------------------------------------------------------------
 import requests
@@ -1094,7 +1168,7 @@ def hdw_get_genres(div: Tag) -> list:
     return [g.strip() for g in div.find("span", class_="content-views").text.split(", ")]
 
 def get_tmdb_id(title: str, genre: str) -> Optional[str]:
-    api_key = environ.get("TMDB_API_KEY")
+    api_key = os.environ.get("TMDB_API_KEY")
     if not api_key:
         return None
     url = "https://api.themoviedb.org/3/search/movie" if genre == "movies" else "https://api.themoviedb.org/3/search/tv"

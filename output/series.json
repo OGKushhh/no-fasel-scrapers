@@ -100775,5 +100775,33 @@
         "EpisodeDuration": "50د",
         "Number Of Episodes Text": 16,
         "last_scraped": "2026-05-04T10:49:25.454210+00:00"
+    },
+    "14506": {
+        "Title": "مسلسل (3%)",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2016/11/0000-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Action",
+            "Drama",
+            "Sci-fi"
+        ],
+        "GenresAr": [
+            "Action",
+            "Drama",
+            "Sci-fi"
+        ],
+        "Format": "WEBRip",
+        "Runtime": 49,
+        "Country": null,
+        "Description": "تدور الاحداث فى البرازيل فى المستقبل حيث المعاناة والبؤوس تلتف بالمجتمع والبلاد ولكن لدى الشباب الذين يصلون لعمر الـ20 فرصة لتحسين حياتهم والانضمام إلى مجتمع ومكان خاص يضمن لك حياة مجيدة، المعضلة أنَّ 3% فقط من المُقدمين يُسمح لهم بالانضمام وفي تلك العملية صراع سيحتدم بين الرغبة وبين ما قد يفعله المرء من أجل حياة أفضل.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/?p=14506",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "البرتغالية",
+        "ReleaseDate": "2016",
+        "EpisodeDuration": "49د",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-05-04T15:55:15.008206"
     }
 }

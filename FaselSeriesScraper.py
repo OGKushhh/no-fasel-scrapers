@@ -306,7 +306,6 @@ def scrape_series_category(path: str):
                 "Category": path,
                 "Image Source": img_src,
                 "Source": source,
-                "Sources": sources,
                 "Genres": genres_info["en"],
                 "GenresAr": genres_info["ar"],
                 "Format": get_content_format(dsoup),

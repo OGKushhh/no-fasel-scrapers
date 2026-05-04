@@ -3,15 +3,17 @@
 backfill.py – Unified backfill script.
 
 Tasks:
-1. descriptions – fills missing 'Description' fields in main JSONs (movies, anime, series, etc.)
+1. descriptions – fills missing 'Description' fields and adds 'last_scraped' if missing
 2. episodes    – upgrades episode JSON files to include 'sources' (player token URLs)
 
 Run with:
-    python backfill.py --descriptions   (only descriptions)
+    python backfill.py --descriptions   (only descriptions + last_scraped)
     python backfill.py --episodes       (only episodes)
     python backfill.py --all            (both, default)
 
-Progress is saved per file, so you can stop/resume.
+Improvements:
+- Contiguous progress tracking: ensures no items are skipped even if threads complete out of order.
+- Thread‑safe max index calculation.
 """
 
 import argparse
@@ -21,6 +23,7 @@ import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from threading import Lock
 from pathlib import Path
+from datetime import datetime, timezone
 from bs4 import BeautifulSoup
 from Common import (
     get_website_safe, extract_description, extract_sources,
@@ -53,7 +56,7 @@ REQUEST_DELAY_EPISODE = REQUEST_DELAY  # seconds between episode page requests
 # ===================================
 
 def load_progress(progress_file: str) -> int:
-    """Load the last processed index (0-indexed) for a description backfill."""
+    """Load the last contiguous completed index (0-indexed) for a description backfill."""
     if os.path.exists(progress_file):
         with open(progress_file, "r") as f:
             try:
@@ -63,6 +66,7 @@ def load_progress(progress_file: str) -> int:
     return 0
 
 def save_progress(progress_file: str, index: int):
+    """Save the current contiguous completed index."""
     with open(progress_file, "w") as f:
         f.write(str(index))
 
@@ -77,8 +81,10 @@ def fetch_description(item_id: str, detail_url: str = None) -> str:
     return ""
 
 def backfill_descriptions_for_file(json_path: Path, category: str):
-    """Backfill missing Description fields in a single JSON file."""
-    print(f"\n📖 Backfilling descriptions for {json_path.name} (category: {category})")
+    """Backfill missing Description fields and add last_scraped if missing.
+    Uses contiguous progress tracking to avoid skipping items on resume.
+    """
+    print(f"\n📖 Backfilling descriptions & last_scraped for {json_path.name}")
     if not json_path.exists():
         print(f"  File not found, skipping.")
         return
@@ -90,18 +96,25 @@ def backfill_descriptions_for_file(json_path: Path, category: str):
     total = len(items)
 
     progress_file = str(json_path).replace(".json", "_desc_progress.txt")
-    start_index = load_progress(progress_file)
-    print(f"  Resuming from index {start_index} / {total}")
+    start_contiguous = load_progress(progress_file)
+    print(f"  Resuming from contiguous index {start_contiguous} / {total}")
 
     updated_count = 0
     lock = Lock()
+    now_iso = datetime.now(timezone.utc).isoformat()
+
+    # Track completed indices (1‑based) for contiguous max calculation
+    completed = set()
+    max_contiguous = start_contiguous  # the last fully completed index (0‑based)
 
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        for i in range(start_index, total, MAX_WORKERS):
+        # We need to iterate from max_contiguous to end
+        for i in range(max_contiguous, total, MAX_WORKERS):
             batch = items[i:i+MAX_WORKERS]
             futures = {}
             for idx, (item_id, item_data) in enumerate(batch, start=i):
-                if item_data.get("Description"):
+                # Skip if already has description and already has last_scraped
+                if item_data.get("Description") and item_data.get("last_scraped"):
                     continue
                 future = executor.submit(fetch_description, item_id)
                 futures[future] = (idx, item_id, item_data)
@@ -110,20 +123,34 @@ def backfill_descriptions_for_file(json_path: Path, category: str):
                 idx, item_id, item_data = futures[future]
                 desc = future.result()
                 with lock:
-                    if desc:
+                    changed = False
+                    if desc and not item_data.get("Description"):
                         item_data["Description"] = desc
                         updated_count += 1
                         print(f"  [{idx+1}/{total}] ✅ Added description for {item_id} ({len(desc)} chars)")
-                    else:
+                        changed = True
+                    elif not desc and not item_data.get("Description"):
                         item_data["Description"] = ""
                         print(f"  [{idx+1}/{total}] ⚠️ No description for {item_id}")
 
-                    save_progress(progress_file, idx + 1)
+                    # Add last_scraped if missing
+                    if not item_data.get("last_scraped"):
+                        item_data["last_scraped"] = now_iso
+                        print(f"  [{idx+1}/{total}] 🕒 Added last_scraped for {item_id}")
+                        changed = True
 
-                    if updated_count % SAVE_INTERVAL == 0:
-                        with open(json_path, "w", encoding="utf-8") as f:
-                            json.dump(data, f, indent=4, ensure_ascii=False)
-                        print(f"  💾 Saved progress (updated {updated_count} items)")
+                    if changed:
+                        # Mark this index as completed (1‑based for easier comparison)
+                        completed.add(idx + 1)
+                        # Update the contiguous max index
+                        while max_contiguous + 1 in completed:
+                            max_contiguous += 1
+                        save_progress(progress_file, max_contiguous)
+
+                        if updated_count % SAVE_INTERVAL == 0:
+                            with open(json_path, "w", encoding="utf-8") as f:
+                                json.dump(data, f, indent=4, ensure_ascii=False)
+                            print(f"  💾 Saved progress (updated {updated_count} items)")
 
             time.sleep(BATCH_DELAY)
 
@@ -135,7 +162,7 @@ def backfill_descriptions_for_file(json_path: Path, category: str):
     if os.path.exists(progress_file):
         os.remove(progress_file)
 
-    print(f"  ✅ Finished {json_path.name}: updated {updated_count} descriptions.")
+    print(f"  ✅ Finished {json_path.name}: added {updated_count} descriptions and last_scraped timestamps.")
 
 def backfill_all_descriptions():
     """Run description backfill on all main JSON files."""
@@ -144,12 +171,13 @@ def backfill_all_descriptions():
         backfill_descriptions_for_file(file_path, category)
 
 # ----------------------------------------------------------------------
-# Episode Sources Backfill
+# Episode Sources Backfill (unchanged, already correct)
 # ----------------------------------------------------------------------
 def upgrade_episode_file(episode_file: Path):
     """
     Convert old episode file (list of URL strings) to new format
     (list of {"url": ..., "sources": [...]}) and fetch missing sources.
+    Also ensures file-level last_updated is present.
     """
     print(f"\n🎬 Processing episode file: {episode_file}")
     try:
@@ -195,14 +223,22 @@ def upgrade_episode_file(episode_file: Path):
                         time.sleep(REQUEST_DELAY_EPISODE)
                         changed = True
                         print(f"  🔄 Added sources for {url}")
+
     if changed:
         # Add or update last_updated timestamp
-        data["last_updated"] = __import__("datetime").datetime.now().isoformat()
+        data["last_updated"] = datetime.now(timezone.utc).isoformat()
         with open(episode_file, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=4, ensure_ascii=False)
         print(f"  💾 Saved {episode_file}")
     else:
-        print(f"  ✅ No changes needed for {episode_file}")
+        # Ensure last_updated exists even if no other change
+        if "last_updated" not in data:
+            data["last_updated"] = datetime.now(timezone.utc).isoformat()
+            with open(episode_file, "w", encoding="utf-8") as f:
+                json.dump(data, f, indent=4, ensure_ascii=False)
+            print(f"  🕒 Added last_updated to {episode_file}")
+        else:
+            print(f"  ✅ No changes needed for {episode_file}")
 
 def backfill_all_episodes():
     """Run episode sources backfill on all episode files."""
@@ -234,7 +270,7 @@ def main():
 
     if args.task in ("descriptions", "all"):
         print("="*60)
-        print("📖 Running description backfill...")
+        print("📖 Running description + last_scraped backfill (with contiguous progress)...")
         print("="*60)
         backfill_all_descriptions()
 

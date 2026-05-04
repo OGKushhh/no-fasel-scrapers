@@ -228,7 +228,6 @@ def scrape_anime():
                 "Number Of Episodes Text": episode_count_text,
                 "Image Source": img_src,
                 "Source": source,
-                "Sources": sources,
                 "Genres": genres_info["en"],
                 "GenresAr": genres_info["ar"],
                 "Format": get_content_format(dsoup),
