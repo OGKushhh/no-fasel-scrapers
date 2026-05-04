@@ -51246,3 +51246,15 @@ Traceback (most recent call last):
   File "C:\Users\abdo\AppData\Local\Programs\Python\Python312\Lib\site-packages\patchright\_impl\_connection.py", line 500, in wrap_api_call
     raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
 Exception: Connection.init: Connection closed while reading from the driver
+2026-05-04 14:31:52,351 - INFO - Fetched (404) <GET https://www.fasel-hd.cam/?p=14506> (referer: https://www.google.com/)
+2026-05-04 14:32:00,057 - INFO - Fetched (404) <GET https://www.fasel-hd.cam/?p=14506> (referer: https://www.google.com/)
+2026-05-04 14:32:08,286 - INFO - Fetched (404) <GET https://www.fasel-hd.cam/?p=14506> (referer: https://www.google.com/)
+2026-05-04 14:32:14,373 - WARNING - Failed to fetch https://www.fasel-hd.cam/?p=14506
+2026-05-04 14:32:24,914 - INFO - Fetched (404) <GET https://www.fasel-hd.cam/?p=14506> (referer: https://www.google.com/)
+2026-05-04 14:32:32,505 - INFO - Fetched (404) <GET https://www.fasel-hd.cam/?p=14506> (referer: https://www.google.com/)
+2026-05-04 14:32:41,561 - INFO - Fetched (404) <GET https://www.fasel-hd.cam/?p=14506> (referer: https://www.google.com/)
+2026-05-04 14:32:47,442 - WARNING - Failed to fetch https://www.fasel-hd.cam/?p=14506
+2026-05-04 14:32:57,902 - INFO - Fetched (404) <GET https://www.fasel-hd.cam/?p=14506> (referer: https://www.google.com/)
+2026-05-04 14:33:05,935 - INFO - Fetched (404) <GET https://www.fasel-hd.cam/?p=14506> (referer: https://www.google.com/)
+2026-05-04 14:33:15,585 - INFO - Fetched (404) <GET https://www.fasel-hd.cam/?p=14506> (referer: https://www.google.com/)
+2026-05-04 14:33:21,363 - WARNING - Failed to fetch https://www.fasel-hd.cam/?p=14506

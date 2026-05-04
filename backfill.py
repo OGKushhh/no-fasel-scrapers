@@ -1,37 +1,72 @@
-# backfill_descriptions_resumable.py
+#!/usr/bin/env python3
+"""
+backfill.py – Unified backfill script.
+
+Tasks:
+1. descriptions – fills missing 'Description' fields in main JSONs (movies, anime, series, etc.)
+2. episodes    – upgrades episode JSON files to include 'sources' (player token URLs)
+
+Run with:
+    python backfill.py --descriptions   (only descriptions)
+    python backfill.py --episodes       (only episodes)
+    python backfill.py --all            (both, default)
+
+Progress is saved per file, so you can stop/resume.
+"""
+
+import argparse
 import json
 import os
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from threading import Lock
-from Common import get_website_safe, extract_description, REQUEST_DELAY
+from pathlib import Path
 from bs4 import BeautifulSoup
+from Common import (
+    get_website_safe, extract_description, extract_sources,
+    REQUEST_DELAY
+)
 
-# ----------------------------------------------------------------------
-# Configuration
-# ----------------------------------------------------------------------
-JSON_FILE = "./output/movies.json"          # change to series.json, anime.json, etc.
-PROGRESS_FILE = "./output/backfill_progress.txt"
+# ========== CONFIGURATION ==========
+# Files for description backfill (main metadata JSONs)
+DESCRIPTION_FILES = {
+    "movies.json": "movies",
+    "dubbed-movies.json": "movies",
+    "hindi.json": "movies",
+    "asian-movies.json": "movies",
+    "anime-movies.json": "movies",
+    "anime.json": "anime",
+    "series.json": "series",
+    "tvshows.json": "tvshows",
+    "asian-series.json": "asian-series",
+}
+
+# Directories for episode backfill
+EPISODE_CATEGORIES = ["series", "tvshows", "asian-series", "anime"]
+EPISODES_BASE = Path("./output/episodes")
+
+# Backfill settings
 MAX_WORKERS = 6
-SAVE_INTERVAL = 50                          # save after every N successful updates
-REQUEST_DELAY_BATCH = 2                     # seconds to wait between batches (optional)
-# ----------------------------------------------------------------------
+SAVE_INTERVAL = 50          # save main JSON after this many updates
+BATCH_DELAY = 2             # seconds between batches (descriptions)
+REQUEST_DELAY_EPISODE = REQUEST_DELAY  # seconds between episode page requests
+# ===================================
 
-def load_progress():
-    """Return the last processed item index (0-indexed) from progress file."""
-    if os.path.exists(PROGRESS_FILE):
-        with open(PROGRESS_FILE, "r") as f:
+def load_progress(progress_file: str) -> int:
+    """Load the last processed index (0-indexed) for a description backfill."""
+    if os.path.exists(progress_file):
+        with open(progress_file, "r") as f:
             try:
                 return int(f.read().strip())
             except:
                 return 0
     return 0
 
-def save_progress(index):
-    with open(PROGRESS_FILE, "w") as f:
+def save_progress(progress_file: str, index: int):
+    with open(progress_file, "w") as f:
         f.write(str(index))
 
-def fetch_description(item_id, detail_url=None):
+def fetch_description(item_id: str, detail_url: str = None) -> str:
     """Fetch description for a single item using its ID or URL."""
     if not detail_url:
         detail_url = f"https://www.fasel-hd.cam/?p={item_id}"
@@ -41,34 +76,36 @@ def fetch_description(item_id, detail_url=None):
         return extract_description(soup)
     return ""
 
-def backfill_descriptions(json_file, progress_file, max_workers=8, save_interval=50):
-    # Load existing data
-    with open(json_file, "r", encoding="utf-8") as f:
+def backfill_descriptions_for_file(json_path: Path, category: str):
+    """Backfill missing Description fields in a single JSON file."""
+    print(f"\n📖 Backfilling descriptions for {json_path.name} (category: {category})")
+    if not json_path.exists():
+        print(f"  File not found, skipping.")
+        return
+
+    with open(json_path, "r", encoding="utf-8") as f:
         data = json.load(f)
-    
-    # Get list of items (id, data)
+
     items = list(data.items())
     total = len(items)
-    
-    start_index = load_progress()
-    print(f"Resuming from index {start_index} / {total}")
-    
+
+    progress_file = str(json_path).replace(".json", "_desc_progress.txt")
+    start_index = load_progress(progress_file)
+    print(f"  Resuming from index {start_index} / {total}")
+
     updated_count = 0
     lock = Lock()
-    
-    # Process items in batches to allow progress saving
-    with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        for i in range(start_index, total, max_workers):
-            batch = items[i:i+max_workers]
+
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        for i in range(start_index, total, MAX_WORKERS):
+            batch = items[i:i+MAX_WORKERS]
             futures = {}
             for idx, (item_id, item_data) in enumerate(batch, start=i):
-                # Skip if already has description
                 if item_data.get("Description"):
                     continue
                 future = executor.submit(fetch_description, item_id)
                 futures[future] = (idx, item_id, item_data)
-            
-            # Process completed futures
+
             for future in as_completed(futures):
                 idx, item_id, item_data = futures[future]
                 desc = future.result()
@@ -76,44 +113,138 @@ def backfill_descriptions(json_file, progress_file, max_workers=8, save_interval
                     if desc:
                         item_data["Description"] = desc
                         updated_count += 1
-                        print(f"[{idx+1}/{total}] ✅ Added description for {item_id} ({len(desc)} chars)")
+                        print(f"  [{idx+1}/{total}] ✅ Added description for {item_id} ({len(desc)} chars)")
                     else:
                         item_data["Description"] = ""
-                        print(f"[{idx+1}/{total}] ⚠️ No description for {item_id}")
-                    
-                    # Save progress after each item or after save_interval updates
-                    save_progress(idx + 1)  # next index to process
-                    
-                    # Save the whole JSON periodically
-                    if updated_count % save_interval == 0:
-                        with open(json_file, "w", encoding="utf-8") as f:
+                        print(f"  [{idx+1}/{total}] ⚠️ No description for {item_id}")
+
+                    save_progress(progress_file, idx + 1)
+
+                    if updated_count % SAVE_INTERVAL == 0:
+                        with open(json_path, "w", encoding="utf-8") as f:
                             json.dump(data, f, indent=4, ensure_ascii=False)
                         print(f"  💾 Saved progress (updated {updated_count} items)")
-            
-            # Small delay between batches to be polite
-            time.sleep(REQUEST_DELAY_BATCH)
-    
+
+            time.sleep(BATCH_DELAY)
+
     # Final save
-    with open(json_file, "w", encoding="utf-8") as f:
+    with open(json_path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
-    
-    # Clear progress file when done
+
+    # Clean up progress file
     if os.path.exists(progress_file):
         os.remove(progress_file)
-    
-    print(f"\n✅ Finished. Updated {updated_count} items out of {total}.")
+
+    print(f"  ✅ Finished {json_path.name}: updated {updated_count} descriptions.")
+
+def backfill_all_descriptions():
+    """Run description backfill on all main JSON files."""
+    for filename, category in DESCRIPTION_FILES.items():
+        file_path = Path("./output") / filename
+        backfill_descriptions_for_file(file_path, category)
+
+# ----------------------------------------------------------------------
+# Episode Sources Backfill
+# ----------------------------------------------------------------------
+def upgrade_episode_file(episode_file: Path):
+    """
+    Convert old episode file (list of URL strings) to new format
+    (list of {"url": ..., "sources": [...]}) and fetch missing sources.
+    """
+    print(f"\n🎬 Processing episode file: {episode_file}")
+    try:
+        with open(episode_file, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception as e:
+        print(f"  ❌ Cannot load: {e}")
+        return
+
+    changed = False
+    seasons = data.get("seasons", {})
+    for season_num, season_data in seasons.items():
+        episodes = season_data.get("episodes", [])
+        if not episodes:
+            continue
+        # If episodes are stored as strings (old format)
+        if isinstance(episodes[0], str):
+            new_episodes = []
+            for url in episodes:
+                resp = get_website_safe(url)
+                if resp:
+                    soup = BeautifulSoup(resp.text, "html.parser")
+                    sources = extract_sources(soup)
+                    new_episodes.append({"url": url, "sources": sources})
+                else:
+                    new_episodes.append({"url": url, "sources": []})
+                time.sleep(REQUEST_DELAY_EPISODE)
+            season_data["episodes"] = new_episodes
+            changed = True
+            print(f"  🔄 Season {season_num}: converted {len(episodes)} episodes")
+        else:
+            # Already dict format – add sources if missing
+            for ep in episodes:
+                if isinstance(ep, dict) and "sources" not in ep:
+                    url = ep.get("url")
+                    if url:
+                        resp = get_website_safe(url)
+                        if resp:
+                            soup = BeautifulSoup(resp.text, "html.parser")
+                            ep["sources"] = extract_sources(soup)
+                        else:
+                            ep["sources"] = []
+                        time.sleep(REQUEST_DELAY_EPISODE)
+                        changed = True
+                        print(f"  🔄 Added sources for {url}")
+    if changed:
+        # Add or update last_updated timestamp
+        data["last_updated"] = __import__("datetime").datetime.now().isoformat()
+        with open(episode_file, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=4, ensure_ascii=False)
+        print(f"  💾 Saved {episode_file}")
+    else:
+        print(f"  ✅ No changes needed for {episode_file}")
+
+def backfill_all_episodes():
+    """Run episode sources backfill on all episode files."""
+    for category in EPISODE_CATEGORIES:
+        cat_dir = EPISODES_BASE / category
+        if not cat_dir.exists():
+            print(f"⚠️ Episodes directory not found: {cat_dir}")
+            continue
+        episode_files = list(cat_dir.glob("*.json"))
+        if not episode_files:
+            print(f"⚠️ No episode files in {cat_dir}")
+            continue
+        print(f"\n📺 Processing {category} episodes ({len(episode_files)} files)")
+        for ep_file in episode_files:
+            upgrade_episode_file(ep_file)
+
+# ----------------------------------------------------------------------
+# Main
+# ----------------------------------------------------------------------
+def main():
+    parser = argparse.ArgumentParser(description="Unified backfill script")
+    parser.add_argument(
+        "--task",
+        choices=["descriptions", "episodes", "all"],
+        default="all",
+        help="Which backfill task to run. Default: all"
+    )
+    args = parser.parse_args()
+
+    if args.task in ("descriptions", "all"):
+        print("="*60)
+        print("📖 Running description backfill...")
+        print("="*60)
+        backfill_all_descriptions()
+
+    if args.task in ("episodes", "all"):
+        print("\n" + "="*60)
+        print("🎬 Running episode sources backfill...")
+        print("="*60)
+        backfill_all_episodes()
+
+    print("\n✅ All requested backfill tasks completed.")
 
 if __name__ == "__main__":
-    # For movies.json
-    backfill_descriptions(
-        json_file="./output/movies.json",
-        progress_file="./output/backfill_movies_progress.txt",
-        max_workers=8,
-        save_interval=50
-    )
-    
-    # Uncomment to run for other files
-    # backfill_descriptions("./output/series.json", "./output/backfill_series_progress.txt", 8, 50)
-    # backfill_descriptions("./output/tvshows.json", "./output/backfill_tvshows_progress.txt", 8, 50)
-    # backfill_descriptions("./output/asian-series.json", "./output/backfill_asian_progress.txt", 8, 50)
-    # backfill_descriptions("./output/anime.json", "./output/backfill_anime_progress.txt", 8, 50)
+    main()
