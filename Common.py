@@ -8,7 +8,7 @@ from base64 import b64encode
 from concurrent.futures import ThreadPoolExecutor
 from threading import Lock
 from typing import Optional, Callable, Union, List, Dict
-from urllib.parse import quote, unquote
+from urllib.parse import quote, unquote, urlparse
 from PIL import Image
 import requests
 from bs4 import BeautifulSoup, ResultSet, Tag
@@ -44,9 +44,6 @@ except ImportError:
 
 # Playwright ONLY for video extraction – will be imported only inside that function.
 # Not imported at top level to avoid greenlet issues.
-# try:
-#     from playwright.sync_api import sync_playwright
-# except ImportError: ...
 
 # ----------------------------------------------------------------------
 #  Constants & settings
@@ -131,6 +128,18 @@ headers = {
     "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
     "accept-language": "en-US,en;q=0.9,ar;q=0.8",
 }
+
+# ----------------------------------------------------------------------
+#  Ad domain helper (for discovery logging)
+# ----------------------------------------------------------------------
+def extract_domain(url: str) -> str:
+    """Extract registered domain from a URL (e.g., sub.example.com -> example.com)."""
+    parsed = urlparse(url)
+    domain = parsed.netloc
+    parts = domain.split('.')
+    if len(parts) >= 2:
+        return '.'.join(parts[-2:])
+    return domain
 
 # ----------------------------------------------------------------------
 #  Core fetching function (synchronous, thread‑safe: Scrapling + curl_cffi)
@@ -394,9 +403,18 @@ def get_video_stream_url(page_url: str, headless: bool = True, max_attempts: int
         play_selector = ".jw-icon.jw-icon-display.jw-button-color.jw-reset"
         video_selector = "video"
 
-        # intercept .m3u8
+        # intercept .m3u8 AND (new) log unknown ad domains
         def intercept(route, request):
             nonlocal captured_url
+            # ----- Ad domain discovery integration -----
+            domain = extract_domain(request.url)
+            if domain and domain not in AD_DOMAINS:
+                # log to file for later review
+                with open("new_ad_domains.log", "a") as log:
+                    log.write(f"{domain}\n")
+                if DEBUG:
+                    print(f"[AdDiscovery] New potential ad domain: {domain}")
+            # ----- End ad discovery -----
             if ".m3u8" in request.url:
                 if "master.m3u8" in request.url:
                     captured_url = request.url
