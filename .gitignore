@@ -2,6 +2,9 @@
 /output/
 output/
 
+# Ignore Hugging Face Space clone
+AbdoBest/
+
 # Backup folder
 /backup/
 backup/
