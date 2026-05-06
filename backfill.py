@@ -3,14 +3,15 @@
 backfill.py – Unified backfill script.
 
 Tasks:
-1. descriptions – fills missing 'Description' fields and adds 'last_scraped' if missing
+1. descriptions – fills missing 'Description' fields and adds 'last_scraped' (for all categories except movies, because movies have their own combined task)
 2. episodes    – upgrades episode JSON files to include 'sources' (player token URLs)
-3. movie-sources – adds 'Sources' (iframe tokens) to movie entries (movies, dubbed, hindi, asian, anime-movies)
+3. movies      – (NEW) ONE‑PASS backfill for movies: fetches each movie page once and extracts Description, last_scraped, and Sources simultaneously.
+4. all         – runs descriptions (non‑movie), episodes, and movies.
 
 Run with:
-    python backfill.py --descriptions   (only descriptions + last_scraped)
+    python backfill.py --descriptions   (only descriptions for series/anime etc.)
     python backfill.py --episodes       (only episodes)
-    python backfill.py --movie-sources  (only movie iframe sources)
+    python backfill.py --movies         (only movies: description + last_scraped + sources in one pass)
     python backfill.py --all            (all tasks, default)
 """
 
@@ -20,6 +21,7 @@ import os
 import time
 import signal
 import sys
+import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from threading import Lock
 from pathlib import Path
@@ -40,21 +42,16 @@ signal.signal(signal.SIGTERM, _exit_gracefully)
 # ===========================================================
 
 # ========== CONFIGURATION ==========
-# Files for description backfill (main metadata JSONs)
+# Files for description backfill (series, anime, etc. – NOT movies)
 DESCRIPTION_FILES = {
-    "movies.json": "movies",
-    "dubbed-movies.json": "movies",
-    "hindi.json": "movies",
-    "asian-movies.json": "movies",
-    "anime-movies.json": "movies",
     "anime.json": "anime",
     "series.json": "series",
     "tvshows.json": "tvshows",
     "asian-series.json": "asian-series",
 }
 
-# Only movie categories for source backfill
-MOVIE_SOURCE_FILES = {
+# Only movie categories for the combined movie task
+MOVIE_FILES = {
     "movies.json": "movies",
     "dubbed-movies.json": "movies",
     "hindi.json": "movies",
@@ -69,12 +66,12 @@ EPISODES_BASE = Path("./output/episodes")
 # Backfill settings
 MAX_WORKERS = 6
 SAVE_INTERVAL = 50          # save main JSON after this many updates
-BATCH_DELAY = 2             # seconds between batches (descriptions)
+BATCH_DELAY = 2             # seconds between batches
 REQUEST_DELAY_EPISODE = REQUEST_DELAY  # seconds between episode page requests
 # ===================================
 
 def load_progress(progress_file: str) -> int:
-    """Load the last contiguous completed index (0-indexed) for a description backfill."""
+    """Load the last contiguous completed index (0-indexed)."""
     if os.path.exists(progress_file):
         with open(progress_file, "r") as f:
             try:
@@ -84,12 +81,10 @@ def load_progress(progress_file: str) -> int:
     return 0
 
 def save_progress(progress_file: str, index: int):
-    """Save the current contiguous completed index."""
     with open(progress_file, "w") as f:
         f.write(str(index))
 
 def fetch_description(item_id: str, detail_url: str = None) -> str:
-    """Fetch description for a single item using its ID or URL."""
     if not detail_url:
         detail_url = f"https://www.fasel-hd.cam/?p={item_id}"
     resp = get_website_safe(detail_url)
@@ -98,18 +93,32 @@ def fetch_description(item_id: str, detail_url: str = None) -> str:
         return extract_description(soup)
     return ""
 
-def fetch_movie_sources(item_id: str, detail_url: str = None) -> list:
-    """Fetch player token URLs (sources) for a movie detail page."""
+def fetch_movie_data(item_id: str, detail_url: str) -> tuple:
+    """
+    Fetch a movie page once and return (description, sources).
+    Also we'll add last_scraped timestamp later.
+    """
     if not detail_url:
-        detail_url = f"https://www.fasel-hd.cam/?p={item_id}"
+        return ("", [])
     resp = get_website_safe(detail_url)
-    if resp and resp.status_code == 200:
-        soup = BeautifulSoup(resp.text, "html.parser")
-        return extract_sources(soup)
-    return []
+    if not resp or resp.status_code != 200:
+        return ("", [])
+    soup = BeautifulSoup(resp.text, "html.parser")
+    description = extract_description(soup)
+    sources = extract_sources(soup)  # try .tabs-ul onclick first
+    if not sources:
+        # fallback to iframe data-src
+        iframe = soup.find("iframe", {"name": "player_iframe"})
+        if iframe:
+            src = iframe.get("data-src") or iframe.get("src")
+            if src and "video_player" in src:
+                sources = [src]
+    return (description, sources)
 
+# ----------------------------------------------------------------------
+# Description backfill (for non‑movie categories)
+# ----------------------------------------------------------------------
 def backfill_descriptions_for_file(json_path: Path, category: str):
-    """Backfill missing Description fields and add last_scraped if missing."""
     print(f"\n📖 Backfilling descriptions & last_scraped for {json_path.name}")
     if not json_path.exists():
         print(f"  File not found, skipping.")
@@ -134,8 +143,6 @@ def backfill_descriptions_for_file(json_path: Path, category: str):
 
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
         for i in range(max_contiguous, total, MAX_WORKERS):
-            if not signal.signal(signal.SIGINT, _exit_gracefully):  # not needed, just a hint
-                pass
             batch = items[i:i+MAX_WORKERS]
             futures = {}
             for idx, (item_id, item_data) in enumerate(batch, start=i):
@@ -157,6 +164,7 @@ def backfill_descriptions_for_file(json_path: Path, category: str):
                     elif not desc and not item_data.get("Description"):
                         item_data["Description"] = ""
                         print(f"  [{idx+1}/{total}] ⚠️ No description for {item_id}")
+                        changed = True
 
                     if not item_data.get("last_scraped"):
                         item_data["last_scraped"] = now_iso
@@ -190,11 +198,10 @@ def backfill_all_descriptions():
         backfill_descriptions_for_file(file_path, category)
 
 # ----------------------------------------------------------------------
-# Movie Sources Backfill
+# COMBINED MOVIE BACKFILL (description + last_scraped + sources in one pass)
 # ----------------------------------------------------------------------
-def backfill_movie_sources_for_file(json_path: Path, category: str):
-    """Backfill missing 'Sources' field for movies."""
-    print(f"\n🎬 Backfilling movie sources for {json_path.name}")
+def backfill_movies_combined(json_path: Path, category: str):
+    print(f"\n🎬 Combined movie backfill (desc + sources) for {json_path.name}")
     if not json_path.exists():
         print(f"  File not found, skipping.")
         return
@@ -205,7 +212,7 @@ def backfill_movie_sources_for_file(json_path: Path, category: str):
     items = list(data.items())
     total = len(items)
 
-    progress_file = str(json_path).replace(".json", "_sources_progress.txt")
+    progress_file = str(json_path).replace(".json", "_movie_progress.txt")
     start_contiguous = load_progress(progress_file)
     print(f"  Resuming from contiguous index {start_contiguous} / {total}")
 
@@ -221,20 +228,37 @@ def backfill_movie_sources_for_file(json_path: Path, category: str):
             batch = items[i:i+MAX_WORKERS]
             futures = {}
             for idx, (item_id, item_data) in enumerate(batch, start=i):
-                if item_data.get("Sources") and len(item_data.get("Sources", [])) > 0:
+                # Skip if already has description, last_scraped, and sources
+                if (item_data.get("Description") and 
+                    item_data.get("last_scraped") and 
+                    item_data.get("Sources") and len(item_data.get("Sources", [])) > 0):
                     continue
-                future = executor.submit(fetch_movie_sources, item_id)
+                detail_url = f"https://www.fasel-hd.cam/?p={item_id}"
+                future = executor.submit(fetch_movie_data, item_id, detail_url)
                 futures[future] = (idx, item_id, item_data)
 
             for future in as_completed(futures):
                 idx, item_id, item_data = futures[future]
-                sources = future.result()
+                description, sources = future.result()
                 with lock:
                     changed = False
+                    if description and not item_data.get("Description"):
+                        item_data["Description"] = description
+                        updated_count += 1
+                        print(f"  [{idx+1}/{total}] ✅ Added description for {item_id} ({len(description)} chars)")
+                        changed = True
+                    elif not description and not item_data.get("Description"):
+                        item_data["Description"] = ""
+                        print(f"  [{idx+1}/{total}] ⚠️ No description for {item_id}")
+                        changed = True
+
                     if sources and (not item_data.get("Sources") or len(item_data.get("Sources", [])) == 0):
                         item_data["Sources"] = sources
-                        updated_count += 1
                         print(f"  [{idx+1}/{total}] ✅ Added {len(sources)} source(s) for {item_id}")
+                        changed = True
+                    elif not sources and not item_data.get("Sources"):
+                        item_data["Sources"] = []
+                        print(f"  [{idx+1}/{total}] ⚠️ No sources for {item_id}")
                         changed = True
 
                     if not item_data.get("last_scraped"):
@@ -261,23 +285,18 @@ def backfill_movie_sources_for_file(json_path: Path, category: str):
     if os.path.exists(progress_file):
         os.remove(progress_file)
 
-    print(f"  ✅ Finished {json_path.name}: added sources for {updated_count} movies.")
+    print(f"  ✅ Finished {json_path.name}: updated {updated_count} movies (description, sources, last_scraped).")
 
-def backfill_all_movie_sources():
-    print("\n🎬 Starting movie sources backfill...")
-    for filename, category in MOVIE_SOURCE_FILES.items():
+def backfill_all_movies():
+    print("\n🎬 Starting combined movie backfill (description + sources + last_scraped)...")
+    for filename, category in MOVIE_FILES.items():
         file_path = Path("./output") / filename
-        backfill_movie_sources_for_file(file_path, category)
+        backfill_movies_combined(file_path, category)
 
 # ----------------------------------------------------------------------
 # Episode Sources Backfill (unchanged)
 # ----------------------------------------------------------------------
 def upgrade_episode_file(episode_file: Path):
-    """
-    Convert old episode file (list of URL strings) to new format
-    (list of {"url": ..., "sources": [...]}) and fetch missing sources.
-    Also ensures file-level last_updated is present.
-    """
     print(f"\n🎬 Processing episode file: {episode_file}")
     try:
         with open(episode_file, "r", encoding="utf-8") as f:
@@ -356,7 +375,7 @@ def main():
     parser = argparse.ArgumentParser(description="Unified backfill script")
     parser.add_argument(
         "--task",
-        choices=["descriptions", "episodes", "movie-sources", "all"],
+        choices=["descriptions", "episodes", "movies", "all"],
         default="all",
         help="Which backfill task to run. Default: all"
     )
@@ -364,15 +383,15 @@ def main():
 
     if args.task in ("descriptions", "all"):
         print("="*60)
-        print("📖 Running description + last_scraped backfill (with contiguous progress)...")
+        print("📖 Running description + last_scraped backfill (non‑movie categories)...")
         print("="*60)
         backfill_all_descriptions()
 
-    if args.task in ("movie-sources", "all"):
+    if args.task in ("movies", "all"):
         print("\n" + "="*60)
-        print("🎬 Running movie sources backfill...")
+        print("🎬 Running combined movie backfill (description + sources + last_scraped)...")
         print("="*60)
-        backfill_all_movie_sources()
+        backfill_all_movies()
 
     if args.task in ("episodes", "all"):
         print("\n" + "="*60)
