@@ -146,7 +146,6 @@ def extract_domain(url: str) -> str:
 # ----------------------------------------------------------------------
 def get_website_safe(webpage_url: str, max_retries: int = MAX_RETRIES) -> Optional[Response]:
     """Fetch a page using Scrapling (stealth) or fallback to curl_cffi."""
-    # Try Scrapling first (stateless, thread‑safe)
     if SCRAPLING_AVAILABLE:
         for attempt in range(max_retries):
             try:
@@ -171,7 +170,6 @@ def get_website_safe(webpage_url: str, max_retries: int = MAX_RETRIES) -> Option
         if DEBUG:
             print("Scrapling failed, falling back to curl_cffi")
 
-    # Fallback to curl_cffi (thread‑safe)
     if CURL_CFFI_AVAILABLE:
         for attempt in range(max_retries):
             imp = IMPERSONATIONS[attempt % len(IMPERSONATIONS)]
@@ -213,7 +211,6 @@ def get_number_of_pages(url: str) -> int:
         numbers = [int(a.text.strip()) for a in pagination.find_all("a", class_="page-link") if a.text.strip().isdigit()]
         if numbers:
             return max(numbers)
-    # fallback
     max_page = 1
     for a in soup.find_all('a', href=True):
         m = re.search(r'/page/(\d+)', a['href'])
@@ -222,10 +219,9 @@ def get_number_of_pages(url: str) -> int:
     return max_page if max_page > 1 else 1
 
 # ----------------------------------------------------------------------
-#  Metadata extraction from detail pages
+#  Metadata extraction from detail pages (Fasel)
 # ----------------------------------------------------------------------
 def clean_genre(genre: str) -> str:
-    """Decode percent‑encoded Arabic strings."""
     try:
         decoded = unquote(genre)
         return decoded if '%' not in decoded else genre
@@ -246,7 +242,6 @@ def get_content_format(soup: BeautifulSoup) -> str:
         return "N/A"
 
 def get_genres_both(soup: BeautifulSoup) -> dict:
-    """Return dict with 'en' (English) and 'ar' (Arabic decoded) genre lists."""
     try:
         genre_tags = soup.find("i", class_="far fa-folders").find_next_siblings("a")
         raw_genres = [tag["href"].split("/")[-1].capitalize() for tag in genre_tags]
@@ -257,7 +252,6 @@ def get_genres_both(soup: BeautifulSoup) -> dict:
         return {"ar": [], "en": []}
 
 def clean_iframe_source(iframe_src):
-    """Safely extract the actual video URL from an iframe src attribute."""
     if not iframe_src or "=" not in iframe_src:
         return ""
     try:
@@ -337,7 +331,7 @@ def upload_image(image_url: str, content_id: str, get_image: Callable[[str], Res
         return "https://imgpile.com/images/TPDrVl.jpg"
 
 # ----------------------------------------------------------------------
-#  Video source extraction (on‑demand) – uses Playwright, separate from metadata
+#  Video source extraction (on‑demand) – uses Playwright
 # ----------------------------------------------------------------------
 TEMP_PROFILE = os.path.abspath("./chrome_fresh_profile")
 AD_DOMAINS = [
@@ -348,7 +342,6 @@ AD_DOMAINS = [
 ]
 
 def get_video_stream_url(page_url: str, headless: bool = True, max_attempts: int = 7) -> Optional[str]:
-    """Launch a stealth browser, intercept .m3u8 request, click play button."""
     from playwright.sync_api import sync_playwright
     captured_url = None
     with sync_playwright() as p:
@@ -699,10 +692,9 @@ def get_seasons_url_from_detail(detail_url: str) -> str:
     return detail_url
 
 # ----------------------------------------------------------------------
-#  Description extraction (improved with fallbacks)
+#  Description extraction
 # ----------------------------------------------------------------------
 def extract_description(soup: BeautifulSoup) -> str:
-    """Extract the description/synopsis from a detail page."""
     selectors = ['.singleDesc p', '.desc p', '.film-description']
     for selector in selectors:
         desc_elem = soup.select_one(selector)
@@ -1036,9 +1028,9 @@ def search_imdbapi_dev(title: str, year: Optional[str] = None) -> tuple:
     return (None, 0)
 
 # ======================================================================
-#  AKWAM SPECIFIC HELPERS (added for AkwamArabicSeries.py)
+#  AKWAM SPECIFIC HELPERS (corrected for genres and dates)
 # ======================================================================
-AKWAM_BASE_URL = "https://akwam.com.co"   # May change; update as needed
+AKWAM_BASE_URL = "https://akwam.com.co"   # Update if domain changes
 
 def akwam_extract_series_list(soup: BeautifulSoup, base_url: str = AKWAM_BASE_URL) -> List[dict]:
     """Extract basic series info from a listing page."""
@@ -1083,7 +1075,7 @@ def akwam_extract_series_list(soup: BeautifulSoup, base_url: str = AKWAM_BASE_UR
     return series_list
 
 def akwam_extract_series_metadata(soup: BeautifulSoup, base_url: str = AKWAM_BASE_URL) -> dict:
-    """Extract all metadata from a series detail page."""
+    """Extract all metadata from a series detail page (excluding episodes)."""
     metadata = {}
 
     title_elem = soup.select_one('h1.entry-title')
@@ -1094,7 +1086,7 @@ def akwam_extract_series_metadata(soup: BeautifulSoup, base_url: str = AKWAM_BAS
     metadata['rating'] = rating
     metadata['votes'] = votes
 
-    # Info lines
+    # Info lines (country, language, quality, runtime, year)
     info_rows = soup.select('.movie-cover .row .col-lg-7 .font-size-16')
     for row in info_rows:
         text = row.get_text(strip=True)
@@ -1109,14 +1101,13 @@ def akwam_extract_series_metadata(soup: BeautifulSoup, base_url: str = AKWAM_BAS
         elif 'مدة' in text:
             metadata['runtime'] = text.split(':', 1)[1].strip()
 
-    # Genres
-    genres_ar = [a.get_text(strip=True) for a in soup.select('.font-size-16 .badge-light')]
-    metadata['genres_ar'] = genres_ar
-    # Map to English using AKWAM_GENRES (by name, not id). We'll use a simple lookup.
-    # The AKWAM_GENRES dict is id->English; we need Arabic->English. Create reverse mapping from known names.
-    # For now, we'll try to match using a small mapping or leave as is.
-    # We'll use the existing FASEL_GENRE_MAP which has many Arabic->English.
-    metadata['genres_en'] = [FASEL_GENRE_MAP.get(g, g) for g in genres_ar]
+    # Genres – FIXED: only take badges inside .movie-cover to avoid "المزيد" pollution
+    genres_ar = [a.get_text(strip=True) for a in soup.select('.movie-cover .badge-light')]
+    # Remove duplicates while preserving order
+    seen = set()
+    metadata['genres_ar'] = [g for g in genres_ar if not (g in seen or seen.add(g))]
+    # Map to English using FASEL_GENRE_MAP (or leave as is if not mapped)
+    metadata['genres_en'] = [FASEL_GENRE_MAP.get(g, g) for g in metadata['genres_ar']]
 
     # Description
     metadata['description'] = extract_description(soup)
@@ -1135,14 +1126,14 @@ def akwam_extract_series_metadata(soup: BeautifulSoup, base_url: str = AKWAM_BAS
     # Cast
     metadata['cast'] = [a.get_text(strip=True) for a in soup.select('.entry-box-3 .entry-title a')]
 
-    # Basic episodes (without sources – will be filled later)
+    # Episodes (basic list – only URLs and titles, will be saved separately)
     episodes = []
     episode_blocks = soup.select('#series-episodes .bg-primary2')
     for block in episode_blocks:
         ep_link = block.find('a', href=True)
         if ep_link:
             episodes.append({
-                'number': None,
+                'number': None,  # will be filled later
                 'title': ep_link.get_text(strip=True),
                 'url': urljoin(base_url, ep_link['href'])
             })
@@ -1150,7 +1141,7 @@ def akwam_extract_series_metadata(soup: BeautifulSoup, base_url: str = AKWAM_BAS
     metadata['episode_count'] = len(episodes)
 
     # Detect Ramadan
-    metadata['is_ramadan'] = 'رمضان' in genres_ar
+    metadata['is_ramadan'] = 'رمضان' in metadata['genres_ar']
 
     # Poster
     poster = soup.select_one('.movie-cover .container .col-lg-3 img')
@@ -1191,23 +1182,23 @@ def _akwam_extract_rating(soup: BeautifulSoup) -> tuple:
     return None, 0
 
 def _parse_akwam_date(date_str: str) -> str:
-    """Convert Arabic date to ISO format."""
+    """Convert Arabic date to ISO format. Fixed minute conversion."""
     cleaned = re.sub(r'^(الأحد|الإثنين|الثلاثاء|الأربعاء|الخميس|الجمعة|السبت)\s+', '', date_str)
     cleaned = cleaned.replace('مساءاً', '').replace('صباحاً', '').strip()
     match = re.search(r'(\d{1,2})\s+(\d{1,2})\s+(\d{4})\s*-\s*(\d{1,2}):(\d{2})', cleaned)
     if match:
         day, month, year, hour, minute = match.groups()
         hour = int(hour)
+        minute = int(minute)        # FIXED: convert minute to int
         if 'مساءاً' in date_str and hour < 12:
             hour += 12
         return f"{year}-{int(month):02d}-{int(day):02d}T{hour:02d}:{minute:02d}:00"
     return date_str
 
-def akwam_extract_episode_sources(soup: BeautifulSoup, resolve_direct: bool = True) -> List[dict]:
+def akwam_extract_episode_sources(soup: BeautifulSoup) -> List[dict]:
     """
     Extract quality sources from an Akwam episode page.
-    If resolve_direct = True, follows the go.akwam.com.co/link/... URL
-    to get the final direct MP4 link.
+    Returns the go.akwam.com.co URLs (watch and download) without resolving.
     """
     quality_map = {
         'tab-5': '1080p',
@@ -1223,27 +1214,8 @@ def akwam_extract_episode_sources(soup: BeautifulSoup, resolve_direct: bool = Tr
         download_link = tab_content.select_one('.link-download')
         if not download_link:
             continue
-        
-        # Get the intermediate download URL
-        interim_url = download_link.get('href')
-        direct_mp4 = None
-        
-        if resolve_direct and interim_url:
-            # Fetch the download page
-            resp = get_website_safe(interim_url)
-            if resp and resp.status_code == 200:
-                dl_soup = BeautifulSoup(resp.text, 'html.parser')
-                # Look for the direct download link
-                dl_btn = dl_soup.select_one('.btn-light[download]') or dl_soup.select_one('.btn[download]')
-                if dl_btn and dl_btn.get('href'):
-                    direct_mp4 = dl_btn['href']
-                else:
-                    # Fallback: look for any <a> with download attribute
-                    dl_anchor = dl_soup.select_one('a[download]')
-                    if dl_anchor:
-                        direct_mp4 = dl_anchor['href']
-        
-        # Extract file size if present on the episode page
+
+        # Extract file size (optional)
         size_elem = download_link.select_one('.font-size-14')
         size_mb = None
         if size_elem:
@@ -1251,12 +1223,11 @@ def akwam_extract_episode_sources(soup: BeautifulSoup, resolve_direct: bool = Tr
             match = re.search(r'([\d.]+)\s*MB', size_text)
             if match:
                 size_mb = float(match.group(1))
-        
+
         sources.append({
             'quality': quality_name,
             'watch_url': watch_link.get('href') if watch_link else None,
-            'download_url': direct_mp4 or interim_url,   # store final if resolved
-            'interim_download_url': interim_url if resolve_direct else None,
+            'download_url': download_link.get('href'),
             'size_mb': size_mb
         })
     return sources
