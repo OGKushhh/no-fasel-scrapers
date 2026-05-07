@@ -8,7 +8,7 @@ from base64 import b64encode
 from concurrent.futures import ThreadPoolExecutor
 from threading import Lock
 from typing import Optional, Callable, Union, List, Dict
-from urllib.parse import quote, unquote, urlparse
+from urllib.parse import quote, unquote, urlparse, urljoin
 from PIL import Image
 import requests
 from bs4 import BeautifulSoup, ResultSet, Tag
@@ -338,7 +338,6 @@ def upload_image(image_url: str, content_id: str, get_image: Callable[[str], Res
 
 # ----------------------------------------------------------------------
 #  Video source extraction (on‑demand) – uses Playwright, separate from metadata
-#  This function is called only when a user requests a video.
 # ----------------------------------------------------------------------
 TEMP_PROFILE = os.path.abspath("./chrome_fresh_profile")
 AD_DOMAINS = [
@@ -350,7 +349,7 @@ AD_DOMAINS = [
 
 def get_video_stream_url(page_url: str, headless: bool = True, max_attempts: int = 7) -> Optional[str]:
     """Launch a stealth browser, intercept .m3u8 request, click play button."""
-    from playwright.sync_api import sync_playwright  # imported only here
+    from playwright.sync_api import sync_playwright
     captured_url = None
     with sync_playwright() as p:
         context = p.chromium.launch_persistent_context(
@@ -367,7 +366,6 @@ def get_video_stream_url(page_url: str, headless: bool = True, max_attempts: int
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
         )
         page = context.new_page()
-        # block ads
         def block_ads(route, request):
             if any(domain in request.url for domain in AD_DOMAINS):
                 route.abort()
@@ -382,7 +380,6 @@ def get_video_stream_url(page_url: str, headless: bool = True, max_attempts: int
         page.evaluate("window.scrollTo(0, document.body.scrollHeight/2);")
         time.sleep(2)
 
-        # locate player iframe
         iframe = page.frame(name="player_iframe")
         if not iframe:
             iframe_elem = page.query_selector("iframe[name='player_iframe']")
@@ -403,18 +400,14 @@ def get_video_stream_url(page_url: str, headless: bool = True, max_attempts: int
         play_selector = ".jw-icon.jw-icon-display.jw-button-color.jw-reset"
         video_selector = "video"
 
-        # intercept .m3u8 AND (new) log unknown ad domains
         def intercept(route, request):
             nonlocal captured_url
-            # ----- Ad domain discovery integration -----
             domain = extract_domain(request.url)
             if domain and domain not in AD_DOMAINS:
-                # log to file for later review
                 with open("new_ad_domains.log", "a") as log:
                     log.write(f"{domain}\n")
                 if DEBUG:
                     print(f"[AdDiscovery] New potential ad domain: {domain}")
-            # ----- End ad discovery -----
             if ".m3u8" in request.url:
                 if "master.m3u8" in request.url:
                     captured_url = request.url
@@ -444,7 +437,6 @@ def get_video_stream_url(page_url: str, headless: bool = True, max_attempts: int
                 if p != page:
                     p.close()
 
-        # wait a few seconds after clicks
         for _ in range(30):
             if captured_url:
                 break
@@ -454,12 +446,11 @@ def get_video_stream_url(page_url: str, headless: bool = True, max_attempts: int
         return captured_url
 
 def extract_video_source(page_url: str, headless: bool = True) -> str:
-    """Synchronous wrapper – returns m3u8 URL or empty string."""
     url = get_video_stream_url(page_url, headless=headless)
     return url if url else ""
 
 # ----------------------------------------------------------------------
-#  Convenience sync functions for metadata scraping
+#  Convenience sync functions for metadata scraping (FaselHD)
 # ----------------------------------------------------------------------
 def get_latest_movies(soup: BeautifulSoup) -> List[dict]:
     movies = []
@@ -593,7 +584,6 @@ def get_featured_content(soup: BeautifulSoup) -> List[dict]:
     return featured
 
 def get_most_viewed_movies(soup: BeautifulSoup) -> List[dict]:
-    """Extract the 'الأفلام الاكثر مشاهدة' (most viewed movies) slider from homepage."""
     most_viewed = []
     slider = soup.select_one('.viewsOrderSlider')
     if not slider:
@@ -679,13 +669,6 @@ def get_category_page_rendered(category_url: str, page: int = 1) -> List[dict]:
     return get_latest_movies(soup)
 
 def get_seasons_url_from_detail(detail_url: str) -> str:
-    """
-    Given a movie/series/tvshow/asian-series detail URL,
-    fetches the page and extracts the URL to the "all seasons" page (if any).
-    For series/tvshows/asian-series, this will be the /seasons/, /tvseasons/, or /asian_seasons/ URL.
-    For movies, returns None (no seasons).
-    """
-    # If it's already a seasons/tvseasons/asian_seasons URL, return it as is.
     if any(prefix in detail_url for prefix in ['/seasons/', '/tvseasons/', '/asian_seasons/']):
         return detail_url
 
@@ -694,15 +677,10 @@ def get_seasons_url_from_detail(detail_url: str) -> str:
         return None
 
     soup = BeautifulSoup(resp.text, 'html.parser')
-    # Look for the season list container
     season_div = soup.select_one('#seasonList .seasonDiv')
     if not season_div:
-        # No seasons – probably a movie or a single‑season series without a hub.
-        # For single‑season, the detail page itself is the season page.
-        # We'll return the detail URL as the season page.
         return detail_url
 
-    # Extract the onclick URL from the first season div
     onclick = season_div.get('onclick')
     if not onclick:
         return detail_url
@@ -736,10 +714,9 @@ def extract_description(soup: BeautifulSoup) -> str:
     return ""
 
 # ----------------------------------------------------------------------
-#  NEW helper functions for extra anime metadata
+#  Helper functions for extra anime metadata (FaselHD)
 # ----------------------------------------------------------------------
 def extract_status(soup: BeautifulSoup) -> str:
-    """Extract series status (e.g., 'مستمر', 'مكتمل')."""
     check_icons = soup.find_all('i', class_='far fa-check-double')
     if len(check_icons) >= 1:
         parent = check_icons[0].find_parent('span')
@@ -750,31 +727,20 @@ def extract_status(soup: BeautifulSoup) -> str:
     return ""
 
 def extract_viewing_level(soup: BeautifulSoup) -> str:
-    """
-    Extract age rating (e.g., '+13', 'TV-14').
-    Looks for text containing 'مستوى المشاهدة' or 'فئة المشاهدة'.
-    Returns empty string if not found.
-    """
-    # Find all spans that contain the check-double icon and look for the label
     for span in soup.find_all('span'):
         icon = span.find('i', class_='far fa-check-double')
         if icon:
             text = span.get_text(separator=' ', strip=True)
-            # Check if this span contains the target labels
             if 'مستوى المشاهدة' in text or 'فئة المشاهدة' in text:
-                # Extract after colon
                 if ':' in text:
                     parts = text.split(':', 1)
                     if len(parts) > 1:
                         return parts[1].strip()
                 else:
-                    # Fallback: return the whole text after removing label
-                    # Not ideal, but keep as fallback
                     return text.replace('مستوى المشاهدة', '').replace('فئة المشاهدة', '').strip()
     return ""
 
 def extract_language(soup: BeautifulSoup) -> str:
-    """Extract language (e.g., 'اليابانية', 'English')."""
     icon = soup.find('i', class_='fal fa-language')
     if icon:
         parent = icon.find_parent('span')
@@ -785,7 +751,6 @@ def extract_language(soup: BeautifulSoup) -> str:
     return ""
 
 def extract_release_date(soup: BeautifulSoup) -> str:
-    """Extract release date (e.g., 'شتاء 1996', '2021')."""
     icon = soup.find('i', class_='far fa-calendar-alt')
     if icon:
         parent = icon.find_parent('span')
@@ -796,7 +761,6 @@ def extract_release_date(soup: BeautifulSoup) -> str:
     return ""
 
 def extract_episode_duration(soup: BeautifulSoup) -> str:
-    """Extract episode duration (e.g., '24د', '25د')."""
     icon = soup.find('i', class_='far fa-clock')
     if icon:
         parent = icon.find_parent('span')
@@ -807,10 +771,6 @@ def extract_episode_duration(soup: BeautifulSoup) -> str:
     return ""
 
 def extract_episode_count_text(soup: BeautifulSoup) -> int:
-    """
-    Optional: extract numeric episode count from the 'الحلقات : 101 حلقة' text.
-    Returns integer (0 if none found).
-    """
     icon = soup.find('i', class_='far fa-film')
     if icon:
         parent = icon.find_parent('span')
@@ -818,14 +778,12 @@ def extract_episode_count_text(soup: BeautifulSoup) -> int:
             text = parent.get_text(separator=' ', strip=True)
             if ':' in text:
                 count_part = text.split(':', 1)[1].strip()
-                # Extract digits
                 match = re.search(r'(\d+)', count_part)
                 if match:
                     return int(match.group(1))
     return 0
 
 def extract_sources(soup: BeautifulSoup) -> List[str]:
-    """Extract server token URLs from .tabs-ul li elements."""
     sources = []
     for li in soup.select('.tabs-ul li'):
         onclick = li.get('onclick', '')
@@ -835,29 +793,20 @@ def extract_sources(soup: BeautifulSoup) -> List[str]:
     return sources
 
 # ----------------------------------------------------------------------
-#  NEW: Season and episode extraction helpers (for fix_14506.py and update_episodes.py)
+#  Season and episode extraction helpers (FaselHD)
 # ----------------------------------------------------------------------
 def extract_seasons_from_page(soup: BeautifulSoup, base_url: str) -> List[dict]:
-    """
-    Parse a seasons hub page (or detail page that lists all seasons).
-    Returns a list of dicts with keys: 'number', 'page_url', 'poster'.
-    """
     seasons = []
-    # Look for seasonDiv elements inside #seasonList
     season_divs = soup.select('#seasonList .seasonDiv')
     for div in season_divs:
-        # Extract season number from .title div (text like "موسم 1")
         title_div = div.select_one('.title')
         if not title_div:
             continue
         title_text = title_div.text.strip()
-        # Extract digits from text (e.g., "موسم 1" -> 1)
         match = re.search(r'(\d+)', title_text)
         if not match:
             continue
         season_num = int(match.group(1))
-        
-        # Extract season page URL from onclick attribute
         onclick = div.get('onclick', '')
         url_match = re.search(r"location\.href\s*=\s*['\"]([^'\"]+)['\"]", onclick)
         if not url_match:
@@ -865,13 +814,10 @@ def extract_seasons_from_page(soup: BeautifulSoup, base_url: str) -> List[dict]:
         season_url = url_match.group(1)
         if not season_url.startswith('http'):
             season_url = base_url.rstrip('/') + season_url
-        
-        # Poster image (use data-src if available, otherwise src)
         img = div.find('img')
         poster = ''
         if img:
             poster = img.get('data-src') or img.get('src', '')
-        
         seasons.append({
             'number': season_num,
             'page_url': season_url,
@@ -880,22 +826,14 @@ def extract_seasons_from_page(soup: BeautifulSoup, base_url: str) -> List[dict]:
     return seasons
 
 def extract_episodes_from_season_page(soup: BeautifulSoup) -> List[str]:
-    """
-    Parse a season page and return a list of episode detail URLs.
-    For Fasel-HD, episodes are inside #epAll as <a> tags.
-    """
     episode_urls = []
-    # Primary selector: #epAll a
     ep_links = soup.select('#epAll a')
     for a in ep_links:
         href = a.get('href')
         if href:
-            # Ensure full URL
             if href.startswith('/'):
                 href = FASEL_BASE_URL.rstrip('/') + href
             episode_urls.append(href)
-    
-    # Fallback: look for common episode container selectors (for other site structures)
     if not episode_urls:
         for block in soup.select('.epDiv, .episode-item, .episodeDiv'):
             link = block.find('a', href=True)
@@ -904,25 +842,18 @@ def extract_episodes_from_season_page(soup: BeautifulSoup) -> List[str]:
                 if href.startswith('/'):
                     href = FASEL_BASE_URL.rstrip('/') + href
                 episode_urls.append(href)
-    
-    # Remove duplicates while preserving order
     return list(dict.fromkeys(episode_urls))
 
 # ----------------------------------------------------------------------
 #  IMDb rating helper using OMDb API
 # ----------------------------------------------------------------------
-import requests
-import time
-
 OMDB_API_KEY = "b7fc5b44"
 OMDB_BASE_URL = "http://www.omdbapi.com/"
-IMDB_CACHE = {}  # Simple in‑memory cache for current run
+IMDB_CACHE = {}
 
 def fetch_imdb_rating_by_id(imdb_id: str) -> Optional[str]:
-    """Fetch IMDb rating using direct IMDb ID (e.g., 'tt0111161')."""
     if not imdb_id or not imdb_id.startswith('tt'):
         return None
-    # Check cache
     if imdb_id in IMDB_CACHE:
         return IMDB_CACHE[imdb_id]
     url = f"{OMDB_BASE_URL}?i={imdb_id}&apikey={OMDB_API_KEY}"
@@ -940,7 +871,6 @@ def fetch_imdb_rating_by_id(imdb_id: str) -> Optional[str]:
     return None
 
 def search_imdb_by_title(title: str, year: Optional[str] = None, content_type: str = "movie") -> Optional[str]:
-    """Search for a title and return the best‑matching IMDb ID."""
     search_title = title
     if year:
         search_title += f" {year}"
@@ -957,10 +887,6 @@ def search_imdb_by_title(title: str, year: Optional[str] = None, content_type: s
     return None
 
 def get_imdb_rating(title: str, year: Optional[str] = None, content_type: str = "movie", known_imdb_id: Optional[str] = None) -> Optional[str]:
-    """
-    High‑level function: if known_imdb_id provided, use it; otherwise search by title.
-    Returns rating string (e.g., '8.5') or None.
-    """
     if known_imdb_id and known_imdb_id.startswith('tt'):
         return fetch_imdb_rating_by_id(known_imdb_id)
     imdb_id = search_imdb_by_title(title, year, content_type)
@@ -969,10 +895,6 @@ def get_imdb_rating(title: str, year: Optional[str] = None, content_type: str = 
     return None
 
 def get_imdb_details(title: str, year: Optional[str] = None, content_type: str = "movie", known_imdb_id: Optional[str] = None) -> tuple:
-    """
-    Returns (rating, votes, imdb_id, limit_reached)
-    limit_reached is True if API returned a limit error.
-    """
     imdb_id = known_imdb_id
     if not imdb_id:
         imdb_id = search_imdb_by_title(title, year, content_type)
@@ -1006,14 +928,13 @@ def get_imdb_details(title: str, year: Optional[str] = None, content_type: str =
     return (None, None, imdb_id, False)
 
 # ----------------------------------------------------------------------
-#  TMDb API helpers (replaces OMDb for ratings)
+#  TMDb API helpers
 # ----------------------------------------------------------------------
-TMDB_API_KEY = "4b02f35b5faa266f6cb773e25ab50b7a"   # <-- INSERT YOUR KEY
+TMDB_API_KEY = "4b02f35b5faa266f6cb773e25ab50b7a"
 TMDB_BASE_URL = "https://api.themoviedb.org/3"
-TMDB_CACHE = {}  # cache for (title, year, type) -> (rating, votes)
+TMDB_CACHE = {}
 
 def _clean_title_tmdb(raw_title: str) -> str:
-    """Remove Arabic stop words and clutter for TMDb search."""
     arabic_stop = ["فيلم", "مسلسل", "مترجم", "اون لاين", "اونلاين", "مدبلج", "الحلقة", "الفيلم"]
     cleaned = raw_title
     for word in arabic_stop:
@@ -1023,7 +944,6 @@ def _clean_title_tmdb(raw_title: str) -> str:
     return cleaned if cleaned else raw_title
 
 def search_tmdb(title: str, year: Optional[str] = None, media_type: str = "movie") -> Optional[int]:
-    """Search TMDb for a movie or series, return the first result's ID."""
     search_url = f"{TMDB_BASE_URL}/search/{media_type}"
     params = {
         "api_key": TMDB_API_KEY,
@@ -1046,7 +966,6 @@ def search_tmdb(title: str, year: Optional[str] = None, media_type: str = "movie
     return None
 
 def fetch_tmdb_rating(tmdb_id: int, media_type: str) -> tuple:
-    """Fetch rating (vote_average) and vote_count for a TMDb ID."""
     url = f"{TMDB_BASE_URL}/{media_type}/{tmdb_id}"
     params = {
         "api_key": TMDB_API_KEY,
@@ -1066,10 +985,6 @@ def fetch_tmdb_rating(tmdb_id: int, media_type: str) -> tuple:
         return (None, 0)
 
 def get_tmdb_details(title: str, year: Optional[str] = None, content_type: str = "movie") -> tuple:
-    """
-    Returns (rating, votes) using TMDb.
-    content_type: 'movie' or 'tv'
-    """
     cleaned = _clean_title_tmdb(title)
     cache_key = f"{cleaned}|{year}|{content_type}"
     if cache_key in TMDB_CACHE:
@@ -1085,16 +1000,11 @@ def get_tmdb_details(title: str, year: Optional[str] = None, content_type: str =
     return rating, votes
 
 # ----------------------------------------------------------------------
-#  IMDBAPI.dev API Helpers (Primary Source – No API key, unlimited)
+#  IMDBAPI.dev API Helpers
 # ----------------------------------------------------------------------
 IMDBAPI_BASE_URL = "https://api.imdbapi.dev"
 
 def search_imdbapi_dev(title: str, year: Optional[str] = None) -> tuple:
-    """
-    Search IMDBAPI.dev for a title and return (rating, votes).
-    Uses /search/titles endpoint with year filter and sorting by vote count.
-    Returns (rating_str, vote_count) where rating_str is e.g. "8.5" or None.
-    """
     params = {
         "query": title,
         "limit": 5,
@@ -1114,18 +1024,242 @@ def search_imdbapi_dev(title: str, year: Optional[str] = None) -> tuple:
         if not titles:
             return (None, 0)
 
-        # Pick the best match (first result, which is already sorted by vote count)
         best = titles[0]
         rating_info = best.get("ratingsSummary", {})
         avg_rating = rating_info.get("aggregateRating")
         vote_count = rating_info.get("voteCount", 0)
         if avg_rating is not None:
-            # round to 1 decimal
             rating_str = str(round(float(avg_rating), 1))
             return (rating_str, vote_count)
     except Exception as e:
         print(f"  ⚠️ IMDBAPI.dev error for '{title}': {e}")
     return (None, 0)
+
+# ======================================================================
+#  AKWAM SPECIFIC HELPERS (added for AkwamArabicSeries.py)
+# ======================================================================
+AKWAM_BASE_URL = "https://akwam.com.co"   # May change; update as needed
+
+def akwam_extract_series_list(soup: BeautifulSoup, base_url: str = AKWAM_BASE_URL) -> List[dict]:
+    """Extract basic series info from a listing page."""
+    series_list = []
+    cards = soup.select('.entry-box') or soup.select('.col-lg-auto.col-md-4.col-6')
+    for card in cards:
+        link_tag = card.select_one('.entry-image a')
+        if not link_tag:
+            continue
+        series_url = urljoin(base_url, link_tag.get('href'))
+        series_id = series_url.split('/')[-2] if '/series/' in series_url else None
+        if not series_id:
+            continue
+
+        title_elem = card.select_one('.entry-title a')
+        title = title_elem.get_text(strip=True) if title_elem else ''
+
+        year_elem = card.select_one('.badge-secondary')
+        year = year_elem.get_text(strip=True) if year_elem else None
+
+        rating_elem = card.select_one('.label.rating')
+        rating = None
+        if rating_elem:
+            rating_text = rating_elem.get_text(strip=True).replace('icon-star', '').strip()
+            match = re.search(r'([\d.]+)', rating_text)
+            if match:
+                rating = float(match.group(1))
+
+        img_tag = card.select_one('.entry-image img')
+        img_src = img_tag.get('data-src') or img_tag.get('src', '') if img_tag else ''
+        if img_src and not img_src.startswith('http'):
+            img_src = urljoin(base_url, img_src)
+
+        series_list.append({
+            'id': series_id,
+            'title': title,
+            'year': year,
+            'rating': rating,
+            'image': img_src,
+            'url': series_url
+        })
+    return series_list
+
+def akwam_extract_series_metadata(soup: BeautifulSoup, base_url: str = AKWAM_BASE_URL) -> dict:
+    """Extract all metadata from a series detail page."""
+    metadata = {}
+
+    title_elem = soup.select_one('h1.entry-title')
+    metadata['title'] = title_elem.get_text(strip=True) if title_elem else ''
+
+    # Rating & votes
+    rating, votes = _akwam_extract_rating(soup)
+    metadata['rating'] = rating
+    metadata['votes'] = votes
+
+    # Info lines
+    info_rows = soup.select('.movie-cover .row .col-lg-7 .font-size-16')
+    for row in info_rows:
+        text = row.get_text(strip=True)
+        if 'انتاج :' in text:
+            metadata['country'] = text.split(':', 1)[1].strip()
+        elif 'السنة :' in text:
+            metadata['year'] = text.split(':', 1)[1].strip()
+        elif 'اللغة :' in text:
+            metadata['language'] = text.split(':', 1)[1].strip()
+        elif 'الجودة :' in text:
+            metadata['quality'] = text.split(':', 1)[1].strip()
+        elif 'مدة' in text:
+            metadata['runtime'] = text.split(':', 1)[1].strip()
+
+    # Genres
+    genres_ar = [a.get_text(strip=True) for a in soup.select('.font-size-16 .badge-light')]
+    metadata['genres_ar'] = genres_ar
+    # Map to English using AKWAM_GENRES (by name, not id). We'll use a simple lookup.
+    # The AKWAM_GENRES dict is id->English; we need Arabic->English. Create reverse mapping from known names.
+    # For now, we'll try to match using a small mapping or leave as is.
+    # We'll use the existing FASEL_GENRE_MAP which has many Arabic->English.
+    metadata['genres_en'] = [FASEL_GENRE_MAP.get(g, g) for g in genres_ar]
+
+    # Description
+    metadata['description'] = extract_description(soup)
+
+    # Dates
+    date_spans = soup.select('.font-size-14.text-muted span')
+    for span in date_spans:
+        text = span.get_text(strip=True)
+        if 'تـ الإضافة :' in text:
+            date_str = text.split(':', 1)[1].strip()
+            metadata['date_added'] = _parse_akwam_date(date_str)
+        elif 'تـ اخر تحديث :' in text:
+            date_str = text.split(':', 1)[1].strip()
+            metadata['date_updated'] = _parse_akwam_date(date_str)
+
+    # Cast
+    metadata['cast'] = [a.get_text(strip=True) for a in soup.select('.entry-box-3 .entry-title a')]
+
+    # Basic episodes (without sources – will be filled later)
+    episodes = []
+    episode_blocks = soup.select('#series-episodes .bg-primary2')
+    for block in episode_blocks:
+        ep_link = block.find('a', href=True)
+        if ep_link:
+            episodes.append({
+                'number': None,
+                'title': ep_link.get_text(strip=True),
+                'url': urljoin(base_url, ep_link['href'])
+            })
+    metadata['episodes'] = episodes
+    metadata['episode_count'] = len(episodes)
+
+    # Detect Ramadan
+    metadata['is_ramadan'] = 'رمضان' in genres_ar
+
+    # Poster
+    poster = soup.select_one('.movie-cover .container .col-lg-3 img')
+    metadata['poster'] = urljoin(base_url, poster.get('src', '')) if poster else ''
+
+    # Trailer
+    trailer_btn = soup.select_one('.btn-light[data-fancybox]')
+    metadata['trailer_url'] = trailer_btn.get('href', '') if trailer_btn else ''
+
+    return metadata
+
+def _akwam_extract_rating(soup: BeautifulSoup) -> tuple:
+    """Extract rating and vote count from JSON-LD."""
+    script = soup.find('script', type='application/ld+json')
+    if script:
+        try:
+            data = json.loads(script.string)
+            if isinstance(data, list):
+                for item in data:
+                    if item.get('@type') == 'Movie' and 'AggregateRating' in item:
+                        rating = item['AggregateRating'].get('ratingValue')
+                        votes = item['AggregateRating'].get('ratingCount')
+                        if rating:
+                            return float(rating), int(votes) if votes else 0
+            elif data.get('@type') == 'Movie' and 'AggregateRating' in data:
+                rating = data['AggregateRating'].get('ratingValue')
+                votes = data['AggregateRating'].get('ratingCount')
+                if rating:
+                    return float(rating), int(votes) if votes else 0
+        except:
+            pass
+    rating_elem = soup.select_one('.label.rating')
+    if rating_elem:
+        rating_text = rating_elem.get_text(strip=True).replace('icon-star', '').strip()
+        match = re.search(r'([\d.]+)', rating_text)
+        if match:
+            return float(match.group(1)), 0
+    return None, 0
+
+def _parse_akwam_date(date_str: str) -> str:
+    """Convert Arabic date to ISO format."""
+    cleaned = re.sub(r'^(الأحد|الإثنين|الثلاثاء|الأربعاء|الخميس|الجمعة|السبت)\s+', '', date_str)
+    cleaned = cleaned.replace('مساءاً', '').replace('صباحاً', '').strip()
+    match = re.search(r'(\d{1,2})\s+(\d{1,2})\s+(\d{4})\s*-\s*(\d{1,2}):(\d{2})', cleaned)
+    if match:
+        day, month, year, hour, minute = match.groups()
+        hour = int(hour)
+        if 'مساءاً' in date_str and hour < 12:
+            hour += 12
+        return f"{year}-{int(month):02d}-{int(day):02d}T{hour:02d}:{minute:02d}:00"
+    return date_str
+
+def akwam_extract_episode_sources(soup: BeautifulSoup, resolve_direct: bool = True) -> List[dict]:
+    """
+    Extract quality sources from an Akwam episode page.
+    If resolve_direct = True, follows the go.akwam.com.co/link/... URL
+    to get the final direct MP4 link.
+    """
+    quality_map = {
+        'tab-5': '1080p',
+        'tab-4': '720p',
+        'tab-3': '480p'
+    }
+    sources = []
+    for tab_id, quality_name in quality_map.items():
+        tab_content = soup.select_one(f'#{tab_id}')
+        if not tab_content:
+            continue
+        watch_link = tab_content.select_one('.link-show')
+        download_link = tab_content.select_one('.link-download')
+        if not download_link:
+            continue
+        
+        # Get the intermediate download URL
+        interim_url = download_link.get('href')
+        direct_mp4 = None
+        
+        if resolve_direct and interim_url:
+            # Fetch the download page
+            resp = get_website_safe(interim_url)
+            if resp and resp.status_code == 200:
+                dl_soup = BeautifulSoup(resp.text, 'html.parser')
+                # Look for the direct download link
+                dl_btn = dl_soup.select_one('.btn-light[download]') or dl_soup.select_one('.btn[download]')
+                if dl_btn and dl_btn.get('href'):
+                    direct_mp4 = dl_btn['href']
+                else:
+                    # Fallback: look for any <a> with download attribute
+                    dl_anchor = dl_soup.select_one('a[download]')
+                    if dl_anchor:
+                        direct_mp4 = dl_anchor['href']
+        
+        # Extract file size if present on the episode page
+        size_elem = download_link.select_one('.font-size-14')
+        size_mb = None
+        if size_elem:
+            size_text = size_elem.get_text(strip=True)
+            match = re.search(r'([\d.]+)\s*MB', size_text)
+            if match:
+                size_mb = float(match.group(1))
+        
+        sources.append({
+            'quality': quality_name,
+            'watch_url': watch_link.get('href') if watch_link else None,
+            'download_url': direct_mp4 or interim_url,   # store final if resolved
+            'interim_download_url': interim_url if resolve_direct else None,
+            'size_mb': size_mb
+        })
+    return sources
 
 # ----------------------------------------------------------------------
 #  Legacy functions – Akwam, HDW, CimaNow (unchanged)
