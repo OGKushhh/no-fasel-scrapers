@@ -172,6 +172,19 @@ def process_file(file_path: Path, content_type: str, processed_set: Set[Tuple[st
 
         rating, votes, source = get_rating_and_votes(file_path.name, content_id, title, year, content_type)
 
+        # ----- SAFEGUARD: preserve existing numeric rating if new lookup returns None -----
+        if rating is None and rating_file.exists():
+            try:
+                with open(rating_file, "r") as rf:
+                    existing = json.load(rf)
+                existing_rating = existing.get("rating")
+                if existing_rating not in (None, "N/A"):
+                    print(f"  🛡️ Preserving existing rating {existing_rating} for {content_id} (new lookup returned None)")
+                    save_progress(file_path.name, content_id)
+                    continue
+            except:
+                pass  # If we can't read the file, proceed with writing None
+
         rating_data = {
             "content_id": content_id,
             "title": title,
