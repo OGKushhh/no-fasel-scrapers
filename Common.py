@@ -1028,7 +1028,7 @@ def search_imdbapi_dev(title: str, year: Optional[str] = None) -> tuple:
     return (None, 0)
 
 # ======================================================================
-#  AKWAM SPECIFIC HELPERS (corrected for genres and dates)
+#  AKWAM SPECIFIC HELPERS (clean & simple)
 # ======================================================================
 AKWAM_BASE_URL = "https://akwam.com.co"   # Update if domain changes
 
@@ -1040,7 +1040,7 @@ def akwam_extract_series_list(soup: BeautifulSoup, base_url: str = AKWAM_BASE_UR
         link_tag = card.select_one('.entry-image a')
         if not link_tag:
             continue
-        series_url = urljoin(base_url, link_tag.get('href'))
+        series_url = urljoin(base_url, link_tag.get('href', ''))
         series_id = series_url.split('/')[-2] if '/series/' in series_url else None
         if not series_id:
             continue
@@ -1078,15 +1078,16 @@ def akwam_extract_series_metadata(soup: BeautifulSoup, base_url: str = AKWAM_BAS
     """Extract all metadata from a series detail page (excluding episodes)."""
     metadata = {}
 
+    # Title
     title_elem = soup.select_one('h1.entry-title')
     metadata['title'] = title_elem.get_text(strip=True) if title_elem else ''
 
-    # Rating & votes
+    # Rating & votes (Akwam's own rating)
     rating, votes = _akwam_extract_rating(soup)
     metadata['rating'] = rating
     metadata['votes'] = votes
 
-    # Info lines (country, language, quality, runtime, year)
+    # Basic info
     info_rows = soup.select('.movie-cover .row .col-lg-7 .font-size-16')
     for row in info_rows:
         text = row.get_text(strip=True)
@@ -1101,15 +1102,12 @@ def akwam_extract_series_metadata(soup: BeautifulSoup, base_url: str = AKWAM_BAS
         elif 'مدة' in text:
             metadata['runtime'] = text.split(':', 1)[1].strip()
 
-    # Genres – FIXED: only take badges inside .movie-cover to avoid "المزيد" pollution
+    # Genres
     genres_ar = [a.get_text(strip=True) for a in soup.select('.movie-cover .badge-light')]
-    # Remove duplicates while preserving order
     seen = set()
     metadata['genres_ar'] = [g for g in genres_ar if not (g in seen or seen.add(g))]
-    # Map to English using FASEL_GENRE_MAP (or leave as is if not mapped)
     metadata['genres_en'] = [FASEL_GENRE_MAP.get(g, g) for g in metadata['genres_ar']]
 
-    # Description
     metadata['description'] = extract_description(soup)
 
     # Dates
@@ -1117,44 +1115,80 @@ def akwam_extract_series_metadata(soup: BeautifulSoup, base_url: str = AKWAM_BAS
     for span in date_spans:
         text = span.get_text(strip=True)
         if 'تـ الإضافة :' in text:
-            date_str = text.split(':', 1)[1].strip()
-            metadata['date_added'] = _parse_akwam_date(date_str)
+            metadata['date_added'] = _parse_akwam_date(text.split(':', 1)[1].strip())
         elif 'تـ اخر تحديث :' in text:
-            date_str = text.split(':', 1)[1].strip()
-            metadata['date_updated'] = _parse_akwam_date(date_str)
+            metadata['date_updated'] = _parse_akwam_date(text.split(':', 1)[1].strip())
 
     # Cast
     metadata['cast'] = [a.get_text(strip=True) for a in soup.select('.entry-box-3 .entry-title a')]
 
-    # Episodes (basic list – only URLs and titles, will be saved separately)
+    # ---------- External IDs (TMDb / IMDb) – always present, null if missing ----------
+    metadata['tmdb_url'] = None
+    metadata['tmdb_id'] = None
+    metadata['imdb_url'] = None
+    metadata['imdb_id'] = None
+
+    rating_container = soup.select_one('.font-size-16.text-white.mt-2.d-flex')
+    if rating_container:
+        for link in rating_container.find_all('a', href=True):
+            href = link['href']
+            if 'themoviedb.org' in href:
+                metadata['tmdb_url'] = href
+                match = re.search(r'/(?:tv|movie)/(\d+)', href)
+                if match:
+                    metadata['tmdb_id'] = match.group(1)
+            elif 'imdb.com' in href or 'elcinema.com' in href:
+                metadata['imdb_url'] = href
+                imdb_match = re.search(r'tt\d{7,8}', href)
+                if imdb_match:
+                    metadata['imdb_id'] = imdb_match.group(0)
+    # Fallback search if not found in the rating container
+    if metadata['tmdb_url'] is None:
+        tmdb_link = soup.find('a', href=re.compile(r'themoviedb\.org'))
+        if tmdb_link:
+            metadata['tmdb_url'] = tmdb_link['href']
+            match = re.search(r'/(?:tv|movie)/(\d+)', tmdb_link['href'])
+            if match:
+                metadata['tmdb_id'] = match.group(1)
+    if metadata['imdb_url'] is None:
+        imdb_link = soup.find('a', href=re.compile(r'imdb\.com/title/tt\d+'))
+        if imdb_link:
+            metadata['imdb_url'] = imdb_link['href']
+            match = re.search(r'tt\d{7,8}', imdb_link['href'])
+            if match:
+                metadata['imdb_id'] = match.group(0)
+    # -----------------------------------------------------------------
+
+    # Episodes (basic list)
     episodes = []
-    episode_blocks = soup.select('#series-episodes .bg-primary2')
-    for block in episode_blocks:
+    for block in soup.select('#series-episodes .bg-primary2'):
         ep_link = block.find('a', href=True)
         if ep_link:
+            href = ep_link['href'].strip()
+            if href.startswith('/%20'):
+                href = href[3:]
+            elif href.startswith('/ '):
+                href = href[2:]
+            ep_url = urljoin(base_url, href)
             episodes.append({
-                'number': None,  # will be filled later
+                'number': None,
                 'title': ep_link.get_text(strip=True),
-                'url': urljoin(base_url, ep_link['href'])
+                'url': ep_url
             })
     metadata['episodes'] = episodes
     metadata['episode_count'] = len(episodes)
 
-    # Detect Ramadan
     metadata['is_ramadan'] = 'رمضان' in metadata['genres_ar']
 
-    # Poster
     poster = soup.select_one('.movie-cover .container .col-lg-3 img')
     metadata['poster'] = urljoin(base_url, poster.get('src', '')) if poster else ''
 
-    # Trailer
     trailer_btn = soup.select_one('.btn-light[data-fancybox]')
     metadata['trailer_url'] = trailer_btn.get('href', '') if trailer_btn else ''
 
     return metadata
 
 def _akwam_extract_rating(soup: BeautifulSoup) -> tuple:
-    """Extract rating and vote count from JSON-LD."""
     script = soup.find('script', type='application/ld+json')
     if script:
         try:
@@ -1182,40 +1216,31 @@ def _akwam_extract_rating(soup: BeautifulSoup) -> tuple:
     return None, 0
 
 def _parse_akwam_date(date_str: str) -> str:
-    """Convert Arabic date to ISO format. Fixed minute conversion."""
+    """Convert Arabic date like 'الثلاثاء 09 04 2024 - 07:50 مساءاً' to ISO."""
     cleaned = re.sub(r'^(الأحد|الإثنين|الثلاثاء|الأربعاء|الخميس|الجمعة|السبت)\s+', '', date_str)
     cleaned = cleaned.replace('مساءاً', '').replace('صباحاً', '').strip()
     match = re.search(r'(\d{1,2})\s+(\d{1,2})\s+(\d{4})\s*-\s*(\d{1,2}):(\d{2})', cleaned)
     if match:
         day, month, year, hour, minute = match.groups()
         hour = int(hour)
-        minute = int(minute)        # FIXED: convert minute to int
+        minute = int(minute)
         if 'مساءاً' in date_str and hour < 12:
             hour += 12
         return f"{year}-{int(month):02d}-{int(day):02d}T{hour:02d}:{minute:02d}:00"
     return date_str
 
 def akwam_extract_episode_sources(soup: BeautifulSoup) -> List[dict]:
-    """
-    Extract quality sources from an Akwam episode page.
-    Returns the go.akwam.com.co URLs (watch and download) without resolving.
-    """
-    quality_map = {
-        'tab-5': '1080p',
-        'tab-4': '720p',
-        'tab-3': '480p'
-    }
+    """Extract download/watch URLs from an episode page (only go.akwam.com.co links)."""
+    quality_map = {'tab-5': '1080p', 'tab-4': '720p', 'tab-3': '480p'}
     sources = []
-    for tab_id, quality_name in quality_map.items():
-        tab_content = soup.select_one(f'#{tab_id}')
-        if not tab_content:
+    for tab_id, quality in quality_map.items():
+        tab = soup.select_one(f'#{tab_id}')
+        if not tab:
             continue
-        watch_link = tab_content.select_one('.link-show')
-        download_link = tab_content.select_one('.link-download')
+        download_link = tab.select_one('.link-download')
         if not download_link:
             continue
-
-        # Extract file size (optional)
+        watch_link = tab.select_one('.link-show')
         size_elem = download_link.select_one('.font-size-14')
         size_mb = None
         if size_elem:
@@ -1223,9 +1248,8 @@ def akwam_extract_episode_sources(soup: BeautifulSoup) -> List[dict]:
             match = re.search(r'([\d.]+)\s*MB', size_text)
             if match:
                 size_mb = float(match.group(1))
-
         sources.append({
-            'quality': quality_name,
+            'quality': quality,
             'watch_url': watch_link.get('href') if watch_link else None,
             'download_url': download_link.get('href'),
             'size_mb': size_mb
