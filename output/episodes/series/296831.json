@@ -5,10 +5,27 @@
         "1": {
             "poster": "https://static.faselhdcdn.com/wp-content/uploads/2026/04/156bd6a76f9a74483ea4ead9d42e927f-400x600.jpg",
             "episodes": [
-                "https://www.fasel-hd.cam/episodes/%d9%85%d8%b3%d9%84%d8%b3%d9%84-dark-wizard-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-1",
-                "https://www.fasel-hd.cam/episodes/%d9%85%d8%b3%d9%84%d8%b3%d9%84-dark-wizard-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-2",
-                "https://www.fasel-hd.cam/episodes/%d9%85%d8%b3%d9%84%d8%b3%d9%84-dark-wizard-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-3"
+                {
+                    "url": "https://www.fasel-hd.cam/episodes/%d9%85%d8%b3%d9%84%d8%b3%d9%84-dark-wizard-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-1",
+                    "sources": []
+                },
+                {
+                    "url": "https://www.fasel-hd.cam/episodes/%d9%85%d8%b3%d9%84%d8%b3%d9%84-dark-wizard-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-2",
+                    "sources": []
+                },
+                {
+                    "url": "https://www.fasel-hd.cam/episodes/%d9%85%d8%b3%d9%84%d8%b3%d9%84-dark-wizard-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-3",
+                    "sources": []
+                },
+                {
+                    "url": "https://www.fasel-hd.cam/episodes/%d9%85%d8%b3%d9%84%d8%b3%d9%84-dark-wizard-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-4-%d9%88%d8%a7%d9%84%d8%a7%d8%ae%d9%8a%d8%b1",
+                    "sources": [
+                        "https://www.fasel-hd.cam/video_player?player_token=aFNiRExEUzVlZmovWC83WFJUQWF4MEF1ZlBkVWtDZjF0ZHpkK3BVTElKSzhXSUwzcXZkYTlQTllTeWtWeVZaUVpxd2tydTFUWHBLa0Q0aGFmeUMrcVJDUm42akswcDVvaDJ2YWdiYTUwb21SUFdzV3loMTBleDhraFFZUk9mT1hkRzJBdERwdGlJS2pRL3c0RmxkU3Vuank3b1JRa2tuSUJqcnJSTGg3NW4rb3g1czIrNWhvd2FwM0gxMzJXbWhiTms4ZXBTZXhxWkovOFhzc3RpdERrRXFMUnNVZDVUNWtwRnBNaWxZdTJ6VT06OmMwCI9QmP68V%2FNSPnfyuY0%3D",
+                        "https://www.fasel-hd.cam/video_player?player_token=MHRIeXpXTk5Zbld0a2xIZldmVjhJWlEvR0lSQW9vZzBZaHF2V245U2hOemRxZk5qNWQrV0djSGRRSDNsRlZJNUl1azF6d1NmSlNXSHFuWEpaZS9mK2lEYVVmOFVaMTRFZ3grd081OXRtWnp4ZFFCUHRWeElneWxJOWs4ajBCLzhIS2ZXeVVGbzF4UWhHSFlTSld5YjFvOVF5ZFlJMUFjUkIrcDZGT0J5VmtlTVpXajEvaFJEU3QyOFB0NzdmMmhEUVJZdGQxRWxOK0xxREczUXoydnlqUzVyL2UyVEdiWjZYNVFVdCtkOVVLajcwRHVUU0NkeXlkQlRma3A5ZXE2Tzo6qlifyz%2FZ2fnwrbeyab%2Ffyw%3D%3D"
+                    ]
+                }
             ]
         }
-    }
+    },
+    "last_updated": "2026-05-08T16:53:48.965009+00:00"
 }

@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
 update_episodes.py – Efficient episode updater for Fasel and Akwam series.
-- Compares episode count before deep fetching.
-- Stores episode count in main JSON for quick checking.
-- Supports Akwam series via Common.py helpers.
-- Optionally limits updates per run (daily mode).
+- ALWAYS uses the episode JSON file as the reference for stored count.
+- Compares with current site episode count.
+- If counts match, fixes the main JSON (if it was wrong) and skips deep fetch.
+- Only deep‑fetches when counts differ.
 """
 
 import json
@@ -19,11 +19,10 @@ from Common import (
     get_seasons_url_from_detail, extract_status, extract_sources,
     FASEL_BASE_URL, AKWAM_BASE_URL,
     akwam_extract_series_metadata, akwam_extract_episode_sources,
-    parse_akwam_date
+    _parse_akwam_date as parse_akwam_date
 )
 
 # ========== CONFIGURATION ==========
-# Fasel categories (where episodes are stored in ./output/episodes/{category}/)
 FASEL_CATEGORIES = {
     "series": "./output/series.json",
     "tvshows": "./output/tvshows.json",
@@ -31,12 +30,11 @@ FASEL_CATEGORIES = {
     "anime": "./output/anime.json",
 }
 
-# Akwam categories (only arabic-series for now)
 AKWAM_CATEGORIES = {
     "arabic-series": "./output/arabic-series.json",
 }
 
-DAILY_LIMIT = 50               # Max number of series to update per run (0 = unlimited)
+DAILY_LIMIT = 50
 PROGRESS_FILE = "./output/episode_update_progress.txt"
 EPISODES_BASE = Path("./output/episodes")
 # ===================================
@@ -57,19 +55,28 @@ def save_progress(category: str, series_id: str):
     with open(PROGRESS_FILE, "a", encoding="utf-8") as f:
         f.write(f"{category}|{series_id}\n")
 
-def get_episode_count_from_main_json(category: str, series_id: str) -> int:
-    """Return episode count stored in main JSON (if any)."""
-    json_path = Path(FASEL_CATEGORIES.get(category) or AKWAM_CATEGORIES.get(category))
-    if not json_path.exists():
-        return 0
-    with open(json_path, "r", encoding="utf-8") as f:
-        data = json.load(f)
-    entry = data.get(series_id, {})
-    # Fasel uses "Number Of Episodes" (int), Akwam uses "episode_count" (int)
-    return entry.get("Number Of Episodes") or entry.get("episode_count") or 0
+def get_stored_episode_count_from_file(category: str, series_id: str) -> int:
+    """Return the actual number of episodes stored in the episode JSON file."""
+    if category in FASEL_CATEGORIES:
+        ep_file = EPISODES_BASE / category / f"{series_id}.json"
+        if ep_file.exists():
+            with open(ep_file, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            seasons = data.get("seasons", {})
+            total = 0
+            for season in seasons.values():
+                total += len(season.get("episodes", []))
+            return total
+    elif category in AKWAM_CATEGORIES:
+        ep_file = EPISODES_BASE / category / f"{series_id}.json"
+        if ep_file.exists():
+            with open(ep_file, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            return len(data.get("episodes", []))
+    return 0
 
-def update_episode_count_in_main_json(category: str, series_id: str, new_count: int):
-    """Update stored episode count in the main JSON file."""
+def update_main_json_episode_count(category: str, series_id: str, new_count: int):
+    """Write the correct episode count into the main JSON."""
     json_path = Path(FASEL_CATEGORIES.get(category) or AKWAM_CATEGORIES.get(category))
     if not json_path.exists():
         return
@@ -77,7 +84,6 @@ def update_episode_count_in_main_json(category: str, series_id: str, new_count: 
         data = json.load(f)
     if series_id not in data:
         return
-    # Use appropriate key
     if category in FASEL_CATEGORIES:
         data[series_id]["Number Of Episodes"] = new_count
     else:
@@ -97,7 +103,7 @@ def update_status_in_main_json(category: str, series_id: str, new_status: str):
             json.dump(data, f, indent=4, ensure_ascii=False)
         print(f"  📝 Updated status to '{new_status}' for {category}/{series_id}")
 
-# ================= Fasel Series Helpers =================
+# ================= Fasel Helpers =================
 def load_fasel_episodes(category: str, series_id: str) -> dict:
     path = EPISODES_BASE / category / f"{series_id}.json"
     if path.exists():
@@ -133,7 +139,7 @@ def get_fasel_season_episodes_with_sources(season_url: str) -> list:
     return episodes
 
 def update_fasel_series(category: str, series_id: str, detail_url: str) -> bool:
-    # First, get current episode count from seasons hub (quick)
+    # Get current total from site
     seasons_hub_url = get_seasons_url_from_detail(detail_url)
     if not seasons_hub_url:
         return False
@@ -146,7 +152,6 @@ def update_fasel_series(category: str, series_id: str, detail_url: str) -> bool:
     if not seasons_list:
         return False
 
-    # Calculate total episodes by summing all seasons
     total_current_episodes = 0
     for season in seasons_list:
         season_url = season["page_url"]
@@ -157,15 +162,19 @@ def update_fasel_series(category: str, series_id: str, detail_url: str) -> bool:
             total_current_episodes += len(ep_urls)
         time.sleep(REQUEST_DELAY / 2)
 
-    stored_episode_count = get_episode_count_from_main_json(category, series_id)
-    if stored_episode_count == total_current_episodes and stored_episode_count > 0:
-        print(f"  ⏭️ Episode count unchanged ({total_current_episodes}), skipping deep update")
+    # Get stored count from episode file (NOT from main JSON)
+    stored_count = get_stored_episode_count_from_file(category, series_id)
+
+    # If stored count matches current, just update main JSON and skip deep fetch
+    if stored_count == total_current_episodes and stored_count > 0:
+        print(f"  ⏭️ Episode count unchanged ({total_current_episodes}), syncing main JSON")
+        update_main_json_episode_count(category, series_id, total_current_episodes)
         return False
 
-    print(f"  🔄 Episode count changed: {stored_episode_count} → {total_current_episodes}, updating...")
-    update_episode_count_in_main_json(category, series_id, total_current_episodes)
+    print(f"  🔄 Episode count changed: {stored_count} → {total_current_episodes}, updating...")
+    update_main_json_episode_count(category, series_id, total_current_episodes)
 
-    # Now deep update (seasons + episodes with sources)
+    # Deep update (new episodes added)
     existing = load_fasel_episodes(category, series_id)
     existing_seasons = existing.get("seasons", {})
     changed = False
@@ -220,7 +229,7 @@ def update_fasel_status(category: str, series_id: str, detail_url: str):
         print(f"  🏁 Status changed: {current_status} → {new_status}")
         update_status_in_main_json(category, series_id, new_status)
 
-# ================= Akwam Series Helpers =================
+# ================= Akwam Helpers =================
 def load_akwam_episodes(category: str, series_id: str) -> dict:
     path = EPISODES_BASE / category / f"{series_id}.json"
     if path.exists():
@@ -238,7 +247,6 @@ def save_akwam_episodes(category: str, series_id: str, data: dict):
         print(f"  💾 Saved Akwam episodes for {category}/{series_id}")
 
 def update_akwam_series(category: str, series_id: str, detail_url: str) -> bool:
-    # Get current episode count from metadata
     resp = get_website_safe(detail_url)
     if not resp:
         return False
@@ -246,15 +254,16 @@ def update_akwam_series(category: str, series_id: str, detail_url: str) -> bool:
     metadata = akwam_extract_series_metadata(soup, AKWAM_BASE_URL)
     total_current_episodes = metadata.get("episode_count", 0)
 
-    stored_episode_count = get_episode_count_from_main_json(category, series_id)
-    if stored_episode_count == total_current_episodes and stored_episode_count > 0:
-        print(f"  ⏭️ Episode count unchanged ({total_current_episodes}), skipping deep update")
+    stored_count = get_stored_episode_count_from_file(category, series_id)
+
+    if stored_count == total_current_episodes and stored_count > 0:
+        print(f"  ⏭️ Episode count unchanged ({total_current_episodes}), syncing main JSON")
+        update_main_json_episode_count(category, series_id, total_current_episodes)
         return False
 
-    print(f"  🔄 Episode count changed: {stored_episode_count} → {total_current_episodes}, updating...")
-    update_episode_count_in_main_json(category, series_id, total_current_episodes)
+    print(f"  🔄 Episode count changed: {stored_count} → {total_current_episodes}, updating...")
+    update_main_json_episode_count(category, series_id, total_current_episodes)
 
-    # Deep update: fetch each episode page to get sources
     existing = load_akwam_episodes(category, series_id)
     existing_episodes = existing.get("episodes", [])
     existing_urls = {ep["url"] for ep in existing_episodes}
@@ -263,14 +272,12 @@ def update_akwam_series(category: str, series_id: str, detail_url: str) -> bool:
     for ep in metadata.get("episodes", []):
         if ep["url"] in existing_urls:
             continue
-        # Fetch episode page to get sources
         ep_resp = get_website_safe(ep["url"])
         if ep_resp:
             ep_soup = BeautifulSoup(ep_resp.text, "html.parser")
             sources = akwam_extract_episode_sources(ep_soup)
         else:
             sources = []
-        # Extract episode number from title
         ep_num = None
         num_match = re.search(r'الحلقة\s+(\d+)', ep["title"])
         if num_match:
@@ -287,7 +294,6 @@ def update_akwam_series(category: str, series_id: str, detail_url: str) -> bool:
         print(f"  🆕 Found {len(new_episodes)} new episodes")
         existing["episodes"] = existing_episodes + new_episodes
         save_akwam_episodes(category, series_id, existing)
-        # Akwam may not have a "Status" field like Fasel; we could add one.
         return True
     return False
 
@@ -311,7 +317,6 @@ def process_category(category: str, json_path: str, processed_set: set, daily_li
 
         detail_url = info.get("SeasonsUrl") or info.get("url")
         if not detail_url:
-            # Fallback to constructing URL
             if is_fasel:
                 detail_url = f"{FASEL_BASE_URL}{category}/{series_id}"
             else:
@@ -335,19 +340,17 @@ def process_category(category: str, json_path: str, processed_set: set, daily_li
         processed_count += 1
 
 def main():
-    # Clear progress file at start (optional – comment out if you want to resume)
+    # Optional: clear progress to re‑scan everything once
     # if Path(PROGRESS_FILE).exists():
     #     Path(PROGRESS_FILE).unlink()
 
     processed = load_progress()
 
-    # Process Fasel categories
     for category, json_path in FASEL_CATEGORIES.items():
         process_category(category, json_path, processed, DAILY_LIMIT, is_fasel=True)
         if DAILY_LIMIT > 0 and len(processed) >= DAILY_LIMIT:
             break
 
-    # Process Akwam categories
     for category, json_path in AKWAM_CATEGORIES.items():
         process_category(category, json_path, processed, DAILY_LIMIT - len(processed), is_fasel=False)
         if DAILY_LIMIT > 0 and len(processed) >= DAILY_LIMIT:

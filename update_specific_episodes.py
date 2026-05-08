@@ -3,13 +3,20 @@
 update_specific_episodes.py
 Manually trigger episode update for one or more series/anime IDs.
 Auto‑detects category by searching all JSON files (Fasel + Akwam).
-Uses episode count comparison to avoid unnecessary deep fetching.
-If no episode numbers exist, scans page and compares URLs.
+Uses episode file as source of truth (not main JSON) to avoid unnecessary deep fetches.
+Optimized:
+- Parallel fetching of season pages (ThreadPoolExecutor)
+- Parallel fetching of new episode sources
+- In‑memory caching of episode data
+- Configurable max_workers
+
+Supports --dry-run to simulate.
 
 Usage:
     python update_specific_episodes.py --ids 14506 14507
     python update_specific_episodes.py --file ids.txt
-    python update_specific_episodes.py --ids arabic-series:4799
+    python update_specific_episodes.py --ids arabic-series:4799 --dry-run
+    python update_specific_episodes.py --ids 14506 --workers 8
 """
 
 import argparse
@@ -19,6 +26,7 @@ import sys
 import re
 from pathlib import Path
 from datetime import datetime, timezone
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from bs4 import BeautifulSoup
 from Common import (
     DEBUG, REQUEST_DELAY, get_website_safe,
@@ -26,7 +34,7 @@ from Common import (
     get_seasons_url_from_detail, extract_status, extract_sources,
     FASEL_BASE_URL, AKWAM_BASE_URL,
     akwam_extract_series_metadata, akwam_extract_episode_sources,
-    parse_akwam_date
+    _parse_akwam_date as parse_akwam_date
 )
 
 # ---------- Configuration ----------
@@ -42,6 +50,26 @@ AKWAM_CATEGORIES = {
 }
 
 EPISODES_BASE = Path("./output/episodes")
+DEFAULT_WORKERS = 5
+
+# ---------- In‑memory caching for episode files ----------
+_episode_cache = {}  # key: (source_type, category, series_id) -> data dict
+
+def get_cached_episodes(source_type: str, category: str, series_id: str) -> dict:
+    key = (source_type, category, series_id)
+    if key not in _episode_cache:
+        if source_type == "fasel":
+            _episode_cache[key] = load_fasel_episodes(category, series_id)
+        else:
+            _episode_cache[key] = load_akwam_episodes(category, series_id)
+    return _episode_cache[key]
+
+def set_cached_episodes(source_type: str, category: str, series_id: str, data: dict):
+    key = (source_type, category, series_id)
+    _episode_cache[key] = data
+
+def clear_cache():
+    _episode_cache.clear()
 
 # ---------- Helper functions (Fasel) ----------
 def load_fasel_episodes(category: str, series_id: str) -> dict:
@@ -83,25 +111,42 @@ def update_fasel_status(category: str, series_id: str, detail_url: str):
             json.dump(data, f, indent=4, ensure_ascii=False)
         print(f"  📝 Updated status in {category}/{series_id}")
 
-def get_fasel_season_episodes_with_sources(season_url: str) -> list:
-    resp = get_website_safe(season_url)
-    if not resp:
-        return []
-    soup = BeautifulSoup(resp.text, "html.parser")
-    episode_urls = extract_episodes_from_season_page(soup)
-    episodes = []
-    for url in episode_urls:
-        ep_resp = get_website_safe(url)
-        if ep_resp:
-            ep_soup = BeautifulSoup(ep_resp.text, "html.parser")
-            sources = extract_sources(ep_soup)
-        else:
-            sources = []
-        episodes.append({"url": url, "sources": sources})
-        time.sleep(REQUEST_DELAY / 2)
-    return episodes
+def get_stored_count_fasel(category: str, series_id: str) -> int:
+    ep_file = EPISODES_BASE / category / f"{series_id}.json"
+    if not ep_file.exists():
+        return 0
+    with open(ep_file, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    seasons = data.get("seasons", {})
+    total = 0
+    for season in seasons.values():
+        episodes = season.get("episodes", [])
+        total += len(episodes)
+    return total
 
-def update_fasel_series_by_id(category: str, series_id: str, detail_url: str) -> bool:
+def fetch_season_page(season):
+    """Fetch a single season page and return (season_num, ep_urls, poster)."""
+    season_num = season["number"]
+    season_url = season["page_url"]
+    poster = season.get("poster", "")
+    season_resp = get_website_safe(season_url)
+    if not season_resp:
+        return season_num, [], poster
+    season_soup = BeautifulSoup(season_resp.text, "html.parser")
+    ep_urls = extract_episodes_from_season_page(season_soup)
+    time.sleep(REQUEST_DELAY / 2)  # be gentle
+    return season_num, ep_urls, poster
+
+def fetch_episode_sources(url):
+    """Fetch a single episode page and return its sources."""
+    ep_resp = get_website_safe(url)
+    if ep_resp:
+        ep_soup = BeautifulSoup(ep_resp.text, "html.parser")
+        return extract_sources(ep_soup)
+    return []
+
+# ---------- Optimized Fasel update with parallelism ----------
+def update_fasel_series_by_id(category: str, series_id: str, detail_url: str, dry_run=False, workers=DEFAULT_WORKERS) -> bool:
     # Get seasons hub URL
     seasons_hub_url = get_seasons_url_from_detail(detail_url)
     if not seasons_hub_url:
@@ -115,31 +160,39 @@ def update_fasel_series_by_id(category: str, series_id: str, detail_url: str) ->
     if not seasons_list:
         return False
 
-    # Calculate current total episodes
+    # ---- Parallel fetch of all season pages ----
+    season_data = {}
     total_current_episodes = 0
-    for season in seasons_list:
-        season_url = season["page_url"]
-        season_resp = get_website_safe(season_url)
-        if season_resp:
-            season_soup = BeautifulSoup(season_resp.text, "html.parser")
-            ep_urls = extract_episodes_from_season_page(season_soup)
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        futures = [executor.submit(fetch_season_page, season) for season in seasons_list]
+        for future in as_completed(futures):
+            season_num, ep_urls, poster = future.result()
+            season_data[season_num] = {'urls': ep_urls, 'poster': poster}
             total_current_episodes += len(ep_urls)
-        time.sleep(REQUEST_DELAY / 2)
 
-    # Try to get stored episode count from main JSON
-    json_path = Path(FASEL_CATEGORIES[category])
-    stored_episode_count = 0
-    if json_path.exists():
-        with open(json_path, "r", encoding="utf-8") as f:
-            data = json.load(f)
-            stored_episode_count = data.get(series_id, {}).get("Number Of Episodes", 0)
+    # Get stored count from cached episode file
+    stored_episode_count = get_stored_count_fasel(category, series_id)
 
     if stored_episode_count == total_current_episodes and stored_episode_count > 0:
-        print(f"  ⏭️ Episode count unchanged ({total_current_episodes}), skipping deep update")
+        print(f"  ⏭️ Episode count unchanged ({total_current_episodes}), syncing main JSON")
+        # Update main JSON count
+        json_path = Path(FASEL_CATEGORIES[category])
+        if json_path.exists():
+            with open(json_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            if series_id in data:
+                data[series_id]["Number Of Episodes"] = total_current_episodes
+                with open(json_path, "w", encoding="utf-8") as f:
+                    json.dump(data, f, indent=4, ensure_ascii=False)
         return False
 
     print(f"  🔄 Episode count changed: {stored_episode_count} → {total_current_episodes}, updating...")
-    # Update main JSON with new count
+    if dry_run:
+        print("  [DRY RUN] Would update episodes and main JSON")
+        return True
+
+    # Update main JSON count
+    json_path = Path(FASEL_CATEGORIES[category])
     if json_path.exists():
         with open(json_path, "r", encoding="utf-8") as f:
             data = json.load(f)
@@ -148,39 +201,59 @@ def update_fasel_series_by_id(category: str, series_id: str, detail_url: str) ->
             with open(json_path, "w", encoding="utf-8") as f:
                 json.dump(data, f, indent=4, ensure_ascii=False)
 
-    # Deep fetch with sources
-    existing = load_fasel_episodes(category, series_id)
+    # Get existing episodes from cache
+    existing = get_cached_episodes("fasel", category, series_id)
     existing_seasons = existing.get("seasons", {})
     changed = False
 
-    for season in seasons_list:
-        season_num = season["number"]
-        season_url = season["page_url"]
-        poster = season.get("poster", "")
-
-        current_episodes = get_fasel_season_episodes_with_sources(season_url)
+    for season_num, data in season_data.items():
+        current_urls = data['urls']
+        poster = data['poster']
         stored_season = existing_seasons.get(str(season_num), {})
         stored_episodes = stored_season.get("episodes", [])
-
-        # Normalise stored episodes to dict format
         stored_urls = [ep["url"] if isinstance(ep, dict) else ep for ep in stored_episodes]
-        new_episodes = [ep for ep in current_episodes if ep["url"] not in stored_urls]
 
-        if new_episodes:
-            print(f"  🆕 Season {season_num}: +{len(new_episodes)} new episodes")
-            if stored_episodes and isinstance(stored_episodes[0], str):
-                stored_episodes = [{"url": u, "sources": []} for u in stored_episodes]
+        new_urls = [url for url in current_urls if url not in stored_urls]
+        if not new_urls and stored_urls:
+            continue
+
+        # Normalise stored episodes
+        if stored_episodes and isinstance(stored_episodes[0], str):
+            stored_episodes = [{"url": u, "sources": []} for u in stored_episodes]
+
+        if new_urls:
+            print(f"  🆕 Season {season_num}: +{len(new_urls)} new episodes")
+            # Parallel fetch sources for new episodes
+            with ThreadPoolExecutor(max_workers=workers) as ex:
+                source_futures = {ex.submit(fetch_episode_sources, url): url for url in new_urls}
+                new_episodes = []
+                for future in as_completed(source_futures):
+                    url = source_futures[future]
+                    sources = future.result()
+                    new_episodes.append({"url": url, "sources": sources})
+            # Preserve order (optional)
+            new_episodes.sort(key=lambda x: new_urls.index(x["url"]))
             all_episodes = stored_episodes + new_episodes
-            existing_seasons[str(season_num)] = {"poster": poster, "episodes": all_episodes}
-            changed = True
-        elif not stored_episodes and current_episodes:
-            print(f"  📦 Season {season_num}: storing {len(current_episodes)} episodes")
-            existing_seasons[str(season_num)] = {"poster": poster, "episodes": current_episodes}
-            changed = True
+        else:
+            # Entirely new season
+            print(f"  📦 Season {season_num}: storing {len(current_urls)} episodes")
+            # Parallel fetch all episodes in this new season
+            with ThreadPoolExecutor(max_workers=workers) as ex:
+                source_futures = {ex.submit(fetch_episode_sources, url): url for url in current_urls}
+                all_episodes = []
+                for future in as_completed(source_futures):
+                    url = source_futures[future]
+                    sources = future.result()
+                    all_episodes.append({"url": url, "sources": sources})
+            all_episodes.sort(key=lambda x: current_urls.index(x["url"]))
+
+        existing_seasons[str(season_num)] = {"poster": poster, "episodes": all_episodes}
+        changed = True
 
     if changed:
         existing["seasons"] = existing_seasons
         save_fasel_episodes(category, series_id, existing)
+        set_cached_episodes("fasel", category, series_id, existing)
         update_fasel_status(category, series_id, detail_url)
         return True
     return False
@@ -202,7 +275,15 @@ def save_akwam_episodes(category: str, series_id: str, data: dict):
     if DEBUG:
         print(f"  💾 Saved Akwam episodes for {category}/{series_id}")
 
-def update_akwam_series_by_id(category: str, series_id: str, detail_url: str) -> bool:
+def get_stored_count_akwam(category: str, series_id: str) -> int:
+    ep_file = EPISODES_BASE / category / f"{series_id}.json"
+    if not ep_file.exists():
+        return 0
+    with open(ep_file, "r", encoding="utf-8") as f:
+        data = json.load(f)
+        return len(data.get("episodes", []))
+
+def update_akwam_series_by_id(category: str, series_id: str, detail_url: str, dry_run=False, workers=DEFAULT_WORKERS) -> bool:
     # Get current metadata (including episode list and count)
     resp = get_website_safe(detail_url)
     if not resp:
@@ -214,20 +295,27 @@ def update_akwam_series_by_id(category: str, series_id: str, detail_url: str) ->
         print("  ℹ️ No episodes found on this series page.")
         return False
 
-    # Get stored episode count from main JSON
-    json_path = Path(AKWAM_CATEGORIES[category])
-    stored_episode_count = 0
-    if json_path.exists():
-        with open(json_path, "r", encoding="utf-8") as f:
-            data = json.load(f)
-            stored_episode_count = data.get(series_id, {}).get("episode_count", 0)
+    stored_episode_count = get_stored_count_akwam(category, series_id)
 
     if stored_episode_count == total_episodes and stored_episode_count > 0:
-        print(f"  ⏭️ Episode count unchanged ({total_episodes}), skipping deep update")
+        print(f"  ⏭️ Episode count unchanged ({total_episodes}), syncing main JSON")
+        json_path = Path(AKWAM_CATEGORIES[category])
+        if json_path.exists():
+            with open(json_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            if series_id in data:
+                data[series_id]["episode_count"] = total_episodes
+                with open(json_path, "w", encoding="utf-8") as f:
+                    json.dump(data, f, indent=4, ensure_ascii=False)
         return False
 
     print(f"  🔄 Episode count changed: {stored_episode_count} → {total_episodes}, updating...")
-    # Update main JSON with new count
+    if dry_run:
+        print("  [DRY RUN] Would update episodes and main JSON")
+        return True
+
+    # Update main JSON count
+    json_path = Path(AKWAM_CATEGORIES[category])
     if json_path.exists():
         with open(json_path, "r", encoding="utf-8") as f:
             data = json.load(f)
@@ -236,48 +324,58 @@ def update_akwam_series_by_id(category: str, series_id: str, detail_url: str) ->
             with open(json_path, "w", encoding="utf-8") as f:
                 json.dump(data, f, indent=4, ensure_ascii=False)
 
-    # Deep fetch episodes with sources
-    existing = load_akwam_episodes(category, series_id)
+    existing = get_cached_episodes("akwam", category, series_id)
     existing_episodes = existing.get("episodes", [])
     existing_urls = {ep["url"] for ep in existing_episodes}
     new_episodes = []
 
-    for ep in metadata.get("episodes", []):
-        if ep["url"] in existing_urls:
-            continue
-        # Fetch episode page for sources
-        ep_resp = get_website_safe(ep["url"])
-        if ep_resp:
-            ep_soup = BeautifulSoup(ep_resp.text, "html.parser")
-            sources = akwam_extract_episode_sources(ep_soup)
-        else:
-            sources = []
-        # Try to extract episode number from title (if available)
-        ep_num = None
-        num_match = re.search(r'الحلقة\s+(\d+)', ep["title"])
-        if num_match:
-            ep_num = int(num_match.group(1))
-        new_episodes.append({
-            "number": ep_num,
-            "title": ep["title"],
-            "url": ep["url"],
-            "sources": sources
-        })
-        time.sleep(REQUEST_DELAY / 2)
+    # Prepare list of episode pages to fetch
+    episodes_to_fetch = [ep for ep in metadata.get("episodes", []) if ep["url"] not in existing_urls]
+    if episodes_to_fetch:
+        print(f"  🆕 Found {len(episodes_to_fetch)} new episodes")
+        # Parallel fetch episode sources
+        def fetch_episode_source(ep):
+            ep_resp = get_website_safe(ep["url"])
+            if ep_resp:
+                ep_soup = BeautifulSoup(ep_resp.text, "html.parser")
+                sources = akwam_extract_episode_sources(ep_soup)
+            else:
+                sources = []
+            ep_num = None
+            num_match = re.search(r'الحلقة\s+(\d+)', ep["title"])
+            if num_match:
+                ep_num = int(num_match.group(1))
+            return {
+                "number": ep_num,
+                "title": ep["title"],
+                "url": ep["url"],
+                "sources": sources
+            }
 
-    if new_episodes:
-        print(f"  🆕 Found {len(new_episodes)} new episodes")
+        with ThreadPoolExecutor(max_workers=workers) as ex:
+            futures = [ex.submit(fetch_episode_source, ep) for ep in episodes_to_fetch]
+            for future in as_completed(futures):
+                new_episodes.append(future.result())
+        # Restore original order (by episode number or position)
+        new_episodes.sort(key=lambda x: (x["number"] is None, x["number"] if x["number"] else 999999))
+
         existing["episodes"] = existing_episodes + new_episodes
         save_akwam_episodes(category, series_id, existing)
+        set_cached_episodes("akwam", category, series_id, existing)
         return True
     return False
 
 # ---------- Main dispatcher ----------
 def main():
     parser = argparse.ArgumentParser(description="Update episodes for specific IDs (auto‑detect category)")
-    parser.add_argument("--ids", nargs="+", help="Space‑separated list of IDs (e.g., 14506 14507). For Akwam, prefix with category: e.g., arabic-series:4799")
+    parser.add_argument("--ids", nargs="+", help="Space‑separated list of IDs. For Akwam, prefix with category: e.g., arabic-series:4799")
     parser.add_argument("--file", help="Text file with one ID per line (same format)")
+    parser.add_argument("--dry-run", action="store_true", help="Simulate without making any changes")
+    parser.add_argument("--workers", type=int, default=DEFAULT_WORKERS, help=f"Number of parallel workers (default {DEFAULT_WORKERS})")
     args = parser.parse_args()
+
+    if args.dry_run:
+        print("🔍 DRY RUN MODE – no files will be modified\n")
 
     ids = []
     if args.ids:
@@ -293,10 +391,12 @@ def main():
         print("❌ No IDs provided. Use --ids or --file")
         sys.exit(1)
 
-    # Build a map from ID to list of possible categories and details
-    id_map = {}  # id -> list of dicts {category, detail_url, title, source_type}
+    # Clear cache at start of run
+    clear_cache()
 
-    # First, load Fasel categories
+    # Build a map from ID to list of possible categories and details
+    id_map = {}
+
     for cat, json_path in FASEL_CATEGORIES.items():
         path = Path(json_path)
         if not path.exists():
@@ -314,7 +414,6 @@ def main():
                 "source_type": "fasel"
             })
 
-    # Then, load Akwam categories
     for cat, json_path in AKWAM_CATEGORIES.items():
         path = Path(json_path)
         if not path.exists():
@@ -332,29 +431,25 @@ def main():
                 "source_type": "akwam"
             })
 
-    # Process each requested ID
     for raw_id in ids:
-        # Allow explicit category prefix: e.g., "arabic-series:4799"
         if ":" in raw_id:
             parts = raw_id.split(":", 1)
             category_prefix = parts[0]
             series_id = parts[1]
-            # Look for that specific category
             matched = False
             for entry in id_map.get(series_id, []):
                 if entry["category"] == category_prefix:
                     print(f"\n🔍 {entry['category']}/{series_id}: {entry['title']}")
                     if entry["source_type"] == "fasel":
-                        update_fasel_series_by_id(entry["category"], series_id, entry["detail_url"])
+                        update_fasel_series_by_id(entry["category"], series_id, entry["detail_url"], args.dry_run, args.workers)
                     else:
-                        update_akwam_series_by_id(entry["category"], series_id, entry["detail_url"])
+                        update_akwam_series_by_id(entry["category"], series_id, entry["detail_url"], args.dry_run, args.workers)
                     matched = True
                     break
             if not matched:
                 print(f"⚠️ ID {series_id} not found in category '{category_prefix}'.")
             continue
 
-        # Otherwise, treat as numeric ID and try all matches
         if raw_id not in id_map:
             print(f"⚠️ ID {raw_id} not found in any category JSON.")
             continue
@@ -367,9 +462,9 @@ def main():
         for entry in entries:
             print(f"\n🔍 {entry['category']}/{raw_id}: {entry['title']}")
             if entry["source_type"] == "fasel":
-                update_fasel_series_by_id(entry["category"], raw_id, entry["detail_url"])
+                update_fasel_series_by_id(entry["category"], raw_id, entry["detail_url"], args.dry_run, args.workers)
             else:
-                update_akwam_series_by_id(entry["category"], raw_id, entry["detail_url"])
+                update_akwam_series_by_id(entry["category"], raw_id, entry["detail_url"], args.dry_run, args.workers)
             time.sleep(REQUEST_DELAY / 2)
 
     print("\n✅ Done.")
