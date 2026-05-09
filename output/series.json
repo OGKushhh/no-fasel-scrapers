@@ -101022,5 +101022,31 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 4,
         "last_scraped": "2026-05-08T12:44:43.499649+00:00"
+    },
+    "298782": {
+        "Title": "مسلسل M.I.A.",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/05/06bd7981e594405833f579f232f638ef-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Crime",
+            "Thriller"
+        ],
+        "GenresAr": [
+            "Crime",
+            "Thriller"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "شابة تنتمي لعائلة تعمل في تهريب المخدرات بجنوب فلوريدا. بعد مقتل عائلتها بطريقة وحشية تبدأ رحلة انتقام دموية داخل عالم ميامي السفلي المليء بالعصابات والخيانة !",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-m-i-a",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "N/A",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 9,
+        "last_scraped": "2026-05-09T14:20:13.434340+00:00"
     }
 }

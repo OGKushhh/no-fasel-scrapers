@@ -5,12 +5,18 @@ FaselSeriesScraper.py – Unified scraper for series, tvshows, asian-series.
 - Daily mode: after full scrape, only first N pages (default 5).
 - Extracts episodes and seasons.
 - Adds Sources (player token URLs) for series detail pages.
+- Usage:
+    python FaselSeriesScraper.py            # all categories
+    python FaselSeriesScraper.py asian-series
+    python FaselSeriesScraper.py tvshows
+    python FaselSeriesScraper.py series
 """
 
 import json
 import random
 import re
 import os
+import sys
 import time
 from datetime import datetime, timezone
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -373,9 +379,24 @@ def scrape_series_category(path: str):
     print(f"\n🏁 {path} finished. Total series: {len(all_series)}")
 
 def main():
-    for path in SERIES_PATHS:
+    # Check command-line argument for a single category
+    if len(sys.argv) > 1:
+        category = sys.argv[1]
+        if category in SERIES_PATHS:
+            categories = [category]
+        else:
+            print(f"❌ Invalid category. Choose from: {SERIES_PATHS}")
+            sys.exit(1)
+    else:
+        categories = SERIES_PATHS
+
+    for path in categories:
         scrape_series_category(path)
-    print("\n🎉 All series categories processed successfully!")
+
+    if len(categories) == 1:
+        print(f"\n🎉 {categories[0]} processed successfully!")
+    else:
+        print("\n🎉 All series categories processed successfully!")
 
 if __name__ == "__main__":
     main()
