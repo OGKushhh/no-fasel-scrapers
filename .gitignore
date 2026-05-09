@@ -45,3 +45,4 @@ chrome_fresh_profile/
 *.tmp
 .DS_Store
 Thumbs.db
+scraper_errors.log

@@ -100745,3 +100745,38 @@ Call log:
 Call log:
   - navigating to "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-salish-jordan-matter", waiting until "load"
 . Retrying in 1s...
+2026-05-09 17:23:18,369 - INFO - Fetched (200) <GET https://akwam.com.co/episode/56553/%D9%86%D8%B4%D9%85%D9%8A%D8%A7%D8%AA-%D9%85%D9%86-%D8%A7%D9%84%D8%A8%D8%A7%D8%AF%D9%8A%D8%A9/%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9-3> (referer: https://www.google.com/)
+2026-05-09 17:23:18,765 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-dear-killer-nannies-criado-por-sicarios> (referer: https://www.google.com/)
+2026-05-09 17:23:19,171 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-dark-wizard", waiting until "load"
+. Retrying in 1s...
+2026-05-09 17:23:19,234 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-ronaldinho-one", waiting until "load"
+. Retrying in 1s...
+2026-05-09 17:23:20,190 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-salish-jordan-matter> (referer: https://www.google.com/)
+2026-05-09 17:23:33,994 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-ronaldinho-one> (referer: https://www.google.com/)
+2026-05-09 17:23:35,844 - INFO - Fetched (200) <GET https://akwam.com.co/episode/56936/%D9%81%D9%84%D8%A7%D8%B4/%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9-7> (referer: https://www.google.com/)
+2026-05-09 17:23:36,297 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-dark-wizard> (referer: https://www.google.com/)
+2026-05-09 17:23:47,146 - INFO - Fetched (200) <GET https://akwam.com.co/episode/57143/%D9%8A%D8%AD%D9%8A%D9%89-%D9%88%D9%83%D9%86%D9%88%D8%B2/%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9-9> (referer: https://www.google.com/)
+2026-05-09 17:23:54,434 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://akwam.com.co/episode/56530/%D8%AD%D8%B6%D8%B1%D8%A9-%D8%A7%D9%84%D9%85%D9%88%D9%82%D9%81/%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9-3", waiting until "load"
+. Retrying in 1s...
+2026-05-09 17:23:56,679 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://akwam.com.co/episode/58978/%D8%B3%D8%B1-%D8%A7%D9%84%D9%83%D9%87%D9%81/%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9-27", waiting until "load"
+. Retrying in 1s...
+2026-05-09 17:24:03,328 - INFO - Fetched (200) <GET https://akwam.com.co/episode/58978/%D8%B3%D8%B1-%D8%A7%D9%84%D9%83%D9%87%D9%81/%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9-27> (referer: https://www.google.com/)
+2026-05-09 17:24:04,260 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://akwam.com.co/episode/56637/%D8%B9%D8%A7%D8%B4%D8%B1-%D8%B5%D9%81%D8%AD%D8%A9/%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9-4", waiting until "load"
+. Retrying in 1s...
+2026-05-09 17:24:12,933 - INFO - Fetched (200) <GET https://akwam.com.co/episode/56637/%D8%B9%D8%A7%D8%B4%D8%B1-%D8%B5%D9%81%D8%AD%D8%A9/%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9-4> (referer: https://www.google.com/)
+2026-05-09 17:24:16,112 - INFO - Fetched (200) <GET https://akwam.com.co/episode/56530/%D8%AD%D8%B6%D8%B1%D8%A9-%D8%A7%D9%84%D9%85%D9%88%D9%82%D9%81/%D8%A7%D9%84%D8%AD%D9%84%D9%82%D8%A9-3> (referer: https://www.google.com/)
+2026-05-09 17:24:33,623 - INFO - Fetched (200) <GET https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-the-audacity> (referer: https://www.google.com/)
+2026-05-09 17:24:38,003 - WARNING - Attempt 1 failed: Page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "https://akwam.com.co/series/3044/%D9%87%D9%83%D8%B0%D8%A7-%D9%83%D8%A7%D9%86-%D8%A7%D9%84%D8%A3%D9%86%D8%A8%D9%8A%D8%A7%D8%A1-%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%85-%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A", waiting until "load"
+. Retrying in 1s...
