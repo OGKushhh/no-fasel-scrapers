@@ -110315,3 +110315,4 @@ Call log:
 2026-05-10 19:21:01,084 - INFO - Fetched (200) <GET https://akwam.com.co/series?section=29&category=0&rating=0&year=0&language=0&formats=0&quality=0&page=17> (referer: https://www.google.com/)
 2026-05-10 19:21:12,984 - INFO - Fetched (200) <GET https://akwam.com.co/series?section=29&category=0&rating=0&year=0&language=0&formats=0&quality=0&page=18> (referer: https://www.google.com/)
 2026-05-10 19:21:25,531 - INFO - Fetched (200) <GET https://akwam.com.co/series?section=29&category=0&rating=0&year=0&language=0&formats=0&quality=0&page=19> (referer: https://www.google.com/)
+2026-05-10 19:21:52,565 - INFO - Fetched (200) <GET https://akwam.com.co/series?section=29&category=0&rating=0&year=0&language=0&formats=0&quality=0&page=20> (referer: https://www.google.com/)
