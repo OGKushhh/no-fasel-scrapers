@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """
 AkwamArabicSeries.py – Parallel Arabic series scraper
-- Saves progress (series ID) to text file immediately after each series.
-- Thread‑safe using a lock.
+- Fetches series detail pages concurrently (configurable workers)
+- Within each series, fetches episode pages in parallel (configurable episode workers)
+- Saves episodes separately to ./output/episodes/arabic-series/{id}.json
+- Progress stored as plain text (one ID per line)
+- Handles malformed URLs and redirect loops gracefully
 """
 
 import json
@@ -27,7 +30,8 @@ from Common import (
 # ======== CONFIGURATION ========
 REQUEST_DELAY = 2.0
 JITTER = 0.3
-MAX_WORKERS = 7
+MAX_WORKERS = 1               # Parallel detail page fetches for series
+EPISODE_WORKERS = 7           # Parallel episode fetches within a series
 PROGRESS_FILE = "./output/akwam_series_progress.txt"
 OUTPUT_FILE = "./output/arabic-series.json"
 EPISODES_BASE = Path("./output/episodes/arabic-series")
@@ -35,7 +39,7 @@ ARABIC_SECTION_ID = "29"
 # =================================
 
 progress_lock = threading.Lock()
-series_lock = threading.Lock()   # for updating all_series dict
+series_lock = threading.Lock()
 
 def load_progress():
     if os.path.exists(PROGRESS_FILE):
@@ -44,7 +48,6 @@ def load_progress():
     return set()
 
 def save_progress_immediate(series_id):
-    """Thread‑safe append of a single series ID."""
     with progress_lock:
         with open(PROGRESS_FILE, 'a', encoding='utf-8') as f:
             f.write(series_id + '\n')
@@ -56,7 +59,7 @@ def load_existing_series():
     return {}
 
 def save_series(all_series):
-    # Remove episodes before saving main JSON
+    # Remove episodes from each series before saving main JSON
     clean_series = {}
     for sid, data in all_series.items():
         clean_data = {k: v for k, v in data.items() if k != 'episodes'}
@@ -91,17 +94,34 @@ def extract_episode_number(title: str) -> int:
     return int(match.group(1)) if match else None
 
 def fetch_episode_page(url: str):
+    """Fetch a single episode page and return (url, response, error)"""
     for attempt_url in (url, url.replace('/%20', '/')):
         try:
             resp = get_website_safe(attempt_url)
             if resp and resp.status_code == 200:
-                return resp
+                return url, resp
         except:
             continue
-    return None
+    return url, None
+
+def process_episode(ep):
+    """Process one episode: fetch and extract sources."""
+    ep_url = ep['url']
+    _, resp = fetch_episode_page(ep_url)
+    if not resp:
+        return None
+    ep_soup = BeautifulSoup(resp.text, 'html.parser')
+    sources = akwam_extract_episode_sources(ep_soup)
+    ep_num = extract_episode_number(ep['title'])
+    return {
+        'number': ep_num,
+        'title': ep['title'],
+        'url': ep_url,
+        'sources': sources
+    }
 
 def process_series(series, all_series):
-    """Process one series. Returns True if successful, False otherwise."""
+    """Process one series: fetch details, then fetch all episode pages in parallel."""
     series_id = series['id']
     print(f"  🔍 Fetching details for: {series['title']} ({series_id})")
     detail_resp = get_website_safe(series['url'])
@@ -112,6 +132,7 @@ def process_series(series, all_series):
     detail_soup = BeautifulSoup(detail_resp.text, 'html.parser')
     metadata = akwam_extract_series_metadata(detail_soup, AKWAM_BASE_URL)
 
+    # Merge basic info
     metadata.update({
         'id': series_id,
         'title': series['title'],
@@ -121,29 +142,33 @@ def process_series(series, all_series):
         'url': series['url']
     })
 
-    # Process episodes sequentially
-    episodes_with_sources = []
-    for ep in metadata.get('episodes', []):
-        ep_url = ep['url']
-        if DEBUG:
-            print(f"      Fetching: {ep['title'][:50]}...")
-        ep_resp = fetch_episode_page(ep_url)
-        if not ep_resp:
-            print(f"      ⚠️ Episode not accessible: {ep['title'][:50]}... – skipping")
-            continue
-        ep_soup = BeautifulSoup(ep_resp.text, 'html.parser')
-        sources = akwam_extract_episode_sources(ep_soup)
-        ep_num = extract_episode_number(ep['title'])
-        episodes_with_sources.append({
-            'number': ep_num,
-            'title': ep['title'],
-            'url': ep_url,
-            'sources': sources
-        })
-        time.sleep(0.5)
+    episodes = metadata.get('episodes', [])
+    if not episodes:
+        metadata['episode_count'] = 0
+        with series_lock:
+            all_series[series_id] = metadata
+            save_series(all_series)
+        save_progress_immediate(series_id)
+        print(f"    ⚠️ No episodes found for {series_id}")
+        return True
 
+    # Fetch all episode pages in parallel
+    print(f"    Fetching {len(episodes)} episodes in parallel (max {EPISODE_WORKERS} workers)...")
+    episodes_with_sources = []
+    with ThreadPoolExecutor(max_workers=EPISODE_WORKERS) as ex:
+        future_to_ep = {ex.submit(process_episode, ep): ep for ep in episodes}
+        for future in as_completed(future_to_ep):
+            result = future.result()
+            if result:
+                episodes_with_sources.append(result)
+            else:
+                ep = future_to_ep[future]
+                print(f"      ⚠️ Failed to fetch episode: {ep['title'][:50]}...")
+
+    # Sort episodes ascending by number
     episodes_with_sources.sort(key=lambda x: x['number'] if x['number'] is not None else 999999)
 
+    # Save episodes separately
     if episodes_with_sources:
         save_episodes("arabic-series", series_id, episodes_with_sources)
     else:
@@ -151,19 +176,17 @@ def process_series(series, all_series):
             print(f"    ⚠️ No episodes saved for {series_id}")
 
     metadata['episode_count'] = len(episodes_with_sources)
-    metadata.pop('episodes', None)
+    metadata.pop('episodes', None)  # remove raw episodes before storing main JSON
 
-    # Thread‑safe update of all_series
     with series_lock:
         all_series[series_id] = metadata
-        save_series(all_series)   # Save all after each series (could be slow but safe)
-    # Save progress immediately
+        save_series(all_series)
     save_progress_immediate(series_id)
     print(f"    ✅ Added {series['title']} (total {len(all_series)} series)")
     return True
 
 def scrape_arabic_series():
-    print("🚀 Starting Akwam Arabic Series Scraper (parallel, per‑series progress)")
+    print("🚀 Starting Akwam Arabic Series Scraper (parallel episodes within series)")
     processed_ids = load_progress()
     all_series = load_existing_series()
 
@@ -184,23 +207,21 @@ def scrape_arabic_series():
             print("  No series found, stopping.")
             break
 
-        # Series that are not yet processed
+        # Filter out already processed series
         new_series = [s for s in series_list if s['id'] not in processed_ids]
         if not new_series:
             print("  No new series on this page.")
         else:
-            print(f"  Found {len(new_series)} new series. Fetching in parallel (max {MAX_WORKERS} workers)...")
+            print(f"  Found {len(new_series)} new series. Fetching details in parallel (max {MAX_WORKERS} workers)...")
             with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
                 futures = {executor.submit(process_series, s, all_series): s for s in new_series}
                 for future in as_completed(futures):
                     s = futures[future]
                     try:
-                        success = future.result()
-                        if not success:
-                            # If failed, we still mark as processed to avoid infinite retry
-                            save_progress_immediate(s['id'])
+                        future.result()
                     except Exception as e:
-                        print(f"  ❌ Exception for {s['title']}: {e}")
+                        print(f"  ❌ Error processing {s['title']}: {e}")
+                        # Still mark as processed to avoid infinite retry
                         save_progress_immediate(s['id'])
 
         # Move to next page
