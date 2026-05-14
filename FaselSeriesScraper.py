@@ -4,7 +4,7 @@ FaselSeriesScraper.py – Unified scraper for series, tvshows, asian-series.
 - Full scrape: goes through all pages (no early stop).
 - Daily mode: after full scrape, only first N pages (default 5).
 - Extracts episodes and seasons.
-- Adds Sources (player token URLs) for series detail pages.
+- Does NOT extract player token sources (lighter & faster).
 - Usage:
     python FaselSeriesScraper.py            # all categories
     python FaselSeriesScraper.py asian-series
@@ -29,7 +29,7 @@ from Common import (
     extract_country, extract_runtime, extract_description,
     extract_status, extract_viewing_level, extract_language,
     extract_release_date, extract_episode_duration,
-    extract_episode_count_text, extract_sources
+    extract_episode_count_text
 )
 
 SERIES_PATHS = ["series", "tvshows", "asian-series"]
@@ -305,8 +305,7 @@ def scrape_series_category(path: str):
             if seasons_with_episodes:
                 save_episodes_for_series(path, series_id, seasons_with_episodes)
 
-            sources = extract_sources(dsoup)
-
+            # No sources extraction – removed
             new_series[series_id] = {
                 "Title": title,
                 "Category": path,
@@ -356,7 +355,6 @@ def scrape_series_category(path: str):
                         "Category": path,
                         "Image Source": "",
                         "Source": "",
-                        "Sources": [],
                         "Genres": [],
                         "GenresAr": [],
                         "Format": get_content_format(dsoup),
@@ -379,7 +377,6 @@ def scrape_series_category(path: str):
     print(f"\n🏁 {path} finished. Total series: {len(all_series)}")
 
 def main():
-    # Check command-line argument for a single category
     if len(sys.argv) > 1:
         category = sys.argv[1]
         if category in SERIES_PATHS:

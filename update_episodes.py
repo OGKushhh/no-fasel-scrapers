@@ -16,7 +16,7 @@ from bs4 import BeautifulSoup
 from Common import (
     DEBUG, REQUEST_DELAY, get_website_safe,
     extract_seasons_from_page, extract_episodes_from_season_page,
-    get_seasons_url_from_detail, extract_status, extract_sources,
+    get_seasons_url_from_detail, extract_status,
     FASEL_BASE_URL, AKWAM_BASE_URL,
     akwam_extract_series_metadata, akwam_extract_episode_sources,
     _parse_akwam_date as parse_akwam_date
@@ -120,23 +120,14 @@ def save_fasel_episodes(category: str, series_id: str, data: dict):
     if DEBUG:
         print(f"  💾 Saved Fasel episodes for {category}/{series_id}")
 
-def get_fasel_season_episodes_with_sources(season_url: str) -> list:
+def get_fasel_season_episodes(season_url: str) -> list:
+    """Return list of episode dicts with URL only – no source fetching."""
     resp = get_website_safe(season_url)
     if not resp:
         return []
     soup = BeautifulSoup(resp.text, "html.parser")
     episode_urls = extract_episodes_from_season_page(soup)
-    episodes = []
-    for url in episode_urls:
-        ep_resp = get_website_safe(url)
-        if ep_resp:
-            ep_soup = BeautifulSoup(ep_resp.text, "html.parser")
-            sources = extract_sources(ep_soup)
-        else:
-            sources = []
-        episodes.append({"url": url, "sources": sources})
-        time.sleep(REQUEST_DELAY / 2)
-    return episodes
+    return [{"url": url} for url in episode_urls]
 
 def update_fasel_series(category: str, series_id: str, detail_url: str) -> bool:
     # Get current total from site
@@ -184,7 +175,7 @@ def update_fasel_series(category: str, series_id: str, detail_url: str) -> bool:
         season_url = season["page_url"]
         poster = season.get("poster", "")
 
-        current_episodes = get_fasel_season_episodes_with_sources(season_url)
+        current_episodes = get_fasel_season_episodes(season_url)
         stored_season = existing_seasons.get(str(season_num), {})
         stored_episodes = stored_season.get("episodes", [])
 
@@ -194,7 +185,7 @@ def update_fasel_series(category: str, series_id: str, detail_url: str) -> bool:
         if new_episodes:
             print(f"  🆕 Season {season_num}: +{len(new_episodes)} new episodes")
             if stored_episodes and isinstance(stored_episodes[0], str):
-                stored_episodes = [{"url": u, "sources": []} for u in stored_episodes]
+                stored_episodes = [{"url": u} for u in stored_episodes]
             all_episodes = stored_episodes + new_episodes
             existing_seasons[str(season_num)] = {"poster": poster, "episodes": all_episodes}
             changed = True

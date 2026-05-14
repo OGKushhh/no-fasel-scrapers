@@ -31,7 +31,7 @@ from bs4 import BeautifulSoup
 from Common import (
     DEBUG, REQUEST_DELAY, get_website_safe,
     extract_seasons_from_page, extract_episodes_from_season_page,
-    get_seasons_url_from_detail, extract_status, extract_sources,
+    get_seasons_url_from_detail, extract_status,
     FASEL_BASE_URL, AKWAM_BASE_URL,
     akwam_extract_series_metadata, akwam_extract_episode_sources,
     _parse_akwam_date as parse_akwam_date
@@ -137,14 +137,6 @@ def fetch_season_page(season):
     time.sleep(REQUEST_DELAY / 2)  # be gentle
     return season_num, ep_urls, poster
 
-def fetch_episode_sources(url):
-    """Fetch a single episode page and return its sources."""
-    ep_resp = get_website_safe(url)
-    if ep_resp:
-        ep_soup = BeautifulSoup(ep_resp.text, "html.parser")
-        return extract_sources(ep_soup)
-    return []
-
 # ---------- Optimized Fasel update with parallelism ----------
 def update_fasel_series_by_id(category: str, series_id: str, detail_url: str, dry_run=False, workers=DEFAULT_WORKERS) -> bool:
     # Get seasons hub URL
@@ -219,33 +211,16 @@ def update_fasel_series_by_id(category: str, series_id: str, detail_url: str, dr
 
         # Normalise stored episodes
         if stored_episodes and isinstance(stored_episodes[0], str):
-            stored_episodes = [{"url": u, "sources": []} for u in stored_episodes]
+            stored_episodes = [{"url": u} for u in stored_episodes]
 
         if new_urls:
             print(f"  🆕 Season {season_num}: +{len(new_urls)} new episodes")
-            # Parallel fetch sources for new episodes
-            with ThreadPoolExecutor(max_workers=workers) as ex:
-                source_futures = {ex.submit(fetch_episode_sources, url): url for url in new_urls}
-                new_episodes = []
-                for future in as_completed(source_futures):
-                    url = source_futures[future]
-                    sources = future.result()
-                    new_episodes.append({"url": url, "sources": sources})
-            # Preserve order (optional)
-            new_episodes.sort(key=lambda x: new_urls.index(x["url"]))
+            new_episodes = [{"url": url} for url in new_urls]
             all_episodes = stored_episodes + new_episodes
         else:
             # Entirely new season
             print(f"  📦 Season {season_num}: storing {len(current_urls)} episodes")
-            # Parallel fetch all episodes in this new season
-            with ThreadPoolExecutor(max_workers=workers) as ex:
-                source_futures = {ex.submit(fetch_episode_sources, url): url for url in current_urls}
-                all_episodes = []
-                for future in as_completed(source_futures):
-                    url = source_futures[future]
-                    sources = future.result()
-                    all_episodes.append({"url": url, "sources": sources})
-            all_episodes.sort(key=lambda x: current_urls.index(x["url"]))
+            all_episodes = [{"url": url} for url in current_urls]
 
         existing_seasons[str(season_num)] = {"poster": poster, "episodes": all_episodes}
         changed = True

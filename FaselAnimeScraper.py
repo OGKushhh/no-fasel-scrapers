@@ -4,7 +4,7 @@ FaselAnimeScraper.py – Unified scraper for anime series.
 - Full scrape: goes through all pages, saves progress.
 - Daily mode: after full scrape, only first N pages (default 5).
 - Extracts numeric IDs when available to skip known items.
-- Adds Sources (player token URLs) from server tabs.
+- Does NOT extract player token sources (lighter & faster).
 """
 
 import json
@@ -23,7 +23,7 @@ from Common import (
     extract_country, extract_runtime, extract_description,
     extract_status, extract_viewing_level, extract_language,
     extract_release_date, extract_episode_duration,
-    extract_episode_count_text, extract_sources
+    extract_episode_count_text
 )
 
 DAILY_SCAN_PAGES = 5
@@ -218,8 +218,7 @@ def scrape_anime():
             episode_duration = extract_episode_duration(dsoup)
             episode_count_text = extract_episode_count_text(dsoup)
 
-            sources = extract_sources(dsoup)
-
+            # No sources extraction – removed
             new_anime[anime_id] = {
                 "Title": title,
                 "Category": "anime",
@@ -274,7 +273,6 @@ def scrape_anime():
                         "Number Of Episodes Text": 0,
                         "Image Source": "",
                         "Source": "",
-                        "Sources": [],
                         "Genres": [],
                         "GenresAr": [],
                         "Format": get_content_format(dsoup),

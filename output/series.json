@@ -505,7 +505,7 @@
         "ReleaseDate": "2026-04-15",
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 8,
-        "Number Of Episodes": 6
+        "Number Of Episodes": 7
     },
     "296567": {
         "Title": "مسلسل Salish and Jordan Matter",
@@ -34666,10 +34666,11 @@
         "Status": "مستمر",
         "ViewingLevel": "N/A",
         "Language": "الأنجليزية",
-        "ReleaseDate": "January 2020",
+        "ReleaseDate": "2020",
         "EpisodeDuration": "45د",
         "Number Of Episodes Text": 0,
-        "last_scraped": "2026-05-03T02:59:47.699807+00:00"
+        "last_scraped": "2026-05-03T02:59:47.699807+00:00",
+        "Number Of Episodes": 2
     },
     "260037": {
         "Title": "مسلسل Bandish Bandits",
@@ -43994,26 +43995,6 @@
         "EpisodeDuration": "40د",
         "Number Of Episodes Text": 6,
         "last_scraped": "2026-05-03T06:18:05.916669+00:00"
-    },
-    "2": {
-        "Title": "",
-        "Category": "series",
-        "Image Source": "https://static.faselhdcdn.com/wp-content/themes/faselhd_2020/images/blank.gif",
-        "Source": "",
-        "Genres": [],
-        "GenresAr": [],
-        "Format": "N/A",
-        "Runtime": null,
-        "Country": null,
-        "Description": "مشاهدة وتحميل جميع مواسم كامل HD مترجم بجودة عالية علي موقع فاصل اعلاني FaselHD اون لاين مترجم اونلاين",
-        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/172769-2",
-        "Status": "",
-        "ViewingLevel": "",
-        "Language": "",
-        "ReleaseDate": "",
-        "EpisodeDuration": "",
-        "Number Of Episodes Text": 0,
-        "last_scraped": "2026-05-03T06:18:05.987597+00:00"
     },
     "172747": {
         "Title": "مسلسل Fakes",
@@ -73632,7 +73613,7 @@
         "Status": "مكتمل",
         "ViewingLevel": "TV-MA",
         "Language": "الإنجليزية",
-        "ReleaseDate": "tt9184592",
+        "ReleaseDate": "2019",
         "EpisodeDuration": "24د",
         "Number Of Episodes Text": 15,
         "last_scraped": "2026-05-03T18:56:37.093589+00:00"
@@ -75576,7 +75557,7 @@
         "EpisodeDuration": "60د",
         "Number Of Episodes Text": 8,
         "last_scraped": "2026-05-03T19:43:06.031608+00:00",
-        "Number Of Episodes": 38
+        "Number Of Episodes": 39
     },
     "135429": {
         "Title": "مسلسل Another Life",
@@ -77350,7 +77331,7 @@
         "Status": "+15",
         "ViewingLevel": "",
         "Language": "الكورية",
-        "ReleaseDate": "Fridays & Saturdays 22:00 KST",
+        "ReleaseDate": "2019",
         "EpisodeDuration": "30د",
         "Number Of Episodes Text": 48,
         "last_scraped": "2026-05-03T20:26:06.070903+00:00"
@@ -88638,7 +88619,8 @@
         "ReleaseDate": "",
         "EpisodeDuration": "53د",
         "Number Of Episodes Text": 13,
-        "last_scraped": "2026-05-04T01:55:33.346750+00:00"
+        "last_scraped": "2026-05-04T01:55:33.346750+00:00",
+        "Number Of Episodes": 27
     },
     "40446": {
         "Title": "مسلسل Life Unexpected",
@@ -96938,7 +96920,7 @@
         "Status": "TV-MA",
         "ViewingLevel": "",
         "Language": "إنجليزي",
-        "ReleaseDate": "صباح كل يوم أثنين",
+        "ReleaseDate": "2014",
         "EpisodeDuration": "60د",
         "Number Of Episodes Text": 8,
         "last_scraped": "2026-05-04T07:44:01.536981+00:00"
@@ -101070,7 +101052,7 @@
         "Status": "مكتمل",
         "ViewingLevel": "",
         "Language": "English",
-        "ReleaseDate": "19942009",
+        "ReleaseDate": "1994",
         "EpisodeDuration": "44د",
         "Number Of Episodes Text": 22,
         "last_scraped": "2026-05-13T02:01:15.464414+00:00"
@@ -101122,7 +101104,7 @@
         "Status": "مكتمل",
         "ViewingLevel": "",
         "Language": "English",
-        "ReleaseDate": "20002005",
+        "ReleaseDate": "2000",
         "EpisodeDuration": "23د",
         "Number Of Episodes Text": 26,
         "last_scraped": "2026-05-13T02:02:19.640835+00:00"
@@ -101150,7 +101132,7 @@
         "Status": "مكتمل",
         "ViewingLevel": "",
         "Language": "English",
-        "ReleaseDate": "20142017",
+        "ReleaseDate": "2014",
         "EpisodeDuration": "23د",
         "Number Of Episodes Text": 21,
         "last_scraped": "2026-05-13T02:03:16.232839+00:00"
@@ -101176,7 +101158,7 @@
         "Status": "مكتمل",
         "ViewingLevel": "",
         "Language": "English",
-        "ReleaseDate": "2016-02-14",
+        "ReleaseDate": "2016",
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 21,
         "last_scraped": "2026-05-13T02:04:10.221809+00:00"
@@ -101208,5 +101190,57 @@
         "EpisodeDuration": "",
         "Number Of Episodes Text": 13,
         "last_scraped": "2026-05-13T02:04:49.724224+00:00"
+    },
+    "299441": {
+        "Title": "مسلسل Between Father and Son",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/05/09364d785c22d89f16ef9772cf1506b7-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Thriller"
+        ],
+        "GenresAr": [
+            "Drama",
+            "Thriller"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "حين تزور محامية ناجحة منزل عائلة خطيبها، تتقرّب من ابنه المضطرب بطريقة مريبة وسط أجواء مشحونة بضغائن دفينة وأسرار تنذر بوقوع الشر.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-father-son",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "Spanish",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 20,
+        "last_scraped": "2026-05-13T14:32:55.718731+00:00"
+    },
+    "299399": {
+        "Title": "مسلسل Off Campus",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/05/cca0bf1a5adea2e59fe592708a624e73-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Romance"
+        ],
+        "GenresAr": [
+            "Drama",
+            "Romance"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يتبع العمل قصة دراما رومانسية تدور أحداثها في الجامعة، حيث تتطور علاقة حب غير متوقعة بين طالبة موسيقى ونجم فريق الهوكي بالجامعة، مستكشفةً موضوعات الحب وتعقيدات مرحلة النضج.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-off-campus",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-05-13T14:33:09.398823+00:00"
     }
 }

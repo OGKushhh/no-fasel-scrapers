@@ -4,7 +4,7 @@ FaselMoviesScraper.py – Unified scraper for all movie categories.
 - Full scrape: goes through all pages, saves progress.
 - Daily mode: after full scrape, checks only first N pages (default 5).
 - Extracts numeric IDs when available to skip known items.
-- Adds Sources (player token URLs) from server tabs.
+- Does NOT extract player token sources (lighter & faster).
 """
 
 import json
@@ -21,7 +21,7 @@ from Common import (
     get_website_safe, get_number_of_pages, get_paginated_url,
     get_content_id, clean_iframe_source, get_content_format, get_genres_both,
     extract_country, extract_runtime, extract_description,
-    extract_release_date, extract_language, extract_sources
+    extract_release_date, extract_language
 )
 
 MOVIE_PATHS = ["movies", "dubbed-movies", "hindi", "asian-movies", "anime-movies"]
@@ -179,14 +179,12 @@ def scrape_category(path: str):
             language = extract_language(dsoup)
             country = extract_country(dsoup)
 
-            sources = extract_sources(dsoup)
-
+            # No sources extraction – removed
             new_movies[movie_id] = {
                 "Title": title,
                 "Category": path,
                 "Image Source": img_src,
-                "Source": source,          # old iframe URL (may be empty)
-                "Sources": sources,        # new array of player token URLs
+                "Source": source,
                 "Genres": genres_info["en"],
                 "GenresAr": genres_info["ar"],
                 "Format": get_content_format(dsoup),
@@ -226,7 +224,6 @@ def scrape_category(path: str):
                         "Category": path,
                         "Image Source": "",
                         "Source": "",
-                        "Sources": [],
                         "Genres": [],
                         "GenresAr": [],
                         "Format": get_content_format(dsoup),
