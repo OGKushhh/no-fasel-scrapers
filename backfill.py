@@ -62,19 +62,24 @@ SAVE_INTERVAL = 50          # save main JSON after this many updates
 BATCH_DELAY = 2             # seconds between batches
 # ===================================
 
-def load_progress(progress_file: str) -> int:
-    """Load the last contiguous completed index (0-indexed)."""
+def load_progress(progress_file: str) -> set:
+    """Load the set of already-completed item IDs from a JSON progress file."""
     if os.path.exists(progress_file):
-        with open(progress_file, "r") as f:
-            try:
-                return int(f.read().strip())
-            except:
-                return 0
-    return 0
+        try:
+            with open(progress_file, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            if isinstance(data, list):
+                return set(data)
+        except Exception:
+            pass
+    return set()
 
-def save_progress(progress_file: str, index: int):
-    with open(progress_file, "w") as f:
-        f.write(str(index))
+def save_progress(progress_file: str, done_ids: set):
+    """Atomically write completed item IDs to the progress file."""
+    tmp = progress_file + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(list(done_ids), f)
+    os.replace(tmp, progress_file)
 
 def fetch_description(item_id: str, detail_url: str = None) -> str:
     if not detail_url:
@@ -110,67 +115,79 @@ def backfill_descriptions_for_file(json_path: Path, category: str):
     items = list(data.items())
     total = len(items)
 
-    progress_file = str(json_path).replace(".json", "_desc_progress.txt")
-    start_contiguous = load_progress(progress_file)
-    print(f"  Resuming from contiguous index {start_contiguous} / {total}")
+    progress_file = str(json_path).replace(".json", "_desc_progress.json")
+    done_ids = load_progress(progress_file)
+
+    # Also consider items already complete in the JSON itself as done
+    already_done = {
+        item_id for item_id, item_data in items
+        if item_data.get("Description") is not None and item_data.get("last_scraped")
+    }
+    done_ids |= already_done
+
+    remaining = [(item_id, item_data) for item_id, item_data in items if item_id not in done_ids]
+    print(f"  {len(already_done)} already complete, {len(remaining)} remaining / {total} total")
+
+    if not remaining:
+        print(f"  ✅ Nothing to do for {json_path.name}")
+        if os.path.exists(progress_file):
+            os.remove(progress_file)
+        return
 
     updated_count = 0
     lock = Lock()
     now_iso = datetime.now(timezone.utc).isoformat()
 
-    completed = set()
-    max_contiguous = start_contiguous
+    def _save_json():
+        tmp = str(json_path) + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=4, ensure_ascii=False)
+        os.replace(tmp, str(json_path))
 
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        for i in range(max_contiguous, total, MAX_WORKERS):
-            batch = items[i:i+MAX_WORKERS]
-            futures = {}
-            for idx, (item_id, item_data) in enumerate(batch, start=i):
-                if item_data.get("Description") and item_data.get("last_scraped"):
-                    continue
-                future = executor.submit(fetch_description, item_id)
-                futures[future] = (idx, item_id, item_data)
+        for i in range(0, len(remaining), MAX_WORKERS):
+            batch = remaining[i:i + MAX_WORKERS]
+            futures = {
+                executor.submit(fetch_description, item_id): (item_id, item_data)
+                for item_id, item_data in batch
+            }
 
             for future in as_completed(futures):
-                idx, item_id, item_data = futures[future]
+                item_id, item_data = futures[future]
                 desc = future.result()
                 with lock:
                     changed = False
+
                     if desc and not item_data.get("Description"):
                         item_data["Description"] = desc
                         updated_count += 1
-                        print(f"  [{idx+1}/{total}] ✅ Added description for {item_id} ({len(desc)} chars)")
+                        print(f"  [{i+1}/{len(remaining)}] ✅ {item_id} ({len(desc)} chars)")
                         changed = True
-                    elif not desc and not item_data.get("Description"):
+                    elif not desc and item_data.get("Description") is None:
                         item_data["Description"] = ""
-                        print(f"  [{idx+1}/{total}] ⚠️ No description for {item_id}")
+                        print(f"  [{i+1}/{len(remaining)}] ⚠️  No description for {item_id}")
                         changed = True
 
                     if not item_data.get("last_scraped"):
                         item_data["last_scraped"] = now_iso
-                        print(f"  [{idx+1}/{total}] 🕒 Added last_scraped for {item_id}")
                         changed = True
 
-                    if changed:
-                        completed.add(idx + 1)
-                        while max_contiguous + 1 in completed:
-                            max_contiguous += 1
-                        save_progress(progress_file, max_contiguous)
+                    # Always mark done so we don't retry this ID on next run
+                    done_ids.add(item_id)
+                    save_progress(progress_file, done_ids)
 
-                        if updated_count % SAVE_INTERVAL == 0:
-                            with open(json_path, "w", encoding="utf-8") as f:
-                                json.dump(data, f, indent=4, ensure_ascii=False)
-                            print(f"  💾 Saved progress (updated {updated_count} items)")
+                    if changed and updated_count > 0 and updated_count % SAVE_INTERVAL == 0:
+                        _save_json()
+                        print(f"  💾 Saved JSON (updated {updated_count} items so far)")
 
             time.sleep(BATCH_DELAY)
 
-    with open(json_path, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=4, ensure_ascii=False)
+    _save_json()
 
     if os.path.exists(progress_file):
         os.remove(progress_file)
 
-    print(f"  ✅ Finished {json_path.name}: added {updated_count} descriptions and last_scraped timestamps.")
+    print(f"  ✅ Finished {json_path.name}: updated {updated_count} items.")
 
 def backfill_all_descriptions():
     for filename, category in DESCRIPTION_FILES.items():
@@ -192,64 +209,72 @@ def backfill_movies_combined(json_path: Path, category: str):
     items = list(data.items())
     total = len(items)
 
-    progress_file = str(json_path).replace(".json", "_movie_progress.txt")
-    start_contiguous = load_progress(progress_file)
-    print(f"  Resuming from contiguous index {start_contiguous} / {total}")
+    progress_file = str(json_path).replace(".json", "_movie_progress.json")
+    done_ids = load_progress(progress_file)
+
+    already_done = {
+        item_id for item_id, item_data in items
+        if item_data.get("Description") is not None and item_data.get("last_scraped")
+    }
+    done_ids |= already_done
+
+    remaining = [(item_id, item_data) for item_id, item_data in items if item_id not in done_ids]
+    print(f"  {len(already_done)} already complete, {len(remaining)} remaining / {total} total")
+
+    if not remaining:
+        print(f"  ✅ Nothing to do for {json_path.name}")
+        if os.path.exists(progress_file):
+            os.remove(progress_file)
+        return
 
     updated_count = 0
     lock = Lock()
     now_iso = datetime.now(timezone.utc).isoformat()
 
-    completed = set()
-    max_contiguous = start_contiguous
+    def _save_json():
+        tmp = str(json_path) + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=4, ensure_ascii=False)
+        os.replace(tmp, str(json_path))
 
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        for i in range(max_contiguous, total, MAX_WORKERS):
-            batch = items[i:i+MAX_WORKERS]
-            futures = {}
-            for idx, (item_id, item_data) in enumerate(batch, start=i):
-                # Skip if already has description and last_scraped
-                if item_data.get("Description") and item_data.get("last_scraped"):
-                    continue
-                detail_url = f"https://www.fasel-hd.cam/?p={item_id}"
-                future = executor.submit(fetch_movie_data, item_id, detail_url)
-                futures[future] = (idx, item_id, item_data)
+        for i in range(0, len(remaining), MAX_WORKERS):
+            batch = remaining[i:i + MAX_WORKERS]
+            futures = {
+                executor.submit(fetch_movie_data, item_id, f"https://www.fasel-hd.cam/?p={item_id}"): (item_id, item_data)
+                for item_id, item_data in batch
+            }
 
             for future in as_completed(futures):
-                idx, item_id, item_data = futures[future]
+                item_id, item_data = futures[future]
                 description = future.result()
                 with lock:
                     changed = False
+
                     if description and not item_data.get("Description"):
                         item_data["Description"] = description
                         updated_count += 1
-                        print(f"  [{idx+1}/{total}] ✅ Added description for {item_id} ({len(description)} chars)")
+                        print(f"  [{i+1}/{len(remaining)}] ✅ {item_id} ({len(description)} chars)")
                         changed = True
-                    elif not description and not item_data.get("Description"):
+                    elif not description and item_data.get("Description") is None:
                         item_data["Description"] = ""
-                        print(f"  [{idx+1}/{total}] ⚠️ No description for {item_id}")
+                        print(f"  [{i+1}/{len(remaining)}] ⚠️  No description for {item_id}")
                         changed = True
 
                     if not item_data.get("last_scraped"):
                         item_data["last_scraped"] = now_iso
-                        print(f"  [{idx+1}/{total}] 🕒 Added last_scraped for {item_id}")
                         changed = True
 
-                    if changed:
-                        completed.add(idx + 1)
-                        while max_contiguous + 1 in completed:
-                            max_contiguous += 1
-                        save_progress(progress_file, max_contiguous)
+                    done_ids.add(item_id)
+                    save_progress(progress_file, done_ids)
 
-                        if updated_count % SAVE_INTERVAL == 0:
-                            with open(json_path, "w", encoding="utf-8") as f:
-                                json.dump(data, f, indent=4, ensure_ascii=False)
-                            print(f"  💾 Saved progress (updated {updated_count} items)")
+                    if changed and updated_count > 0 and updated_count % SAVE_INTERVAL == 0:
+                        _save_json()
+                        print(f"  💾 Saved JSON (updated {updated_count} items so far)")
 
             time.sleep(BATCH_DELAY)
 
-    with open(json_path, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=4, ensure_ascii=False)
+    _save_json()
 
     if os.path.exists(progress_file):
         os.remove(progress_file)

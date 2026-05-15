@@ -7,6 +7,7 @@ import subprocess
 import sys
 import os
 import threading
+import time
 import tkinter as tk
 from tkinter import ttk, scrolledtext, messagebox, simpledialog
 import shlex
@@ -80,7 +81,10 @@ class ScraperGUI:
         self.output_tabs  = {}
         self.custom_procs = {}
         self.indicators   = {}
+        self._stopped_procs = set()   # PIDs killed manually; _reader skips UI reset for these
         self.backfill_task_var = tk.StringVar(value="All Tasks")
+        self.auto_scroll  = {}   # tab_name -> BooleanVar
+        self.start_times  = {}   # name -> float (time.monotonic)
 
         self.dark_mode = False
         self.T = LIGHT
@@ -163,6 +167,11 @@ class ScraperGUI:
             log_frame, wrap=tk.WORD, font=("Consolas", 9), state=tk.DISABLED
         )
         self.log_text.grid(row=0, column=0, sticky="nsew")
+        self.log_text.tag_configure("ok",   foreground="#27ae60")
+        self.log_text.tag_configure("warn", foreground="#e67e22")
+        self.log_text.tag_configure("err",  foreground="#e74c3c")
+        self.log_text.tag_configure("dim",  foreground="#888888")
+        self.auto_scroll[id(self.log_text)] = tk.BooleanVar(value=True)
         self._log(f"Started — {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
 
     def _section_header(self, text):
@@ -237,6 +246,13 @@ class ScraperGUI:
         )
         self._custom_btn.pack(fill=tk.X, padx=8, pady=(4, 2))
 
+        self._stop_all_btn = tk.Button(
+            self.scroll_frame, text="⏹  Stop All",
+            command=self.stop_all_scripts,
+            relief=tk.FLAT, bd=0, pady=6, font=("Arial", 9, "bold"),
+        )
+        self._stop_all_btn.pack(fill=tk.X, padx=8, pady=(2, 2))
+
         self.dark_toggle_btn = tk.Button(
             self.scroll_frame, text="🌙  Dark Mode",
             command=self.toggle_dark_mode,
@@ -296,6 +312,8 @@ class ScraperGUI:
 
         self._custom_btn.configure(bg=T["btn_green"], fg=T["btn_green_fg"],
                                    activebackground=T["btn_green"])
+        self._stop_all_btn.configure(bg=T["btn_stop"], fg=T["btn_stop_fg"],
+                                     activebackground=T["btn_stop"])
         self.dark_toggle_btn.configure(bg=T["sidebar"], fg=T["fg"],
                                        activebackground=T["btn_active"])
 
@@ -305,6 +323,27 @@ class ScraperGUI:
         for widget in self.output_tabs.values():
             widget.configure(bg=T["text_bg"], fg=T["text_fg"],
                              insertbackground=T["fg"])
+
+    def stop_all_scripts(self):
+        names = list(self.processes.keys())
+        if not names:
+            self._set_status("⏹  Nothing running")
+            return
+        for name in names:
+            proc = self.processes.get(name)
+            if proc and proc.poll() is None:
+                self._stopped_procs.add(proc.pid)
+                self._kill_process(proc, name)
+            self.processes.pop(name, None)
+            self.output_tabs.pop(name, None)
+            self._set_indicator(name, False)
+            if name in self.script_buttons:
+                start_btn, stop_btn, _ = self.script_buttons[name]
+                start_btn.config(state=tk.NORMAL)
+                stop_btn.config(state=tk.DISABLED)
+        self.backfill_start_btn.config(state=tk.NORMAL)
+        self.backfill_stop_btn.config(state=tk.DISABLED)
+        self._set_status(f"⏹  Stopped all ({len(names)} processes)")
 
     def toggle_dark_mode(self):
         self.dark_mode = not self.dark_mode
@@ -343,6 +382,7 @@ class ScraperGUI:
         proc = self.processes.get(name)
         if not proc or proc.poll() is not None:
             return
+        self._stopped_procs.add(proc.pid)
         self._kill_process(proc, name)
         self.processes.pop(name, None)
         self.output_tabs.pop(name, None)
@@ -386,6 +426,7 @@ class ScraperGUI:
         proc = self.processes.get("backfill")
         if not proc or proc.poll() is not None:
             return
+        self._stopped_procs.add(proc.pid)
         self._kill_process(proc, "backfill")
         self.processes.pop("backfill", None)
         self.output_tabs.pop("backfill", None)
@@ -412,7 +453,7 @@ class ScraperGUI:
         self.notebook.add(tab_frame, text=f"  {tab_name}  ")
         tab_frame.rowconfigure(0, weight=1)
         tab_frame.columnconfigure(0, weight=1)
-        text_widget = self._make_output_widget(tab_frame)
+        text_widget = self._make_output_widget(tab_frame, tab_name)
 
         proc, _ = self._run_subprocess(cmd_list, tab_name, text_widget)
         if proc:
@@ -447,7 +488,7 @@ class ScraperGUI:
             self.notebook.add(tab_frame, text=f"  {tab_name}  ")
             tab_frame.rowconfigure(0, weight=1)
             tab_frame.columnconfigure(0, weight=1)
-            text_widget = self._make_output_widget(tab_frame)
+            text_widget = self._make_output_widget(tab_frame, tab_name)
             self.notebook.select(tab_frame)
 
         try:
@@ -461,6 +502,7 @@ class ScraperGUI:
             messagebox.showerror("Error", f"Could not start:\n{' '.join(cmd)}\n\n{e}")
             return None, None
 
+        t0 = time.monotonic()
         stamp = datetime.now().strftime("%H:%M:%S")
         self._append_output(text_widget,
             f"{'─'*60}\n▶  {tab_name}  [{stamp}]\n{'─'*60}\n")
@@ -469,13 +511,23 @@ class ScraperGUI:
             for line in iter(proc.stdout.readline, ""):
                 self.root.after(0, lambda l=line: self._append_output(text_widget, l))
             proc.wait()
+
+            # If manually stopped, UI was already reset — don't touch it again
+            if proc.pid in self._stopped_procs:
+                self._stopped_procs.discard(proc.pid)
+                return
+
+            elapsed = time.monotonic() - t0
+            mins, secs = divmod(int(elapsed), 60)
+            elapsed_str = f"{mins}m {secs}s" if mins else f"{secs}s"
             ts = datetime.now().strftime("%H:%M:%S")
+            code = proc.returncode
             self.root.after(0, lambda: self._append_output(
                 text_widget,
-                f"{'─'*60}\n⏹  Finished (exit {proc.returncode})  [{ts}]\n{'─'*60}\n"
+                f"{'─'*60}\n⏹  Finished (exit {code})  [{ts}]  ⏱ {elapsed_str}\n{'─'*60}\n"
             ))
             self.root.after(0, lambda: self._set_status(
-                f"✔  Done: {tab_name}  (exit {proc.returncode})"
+                f"{'✔' if code == 0 else '✖'}  Done: {tab_name}  (exit {code})  ⏱ {elapsed_str}"
             ))
             for sname, (sbtn, stpbtn, _) in self.script_buttons.items():
                 if self.processes.get(sname) is proc:
@@ -489,7 +541,7 @@ class ScraperGUI:
         threading.Thread(target=_reader, daemon=True).start()
         return proc, text_widget
 
-    def _make_output_widget(self, parent):
+    def _make_output_widget(self, parent, tab_name=None):
         T = self.T
         outer = tk.Frame(parent)
         outer.grid(row=0, column=0, sticky="nsew")
@@ -503,15 +555,58 @@ class ScraperGUI:
         )
         text.grid(row=0, column=0, sticky="nsew")
 
+        # Colour tags
+        text.tag_configure("ok",   foreground="#27ae60")
+        text.tag_configure("warn", foreground="#e67e22")
+        text.tag_configure("err",  foreground="#e74c3c")
+        text.tag_configure("dim",  foreground="#888888")
+
+        # Register auto-scroll var keyed by widget id
+        scroll_var = tk.BooleanVar(value=True)
+        self.auto_scroll[id(text)] = scroll_var
+
         strip = tk.Frame(outer, height=28, bg=T["btn_bg"])
         strip.grid(row=1, column=0, sticky="ew")
 
+        # Clear button — properly re-disables after clearing
+        def _clear(t=text):
+            t.config(state=tk.NORMAL)
+            t.delete("1.0", tk.END)
+            t.config(state=tk.DISABLED)
+
         tk.Button(
-            strip, text="Clear output",
-            command=lambda t=text: (t.config(state=tk.NORMAL), t.delete("1.0", tk.END)),
+            strip, text="Clear",
+            command=_clear,
             relief=tk.FLAT, bd=0, padx=10, pady=3, font=("Arial", 8),
             bg=T["btn_bg"], fg=T["fg"], activebackground=T["btn_active"],
-        ).pack(side=tk.RIGHT, padx=6, pady=2)
+        ).pack(side=tk.RIGHT, padx=4, pady=2)
+
+        # Auto-scroll pin toggle
+        tk.Checkbutton(
+            strip, text="Auto-scroll", variable=scroll_var,
+            relief=tk.FLAT, bd=0, font=("Arial", 8),
+            bg=T["btn_bg"], fg=T["fg"], activebackground=T["btn_active"],
+            selectcolor=T["btn_bg"],
+        ).pack(side=tk.RIGHT, padx=4, pady=2)
+
+        # Close-tab button
+        def _close_tab():
+            for i in range(self.notebook.index("end")):
+                try:
+                    if self.notebook.tab(i, "text").strip() == (tab_name or "").strip():
+                        self.notebook.forget(i)
+                        break
+                except tk.TclError:
+                    pass
+            self.auto_scroll.pop(id(text), None)
+
+        if tab_name:
+            tk.Button(
+                strip, text="✕  Close tab",
+                command=_close_tab,
+                relief=tk.FLAT, bd=0, padx=10, pady=3, font=("Arial", 8),
+                bg=T["btn_bg"], fg=T["fg"], activebackground=T["btn_active"],
+            ).pack(side=tk.LEFT, padx=4, pady=2)
 
         return text
 
@@ -519,24 +614,71 @@ class ScraperGUI:
         was_disabled = str(widget.cget("state")) == "disabled"
         if was_disabled:
             widget.config(state=tk.NORMAL)
-        widget.insert(tk.END, line)
-        widget.see(tk.END)
+
+        # Colour-code output lines by content
+        tag = None
+        low = line.lower()
+        if any(x in line for x in ("✅", "🆕", "📦", "💾", "✔")):
+            tag = "ok"
+        elif any(x in line for x in ("⚠️", "⚠", "warning", "Warning")):
+            tag = "warn"
+        elif any(x in line for x in ("❌", "error", "Error", "Traceback", "Exception")):
+            tag = "err"
+        elif line.startswith("⏹") or "exit " in low:
+            # colour exit line red if non-zero
+            tag = "err" if ("exit 0" not in low and "exit " in low) else "dim"
+        elif line.startswith("▶") or line.startswith("─"):
+            tag = "dim"
+
+        if tag:
+            widget.insert(tk.END, line, tag)
+        else:
+            widget.insert(tk.END, line)
+
+        # Only auto-scroll if the pin is on
+        key = id(widget)
+        if self.auto_scroll.get(key, tk.BooleanVar(value=True)).get():
+            widget.see(tk.END)
+
         if was_disabled:
             widget.config(state=tk.DISABLED)
 
+    def _update_running_count(self):
+        n = sum(1 for p in self.processes.values() if p.poll() is None)
+        if n:
+            self.status_var.set(f"  {self.status_var.get().strip()}   [{n} running]")
+
     def _kill_process(self, proc, name=""):
+        """Terminate proc and its entire child tree, then wait for it to die."""
+        if proc is None or proc.poll() is not None:
+            return  # already dead
         try:
             if sys.platform == "win32":
-                subprocess.run(["taskkill", "/F", "/T", "/PID", str(proc.pid)],
-                               capture_output=True)
+                # Kill the whole process tree (/T), forcefully (/F)
+                result = subprocess.run(
+                    ["taskkill", "/F", "/T", "/PID", str(proc.pid)],
+                    capture_output=True
+                )
+                if result.returncode != 0:
+                    # taskkill failed – fall back to direct terminate
+                    proc.terminate()
             else:
-                proc.terminate()
+                import signal as _signal
                 try:
-                    proc.wait(timeout=5)
+                    os.killpg(os.getpgid(proc.pid), _signal.SIGTERM)
+                except Exception:
+                    proc.terminate()
+            # Wait up to 5 s for the process to actually exit
+            try:
+                proc.wait(timeout=5)
+            except subprocess.TimeoutExpired:
+                proc.kill()
+                try:
+                    proc.wait(timeout=3)
                 except subprocess.TimeoutExpired:
-                    proc.kill()
+                    self._log(f"⚠️ Warning: {name} (PID {proc.pid}) did not exit after kill\n")
         except Exception as e:
-            self._log(f"Error stopping {name}: {e}\n")
+            self._log(f"⚠️ Error stopping {name}: {e}\n")
 
     def _set_indicator(self, key, running):
         dot = self.indicators.get(key)
