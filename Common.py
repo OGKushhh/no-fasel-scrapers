@@ -1030,10 +1030,27 @@ def search_imdbapi_dev(title: str, year: Optional[str] = None) -> tuple:
 # ======================================================================
 #  AKWAM SPECIFIC HELPERS (clean & simple)
 # ======================================================================
-AKWAM_BASE_URL = "https://akwam.com.co"   # Update if domain changes
+AKWAM_BASE_URL    = "https://akwam.it"       # ← update here if domain changes again
+AKWAM_GO_URL      = "https://go.akwam.it"   # shortener / watch+download links
+# Legacy domains – kept so normalize_akwam_url can rewrite saved links
+AKWAM_LEGACY_DOMAINS = ["akwam.com.co", "go.akwam.com.co", "akw.cam"]
 
-def akwam_extract_series_list(soup: BeautifulSoup, base_url: str = AKWAM_BASE_URL) -> List[dict]:
+def normalize_akwam_url(url: str) -> str:
+    """Rewrite any saved akwam link from old domains to the current live domain.
+    Safe to call even if the URL is already on the new domain or is empty.
+    """
+    if not url:
+        return url
+    for legacy in AKWAM_LEGACY_DOMAINS:
+        if legacy in url:
+            replacement = AKWAM_GO_URL.replace("https://", "") if legacy.startswith("go.") else AKWAM_BASE_URL.replace("https://", "")
+            return url.replace(legacy, replacement)
+    return url
+
+def akwam_extract_series_list(soup: BeautifulSoup, base_url: str = None) -> List[dict]:
     """Extract basic series info from a listing page."""
+    if base_url is None:
+        base_url = AKWAM_BASE_URL
     series_list = []
     cards = soup.select('.entry-box') or soup.select('.col-lg-auto.col-md-4.col-6')
     for card in cards:
@@ -1074,8 +1091,10 @@ def akwam_extract_series_list(soup: BeautifulSoup, base_url: str = AKWAM_BASE_UR
         })
     return series_list
 
-def akwam_extract_series_metadata(soup: BeautifulSoup, base_url: str = AKWAM_BASE_URL) -> dict:
+def akwam_extract_series_metadata(soup: BeautifulSoup, base_url: str = None) -> dict:
     """Extract all metadata from a series detail page (excluding episodes)."""
+    if base_url is None:
+        base_url = AKWAM_BASE_URL
     metadata = {}
 
     # Title
@@ -1230,7 +1249,7 @@ def _parse_akwam_date(date_str: str) -> str:
     return date_str
 
 def akwam_extract_episode_sources(soup: BeautifulSoup) -> List[dict]:
-    """Extract download/watch URLs from an episode page (only go.akwam.com.co links)."""
+    """Extract download/watch URLs from an episode page (go.akwam.it links)."""
     quality_map = {'tab-5': '1080p', 'tab-4': '720p', 'tab-3': '480p'}
     sources = []
     for tab_id, quality in quality_map.items():
