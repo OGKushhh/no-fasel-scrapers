@@ -120,8 +120,11 @@ def get_stored_count_fasel(category: str, series_id: str) -> int:
     seasons = data.get("seasons", {})
     total = 0
     for season in seasons.values():
-        episodes = season.get("episodes", [])
-        total += len(episodes)
+        # Season can be a plain list (anime scraper format) or a dict with "episodes" key
+        if isinstance(season, list):
+            total += len(season)
+        else:
+            total += len(season.get("episodes", []))
     return total
 
 def fetch_season_page(season):
@@ -202,25 +205,25 @@ def update_fasel_series_by_id(category: str, series_id: str, detail_url: str, dr
         current_urls = data['urls']
         poster = data['poster']
         stored_season = existing_seasons.get(str(season_num), {})
-        stored_episodes = stored_season.get("episodes", [])
+        # Season can be a plain list (anime format) or a dict with "episodes" key
+        if isinstance(stored_season, list):
+            stored_episodes = stored_season
+        else:
+            stored_episodes = stored_season.get("episodes", [])
+        # Normalise any dict entries back to plain URL strings
         stored_urls = [ep["url"] if isinstance(ep, dict) else ep for ep in stored_episodes]
 
         new_urls = [url for url in current_urls if url not in stored_urls]
         if not new_urls and stored_urls:
             continue
 
-        # Normalise stored episodes
-        if stored_episodes and isinstance(stored_episodes[0], str):
-            stored_episodes = [{"url": u} for u in stored_episodes]
-
         if new_urls:
             print(f"  🆕 Season {season_num}: +{len(new_urls)} new episodes")
-            new_episodes = [{"url": url} for url in new_urls]
-            all_episodes = stored_episodes + new_episodes
+            all_episodes = stored_urls + new_urls
         else:
             # Entirely new season
             print(f"  📦 Season {season_num}: storing {len(current_urls)} episodes")
-            all_episodes = [{"url": url} for url in current_urls]
+            all_episodes = current_urls
 
         existing_seasons[str(season_num)] = {"poster": poster, "episodes": all_episodes}
         changed = True

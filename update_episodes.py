@@ -65,7 +65,11 @@ def get_stored_episode_count_from_file(category: str, series_id: str) -> int:
             seasons = data.get("seasons", {})
             total = 0
             for season in seasons.values():
-                total += len(season.get("episodes", []))
+                # Season can be a plain list (anime scraper format) or a dict with "episodes" key
+                if isinstance(season, list):
+                    total += len(season)
+                else:
+                    total += len(season.get("episodes", []))
             return total
     elif category in AKWAM_CATEGORIES:
         ep_file = EPISODES_BASE / category / f"{series_id}.json"
@@ -121,13 +125,12 @@ def save_fasel_episodes(category: str, series_id: str, data: dict):
         print(f"  💾 Saved Fasel episodes for {category}/{series_id}")
 
 def get_fasel_season_episodes(season_url: str) -> list:
-    """Return list of episode dicts with URL only – no source fetching."""
+    """Return list of episode page URLs (plain strings) – no source fetching."""
     resp = get_website_safe(season_url)
     if not resp:
         return []
     soup = BeautifulSoup(resp.text, "html.parser")
-    episode_urls = extract_episodes_from_season_page(soup)
-    return [{"url": url} for url in episode_urls]
+    return extract_episodes_from_season_page(soup)
 
 def update_fasel_series(category: str, series_id: str, detail_url: str) -> bool:
     # Get current total from site
@@ -177,7 +180,11 @@ def update_fasel_series(category: str, series_id: str, detail_url: str) -> bool:
 
         current_episodes = get_fasel_season_episodes(season_url)
         stored_season = existing_seasons.get(str(season_num), {})
-        stored_episodes = stored_season.get("episodes", [])
+        # Season can be a plain list (anime scraper format) or a dict with "episodes" key
+        if isinstance(stored_season, list):
+            stored_episodes = stored_season
+        else:
+            stored_episodes = stored_season.get("episodes", [])
 
         stored_urls = [ep["url"] if isinstance(ep, dict) else ep for ep in stored_episodes]
         new_episodes = [ep for ep in current_episodes if ep["url"] not in stored_urls]

@@ -101242,5 +101242,141 @@
         "EpisodeDuration": "",
         "Number Of Episodes Text": 8,
         "last_scraped": "2026-05-13T14:33:09.398823+00:00"
+    },
+    "299621": {
+        "Title": "مسلسل Dutton Ranch",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/05/a0b0c47f02a617c162c6c03913fca28f-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Melodrama",
+            "Western"
+        ],
+        "GenresAr": [
+            "Drama",
+            "Melodrama",
+            "Western"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يكافح “بيث داتون” و”ريب ويلر” من أجل البقاء في مزرعتهما العزيزة التي تبلغ مساحتها 7000 فدان وسط أوقات صعبة ومنافسة شديدة، مع ضمان أن يصبح “كارتر” الشاب الرجل الذي من المفترض أن يكون.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-dutton-ranch",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-05-15",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 9,
+        "last_scraped": "2026-05-17T21:37:01.725580+00:00"
+    },
+    "299611": {
+        "Title": "مسلسل Jamie and Sophie: Raising Chelsea",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/05/a033a2d702bc7262e89429940d6b8ef3-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Reality-tv"
+        ],
+        "GenresAr": [
+            "Reality-tv"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يشارك نجما تلفزيون الواقع “جيمي لينغ” و”صوفي هابو” رحلتهما بينما يستعدان لتغيير كبير في حياتهما ويتقبلان تحديات أن يصبحا آباء لأول مرة.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-jamie-sophie-raising-chelsea",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-04-02",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 3,
+        "last_scraped": "2026-05-17T21:37:56.471358+00:00"
+    },
+    "299567": {
+        "Title": "مسلسل Berlin and the Lady with an Ermine",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/05/4f73d77fa7a6c8c7b14580b0e4c8ce8e-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Crime",
+            "Drama",
+            "Thriller"
+        ],
+        "GenresAr": [
+            "Crime",
+            "Drama",
+            "Thriller"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يتعطش “برلين” لعملية سطو جديدة، فيستدعي العصابة إلى “إشبيلية” ليحوّل دوقًا طموحًا إلى ضحية خطته الخاصة: سرقة لوحة “دا فينشي”.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-berlin-lady-ermine",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "Spanish",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-05-17T21:38:26.352277+00:00"
+    },
+    "299486": {
+        "Title": "مسلسل Nemesis",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/05/a30f4a9739e133f4144a30f0c7087991-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Action",
+            "Crime",
+            "Drama",
+            "Thriller"
+        ],
+        "GenresAr": [
+            "Action",
+            "Crime",
+            "Drama",
+            "Thriller"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 60,
+        "Country": null,
+        "Description": "يصبح محقّق عنيد من شرطة “لوس أنجلوس” مهووسًا بالقبض على لصّ محنك يقف وراء سلسلة من عمليات السطو الجريئة… ولن تكون الغلبة إلا لواحد منهما.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-nemesis-2",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "60د",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-05-17T21:38:40.255501+00:00"
+    },
+    "299764": {
+        "Title": "مسلسل ER",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/05/77a991eabbbd836e5b8df94d807687c1-400x600.webp",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Romance"
+        ],
+        "GenresAr": [
+            "Drama",
+            "Romance"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 44,
+        "Country": null,
+        "Description": "دراما طبية تصور الحياة والموت في غرفة الطوارئ في مستشفى شيكاغو، ففي كل حلقة تحكي عن ما يحصل في غرفة الطوارئ من الإثارة والمتعة والفرح والحزن لتتصور بدقة البيئة المجهدة التي يعيشها الأطباء هناك.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-er",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "19942009",
+        "EpisodeDuration": "44د",
+        "Number Of Episodes Text": 22,
+        "last_scraped": "2026-05-17T21:41:35.332124+00:00"
     }
 }
