@@ -505,7 +505,7 @@
         "ReleaseDate": "2026-04-15",
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 8,
-        "Number Of Episodes": 7
+        "Number Of Episodes": 8
     },
     "296567": {
         "Title": "مسلسل Salish and Jordan Matter",
@@ -100869,7 +100869,8 @@
         "ReleaseDate": "2026",
         "EpisodeDuration": "",
         "Number Of Episodes Text": 8,
-        "last_scraped": "2026-05-06T21:01:10.966197+00:00"
+        "last_scraped": "2026-05-06T21:01:10.966197+00:00",
+        "Number Of Episodes": 8
     },
     "298290": {
         "Title": "مسلسل Should I Marry a Murderer?",

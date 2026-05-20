@@ -5,33 +5,12 @@
         "1": {
             "poster": "https://static.faselhdcdn.com/wp-content/uploads/2026/04/214379f04f129de1c689ac1ef382cb43-400x600.jpg",
             "episodes": [
-                {
-                    "url": "https://www.fasel-hd.cam/episodes/%d9%85%d8%b3%d9%84%d8%b3%d9%84-testaments-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-1",
-                    "sources": []
-                },
-                {
-                    "url": "https://www.fasel-hd.cam/episodes/%d9%85%d8%b3%d9%84%d8%b3%d9%84-testaments-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-2",
-                    "sources": []
-                },
-                {
-                    "url": "https://www.fasel-hd.cam/episodes/%d9%85%d8%b3%d9%84%d8%b3%d9%84-testaments-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-3",
-                    "sources": []
-                },
-                {
-                    "url": "https://www.fasel-hd.cam/episodes/%d9%85%d8%b3%d9%84%d8%b3%d9%84-testaments-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-4",
-                    "sources": []
-                },
-                {
-                    "url": "https://www.fasel-hd.cam/episodes/%d9%85%d8%b3%d9%84%d8%b3%d9%84-testaments-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-5",
-                    "sources": []
-                },
-                {
-                    "url": "https://www.fasel-hd.cam/episodes/%d9%85%d8%b3%d9%84%d8%b3%d9%84-testaments-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-6",
-                    "sources": [
-                        "https://www.fasel-hd.cam/video_player?player_token=cWJKbzFJOVlMczJFWkdvUk9UajFlenJodGRIQjhKck00OEtZZmtoYVg2Q2Z6bDY4WmhXeWM5bGhKaGRtVWNEc2ROM1g5MEFyUWVVRmM5VDM2YnphWENINHEvTld3VVpEZ2hkNDEyMzVUQ2NZckw1V250ZTJneXhFK2N2R2t3aUtQZHdCRUY2LzliYzdFNTdUc055a1krT2o5QndNU2tGU0lMRHhvWnIrVDgwc2VSclVYd1djcEFKUGxGRWtKdm9FWXRJQW02Z2huK21HaW9GVENMcTFiMC9ZM00rZ2FDam5TTk04VmVXOEZ3cz06OkiJjsoUYR1XgHx38gjWvk0%3D",
-                        "https://www.fasel-hd.cam/video_player?player_token=UU8yTCs5OEt3dUZVdGl5ZXhzMm4zTnloTWx6RXp0alUzUkJqcDJ6MVQxRXhIVzBvSjF5MVRsL0NockV2OFZ0RjZvTEtUVzlHZVo4MjhzYTRxZ3NORmhZVjBEelFaRDFvakVvSjZSK09yR2hFN0lHY2NrNktzSHhoMnJXTlBSZmhwU3o1Q2JYNHpFMFBtYlFuTFBYOTZWTloyVUNldDlvTVdrVDBnaCtpUDBQMENzKzU5Rm5WaGlCbG05dUhqb1pDYVNtRGovdmdMeUQ4UjJpYWFwbUsyUXg5TnpVUnhXMjNYRTlQVUhwVE82em8wdDBrN2FxSXo5cW1uQkhsU3Z1Rjo6lPr5CMeaRZAZjqLM646otA%3D%3D"
-                    ]
-                }
+                "https://www.fasel-hd.cam/episodes/%d9%85%d8%b3%d9%84%d8%b3%d9%84-testaments-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-1",
+                "https://www.fasel-hd.cam/episodes/%d9%85%d8%b3%d9%84%d8%b3%d9%84-testaments-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-2",
+                "https://www.fasel-hd.cam/episodes/%d9%85%d8%b3%d9%84%d8%b3%d9%84-testaments-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-3",
+                "https://www.fasel-hd.cam/episodes/%d9%85%d8%b3%d9%84%d8%b3%d9%84-testaments-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-4",
+                "https://www.fasel-hd.cam/episodes/%d9%85%d8%b3%d9%84%d8%b3%d9%84-testaments-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-5",
+                "https://www.fasel-hd.cam/episodes/%d9%85%d8%b3%d9%84%d8%b3%d9%84-testaments-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a3%d9%88%d9%84-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-6"
             ]
         }
     },
