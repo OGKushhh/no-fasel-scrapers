@@ -75557,7 +75557,7 @@
         "EpisodeDuration": "60د",
         "Number Of Episodes Text": 8,
         "last_scraped": "2026-05-03T19:43:06.031608+00:00",
-        "Number Of Episodes": 39
+        "Number Of Episodes": 40
     },
     "135429": {
         "Title": "مسلسل Another Life",
@@ -101354,7 +101354,191 @@
         "Number Of Episodes Text": 8,
         "last_scraped": "2026-05-17T21:38:40.255501+00:00"
     },
-    "299764": {
+    "300097": {
+        "Title": "مسلسل The Boroughs",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/05/664541f2992e23586935a9ee02b7493e-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Adventure",
+            "Drama",
+            "Fantasy",
+            "Fantasysouth-korea",
+            "Melodrama"
+        ],
+        "GenresAr": [
+            "Adventure",
+            "Drama",
+            "Fantasy",
+            "Fantasysouth-korea",
+            "Melodrama"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "في مجتمع تقاعد يبدو رائعًا، يجب على مجموعة من الأبطال غير المتوقعين أن يتحدوا معًا لإيقاف تهديد من عالم آخر من سرقة الشيء الوحيد الذي لا يملكونه – الوقت.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-the-boroughs",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-05-21T18:53:07.987075+00:00"
+    },
+    "300089": {
+        "Title": "مسلسل Ndrangheta, World Wide Mafia",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/05/50d5a2c99e105033fa9234fe3bcbf43a-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Crime",
+            "Documentary",
+            "Documentary"
+        ],
+        "GenresAr": [
+            "Crime",
+            "Documentary",
+            "وثائقي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "محاكمة ماكسي في كالابريا بقيادة المدعي العام جراتيري ضد 350 شخصًا مرتبطين بعصابة ندرانجيتا تكشف عن تسلل عصابة إجرامية دولية إلى قطاع الأعمال والحكومة.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-ndrangheta-world-wide-mafia",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "italy",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 4,
+        "last_scraped": "2026-05-21T18:53:39.739617+00:00"
+    },
+    "300068": {
+        "Title": "مسلسل Betrayal: Secrets & Lies",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/05/55c81baf2866517b430c15d3daed006a-400x600.jpg",
+        "Source": "",
+        "Genres": [],
+        "GenresAr": [],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "من البودكاست رقم 1 حول الجريمة الحقيقية، تأتي سلسلة وثائقية أسبوعية. تستكشف ثماني حلقات حياة حطمتها الخيانات الصادمة، وتتبع الناجين من الاعترافات الفاضحة، والحياة الخفية، وأعمال العنف، والدمار المالي.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-betrayal-secrets-lies",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-05-21T18:53:52.395535+00:00"
+    },
+    "300038": {
+        "Title": "مسلسل Kylie",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/05/9b8eb5481e662030b2f131062a3f0490-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Documentary",
+            "Documentary"
+        ],
+        "GenresAr": [
+            "Documentary",
+            "وثائقي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يتبع كايلي مينوغ وهي تفتح أرشيفاتها الشخصية وتتأمل في حياتها المهنية، وتتناول التدقيق العام والخسارة الشخصية والمرض من خلال الأفلام المنزلية والمقابلات.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-kylie",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 3,
+        "last_scraped": "2026-05-21T18:54:07.110787+00:00"
+    },
+    "300030": {
+        "Title": "مسلسل The Nightmare Upstairs: What Happened to Ty and Bryn",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/05/4d08edbfd527cf1d84ddfb9d3e0cf3ae-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Documentary",
+            "Documentary"
+        ],
+        "GenresAr": [
+            "Documentary",
+            "وثائقي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يعتمد الفيلم على أرشيفات لم تُعرض من قبل، ومقابلات مع الشرطة، وسجلات المحكمة، لتتبع عائلة يوتا التي دفعت إلى حافة الهاوية.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-nightmare-upstairs-happened-ty-bryn",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 2,
+        "last_scraped": "2026-05-21T18:54:20.937822+00:00"
+    },
+    "299939": {
+        "Title": "مسلسل Carísima",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/05/24aff30518a0a57bc4307ac879042d59-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy"
+        ],
+        "GenresAr": [
+            "Comedy"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "تمتلك كارو باردياكو، المؤثرة المتألقة والمغنية المتفرغة، كل شيء – ولكن في الثلاثين من عمرها، في خضم أزمة منتصف العمر، تقع في فخ الحب الرومانسي.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-carisima",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "spanish",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 10,
+        "last_scraped": "2026-05-21T18:54:37.051297+00:00"
+    },
+    "299924": {
+        "Title": "مسلسل Maximum Pleasure Guaranteed",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/05/10bf370cc9e18d5cf6695adac2b68286-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy",
+            "Mystery",
+            "Thriller"
+        ],
+        "GenresAr": [
+            "Comedy",
+            "Mystery",
+            "Thriller"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": "USA",
+        "Description": "تقع أم مطلقة في شبكة محفوفة بالمخاطر من الابتزاز والقتل وكرة القدم للشباب.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-maximum-pleasure-guaranteed",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "45د",
+        "Number Of Episodes Text": 10,
+        "last_scraped": "2026-05-21T18:54:52.632436+00:00"
+    },
+    "299839": {
         "Title": "مسلسل ER",
         "Category": "series",
         "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/05/77a991eabbbd836e5b8df94d807687c1-400x600.webp",
@@ -101369,15 +101553,15 @@
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 44,
-        "Country": null,
+        "Country": "USA",
         "Description": "دراما طبية تصور الحياة والموت في غرفة الطوارئ في مستشفى شيكاغو، ففي كل حلقة تحكي عن ما يحصل في غرفة الطوارئ من الإثارة والمتعة والفرح والحزن لتتصور بدقة البيئة المجهدة التي يعيشها الأطباء هناك.",
         "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-er",
         "Status": "مكتمل",
-        "ViewingLevel": "",
+        "ViewingLevel": "TV-14",
         "Language": "English",
         "ReleaseDate": "1994",
         "EpisodeDuration": "44د",
         "Number Of Episodes Text": 22,
-        "last_scraped": "2026-05-17T21:41:35.332124+00:00"
+        "last_scraped": "2026-05-21T18:57:14.401776+00:00"
     }
 }

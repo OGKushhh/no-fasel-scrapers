@@ -3,6 +3,7 @@ import os
 import shutil
 import re
 import logging
+import argparse
 from pathlib import Path
 from typing import Optional
 from datetime import datetime
@@ -22,6 +23,17 @@ FILES_TO_CLEAN = [
     "tvshows.json",
     "asian-series.json"
 ]
+
+# Only FaselHD files get year backfill — Akwam files use "year" (lowercase)
+# and are already populated. Do NOT include arabic-movies.json / arabic-series.json.
+FASEL_FILES = FILES_TO_CLEAN  # currently all FILES_TO_CLEAN are FaselHD
+
+# Year extraction bounds.
+# Lower bound: 1920 covers silent-era classics that FaselHD occasionally carries.
+# Upper bound: hard-cap at MAX_YEAR_CAP to block sci-fi plot years in titles
+#              like "2049", "2077", "2150" etc.
+YEAR_LOWER = 1920
+MAX_YEAR_CAP = datetime.now().year + 2   # e.g. 2028 as of 2026
 
 # Country normalisation
 COUNTRY_REPLACEMENTS = {
@@ -62,6 +74,9 @@ EN_TO_AR_GENRE = {
     "Game-Show": "برامج مسابقات",
     "Musical": "موسيقي",
 }
+
+
+# ─── Helpers ──────────────────────────────────────────────────────────────────
 
 def backup_file(file_path: str) -> None:
     """Create a backup copy in ./baks/ folder before modifying."""
@@ -119,7 +134,7 @@ def clean_release_date(date_str: str) -> str:
     match = re.search(r'(\d{4})\s*[^\d]?\s*(\d{4})', date_str)
     if match:
         return f"{match.group(1)}-{match.group(2)}"
-    
+
     # If it's a single 4-digit year, validate it
     match = re.fullmatch(r'^\s*(\d{4})\s*$', date_str)
     if match:
@@ -141,6 +156,181 @@ def translate_missing_arabic_genres(data: dict) -> bool:
         data["GenresAr"] = translated
         return True
     return False
+
+
+# ─── Year backfill ────────────────────────────────────────────────────────────
+
+def extract_year_from_title(title: str) -> Optional[str]:
+    """
+    Find the best candidate release year embedded in a movie/series title.
+
+    Strategy:
+      1. First try to fix common scraper typos — 5-digit runs that are a valid
+         4-digit year with one extra digit (e.g. "20223" → 2022 or 2023).
+      2. Also match years that are glued directly to surrounding text with no
+         space (e.g. "Yara2021", "Live or Let Die2020").
+      3. Collect all 4-digit candidates, keep only those in [YEAR_LOWER, MAX_YEAR_CAP].
+      4. Return the LAST (rightmost) valid match — appended years are almost
+         always the release year, e.g. "Dune Part Two 2024".
+      5. Return None if nothing valid found.
+
+    Examples:
+        "Dune Part Two 2024"            → "2024"
+        "مسلسل الاختيار 2022"           → "2022"
+        "Batman v Superman 2016"        → "2016"
+        "Yara2021"                      → "2021"  (glued, no space)
+        "Live or Let Die2020"           → "2020"  (glued, no space)
+        "Little Dixie 20223"            → "2022"  (5-digit typo, first 4 valid)
+        "She Done Him Wrong 1933"       → "1933"  (YEAR_LOWER now 1920)
+        "Blade Runner 2049"             → None    (2049 > MAX_YEAR_CAP)
+        "فيلم روبوكوب 2077"             → None    (2077 > cap)
+        "2001: A Space Odyssey"         → "2001"
+    """
+    if not title or not isinstance(title, str):
+        return None
+
+    candidates = []
+
+    # ── Pass 1: standard isolated 4-digit years (word-boundary or non-digit fence)
+    for m in re.finditer(r'(?<!\d)(\d{4})(?!\d)', title):
+        y = int(m.group(1))
+        if YEAR_LOWER <= y <= MAX_YEAR_CAP:
+            candidates.append((m.start(), y))
+
+    # ── Pass 2: 5-digit typos — try both the first 4 and last 4 digits
+    # e.g. "20223" → try 2022 and 0223; "20192" → try 2019 and 0192
+    for m in re.finditer(r'(?<!\d)(\d{5})(?!\d)', title):
+        s = m.group(1)
+        for fragment in (s[:4], s[1:]):
+            y = int(fragment)
+            if YEAR_LOWER <= y <= MAX_YEAR_CAP:
+                candidates.append((m.start(), y))
+                break  # take only first valid fragment per 5-digit run
+
+    if not candidates:
+        return None
+
+    # Sort by position so "last" = rightmost in the string
+    candidates.sort(key=lambda x: x[0])
+    return str(candidates[-1][1])
+
+
+def is_release_date_empty(value) -> bool:
+    """Return True if ReleaseDate is missing, None, or an empty/whitespace string."""
+    if value is None:
+        return True
+    if isinstance(value, str) and not value.strip():
+        return True
+    return False
+
+
+def backfill_year_from_title(
+    file_name: str,
+    dry_run: bool = True,
+    max_preview: int = 30,
+) -> dict:
+    """
+    For every entry in file_name whose ReleaseDate is empty/missing,
+    attempt to extract a year from the Title and set ReleaseDate to it.
+
+    Args:
+        file_name:   JSON filename inside ./output/ (e.g. "movies.json")
+        dry_run:     If True, print what WOULD change but don't write anything.
+        max_preview: Max number of sample rows to print in dry-run mode.
+
+    Returns:
+        A summary dict with counts.
+    """
+    file_path = f"./output/{file_name}"
+    if not os.path.exists(file_path):
+        logging.warning(f"{file_path} not found, skipping backfill.")
+        return {}
+
+    with open(file_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    total          = len(data)
+    already_has    = 0   # already has a non-empty ReleaseDate
+    backfilled     = 0   # would be / was filled from title
+    no_year_found  = 0   # empty ReleaseDate AND no year in title
+    previewed      = 0
+    no_year_titles = []  # collect a sample of titles we couldn't fix
+
+    tag = "[DRY RUN] " if dry_run else ""
+
+    print(f"\n{'='*60}")
+    print(f"{tag}Year backfill: {file_name}")
+    print(f"{'='*60}")
+    if dry_run:
+        print(f"  Showing up to {max_preview} would-be changes.\n")
+
+    for content_id, content in data.items():
+        current_date = content.get("ReleaseDate")
+
+        if not is_release_date_empty(current_date):
+            already_has += 1
+            continue
+
+        title = content.get("Title", "")
+        year  = extract_year_from_title(title)
+
+        if year is None:
+            no_year_found += 1
+            no_year_titles.append(title)
+            continue
+
+        # We have a year to apply
+        backfilled += 1
+
+        if dry_run:
+            if previewed < max_preview:
+                old_display = repr(current_date) if current_date is not None else "missing"
+                print(f"  [{content_id}] \"{title}\"")
+                print(f"    ReleaseDate: {old_display}  →  \"{year}\"")
+                previewed += 1
+            elif previewed == max_preview:
+                print(f"  ... (further matches omitted, showing first {max_preview})")
+                previewed += 1
+        else:
+            content["ReleaseDate"] = year
+
+    # ── Write changes (live run only) ────────────────────────────────────────
+    if not dry_run and backfilled > 0:
+        backup_file(file_path)
+        with open(file_path, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=4, ensure_ascii=False)
+
+    # ── Summary ──────────────────────────────────────────────────────────────
+    print(f"\n{'─'*60}")
+    print(f"  {'[DRY RUN] ' if dry_run else ''}Results for {file_name}")
+    print(f"  Total entries      : {total}")
+    print(f"  Already have year  : {already_has}  ({already_has*100//total if total else 0}%)")
+    print(f"  {'Would backfill' if dry_run else 'Backfilled'} from title : {backfilled}  ({backfilled*100//total if total else 0}%)")
+    print(f"  No year found      : {no_year_found}  ({no_year_found*100//total if total else 0}%)")
+    if not dry_run and backfilled > 0:
+        print(f"  ✅ Saved to {file_path}  (backup in ./baks/)")
+    elif dry_run:
+        print(f"  ℹ️  No files written (dry run).")
+
+    # Show a sample of titles we couldn't fix so you can spot patterns
+    if no_year_titles:
+        sample = no_year_titles[:10]
+        print(f"\n  Sample titles with NO extractable year ({len(no_year_titles)} total):")
+        for t in sample:
+            print(f"    • {t}")
+
+    print(f"{'─'*60}\n")
+
+    return {
+        "file": file_name,
+        "total": total,
+        "already_has": already_has,
+        "backfilled": backfilled,
+        "no_year_found": no_year_found,
+    }
+
+
+# ─── Existing cleaning logic (unchanged) ──────────────────────────────────────
 
 def clean_json_file(file_name: str, translate_missing_ar: bool = False) -> None:
     """Load, clean, and save a JSON file (replace hyphens, normalise country/runtime/release date)."""
@@ -206,14 +396,81 @@ def clean_json_file(file_name: str, translate_missing_ar: bool = False) -> None:
     else:
         logging.info(f"No changes needed for {file_path}")
 
-def main():
-    # Set to True if you want to add Arabic translations for missing GenresAr
-    TRANSLATE_MISSING = False   # Keep False to preserve original Arabic data
 
-    for file_name in FILES_TO_CLEAN:
-        clean_json_file(file_name, translate_missing_ar=TRANSLATE_MISSING)
+# ─── Entry points ─────────────────────────────────────────────────────────────
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Clean metadata JSON files produced by the scrapers."
+    )
+    parser.add_argument(
+        "--backfill-year",
+        action="store_true",
+        help="Extract release year from Title and fill empty ReleaseDate fields.",
+    )
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Preview year backfill changes without writing any files. "
+             "Only meaningful together with --backfill-year.",
+    )
+    parser.add_argument(
+        "--files",
+        nargs="+",
+        metavar="FILE",
+        help="Limit processing to specific file(s), e.g. --files movies.json anime.json. "
+             "Defaults to all FILES_TO_CLEAN.",
+    )
+    parser.add_argument(
+        "--preview-limit",
+        type=int,
+        default=30,
+        metavar="N",
+        help="Max number of sample changes to print in dry-run mode (default: 30).",
+    )
+    parser.add_argument(
+        "--translate-genres",
+        action="store_true",
+        help="Fill missing Arabic genre translations (GenresAr).",
+    )
+    args = parser.parse_args()
+
+    target_files = args.files if args.files else FILES_TO_CLEAN
+
+    # ── Step 1: standard cleaning pass ────────────────────────────────────────
+    if not args.backfill_year or not args.dry_run:
+        # Always run standard cleaning unless we're in a pure dry-run backfill
+        # preview (where the user just wants to see the year changes).
+        for file_name in target_files:
+            clean_json_file(file_name, translate_missing_ar=args.translate_genres)
+
+    # ── Step 2: year backfill (optional) ──────────────────────────────────────
+    if args.backfill_year:
+        fasel_targets = [f for f in target_files if f in FASEL_FILES]
+        if not fasel_targets:
+            print("No FaselHD files in target list — nothing to backfill.")
+        else:
+            totals = {"total": 0, "already_has": 0, "backfilled": 0, "no_year_found": 0}
+            for file_name in fasel_targets:
+                summary = backfill_year_from_title(
+                    file_name,
+                    dry_run=args.dry_run,
+                    max_preview=args.preview_limit,
+                )
+                for k in totals:
+                    totals[k] += summary.get(k, 0)
+
+            if len(fasel_targets) > 1:
+                print(f"\n{'='*60}")
+                print(f"  GRAND TOTAL across {len(fasel_targets)} files")
+                print(f"  Total entries      : {totals['total']}")
+                print(f"  Already have year  : {totals['already_has']}")
+                print(f"  {'Would backfill' if args.dry_run else 'Backfilled'} : {totals['backfilled']}")
+                print(f"  No year found      : {totals['no_year_found']}")
+                print(f"{'='*60}\n")
 
     logging.info("Metadata cleaning complete.")
+
 
 if __name__ == "__main__":
     main()
