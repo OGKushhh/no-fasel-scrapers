@@ -2973,14 +2973,14 @@
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
-        "Country": null,
+        "Country": "USA",
         "Description": "تدور احداث المسلسل حول سكرتيرتين في السفارة الأمريكية بموسكو خلال سبعينيات القرن الماضي تتحولان إلى عميلتين في وكالة الاستخبارات المركزية بعد مقتل زوجيهما ليكشف التحقيق عن مؤامرة من حقبة الحرب الباردة تقف خلف المأساة.",
         "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-ponies",
         "Status": "مكتمل",
         "ViewingLevel": "TV-MA",
         "Language": "English",
         "ReleaseDate": "2026",
-        "EpisodeDuration": "",
+        "EpisodeDuration": "50 دقيقة",
         "Number Of Episodes Text": 8
     },
     "290698": {
@@ -5539,7 +5539,8 @@
         "Language": "English",
         "ReleaseDate": "2025",
         "EpisodeDuration": "44د",
-        "Number Of Episodes Text": 0
+        "Number Of Episodes Text": 0,
+        "Number Of Episodes": 20
     },
     "282459": {
         "Title": "مسلسل Sheriff Country",
@@ -5564,7 +5565,8 @@
         "Language": "English",
         "ReleaseDate": "2025",
         "EpisodeDuration": "43د",
-        "Number Of Episodes Text": 20
+        "Number Of Episodes Text": 20,
+        "Number Of Episodes": 20
     },
     "282441": {
         "Title": "مسلسل The Lost Station Girls",
@@ -17733,7 +17735,7 @@
         "ReleaseDate": "2024",
         "EpisodeDuration": "22د",
         "Number Of Episodes Text": 0,
-        "Number Of Episodes": 40
+        "Number Of Episodes": 44
     },
     "255947": {
         "Title": "مسلسل Rivals",
@@ -23249,7 +23251,7 @@
         "Description": "في المستقبل، بعد نهاية العالم في لوس أنجلوس بسبب الدمار النووي، يجب على المواطنين العيش في مخابئ تحت الأرض لحماية أنفسهم من الإشعاع والمتحولين وقطاع الطرق.",
         "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-fallout",
         "Status": "مستمر",
-        "ViewingLevel": "",
+        "ViewingLevel": "TV-MA",
         "Language": "English",
         "ReleaseDate": "2025",
         "EpisodeDuration": "45د",
@@ -24021,7 +24023,8 @@
         "Language": "English",
         "ReleaseDate": "2025",
         "EpisodeDuration": "",
-        "Number Of Episodes Text": 0
+        "Number Of Episodes Text": 0,
+        "Number Of Episodes": 50
     },
     "239950": {
         "Title": "مسلسل The Completely Made-Up Adventures of Dick Turpin",
@@ -41840,13 +41843,14 @@
         "Country": null,
         "Description": "يتابع رحلات شخصية مكثفة وعمليات إنقاذ طبية عالية الخطورة ونوبات من الحزن والمحن للممرضات والطيارين الناشئين الذين يقودون سيارات الإسعاف الجوي.",
         "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-skymed",
-        "Status": "مستمر",
+        "Status": "مكتمل",
         "ViewingLevel": "TV-14",
         "Language": "English",
         "ReleaseDate": "2025",
         "EpisodeDuration": "44د",
         "Number Of Episodes Text": 9,
-        "last_scraped": "2026-05-03T05:35:07.010940+00:00"
+        "last_scraped": "2026-05-03T05:35:07.010940+00:00",
+        "Number Of Episodes": 35
     },
     "189464": {
         "Title": "مسلسل Becoming Elizabeth",
@@ -42600,7 +42604,8 @@
         "ReleaseDate": "2025",
         "EpisodeDuration": "",
         "Number Of Episodes Text": 0,
-        "last_scraped": "2026-05-03T05:48:46.830139+00:00"
+        "last_scraped": "2026-05-03T05:48:46.830139+00:00",
+        "Number Of Episodes": 72
     },
     "187449": {
         "Title": "مسلسل Walker: Independence",
@@ -55058,7 +55063,8 @@
         "ReleaseDate": "2025",
         "EpisodeDuration": "",
         "Number Of Episodes Text": 22,
-        "last_scraped": "2026-05-03T10:26:55.868506+00:00"
+        "last_scraped": "2026-05-03T10:26:55.868506+00:00",
+        "Number Of Episodes": 94
     },
     "275453": {
         "Title": "مسلسل Acapulco",
@@ -99244,9 +99250,9 @@
         "Description": "تدور أحداث المسلسل حول الوحدة التجريبية التابعة لإدارة شرطة لوس أنجلوس بمقاطعة فارمنجتون القصصية بولاية لوس أنجلوس ، والتي تتخذ من إحدى الكنائس مقرًا لها، وتتكون من مجموعة من المحققين المعروفين باسم فريق سترايك ، ولايتوقف أعضاء الفريق عند أي حدود من أجل تحقيق العدالة على طريقتهم الخاصة في شوارع لوس أنجلوس، ويرى أعضاء الفريق أن الغاية تبرر الوسيلة.",
         "SeasonsUrl": "https://www.fasel-hd.cam/seasons/the-shield-series",
         "Status": "+15",
-        "ViewingLevel": "",
+        "ViewingLevel": "TV-MA",
         "Language": "الإنجليزية",
-        "ReleaseDate": "",
+        "ReleaseDate": "2002",
         "EpisodeDuration": "50د",
         "Number Of Episodes Text": 13,
         "last_scraped": "2026-05-04T09:35:17.337004+00:00"
@@ -99272,7 +99278,7 @@
         "Status": "مكتمل",
         "ViewingLevel": "+14",
         "Language": "الانجليزية",
-        "ReleaseDate": "",
+        "ReleaseDate": "1999",
         "EpisodeDuration": "55د",
         "Number Of Episodes Text": 21,
         "last_scraped": "2026-05-04T09:36:59.999235+00:00"
@@ -100780,13 +100786,13 @@
         ],
         "Format": "Bluray",
         "Runtime": 50,
-        "Country": null,
+        "Country": "USA",
         "Description": "يتنـاول المسلسل قصـة مدرس كيميـاء في مدرسة ثانويـة ويعمل بعد الدوام في جراج غسيل للسيارات وفجأة يكتشف إصابته بسرطان الرئـة وأن لا أمل لشفائه لارتفـاع ثمـن العـلاج فيفكـر في طريقة يترك لعائلته المكونة من زوجته سكايلر وإبنه والت الصغير يترك لهم ما يكفيهم من المال .. أناء ذلك يخرج مع هانك وهو زوج أخت سكايلر ويعمل في مكافحة المخدرات ويشاهد الأرباح التي يجنيها مروجي المخدرات فتخطر بباله فكرة صنع المخدرات (الميث) وحيث أنه أستاذ كيمياء فان لديه المقدرة على صنع ميث نقي ويشترك في هذه المغامرة مع جيسي وهو أحد طلبته سابقاً في المدرسة الثانوية.",
         "SeasonsUrl": "https://www.fasel-hd.cam/seasons/breaking-bad-all-seasons",
-        "Status": "+15",
-        "ViewingLevel": "",
+        "Status": "مكتمل",
+        "ViewingLevel": "+15",
         "Language": "الإنجليزية",
-        "ReleaseDate": "",
+        "ReleaseDate": "2008",
         "EpisodeDuration": "50د",
         "Number Of Episodes Text": 16,
         "last_scraped": "2026-05-04T10:49:25.454210+00:00"
@@ -101031,32 +101037,6 @@
         "EpisodeDuration": "",
         "Number Of Episodes Text": 9,
         "last_scraped": "2026-05-09T14:20:13.434340+00:00"
-    },
-    "299346": {
-        "Title": "مسلسل ER",
-        "Category": "series",
-        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/05/77a991eabbbd836e5b8df94d807687c1-400x600.webp",
-        "Source": "",
-        "Genres": [
-            "Drama",
-            "Romance"
-        ],
-        "GenresAr": [
-            "Drama",
-            "Romance"
-        ],
-        "Format": "1080p WEB-DL",
-        "Runtime": 44,
-        "Country": null,
-        "Description": "دراما طبية تصور الحياة والموت في غرفة الطوارئ في مستشفى شيكاغو، ففي كل حلقة تحكي عن ما يحصل في غرفة الطوارئ من الإثارة والمتعة والفرح والحزن لتتصور بدقة البيئة المجهدة التي يعيشها الأطباء هناك.",
-        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-er",
-        "Status": "مكتمل",
-        "ViewingLevel": "",
-        "Language": "English",
-        "ReleaseDate": "1994",
-        "EpisodeDuration": "44د",
-        "Number Of Episodes Text": 22,
-        "last_scraped": "2026-05-13T02:01:15.464414+00:00"
     },
     "299159": {
         "Title": "مسلسل Everyone Is Doing Great",
@@ -101563,5 +101543,97 @@
         "EpisodeDuration": "44د",
         "Number Of Episodes Text": 22,
         "last_scraped": "2026-05-21T18:57:14.401776+00:00"
+    },
+    "300373": {
+        "Title": "مسلسل Mating Season",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/05/70763fceef6b0825a5ef1e7dbf9cd962-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Animation",
+            "Comedy",
+            "Romance"
+        ],
+        "GenresAr": [
+            "Animation",
+            "Comedy",
+            "Romance"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يبرز الحيوان بداخلنا لإطلاق العنان لغرائزنا الطبيعية في السعي وراء الحب الحقيقي.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-mating-season",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-05-22",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 6,
+        "last_scraped": "2026-05-23T14:14:46.879728+00:00"
+    },
+    "300312": {
+        "Title": "مسلسل James",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/05/95f8a4de70222c78d7ef1a8b57fff0d2-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Biography",
+            "Documentary",
+            "Sport",
+            "Sports",
+            "Documentary"
+        ],
+        "GenresAr": [
+            "Biography",
+            "Documentary",
+            "Sport",
+            "Sports",
+            "وثائقي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "فيلم وثائقي يتتبع رحلة نجم كرة القدم جيمس رودريغيز عبر كرة القدم الاحترافية، ويغطي صعوده في كرة القدم للأندية، ونجاح المنتخب الوطني، والطريق نحو كأس العالم 2026.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-james",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "اسبانيا",
+        "ReleaseDate": "2026-05-21",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 3,
+        "last_scraped": "2026-05-23T14:15:00.555703+00:00"
+    },
+    "300358": {
+        "Title": "مسلسل One Tree Hill",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/05/8c7e89b7db617d0d49961e1bcef84200-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Melodrama",
+            "Romance",
+            "Sport",
+            "Sports"
+        ],
+        "GenresAr": [
+            "Drama",
+            "Melodrama",
+            "Romance",
+            "Sport",
+            "Sports"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يتبادل الأخوان غير الشقيقين لوكاس وناثان سكوت بين القرابة والتنافس سواء في ملعب كرة السلة أو في قلوب أصدقائهم في بلدة تري هيل الصغيرة، ولكن ليست الهادئة، بولاية نورث كارولينا.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-one-tree-hill",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2003-09-23",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 13,
+        "last_scraped": "2026-05-23T14:18:07.584844+00:00"
     }
 }
