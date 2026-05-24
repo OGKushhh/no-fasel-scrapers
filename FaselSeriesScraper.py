@@ -254,6 +254,8 @@ def scrape_series_category(path: str):
                         series_id = match.group(1)
                     else:
                         series_id = detail_url.split('/')[-2]
+            # Skip if already exists — FaselHD rarely updates metadata,
+            # so re-scraping existing items gains nothing and risks overwriting good data.
             if not series_id or series_id in existing_ids:
                 continue
 

@@ -160,6 +160,8 @@ def scrape_category(path: str):
                         movie_id = match.group(1)
                     else:
                         movie_id = detail_url.split('/')[-2]
+            # Skip if already exists — FaselHD rarely updates metadata,
+            # so re-scraping existing items gains nothing and risks overwriting good data.
             if not movie_id or movie_id in existing_ids:
                 continue
 

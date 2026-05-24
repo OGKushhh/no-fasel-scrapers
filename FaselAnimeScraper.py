@@ -188,6 +188,8 @@ def scrape_anime():
                         anime_id = match.group(1)
                     else:
                         anime_id = detail_url.split('/')[-2]
+            # Skip if already exists — FaselHD rarely updates metadata,
+            # so re-scraping existing items gains nothing and risks overwriting good data.
             if not anime_id or anime_id in existing_ids:
                 continue
 
