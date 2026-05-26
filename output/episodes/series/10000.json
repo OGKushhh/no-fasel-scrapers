@@ -1,0 +1,16 @@
+{
+    "content_id": "10000",
+    "category": "series",
+    "seasons": {
+        "1": {
+            "poster": "https://static.faselhdcdn.com/wp-content/uploads/2016/10/MV5BMDViN2VlZWMtMThmMy00OGEwLTllMjgtODQzNTJmZWEzNGM1XkEyXkFqcGdeQXVyMjExMjk0ODk@._V1_SY1000_CR007031000_AL_-400x600.jpg",
+            "episodes": [
+                "https://www.fasel-hd.cam/episodes/%d9%85%d8%b3%d9%84%d8%b3%d9%84-thirteen-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-1",
+                "https://www.fasel-hd.cam/episodes/%d9%85%d8%b3%d9%84%d8%b3%d9%84-thirteen-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-2",
+                "https://www.fasel-hd.cam/episodes/%d9%85%d8%b3%d9%84%d8%b3%d9%84-thirteen-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-3",
+                "https://www.fasel-hd.cam/episodes/%d9%85%d8%b3%d9%84%d8%b3%d9%84-thirteen-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-4",
+                "https://www.fasel-hd.cam/episodes/%d9%85%d8%b3%d9%84%d8%b3%d9%84-thirteen-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-5"
+            ]
+        }
+    }
+}
