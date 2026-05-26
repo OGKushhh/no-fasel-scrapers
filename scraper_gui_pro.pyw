@@ -42,6 +42,12 @@ SCRIPT_GROUPS = {
         "Ratings (IMDbAPI only)": [PYTHON_EXE, "-u", "update_ratings.py", "--sources", "imdbapi"],
         "Ratings (Custom order)": [PYTHON_EXE, "-u", "update_ratings.py"],  # will prompt for sources
     },
+    "Metadata": {
+        "Runtime (IMDbAPI → TMDb → OMDb)": [PYTHON_EXE, "-u", "normalize_runtime.py", "--sources", "imdbapi,tmdb,omdb"],
+        "Runtime (IMDbAPI → TMDb)": [PYTHON_EXE, "-u", "normalize_runtime.py", "--sources", "imdbapi,tmdb"],
+        "Runtime (IMDbAPI only)": [PYTHON_EXE, "-u", "normalize_runtime.py", "--sources", "imdbapi"],
+        "Runtime (Custom order)": [PYTHON_EXE, "-u", "normalize_runtime.py"],  # will prompt for sources
+    },
 }
 
 BACKFILL_TASKS = {
@@ -388,6 +394,14 @@ class ScraperGUI:
         elif name == "Ratings (Custom order)":
             sources = simpledialog.askstring(
                 "Rating Sources",
+                "Enter source order (comma-separated, e.g.: imdbapi,tmdb,omdb)\nOptions: imdbapi, tmdb, omdb"
+            )
+            if not sources:
+                return
+            extra = ["--sources", sources.strip()]
+        elif name == "Runtime (Custom order)":
+            sources = simpledialog.askstring(
+                "Runtime Sources",
                 "Enter source order (comma-separated, e.g.: imdbapi,tmdb,omdb)\nOptions: imdbapi, tmdb, omdb"
             )
             if not sources:

@@ -1049,6 +1049,49 @@ def get_tmdb_imdb_id(title: str, year: Optional[str] = None, media_type: str = "
         print(f"  ⚠️ TMDb external ID error for '{title}': {e}")
         return None
 
+def fetch_runtime_from_tmdb(imdb_id: str) -> Optional[int]:
+    """
+    Given an IMDb ID, find the corresponding TMDb entry and return runtime in minutes.
+    For movies, returns the movie runtime.
+    For TV series, returns the typical episode runtime (first value from episode_run_time array).
+    Returns None if not found.
+    """
+    if not imdb_id or not imdb_id.startswith('tt'):
+        return None
+    # Use TMDb find endpoint
+    url = f"{TMDB_BASE_URL}/find/{imdb_id}"
+    params = {
+        "api_key": TMDB_API_KEY,
+        "external_source": "imdb_id"
+    }
+    try:
+        resp = requests.get(url, params=params, timeout=10)
+        resp.raise_for_status()
+        data = resp.json()
+        # Check movies first
+        movie_results = data.get("movie_results", [])
+        if movie_results:
+            tmdb_id = movie_results[0]["id"]
+            detail_url = f"{TMDB_BASE_URL}/movie/{tmdb_id}"
+            detail_resp = requests.get(detail_url, params={"api_key": TMDB_API_KEY})
+            detail_resp.raise_for_status()
+            runtime = detail_resp.json().get("runtime")
+            return runtime if runtime else None
+        # Then TV series
+        tv_results = data.get("tv_results", [])
+        if tv_results:
+            tmdb_id = tv_results[0]["id"]
+            detail_url = f"{TMDB_BASE_URL}/tv/{tmdb_id}"
+            detail_resp = requests.get(detail_url, params={"api_key": TMDB_API_KEY})
+            detail_resp.raise_for_status()
+            episode_run_time = detail_resp.json().get("episode_run_time", [])
+            if episode_run_time:
+                return episode_run_time[0]  # typical episode runtime in minutes
+        return None
+    except Exception as e:
+        print(f"  TMDb runtime fetch error for {imdb_id}: {e}")
+        return None
+
 # ----------------------------------------------------------------------
 #  IMDBAPI.dev API Helpers (with retries)
 # ----------------------------------------------------------------------
