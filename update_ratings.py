@@ -1,11 +1,8 @@
 #!/usr/bin/env python3
 """
-update_ratings.py – Flexible rating fetcher: any order of sources.
-Usage examples:
-  python update_ratings.py --sources imdbapi,tmdb,omdb
-  python update_ratings.py --sources tmdb,omdb
-  python update_ratings.py --sources imdbapi   # only IMDbAPI
-Output: ./output/ratings/{category}/{id}.json (rating, votes, source, imdb_id)
+update_ratings.py – Flexible rating fetcher.
+If an IMDb ID exists in the rating file, it directly fetches from IMDbAPI (upgrade).
+Otherwise uses the source order (--sources).
 """
 
 import json
@@ -19,7 +16,8 @@ from datetime import datetime, timezone
 
 sys.path.insert(0, str(Path(__file__).parent))
 from Common import (
-    get_tmdb_details, get_imdb_details, search_imdbapi_dev, get_tmdb_imdb_id
+    get_tmdb_details, get_imdb_details, search_imdbapi_dev, get_tmdb_imdb_id,
+    fetch_imdbapi_by_id
 )
 
 OUTPUT_DIR = Path("./output")
@@ -28,9 +26,9 @@ PROGRESS_FILE = OUTPUT_DIR / "rating_update_progress.txt"
 
 # Delays (seconds) per source
 DELAYS = {
-    "imdbapi": 3.0,   # avoid 429
-    "tmdb": 0.04,     # 25 req/sec
-    "omdb": 0.5,      # slower, daily limit
+    "imdbapi": 3.0,
+    "tmdb": 0.04,
+    "omdb": 0.5,
 }
 OMDB_DAILY_LIMIT = 1000
 CURRENT_YEAR = datetime.now().year
@@ -47,7 +45,6 @@ CONTENT_FILES = {
     "asian-series.json": "tv",
 }
 
-# Caches
 tmdb_cache: Dict[str, tuple] = {}
 imdbapi_cache: Dict[str, tuple] = {}
 omdb_calls_today = 0
@@ -110,7 +107,6 @@ def extract_year(title: str, release_date: Optional[str]) -> Optional[str]:
 
 # ---- Source functions ----
 def fetch_tmdb(cleaned: str, year: Optional[str], content_type: str) -> tuple:
-    """Return (rating, votes, imdb_id, source_name) or (None,0,None,'tmdb')"""
     cache_key = f"{cleaned}|{year}|{content_type}"
     if cache_key in tmdb_cache:
         rating, votes, imdb_id = tmdb_cache[cache_key]
@@ -133,6 +129,7 @@ def fetch_imdbapi(cleaned: str, year: Optional[str]) -> tuple:
         if rating is not None:
             print(f"  [IMDbAPI CACHE] '{cleaned}' -> rating={rating}, votes={votes}")
             return rating, votes, imdb_id, "imdbapi"
+    time.sleep(DELAYS["imdbapi"])
     rating, votes, imdb_id = search_imdbapi_dev(cleaned, year)
     imdbapi_cache[cache_key] = (rating, votes, imdb_id)
     if rating is not None:
@@ -146,6 +143,7 @@ def fetch_omdb(cleaned: str, year: Optional[str], content_type: str) -> tuple:
     if omdb_calls_today >= OMDB_DAILY_LIMIT:
         print(f"  [OMDb] Daily limit reached ({omdb_calls_today}) – skipping.")
         return None, 0, None, "omdb"
+    time.sleep(DELAYS["omdb"])
     rating, votes, imdb_id, limit_reached = get_imdb_details(cleaned, year, content_type, known_imdb_id=None)
     omdb_calls_today += 1
     if limit_reached:
@@ -157,13 +155,7 @@ def fetch_omdb(cleaned: str, year: Optional[str], content_type: str) -> tuple:
         print(f"  [OMDb] No rating found for '{cleaned}'")
     return rating, votes, imdb_id, "omdb"
 
-# Dispatcher
 def get_rating_from_sources(cleaned: str, year: Optional[str], content_type: str, sources: list) -> tuple:
-    """
-    Iterate over sources in given order.
-    Each source is a string: 'imdbapi', 'tmdb', 'omdb'.
-    Returns (rating, votes, imdb_id, source_used).
-    """
     for src in sources:
         if src == "imdbapi":
             rating, votes, imdb_id, used = fetch_imdbapi(cleaned, year)
@@ -175,7 +167,6 @@ def get_rating_from_sources(cleaned: str, year: Optional[str], content_type: str
             raise ValueError(f"Unknown source: {src}")
         if rating is not None:
             return rating, votes, imdb_id, used
-        # Respect delay between sources to be gentle
         time.sleep(0.5)
     return None, 0, None, "none"
 
@@ -209,32 +200,67 @@ def process_file(file_path: Path, content_type: str, processed_set: Set[Tuple[st
         year = extract_year(title, item.get("ReleaseDate"))
         rating_file = rating_dir / f"{content_id}.json"
 
+        # Load existing rating file (if any)
+        existing_imdb_id = None
+        existing_source = None
+        existing_rating = None
         if rating_file.exists():
             try:
                 with open(rating_file, "r") as rf:
                     existing = json.load(rf)
-                if existing.get("rating") not in (None, "N/A"):
-                    print(f"  SKIP {content_id}: already rated {existing['rating']} (source: {existing.get('source')})")
-                    save_progress(file_path.name, content_id)
-                    continue
-                else:
-                    print(f"  UPDATE {content_id}: existing rating is null, re-fetching...")
+                existing_rating = existing.get("rating")
+                existing_source = existing.get("source")
+                existing_imdb_id = existing.get("imdb_id")
             except:
                 pass
 
-        cleaned = clean_title(title)
-
-        # Skip future years (no ratings exist)
-        if year and int(year) > CURRENT_YEAR:
-            print(f"  SKIP {content_id}: future year {year}, no rating available")
+        # If we already have a rating and it's from IMDbAPI, skip
+        if existing_rating is not None and existing_rating not in (None, "N/A") and existing_source == "imdbapi":
+            print(f"  SKIP {content_id}: already rated from IMDbAPI ({existing_rating})")
             save_progress(file_path.name, content_id)
             continue
 
-        # Apply delay before each item based on first source? Better to let each source handle its own delay.
+        # If we have an IMDb ID, use it directly (upgrade path)
+        if existing_imdb_id and existing_imdb_id.startswith("tt"):
+            print(f"  [UPGRADE] {content_id}: using stored IMDb ID {existing_imdb_id} to fetch IMDb rating")
+            rating, votes = fetch_imdbapi_by_id(existing_imdb_id)
+            if rating is not None:
+                rating_data = {
+                    "content_id": content_id,
+                    "title": title,
+                    "year": year,
+                    "rating": rating,
+                    "votes": votes,
+                    "source": "imdbapi",
+                    "imdb_id": existing_imdb_id,
+                    "last_updated": datetime.now(timezone.utc).isoformat()
+                }
+                with open(rating_file, "w", encoding="utf-8") as f:
+                    json.dump(rating_data, f, indent=2, ensure_ascii=False)
+                print(f"  SUCCESS (upgraded) {content_id}: rating={rating}, votes={votes}, source=imdbapi")
+                save_progress(file_path.name, content_id)
+                continue
+            else:
+                print(f"  [UPGRADE] Failed to fetch from IMDb ID {existing_imdb_id}, falling back to sources")
+
+        # If we already have a numeric rating from other source (tmdb/omdb) but no IMDb ID, we could skip? We'll let sources run.
+        # But we skip if rating exists and is not null (unless we want to upgrade? The upgrade already handled above if ID existed).
+        if existing_rating is not None and existing_rating not in (None, "N/A"):
+            print(f"  SKIP {content_id}: already rated {existing_rating} (source: {existing_source}) – no IMDb ID to upgrade")
+            save_progress(file_path.name, content_id)
+            continue
+
+        cleaned = clean_title(title)
+
+        if year and int(year) > CURRENT_YEAR:
+            print(f"  SKIP {content_id}: future year {year}")
+            save_progress(file_path.name, content_id)
+            continue
+
         rating, votes, imdb_id, source_used = get_rating_from_sources(cleaned, year, content_type, sources)
 
         if rating is None:
-            print(f"  FAILED {content_id}: no rating from any source. Will retry later.")
+            print(f"  FAILED {content_id}: no rating from any source")
             continue
 
         rating_data = {
@@ -252,13 +278,12 @@ def process_file(file_path: Path, content_type: str, processed_set: Set[Tuple[st
         print(f"  SUCCESS {content_id}: rating={rating}, votes={votes}, source={source_used}")
 
         save_progress(file_path.name, content_id)
-        # Small delay between items to be nice
         time.sleep(0.2)
 
 def main():
     parser = argparse.ArgumentParser(description="Flexible rating fetcher")
     parser.add_argument("--sources", type=str, default="imdbapi,tmdb,omdb",
-                        help="Comma-separated list of sources in priority order (imdbapi, tmdb, omdb). Default: imdbapi,tmdb,omdb")
+                        help="Comma-separated list of sources (imdbapi,tmdb,omdb). Default: imdbapi,tmdb,omdb")
     args = parser.parse_args()
 
     sources = [s.strip() for s in args.sources.split(",")]

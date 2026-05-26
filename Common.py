@@ -992,10 +992,7 @@ def get_tmdb_details(title: str, year: Optional[str] = None, content_type: str =
     return rating, votes
 
 def get_tmdb_imdb_id(title: str, year: Optional[str] = None, media_type: str = "movie") -> Optional[str]:
-    """
-    Search TMDb for a title/year and return the IMDb ID (tt...).
-    Returns None if not found or if TMDb doesn't have an external IMDb ID.
-    """
+    """Search TMDb and return IMDb ID (tt...), or None if not found."""
     cleaned = _clean_title_tmdb(title)
     tmdb_id = search_tmdb(cleaned, year, media_type)
     if not tmdb_id:
@@ -1013,18 +1010,18 @@ def get_tmdb_imdb_id(title: str, year: Optional[str] = None, media_type: str = "
         return None
 
 # ----------------------------------------------------------------------
-#  IMDBAPI.dev API Helpers
+#  IMDBAPI.dev API Helpers (with retries)
 # ----------------------------------------------------------------------
 IMDBAPI_BASE_URL = "https://api.imdbapi.dev"
 
-def search_imdbapi_dev(title: str, year: Optional[str] = None) -> tuple:
+def search_imdbapi_dev(title: str, year: Optional[str] = None, max_retries: int = 3) -> tuple:
     """
-    Search IMDbAPI.dev and return (rating, votes, imdb_id).
-    Returns (None, 0, None) if not found.
+    Search IMDbAPI.dev for a title and return (rating, votes, imdb_id).
+    Uses fuzzy matching with year filtering. Retries on 5xx errors.
     """
     params = {
         "query": title,
-        "limit": 5,
+        "limit": 10,
         "sortBy": "SORT_BY_USER_RATING_COUNT",
         "sortOrder": "DESC"
     }
@@ -1033,47 +1030,85 @@ def search_imdbapi_dev(title: str, year: Optional[str] = None) -> tuple:
         params["endYear"] = year
 
     url = f"{IMDBAPI_BASE_URL}/search/titles"
-    try:
-        resp = requests.get(url, params=params, timeout=10)
-        resp.raise_for_status()
-        data = resp.json()
-        titles = data.get("titles", [])
-        if not titles:
-            return (None, 0, None)
-
-        best = titles[0]
-        imdb_id = best.get("id")          # e.g., "tt9813792"
-        rating_info = best.get("ratingsSummary", {})
-        avg_rating = rating_info.get("aggregateRating")
-        vote_count = rating_info.get("voteCount", 0)
-        if avg_rating is not None:
-            rating_str = str(round(float(avg_rating), 1))
-            return (rating_str, vote_count, imdb_id)
-    except Exception as e:
-        print(f"  ⚠️ IMDBAPI.dev error for '{title}': {e}")
+    
+    for attempt in range(max_retries):
+        try:
+            resp = requests.get(url, params=params, timeout=10)
+            if resp.status_code == 200:
+                data = resp.json()
+                titles = data.get("titles", [])
+                if not titles:
+                    return (None, 0, None)
+                
+                # Find the best matching title using a simple scoring system
+                best_match = None
+                best_score = -1
+                for t in titles:
+                    t_title = t.get("primaryTitle", "")
+                    t_year = t.get("startYear")
+                    score = 0
+                    # Exact title match (case-insensitive)
+                    if title.lower() == t_title.lower():
+                        score += 10
+                    # Partial match (title contained in result or vice versa)
+                    elif title.lower() in t_title.lower() or t_title.lower() in title.lower():
+                        score += 5
+                    # Year match
+                    if year and t_year and int(year) == t_year:
+                        score += 3
+                    if score > best_score:
+                        best_score = score
+                        best_match = t
+                
+                # Accept only if score is at least 5 (partial match) or better
+                if best_match and best_score >= 5:
+                    imdb_id = best_match.get("id")
+                    # CORRECTED: use "rating" not "ratingsSummary"
+                    rating_info = best_match.get("rating", {})
+                    avg_rating = rating_info.get("aggregateRating")
+                    vote_count = rating_info.get("voteCount", 0)
+                    if avg_rating is not None:
+                        rating_str = str(round(float(avg_rating), 1))
+                        return (rating_str, vote_count, imdb_id)
+                    else:
+                        return (None, 0, imdb_id)
+                else:
+                    return (None, 0, None)
+            
+            elif resp.status_code in (500, 502, 503, 504):
+                wait = 2 ** attempt
+                print(f"  [IMDbAPI] Server error {resp.status_code}, retry {attempt+1}/{max_retries} after {wait}s")
+                time.sleep(wait)
+                continue
+            else:
+                print(f"  [IMDbAPI] HTTP {resp.status_code} for '{title}'")
+                return (None, 0, None)
+        except Exception as e:
+            print(f"  [IMDbAPI] Request error: {e}")
+            if attempt < max_retries - 1:
+                wait = 2 ** attempt
+                time.sleep(wait)
+            else:
+                return (None, 0, None)
+    
     return (None, 0, None)
 
-def fetch_imdbapi_rating_by_id(imdb_id: str) -> tuple:
-    """
-    Fetch rating and votes for a known IMDb ID using IMDbAPI.dev.
-    Returns (rating, votes) or (None, 0) if not found.
-    """
+def fetch_imdbapi_by_id(imdb_id: str) -> tuple:
+    """Fetch rating and votes for a known IMDb ID using IMDbAPI.dev."""
     if not imdb_id or not imdb_id.startswith("tt"):
         return (None, 0)
     url = f"{IMDBAPI_BASE_URL}/titles/{imdb_id}"
-    params = {"api_key": IMDBAPI_DEV_KEY}   # You need to define this variable
     try:
-        resp = requests.get(url, params=params, timeout=10)
-        resp.raise_for_status()
-        data = resp.json()
-        rating_info = data.get("ratingsSummary", {})
-        avg_rating = rating_info.get("aggregateRating")
-        vote_count = rating_info.get("voteCount", 0)
-        if avg_rating is not None:
-            rating_str = str(round(float(avg_rating), 1))
-            return (rating_str, vote_count)
+        resp = requests.get(url, timeout=10)
+        if resp.status_code == 200:
+            data = resp.json()
+            rating_info = data.get("rating", {})
+            avg_rating = rating_info.get("aggregateRating")
+            vote_count = rating_info.get("voteCount", 0)
+            if avg_rating is not None:
+                return (str(round(float(avg_rating), 1)), vote_count)
     except Exception as e:
-        print(f"  ⚠️ IMDbAPI.dev direct fetch error for {imdb_id}: {e}")
+        print(f"  [IMDbAPI] Direct fetch error for {imdb_id}: {e}")
     return (None, 0)
 
 # ======================================================================
