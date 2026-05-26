@@ -26,7 +26,7 @@ PROGRESS_FILE = OUTPUT_DIR / "rating_update_progress.txt"
 
 # Delays (seconds) per source
 DELAYS = {
-    "imdbapi": 3.0,
+    "imdbapi": 2.0,
     "tmdb": 0.04,
     "omdb": 0.5,
 }
