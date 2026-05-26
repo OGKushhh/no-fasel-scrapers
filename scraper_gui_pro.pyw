@@ -35,9 +35,12 @@ SCRIPT_GROUPS = {
         "Check New":        [PYTHON_EXE, "-u", "check_new_episodes.py"],
     },
     "Ratings": {
-        "Ratings (TMDb + OMDb fallback)": [PYTHON_EXE, "-u", "update_ratings.py", "--primary", "tmdb", "--fallback"],
-        "Ratings (IMDbAPI + OMDb fallback)": [PYTHON_EXE, "-u", "update_ratings.py", "--primary", "imdbapi", "--fallback"],
-        "Ratings (IMDbAPI only)": [PYTHON_EXE, "-u", "update_ratings.py", "--primary", "imdbapi"],
+        "Ratings (IMDbAPI → TMDb → OMDb)": [PYTHON_EXE, "-u", "update_ratings.py", "--sources", "imdbapi,tmdb,omdb"],
+        "Ratings (TMDb → OMDb)": [PYTHON_EXE, "-u", "update_ratings.py", "--sources", "tmdb,omdb"],
+        "Ratings (IMDbAPI → TMDb)": [PYTHON_EXE, "-u", "update_ratings.py", "--sources", "imdbapi,tmdb"],
+        "Ratings (TMDb only)": [PYTHON_EXE, "-u", "update_ratings.py", "--sources", "tmdb"],
+        "Ratings (IMDbAPI only)": [PYTHON_EXE, "-u", "update_ratings.py", "--sources", "imdbapi"],
+        "Ratings (Custom order)": [PYTHON_EXE, "-u", "update_ratings.py"],  # will prompt for sources
     },
 }
 
@@ -382,6 +385,14 @@ class ScraperGUI:
             if not ids:
                 return
             extra = ["--ids"] + ids.split()
+        elif name == "Ratings (Custom order)":
+            sources = simpledialog.askstring(
+                "Rating Sources",
+                "Enter source order (comma-separated, e.g.: imdbapi,tmdb,omdb)\nOptions: imdbapi, tmdb, omdb"
+            )
+            if not sources:
+                return
+            extra = ["--sources", sources.strip()]
 
         proc, text_widget = self._run_subprocess(cmd + extra, name)
         if proc is None:
