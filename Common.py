@@ -991,12 +991,37 @@ def get_tmdb_details(title: str, year: Optional[str] = None, content_type: str =
     TMDB_CACHE[cache_key] = (rating, votes)
     return rating, votes
 
+def get_tmdb_imdb_id(title: str, year: Optional[str] = None, media_type: str = "movie") -> Optional[str]:
+    """
+    Search TMDb for a title/year and return the IMDb ID (tt...).
+    Returns None if not found or if TMDb doesn't have an external IMDb ID.
+    """
+    cleaned = _clean_title_tmdb(title)
+    tmdb_id = search_tmdb(cleaned, year, media_type)
+    if not tmdb_id:
+        return None
+    url = f"{TMDB_BASE_URL}/{media_type}/{tmdb_id}/external_ids"
+    params = {"api_key": TMDB_API_KEY}
+    try:
+        resp = requests.get(url, params=params, timeout=10)
+        resp.raise_for_status()
+        data = resp.json()
+        imdb_id = data.get("imdb_id")
+        return imdb_id if imdb_id else None
+    except Exception as e:
+        print(f"  ⚠️ TMDb external ID error for '{title}': {e}")
+        return None
+
 # ----------------------------------------------------------------------
 #  IMDBAPI.dev API Helpers
 # ----------------------------------------------------------------------
 IMDBAPI_BASE_URL = "https://api.imdbapi.dev"
 
 def search_imdbapi_dev(title: str, year: Optional[str] = None) -> tuple:
+    """
+    Search IMDbAPI.dev and return (rating, votes, imdb_id).
+    Returns (None, 0, None) if not found.
+    """
     params = {
         "query": title,
         "limit": 5,
@@ -1014,17 +1039,41 @@ def search_imdbapi_dev(title: str, year: Optional[str] = None) -> tuple:
         data = resp.json()
         titles = data.get("titles", [])
         if not titles:
-            return (None, 0)
+            return (None, 0, None)
 
         best = titles[0]
+        imdb_id = best.get("id")          # e.g., "tt9813792"
         rating_info = best.get("ratingsSummary", {})
+        avg_rating = rating_info.get("aggregateRating")
+        vote_count = rating_info.get("voteCount", 0)
+        if avg_rating is not None:
+            rating_str = str(round(float(avg_rating), 1))
+            return (rating_str, vote_count, imdb_id)
+    except Exception as e:
+        print(f"  ⚠️ IMDBAPI.dev error for '{title}': {e}")
+    return (None, 0, None)
+
+def fetch_imdbapi_rating_by_id(imdb_id: str) -> tuple:
+    """
+    Fetch rating and votes for a known IMDb ID using IMDbAPI.dev.
+    Returns (rating, votes) or (None, 0) if not found.
+    """
+    if not imdb_id or not imdb_id.startswith("tt"):
+        return (None, 0)
+    url = f"{IMDBAPI_BASE_URL}/titles/{imdb_id}"
+    params = {"api_key": IMDBAPI_DEV_KEY}   # You need to define this variable
+    try:
+        resp = requests.get(url, params=params, timeout=10)
+        resp.raise_for_status()
+        data = resp.json()
+        rating_info = data.get("ratingsSummary", {})
         avg_rating = rating_info.get("aggregateRating")
         vote_count = rating_info.get("voteCount", 0)
         if avg_rating is not None:
             rating_str = str(round(float(avg_rating), 1))
             return (rating_str, vote_count)
     except Exception as e:
-        print(f"  ⚠️ IMDBAPI.dev error for '{title}': {e}")
+        print(f"  ⚠️ IMDbAPI.dev direct fetch error for {imdb_id}: {e}")
     return (None, 0)
 
 # ======================================================================

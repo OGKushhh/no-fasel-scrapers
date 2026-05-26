@@ -34,6 +34,11 @@ SCRIPT_GROUPS = {
         "Update Specific":  [PYTHON_EXE, "-u", "update_specific_episodes.py"],
         "Check New":        [PYTHON_EXE, "-u", "check_new_episodes.py"],
     },
+    "Ratings": {
+        "Ratings (TMDb + OMDb fallback)": [PYTHON_EXE, "-u", "update_ratings.py", "--primary", "tmdb", "--fallback"],
+        "Ratings (IMDbAPI + OMDb fallback)": [PYTHON_EXE, "-u", "update_ratings.py", "--primary", "imdbapi", "--fallback"],
+        "Ratings (IMDbAPI only)": [PYTHON_EXE, "-u", "update_ratings.py", "--primary", "imdbapi"],
+    },
 }
 
 BACKFILL_TASKS = {
