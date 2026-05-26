@@ -1014,10 +1014,13 @@ def get_tmdb_imdb_id(title: str, year: Optional[str] = None, media_type: str = "
 # ----------------------------------------------------------------------
 IMDBAPI_BASE_URL = "https://api.imdbapi.dev"
 
+# Set this to True to see full response text on errors
+DEBUG_IMDBAPI = True
+
 def search_imdbapi_dev(title: str, year: Optional[str] = None, max_retries: int = 3) -> tuple:
     """
     Search IMDbAPI.dev for a title and return (rating, votes, imdb_id).
-    Uses fuzzy matching with year filtering. Retries on 5xx errors.
+    Handles 429 with backoff, prints response body on errors.
     """
     params = {
         "query": title,
@@ -1034,36 +1037,32 @@ def search_imdbapi_dev(title: str, year: Optional[str] = None, max_retries: int 
     for attempt in range(max_retries):
         try:
             resp = requests.get(url, params=params, timeout=10)
+            
             if resp.status_code == 200:
                 data = resp.json()
                 titles = data.get("titles", [])
                 if not titles:
                     return (None, 0, None)
                 
-                # Find the best matching title using a simple scoring system
+                # Find best match (same scoring as before)
                 best_match = None
                 best_score = -1
                 for t in titles:
                     t_title = t.get("primaryTitle", "")
                     t_year = t.get("startYear")
                     score = 0
-                    # Exact title match (case-insensitive)
                     if title.lower() == t_title.lower():
                         score += 10
-                    # Partial match (title contained in result or vice versa)
                     elif title.lower() in t_title.lower() or t_title.lower() in title.lower():
                         score += 5
-                    # Year match
                     if year and t_year and int(year) == t_year:
                         score += 3
                     if score > best_score:
                         best_score = score
                         best_match = t
                 
-                # Accept only if score is at least 5 (partial match) or better
                 if best_match and best_score >= 5:
                     imdb_id = best_match.get("id")
-                    # CORRECTED: use "rating" not "ratingsSummary"
                     rating_info = best_match.get("rating", {})
                     avg_rating = rating_info.get("aggregateRating")
                     vote_count = rating_info.get("voteCount", 0)
@@ -1075,19 +1074,40 @@ def search_imdbapi_dev(title: str, year: Optional[str] = None, max_retries: int 
                 else:
                     return (None, 0, None)
             
+            elif resp.status_code == 429:
+                # Rate limit – exponential backoff starting at 5 seconds
+                wait = 5 * (2 ** attempt)
+                print(f"  [IMDbAPI] Rate limited (429), retry {attempt+1}/{max_retries} after {wait}s")
+                if DEBUG_IMDBAPI:
+                    print(f"  Response: {resp.text[:200]}")
+                time.sleep(wait)
+                continue
+            
             elif resp.status_code in (500, 502, 503, 504):
                 wait = 2 ** attempt
                 print(f"  [IMDbAPI] Server error {resp.status_code}, retry {attempt+1}/{max_retries} after {wait}s")
+                if DEBUG_IMDBAPI:
+                    print(f"  Response: {resp.text[:200]}")
                 time.sleep(wait)
                 continue
+            
             else:
+                # Other HTTP errors (400, 403, 404, etc.)
                 print(f"  [IMDbAPI] HTTP {resp.status_code} for '{title}'")
+                if DEBUG_IMDBAPI:
+                    print(f"  Response: {resp.text[:500]}")
+                return (None, 0, None)
+        
+        except requests.exceptions.Timeout:
+            print(f"  [IMDbAPI] Timeout for '{title}', attempt {attempt+1}/{max_retries}")
+            if attempt < max_retries - 1:
+                time.sleep(2 ** attempt)
+            else:
                 return (None, 0, None)
         except Exception as e:
             print(f"  [IMDbAPI] Request error: {e}")
             if attempt < max_retries - 1:
-                wait = 2 ** attempt
-                time.sleep(wait)
+                time.sleep(2 ** attempt)
             else:
                 return (None, 0, None)
     
