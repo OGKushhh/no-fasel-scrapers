@@ -1,0 +1,26 @@
+{
+  "content_id": "466",
+  "category": "arabic-series",
+  "episodes": [
+    {
+      "number": 1,
+      "title": "حلقة 1 : مسلسل أحلام قديمة  السهرة كاملة",
+      "url": "https://akwam.com.co/episode/7479/السهرة-كاملة",
+      "sources": [
+        {
+          "quality": "720p",
+          "watch_url": "http://go.akwam.com.co/watch/18473",
+          "download_url": "http://go.akwam.com.co/link/18473",
+          "size_mb": 981.8
+        },
+        {
+          "quality": "480p",
+          "watch_url": "http://go.akwam.com.co/watch/18472",
+          "download_url": "http://go.akwam.com.co/link/18472",
+          "size_mb": 542.6
+        }
+      ]
+    }
+  ],
+  "last_updated": "2026-05-12T03:03:22"
+}

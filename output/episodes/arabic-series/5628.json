@@ -1,0 +1,33 @@
+{
+  "content_id": "5628",
+  "category": "arabic-series",
+  "episodes": [
+    {
+      "number": 1,
+      "title": "حلقة 1 : مسلسل حفرة جهنم  1",
+      "url": "https://akwam.com.co/episode/100531/حفرة-جهنم/الحلقة-1",
+      "sources": [
+        {
+          "quality": "720p",
+          "watch_url": "http://go.akwam.com.co/watch/178872",
+          "download_url": "http://go.akwam.com.co/link/178872",
+          "size_mb": 335.1
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "حلقة 2 : مسلسل حفرة جهنم  2",
+      "url": "https://akwam.com.co/episode/100532/حفرة-جهنم/الحلقة-2",
+      "sources": [
+        {
+          "quality": "720p",
+          "watch_url": "http://go.akwam.com.co/watch/178873",
+          "download_url": "http://go.akwam.com.co/link/178873",
+          "size_mb": 300.8
+        }
+      ]
+    }
+  ],
+  "last_updated": "2026-05-10T11:57:47"
+}

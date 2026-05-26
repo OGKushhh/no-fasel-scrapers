@@ -1,0 +1,85 @@
+{
+  "content_id": "3878",
+  "category": "arabic-series",
+  "episodes": [
+    {
+      "number": 1,
+      "title": "حلقة 1 : مسلسل المشروع  الحلقة الاولى",
+      "url": "https://akwam.com.co/episode/71505/المشروع/الحلقة-1",
+      "sources": [
+        {
+          "quality": "720p",
+          "watch_url": "http://go.akwam.com.co/watch/130908",
+          "download_url": "http://go.akwam.com.co/link/130908",
+          "size_mb": 180.9
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "حلقة 2 : مسلسل المشروع  الحلقة الثانية",
+      "url": "https://akwam.com.co/episode/71506/المشروع/الحلقة-2",
+      "sources": [
+        {
+          "quality": "720p",
+          "watch_url": "http://go.akwam.com.co/watch/130909",
+          "download_url": "http://go.akwam.com.co/link/130909",
+          "size_mb": 165.1
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "حلقة 3 : مسلسل المشروع  الحلقة الثالثة",
+      "url": "https://akwam.com.co/episode/71507/المشروع/الحلقة-3",
+      "sources": [
+        {
+          "quality": "720p",
+          "watch_url": "http://go.akwam.com.co/watch/130910",
+          "download_url": "http://go.akwam.com.co/link/130910",
+          "size_mb": 162.3
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "حلقة 4 : مسلسل المشروع  الحلقة الرابعة",
+      "url": "https://akwam.com.co/episode/71508/المشروع/الحلقة-4",
+      "sources": [
+        {
+          "quality": "720p",
+          "watch_url": "http://go.akwam.com.co/watch/130911",
+          "download_url": "http://go.akwam.com.co/link/130911",
+          "size_mb": 187.2
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "حلقة 5 : مسلسل المشروع  الحلقة الخامسة",
+      "url": "https://akwam.com.co/episode/71509/المشروع/الحلقة-5",
+      "sources": [
+        {
+          "quality": "720p",
+          "watch_url": "http://go.akwam.com.co/watch/130912",
+          "download_url": "http://go.akwam.com.co/link/130912",
+          "size_mb": 212.5
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "حلقة 6 : مسلسل المشروع  الحلقة السادسة والاخيرة",
+      "url": "https://akwam.com.co/episode/71510/المشروع/الحلقة-6",
+      "sources": [
+        {
+          "quality": "720p",
+          "watch_url": "http://go.akwam.com.co/watch/130913",
+          "download_url": "http://go.akwam.com.co/link/130913",
+          "size_mb": 162.2
+        }
+      ]
+    }
+  ],
+  "last_updated": "2026-05-09T04:47:53"
+}
