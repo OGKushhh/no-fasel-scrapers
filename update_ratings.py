@@ -96,8 +96,8 @@ def clean_title(raw_title: str) -> str:
         cleaned = re.sub(rf'\b{word}\b', '', cleaned, flags=re.IGNORECASE)
     # Normalize smart/curly quotes to straight ones
     cleaned = cleaned.replace('’', "'").replace('‘', "'").replace('“', '"').replace('”', '"')
-    # Keep letters, numbers, spaces, colon, apostrophe, dot, dash, comma, ampersand
-    cleaned = re.sub(r'[^A-Za-z0-9\s:\'\.\-,&]', ' ', cleaned)
+    # Keep letters (including accented), numbers, spaces, and allowed punctuation: ' , - & : .
+    cleaned = re.sub(r'[^\w\s\'\-,&:.]', ' ', cleaned, flags=re.UNICODE)
     cleaned = ' '.join(cleaned.split())
     return cleaned if cleaned else raw_title
 

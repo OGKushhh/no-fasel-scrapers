@@ -190,6 +190,8 @@ class ScraperGUI:
                 self._script_row(name, cmd)
         self._section_header("Backfill")
         self._backfill_row()
+        self._section_header("Manual")
+        self._manual_row()
         self._section_header("")
         self._bottom_controls()
 
@@ -271,6 +273,19 @@ class ScraperGUI:
             state=tk.DISABLED, font=("Arial", 9),
         )
         self.backfill_stop_btn.grid(row=0, column=3, padx=(2, 2))
+
+    def _manual_row(self):
+        row = tk.Frame(self.scroll_frame)
+        row.pack(fill=tk.X, padx=6, pady=2)
+        row.columnconfigure(0, weight=1)
+
+        btn = tk.Button(
+            row, text="✏️  Set IMDb ID",
+            command=self.open_imdb_dialog,
+            relief=tk.GROOVE, bd=1,
+            font=("Arial", 9), pady=4
+        )
+        btn.grid(row=0, column=0, sticky="ew", padx=4, pady=2)
 
     def _bottom_controls(self):
         self._custom_btn = tk.Button(
@@ -776,6 +791,43 @@ class ScraperGUI:
 
     def _log(self, msg):
         self._append_output(self.log_text, msg)
+
+    # -------------------------------------------------------------------------
+    # MANUAL IMDb ID SETTER
+    # -------------------------------------------------------------------------
+    def open_imdb_dialog(self):
+        categories = [
+            "movies.json", "dubbed-movies.json", "hindi.json",
+            "asian-movies.json", "anime-movies.json", "anime.json",
+            "series.json", "tvshows.json", "asian-series.json"
+        ]
+        category = simpledialog.askstring(
+            "Category",
+            "Enter category file name (e.g., movies.json):\n" + "\n".join(categories)
+        )
+        if not category:
+            return
+        # Validate category exists
+        if not (Path("./output") / category).exists():
+            messagebox.showerror("Error", f"Category file {category} not found.")
+            return
+
+        content_id = simpledialog.askstring("Content ID", "Enter content ID (numeric):")
+        if not content_id or not content_id.isdigit():
+            messagebox.showerror("Error", "Invalid content ID. Must be numeric.")
+            return
+
+        imdb_id = simpledialog.askstring("IMDb ID", "Enter IMDb ID (e.g., tt1234567):")
+        if not imdb_id or not imdb_id.startswith("tt"):
+            messagebox.showerror("Error", "Invalid IMDb ID. Must start with 'tt'.")
+            return
+
+        # Run the set_imdb_id.py script
+        cmd = [PYTHON_EXE, "-u", "set_imdb_id.py", "--category", category, "--id", content_id, "--imdb_id", imdb_id]
+        proc, text_widget = self._run_subprocess(cmd, f"Set IMDb ID: {content_id}")
+        if proc:
+            self.processes[f"Set IMDb ID {content_id}"] = proc
+            self.output_tabs[f"Set IMDb ID {content_id}"] = text_widget
 
 
 # -----------------------------------------------------------------------------

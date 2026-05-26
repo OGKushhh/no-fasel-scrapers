@@ -875,7 +875,7 @@ def search_imdb_by_title(title: str, year: Optional[str] = None, content_type: s
     # Clean title (remove punctuation)
     # Normalize smart quotes, keep apostrophes, commas, periods, colons, dashes, ampersands
     title_temp = title.replace('’', "'").replace('‘', "'").replace('“', '"').replace('”', '"')
-    cleaned = re.sub(r'[^A-Za-z0-9\s\'\-,\.:&]', '', title_temp).strip()
+    cleaned = re.sub(r'[^\w\s\'\-,\.:&]', ' ', title_temp, flags=re.UNICODE).strip()
     
     # Map content_type to OMDb type parameter
     omdb_type = None
@@ -975,8 +975,9 @@ def _clean_title_tmdb(raw_title: str) -> str:
         cleaned = re.sub(rf'\b{word}\b', '', cleaned, flags=re.IGNORECASE)
     # Normalize smart/curly quotes to straight ones
     cleaned = cleaned.replace('’', "'").replace('‘', "'").replace('“', '"').replace('”', '"')
-    # Keep letters, numbers, spaces, colon, apostrophe, dot, dash, comma, ampersand
-    cleaned = re.sub(r'[^A-Za-z0-9\s:\'\.\-,&]', ' ', cleaned)
+    # Keep letters (including accented), numbers, spaces, and allowed punctuation: ' , - & : .
+    # Remove all other punctuation (e.g., ! @ # $ % ^ * ( ) + = { } [ ] \ | / ~)
+    cleaned = re.sub(r'[^\w\s\'\-,&:.]', ' ', cleaned, flags=re.UNICODE)
     cleaned = ' '.join(cleaned.split())
     return cleaned if cleaned else raw_title
 
