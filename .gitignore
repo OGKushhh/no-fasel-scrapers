@@ -1,6 +1,4 @@
-# Output folder (scraped data, ratings, episodes, progress files, etc.)
-/output/
-output/
+# Output folder – NOW TRACKED FULLY (removed ignore lines)
 
 # Ignore Hugging Face Space clone
 AbdoBest/

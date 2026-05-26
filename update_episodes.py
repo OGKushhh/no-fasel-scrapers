@@ -160,15 +160,23 @@ def save_fasel_episodes(category: str, series_id: str, data: dict):
     """
     Persist Fasel episode data.
     ENFORCES: every season's episodes list contains plain URL strings only.
+    Also sorts seasons by numeric key (ascending) before writing.
     """
-    # Safety pass: strip any dict entries that slipped in
+    # Clean each season's episodes (as before)
     for sk, season_val in data.get("seasons", {}).items():
         if isinstance(season_val, list):
-            # Anime plain-list format → keep as list of strings
             data["seasons"][sk] = [_ep_to_url(e) for e in season_val if _ep_to_url(e)]
         elif isinstance(season_val, dict):
             clean_urls = [_ep_to_url(e) for e in season_val.get("episodes", []) if _ep_to_url(e)]
             data["seasons"][sk] = {"poster": season_val.get("poster", ""), "episodes": clean_urls}
+
+    # ----- NEW: Sort seasons by numeric key -----
+    seasons = data.get("seasons", {})
+    if seasons:
+        # Convert keys to int for sorting, then back to str
+        sorted_keys = sorted(seasons.keys(), key=lambda k: int(k))
+        data["seasons"] = {k: seasons[k] for k in sorted_keys}
+    # --------------------------------------------
 
     data["last_updated"] = datetime.now(timezone.utc).isoformat()
     path = EPISODES_BASE / category / f"{series_id}.json"
