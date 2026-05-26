@@ -23,7 +23,11 @@ SCRIPT_GROUPS = {
         "Series (all)":     [PYTHON_EXE, "-u", "FaselSeriesScraper.py"],
         "Series (asian)":   [PYTHON_EXE, "-u", "FaselSeriesScraper.py", "asian-series"],
         "Series (tvshows)": [PYTHON_EXE, "-u", "FaselSeriesScraper.py", "tvshows"],
-        "Movies":           [PYTHON_EXE, "-u", "FaselMoviesScraper.py"],
+        "Movies (all)":     [PYTHON_EXE, "-u", "FaselMoviesScraper.py"],
+        "Movies (dubbed)":  [PYTHON_EXE, "-u", "FaselMoviesScraper.py", "--category", "dubbed-movies"],
+        "Movies (hindi)":   [PYTHON_EXE, "-u", "FaselMoviesScraper.py", "--category", "hindi"],
+        "Movies (asian)":   [PYTHON_EXE, "-u", "FaselMoviesScraper.py", "--category", "asian-movies"],
+        "Movies (anime)":   [PYTHON_EXE, "-u", "FaselMoviesScraper.py", "--category", "anime-movies"],
         "Anime":            [PYTHON_EXE, "-u", "FaselAnimeScraper.py"],
     },
     "Akwam": {

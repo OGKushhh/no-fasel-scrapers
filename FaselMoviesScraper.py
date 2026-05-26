@@ -12,6 +12,8 @@ import random
 import re
 import os
 import time
+import argparse
+import sys
 from datetime import datetime, timezone
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from time import sleep
@@ -243,9 +245,19 @@ def scrape_category(path: str):
     print(f"\n🏁 {path} finished. Total movies: {len(all_movies)}")
 
 def main():
-    for path in MOVIE_PATHS:
+    parser = argparse.ArgumentParser(description="Scrape FaselHD movie categories")
+    parser.add_argument("--category", type=str, choices=MOVIE_PATHS + ["all"], default="all",
+                        help="Specific category to scrape. Default: all")
+    args = parser.parse_args()
+
+    if args.category == "all":
+        paths = MOVIE_PATHS
+    else:
+        paths = [args.category]
+
+    for path in paths:
         scrape_category(path)
-    print("\n🎉 All movie categories processed successfully!")
+    print("\n🎉 All requested movie categories processed successfully!")
 
 if __name__ == "__main__":
     main()
