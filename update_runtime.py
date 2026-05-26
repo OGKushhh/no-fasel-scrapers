@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-normalize_runtime.py – Convert runtime to integer minutes using multiple sources.
-Supports --sources imdbapi,tmdb,omdb (any order).
+update_runtime.py – Convert runtime to integer minutes using multiple sources.
+Supports --sources imdbapi,tmdb,omdb (any order) and --category.
 Parses existing runtime strings first, then tries API sources.
 """
 
@@ -20,7 +20,7 @@ import requests
 
 OUTPUT_DIR = Path("./output")
 RATINGS_DIR = OUTPUT_DIR / "ratings"
-PROGRESS_FILE = OUTPUT_DIR / "runtime_normalize_progress.txt"
+PROGRESS_FILE = OUTPUT_DIR / "runtime_update_progress.txt"
 
 CONTENT_FILES = {
     "movies.json": "movie",
@@ -196,9 +196,10 @@ def process_file(file_path: Path, content_type: str, processed_set: set, sources
         print(f"  UPDATED {file_path.name}")
 
 def main():
-    parser = argparse.ArgumentParser(description="Normalize runtime using multiple sources")
+    parser = argparse.ArgumentParser(description="Update runtime (convert to minutes) using multiple sources")
     parser.add_argument("--sources", type=str, default="imdbapi,tmdb,omdb",
                         help="Comma-separated sources in priority order (imdbapi, tmdb, omdb). Default: imdbapi,tmdb,omdb")
+    parser.add_argument("--category", type=str, help="Process only a specific category file (e.g., movies.json)")
     args = parser.parse_args()
 
     sources = [s.strip() for s in args.sources.split(",")]
@@ -208,10 +209,12 @@ def main():
             print(f"ERROR: Invalid source '{s}'. Choose from {valid}")
             sys.exit(1)
 
-    print(f"Starting runtime normalization with sources: {sources}")
+    print(f"Starting runtime update with sources: {sources}")
     processed = load_progress()
 
     for filename, media_type in CONTENT_FILES.items():
+        if args.category and filename != args.category:
+            continue
         file_path = OUTPUT_DIR / filename
         if file_path.exists():
             process_file(file_path, media_type, processed, sources)

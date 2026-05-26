@@ -3,6 +3,7 @@
 update_ratings.py – Flexible rating fetcher.
 If an IMDb ID exists in the rating file, it directly fetches from IMDbAPI (upgrade).
 Otherwise uses the source order (--sources).
+Supports --category to process only one JSON file.
 """
 
 import json
@@ -284,6 +285,7 @@ def main():
     parser = argparse.ArgumentParser(description="Flexible rating fetcher")
     parser.add_argument("--sources", type=str, default="imdbapi,tmdb,omdb",
                         help="Comma-separated list of sources (imdbapi,tmdb,omdb). Default: imdbapi,tmdb,omdb")
+    parser.add_argument("--category", type=str, help="Process only a specific category file (e.g., movies.json)")
     args = parser.parse_args()
 
     sources = [s.strip() for s in args.sources.split(",")]
@@ -298,6 +300,8 @@ def main():
     processed = load_progress()
 
     for filename, media_type in CONTENT_FILES.items():
+        if args.category and filename != args.category:
+            continue
         file_path = OUTPUT_DIR / filename
         if file_path.exists():
             process_file(file_path, media_type, processed, sources)

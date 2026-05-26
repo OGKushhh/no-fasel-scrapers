@@ -41,12 +41,14 @@ SCRIPT_GROUPS = {
         "Ratings (TMDb only)": [PYTHON_EXE, "-u", "update_ratings.py", "--sources", "tmdb"],
         "Ratings (IMDbAPI only)": [PYTHON_EXE, "-u", "update_ratings.py", "--sources", "imdbapi"],
         "Ratings (Custom order)": [PYTHON_EXE, "-u", "update_ratings.py"],  # will prompt for sources
+        "Ratings (Specific category)": [PYTHON_EXE, "-u", "update_ratings.py"],  # prompt for sources and category
     },
     "Metadata": {
-        "Runtime (IMDbAPI → TMDb → OMDb)": [PYTHON_EXE, "-u", "normalize_runtime.py", "--sources", "imdbapi,tmdb,omdb"],
-        "Runtime (IMDbAPI → TMDb)": [PYTHON_EXE, "-u", "normalize_runtime.py", "--sources", "imdbapi,tmdb"],
-        "Runtime (IMDbAPI only)": [PYTHON_EXE, "-u", "normalize_runtime.py", "--sources", "imdbapi"],
-        "Runtime (Custom order)": [PYTHON_EXE, "-u", "normalize_runtime.py"],  # will prompt for sources
+        "Runtime (IMDbAPI → TMDb → OMDb)": [PYTHON_EXE, "-u", "update_runtime.py", "--sources", "imdbapi,tmdb,omdb"],
+        "Runtime (IMDbAPI → TMDb)": [PYTHON_EXE, "-u", "update_runtime.py", "--sources", "imdbapi,tmdb"],
+        "Runtime (IMDbAPI only)": [PYTHON_EXE, "-u", "update_runtime.py", "--sources", "imdbapi"],
+        "Runtime (Custom order)": [PYTHON_EXE, "-u", "update_runtime.py"],  # will prompt for sources
+        "Runtime (Specific category)": [PYTHON_EXE, "-u", "update_runtime.py"],  # prompt for sources and category
     },
 }
 
@@ -399,6 +401,20 @@ class ScraperGUI:
             if not sources:
                 return
             extra = ["--sources", sources.strip()]
+        elif name == "Ratings (Specific category)":
+            sources = simpledialog.askstring(
+                "Rating Sources",
+                "Enter source order (comma-separated, e.g.: imdbapi,tmdb,omdb)\nOptions: imdbapi, tmdb, omdb"
+            )
+            if not sources:
+                return
+            category = simpledialog.askstring(
+                "Category",
+                "Enter category file name (e.g., movies.json, series.json, anime.json)"
+            )
+            if not category:
+                return
+            extra = ["--sources", sources.strip(), "--category", category.strip()]
         elif name == "Runtime (Custom order)":
             sources = simpledialog.askstring(
                 "Runtime Sources",
@@ -407,6 +423,20 @@ class ScraperGUI:
             if not sources:
                 return
             extra = ["--sources", sources.strip()]
+        elif name == "Runtime (Specific category)":
+            sources = simpledialog.askstring(
+                "Runtime Sources",
+                "Enter source order (comma-separated, e.g.: imdbapi,tmdb,omdb)\nOptions: imdbapi, tmdb, omdb"
+            )
+            if not sources:
+                return
+            category = simpledialog.askstring(
+                "Category",
+                "Enter category file name (e.g., movies.json, series.json, anime.json)"
+            )
+            if not category:
+                return
+            extra = ["--sources", sources.strip(), "--category", category.strip()]
 
         proc, text_widget = self._run_subprocess(cmd + extra, name)
         if proc is None:
