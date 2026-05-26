@@ -837,48 +837,82 @@ def extract_episodes_from_season_page(soup: BeautifulSoup) -> List[str]:
     return list(dict.fromkeys(episode_urls))
 
 # ----------------------------------------------------------------------
-#  IMDb rating helper using OMDb API
+#  IMDb rating helper using OMDb API (via omdb library)
 # ----------------------------------------------------------------------
+import omdb  # requires 'pip install omdb'
+
 OMDB_API_KEY = "b7fc5b44"
 OMDB_BASE_URL = "http://www.omdbapi.com/"
 IMDB_CACHE = {}
 
+# Set the API key globally for the omdb module
+omdb.set_default('apikey', OMDB_API_KEY)
+
 def fetch_imdb_rating_by_id(imdb_id: str) -> Optional[str]:
+    """Fetch rating using IMDb ID via omdb library."""
     if not imdb_id or not imdb_id.startswith('tt'):
         return None
     if imdb_id in IMDB_CACHE:
-        return IMDB_CACHE[imdb_id]
-    url = f"{OMDB_BASE_URL}?i={imdb_id}&apikey={OMDB_API_KEY}"
+        cached = IMDB_CACHE[imdb_id]
+        if isinstance(cached, str):
+            return cached
+        if isinstance(cached, dict) and 'rating' in cached:
+            return cached['rating']
     try:
-        resp = requests.get(url, timeout=10)
-        data = resp.json()
-        if data.get("Response") == "True":
-            rating = data.get("imdbRating")
-            if rating and rating != "N/A":
+        data = omdb.imdbid(imdb_id, timeout=10)
+        if data and data.get('response') == True:
+            rating = data.get('imdb_rating')
+            if rating and rating != 'N/A':
                 IMDB_CACHE[imdb_id] = rating
                 return rating
     except Exception as e:
-        print(f"IMDb API error for {imdb_id}: {e}")
+        print(f"OMDb error for ID {imdb_id}: {e}")
     IMDB_CACHE[imdb_id] = None
     return None
 
 def search_imdb_by_title(title: str, year: Optional[str] = None, content_type: str = "movie") -> Optional[str]:
-    search_title = title
+    """Search OMDb by title/year/type using direct lookup via raw requests. Returns IMDb ID or None."""
+    # Clean title (remove punctuation)
+    cleaned = re.sub(r'[^\w\s]', '', title).strip()
+    
+    # Map content_type to OMDb type parameter
+    omdb_type = None
+    if content_type == "movie":
+        omdb_type = "movie"
+    elif content_type in ("tv", "series"):
+        omdb_type = "series"
+    
+    # Direct lookup with title, year, type
     if year:
-        search_title += f" {year}"
-    url = f"{OMDB_BASE_URL}?t={search_title}&apikey={OMDB_API_KEY}"
-    if content_type in ["movie", "series", "episode"]:
-        url += f"&type={content_type}"
+        url = f"{OMDB_BASE_URL}?t={cleaned}&y={year}&apikey={OMDB_API_KEY}"
+        if omdb_type:
+            url += f"&type={omdb_type}"
+        try:
+            resp = requests.get(url, timeout=10)
+            data = resp.json()
+            if data.get('Response') == 'True':
+                return data.get('imdbID')
+        except Exception as e:
+            print(f"OMDb direct lookup error for '{cleaned} ({year})': {e}")
+        return None
+    
+    # Only if no year was provided, try search (less accurate)
+    url = f"{OMDB_BASE_URL}?s={cleaned}&apikey={OMDB_API_KEY}"
+    if omdb_type:
+        url += f"&type={omdb_type}"
     try:
         resp = requests.get(url, timeout=10)
         data = resp.json()
-        if data.get("Response") == "True":
-            return data.get("imdbID")
+        if data.get('Response') == 'True':
+            results = data.get('Search', [])
+            if results:
+                return results[0].get('imdbID')
     except Exception as e:
-        print(f"IMDb search error for '{title}': {e}")
+        print(f"OMDb search error: {e}")
     return None
 
 def get_imdb_rating(title: str, year: Optional[str] = None, content_type: str = "movie", known_imdb_id: Optional[str] = None) -> Optional[str]:
+    """Return rating as string or None."""
     if known_imdb_id and known_imdb_id.startswith('tt'):
         return fetch_imdb_rating_by_id(known_imdb_id)
     imdb_id = search_imdb_by_title(title, year, content_type)
@@ -887,36 +921,42 @@ def get_imdb_rating(title: str, year: Optional[str] = None, content_type: str = 
     return None
 
 def get_imdb_details(title: str, year: Optional[str] = None, content_type: str = "movie", known_imdb_id: Optional[str] = None) -> tuple:
+    """
+    Return (rating, votes, imdb_id, limit_reached) using raw requests.
+    """
     imdb_id = known_imdb_id
     if not imdb_id:
         imdb_id = search_imdb_by_title(title, year, content_type)
     if not imdb_id:
         return (None, None, None, False)
 
+    # Check cache
     if imdb_id in IMDB_CACHE:
         cached = IMDB_CACHE[imdb_id]
-        if isinstance(cached, dict):
-            return (cached.get("rating"), cached.get("votes"), imdb_id, False)
+        if isinstance(cached, dict) and 'rating' in cached and 'votes' in cached:
+            return (cached['rating'], cached['votes'], imdb_id, False)
+        elif isinstance(cached, str):
+            return (cached, 0, imdb_id, False)
 
     url = f"{OMDB_BASE_URL}?i={imdb_id}&apikey={OMDB_API_KEY}"
     try:
         resp = requests.get(url, timeout=10)
         data = resp.json()
-        if data.get("Response") == "True":
-            rating = data.get("imdbRating")
-            votes_str = data.get("imdbVotes", "0")
-            votes = int(votes_str.replace(",", "")) if votes_str and votes_str != "N/A" else 0
-            if rating and rating != "N/A":
-                IMDB_CACHE[imdb_id] = {"rating": rating, "votes": votes}
+        if data.get('Response') == 'True':
+            rating = data.get('imdbRating')
+            votes_str = data.get('imdbVotes', '0')
+            votes = int(votes_str.replace(',', '')) if votes_str and votes_str != 'N/A' else 0
+            if rating and rating != 'N/A':
+                IMDB_CACHE[imdb_id] = {'rating': rating, 'votes': votes}
                 return (rating, votes, imdb_id, False)
         else:
-            error = data.get("Error", "")
-            if "limit" in error.lower():
+            error = data.get('Error', '')
+            if 'limit' in error.lower():
                 print(f"⚠️ OMDb API limit reached: {error}")
                 return (None, None, imdb_id, True)
     except Exception as e:
-        print(f"Error: {e}")
-    IMDB_CACHE[imdb_id] = {"rating": None, "votes": None}
+        print(f"OMDb error for {imdb_id}: {e}")
+    IMDB_CACHE[imdb_id] = {'rating': None, 'votes': None}
     return (None, None, imdb_id, False)
 
 # ----------------------------------------------------------------------
