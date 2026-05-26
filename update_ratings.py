@@ -94,7 +94,8 @@ def clean_title(raw_title: str) -> str:
     cleaned = raw_title
     for word in arabic_stop:
         cleaned = re.sub(rf'\b{word}\b', '', cleaned, flags=re.IGNORECASE)
-    cleaned = re.sub(r'[^A-Za-z0-9\s:\'\.-]', ' ', cleaned)
+    # Keep letters, numbers, spaces, colon, apostrophe, dot, dash, and comma
+    cleaned = re.sub(r'[^A-Za-z0-9\s:\'\.\-,]', ' ', cleaned)
     cleaned = ' '.join(cleaned.split())
     return cleaned if cleaned else raw_title
 
