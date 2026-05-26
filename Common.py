@@ -873,7 +873,9 @@ def fetch_imdb_rating_by_id(imdb_id: str) -> Optional[str]:
 def search_imdb_by_title(title: str, year: Optional[str] = None, content_type: str = "movie") -> Optional[str]:
     """Search OMDb by title/year/type using direct lookup via raw requests. Returns IMDb ID or None."""
     # Clean title (remove punctuation)
-    cleaned = re.sub(r'[^\w\s]', '', title).strip()
+    # Normalize smart quotes, keep apostrophes, commas, periods, colons, dashes, ampersands
+    title_temp = title.replace('’', "'").replace('‘', "'").replace('“', '"').replace('”', '"')
+    cleaned = re.sub(r'[^A-Za-z0-9\s\'\-,\.:&]', '', title_temp).strip()
     
     # Map content_type to OMDb type parameter
     omdb_type = None
@@ -971,7 +973,10 @@ def _clean_title_tmdb(raw_title: str) -> str:
     cleaned = raw_title
     for word in arabic_stop:
         cleaned = re.sub(rf'\b{word}\b', '', cleaned, flags=re.IGNORECASE)
-    cleaned = re.sub(r'[^A-Za-z0-9\s:\'\.-]', ' ', cleaned)
+    # Normalize smart/curly quotes to straight ones
+    cleaned = cleaned.replace('’', "'").replace('‘', "'").replace('“', '"').replace('”', '"')
+    # Keep letters, numbers, spaces, colon, apostrophe, dot, dash, comma, ampersand
+    cleaned = re.sub(r'[^A-Za-z0-9\s:\'\.\-,&]', ' ', cleaned)
     cleaned = ' '.join(cleaned.split())
     return cleaned if cleaned else raw_title
 
