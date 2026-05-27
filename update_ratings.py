@@ -136,9 +136,10 @@ def fetch_imdbapi(cleaned: str, year: Optional[str]) -> tuple:
     time.sleep(DELAYS["imdbapi"])
     # Strict search first (score >= 5)
     rating, votes, imdb_id = search_imdbapi_dev(cleaned, year, relaxed=False)
-    # If strict fails and we have a year, try relaxed (accept best match)
+    # If strict fails and we have a year, try relaxed after a delay
     if rating is None and year:
-        print(f"  [IMDbAPI] Strict match failed, trying relaxed scoring...")
+        print(f"  [IMDbAPI] Strict match failed, waiting 2s before relaxed...")
+        time.sleep(2.0)   # <-- added delay to avoid immediate retry
         rating, votes, imdb_id = search_imdbapi_dev(cleaned, year, relaxed=True)
     imdbapi_cache[cache_key] = (rating, votes, imdb_id)
     if rating is not None:
