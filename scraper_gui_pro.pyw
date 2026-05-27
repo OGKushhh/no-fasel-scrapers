@@ -44,6 +44,7 @@ SCRIPT_GROUPS = {
         "Ratings (IMDbAPI → TMDb)": [PYTHON_EXE, "-u", "update_ratings.py", "--sources", "imdbapi,tmdb"],
         "Ratings (TMDb only)": [PYTHON_EXE, "-u", "update_ratings.py", "--sources", "tmdb"],
         "Ratings (IMDbAPI only)": [PYTHON_EXE, "-u", "update_ratings.py", "--sources", "imdbapi"],
+        "Ratings (TMDb‑first)": [PYTHON_EXE, "-u", "update_ratings.py", "--tmdb-first"],
         "Ratings (Custom order)": [PYTHON_EXE, "-u", "update_ratings.py"],  # will prompt for sources
         "Ratings (Specific category)": [PYTHON_EXE, "-u", "update_ratings.py"],  # prompt for sources and category
     },

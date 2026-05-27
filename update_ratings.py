@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 update_ratings.py – Flexible rating fetcher.
-If an IMDb ID exists in the rating file, it directly fetches from IMDbAPI (upgrade).
+If --tmdb-first is used: tries TMDb to get IMDb ID, then fetches rating from IMDbAPI.
 Otherwise uses the source order (--sources).
 Supports --category to process only one JSON file.
 """
@@ -109,7 +109,7 @@ def extract_year(title: str, release_date: Optional[str]) -> Optional[str]:
     m = re.search(r'\b(19|20)\d{2}\b', title)
     return m.group(0) if m else None
 
-# ---- Source functions ----
+# ---- Source functions (fallback) ----
 def fetch_tmdb(cleaned: str, year: Optional[str], content_type: str) -> tuple:
     cache_key = f"{cleaned}|{year}|{content_type}"
     if cache_key in tmdb_cache:
@@ -139,7 +139,7 @@ def fetch_imdbapi(cleaned: str, year: Optional[str]) -> tuple:
     # If strict fails and we have a year, try relaxed after a delay
     if rating is None and year:
         print(f"  [IMDbAPI] Strict match failed, waiting 2s before relaxed...")
-        time.sleep(2.0)   # <-- added delay to avoid immediate retry
+        time.sleep(2.0)
         rating, votes, imdb_id = search_imdbapi_dev(cleaned, year, relaxed=True)
     imdbapi_cache[cache_key] = (rating, votes, imdb_id)
     if rating is not None:
@@ -180,8 +180,8 @@ def get_rating_from_sources(cleaned: str, year: Optional[str], content_type: str
         time.sleep(0.5)
     return None, 0, None, "none"
 
-def process_file(file_path: Path, content_type: str, processed_set: Set[Tuple[str, str]], sources: list):
-    print(f"\n[FILE] Processing {file_path.name} (type: {content_type}) - sources: {sources}")
+def process_file(file_path: Path, content_type: str, processed_set: Set[Tuple[str, str]], sources: list, tmdb_first: bool):
+    print(f"\n[FILE] Processing {file_path.name} (type: {content_type}) - sources: {sources}, tmdb_first={tmdb_first}")
     try:
         with open(file_path, "r", encoding="utf-8") as f:
             data = json.load(f)
@@ -253,21 +253,46 @@ def process_file(file_path: Path, content_type: str, processed_set: Set[Tuple[st
             else:
                 print(f"  [UPGRADE] Failed to fetch from IMDb ID {existing_imdb_id}, falling back to sources")
 
-        # If we already have a numeric rating from other source (tmdb/omdb) but no IMDb ID, we could skip? We'll let sources run.
-        # But we skip if rating exists and is not null (unless we want to upgrade? The upgrade already handled above if ID existed).
+        # If we already have a numeric rating from other source, skip (no IMDb ID to upgrade)
         if existing_rating is not None and existing_rating not in (None, "N/A"):
             print(f"  SKIP {content_id}: already rated {existing_rating} (source: {existing_source}) – no IMDb ID to upgrade")
             save_progress(file_path.name, content_id)
             continue
 
         cleaned = clean_title(title)
-
         if year and int(year) > CURRENT_YEAR:
             print(f"  SKIP {content_id}: future year {year}")
             save_progress(file_path.name, content_id)
             continue
 
-        rating, votes, imdb_id, source_used = get_rating_from_sources(cleaned, year, content_type, sources)
+        rating = None
+        votes = 0
+        imdb_id = None
+        source_used = None
+
+        # ---- TMDb-first mode ----
+        if tmdb_first:
+            print(f"  [TMDb-first] Trying to get IMDb ID for '{title}'")
+            # Try with year first, then without
+            tmdb_imdb_id = get_tmdb_imdb_id(cleaned, year, content_type) if year else None
+            if not tmdb_imdb_id:
+                tmdb_imdb_id = get_tmdb_imdb_id(cleaned, None, content_type)
+            if tmdb_imdb_id:
+                print(f"  [TMDb-first] Found IMDb ID: {tmdb_imdb_id}")
+                time.sleep(DELAYS["imdbapi"])  # be polite
+                rating, votes = fetch_imdbapi_by_id(tmdb_imdb_id)
+                if rating is not None:
+                    source_used = "imdbapi (via TMDb)"
+                    imdb_id = tmdb_imdb_id
+                    print(f"  [IMDbAPI] Rating from ID: {rating}, votes={votes}")
+                else:
+                    print(f"  [TMDb-first] Rating fetch failed, falling back to source chain")
+            else:
+                print(f"  [TMDb-first] No IMDb ID found, falling back to source chain")
+
+        # ---- Fallback to source chain if TMDb-first didn't succeed ----
+        if rating is None:
+            rating, votes, imdb_id, source_used = get_rating_from_sources(cleaned, year, content_type, sources)
 
         if rating is None:
             print(f"  FAILED {content_id}: no rating from any source")
@@ -295,6 +320,8 @@ def main():
     parser.add_argument("--sources", type=str, default="imdbapi,tmdb,omdb",
                         help="Comma-separated list of sources (imdbapi,tmdb,omdb). Default: imdbapi,tmdb,omdb")
     parser.add_argument("--category", type=str, help="Process only a specific category file (e.g., movies.json)")
+    parser.add_argument("--tmdb-first", action="store_true",
+                        help="Try TMDb to get IMDb ID first, then fetch rating from IMDbAPI. Fallback to --sources.")
     args = parser.parse_args()
 
     sources = [s.strip() for s in args.sources.split(",")]
@@ -304,7 +331,7 @@ def main():
             print(f"ERROR: Invalid source '{s}'. Choose from {valid_sources}")
             sys.exit(1)
 
-    print(f"Starting rating update with source order: {sources}")
+    print(f"Starting rating update. Sources: {sources}, TMDb-first: {args.tmdb_first}")
     load_caches()
     processed = load_progress()
 
@@ -313,7 +340,7 @@ def main():
             continue
         file_path = OUTPUT_DIR / filename
         if file_path.exists():
-            process_file(file_path, media_type, processed, sources)
+            process_file(file_path, media_type, processed, sources, args.tmdb_first)
         else:
             print(f"WARNING: {filename} not found, skipping.")
 
