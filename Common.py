@@ -1106,10 +1106,11 @@ IMDBAPI_BASE_URL = "https://api.imdbapi.dev"
 # Set this to True to see full response text on errors
 DEBUG_IMDBAPI = True
 
-def search_imdbapi_dev(title: str, year: Optional[str] = None, max_retries: int = 3) -> tuple:
+def search_imdbapi_dev(title: str, year: Optional[str] = None, max_retries: int = 3, relaxed: bool = False) -> tuple:
     """
     Search IMDbAPI.dev for a title and return (rating, votes, imdb_id).
-    Handles 429 with backoff, prints response body on errors.
+    If relaxed=True, accept best match regardless of score (score >= -1).
+    Otherwise requires best_score >= 5.
     """
     params = {
         "query": title,
@@ -1133,7 +1134,6 @@ def search_imdbapi_dev(title: str, year: Optional[str] = None, max_retries: int 
                 if not titles:
                     return (None, 0, None)
                 
-                # Find best match (same scoring as before)
                 best_match = None
                 best_score = -1
                 for t in titles:
@@ -1146,11 +1146,14 @@ def search_imdbapi_dev(title: str, year: Optional[str] = None, max_retries: int 
                         score += 5
                     if year and t_year and int(year) == t_year:
                         score += 3
+                    if t.get("rating", {}).get("aggregateRating") is not None:
+                        score += 1
                     if score > best_score:
                         best_score = score
                         best_match = t
                 
-                if best_match and best_score >= 5:
+                required_score = -1 if relaxed else 5
+                if best_match and best_score >= required_score:
                     imdb_id = best_match.get("id")
                     rating_info = best_match.get("rating", {})
                     avg_rating = rating_info.get("aggregateRating")
@@ -1163,8 +1166,8 @@ def search_imdbapi_dev(title: str, year: Optional[str] = None, max_retries: int 
                 else:
                     return (None, 0, None)
             
+            # Rate limit and error handling (unchanged)
             elif resp.status_code == 429:
-                # Rate limit – exponential backoff starting at 5 seconds
                 wait = 5 * (2 ** attempt)
                 print(f"  [IMDbAPI] Rate limited (429), retry {attempt+1}/{max_retries} after {wait}s")
                 if DEBUG_IMDBAPI:
@@ -1181,7 +1184,6 @@ def search_imdbapi_dev(title: str, year: Optional[str] = None, max_retries: int 
                 continue
             
             else:
-                # Other HTTP errors (400, 403, 404, etc.)
                 print(f"  [IMDbAPI] HTTP {resp.status_code} for '{title}'")
                 if DEBUG_IMDBAPI:
                     print(f"  Response: {resp.text[:500]}")

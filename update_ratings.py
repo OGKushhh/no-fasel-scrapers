@@ -134,7 +134,12 @@ def fetch_imdbapi(cleaned: str, year: Optional[str]) -> tuple:
             print(f"  [IMDbAPI CACHE] '{cleaned}' -> rating={rating}, votes={votes}")
             return rating, votes, imdb_id, "imdbapi"
     time.sleep(DELAYS["imdbapi"])
-    rating, votes, imdb_id = search_imdbapi_dev(cleaned, year)
+    # Strict search first (score >= 5)
+    rating, votes, imdb_id = search_imdbapi_dev(cleaned, year, relaxed=False)
+    # If strict fails and we have a year, try relaxed (accept best match)
+    if rating is None and year:
+        print(f"  [IMDbAPI] Strict match failed, trying relaxed scoring...")
+        rating, votes, imdb_id = search_imdbapi_dev(cleaned, year, relaxed=True)
     imdbapi_cache[cache_key] = (rating, votes, imdb_id)
     if rating is not None:
         print(f"  [IMDbAPI] '{cleaned}' -> rating={rating}, votes={votes}")

@@ -36560,5 +36560,35 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 12,
         "last_scraped": "2026-05-23T15:24:25.435943+00:00"
+    },
+    "300631": {
+        "Title": "مسلسل Jae Seok’s B&B Rules!",
+        "Category": "asian-series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/05/cf3cd3775b35f13861cfea0f1db0a7d5-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy",
+            "Documentary",
+            "Reality-tv",
+            "Documentary"
+        ],
+        "GenresAr": [
+            "Comedy",
+            "Documentary",
+            "Reality-tv",
+            "وثائقي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "الضيف كالملك… وفي بعض الأحيان يكون المُضيف ملكًا هو الآخر! يفتتح “يو جاي سيوك” نُزله الأول، حيث يديره وفقًا لطريقته الخاصة، ويُسلّي نزلاءه بالألعاب التي يشتهر بتقديمها.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-jae-seoks-bb-rules",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-05-26",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 10,
+        "last_scraped": "2026-05-26T21:08:40.069856+00:00"
     }
 }
