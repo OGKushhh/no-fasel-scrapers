@@ -191,6 +191,13 @@ def scrape_series_category(path: str):
     all_series = existing_series.copy()
     failed_detail_urls = set()
 
+    # Build a map of title -> existing ID (case‑insensitive)
+    title_to_id = {}
+    for sid, sdata in all_series.items():
+        title = sdata.get("Title", "").strip().lower()
+        if title:
+            title_to_id[title] = sid
+
     for page in range(start_page, end_page + 1):
         delay = REQUEST_DELAY + random.uniform(-JITTER, JITTER)
         if delay < 0.5:
@@ -245,6 +252,19 @@ def scrape_series_category(path: str):
                 continue
             dsoup = BeautifulSoup(detail_html, "html.parser")
 
+            # Get title first for deduplication
+            title_elem = div.find("div", class_="h5") or div.find("div", class_="h1")
+            title = title_elem.text.strip() if title_elem else "Unknown"
+            title_lower = title.strip().lower()
+
+            # Check duplicate by title (case‑insensitive)
+            existing_id_by_title = title_to_id.get(title_lower)
+            if existing_id_by_title and existing_id_by_title in all_series:
+                print(f"  ⚠️ Duplicate detected: '{title}' already exists as ID {existing_id_by_title}. Skipping new ID.")
+                # Optionally, you could update the existing entry's metadata and seasons here.
+                # For now, we simply skip to avoid duplicates.
+                continue
+
             series_id = get_content_id(dsoup)
             if not series_id:
                 series_id = extract_numeric_id(detail_url)
@@ -254,13 +274,11 @@ def scrape_series_category(path: str):
                         series_id = match.group(1)
                     else:
                         series_id = detail_url.split('/')[-2]
-            # Skip if already exists — FaselHD rarely updates metadata,
-            # so re-scraping existing items gains nothing and risks overwriting good data.
+
+            # Skip if already exists by ID
             if not series_id or series_id in existing_ids:
                 continue
 
-            title_elem = div.find("div", class_="h5") or div.find("div", class_="h1")
-            title = title_elem.text.strip() if title_elem else "Unknown"
             img = div.find("img")
             img_src = img.get("data-src") or img.get("src", "") if img else ""
 
@@ -307,7 +325,6 @@ def scrape_series_category(path: str):
             if seasons_with_episodes:
                 save_episodes_for_series(path, series_id, seasons_with_episodes)
 
-            # No sources extraction – removed
             new_series[series_id] = {
                 "Title": title,
                 "Category": path,
@@ -329,6 +346,7 @@ def scrape_series_category(path: str):
                 "last_scraped": datetime.now(timezone.utc).isoformat()
             }
             existing_ids.add(series_id)
+            title_to_id[title_lower] = series_id   # add new title mapping
 
         if new_series:
             all_series.update(new_series)
@@ -352,6 +370,7 @@ def scrape_series_category(path: str):
                     match = re.search(r'-(\d+)$', url.rstrip('/'))
                     series_id = match.group(1) if match else url.split('/')[-2]
                 if series_id and series_id not in existing_ids:
+                    # Also check title duplicate here (simplified – add as unknown)
                     all_series[series_id] = {
                         "Title": "Unknown (retried)",
                         "Category": path,

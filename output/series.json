@@ -101518,33 +101518,6 @@
         "Number Of Episodes Text": 10,
         "last_scraped": "2026-05-21T18:54:52.632436+00:00"
     },
-    "299839": {
-        "Title": "مسلسل ER",
-        "Category": "series",
-        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/05/77a991eabbbd836e5b8df94d807687c1-400x600.webp",
-        "Source": "",
-        "Genres": [
-            "Drama",
-            "Romance"
-        ],
-        "GenresAr": [
-            "Drama",
-            "Romance"
-        ],
-        "Format": "1080p WEB-DL",
-        "Runtime": 44,
-        "Country": "USA",
-        "Description": "دراما طبية تصور الحياة والموت في غرفة الطوارئ في مستشفى شيكاغو، ففي كل حلقة تحكي عن ما يحصل في غرفة الطوارئ من الإثارة والمتعة والفرح والحزن لتتصور بدقة البيئة المجهدة التي يعيشها الأطباء هناك.",
-        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-er",
-        "Status": "مكتمل",
-        "ViewingLevel": "TV-14",
-        "Language": "English",
-        "ReleaseDate": "1994",
-        "EpisodeDuration": "44د",
-        "Number Of Episodes Text": 22,
-        "last_scraped": "2026-05-21T18:57:14.401776+00:00",
-        "Number Of Episodes": 331
-    },
     "300373": {
         "Title": "مسلسل Mating Season",
         "Category": "series",
@@ -101636,5 +101609,123 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 13,
         "last_scraped": "2026-05-23T14:18:07.584844+00:00"
+    },
+    "300963": {
+        "Title": "مسلسل Hotel Costiera",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/05/ec6b03509b2cfeadf8329bb94062df0d-394x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Action",
+            "Comedy",
+            "Drama",
+            "Genres-action",
+            "Melodrama"
+        ],
+        "GenresAr": [
+            "Action",
+            "Comedy",
+            "Drama",
+            "Genres-action",
+            "Melodrama"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "دانييل دي لوكا هو جندي بحري سابق نصف إيطالي يعود إلى إيطاليا، أرض طفولته، ويتولى حل المشكلات في أحد أفخم الفنادق في العالم، والذي يقع على ساحل بوسيتانو المذهل.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-hotel-costiera",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2025-09-24",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 6,
+        "last_scraped": "2026-05-27T15:08:50.604541+00:00"
+    },
+    "300928": {
+        "Title": "مسلسل Spider-Noir",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/05/d8f8843857acd10aa7c9a6c325599b1f-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Action",
+            "Adventure",
+            "Crime"
+        ],
+        "GenresAr": [
+            "Action",
+            "Adventure",
+            "Crime"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 45,
+        "Country": "USA",
+        "Description": "يضطر محقق خاص كبير في السن وقليل الحظ في (نيويورك) في ثلاثينيات القرن الماضي للعودة إلى حياته القديمة وتذكر ماضيه باعتباره البطل الخارق الوحيد في المدينة.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-spider-noir",
+        "Status": "مكتمل",
+        "ViewingLevel": "TV-14",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "45د",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-05-27T15:09:08.122879+00:00"
+    },
+    "300845": {
+        "Title": "مسلسل Violetta",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/05/d9408c483c6751f1ba5a3d7556278f85-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Family",
+            "Melodrama",
+            "Music",
+            "Musical"
+        ],
+        "GenresAr": [
+            "Drama",
+            "Family",
+            "Melodrama",
+            "Music",
+            "Musical"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "تعود مراهقة موهوبة موسيقيًا إلى موطنها بوينس آيرس بعد أن عاشت في أوروبا.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-violetta",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "الاسبانية",
+        "ReleaseDate": "2012-05-14",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 80,
+        "last_scraped": "2026-05-27T15:09:58.579847+00:00"
+    },
+    "300544": {
+        "Title": "مسلسل ER",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/05/77a991eabbbd836e5b8df94d807687c1-400x600.webp",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Romance"
+        ],
+        "GenresAr": [
+            "Drama",
+            "Romance"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 44,
+        "Country": "USA",
+        "Description": "دراما طبية تصور الحياة والموت في غرفة الطوارئ في مستشفى شيكاغو، ففي كل حلقة تحكي عن ما يحصل في غرفة الطوارئ من الإثارة والمتعة والفرح والحزن لتتصور بدقة البيئة المجهدة التي يعيشها الأطباء هناك.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-er",
+        "Status": "مكتمل",
+        "ViewingLevel": "TV-14",
+        "Language": "English",
+        "ReleaseDate": "1994",
+        "EpisodeDuration": "44د",
+        "Number Of Episodes Text": 331,
+        "last_scraped": "2026-05-27T15:14:08.537754+00:00"
     }
 }
