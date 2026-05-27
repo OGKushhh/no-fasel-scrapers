@@ -2,8 +2,9 @@
   "content_id": "223333",
   "title": "فيلم Freestyle 2023 مترجم",
   "year": "2023",
-  "rating": null,
-  "votes": 0,
-  "source": "none",
-  "last_updated": "2026-05-06T20:33:30.744091+00:00"
+  "rating": "4.8",
+  "votes": 1475,
+  "source": "imdbapi",
+  "imdb_id": "tt28366647",
+  "last_updated": "2026-05-27T03:10:57.817409+00:00"
 }
