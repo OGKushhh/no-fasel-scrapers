@@ -56,11 +56,17 @@ def save_progress(category: str, content_id: str):
     with open(PROGRESS_FILE, "a") as f:
         f.write(f"{category}|{content_id}\n")
 
-def parse_runtime_string(runtime_str: str) -> Optional[int]:
-    """Parse common runtime formats into minutes."""
-    if not runtime_str or runtime_str == "N/A":
+def parse_runtime_string(runtime_str) -> Optional[int]:
+    """Parse common runtime formats into minutes. Accepts string or int."""
+    if runtime_str is None:
         return None
-    runtime_str = runtime_str.strip().lower()
+    # If it's already an integer (minutes), return it directly
+    if isinstance(runtime_str, int):
+        return runtime_str if runtime_str > 0 else None
+    # Convert to string and clean
+    runtime_str = str(runtime_str).strip().lower()
+    if not runtime_str or runtime_str == "n/a":
+        return None
     # Hours and minutes: "2h 30min", "2h30m", "2 hours 30 minutes"
     match = re.search(r'(\d+)\s*h(?:ours?)?\s*(?:(\d+)\s*m(?:in)?)?', runtime_str)
     if match:
