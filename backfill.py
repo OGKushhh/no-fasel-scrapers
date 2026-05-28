@@ -3,14 +3,14 @@
 backfill.py – Unified backfill script.
 
 Tasks:
-1. descriptions – fills missing 'Description' fields and adds 'last_scraped' (for all categories except movies, because movies have their own combined task)
+1. descriptions – fills missing 'Description' fields and adds 'last_scraped' for all categories except movies.
 2. movies      – ONE‑PASS backfill for movies: fetches each movie page once and extracts Description and last_scraped.
 3. all         – runs descriptions (non‑movie) and movies.
 
-Run with:
-    python backfill.py --descriptions   (only descriptions for series/anime etc.)
-    python backfill.py --movies         (only movies: description + last_scraped in one pass)
-    python backfill.py --all            (all tasks, default)
+Usage:
+    python backfill.py --descriptions
+    python backfill.py --movies
+    python backfill.py --all
 """
 
 import argparse
@@ -81,9 +81,27 @@ def save_progress(progress_file: str, done_ids: set):
         json.dump(list(done_ids), f)
     os.replace(tmp, progress_file)
 
-def fetch_description(item_id: str, detail_url: str = None) -> str:
-    if not detail_url:
-        detail_url = f"https://www.fasel-hd.cam/?p={item_id}"
+def get_detail_url_for_item(item_id: str, item_data: dict, is_movie: bool = False) -> str:
+    """
+    Construct the correct detail page URL for a given item.
+    For series: use stored 'SeasonsUrl' if present, else construct from Category + ID.
+    For movies: construct from Category + ID, fallback to ?p=ID.
+    """
+    # First, try to use SeasonsUrl (stored for series, sometimes for movies too)
+    if "SeasonsUrl" in item_data and item_data["SeasonsUrl"]:
+        return item_data["SeasonsUrl"]
+    
+    # Fallback: construct from Category field
+    category_path = item_data.get("Category", "")
+    if category_path:
+        # Ensure URL ends with slash
+        return f"https://www.fasel-hd.cam/{category_path}/{item_id}/"
+    
+    # Last resort – query parameter (works for movies, rarely for series)
+    return f"https://www.fasel-hd.cam/?p={item_id}"
+
+def fetch_description(item_id: str, detail_url: str) -> str:
+    """Fetch a single detail page and return its description."""
     resp = get_website_safe(detail_url)
     if resp and resp.status_code == 200:
         soup = BeautifulSoup(resp.text, "html.parser")
@@ -91,14 +109,8 @@ def fetch_description(item_id: str, detail_url: str = None) -> str:
     return ""
 
 def fetch_movie_data(item_id: str, detail_url: str) -> str:
-    """Fetch a movie page and return its description."""
-    if not detail_url:
-        return ""
-    resp = get_website_safe(detail_url)
-    if not resp or resp.status_code != 200:
-        return ""
-    soup = BeautifulSoup(resp.text, "html.parser")
-    return extract_description(soup)
+    """Alias for fetch_description (same logic)."""
+    return fetch_description(item_id, detail_url)
 
 # ----------------------------------------------------------------------
 # Description backfill (for non‑movie categories)
@@ -118,7 +130,7 @@ def backfill_descriptions_for_file(json_path: Path, category: str):
     progress_file = str(json_path).replace(".json", "_desc_progress.json")
     done_ids = load_progress(progress_file)
 
-    # Also consider items already complete in the JSON itself as done
+    # Items that already have both description and last_scraped are considered done
     already_done = {
         item_id for item_id, item_data in items
         if item_data.get("Description") is not None and item_data.get("last_scraped")
@@ -126,7 +138,7 @@ def backfill_descriptions_for_file(json_path: Path, category: str):
     done_ids |= already_done
 
     remaining = [(item_id, item_data) for item_id, item_data in items if item_id not in done_ids]
-    print(f"  {len(already_done)} already complete, {len(remaining)} remaining / {total} total")
+    print(f"  {len(already_done)} already have description + last_scraped, {len(remaining)} remaining / {total} total")
 
     if not remaining:
         print(f"  ✅ Nothing to do for {json_path.name}")
@@ -147,10 +159,10 @@ def backfill_descriptions_for_file(json_path: Path, category: str):
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
         for i in range(0, len(remaining), MAX_WORKERS):
             batch = remaining[i:i + MAX_WORKERS]
-            futures = {
-                executor.submit(fetch_description, item_id): (item_id, item_data)
-                for item_id, item_data in batch
-            }
+            futures = {}
+            for item_id, item_data in batch:
+                detail_url = get_detail_url_for_item(item_id, item_data, is_movie=False)
+                futures[executor.submit(fetch_description, item_id, detail_url)] = (item_id, item_data)
 
             for future in as_completed(futures):
                 item_id, item_data = futures[future]
@@ -161,18 +173,22 @@ def backfill_descriptions_for_file(json_path: Path, category: str):
                     if desc and not item_data.get("Description"):
                         item_data["Description"] = desc
                         updated_count += 1
-                        print(f"  [{i+1}/{len(remaining)}] ✅ {item_id} ({len(desc)} chars)")
+                        print(f"  [{i+1}/{len(remaining)}] ✅ {item_id} – description ({len(desc)} chars)")
                         changed = True
                     elif not desc and item_data.get("Description") is None:
+                        # No description found on page – store empty string and treat as "done"
                         item_data["Description"] = ""
-                        print(f"  [{i+1}/{len(remaining)}] ⚠️  No description for {item_id}")
+                        print(f"  [{i+1}/{len(remaining)}] ⚠️  No description for {item_id} (URL: {get_detail_url_for_item(item_id, item_data, is_movie=False)})")
                         changed = True
+                    else:
+                        # Item already had description (maybe from previous run) – still ensure last_scraped
+                        pass
 
                     if not item_data.get("last_scraped"):
                         item_data["last_scraped"] = now_iso
                         changed = True
 
-                    # Always mark done so we don't retry this ID on next run
+                    # Mark as done regardless (so we don't retry empty descriptions)
                     done_ids.add(item_id)
                     save_progress(progress_file, done_ids)
 
@@ -187,7 +203,7 @@ def backfill_descriptions_for_file(json_path: Path, category: str):
     if os.path.exists(progress_file):
         os.remove(progress_file)
 
-    print(f"  ✅ Finished {json_path.name}: updated {updated_count} items.")
+    print(f"  ✅ Finished {json_path.name}: updated {updated_count} items (descriptions and/or last_scraped).")
 
 def backfill_all_descriptions():
     for filename, category in DESCRIPTION_FILES.items():
@@ -240,10 +256,10 @@ def backfill_movies_combined(json_path: Path, category: str):
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
         for i in range(0, len(remaining), MAX_WORKERS):
             batch = remaining[i:i + MAX_WORKERS]
-            futures = {
-                executor.submit(fetch_movie_data, item_id, f"https://www.fasel-hd.cam/?p={item_id}"): (item_id, item_data)
-                for item_id, item_data in batch
-            }
+            futures = {}
+            for item_id, item_data in batch:
+                detail_url = get_detail_url_for_item(item_id, item_data, is_movie=True)
+                futures[executor.submit(fetch_movie_data, item_id, detail_url)] = (item_id, item_data)
 
             for future in as_completed(futures):
                 item_id, item_data = futures[future]
@@ -258,7 +274,7 @@ def backfill_movies_combined(json_path: Path, category: str):
                         changed = True
                     elif not description and item_data.get("Description") is None:
                         item_data["Description"] = ""
-                        print(f"  [{i+1}/{len(remaining)}] ⚠️  No description for {item_id}")
+                        print(f"  [{i+1}/{len(remaining)}] ⚠️  No description for {item_id} (URL: {get_detail_url_for_item(item_id, item_data, is_movie=True)})")
                         changed = True
 
                     if not item_data.get("last_scraped"):
@@ -279,7 +295,7 @@ def backfill_movies_combined(json_path: Path, category: str):
     if os.path.exists(progress_file):
         os.remove(progress_file)
 
-    print(f"  ✅ Finished {json_path.name}: updated {updated_count} movies (description, last_scraped).")
+    print(f"  ✅ Finished {json_path.name}: updated {updated_count} movies (description + last_scraped).")
 
 def backfill_all_movies():
     print("\n🎬 Starting combined movie backfill (description + last_scraped)...")
