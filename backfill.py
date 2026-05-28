@@ -130,15 +130,15 @@ def backfill_descriptions_for_file(json_path: Path, category: str):
     progress_file = str(json_path).replace(".json", "_desc_progress.json")
     done_ids = load_progress(progress_file)
 
-    # Items that already have both description and last_scraped are considered done
+    # Items that already have both description (non-empty) and last_scraped are considered done
     already_done = {
         item_id for item_id, item_data in items
-        if item_data.get("Description") is not None and item_data.get("last_scraped")
+        if item_data.get("Description") and item_data.get("last_scraped")
     }
     done_ids |= already_done
 
     remaining = [(item_id, item_data) for item_id, item_data in items if item_id not in done_ids]
-    print(f"  {len(already_done)} already have description + last_scraped, {len(remaining)} remaining / {total} total")
+    print(f"  {len(already_done)} already have valid description + last_scraped, {len(remaining)} remaining / {total} total")
 
     if not remaining:
         print(f"  ✅ Nothing to do for {json_path.name}")
@@ -170,31 +170,31 @@ def backfill_descriptions_for_file(json_path: Path, category: str):
                 with lock:
                     changed = False
 
+                    # If we have a non-empty description and current is missing or empty
                     if desc and not item_data.get("Description"):
                         item_data["Description"] = desc
                         updated_count += 1
-                        print(f"  [{i+1}/{len(remaining)}] ✅ {item_id} – description ({len(desc)} chars)")
+                        print(f"  [{i+1}/{len(remaining)}] ✅ {item_id} – description ({len(desc)} chars)", flush=True)
                         changed = True
-                    elif not desc and item_data.get("Description") is None:
-                        # No description found on page – store empty string and treat as "done"
+                    elif not desc and not item_data.get("Description"):
+                        # No description on page, and item has no description (None or empty)
                         item_data["Description"] = ""
-                        print(f"  [{i+1}/{len(remaining)}] ⚠️  No description for {item_id} (URL: {get_detail_url_for_item(item_id, item_data, is_movie=False)})")
+                        print(f"  [{i+1}/{len(remaining)}] ⚠️  No description for {item_id} (URL: {get_detail_url_for_item(item_id, item_data, is_movie=False)})", flush=True)
                         changed = True
                     else:
-                        # Item already had description (maybe from previous run) – still ensure last_scraped
-                        pass
+                        # Item already has a description (non-empty) – skip
+                        print(f"  [{i+1}/{len(remaining)}] ⏭️  Skip {item_id} – already has description", flush=True)
 
                     if not item_data.get("last_scraped"):
                         item_data["last_scraped"] = now_iso
                         changed = True
 
-                    # Mark as done regardless (so we don't retry empty descriptions)
                     done_ids.add(item_id)
                     save_progress(progress_file, done_ids)
 
                     if changed and updated_count > 0 and updated_count % SAVE_INTERVAL == 0:
                         _save_json()
-                        print(f"  💾 Saved JSON (updated {updated_count} items so far)")
+                        print(f"  💾 Saved JSON (updated {updated_count} items so far)", flush=True)
 
             time.sleep(BATCH_DELAY)
 
