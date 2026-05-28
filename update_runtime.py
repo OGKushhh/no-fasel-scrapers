@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 update_runtime.py – Convert runtime to integer minutes using multiple sources.
-Supports --sources imdbapi,tmdb,omdb (any order) and --category.
+Supports --sources imdbapi,tmdb,omdb (any order), --category, and --ids.
 Parses existing runtime strings first, then tries API sources.
 """
 
@@ -11,7 +11,7 @@ import sys
 import time
 import argparse
 from pathlib import Path
-from typing import Optional, Tuple
+from typing import Optional, Tuple, Set
 from datetime import datetime, timezone
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -40,7 +40,7 @@ DELAYS = {
     "omdb": 0.5,
 }
 
-def load_progress() -> set:
+def load_progress() -> Set[Tuple[str, str]]:
     processed = set()
     if PROGRESS_FILE.exists():
         with open(PROGRESS_FILE, "r") as f:
@@ -57,33 +57,26 @@ def save_progress(category: str, content_id: str):
         f.write(f"{category}|{content_id}\n")
 
 def parse_runtime_string(runtime_str) -> Optional[int]:
-    """Parse common runtime formats into minutes. Accepts string or int."""
     if runtime_str is None:
         return None
-    # If it's already an integer (minutes), return it directly
     if isinstance(runtime_str, int):
         return runtime_str if runtime_str > 0 else None
-    # Convert to string and clean
     runtime_str = str(runtime_str).strip().lower()
     if not runtime_str or runtime_str == "n/a":
         return None
-    # Hours and minutes: "2h 30min", "2h30m", "2 hours 30 minutes"
     match = re.search(r'(\d+)\s*h(?:ours?)?\s*(?:(\d+)\s*m(?:in)?)?', runtime_str)
     if match:
         hours = int(match.group(1))
         minutes = int(match.group(2)) if match.group(2) else 0
         return hours * 60 + minutes
-    # Only minutes: "150 min", "150m"
     match = re.search(r'(\d+)\s*m(?:in)?', runtime_str)
     if match:
         return int(match.group(1))
-    # HH:MM:SS format
     match = re.search(r'(\d{2}):(\d{2}):(\d{2})', runtime_str)
     if match:
         hours = int(match.group(1))
         minutes = int(match.group(2))
         return hours * 60 + minutes
-    # Arabic: "2س 30د" or "150د"
     match = re.search(r'(\d+)\s*س\s*(?:(\d+)\s*د)?', runtime_str)
     if match:
         hours = int(match.group(1))
@@ -95,7 +88,6 @@ def parse_runtime_string(runtime_str) -> Optional[int]:
     return None
 
 def fetch_runtime_imdbapi(imdb_id: str) -> Optional[int]:
-    """Fetch runtime from IMDbAPI using /titles/{id}."""
     url = f"https://api.imdbapi.dev/titles/{imdb_id}"
     try:
         resp = requests.get(url, timeout=10)
@@ -109,7 +101,6 @@ def fetch_runtime_imdbapi(imdb_id: str) -> Optional[int]:
     return None
 
 def fetch_runtime_omdb(imdb_id: str) -> Optional[int]:
-    """Fallback to OMDb."""
     url = f"{OMDB_BASE_URL}?i={imdb_id}&apikey={OMDB_API_KEY}"
     try:
         resp = requests.get(url, timeout=10)
@@ -122,17 +113,17 @@ def fetch_runtime_omdb(imdb_id: str) -> Optional[int]:
     return None
 
 def fetch_runtime_tmdb(imdb_id: str) -> Optional[int]:
-    """Fetch runtime from TMDb via Common helper."""
     return fetch_runtime_from_tmdb(imdb_id)
 
-def process_file(file_path: Path, content_type: str, processed_set: set, sources: list):
+def process_file(file_path: Path, content_type: str, processed_set: Set[Tuple[str, str]], sources: list, data: dict = None):
     print(f"\n[FILE] Processing {file_path.name} (sources: {sources})")
-    try:
-        with open(file_path, "r", encoding="utf-8") as f:
-            data = json.load(f)
-    except Exception as e:
-        print(f"  ERROR: Cannot load {file_path}: {e}")
-        return
+    if data is None:
+        try:
+            with open(file_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+        except Exception as e:
+            print(f"  ERROR: Cannot load {file_path}: {e}")
+            return
 
     if not isinstance(data, dict):
         print("  WARNING: Not a dictionary, skipping.")
@@ -145,13 +136,11 @@ def process_file(file_path: Path, content_type: str, processed_set: set, sources
         if (file_path.name, content_id) in processed_set:
             continue
 
-        # Skip if already has runtime_minutes
         if "runtime_minutes" in item and item["runtime_minutes"] is not None:
             print(f"  SKIP {content_id}: already has runtime_minutes={item['runtime_minutes']}")
             save_progress(file_path.name, content_id)
             continue
 
-        # Get IMDb ID from rating file
         rating_file = RATINGS_DIR / file_path.stem.split('.')[0] / f"{content_id}.json"
         imdb_id = None
         if rating_file.exists():
@@ -163,15 +152,12 @@ def process_file(file_path: Path, content_type: str, processed_set: set, sources
                 pass
 
         runtime_minutes = None
-
-        # First try to parse existing runtime string (if any) – local, no API
         existing_runtime = item.get("Runtime") or item.get("runtime") or item.get("EpisodeDuration")
         if existing_runtime:
             runtime_minutes = parse_runtime_string(existing_runtime)
             if runtime_minutes:
                 print(f"  PARSED {content_id}: '{existing_runtime}' -> {runtime_minutes} min")
 
-        # If not parsed and we have IMDb ID, try each source in order
         if not runtime_minutes and imdb_id and imdb_id.startswith("tt"):
             for src in sources:
                 if src == "imdbapi":
@@ -206,6 +192,7 @@ def main():
     parser.add_argument("--sources", type=str, default="imdbapi,tmdb,omdb",
                         help="Comma-separated sources in priority order (imdbapi, tmdb, omdb). Default: imdbapi,tmdb,omdb")
     parser.add_argument("--category", type=str, help="Process only a specific category file (e.g., movies.json)")
+    parser.add_argument("--ids", nargs="+", help="Space‑separated list of content IDs to process (e.g., 12345 67890)")
     args = parser.parse_args()
 
     sources = [s.strip() for s in args.sources.split(",")]
@@ -222,10 +209,20 @@ def main():
         if args.category and filename != args.category:
             continue
         file_path = OUTPUT_DIR / filename
-        if file_path.exists():
-            process_file(file_path, media_type, processed, sources)
-        else:
+        if not file_path.exists():
             print(f"WARNING: {filename} not found, skipping.")
+            continue
+
+        if args.ids:
+            with open(file_path, "r", encoding="utf-8") as f:
+                full_data = json.load(f)
+            filtered_data = {cid: full_data[cid] for cid in args.ids if cid in full_data}
+            if not filtered_data:
+                print(f"WARNING: None of the requested IDs found in {filename}")
+                continue
+            process_file(file_path, media_type, processed, sources, data=filtered_data)
+        else:
+            process_file(file_path, media_type, processed, sources)
 
     print("\nDone.")
 

@@ -4,6 +4,7 @@ update_ratings.py – Flexible rating fetcher.
 If --tmdb-first is used: tries TMDb to get IMDb ID, then fetches rating from IMDbAPI.
 Otherwise uses the source order (--sources).
 Supports --category to process only one JSON file.
+Supports --ids to process only specific content IDs.
 """
 
 import json
@@ -94,9 +95,7 @@ def clean_title(raw_title: str) -> str:
     cleaned = raw_title
     for word in arabic_stop:
         cleaned = re.sub(rf'\b{word}\b', '', cleaned, flags=re.IGNORECASE)
-    # Normalize smart/curly quotes to straight ones
     cleaned = cleaned.replace('’', "'").replace('‘', "'").replace('“', '"').replace('”', '"')
-    # Keep letters (including accented), numbers, spaces, and allowed punctuation: ' , - & : .
     cleaned = re.sub(r'[^\w\s\'\-,&:.]', ' ', cleaned, flags=re.UNICODE)
     cleaned = ' '.join(cleaned.split())
     return cleaned if cleaned else raw_title
@@ -134,9 +133,7 @@ def fetch_imdbapi(cleaned: str, year: Optional[str]) -> tuple:
             print(f"  [IMDbAPI CACHE] '{cleaned}' -> rating={rating}, votes={votes}")
             return rating, votes, imdb_id, "imdbapi"
     time.sleep(DELAYS["imdbapi"])
-    # Strict search first (score >= 5)
     rating, votes, imdb_id = search_imdbapi_dev(cleaned, year, relaxed=False)
-    # If strict fails and we have a year, try relaxed after a delay
     if rating is None and year:
         print(f"  [IMDbAPI] Strict match failed, waiting 2s before relaxed...")
         time.sleep(2.0)
@@ -180,14 +177,15 @@ def get_rating_from_sources(cleaned: str, year: Optional[str], content_type: str
         time.sleep(0.5)
     return None, 0, None, "none"
 
-def process_file(file_path: Path, content_type: str, processed_set: Set[Tuple[str, str]], sources: list, tmdb_first: bool):
+def process_file(file_path: Path, content_type: str, processed_set: Set[Tuple[str, str]], sources: list, tmdb_first: bool, data: dict = None):
     print(f"\n[FILE] Processing {file_path.name} (type: {content_type}) - sources: {sources}, tmdb_first={tmdb_first}")
-    try:
-        with open(file_path, "r", encoding="utf-8") as f:
-            data = json.load(f)
-    except Exception as e:
-        print(f"  ERROR: Cannot load {file_path}: {e}")
-        return
+    if data is None:
+        try:
+            with open(file_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+        except Exception as e:
+            print(f"  ERROR: Cannot load {file_path}: {e}")
+            return
 
     if not isinstance(data, dict):
         print("  WARNING: Not a dictionary, skipping.")
@@ -273,13 +271,12 @@ def process_file(file_path: Path, content_type: str, processed_set: Set[Tuple[st
         # ---- TMDb-first mode ----
         if tmdb_first:
             print(f"  [TMDb-first] Trying to get IMDb ID for '{title}'")
-            # Try with year first, then without
             tmdb_imdb_id = get_tmdb_imdb_id(cleaned, year, content_type) if year else None
             if not tmdb_imdb_id:
                 tmdb_imdb_id = get_tmdb_imdb_id(cleaned, None, content_type)
             if tmdb_imdb_id:
                 print(f"  [TMDb-first] Found IMDb ID: {tmdb_imdb_id}")
-                time.sleep(DELAYS["imdbapi"])  # be polite
+                time.sleep(DELAYS["imdbapi"])
                 rating, votes = fetch_imdbapi_by_id(tmdb_imdb_id)
                 if rating is not None:
                     source_used = "imdbapi (via TMDb)"
@@ -322,6 +319,7 @@ def main():
     parser.add_argument("--category", type=str, help="Process only a specific category file (e.g., movies.json)")
     parser.add_argument("--tmdb-first", action="store_true",
                         help="Try TMDb to get IMDb ID first, then fetch rating from IMDbAPI. Fallback to --sources.")
+    parser.add_argument("--ids", nargs="+", help="Space‑separated list of content IDs to process (e.g., 12345 67890)")
     args = parser.parse_args()
 
     sources = [s.strip() for s in args.sources.split(",")]
@@ -339,10 +337,21 @@ def main():
         if args.category and filename != args.category:
             continue
         file_path = OUTPUT_DIR / filename
-        if file_path.exists():
-            process_file(file_path, media_type, processed, sources, args.tmdb_first)
-        else:
+        if not file_path.exists():
             print(f"WARNING: {filename} not found, skipping.")
+            continue
+
+        if args.ids:
+            # Load the full file and filter only requested IDs
+            with open(file_path, "r", encoding="utf-8") as f:
+                full_data = json.load(f)
+            filtered_data = {cid: full_data[cid] for cid in args.ids if cid in full_data}
+            if not filtered_data:
+                print(f"WARNING: None of the requested IDs found in {filename}")
+                continue
+            process_file(file_path, media_type, processed, sources, args.tmdb_first, data=filtered_data)
+        else:
+            process_file(file_path, media_type, processed, sources, args.tmdb_first)
 
     save_caches()
     print(f"\nFinished. OMDb calls used today: {omdb_calls_today} / {OMDB_DAILY_LIMIT}")

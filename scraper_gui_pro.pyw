@@ -124,10 +124,6 @@ LIGHT = dict(
 
 
 class PillButton(tk.Frame):
-    """
-    A lightweight pill-shaped button built from a Frame + Label.
-    No canvas tricks — fully compatible with all tkinter versions.
-    """
     def __init__(self, parent, text, command=None,
                  bg="#3b82f6", fg="#ffffff",
                  hover_bg=None, active_bg=None,
@@ -179,7 +175,6 @@ class PillButton(tk.Frame):
                 self._cmd()
 
     def configure(self, **kw):
-        # intercept our custom keys before passing to Frame
         if "state" in kw:
             self._enabled = kw.pop("state") != tk.DISABLED
             alpha = self._fg if self._enabled else self._active
@@ -215,7 +210,7 @@ class ScraperGUI:
         self._stopped_procs    = set()
         self.backfill_task_var = tk.StringVar(value="All Tasks")
         self.auto_scroll       = {}
-        self.script_buttons    = {}   # name → (label, stop_btn, outer_frame)
+        self.script_buttons    = {}
 
         self.dark_mode = True
         self.T         = DARK
@@ -226,16 +221,16 @@ class ScraperGUI:
         self._build_ui()
         self._apply_theme()
 
-    # ─────────────────────────────────────────────────────────────────────────
+    # -------------------------------------------------------------------------
     # UI CONSTRUCTION
-    # ─────────────────────────────────────────────────────────────────────────
+    # -------------------------------------------------------------------------
     def _build_ui(self):
         self.root.rowconfigure(0, weight=1)
         self.root.columnconfigure(0, minsize=252, weight=0)
         self.root.columnconfigure(1, minsize=1,   weight=0)
         self.root.columnconfigure(2, weight=1)
 
-        # ── Status bar ───────────────────────────────────────────────────────
+        # Status bar
         self.status_bar = tk.Frame(self.root, height=26)
         self.status_bar.grid(row=1, column=0, columnspan=3, sticky="ew")
         self.status_bar.grid_propagate(False)
@@ -254,14 +249,13 @@ class ScraperGUI:
         self._clock_lbl.pack(side=tk.RIGHT, padx=10)
         self._tick_clock()
 
-        # ── Sidebar ──────────────────────────────────────────────────────────
+        # Sidebar
         self.sidebar = tk.Frame(self.root, width=252)
         self.sidebar.grid(row=0, column=0, sticky="nsew")
         self.sidebar.grid_propagate(False)
         self.sidebar.rowconfigure(1, weight=1)
         self.sidebar.columnconfigure(0, weight=1)
 
-        # Title bar
         self._title_bar = tk.Frame(self.sidebar, height=52)
         self._title_bar.grid(row=0, column=0, columnspan=2, sticky="ew")
         self._title_bar.grid_propagate(False)
@@ -280,7 +274,6 @@ class ScraperGUI:
         self._theme_btn.grid(row=0, column=1, padx=12)
         self._theme_btn.bind("<Button-1>", lambda _: self.toggle_dark_mode())
 
-        # Scrollable area
         self._sidebar_canvas = tk.Canvas(
             self.sidebar, highlightthickness=0, bd=0, width=250,
         )
@@ -304,7 +297,6 @@ class ScraperGUI:
             lambda e: self._sidebar_canvas.yview_scroll(int(-1*(e.delta/120)), "units")
         )
 
-        # Footer
         self._sidebar_footer = tk.Frame(self.sidebar, height=52)
         self._sidebar_footer.grid(row=2, column=0, columnspan=2, sticky="ew")
         self._sidebar_footer.grid_propagate(False)
@@ -327,11 +319,9 @@ class ScraperGUI:
         )
         self._stop_all_btn.grid(row=0, column=1, sticky="ew", padx=(4, 10), pady=10)
 
-        # Divider
         self._divider = tk.Frame(self.root, width=1)
         self._divider.grid(row=0, column=1, sticky="nsew")
 
-        # ── Content area ─────────────────────────────────────────────────────
         content = tk.Frame(self.root)
         content.grid(row=0, column=2, sticky="nsew")
         content.rowconfigure(0, weight=1)
@@ -355,7 +345,6 @@ class ScraperGUI:
         self.auto_scroll[id(self.log_text)] = tk.BooleanVar(value=True)
         self._log(f"Started — {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
 
-        # Populate sidebar
         for group, scripts in SCRIPT_GROUPS.items():
             self._section_header(group)
             for name, cmd in scripts.items():
@@ -370,9 +359,6 @@ class ScraperGUI:
         self._clock_lbl.config(text=datetime.now().strftime("%H:%M:%S"))
         self.root.after(1000, self._tick_clock)
 
-    # ─────────────────────────────────────────────────────────────────────────
-    # SIDEBAR WIDGETS
-    # ─────────────────────────────────────────────────────────────────────────
     def _section_header(self, text):
         f = tk.Frame(self.scroll_frame)
         f.pack(fill=tk.X, pady=(10, 0))
@@ -411,7 +397,7 @@ class ScraperGUI:
             font=("Segoe UI", 10), padx=10, pady=4,
         )
         stop_btn.grid(row=0, column=2, padx=(2, 6), pady=3)
-        stop_btn.grid_remove()  # hidden until running
+        stop_btn.grid_remove()
 
         def _start(_evt=None, n=name, c=cmd):
             self.start_script(n, c)
@@ -478,9 +464,23 @@ class ScraperGUI:
         )
         self._imdb_btn.pack(fill=tk.X, padx=4, pady=2)
 
-    # ─────────────────────────────────────────────────────────────────────────
+        self._rating_by_id_btn = PillButton(
+            row, text="⭐  Get Rating by ID",
+            command=self.open_rating_by_id,
+            font=("Segoe UI", 11), padx=10, pady=5,
+        )
+        self._rating_by_id_btn.pack(fill=tk.X, padx=4, pady=2)
+
+        self._runtime_by_id_btn = PillButton(
+            row, text="⏱  Get Runtime by ID",
+            command=self.open_runtime_by_id,
+            font=("Segoe UI", 11), padx=10, pady=5,
+        )
+        self._runtime_by_id_btn.pack(fill=tk.X, padx=4, pady=2)
+
+    # -------------------------------------------------------------------------
     # THEME
-    # ─────────────────────────────────────────────────────────────────────────
+    # -------------------------------------------------------------------------
     def _style_stop_btn(self, btn, is_running):
         T = self.T
         if is_running:
@@ -531,7 +531,6 @@ class ScraperGUI:
                   fieldbackground=[("readonly", T["sidebar"])],
                   foreground=[("readonly", T["fg"])])
 
-        # Sidebar structural frames
         for w in (self.sidebar, self._sidebar_canvas, self.scroll_frame,
                   self._title_bar, self._sidebar_footer):
             w.configure(bg=T["sidebar"])
@@ -540,14 +539,12 @@ class ScraperGUI:
         self._theme_btn.configure(bg=T["sidebar"], fg=T["fg_muted"])
         self._divider.configure(bg=T["sidebar_border"])
 
-        # Section headers
         for lbl in self._section_labels:
             lbl.configure(bg=T["sidebar"], fg=T["fg_section"])
             lbl.master.configure(bg=T["sidebar"])
         for sep in self._section_seps:
             sep.configure(bg=T["sidebar_border"])
 
-        # Script rows
         for name, (lbl, stop_btn, outer) in self.script_buttons.items():
             outer.configure(bg=T["sidebar"])
             lbl.configure(bg=T["sidebar"], fg=T["fg"])
@@ -559,7 +556,6 @@ class ScraperGUI:
             running = name in self.processes and self.processes[name].poll() is None
             self._style_stop_btn(stop_btn, running)
 
-        # Backfill row
         self._backfill_row_frame.configure(bg=T["sidebar"])
         bf_dot = self.indicators.get("backfill")
         if bf_dot:
@@ -576,7 +572,6 @@ class ScraperGUI:
         self.backfill_start_btn._set_color(T["run"])
         self._style_stop_btn(self.backfill_stop_btn, bf_run)
 
-        # Footer buttons
         self._custom_btn._bg    = T["accent"]
         self._custom_btn._hover = T["accent_dim"]
         self._custom_btn._active= T["accent_dim"]
@@ -591,23 +586,21 @@ class ScraperGUI:
         self._stop_all_btn._lbl.configure(fg=T["stop_text"])
         self._stop_all_btn._set_color(T["stop"])
 
-        # IMDb button
         idle_bg = T["hover"]
-        self._imdb_btn._bg    = idle_bg
-        self._imdb_btn._hover = T["accent"]
-        self._imdb_btn._active= T["accent_dim"]
-        self._imdb_btn._fg    = T["fg"]
-        self._imdb_btn._lbl.configure(fg=T["fg"])
-        self._imdb_btn._set_color(idle_bg)
-        self._imdb_btn.master.configure(bg=T["sidebar"])
+        for btn in [self._imdb_btn, self._rating_by_id_btn, self._runtime_by_id_btn]:
+            btn._bg    = idle_bg
+            btn._hover = T["accent"]
+            btn._active= T["accent_dim"]
+            btn._fg    = T["fg"]
+            btn._lbl.configure(fg=T["fg"])
+            btn._set_color(idle_bg)
+            btn.master.configure(bg=T["sidebar"])
 
-        # Status bar
         self.status_bar.configure(bg=T["status_bg"])
         self._status_dot.configure(bg=T["status_bg"], fg=T["status_accent"])
         self._status_lbl.configure(bg=T["status_bg"], fg=T["status_fg"])
         self._clock_lbl.configure(bg=T["status_bg"], fg=T["fg_muted"])
 
-        # Log and output widgets
         self.log_text.configure(bg=T["text_bg"], fg=T["text_fg"],
                                 insertbackground=T["fg"])
         for tag, col in [("ok", T["run"]), ("warn", T["indicator_busy"]),
@@ -621,7 +614,6 @@ class ScraperGUI:
             except tk.TclError:
                 pass
 
-        # Content frame bg
         for child in self.root.winfo_children():
             if isinstance(child, tk.Frame) and child not in (
                 self.sidebar, self._divider, self.status_bar
@@ -633,9 +625,9 @@ class ScraperGUI:
         self.T = DARK if self.dark_mode else LIGHT
         self._apply_theme()
 
-    # ─────────────────────────────────────────────────────────────────────────
+    # -------------------------------------------------------------------------
     # SCRIPT CONTROL
-    # ─────────────────────────────────────────────────────────────────────────
+    # -------------------------------------------------------------------------
     def start_script(self, name, cmd):
         if name in self.processes and self.processes[name].poll() is None:
             messagebox.showwarning("Already running", f'"{name}" is already running.')
@@ -782,9 +774,9 @@ class ScraperGUI:
         self._set_indicator("backfill", False)
         self._set_status("⏹  Backfill stopped")
 
-    # ─────────────────────────────────────────────────────────────────────────
+    # -------------------------------------------------------------------------
     # CUSTOM COMMAND
-    # ─────────────────────────────────────────────────────────────────────────
+    # -------------------------------------------------------------------------
     def add_custom_command(self):
         cmd_str = simpledialog.askstring(
             "Custom Command", "Enter command (e.g. python myscript.py --arg):"
@@ -829,9 +821,9 @@ class ScraperGUI:
                 pass
         self.custom_procs.pop(pid, None)
 
-    # ─────────────────────────────────────────────────────────────────────────
+    # -------------------------------------------------------------------------
     # SUBPROCESS HELPERS
-    # ─────────────────────────────────────────────────────────────────────────
+    # -------------------------------------------------------------------------
     def _run_subprocess(self, cmd, tab_name, text_widget=None):
         T = self.T
         env = os.environ.copy()
@@ -1026,9 +1018,9 @@ class ScraperGUI:
     def _log(self, msg):
         self._append_output(self.log_text, msg)
 
-    # ─────────────────────────────────────────────────────────────────────────
+    # -------------------------------------------------------------------------
     # MANUAL IMDb ID SETTER
-    # ─────────────────────────────────────────────────────────────────────────
+    # -------------------------------------------------------------------------
     def open_imdb_dialog(self):
         categories = [
             "movies.json", "dubbed-movies.json", "hindi.json",
@@ -1060,8 +1052,60 @@ class ScraperGUI:
             self.processes[key]   = proc
             self.output_tabs[key] = text_widget
 
+    # -------------------------------------------------------------------------
+    # RATING / RUNTIME BY ID
+    # -------------------------------------------------------------------------
+    def open_rating_by_id(self):
+        categories = [
+            "movies.json", "dubbed-movies.json", "hindi.json",
+            "asian-movies.json", "anime-movies.json", "anime.json",
+            "series.json", "tvshows.json", "asian-series.json"
+        ]
+        category = simpledialog.askstring(
+            "Category",
+            "Enter category file name:\n" + "\n".join(categories)
+        )
+        if not category:
+            return
 
-# ─────────────────────────────────────────────────────────────────────────────
+        ids_str = simpledialog.askstring("Content IDs", "Enter one or more content IDs (space-separated):")
+        if not ids_str:
+            return
+        ids = ids_str.split()
+
+        cmd = [PYTHON_EXE, "-u", "update_ratings.py", "--category", category, "--ids"] + ids
+        proc, text_widget = self._run_subprocess(cmd, f"Rating for IDs: {', '.join(ids)}")
+        if proc:
+            key = f"Rating IDs {category} {ids[0]}"
+            self.processes[key] = proc
+            self.output_tabs[key] = text_widget
+
+    def open_runtime_by_id(self):
+        categories = [
+            "movies.json", "dubbed-movies.json", "hindi.json",
+            "asian-movies.json", "anime-movies.json", "anime.json",
+            "series.json", "tvshows.json", "asian-series.json"
+        ]
+        category = simpledialog.askstring(
+            "Category",
+            "Enter category file name:\n" + "\n".join(categories)
+        )
+        if not category:
+            return
+
+        ids_str = simpledialog.askstring("Content IDs", "Enter one or more content IDs (space-separated):")
+        if not ids_str:
+            return
+        ids = ids_str.split()
+
+        cmd = [PYTHON_EXE, "-u", "update_runtime.py", "--category", category, "--ids"] + ids
+        proc, text_widget = self._run_subprocess(cmd, f"Runtime for IDs: {', '.join(ids)}")
+        if proc:
+            key = f"Runtime IDs {category} {ids[0]}"
+            self.processes[key] = proc
+            self.output_tabs[key] = text_widget
+
+
 if __name__ == "__main__":
     if not os.path.exists(PYTHON_EXE):
         import tkinter.messagebox as _mb
