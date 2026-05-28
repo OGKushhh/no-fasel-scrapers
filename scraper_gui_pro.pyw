@@ -805,11 +805,19 @@ class ScraperGUI:
 
     def _watch_custom(self, proc, tab_frame, tab_name):
         proc.wait()
+        # Do NOT remove the tab automatically. Let the user close it via the close button.
         if proc.pid not in self._stopped_procs:
-            self.root.after(0, lambda: self._remove_custom_tab(tab_frame, tab_name, proc.pid))
+            # Optionally update the tab title to indicate it's finished
+            for i in range(self.notebook.index("end")):
+                try:
+                    if self.notebook.tab(i, "text").strip() == tab_name:
+                        self.notebook.tab(i, text=f"  {tab_name} (finished)  ")
+                        break
+                except tk.TclError:
+                    pass
         else:
             self._stopped_procs.discard(proc.pid)
-            self.root.after(0, lambda: self.custom_procs.pop(proc.pid, None))
+        self.custom_procs.pop(proc.pid, None)
 
     def _remove_custom_tab(self, tab_frame, tab_name, pid):
         for i in range(self.notebook.index("end")):
