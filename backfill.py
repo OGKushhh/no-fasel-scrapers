@@ -126,16 +126,18 @@ def backfill_descriptions_for_file(json_path: Path, category: str):
     items = list(data.items())
     total = len(items)
 
-    progress_file = str(json_path).replace(".json", "_desc_progress.json")
+    # Use .txt extension for progress files
+    progress_file = str(json_path).replace(".json", "_desc_progress.txt")
     done_ids = load_progress(progress_file)
 
-    # Items that already have both description (non-empty) and last_scraped are considered done
+    # Items that already have a non-empty description AND last_scraped are considered fully done
     already_done = {
         item_id for item_id, item_data in items
         if item_data.get("Description") and item_data.get("last_scraped")
     }
     done_ids |= already_done
 
+    # Items not yet in done_ids need processing (even if they have an empty description)
     remaining = [(item_id, item_data) for item_id, item_data in items if item_id not in done_ids]
     print(f"  {len(already_done)} already have valid description + last_scraped, {len(remaining)} remaining / {total} total")
 
@@ -169,7 +171,7 @@ def backfill_descriptions_for_file(json_path: Path, category: str):
                 with lock:
                     changed = False
 
-                    # If we have a non-empty description and current is missing or empty
+                    # If we got a non-empty description and the current one is missing/empty
                     if desc and not item_data.get("Description"):
                         item_data["Description"] = desc
                         updated_count += 1
@@ -178,18 +180,19 @@ def backfill_descriptions_for_file(json_path: Path, category: str):
                     elif not desc and not item_data.get("Description"):
                         # No description on page, and item has no description (None or empty)
                         item_data["Description"] = ""
-                        print(f"  [{i+1}/{len(remaining)}] ⚠️  No description for {item_id} (URL: {get_detail_url_for_item(item_id, item_data, is_movie=False)})", flush=True)
+                        print(f"  [{i+1}/{len(remaining)}] ⚠️  No description for {item_id}", flush=True)
                         changed = True
                     else:
-                        # Item already has a description (non-empty) – skip
+                        # Item already has a description (non-empty) – just report skip
                         print(f"  [{i+1}/{len(remaining)}] ⏭️  Skip {item_id} – already has description", flush=True)
 
                     if not item_data.get("last_scraped"):
                         item_data["last_scraped"] = now_iso
                         changed = True
 
+                    # ALWAYS mark this ID as done, regardless of changes
                     done_ids.add(item_id)
-                    save_progress(progress_file, done_ids)
+                    save_progress(progress_file, done_ids)   # <-- THIS IS THE KEY
 
                     if changed and updated_count > 0 and updated_count % SAVE_INTERVAL == 0:
                         _save_json()
@@ -199,8 +202,10 @@ def backfill_descriptions_for_file(json_path: Path, category: str):
 
     _save_json()
 
-    if os.path.exists(progress_file):
-        os.remove(progress_file)
+    # Clean up progress file only if all items are done (this will happen after the loop finishes)
+    if len(done_ids) >= total:
+        if os.path.exists(progress_file):
+            os.remove(progress_file)
 
     print(f"  ✅ Finished {json_path.name}: updated {updated_count} items (descriptions and/or last_scraped).")
 
