@@ -191,9 +191,6 @@ def process_file(file_path: Path, content_type: str, processed_set: Set[Tuple[st
         print("  WARNING: Not a dictionary, skipping.")
         return
 
-    rating_dir = RATINGS_DIR / file_path.stem.split('.')[0]
-    rating_dir.mkdir(parents=True, exist_ok=True)
-
     for content_id, item in data.items():
         if not isinstance(item, dict):
             continue
@@ -206,9 +203,25 @@ def process_file(file_path: Path, content_type: str, processed_set: Set[Tuple[st
             continue
 
         year = extract_year(title, item.get("ReleaseDate"))
+
+        # Determine rating file path with parity split for movies
+        category_stem = file_path.stem.split('.')[0]  # e.g., "movies", "series"
+        base_dir = RATINGS_DIR / category_stem
+
+        if category_stem in ["movies", "dubbed-movies", "hindi", "asian-movies", "anime-movies"]:
+            # For movie categories, split into two folders based on ID parity
+            # Even IDs go to movies/, odd IDs go to movies2/
+            if int(content_id) % 2 == 0:
+                rating_dir = RATINGS_DIR / "movies"
+            else:
+                rating_dir = RATINGS_DIR / "movies2"
+        else:
+            rating_dir = base_dir
+
+        rating_dir.mkdir(parents=True, exist_ok=True)
         rating_file = rating_dir / f"{content_id}.json"
 
-        # Load existing rating file (if any)
+        # Load existing rating file (if any) – also check fallback location for movies
         existing_imdb_id = None
         existing_source = None
         existing_rating = None
@@ -221,6 +234,19 @@ def process_file(file_path: Path, content_type: str, processed_set: Set[Tuple[st
                 existing_imdb_id = existing.get("imdb_id")
             except:
                 pass
+        elif category_stem in ["movies", "dubbed-movies", "hindi", "asian-movies", "anime-movies"]:
+            # Try the opposite folder (if migration happened)
+            fallback_dir = RATINGS_DIR / ("movies" if int(content_id) % 2 != 0 else "movies2")
+            fallback_file = fallback_dir / f"{content_id}.json"
+            if fallback_file.exists():
+                try:
+                    with open(fallback_file, "r") as rf:
+                        existing = json.load(rf)
+                    existing_rating = existing.get("rating")
+                    existing_source = existing.get("source")
+                    existing_imdb_id = existing.get("imdb_id")
+                except:
+                    pass
 
         # If we already have a rating and it's from IMDbAPI, skip
         if existing_rating is not None and existing_rating not in (None, "N/A") and existing_source == "imdbapi":

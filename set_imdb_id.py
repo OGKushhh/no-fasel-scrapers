@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 set_imdb_id.py – Manually set or update IMDb ID for a content item.
-Updates the rating file at output/ratings/{category_stem}/{id}.json.
+Updates the rating file. For movies, writes to output/ratings/movies/ (not movies2).
 """
 
 import json
@@ -20,22 +20,38 @@ def main():
     parser.add_argument("--imdb_id", required=True, help="IMDb ID (e.g., tt1234567)")
     args = parser.parse_args()
 
-    # Validate IMDb ID format
     if not args.imdb_id.startswith("tt") or not args.imdb_id[2:].isdigit():
         print(f"ERROR: Invalid IMDb ID format: {args.imdb_id}. Must start with 'tt' followed by digits.")
         sys.exit(1)
 
-    # Determine rating subfolder (remove .json extension)
     category_stem = Path(args.category).stem
-    rating_dir = RATINGS_DIR / category_stem
-    rating_dir.mkdir(parents=True, exist_ok=True)
+    base_dir = RATINGS_DIR / category_stem
 
+    # For movies, write to movies/ (the main folder). The balancing script will later move extras to movies2.
+    rating_dir = base_dir
+    if category_stem == "movies":
+        rating_dir = RATINGS_DIR / "movies"
+
+    rating_dir.mkdir(parents=True, exist_ok=True)
     rating_file = rating_dir / f"{args.id}.json"
 
-    # Load existing data or create new
+    # Load existing data if any (try both movies and movies2)
+    existing_data = None
     if rating_file.exists():
         with open(rating_file, "r", encoding="utf-8") as f:
-            data = json.load(f)
+            existing_data = json.load(f)
+    elif category_stem == "movies":
+        fallback_file = RATINGS_DIR / "movies2" / f"{args.id}.json"
+        if fallback_file.exists():
+            with open(fallback_file, "r", encoding="utf-8") as f:
+                existing_data = json.load(f)
+            print(f"Found existing rating in movies2/, will overwrite in movies/")
+
+    if existing_data:
+        existing_data["imdb_id"] = args.imdb_id
+        existing_data["source"] = "manual"
+        existing_data["last_updated"] = datetime.now(timezone.utc).isoformat()
+        data = existing_data
     else:
         data = {
             "content_id": args.id,
@@ -58,20 +74,10 @@ def main():
                     data["year"] = main_data[args.id].get("ReleaseDate") or None
             except:
                 pass
-        with open(rating_file, "w", encoding="utf-8") as f:
-            json.dump(data, f, indent=2, ensure_ascii=False)
-        print(f"✅ Created rating file with IMDb ID {args.imdb_id} for {args.category}/{args.id}")
-        return
 
-    # Update existing rating file
-    data["imdb_id"] = args.imdb_id
-    data["source"] = "manual"
-    data["last_updated"] = datetime.now(timezone.utc).isoformat()
-    # Optionally keep existing rating; set to None to force refetch
-    # data["rating"] = None   # uncomment if you want to force rating refetch
     with open(rating_file, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
-    print(f"✅ Updated IMDb ID to {args.imdb_id} for {args.category}/{args.id}")
+    print(f"✅ IMDb ID {args.imdb_id} set for {args.category}/{args.id} in {rating_file.parent}")
 
 if __name__ == "__main__":
     main()

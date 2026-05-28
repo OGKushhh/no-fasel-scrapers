@@ -141,7 +141,20 @@ def process_file(file_path: Path, content_type: str, processed_set: Set[Tuple[st
             save_progress(file_path.name, content_id)
             continue
 
-        rating_file = RATINGS_DIR / file_path.stem.split('.')[0] / f"{content_id}.json"
+        # Determine rating file path with fallback for movies
+        category_stem = file_path.stem.split('.')[0]  # e.g., "movies", "series"
+        base_dir = RATINGS_DIR / category_stem
+
+        if category_stem == "movies":
+            rating_file = base_dir / f"{content_id}.json"
+            if not rating_file.exists():
+                rating_file = RATINGS_DIR / "movies2" / f"{content_id}.json"
+        else:
+            rating_file = base_dir / f"{content_id}.json"
+
+        # Ensure parent directory exists (for movies2 case)
+        rating_file.parent.mkdir(parents=True, exist_ok=True)
+
         imdb_id = None
         if rating_file.exists():
             try:
