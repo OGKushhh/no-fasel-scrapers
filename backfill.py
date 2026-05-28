@@ -63,22 +63,21 @@ BATCH_DELAY = 2             # seconds between batches
 # ===================================
 
 def load_progress(progress_file: str) -> set:
-    """Load the set of already-completed item IDs from a JSON progress file."""
+    """Load the set of already-completed item IDs from a plain text file (one ID per line)."""
     if os.path.exists(progress_file):
         try:
             with open(progress_file, "r", encoding="utf-8") as f:
-                data = json.load(f)
-            if isinstance(data, list):
-                return set(data)
+                return {line.strip() for line in f if line.strip()}
         except Exception:
             pass
     return set()
 
 def save_progress(progress_file: str, done_ids: set):
-    """Atomically write completed item IDs to the progress file."""
+    """Atomically write completed item IDs to a plain text file (one ID per line)."""
     tmp = progress_file + ".tmp"
     with open(tmp, "w", encoding="utf-8") as f:
-        json.dump(list(done_ids), f)
+        for item_id in sorted(done_ids):
+            f.write(item_id + "\n")
     os.replace(tmp, progress_file)
 
 def get_detail_url_for_item(item_id: str, item_data: dict, is_movie: bool = False) -> str:
