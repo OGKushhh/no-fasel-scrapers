@@ -192,7 +192,7 @@ def backfill_descriptions_for_file(json_path: Path, category: str):
 
                     # ALWAYS mark this ID as done, regardless of changes
                     done_ids.add(item_id)
-                    save_progress(progress_file, done_ids)   # <-- THIS IS THE KEY
+                    save_progress(progress_file, done_ids)
 
                     if changed and updated_count > 0 and updated_count % SAVE_INTERVAL == 0:
                         _save_json()
@@ -229,17 +229,18 @@ def backfill_movies_combined(json_path: Path, category: str):
     items = list(data.items())
     total = len(items)
 
-    progress_file = str(json_path).replace(".json", "_movie_progress.json")
+    # Use .txt extension for progress files
+    progress_file = str(json_path).replace(".json", "_movie_progress.txt")
     done_ids = load_progress(progress_file)
 
     already_done = {
         item_id for item_id, item_data in items
-        if item_data.get("Description") is not None and item_data.get("last_scraped")
+        if item_data.get("Description") and item_data.get("last_scraped")
     }
     done_ids |= already_done
 
     remaining = [(item_id, item_data) for item_id, item_data in items if item_id not in done_ids]
-    print(f"  {len(already_done)} already complete, {len(remaining)} remaining / {total} total")
+    print(f"  {len(already_done)} already have valid description + last_scraped, {len(remaining)} remaining / {total} total")
 
     if not remaining:
         print(f"  ✅ Nothing to do for {json_path.name}")
@@ -274,12 +275,14 @@ def backfill_movies_combined(json_path: Path, category: str):
                     if description and not item_data.get("Description"):
                         item_data["Description"] = description
                         updated_count += 1
-                        print(f"  [{i+1}/{len(remaining)}] ✅ {item_id} ({len(description)} chars)")
+                        print(f"  [{i+1}/{len(remaining)}] ✅ {item_id} ({len(description)} chars)", flush=True)
                         changed = True
-                    elif not description and item_data.get("Description") is None:
+                    elif not description and not item_data.get("Description"):
                         item_data["Description"] = ""
-                        print(f"  [{i+1}/{len(remaining)}] ⚠️  No description for {item_id} (URL: {get_detail_url_for_item(item_id, item_data, is_movie=True)})")
+                        print(f"  [{i+1}/{len(remaining)}] ⚠️  No description for {item_id}", flush=True)
                         changed = True
+                    else:
+                        print(f"  [{i+1}/{len(remaining)}] ⏭️  Skip {item_id} – already has description", flush=True)
 
                     if not item_data.get("last_scraped"):
                         item_data["last_scraped"] = now_iso
@@ -290,14 +293,15 @@ def backfill_movies_combined(json_path: Path, category: str):
 
                     if changed and updated_count > 0 and updated_count % SAVE_INTERVAL == 0:
                         _save_json()
-                        print(f"  💾 Saved JSON (updated {updated_count} items so far)")
+                        print(f"  💾 Saved JSON (updated {updated_count} items so far)", flush=True)
 
             time.sleep(BATCH_DELAY)
 
     _save_json()
 
-    if os.path.exists(progress_file):
-        os.remove(progress_file)
+    if len(done_ids) >= total:
+        if os.path.exists(progress_file):
+            os.remove(progress_file)
 
     print(f"  ✅ Finished {json_path.name}: updated {updated_count} movies (description + last_scraped).")
 
