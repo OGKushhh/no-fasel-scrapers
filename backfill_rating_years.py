@@ -72,6 +72,12 @@ def process_category(category: str, dry_run: bool):
             same += 1
             continue
 
+        # Guard: if new year is later than existing year, likely wrong IMDb match — skip
+        if current_year and int(start_year) > int(str(current_year)):
+            print(f"  SKIP [{data.get('content_id')}] {data.get('title', '')[:40]} | {current_year} → {start_year} (new year is later, likely wrong match)")
+            skipped += 1
+            continue
+
         print(f"  [{data.get('content_id')}] {data.get('title', '')[:40]} | {current_year} → {start_year}")
 
         if not dry_run:
