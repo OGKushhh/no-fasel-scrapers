@@ -2,9 +2,19 @@
   "content_id": "140942",
   "title": "انمي Tokyo 24-ku",
   "year": "2022",
-  "rating": "6.1",
-  "votes": 312,
-  "source": "imdbapi",
+  "rating": "5.8",
+  "votes": 1186,
+  "source": "mal",
+  "mal_id": 51296,
+  "mal_rank": 12065,
+  "mal_popularity": 10805,
+  "mal_studios": [
+    "CloverWorks"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "東京24区 第9.5話「Reversal film」",
+  "mal_season": "winter 2022",
+  "mal_year": "2022",
   "imdb_id": "tt15758108",
-  "last_updated": "2026-05-29T01:55:30.870783+00:00"
+  "last_updated": "2026-05-29T19:36:04.915147+00:00"
 }

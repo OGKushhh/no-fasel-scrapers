@@ -2,9 +2,19 @@
   "content_id": "140947",
   "title": "انمي Leadale no Daichi nite",
   "year": "2022",
-  "rating": "6.6",
-  "votes": 1119,
-  "source": "imdbapi",
+  "rating": "6.97",
+  "votes": 93750,
+  "source": "mal",
+  "mal_id": 48239,
+  "mal_rank": 5402,
+  "mal_popularity": 1468,
+  "mal_studios": [
+    "Maho Film"
+  ],
+  "mal_title_en": "In the Land of Leadale",
+  "mal_title_jp": "リアデイルの大地にて",
+  "mal_season": "winter 2022",
+  "mal_year": "2022",
   "imdb_id": "tt14506186",
-  "last_updated": "2026-05-29T01:55:23.762176+00:00"
+  "last_updated": "2026-05-29T19:35:59.422473+00:00"
 }

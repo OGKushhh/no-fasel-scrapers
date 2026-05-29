@@ -3,8 +3,18 @@
   "title": "انمي Blade Runner Black Lotus",
   "year": "2021",
   "rating": "6.3",
-  "votes": 3984,
-  "source": "imdbapi",
+  "votes": 5632,
+  "source": "mal",
+  "mal_id": 38749,
+  "mal_rank": 9389,
+  "mal_popularity": 4802,
+  "mal_studios": [
+    "Sola Digital Arts"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "BLADE RUNNER – BLACK LOTUS",
+  "mal_season": "fall 2021",
+  "mal_year": "2021",
   "imdb_id": "tt9359796",
-  "last_updated": "2026-05-29T01:56:48.807506+00:00"
+  "last_updated": "2026-05-29T19:36:56.346382+00:00"
 }

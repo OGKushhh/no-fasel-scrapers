@@ -2,9 +2,19 @@
   "content_id": "135203",
   "title": "انمي World Trigger Season 3",
   "year": "2021",
-  "rating": "8.9",
-  "votes": 2297,
-  "source": "imdbapi",
+  "rating": "8.06",
+  "votes": 69012,
+  "source": "mal",
+  "mal_id": 40907,
+  "mal_rank": 668,
+  "mal_popularity": 1575,
+  "mal_studios": [
+    "Toei Animation"
+  ],
+  "mal_title_en": "World Trigger 2nd Season",
+  "mal_title_jp": "ワールドトリガー",
+  "mal_season": "winter 2021",
+  "mal_year": "2021",
   "imdb_id": "tt33319868",
-  "last_updated": "2026-05-29T01:59:25.561097+00:00"
+  "last_updated": "2026-05-29T19:38:20.251162+00:00"
 }

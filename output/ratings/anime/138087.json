@@ -2,9 +2,19 @@
   "content_id": "138087",
   "title": "انمي Tengen Toppa Gurren Lagann",
   "year": "2007",
-  "rating": "8.3",
-  "votes": 26608,
-  "source": "imdbapi",
+  "rating": "8.65",
+  "votes": 979511,
+  "source": "mal",
+  "mal_id": 2001,
+  "mal_rank": 88,
+  "mal_popularity": 66,
+  "mal_studios": [
+    "Gainax"
+  ],
+  "mal_title_en": "Gurren Lagann",
+  "mal_title_jp": "天元突破グレンラガン",
+  "mal_season": "spring 2007",
+  "mal_year": "2007",
   "imdb_id": "tt0948103",
-  "last_updated": "2026-05-29T01:56:24.101408+00:00"
+  "last_updated": "2026-05-29T19:36:33.965728+00:00"
 }

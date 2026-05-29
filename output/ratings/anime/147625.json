@@ -2,9 +2,19 @@
   "content_id": "147625",
   "title": "انمي Date A Live IV",
   "year": "2022",
-  "rating": "6.9",
-  "votes": 5293,
-  "source": "imdbapi",
+  "rating": "7.74",
+  "votes": 108242,
+  "source": "mal",
+  "mal_id": 41461,
+  "mal_rank": 1344,
+  "mal_popularity": 967,
+  "mal_studios": [
+    "Geek Toys"
+  ],
+  "mal_title_en": "Date A Live IV",
+  "mal_title_jp": "デート・ア・ライブⅣ",
+  "mal_season": "spring 2022",
+  "mal_year": "2022",
   "imdb_id": "tt2575684",
-  "last_updated": "2026-05-29T01:46:49.865890+00:00"
+  "last_updated": "2026-05-29T19:31:22.797792+00:00"
 }

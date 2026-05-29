@@ -2,9 +2,19 @@
   "content_id": "136110",
   "title": "انمي Area no Kishi",
   "year": "2012",
-  "rating": "6.9",
-  "votes": 312,
-  "source": "imdbapi",
+  "rating": "7.19",
+  "votes": 37370,
+  "source": "mal",
+  "mal_id": 11697,
+  "mal_rank": 4095,
+  "mal_popularity": 2742,
+  "mal_studios": [
+    "Shin-Ei Animation"
+  ],
+  "mal_title_en": "The Knight in the Area",
+  "mal_title_jp": "エリアの騎士",
+  "mal_season": "winter 2012",
+  "mal_year": "2012",
   "imdb_id": "tt2176177",
-  "last_updated": "2026-05-29T01:57:24.535594+00:00"
+  "last_updated": "2026-05-29T19:37:24.325182+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "141299",
   "title": "انمي Baraou no Souretsu",
   "year": "2022",
-  "rating": "5.0",
-  "votes": 337,
-  "source": "imdbapi",
+  "rating": "6.44",
+  "votes": 14378,
+  "source": "mal",
+  "mal_id": 42892,
+  "mal_rank": 8575,
+  "mal_popularity": 3091,
+  "mal_studios": [
+    "J.C.Staff"
+  ],
+  "mal_title_en": "Requiem of the Rose King",
+  "mal_title_jp": "薔薇王の葬列",
+  "mal_season": "winter 2022",
+  "mal_year": "2022",
   "imdb_id": "tt14979604",
-  "last_updated": "2026-05-29T01:53:15.542160+00:00"
+  "last_updated": "2026-05-29T19:34:41.094642+00:00"
 }

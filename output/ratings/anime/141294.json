@@ -2,9 +2,19 @@
   "content_id": "141294",
   "title": "انمي Koroshi Ai",
   "year": "2022",
-  "rating": "6.2",
-  "votes": 147,
-  "source": "imdbapi",
+  "rating": "6.91",
+  "votes": 72458,
+  "source": "mal",
+  "mal_id": 44516,
+  "mal_rank": 5726,
+  "mal_popularity": 1421,
+  "mal_studios": [
+    "Platinum Vision"
+  ],
+  "mal_title_en": "Love of Kill",
+  "mal_title_jp": "殺し愛",
+  "mal_season": "winter 2022",
+  "mal_year": "2022",
   "imdb_id": "tt0060605",
-  "last_updated": "2026-05-29T01:53:19.459331+00:00"
+  "last_updated": "2026-05-29T19:34:46.164326+00:00"
 }

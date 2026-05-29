@@ -2,9 +2,20 @@
   "content_id": "148487",
   "title": "انمي Kakkou no Iinazuk",
   "year": "2022",
-  "rating": "6.8",
-  "votes": 3131,
-  "source": "imdbapi",
+  "rating": "6.85",
+  "votes": 136109,
+  "source": "mal",
+  "mal_id": 48675,
+  "mal_rank": 6081,
+  "mal_popularity": 815,
+  "mal_studios": [
+    "SynergySP",
+    "Shin-Ei Animation"
+  ],
+  "mal_title_en": "A Couple of Cuckoos",
+  "mal_title_jp": "カッコウの許嫁",
+  "mal_season": "spring 2022",
+  "mal_year": "2022",
   "imdb_id": "tt14400866",
-  "last_updated": "2026-05-29T01:43:51.086241+00:00"
+  "last_updated": "2026-05-29T19:29:41.899450+00:00"
 }

@@ -2,9 +2,20 @@
   "content_id": "141951",
   "title": "انمي Tales of Luminaria: The Fateful Crossroad",
   "year": "2022",
-  "rating": "5.9",
-  "votes": 47,
-  "source": "imdbapi",
+  "rating": "6.17",
+  "votes": 2076,
+  "source": "mal",
+  "mal_id": 49942,
+  "mal_rank": 10158,
+  "mal_popularity": 8632,
+  "mal_studios": [
+    "Anima",
+    "Kamikaze Douga"
+  ],
+  "mal_title_en": "Tales of Luminaria the Fateful Crossroad",
+  "mal_title_jp": "TALES OF LUMINARIA The Fateful Crossroad",
+  "mal_season": "winter 2022",
+  "mal_year": "2022",
   "imdb_id": "tt15680762",
-  "last_updated": "2026-05-29T01:51:23.623704+00:00"
+  "last_updated": "2026-05-29T19:33:55.819545+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "147787",
   "title": "انمي Kono Healer, Mendokusai",
   "year": "2022",
-  "rating": "5.8",
-  "votes": 260,
-  "source": "imdbapi",
+  "rating": "6.41",
+  "votes": 25661,
+  "source": "mal",
+  "mal_id": 48742,
+  "mal_rank": 8781,
+  "mal_popularity": 2960,
+  "mal_studios": [
+    "Jumondou"
+  ],
+  "mal_title_en": "Don't Hurt Me, My Healer!",
+  "mal_title_jp": "このヒーラー、めんどくさい",
+  "mal_season": "spring 2022",
+  "mal_year": "2022",
   "imdb_id": "tt14453538",
-  "last_updated": "2026-05-29T01:45:04.208280+00:00"
+  "last_updated": "2026-05-29T19:30:17.425927+00:00"
 }

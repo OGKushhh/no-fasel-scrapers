@@ -2,9 +2,19 @@
   "content_id": "147408",
   "title": "انمي Detective Conan: Zero no Tea Time",
   "year": "2022",
-  "rating": "6.0",
-  "votes": 472,
-  "source": "imdbapi",
+  "rating": "6.99",
+  "votes": 7237,
+  "source": "mal",
+  "mal_id": 50012,
+  "mal_rank": 5296,
+  "mal_popularity": 5889,
+  "mal_studios": [
+    "TMS Entertainment"
+  ],
+  "mal_title_en": "Detective Conan: Zero's Tea Time",
+  "mal_title_jp": "名探偵コナン ゼロの日常（ティータイム）",
+  "mal_season": "spring 2022",
+  "mal_year": "2022",
   "imdb_id": "tt19798344",
-  "last_updated": "2026-05-29T01:48:19.071996+00:00"
+  "last_updated": "2026-05-29T19:32:25.193448+00:00"
 }

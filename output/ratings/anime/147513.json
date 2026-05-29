@@ -2,9 +2,20 @@
   "content_id": "147513",
   "title": "انمي Gaikotsu Kishi-sama Tadaima Isekai e Odekakechuu",
   "year": "2022",
-  "rating": "7.0",
-  "votes": 3101,
-  "source": "imdbapi",
+  "rating": "7.13",
+  "votes": 190972,
+  "source": "mal",
+  "mal_id": 48760,
+  "mal_rank": 4489,
+  "mal_popularity": 729,
+  "mal_studios": [
+    "Studio KAI",
+    "HORNETS"
+  ],
+  "mal_title_en": "Skeleton Knight in Another World",
+  "mal_title_jp": "骸骨騎士様、只今異世界へお出掛け中",
+  "mal_season": "spring 2022",
+  "mal_year": "2022",
   "imdb_id": "tt14476236",
-  "last_updated": "2026-05-29T01:47:14.604947+00:00"
+  "last_updated": "2026-05-29T19:31:41.239179+00:00"
 }

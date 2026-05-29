@@ -2,9 +2,19 @@
   "content_id": "141113",
   "title": "انمي Kaijin Kaihatsubu no Kuroitsu-san",
   "year": "2022",
-  "rating": "6.1",
-  "votes": 231,
-  "source": "imdbapi",
+  "rating": "6.74",
+  "votes": 21168,
+  "source": "mal",
+  "mal_id": 49385,
+  "mal_rank": 6752,
+  "mal_popularity": 3119,
+  "mal_studios": [
+    "Quad"
+  ],
+  "mal_title_en": "Miss Kuroitsu from the Monster Development Department",
+  "mal_title_jp": "怪人開発部の黒井津さん",
+  "mal_season": "winter 2022",
+  "mal_year": "2022",
   "imdb_id": "tt15582924",
-  "last_updated": "2026-05-29T01:54:10.017315+00:00"
+  "last_updated": "2026-05-29T19:35:20.939912+00:00"
 }

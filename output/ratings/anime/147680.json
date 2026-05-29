@@ -2,9 +2,19 @@
   "content_id": "147680",
   "title": "انمي Kunoichi Tsubaki no Mune no Uchi",
   "year": "2022",
-  "rating": "6.4",
-  "votes": 221,
-  "source": "imdbapi",
+  "rating": "7.16",
+  "votes": 25858,
+  "source": "mal",
+  "mal_id": 50338,
+  "mal_rank": 4316,
+  "mal_popularity": 3042,
+  "mal_studios": [
+    "CloverWorks"
+  ],
+  "mal_title_en": "In the Heart of Kunoichi Tsubaki",
+  "mal_title_jp": "くノ一ツバキの胸の内",
+  "mal_season": "spring 2022",
+  "mal_year": "2022",
   "imdb_id": "tt15929150",
-  "last_updated": "2026-05-29T01:45:50.209956+00:00"
+  "last_updated": "2026-05-29T19:30:35.884006+00:00"
 }

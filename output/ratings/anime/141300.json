@@ -2,9 +2,19 @@
   "content_id": "141300",
   "title": "انمي Kenja no Deshi wo Nanoru Kenja",
   "year": "2022",
-  "rating": "5.9",
-  "votes": 617,
-  "source": "imdbapi",
+  "rating": "6.34",
+  "votes": 59311,
+  "source": "mal",
+  "mal_id": 42072,
+  "mal_rank": 9182,
+  "mal_popularity": 1837,
+  "mal_studios": [
+    "Studio A-CAT"
+  ],
+  "mal_title_en": "She Professed Herself Pupil of the Wise Man",
+  "mal_title_jp": "賢者の弟子を名乗る賢者",
+  "mal_season": "winter 2022",
+  "mal_year": "2022",
   "imdb_id": "tt14960284",
-  "last_updated": "2026-05-29T01:53:08.441589+00:00"
+  "last_updated": "2026-05-29T19:34:35.739823+00:00"
 }

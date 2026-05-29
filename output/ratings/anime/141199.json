@@ -2,9 +2,19 @@
   "content_id": "141199",
   "title": "انمي Sabikui Bisco",
   "year": "2022",
-  "rating": "6.9",
-  "votes": 1277,
-  "source": "imdbapi",
+  "rating": "7.14",
+  "votes": 113164,
+  "source": "mal",
+  "mal_id": 48414,
+  "mal_rank": 4457,
+  "mal_popularity": 1006,
+  "mal_studios": [
+    "OZ"
+  ],
+  "mal_title_en": "Sabikui Bisco",
+  "mal_title_jp": "錆喰いビスコ",
+  "mal_season": "winter 2022",
+  "mal_year": "2022",
   "imdb_id": "tt14187728",
-  "last_updated": "2026-05-29T01:53:33.690799+00:00"
+  "last_updated": "2026-05-29T19:34:56.763526+00:00"
 }

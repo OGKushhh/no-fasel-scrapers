@@ -2,9 +2,19 @@
   "content_id": "141069",
   "title": "انمي Hakozume: Kouban Joshi no Gyakushuu",
   "year": "2022",
-  "rating": "6.7",
-  "votes": 249,
-  "source": "imdbapi",
+  "rating": "7.18",
+  "votes": 24508,
+  "source": "mal",
+  "mal_id": 49519,
+  "mal_rank": 4173,
+  "mal_popularity": 3323,
+  "mal_studios": [
+    "Madhouse"
+  ],
+  "mal_title_en": "Police in a Pod",
+  "mal_title_jp": "ハコヅメ～交番女子の逆襲～",
+  "mal_season": "winter 2022",
+  "mal_year": "2022",
   "imdb_id": "tt15715750",
-  "last_updated": "2026-05-29T01:55:16.817762+00:00"
+  "last_updated": "2026-05-29T19:35:54.224962+00:00"
 }

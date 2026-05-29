@@ -2,9 +2,19 @@
   "content_id": "135001",
   "title": "انمي Komi-san wa, Comyushou desu",
   "year": "2021",
-  "rating": "7.6",
-  "votes": 13243,
-  "source": "imdbapi",
+  "rating": "7.78",
+  "votes": 541920,
+  "source": "mal",
+  "mal_id": 48926,
+  "mal_rank": 1249,
+  "mal_popularity": 184,
+  "mal_studios": [
+    "OLM"
+  ],
+  "mal_title_en": "Komi Can't Communicate",
+  "mal_title_jp": "古見さんは、コミュ症です。",
+  "mal_season": "fall 2021",
+  "mal_year": "2021",
   "imdb_id": "tt14626352",
-  "last_updated": "2026-05-29T02:00:04.644142+00:00"
+  "last_updated": "2026-05-29T19:38:52.733666+00:00"
 }

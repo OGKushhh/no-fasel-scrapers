@@ -2,9 +2,19 @@
   "content_id": "147645",
   "title": "انمي Tiger & Bunny Season 2",
   "year": "2022",
-  "rating": "7.4",
-  "votes": 1840,
-  "source": "imdbapi",
+  "rating": "7.46",
+  "votes": 9226,
+  "source": "mal",
+  "mal_id": 41595,
+  "mal_rank": 2517,
+  "mal_popularity": 4985,
+  "mal_studios": [
+    "Bandai Namco Pictures"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "TIGER & BUNNY 2",
+  "mal_season": "spring 2022",
+  "mal_year": "2022",
   "imdb_id": "tt2061527",
-  "last_updated": "2026-05-29T01:46:16.074440+00:00"
+  "last_updated": "2026-05-29T19:31:04.788410+00:00"
 }

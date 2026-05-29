@@ -2,9 +2,21 @@
   "content_id": "134994",
   "title": "انمي Muv-Luv Alternative",
   "year": "2021",
-  "rating": "5.7",
-  "votes": 107,
-  "source": "imdbapi",
+  "rating": "5.96",
+  "votes": 14670,
+  "source": "mal",
+  "mal_id": 40608,
+  "mal_rank": 11232,
+  "mal_popularity": 3716,
+  "mal_studios": [
+    "Yumeta Company",
+    "Graphinica",
+    "Flagship Line"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "マブラヴ オルタネイティヴ",
+  "mal_season": "fall 2021",
+  "mal_year": "2021",
   "imdb_id": "tt12421676",
-  "last_updated": "2026-05-29T02:00:32.691857+00:00"
+  "last_updated": "2026-05-29T19:39:03.982126+00:00"
 }

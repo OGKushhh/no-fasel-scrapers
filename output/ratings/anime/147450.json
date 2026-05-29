@@ -2,9 +2,19 @@
   "content_id": "147450",
   "title": "انمي Tomodachi Game",
   "year": "2022",
-  "rating": "7.6",
-  "votes": 6423,
-  "source": "imdbapi",
+  "rating": "7.71",
+  "votes": 260051,
+  "source": "mal",
+  "mal_id": 50273,
+  "mal_rank": 1461,
+  "mal_popularity": 529,
+  "mal_studios": [
+    "Okuruto Noboru"
+  ],
+  "mal_title_en": "Tomodachi Game",
+  "mal_title_jp": "トモダチゲーム",
+  "mal_season": "spring 2022",
+  "mal_year": "2022",
   "imdb_id": "tt15830678",
-  "last_updated": "2026-05-29T01:47:47.249749+00:00"
+  "last_updated": "2026-05-29T19:32:02.725873+00:00"
 }

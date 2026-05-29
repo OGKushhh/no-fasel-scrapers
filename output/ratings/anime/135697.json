@@ -2,9 +2,19 @@
   "content_id": "135697",
   "title": "انمي Shikizakura",
   "year": "2021",
-  "rating": "5.2",
-  "votes": 48,
-  "source": "imdbapi",
+  "rating": "5.86",
+  "votes": 3591,
+  "source": "mal",
+  "mal_id": 38440,
+  "mal_rank": 11746,
+  "mal_popularity": 5696,
+  "mal_studios": [
+    "Sublimation"
+  ],
+  "mal_title_en": "Shikizakura",
+  "mal_title_jp": "シキザクラ",
+  "mal_season": "fall 2021",
+  "mal_year": "2021",
   "imdb_id": "tt9442120",
-  "last_updated": "2026-05-29T01:58:46.584462+00:00"
+  "last_updated": "2026-05-29T19:37:45.270482+00:00"
 }

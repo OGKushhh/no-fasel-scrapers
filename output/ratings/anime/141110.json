@@ -2,9 +2,19 @@
   "content_id": "141110",
   "title": "انمي Akebi-chan no Sailor-fuku",
   "year": "2022",
-  "rating": "7.2",
-  "votes": 914,
-  "source": "imdbapi",
+  "rating": "7.66",
+  "votes": 80359,
+  "source": "mal",
+  "mal_id": 48553,
+  "mal_rank": 1600,
+  "mal_popularity": 1304,
+  "mal_studios": [
+    "CloverWorks"
+  ],
+  "mal_title_en": "Akebi's Sailor Uniform",
+  "mal_title_jp": "明日ちゃんのセーラー服",
+  "mal_season": "winter 2022",
+  "mal_year": "2022",
   "imdb_id": "tt15533674",
-  "last_updated": "2026-05-29T01:54:30.685260+00:00"
+  "last_updated": "2026-05-29T19:35:26.444550+00:00"
 }

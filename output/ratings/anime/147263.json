@@ -2,9 +2,19 @@
   "content_id": "147263",
   "title": "انمي Build Divide: Code White",
   "year": "2022",
-  "rating": "6.4",
-  "votes": 108,
-  "source": "imdbapi",
+  "rating": "6.64",
+  "votes": 6182,
+  "source": "mal",
+  "mal_id": 48777,
+  "mal_rank": 7366,
+  "mal_popularity": 5225,
+  "mal_studios": [
+    "LIDENFILMS"
+  ],
+  "mal_title_en": "Build Divide -#FFFFFF- Code White",
+  "mal_title_jp": "ビルディバイド -#FFFFFF(コードホワイト)-",
+  "mal_season": "spring 2022",
+  "mal_year": "2022",
   "imdb_id": "tt14489144",
-  "last_updated": "2026-05-29T01:49:04.000536+00:00"
+  "last_updated": "2026-05-29T19:32:50.078986+00:00"
 }

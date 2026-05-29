@@ -2,9 +2,19 @@
   "content_id": "147392",
   "title": "انمي Healer Girl",
   "year": "2022",
-  "rating": "6.7",
-  "votes": 88,
-  "source": "imdbapi",
+  "rating": "7.33",
+  "votes": 12634,
+  "source": "mal",
+  "mal_id": 48857,
+  "mal_rank": 3170,
+  "mal_popularity": 4207,
+  "mal_studios": [
+    "Studio 3Hz"
+  ],
+  "mal_title_en": "Healer Girl",
+  "mal_title_jp": "ヒーラー・ガール",
+  "mal_season": "spring 2022",
+  "mal_year": "2022",
   "imdb_id": "tt19409404",
-  "last_updated": "2026-05-29T01:48:24.174291+00:00"
+  "last_updated": "2026-05-29T19:32:31.062480+00:00"
 }

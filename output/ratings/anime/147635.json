@@ -2,9 +2,19 @@
   "content_id": "147635",
   "title": "انمي Dance Dance Danseur",
   "year": "2022",
-  "rating": "7.6",
-  "votes": 346,
-  "source": "imdbapi",
+  "rating": "7.83",
+  "votes": 49793,
+  "source": "mal",
+  "mal_id": 48702,
+  "mal_rank": 1113,
+  "mal_popularity": 2313,
+  "mal_studios": [
+    "MAPPA"
+  ],
+  "mal_title_en": "Dance Dance Danseur",
+  "mal_title_jp": "ダンス・ダンス・ダンスール",
+  "mal_season": "spring 2022",
+  "mal_year": "2022",
   "imdb_id": "tt15391190",
-  "last_updated": "2026-05-29T01:46:20.034589+00:00"
+  "last_updated": "2026-05-29T19:31:10.593009+00:00"
 }

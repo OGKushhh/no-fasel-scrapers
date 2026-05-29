@@ -1,10 +1,20 @@
 {
   "content_id": "137687",
   "title": "Shijou Saikyou no Deshi Kenichi OVA مترجم",
-  "year": "2014",
-  "rating": "8.0",
-  "votes": 2769,
-  "source": "imdbapi",
+  "year": "2012",
+  "rating": "7.9",
+  "votes": 30955,
+  "source": "mal",
+  "mal_id": 11813,
+  "mal_rank": 958,
+  "mal_popularity": 3196,
+  "mal_studios": [
+    "Brain's Base"
+  ],
+  "mal_title_en": "KenIchi: The Mightiest Disciple OVA",
+  "mal_title_jp": "史上最強の弟子 ケンイチ OVA",
+  "mal_season": "winter 2012",
+  "mal_year": "2012",
   "imdb_id": "tt1424037",
-  "last_updated": "2026-05-29T01:56:34.857570+00:00"
+  "last_updated": "2026-05-29T19:36:44.563273+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "147512",
   "title": "انمي Shachiku-san wa Youjo Yuurei ni Iyasaretai",
   "year": "2022",
-  "rating": "7.5",
-  "votes": 117,
-  "source": "imdbapi",
+  "rating": "7.15",
+  "votes": 14680,
+  "source": "mal",
+  "mal_id": 49160,
+  "mal_rank": 4406,
+  "mal_popularity": 3887,
+  "mal_studios": [
+    "Project No.9"
+  ],
+  "mal_title_en": "Miss Shachiku and the Little Baby Ghost",
+  "mal_title_jp": "社畜さんは幼女幽霊に癒されたい。",
+  "mal_season": "spring 2022",
+  "mal_year": "2022",
   "imdb_id": "tt15978968",
-  "last_updated": "2026-05-29T01:47:23.471838+00:00"
+  "last_updated": "2026-05-29T19:31:46.677773+00:00"
 }

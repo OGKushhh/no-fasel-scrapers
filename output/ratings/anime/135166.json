@@ -2,9 +2,19 @@
   "content_id": "135166",
   "title": "انمي Taishou Otome Otogibanashi",
   "year": "2021",
-  "rating": "7.6",
-  "votes": 896,
-  "source": "imdbapi",
+  "rating": "7.8",
+  "votes": 73643,
+  "source": "mal",
+  "mal_id": 45055,
+  "mal_rank": 1205,
+  "mal_popularity": 1592,
+  "mal_studios": [
+    "SynergySP"
+  ],
+  "mal_title_en": "Taisho Otome Fairy Tale",
+  "mal_title_jp": "大正オトメ御伽話",
+  "mal_season": "fall 2021",
+  "mal_year": "2021",
   "imdb_id": "tt13677314",
-  "last_updated": "2026-05-29T01:59:39.761019+00:00"
+  "last_updated": "2026-05-29T19:38:31.692267+00:00"
 }

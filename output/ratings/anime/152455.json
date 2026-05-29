@@ -1,10 +1,20 @@
 {
   "content_id": "152455",
   "title": "انمي Teppen",
-  "year": "2022",
+  "year": "1996",
   "rating": "5.7",
-  "votes": 44,
-  "source": "imdbapi",
+  "votes": 103,
+  "source": "mal",
+  "mal_id": 23723,
+  "mal_rank": 20974,
+  "mal_popularity": 17178,
+  "mal_studios": [
+    "Knack Productions"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "てっぺん",
+  "mal_season": "winter 1996",
+  "mal_year": "1996",
   "imdb_id": "tt18939874",
-  "last_updated": "2026-05-29T01:42:37.394858+00:00"
+  "last_updated": "2026-05-29T19:29:00.811094+00:00"
 }

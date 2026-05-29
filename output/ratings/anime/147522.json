@@ -2,9 +2,19 @@
   "content_id": "147522",
   "title": "انمي Mahoutsukai Reimeiki",
   "year": "2022",
-  "rating": "5.8",
-  "votes": 567,
-  "source": "imdbapi",
+  "rating": "6.41",
+  "votes": 63216,
+  "source": "mal",
+  "mal_id": 48842,
+  "mal_rank": 8785,
+  "mal_popularity": 1505,
+  "mal_studios": [
+    "Tezuka Productions"
+  ],
+  "mal_title_en": "The Dawn of the Witch",
+  "mal_title_jp": "魔法使い黎明期",
+  "mal_season": "spring 2022",
+  "mal_year": "2022",
   "imdb_id": "tt15766292",
-  "last_updated": "2026-05-29T01:47:07.734463+00:00"
+  "last_updated": "2026-05-29T19:31:35.765544+00:00"
 }

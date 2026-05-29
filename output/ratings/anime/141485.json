@@ -2,9 +2,19 @@
   "content_id": "141485",
   "title": "انمي Gensou Sangokushi: Tengen Reishinki",
   "year": "2022",
-  "rating": "5.0",
-  "votes": 47,
-  "source": "imdbapi",
+  "rating": "5.31",
+  "votes": 4893,
+  "source": "mal",
+  "mal_id": 49514,
+  "mal_rank": 13825,
+  "mal_popularity": 5193,
+  "mal_studios": [
+    "Geek Toys"
+  ],
+  "mal_title_en": "Fantasia Sango: Realm of Legends",
+  "mal_title_jp": "幻想三國誌 -天元霊心記-",
+  "mal_season": "winter 2022",
+  "mal_year": "2022",
   "imdb_id": "tt15176722",
-  "last_updated": "2026-05-29T01:52:05.064639+00:00"
+  "last_updated": "2026-05-29T19:34:07.016697+00:00"
 }

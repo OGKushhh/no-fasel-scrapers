@@ -2,9 +2,19 @@
   "content_id": "135090",
   "title": "انمي Platinum End",
   "year": "2021",
-  "rating": "6.0",
-  "votes": 2445,
-  "source": "imdbapi",
+  "rating": "6.02",
+  "votes": 149879,
+  "source": "mal",
+  "mal_id": 44961,
+  "mal_rank": 10968,
+  "mal_popularity": 644,
+  "mal_studios": [
+    "Signal.MD"
+  ],
+  "mal_title_en": "Platinum End",
+  "mal_title_jp": "プラチナエンド",
+  "mal_season": "fall 2021",
+  "mal_year": "2021",
   "imdb_id": "tt13676300",
-  "last_updated": "2026-05-29T01:59:43.570294+00:00"
+  "last_updated": "2026-05-29T19:38:37.056875+00:00"
 }

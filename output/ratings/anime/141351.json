@@ -2,9 +2,19 @@
   "content_id": "141351",
   "title": "انمي Tensai Ouji no Akaji Kokka Saiseijutsu",
   "year": "2022",
-  "rating": "7.1",
-  "votes": 1673,
-  "source": "imdbapi",
+  "rating": "7.39",
+  "votes": 157050,
+  "source": "mal",
+  "mal_id": 47159,
+  "mal_rank": 2870,
+  "mal_popularity": 842,
+  "mal_studios": [
+    "Yokohama Animation Lab"
+  ],
+  "mal_title_en": "The Genius Prince's Guide to Raising a Nation Out of Debt",
+  "mal_title_jp": "天才王子の赤字国家再生術",
+  "mal_season": "winter 2022",
+  "mal_year": "2022",
   "imdb_id": "tt13956466",
-  "last_updated": "2026-05-29T01:52:37.683509+00:00"
+  "last_updated": "2026-05-29T19:34:23.785731+00:00"
 }

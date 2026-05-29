@@ -2,9 +2,19 @@
   "content_id": "152456",
   "title": "انمي Utawarerumono: Futari no Hakuoro",
   "year": "2022",
-  "rating": "6.6",
-  "votes": 68,
-  "source": "imdbapi",
+  "rating": "7.6",
+  "votes": 9221,
+  "source": "mal",
+  "mal_id": 40590,
+  "mal_rank": 1860,
+  "mal_popularity": 3947,
+  "mal_studios": [
+    "White Fox"
+  ],
+  "mal_title_en": "Utawarerumono: Mask of Truth",
+  "mal_title_jp": "うたわれるもの 二人の白皇",
+  "mal_season": "summer 2022",
+  "mal_year": "2022",
   "imdb_id": "tt21421752",
-  "last_updated": "2026-05-29T01:42:30.410203+00:00"
+  "last_updated": "2026-05-29T19:28:55.817782+00:00"
 }

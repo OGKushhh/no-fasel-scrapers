@@ -2,9 +2,19 @@
   "content_id": "135189",
   "title": "انمي Saihate no Paladin",
   "year": "2021",
-  "rating": "6.8",
-  "votes": 2039,
-  "source": "imdbapi",
+  "rating": "6.89",
+  "votes": 164329,
+  "source": "mal",
+  "mal_id": 48761,
+  "mal_rank": 5847,
+  "mal_popularity": 771,
+  "mal_studios": [
+    "Children's Playground Entertainment"
+  ],
+  "mal_title_en": "The Faraway Paladin",
+  "mal_title_jp": "最果てのパラディン",
+  "mal_season": "fall 2021",
+  "mal_year": "2021",
   "imdb_id": "tt14476244",
-  "last_updated": "2026-05-29T01:59:32.718683+00:00"
+  "last_updated": "2026-05-29T19:38:26.121630+00:00"
 }

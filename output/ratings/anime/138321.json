@@ -2,9 +2,19 @@
   "content_id": "138321",
   "title": "انمي Super Crooks",
   "year": "2021",
-  "rating": "7.1",
-  "votes": 4144,
-  "source": "imdbapi",
+  "rating": "7.21",
+  "votes": 45933,
+  "source": "mal",
+  "mal_id": 48453,
+  "mal_rank": 4028,
+  "mal_popularity": 2293,
+  "mal_studios": [
+    "Bones"
+  ],
+  "mal_title_en": "Super Crooks",
+  "mal_title_jp": "スーパー・クルックス",
+  "mal_season": "fall 2021",
+  "mal_year": "2021",
   "imdb_id": "tt14272628",
-  "last_updated": "2026-05-29T01:56:20.370933+00:00"
+  "last_updated": "2026-05-29T19:36:28.940167+00:00"
 }

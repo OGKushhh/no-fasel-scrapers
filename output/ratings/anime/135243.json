@@ -2,9 +2,19 @@
   "content_id": "135243",
   "title": "انمي Kimetsu no Yaiba: Mugen Ressha Hen",
   "year": "2021",
-  "rating": "8.4",
-  "votes": 71953,
-  "source": "imdbapi",
+  "rating": "8.34",
+  "votes": 596365,
+  "source": "mal",
+  "mal_id": 49926,
+  "mal_rank": 287,
+  "mal_popularity": 197,
+  "mal_studios": [
+    "ufotable"
+  ],
+  "mal_title_en": "Demon Slayer: Kimetsu no Yaiba Mugen Train Arc",
+  "mal_title_jp": "鬼滅の刃 無限列車編",
+  "mal_season": "fall 2021",
+  "mal_year": "2021",
   "imdb_id": "tt32820897",
-  "last_updated": "2026-05-29T01:59:18.588200+00:00"
+  "last_updated": "2026-05-29T19:38:13.569180+00:00"
 }

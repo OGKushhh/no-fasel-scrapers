@@ -49,8 +49,9 @@ ANIME_FILES = {
 
 HEADERS = {"X-MAL-CLIENT-ID": MAL_CLIENT_ID}
 
-# ── Arabic season ordinals ─────────────────────────────────────────────
+# ── Season mapping (Arabic + English ordinals) ────────────────────────
 SEASON_MAP = {
+    # Arabic
     "الأول": 1, "الاول": 1,
     "الثاني": 2, "الثانية": 2,
     "الثالث": 3, "الثالثة": 3,
@@ -64,6 +65,12 @@ SEASON_MAP = {
     "الحادي عشر": 11, "الثاني عشر": 12,
     "الثالث عشر": 13, "الرابع عشر": 14,
     "الخامس عشر": 15,
+    # English ordinals (full words)
+    "first": 1, "second": 2, "third": 3, "fourth": 4,
+    "fifth": 5, "sixth": 6, "seventh": 7, "eighth": 8,
+    "ninth": 9, "tenth": 10,
+    "eleventh": 11, "twelfth": 12, "thirteenth": 13,
+    "fourteenth": 14, "fifteenth": 15,
 }
 
 # MAL status → Arabic
@@ -105,17 +112,48 @@ def save_progress(content_id: str):
 
 # ── Title cleaning ────────────────────────────────────────────────────
 def extract_season_number(title: str) -> Optional[int]:
-    """Extract season number from Arabic season suffix."""
+    """
+    Extract season number from title.
+    Supports:
+      - Arabic: "الموسم 2", "الموسم الثاني"
+      - English: "season 2", "S2", "2nd season", "3rd season", "second season"
+    Returns None if no season info found.
+    """
+    # 1. Arabic "الموسم" followed by a digit
     m = re.search(r'الموسم\s+(\d+)', title)
     if m:
         return int(m.group(1))
+
+    # 2. Arabic ordinal word (e.g., "الموسم الثاني")
     m = re.search(r'الموسم\s+([\u0600-\u06FF\s]+?)(?:\s|$)', title)
     if m:
         word = m.group(1).strip()
         for k, v in SEASON_MAP.items():
             if k in word:
                 return v
-    return None  # no season info → assume season 1
+
+    # 3. English "2nd season", "3rd season", "4th season" (with st/nd/rd/th)
+    m = re.search(r'(?i)(\d+)(?:st|nd|rd|th)\s+season', title)
+    if m:
+        return int(m.group(1))
+
+    # 4. English "season 2"
+    m = re.search(r'(?i)season\s+(\d+)', title)
+    if m:
+        return int(m.group(1))
+
+    # 5. English "S2"
+    m = re.search(r'(?i)s(\d+)', title)
+    if m:
+        return int(m.group(1))
+
+    # 6. English full ordinal word + "season" (e.g., "second season")
+    m = re.search(r'(?i)\b(' + '|'.join(SEASON_MAP.keys()) + r')\s+season\b', title)
+    if m:
+        word = m.group(1).lower()
+        return SEASON_MAP.get(word)
+
+    return None
 
 
 def clean_title_for_search(title: str) -> str:
@@ -123,6 +161,11 @@ def clean_title_for_search(title: str) -> str:
     title = re.sub(r'^[أا]نمي\s*', '', title.strip())
     title = re.sub(r'\s*[-–]\s*الموسم.*$', '', title)
     title = re.sub(r'\s+الموسم.*$', '', title)
+    # Also remove English season suffixes (so they don't pollute search)
+    title = re.sub(r'(?i)\s+season\s+\d+', '', title)
+    title = re.sub(r'(?i)\s+s\d+', '', title)
+    title = re.sub(r'(?i)\s+\d+(?:st|nd|rd|th)\s+season', '', title)
+    title = re.sub(r'(?i)\s+\b(?:first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth)\s+season\b', '', title)
     title = re.sub(r'[\u0600-\u06FF]+', '', title)
     title = re.sub(r'[\s\-–:]+$', '', title)
     title = ' '.join(title.split())
@@ -346,7 +389,9 @@ def process_file(file_path: Path, processed: set, force: bool, ids_filter: Optio
             save_progress(progress_key)
             continue
 
-        season = extract_season_number(title) or 1
+        season = extract_season_number(title)
+        if season is None:
+            season = 1
         print(f"\n  [{content_id}] '{clean}' (season {season})")
 
         time.sleep(DELAY)

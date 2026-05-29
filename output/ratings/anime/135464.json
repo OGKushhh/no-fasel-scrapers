@@ -2,9 +2,19 @@
   "content_id": "135464",
   "title": "انمي Build Divide: Code Black",
   "year": "2021",
-  "rating": "6.4",
-  "votes": 108,
-  "source": "imdbapi",
+  "rating": "6.42",
+  "votes": 16707,
+  "source": "mal",
+  "mal_id": 48776,
+  "mal_rank": 8689,
+  "mal_popularity": 3201,
+  "mal_studios": [
+    "LIDENFILMS"
+  ],
+  "mal_title_en": "Build-Divide -#000000- Code Black",
+  "mal_title_jp": "ビルディバイド -#000000(コードブラック)-",
+  "mal_season": "fall 2021",
+  "mal_year": "2021",
   "imdb_id": "tt14489144",
-  "last_updated": "2026-05-29T01:58:50.310525+00:00"
+  "last_updated": "2026-05-29T19:37:50.450074+00:00"
 }

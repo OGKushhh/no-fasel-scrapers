@@ -2,9 +2,20 @@
   "content_id": "134997",
   "title": "انمي Sekai Saikou no Ansatsusha, Isekai Kizoku ni Tensei suru",
   "year": "2021",
-  "rating": "7.3",
-  "votes": 5563,
-  "source": "imdbapi",
+  "rating": "7.31",
+  "votes": 349389,
+  "source": "mal",
+  "mal_id": 47790,
+  "mal_rank": 3329,
+  "mal_popularity": 387,
+  "mal_studios": [
+    "SILVER LINK.",
+    "Studio Palette"
+  ],
+  "mal_title_en": "The World's Finest Assassin Gets Reincarnated in Another World as an Aristocrat",
+  "mal_title_jp": "世界最高の暗殺者、異世界貴族に転生する",
+  "mal_season": "fall 2021",
+  "mal_year": "2021",
   "imdb_id": "tt14061838",
-  "last_updated": "2026-05-29T02:00:28.762351+00:00"
+  "last_updated": "2026-05-29T19:38:58.322661+00:00"
 }

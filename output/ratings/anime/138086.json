@@ -2,9 +2,19 @@
   "content_id": "138086",
   "title": "انمي Kill la Kill",
   "year": "2013",
-  "rating": "7.8",
-  "votes": 19504,
-  "source": "imdbapi",
+  "rating": "8.03",
+  "votes": 1011319,
+  "source": "mal",
+  "mal_id": 18679,
+  "mal_rank": 717,
+  "mal_popularity": 59,
+  "mal_studios": [
+    "Trigger"
+  ],
+  "mal_title_en": "Kill la Kill",
+  "mal_title_jp": "キルラキル",
+  "mal_season": "fall 2013",
+  "mal_year": "2013",
   "imdb_id": "tt3114390",
-  "last_updated": "2026-05-29T01:56:27.915329+00:00"
+  "last_updated": "2026-05-29T19:36:39.275680+00:00"
 }

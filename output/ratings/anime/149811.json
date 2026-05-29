@@ -2,9 +2,19 @@
   "content_id": "149811",
   "title": "انمي Vampire in the Garden",
   "year": "2022",
-  "rating": "6.8",
-  "votes": 2236,
-  "source": "imdbapi",
+  "rating": "7.17",
+  "votes": 39407,
+  "source": "mal",
+  "mal_id": 39518,
+  "mal_rank": 4288,
+  "mal_popularity": 2578,
+  "mal_studios": [
+    "Wit Studio"
+  ],
+  "mal_title_en": "Vampire in the Garden",
+  "mal_title_jp": "ヴァンパイア・イン・ザ・ガーデン",
+  "mal_season": "spring 2022",
+  "mal_year": "2022",
   "imdb_id": "tt10011314",
-  "last_updated": "2026-05-29T01:43:37.177711+00:00"
+  "last_updated": "2026-05-29T19:29:31.696764+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "148001",
   "title": "انمي Summertime Render",
   "year": "2022",
-  "rating": "8.2",
-  "votes": 10619,
-  "source": "imdbapi",
+  "rating": "8.47",
+  "votes": 292868,
+  "source": "mal",
+  "mal_id": 47194,
+  "mal_rank": 181,
+  "mal_popularity": 358,
+  "mal_studios": [
+    "OLM"
+  ],
+  "mal_title_en": "Summer Time Rendering",
+  "mal_title_jp": "サマータイムレンダ",
+  "mal_season": "spring 2022",
+  "mal_year": "2022",
   "imdb_id": "tt15686254",
-  "last_updated": "2026-05-29T01:44:24.156970+00:00"
+  "last_updated": "2026-05-29T19:29:54.935477+00:00"
 }

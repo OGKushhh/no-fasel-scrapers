@@ -2,9 +2,19 @@
   "content_id": "136553",
   "title": "انمي Owari no Seraph",
   "year": "2015",
-  "rating": "7.4",
-  "votes": 9005,
-  "source": "imdbapi",
+  "rating": "7.49",
+  "votes": 787228,
+  "source": "mal",
+  "mal_id": 26243,
+  "mal_rank": 2359,
+  "mal_popularity": 103,
+  "mal_studios": [
+    "Wit Studio"
+  ],
+  "mal_title_en": "Seraph of the End: Vampire Reign",
+  "mal_title_jp": "終わりのセラフ",
+  "mal_season": "spring 2015",
+  "mal_year": "2015",
   "imdb_id": "tt4584326",
-  "last_updated": "2026-05-29T01:57:10.457831+00:00"
+  "last_updated": "2026-05-29T19:37:12.146983+00:00"
 }

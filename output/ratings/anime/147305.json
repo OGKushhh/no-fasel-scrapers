@@ -2,9 +2,19 @@
   "content_id": "147305",
   "title": "انمي Otome Game Sekai wa Mob ni Kibishii Sekai desu",
   "year": "2022",
-  "rating": "7.3",
-  "votes": 3103,
-  "source": "imdbapi",
+  "rating": "7.32",
+  "votes": 201340,
+  "source": "mal",
+  "mal_id": 50461,
+  "mal_rank": 3262,
+  "mal_popularity": 703,
+  "mal_studios": [
+    "ENGI"
+  ],
+  "mal_title_en": "Trapped in a Dating Sim: The World of Otome Games is Tough for Mobs",
+  "mal_title_jp": "乙女ゲー世界はモブに厳しい世界です",
+  "mal_season": "spring 2022",
+  "mal_year": "2022",
   "imdb_id": "tt16255458",
-  "last_updated": "2026-05-29T01:48:49.975957+00:00"
+  "last_updated": "2026-05-29T19:32:40.965117+00:00"
 }

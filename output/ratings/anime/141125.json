@@ -2,9 +2,19 @@
   "content_id": "141125",
   "title": "انمي Shikkakumon no Saikyou Kenja",
   "year": "2022",
-  "rating": "6.3",
-  "votes": 1990,
-  "source": "imdbapi",
+  "rating": "6.22",
+  "votes": 143759,
+  "source": "mal",
+  "mal_id": 47161,
+  "mal_rank": 9898,
+  "mal_popularity": 939,
+  "mal_studios": [
+    "J.C.Staff"
+  ],
+  "mal_title_en": "The Strongest Sage with the Weakest Crest",
+  "mal_title_jp": "失格紋の最強賢者",
+  "mal_season": "winter 2022",
+  "mal_year": "2022",
   "imdb_id": "tt15441424",
-  "last_updated": "2026-05-29T01:53:56.141415+00:00"
+  "last_updated": "2026-05-29T19:35:07.404187+00:00"
 }

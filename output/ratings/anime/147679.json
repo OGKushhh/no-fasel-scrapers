@@ -2,9 +2,20 @@
   "content_id": "147679",
   "title": "انمي Spy x Family",
   "year": "2022",
-  "rating": "8.2",
-  "votes": 62129,
-  "source": "imdbapi",
+  "rating": "8.42",
+  "votes": 1168106,
+  "source": "mal",
+  "mal_id": 50265,
+  "mal_rank": 215,
+  "mal_popularity": 56,
+  "mal_studios": [
+    "Wit Studio",
+    "CloverWorks"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "SPY×FAMILY",
+  "mal_season": "spring 2022",
+  "mal_year": "2022",
   "imdb_id": "tt13706018",
-  "last_updated": "2026-05-29T01:46:01.074392+00:00"
+  "last_updated": "2026-05-29T19:30:47.716062+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "147448",
   "title": "انمي Deaimon",
   "year": "2022",
-  "rating": "7.0",
-  "votes": 344,
-  "source": "imdbapi",
+  "rating": "7.55",
+  "votes": 47781,
+  "source": "mal",
+  "mal_id": 48779,
+  "mal_rank": 2043,
+  "mal_popularity": 2256,
+  "mal_studios": [
+    "Encourage Films"
+  ],
+  "mal_title_en": "Deaimon: Recipe for Happiness",
+  "mal_title_jp": "であいもん",
+  "mal_season": "spring 2022",
+  "mal_year": "2022",
   "imdb_id": "tt14489130",
-  "last_updated": "2026-05-29T01:47:00.620049+00:00"
+  "last_updated": "2026-05-29T19:31:30.577915+00:00"
 }

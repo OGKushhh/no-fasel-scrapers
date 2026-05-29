@@ -2,9 +2,19 @@
   "content_id": "147461",
   "title": "انمي RPG Fudousan",
   "year": "2022",
-  "rating": "7.0",
-  "votes": 538,
-  "source": "imdbapi",
+  "rating": "6.78",
+  "votes": 18047,
+  "source": "mal",
+  "mal_id": 48363,
+  "mal_rank": 6528,
+  "mal_popularity": 3488,
+  "mal_studios": [
+    "Doga Kobo"
+  ],
+  "mal_title_en": "RPG Real Estate",
+  "mal_title_jp": "RPG不動産",
+  "mal_season": "spring 2022",
+  "mal_year": "2022",
   "imdb_id": "tt16434950",
-  "last_updated": "2026-05-29T01:47:56.090814+00:00"
+  "last_updated": "2026-05-29T19:32:08.184989+00:00"
 }
