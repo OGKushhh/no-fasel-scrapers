@@ -48,6 +48,13 @@ SCRIPT_GROUPS = {
         "Custom order":          [PYTHON_EXE, "-u", "update_ratings.py"],
         "Specific category":     [PYTHON_EXE, "-u", "update_ratings.py"],
     },
+    "Series IMDb Match": {
+        "All series":        [PYTHON_EXE, "-u", "match_series_imdb.py"],
+        "Series only":       [PYTHON_EXE, "-u", "match_series_imdb.py", "--category", "series"],
+        "TV Shows only":     [PYTHON_EXE, "-u", "match_series_imdb.py", "--category", "tvshows"],
+        "Asian Series only": [PYTHON_EXE, "-u", "match_series_imdb.py", "--category", "asian-series"],
+        "Anime only":        [PYTHON_EXE, "-u", "match_series_imdb.py", "--category", "anime"],
+    },
     "MAL": {
         "Anime (all)":        [PYTHON_EXE, "-u", "update_mal.py"],
         "Anime only":         [PYTHON_EXE, "-u", "update_mal.py", "--category", "anime.json"],

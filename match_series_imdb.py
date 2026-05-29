@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import sys
 """
 match_series_imdb.py – For series without IMDb ID, search IMDbAPI by title and compare
 season/episode structure to find a match. Once matched, fetch rating and release date.
@@ -315,5 +316,4 @@ def main():
     print("\n✅ Done.")
 
 if __name__ == "__main__":
-    import sys
     main()
