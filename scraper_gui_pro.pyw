@@ -62,6 +62,14 @@ SCRIPT_GROUPS = {
         "Force re-process":   [PYTHON_EXE, "-u", "update_mal.py", "--force"],
         "Specific IDs":       [PYTHON_EXE, "-u", "update_mal.py"],
     },
+    "Clean & Fix": {
+        "Clean all":                  [PYTHON_EXE, "-u", "clean_metadata.py"],
+        "Clean + backfill year":      [PYTHON_EXE, "-u", "clean_metadata.py", "--backfill-year"],
+        "Clean + translate genres":   [PYTHON_EXE, "-u", "clean_metadata.py", "--translate-genres"],
+        "Backfill year from title":   [PYTHON_EXE, "-u", "clean_metadata.py", "--backfill-year"],
+        "Backfill year from ratings": [PYTHON_EXE, "-u", "clean_metadata.py", "--backfill-from-ratings"],
+        "Full clean (all steps)":     [PYTHON_EXE, "-u", "clean_metadata.py", "--backfill-year", "--backfill-from-ratings", "--translate-genres"],
+    },
     "Metadata": {
         "Runtime: all sources":       [PYTHON_EXE, "-u", "update_runtime.py", "--sources", "imdbapi,tmdb,omdb"],
         "Runtime: IMDbAPI → TMDb":    [PYTHON_EXE, "-u", "update_runtime.py", "--sources", "imdbapi,tmdb"],

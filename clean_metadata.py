@@ -28,6 +28,14 @@ FILES_TO_CLEAN = [
 # and are already populated. Do NOT include arabic-movies.json / arabic-series.json.
 FASEL_FILES = FILES_TO_CLEAN  # currently all FILES_TO_CLEAN are FaselHD
 
+# Files eligible for ratings-based year backfill
+SERIES_FILES = [
+    "series.json",
+    "tvshows.json",
+    "asian-series.json",
+    "anime.json",
+]
+
 # Year extraction bounds.
 # Lower bound: 1920 covers silent-era classics that FaselHD occasionally carries.
 # Upper bound: hard-cap at MAX_YEAR_CAP to block sci-fi plot years in titles
@@ -397,6 +405,85 @@ def clean_json_file(file_name: str, translate_missing_ar: bool = False) -> None:
         logging.info(f"No changes needed for {file_path}")
 
 
+# ─── Ratings-based year backfill ──────────────────────────────────────────────
+
+def backfill_year_from_ratings(file_name: str, ratings_dir: Path = Path("./output/ratings")) -> dict:
+    """
+    For every entry in file_name whose ReleaseDate is empty/missing,
+    look up its rating file and copy the 'year' field to ReleaseDate.
+    """
+    file_path = Path(f"./output/{file_name}")
+    if not file_path.exists():
+        logging.warning(f"{file_path} not found, skipping.")
+        return {}
+
+    category_stem = file_name.replace(".json", "")
+
+    with open(file_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    total       = len(data)
+    backfilled  = 0
+    skipped     = 0
+    no_rating   = 0
+
+    print(f"
+{'='*60}")
+    print(f"Ratings year backfill: {file_name}")
+    print(f"{'='*60}")
+
+    for content_id, item in data.items():
+        if not isinstance(item, dict):
+            continue
+        if not is_release_date_empty(item.get("ReleaseDate")):
+            skipped += 1
+            continue
+
+        # find rating file — anime-movies not included but handle gracefully
+        rating_file = ratings_dir / category_stem / f"{content_id}.json"
+        if not rating_file.exists():
+            no_rating += 1
+            continue
+
+        try:
+            with open(rating_file, "r", encoding="utf-8") as rf:
+                rating_data = json.load(rf)
+        except Exception:
+            no_rating += 1
+            continue
+
+        year = rating_data.get("year") or rating_data.get("mal_year")
+        if not year:
+            no_rating += 1
+            continue
+
+        # validate year
+        try:
+            y = int(str(year)[:4])
+            if not (1900 <= y <= datetime.now().year + 2):
+                no_rating += 1
+                continue
+            year = str(y)
+        except (ValueError, TypeError):
+            no_rating += 1
+            continue
+
+        item["ReleaseDate"] = year
+        backfilled += 1
+        print(f"  [{content_id}] set ReleaseDate = {year}")
+
+    if backfilled > 0:
+        backup_file(str(file_path))
+        with open(file_path, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=4, ensure_ascii=False)
+
+    print(f"  Total: {total} | Already had year: {skipped} | Backfilled: {backfilled} | No rating: {no_rating}")
+    if backfilled > 0:
+        print(f"  ✅ Saved {file_path}")
+
+    return {"file": file_name, "total": total, "skipped": skipped, "backfilled": backfilled, "no_rating": no_rating}
+
+
 # ─── Entry points ─────────────────────────────────────────────────────────────
 
 def main():
@@ -427,6 +514,11 @@ def main():
         default=30,
         metavar="N",
         help="Max number of sample changes to print in dry-run mode (default: 30).",
+    )
+    parser.add_argument(
+        "--backfill-from-ratings",
+        action="store_true",
+        help="For series/anime with empty ReleaseDate, copy year from their ratings file.",
     )
     parser.add_argument(
         "--translate-genres",
@@ -468,6 +560,16 @@ def main():
                 print(f"  {'Would backfill' if args.dry_run else 'Backfilled'} : {totals['backfilled']}")
                 print(f"  No year found      : {totals['no_year_found']}")
                 print(f"{'='*60}\n")
+
+    # ── Step 3: year backfill from ratings files ──────────────────────────────
+    if args.backfill_from_ratings:
+        ratings_dir = Path("./output/ratings")
+        series_targets = [f for f in target_files if f in SERIES_FILES]
+        if not series_targets:
+            print("No series files in target list — nothing to backfill from ratings.")
+        else:
+            for file_name in series_targets:
+                backfill_year_from_ratings(file_name, ratings_dir)
 
     logging.info("Metadata cleaning complete.")
 
