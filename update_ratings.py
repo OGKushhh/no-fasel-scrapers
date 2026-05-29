@@ -19,7 +19,7 @@ from datetime import datetime, timezone
 sys.path.insert(0, str(Path(__file__).parent))
 from Common import (
     get_tmdb_details, get_imdb_details, search_imdbapi_dev, get_tmdb_imdb_id,
-    fetch_imdbapi_by_id
+    fetch_imdbapi_by_id, fetch_start_year
 )
 
 OUTPUT_DIR = Path("./output")
@@ -330,10 +330,16 @@ def process_file(file_path: Path, content_type: str, processed_set: Set[Tuple[st
             print(f"  FAILED {content_id}: no rating from any source")
             continue
 
+        # For series/tv prefer the real first-aired year from IMDb over scraped title year
+        final_year = year
+        if imdb_id and imdb_id.startswith("tt") and content_type == "tv":
+            start_year = fetch_start_year(imdb_id)
+            if start_year:
+                final_year = start_year
         rating_data = {
             "content_id": content_id,
             "title": title,
-            "year": year,
+            "year": final_year,
             "rating": rating,
             "votes": votes,
             "source": source_used,

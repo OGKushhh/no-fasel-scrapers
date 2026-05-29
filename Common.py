@@ -1222,6 +1222,26 @@ def fetch_imdbapi_by_id(imdb_id: str) -> tuple:
         print(f"  [IMDbAPI] Direct fetch error for {imdb_id}: {e}")
     return (None, 0)
 
+def fetch_start_year(imdb_id: str) -> str | None:
+    """
+    Fetch the first-aired / release year for a title from IMDbAPI.
+    Returns a 4-digit string e.g. "2021", or None if unavailable.
+    """
+    if not imdb_id or not imdb_id.startswith("tt"):
+        return None
+    url = f"{IMDBAPI_BASE_URL}/titles/{imdb_id}"
+    try:
+        resp = requests.get(url, timeout=10)
+        if resp.status_code == 200:
+            data = resp.json()
+            year = data.get("startYear") or data.get("releaseYear") or data.get("year")
+            if year:
+                return str(year)[:4]
+    except Exception as e:
+        print(f"  [IMDbAPI] fetch_start_year error for {imdb_id}: {e}")
+    return None
+
+
 # ======================================================================
 #  AKWAM SPECIFIC HELPERS (clean & simple)
 # ======================================================================
