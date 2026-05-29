@@ -223,6 +223,7 @@ def process_file(file_path: Path, content_type: str, processed_set: Set[Tuple[st
 
         # Load existing rating file (if any) – also check fallback location for movies
         existing_imdb_id = None
+        existing_mal_id = None
         existing_source = None
         existing_rating = None
         if rating_file.exists():
@@ -232,6 +233,7 @@ def process_file(file_path: Path, content_type: str, processed_set: Set[Tuple[st
                 existing_rating = existing.get("rating")
                 existing_source = existing.get("source")
                 existing_imdb_id = existing.get("imdb_id")
+                existing_mal_id = existing.get("mal_id")
             except:
                 pass
         elif category_stem in ["movies", "dubbed-movies", "hindi", "asian-movies", "anime-movies"]:
@@ -245,8 +247,15 @@ def process_file(file_path: Path, content_type: str, processed_set: Set[Tuple[st
                     existing_rating = existing.get("rating")
                     existing_source = existing.get("source")
                     existing_imdb_id = existing.get("imdb_id")
+                    existing_mal_id = existing.get("mal_id")
                 except:
                     pass
+
+        # If MAL already handled this item, skip entirely — MAL takes priority
+        if existing_mal_id:
+            print(f"  SKIP {content_id}: has mal_id, MAL takes priority")
+            save_progress(file_path.name, content_id)
+            continue
 
         # If we already have a rating and it's from IMDbAPI, skip
         if existing_rating is not None and existing_rating not in (None, "N/A") and existing_source == "imdbapi":

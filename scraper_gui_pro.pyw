@@ -48,6 +48,13 @@ SCRIPT_GROUPS = {
         "Custom order":          [PYTHON_EXE, "-u", "update_ratings.py"],
         "Specific category":     [PYTHON_EXE, "-u", "update_ratings.py"],
     },
+    "MAL": {
+        "Anime (all)":        [PYTHON_EXE, "-u", "update_mal.py"],
+        "Anime only":         [PYTHON_EXE, "-u", "update_mal.py", "--category", "anime.json"],
+        "Anime Movies only":  [PYTHON_EXE, "-u", "update_mal.py", "--category", "anime-movies.json"],
+        "Force re-process":   [PYTHON_EXE, "-u", "update_mal.py", "--force"],
+        "Specific IDs":       [PYTHON_EXE, "-u", "update_mal.py"],
+    },
     "Metadata": {
         "Runtime: all sources":       [PYTHON_EXE, "-u", "update_runtime.py", "--sources", "imdbapi,tmdb,omdb"],
         "Runtime: IMDbAPI → TMDb":    [PYTHON_EXE, "-u", "update_runtime.py", "--sources", "imdbapi,tmdb"],
@@ -471,6 +478,13 @@ class ScraperGUI:
         )
         self._rating_by_id_btn.pack(fill=tk.X, padx=4, pady=2)
 
+        self._mal_by_id_btn = PillButton(
+            row, text="🎌  Get MAL by ID",
+            command=self.open_mal_by_id,
+            font=("Segoe UI", 11), padx=10, pady=5,
+        )
+        self._mal_by_id_btn.pack(fill=tk.X, padx=4, pady=2)
+
         self._runtime_by_id_btn = PillButton(
             row, text="⏱  Get Runtime by ID",
             command=self.open_runtime_by_id,
@@ -587,7 +601,7 @@ class ScraperGUI:
         self._stop_all_btn._set_color(T["stop"])
 
         idle_bg = T["hover"]
-        for btn in [self._imdb_btn, self._rating_by_id_btn, self._runtime_by_id_btn]:
+        for btn in [self._imdb_btn, self._rating_by_id_btn, self._runtime_by_id_btn, self._mal_by_id_btn]:
             btn._bg    = idle_bg
             btn._hover = T["accent"]
             btn._active= T["accent_dim"]
@@ -633,7 +647,12 @@ class ScraperGUI:
             messagebox.showwarning("Already running", f'"{name}" is already running.')
             return
         extra = []
-        if name == "Update Specific":
+        if name == "Specific IDs":
+            ids = simpledialog.askstring("Content IDs", "Enter IDs (space-separated):")
+            if not ids:
+                return
+            extra = ["--ids"] + ids.split()
+        elif name == "Update Specific":
             ids = simpledialog.askstring("Series IDs", "Enter IDs (space-separated):")
             if not ids:
                 return
@@ -1111,6 +1130,23 @@ class ScraperGUI:
         if proc:
             key = f"Runtime IDs {category} {ids[0]}"
             self.processes[key] = proc
+            self.output_tabs[key] = text_widget
+
+
+    def open_mal_by_id(self):
+        ids_str = simpledialog.askstring("Content IDs", "Enter one or more anime IDs (space-separated):")
+        if not ids_str:
+            return
+        ids = ids_str.split()
+        category = simpledialog.askstring(
+            "Category",
+            "Enter category file (anime.json or anime-movies.json):",
+        ) or "anime.json"
+        cmd = [PYTHON_EXE, "-u", "update_mal.py", "--category", category, "--ids"] + ids
+        proc, text_widget = self._run_subprocess(cmd, f"MAL for IDs: {', '.join(ids)}")
+        if proc:
+            key = f"MAL IDs {ids[0]}"
+            self.processes[key]   = proc
             self.output_tabs[key] = text_widget
 
 
