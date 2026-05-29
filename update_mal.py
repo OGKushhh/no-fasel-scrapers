@@ -220,16 +220,42 @@ def title_similarity(a: str, b: str) -> float:
     return len(a_tokens & b_tokens) / max(len(a_tokens), len(b_tokens))
 
 
+def find_first_season(entry: dict) -> dict:
+    """
+    Follow prequels until the first season (no prequel). Returns the first season entry.
+    If traversal fails, returns the original entry.
+    """
+    current = entry
+    while True:
+        prequels = [
+            r for r in current.get("related_anime", [])
+            if r.get("relation_type") == "prequel"
+        ]
+        if not prequels:
+            return current
+        prev_id = prequels[0]["node"]["id"]
+        time.sleep(DELAY)
+        current = mal_get(prev_id)
+        if not current:
+            return entry  # fallback to original
+
+
 def find_season_in_chain(base_result: dict, target_season: int) -> Optional[dict]:
     """
-    Follow sequel chain from base_result to find the entry for target_season.
-    Season 1 = base_result itself.
+    Go back to the first season, then move forward to the target season.
+    Returns the entry for the target season, or None if traversal fails.
     """
     if target_season <= 1:
-        return base_result
+        # Even for season 1, we return the first season (which may be the base or earlier)
+        first = find_first_season(base_result)
+        return first
 
-    current = base_result
-    for _ in range(target_season - 1):
+    # Find the first season in the chain
+    first = find_first_season(base_result)
+
+    # Now move forward from the first season
+    current = first
+    for step in range(1, target_season):
         sequels = [
             r for r in current.get("related_anime", [])
             if r.get("relation_type") == "sequel"
@@ -277,18 +303,13 @@ def find_mal_match(clean_title: str, season: int) -> Optional[dict]:
 
     print(f"  [MAL] Matched '{best.get('title')}' (sim={best_score:.2f})")
 
-    # If season 1 or no season info, return this result directly
-    if season <= 1:
-        time.sleep(DELAY)
-        full = mal_get(best["id"])
-        return full or best
-
-    # Follow sequel chain for season 2+
+    # Fetch full details for the matched entry
     time.sleep(DELAY)
     full_base = mal_get(best["id"])
     if not full_base:
         return None
 
+    # Use the chain to get the correct seasonal entry
     seasonal = find_season_in_chain(full_base, season)
     if seasonal:
         print(f"  [MAL] Found season {season} entry: '{seasonal.get('title')}'")

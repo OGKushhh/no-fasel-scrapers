@@ -479,6 +479,7 @@ class ScraperGUI:
         row = tk.Frame(self.scroll_frame)
         row.pack(fill=tk.X, padx=8, pady=(4, 16))
 
+        # Set IMDb ID
         self._imdb_btn = PillButton(
             row, text="✏  Set IMDb ID",
             command=self.open_imdb_dialog,
@@ -486,6 +487,15 @@ class ScraperGUI:
         )
         self._imdb_btn.pack(fill=tk.X, padx=4, pady=2)
 
+        # NEW: Set MAL ID (manual)
+        self._set_mal_btn = PillButton(
+            row, text="🎌  Set MAL ID",
+            command=self.open_mal_setter_dialog,
+            font=("Segoe UI", 11), padx=10, pady=5,
+        )
+        self._set_mal_btn.pack(fill=tk.X, padx=4, pady=2)
+
+        # Get Rating by ID (uses update_ratings.py)
         self._rating_by_id_btn = PillButton(
             row, text="⭐  Get Rating by ID",
             command=self.open_rating_by_id,
@@ -493,6 +503,7 @@ class ScraperGUI:
         )
         self._rating_by_id_btn.pack(fill=tk.X, padx=4, pady=2)
 
+        # Get MAL by ID (uses update_mal.py)
         self._mal_by_id_btn = PillButton(
             row, text="🎌  Get MAL by ID",
             command=self.open_mal_by_id,
@@ -500,6 +511,7 @@ class ScraperGUI:
         )
         self._mal_by_id_btn.pack(fill=tk.X, padx=4, pady=2)
 
+        # Get Runtime by ID
         self._runtime_by_id_btn = PillButton(
             row, text="⏱  Get Runtime by ID",
             command=self.open_runtime_by_id,
@@ -616,7 +628,9 @@ class ScraperGUI:
         self._stop_all_btn._set_color(T["stop"])
 
         idle_bg = T["hover"]
-        for btn in [self._imdb_btn, self._rating_by_id_btn, self._runtime_by_id_btn, self._mal_by_id_btn]:
+        # Apply theme to all manual buttons
+        for btn in [self._imdb_btn, self._set_mal_btn, self._rating_by_id_btn,
+                    self._mal_by_id_btn, self._runtime_by_id_btn]:
             btn._bg    = idle_bg
             btn._hover = T["accent"]
             btn._active= T["accent_dim"]
@@ -1103,6 +1117,39 @@ class ScraperGUI:
             self.output_tabs[key] = text_widget
 
     # -------------------------------------------------------------------------
+    # NEW: MANUAL MAL ID SETTER
+    # -------------------------------------------------------------------------
+    def open_mal_setter_dialog(self):
+        categories = [
+            "anime.json", "anime-movies.json"
+        ]
+        category = simpledialog.askstring(
+            "Category",
+            "Enter category file name:\n" + "\n".join(categories),
+            initialvalue="anime.json"
+        )
+        if not category:
+            return
+
+        content_id = simpledialog.askstring("Content ID", "Enter content ID (numeric):")
+        if not content_id or not content_id.isdigit():
+            messagebox.showerror("Error", "Invalid content ID. Must be numeric.")
+            return
+
+        mal_id = simpledialog.askstring("MAL ID", "Enter MyAnimeList ID (numeric, e.g., 16498):")
+        if not mal_id or not mal_id.isdigit():
+            messagebox.showerror("Error", "Invalid MAL ID. Must be a positive integer.")
+            return
+
+        cmd = [PYTHON_EXE, "-u", "set_mal_id.py",
+               "--category", category, "--id", content_id, "--mal_id", mal_id]
+        proc, text_widget = self._run_subprocess(cmd, f"Set MAL ID: {content_id}")
+        if proc:
+            key = f"Set MAL ID {content_id}"
+            self.processes[key]   = proc
+            self.output_tabs[key] = text_widget
+
+    # -------------------------------------------------------------------------
     # RATING / RUNTIME BY ID
     # -------------------------------------------------------------------------
     def open_rating_by_id(self):
@@ -1154,7 +1201,6 @@ class ScraperGUI:
             key = f"Runtime IDs {category} {ids[0]}"
             self.processes[key] = proc
             self.output_tabs[key] = text_widget
-
 
     def open_mal_by_id(self):
         ids_str = simpledialog.askstring("Content IDs", "Enter one or more anime IDs (space-separated):")
