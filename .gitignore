@@ -1,4 +1,6 @@
 # Output folder – NOW TRACKED FULLY (removed ignore lines)
+# Only sorted folder
+output/sorted/
 
 # Ignore Hugging Face Space clone
 AbdoBest/
