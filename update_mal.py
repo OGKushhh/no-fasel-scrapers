@@ -106,11 +106,9 @@ def save_progress(content_id: str):
 # ── Title cleaning ────────────────────────────────────────────────────
 def extract_season_number(title: str) -> Optional[int]:
     """Extract season number from Arabic season suffix."""
-    # Numeric: الموسم 2
     m = re.search(r'الموسم\s+(\d+)', title)
     if m:
         return int(m.group(1))
-    # Arabic ordinal: الموسم الثاني
     m = re.search(r'الموسم\s+([\u0600-\u06FF\s]+?)(?:\s|$)', title)
     if m:
         word = m.group(1).strip()
@@ -122,14 +120,10 @@ def extract_season_number(title: str) -> Optional[int]:
 
 def clean_title_for_search(title: str) -> str:
     """Strip Arabic anime prefix and season suffix, keep Latin title."""
-    # Remove Arabic anime prefixes
     title = re.sub(r'^[أا]نمي\s*', '', title.strip())
-    # Remove season suffix (الموسم ...)
     title = re.sub(r'\s*[-–]\s*الموسم.*$', '', title)
     title = re.sub(r'\s+الموسم.*$', '', title)
-    # Remove remaining Arabic words (keep Latin, numbers, : - . ')
     title = re.sub(r'[\u0600-\u06FF]+', '', title)
-    # Clean up punctuation artifacts
     title = re.sub(r'[\s\-–:]+$', '', title)
     title = ' '.join(title.split())
     return title.strip()
@@ -242,7 +236,6 @@ def find_mal_match(clean_title: str, season: int) -> Optional[dict]:
 
     # If season 1 or no season info, return this result directly
     if season <= 1:
-        # Fetch full entry for complete data
         time.sleep(DELAY)
         full = mal_get(best["id"])
         return full or best
@@ -390,7 +383,7 @@ def process_file(file_path: Path, processed: set, force: bool, ids_filter: Optio
             item["Status"] = STATUS_AR[mal_status]
 
         # Genres — MAL genres are clean English
-        mal_genres = [g["name"] for g in mal_entry.get("genres", [])]
+        mal_genres = [g["name"] for g in mal_entry.get("genres", []) if "name" in g]
         if mal_genres:
             item["Genres"] = mal_genres
             item["GenresAr"] = [GENRE_AR.get(g, g) for g in mal_genres]
@@ -402,7 +395,13 @@ def process_file(file_path: Path, processed: set, force: bool, ids_filter: Optio
         mal_votes = mal_entry.get("num_scoring_users", 0)
         mal_id    = mal_entry.get("id")
         alt       = mal_entry.get("alternative_titles", {})
-        studios   = [s["node"]["name"] for s in mal_entry.get("studios", [])]
+        # SAFETY CHECK: studios may be missing or not a list of dicts
+        studios = []
+        for s in mal_entry.get("studios", []):
+            if isinstance(s, dict) and "name" in s:
+                studios.append(s["name"])
+            elif isinstance(s, str):
+                studios.append(s)
         start_season = mal_entry.get("start_season", {})
 
         rating_data = {
