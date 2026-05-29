@@ -2,9 +2,19 @@
   "content_id": "282020",
   "title": "انمي Kimi to Koete Koi ni Naru",
   "year": "2025",
-  "rating": "6.5",
-  "votes": 570,
-  "source": "imdbapi",
+  "rating": "7.14",
+  "votes": 13897,
+  "source": "mal",
+  "mal_id": 60765,
+  "mal_rank": 4444,
+  "mal_popularity": 4089,
+  "mal_studios": [
+    "Millepensee"
+  ],
+  "mal_title_en": "With You, Our Love Will Make It Through",
+  "mal_title_jp": "キミと越えて恋になる",
+  "mal_season": "fall 2025",
+  "mal_year": "2025",
   "imdb_id": "tt36221414",
-  "last_updated": "2026-05-28T23:36:57.835839+00:00"
+  "last_updated": "2026-05-29T14:38:15.722414+00:00"
 }

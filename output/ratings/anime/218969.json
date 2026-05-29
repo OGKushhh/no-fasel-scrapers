@@ -2,9 +2,20 @@
   "content_id": "218969",
   "title": "انمي Jidou Hanbaiki ni Umarekawatta Ore wa Meikyuu wo Samayou",
   "year": "2023",
-  "rating": "6.2",
-  "votes": 1426,
-  "source": "imdbapi",
+  "rating": "6.43",
+  "votes": 91192,
+  "source": "mal",
+  "mal_id": 52619,
+  "mal_rank": 8650,
+  "mal_popularity": 1500,
+  "mal_studios": [
+    "Studio Gokumi",
+    "AXsiZ"
+  ],
+  "mal_title_en": "Reborn as a Vending Machine, I Now Wander the Dungeon",
+  "mal_title_jp": "自動販売機に生まれ変わった俺は迷宮を彷徨う",
+  "mal_season": "summer 2023",
+  "mal_year": "2023",
   "imdb_id": "tt28100731",
-  "last_updated": "2026-05-29T01:09:16.559400+00:00"
+  "last_updated": "2026-05-29T19:10:02.933290+00:00"
 }

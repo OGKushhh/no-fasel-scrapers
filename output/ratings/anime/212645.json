@@ -2,9 +2,19 @@
   "content_id": "212645",
   "title": "انمي My Home Hero",
   "year": "2023",
-  "rating": "7.1",
-  "votes": 1041,
-  "source": "imdbapi",
+  "rating": "7.11",
+  "votes": 54737,
+  "source": "mal",
+  "mal_id": 52092,
+  "mal_rank": 4645,
+  "mal_popularity": 1804,
+  "mal_studios": [
+    "Tezuka Productions"
+  ],
+  "mal_title_en": "My Home Hero",
+  "mal_title_jp": "マイホームヒーロー",
+  "mal_season": "spring 2023",
+  "mal_year": "2023",
   "imdb_id": "tt22410622",
-  "last_updated": "2026-05-29T01:19:41.070622+00:00"
+  "last_updated": "2026-05-29T19:15:24.453100+00:00"
 }

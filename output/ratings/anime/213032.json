@@ -2,9 +2,19 @@
   "content_id": "213032",
   "title": "انمي Jijou wo Shiranai Tenkousei ga Guigui Kuru.",
   "year": "2023",
-  "rating": "7.3",
-  "votes": 490,
-  "source": "imdbapi",
+  "rating": "7.52",
+  "votes": 35720,
+  "source": "mal",
+  "mal_id": 53621,
+  "mal_rank": 2193,
+  "mal_popularity": 2744,
+  "mal_studios": [
+    "Studio Signpost"
+  ],
+  "mal_title_en": "My Clueless First Friend",
+  "mal_title_jp": "事情を知らない転校生がグイグイくる。",
+  "mal_season": "spring 2023",
+  "mal_year": "2023",
   "imdb_id": "tt23711384",
-  "last_updated": "2026-05-29T01:16:26.455739+00:00"
+  "last_updated": "2026-05-29T19:13:36.214888+00:00"
 }

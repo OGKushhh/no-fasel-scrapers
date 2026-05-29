@@ -2,9 +2,19 @@
   "content_id": "289554",
   "title": "انمي Darwin Jihen",
   "year": "2026",
-  "rating": "7.0",
-  "votes": 747,
-  "source": "imdbapi",
+  "rating": "7.06",
+  "votes": 14676,
+  "source": "mal",
+  "mal_id": 58886,
+  "mal_rank": 4904,
+  "mal_popularity": 3780,
+  "mal_studios": [
+    "Bellnox Films"
+  ],
+  "mal_title_en": "The Darwin Incident",
+  "mal_title_jp": "ダーウィン事変",
+  "mal_season": "winter 2026",
+  "mal_year": "2026",
   "imdb_id": "tt38980285",
-  "last_updated": "2026-05-28T23:29:33.721512+00:00"
+  "last_updated": "2026-05-29T14:34:05.826174+00:00"
 }

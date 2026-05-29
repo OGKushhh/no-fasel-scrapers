@@ -2,9 +2,19 @@
   "content_id": "188807",
   "title": "انمي 4-nin wa Sorezore Uso wo Tsuku",
   "year": "2022",
-  "rating": "6.7",
-  "votes": 110,
-  "source": "imdbapi",
+  "rating": "7.17",
+  "votes": 16858,
+  "source": "mal",
+  "mal_id": 51464,
+  "mal_rank": 4220,
+  "mal_popularity": 3938,
+  "mal_studios": [
+    "Studio Flad"
+  ],
+  "mal_title_en": "The Little Lies We All Tell",
+  "mal_title_jp": "４人はそれぞれウソをつく",
+  "mal_season": "fall 2022",
+  "mal_year": "2022",
   "imdb_id": "tt21345894",
-  "last_updated": "2026-05-29T01:31:17.402139+00:00"
+  "last_updated": "2026-05-29T19:21:27.453050+00:00"
 }

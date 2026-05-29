@@ -2,9 +2,19 @@
   "content_id": "274649",
   "title": "انمي Turkey!",
   "year": "2025",
-  "rating": "5.9",
-  "votes": 1968,
-  "source": "imdbapi",
+  "rating": "6.67",
+  "votes": 7081,
+  "source": "mal",
+  "mal_id": 54028,
+  "mal_rank": 7242,
+  "mal_popularity": 5352,
+  "mal_studios": [
+    "Bakken Record"
+  ],
+  "mal_title_en": "Turkey! Time to Strike",
+  "mal_title_jp": "Turkey!",
+  "mal_season": "summer 2025",
+  "mal_year": "2025",
   "imdb_id": "tt2575740",
-  "last_updated": "2026-05-28T23:51:19.382413+00:00"
+  "last_updated": "2026-05-29T14:46:53.367304+00:00"
 }

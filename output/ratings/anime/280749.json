@@ -2,9 +2,19 @@
   "content_id": "280749",
   "title": "انمي Bukiyou na Senpai",
   "year": "2025",
-  "rating": "6.7",
-  "votes": 433,
-  "source": "imdbapi",
+  "rating": "7.07",
+  "votes": 26334,
+  "source": "mal",
+  "mal_id": 60531,
+  "mal_rank": 4841,
+  "mal_popularity": 2916,
+  "mal_studios": [
+    "Studio Elle"
+  ],
+  "mal_title_en": "My Awkward Senpai",
+  "mal_title_jp": "不器用な先輩。",
+  "mal_season": "fall 2025",
+  "mal_year": "2025",
   "imdb_id": "tt37679127",
-  "last_updated": "2026-05-28T23:43:40.360428+00:00"
+  "last_updated": "2026-05-29T14:42:12.503295+00:00"
 }

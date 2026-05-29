@@ -2,9 +2,19 @@
   "content_id": "268386",
   "title": "انمي ?Saikyou no Ousama, Nidome no Jinsei wa Nani wo Suru",
   "year": "2025",
-  "rating": "5.8",
-  "votes": 3678,
-  "source": "imdbapi",
+  "rating": "6.19",
+  "votes": 89759,
+  "source": "mal",
+  "mal_id": 60146,
+  "mal_rank": 10044,
+  "mal_popularity": 1486,
+  "mal_studios": [
+    "Studio A-CAT"
+  ],
+  "mal_title_en": "The Beginning After the End",
+  "mal_title_jp": "最強の王様、二度目の人生は何をする?",
+  "mal_season": "spring 2025",
+  "mal_year": "2025",
   "imdb_id": "tt34119820",
-  "last_updated": "2026-05-29T00:06:47.850340+00:00"
+  "last_updated": "2026-05-29T14:56:15.090215+00:00"
 }

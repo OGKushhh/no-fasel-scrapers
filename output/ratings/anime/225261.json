@@ -2,9 +2,20 @@
   "content_id": "225261",
   "title": "انمي Saihate no Paladin: Tetsusabi no Yama no Ou",
   "year": "2023",
-  "rating": "6.8",
-  "votes": 2039,
-  "source": "imdbapi",
+  "rating": "7.44",
+  "votes": 51845,
+  "source": "mal",
+  "mal_id": 50664,
+  "mal_rank": 2602,
+  "mal_popularity": 1810,
+  "mal_studios": [
+    "OLM",
+    "Sunrise Beyond"
+  ],
+  "mal_title_en": "The Faraway Paladin: The Lord of the Rust Mountains",
+  "mal_title_jp": "最果てのパラディン 鉄錆の山の王",
+  "mal_season": "fall 2023",
+  "mal_year": "2023",
   "imdb_id": "tt14476244",
-  "last_updated": "2026-05-29T00:55:08.966515+00:00"
+  "last_updated": "2026-05-29T19:03:27.792784+00:00"
 }

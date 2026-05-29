@@ -2,9 +2,19 @@
   "content_id": "234983",
   "title": "انمي Metallic Rouge",
   "year": "2024",
-  "rating": "5.9",
-  "votes": 665,
-  "source": "imdbapi",
+  "rating": "6.22",
+  "votes": 35236,
+  "source": "mal",
+  "mal_id": 54794,
+  "mal_rank": 9886,
+  "mal_popularity": 2158,
+  "mal_studios": [
+    "Bones"
+  ],
+  "mal_title_en": "Metallic Rouge",
+  "mal_title_jp": "メタリックルージュ",
+  "mal_season": "winter 2024",
+  "mal_year": "2024",
   "imdb_id": "tt29510641",
-  "last_updated": "2026-05-29T00:45:25.804895+00:00"
+  "last_updated": "2026-05-29T18:58:14.117607+00:00"
 }

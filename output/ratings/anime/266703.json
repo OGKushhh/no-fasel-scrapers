@@ -2,9 +2,19 @@
   "content_id": "266703",
   "title": "انمي Goukon ni Ittara Onna ga Inakatta Hanashi",
   "year": "2024",
-  "rating": "7.0",
-  "votes": 331,
-  "source": "imdbapi",
+  "rating": "7.41",
+  "votes": 28638,
+  "source": "mal",
+  "mal_id": 56843,
+  "mal_rank": 2730,
+  "mal_popularity": 2915,
+  "mal_studios": [
+    "Ashi Productions"
+  ],
+  "mal_title_en": "How I Attended an All-Guy's Mixer",
+  "mal_title_jp": "合コンに行ったら女がいなかった話",
+  "mal_season": "fall 2024",
+  "mal_year": "2024",
   "imdb_id": "tt32832421",
-  "last_updated": "2026-05-29T00:09:26.568715+00:00"
+  "last_updated": "2026-05-29T14:57:18.119452+00:00"
 }

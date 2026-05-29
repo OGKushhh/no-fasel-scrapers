@@ -2,9 +2,19 @@
   "content_id": "202237",
   "title": "انمي Buddy Daddies",
   "year": "2023",
-  "rating": "8.0",
-  "votes": 3937,
-  "source": "imdbapi",
+  "rating": "6.82",
+  "votes": 5084,
+  "source": "mal",
+  "mal_id": 54656,
+  "mal_rank": 6245,
+  "mal_popularity": 6758,
+  "mal_studios": [
+    "P.A. Works"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "Buddy Daddies Intermission: Cherry-Pick",
+  "mal_season": "winter 2023",
+  "mal_year": "2023",
   "imdb_id": "tt22986710",
-  "last_updated": "2026-05-29T01:27:42.997421+00:00"
+  "last_updated": "2026-05-29T19:19:28.616567+00:00"
 }

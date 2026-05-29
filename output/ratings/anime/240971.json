@@ -2,9 +2,21 @@
   "content_id": "240971",
   "title": "انمي Sand Land: The Series",
   "year": "2024",
-  "rating": "7.6",
-  "votes": 1142,
-  "source": "imdbapi",
+  "rating": "7.51",
+  "votes": 8085,
+  "source": "mal",
+  "mal_id": 57160,
+  "mal_rank": 2261,
+  "mal_popularity": 5366,
+  "mal_studios": [
+    "Sunrise",
+    "Anima",
+    "Kamikaze Douga"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "SAND LAND: THE SERIES",
+  "mal_season": "winter 2024",
+  "mal_year": "2024",
   "imdb_id": "tt29958256",
-  "last_updated": "2026-05-29T00:43:35.797261+00:00"
+  "last_updated": "2026-05-29T18:56:55.353162+00:00"
 }

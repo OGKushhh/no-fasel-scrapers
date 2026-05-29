@@ -2,9 +2,19 @@
   "content_id": "225266",
   "title": "انمي Kanojo mo Kanojo Season 2",
   "year": "2023",
-  "rating": "6.5",
-  "votes": 982,
-  "source": "imdbapi",
+  "rating": "7.01",
+  "votes": 57559,
+  "source": "mal",
+  "mal_id": 53040,
+  "mal_rank": 5193,
+  "mal_popularity": 2018,
+  "mal_studios": [
+    "SynergySP"
+  ],
+  "mal_title_en": "Girlfriend, Girlfriend Season 2",
+  "mal_title_jp": "カノジョも彼女 Season 2",
+  "mal_season": "fall 2023",
+  "mal_year": "2023",
   "imdb_id": "tt6493644",
-  "last_updated": "2026-05-29T00:55:02.013788+00:00"
+  "last_updated": "2026-05-29T19:03:22.591229+00:00"
 }

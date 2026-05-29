@@ -2,9 +2,19 @@
   "content_id": "261357",
   "title": "انمي Rinkai!",
   "year": "2024",
-  "rating": "4.3",
-  "votes": 33,
-  "source": "imdbapi",
+  "rating": "5.77",
+  "votes": 2383,
+  "source": "mal",
+  "mal_id": 54859,
+  "mal_rank": 12185,
+  "mal_popularity": 7294,
+  "mal_studios": [
+    "TMS Entertainment"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "リンカイ!",
+  "mal_season": "spring 2024",
+  "mal_year": "2024",
   "imdb_id": "tt31957487",
-  "last_updated": "2026-05-29T00:15:22.402100+00:00"
+  "last_updated": "2026-05-29T15:00:35.409720+00:00"
 }

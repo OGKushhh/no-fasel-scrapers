@@ -2,9 +2,19 @@
   "content_id": "280100",
   "title": "انمي Yami Shibai 7",
   "year": "2019",
-  "rating": "7.0",
-  "votes": 1100,
-  "source": "imdbapi",
+  "rating": "6.05",
+  "votes": 10022,
+  "source": "mal",
+  "mal_id": 39836,
+  "mal_rank": 10825,
+  "mal_popularity": 5248,
+  "mal_studios": [
+    "ILCA"
+  ],
+  "mal_title_en": "Theatre of Darkness: Yamishibai 7",
+  "mal_title_jp": "闇芝居 7期",
+  "mal_season": "summer 2019",
+  "mal_year": "2019",
   "imdb_id": "tt3111906",
-  "last_updated": "2026-05-28T23:46:10.275098+00:00"
+  "last_updated": "2026-05-29T14:43:35.573925+00:00"
 }

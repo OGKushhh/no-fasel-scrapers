@@ -2,9 +2,19 @@
   "content_id": "281057",
   "title": "انمي SI-VIS: The Sound of Heroes",
   "year": "2025",
-  "rating": "7.3",
-  "votes": 86,
-  "source": "imdbapi",
+  "rating": "6.36",
+  "votes": 2209,
+  "source": "mal",
+  "mal_id": 62126,
+  "mal_rank": 9098,
+  "mal_popularity": 7365,
+  "mal_studios": [
+    "Studio VOLN"
+  ],
+  "mal_title_en": "SI-VIS: The Sound of Heroes",
+  "mal_title_jp": "SI-VIS: The Sound of Heroes",
+  "mal_season": "fall 2025",
+  "mal_year": "2025",
   "imdb_id": "tt38037470",
-  "last_updated": "2026-05-28T23:40:52.038345+00:00"
+  "last_updated": "2026-05-29T14:40:48.310086+00:00"
 }

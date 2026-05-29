@@ -2,9 +2,19 @@
   "content_id": "268814",
   "title": "انمي Zatsu Tabi: That’s Journey",
   "year": "2025",
-  "rating": "6.5",
-  "votes": 186,
-  "source": "imdbapi",
+  "rating": "6.94",
+  "votes": 13103,
+  "source": "mal",
+  "mal_id": 55514,
+  "mal_rank": 5584,
+  "mal_popularity": 4110,
+  "mal_studios": [
+    "Makaria"
+  ],
+  "mal_title_en": "Zatsu Tabi: That's Journey",
+  "mal_title_jp": "ざつ旅 -That's Journey-",
+  "mal_season": "spring 2025",
+  "mal_year": "2025",
   "imdb_id": "tt35437780",
-  "last_updated": "2026-05-29T00:03:30.283973+00:00"
+  "last_updated": "2026-05-29T14:54:19.003620+00:00"
 }

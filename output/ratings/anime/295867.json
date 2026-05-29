@@ -2,9 +2,19 @@
   "content_id": "295867",
   "title": "انمي Yomi no Tsugai",
   "year": "2026",
-  "rating": "8.2",
-  "votes": 1520,
-  "source": "imdbapi",
+  "rating": "7.98",
+  "votes": 23941,
+  "source": "mal",
+  "mal_id": 62001,
+  "mal_rank": 804,
+  "mal_popularity": 1536,
+  "mal_studios": [
+    "Bones Film"
+  ],
+  "mal_title_en": "Daemons of the Shadow Realm",
+  "mal_title_jp": "黄泉のツガイ",
+  "mal_season": "spring 2026",
+  "mal_year": "2026",
   "imdb_id": "tt37532356",
-  "last_updated": "2026-05-28T23:19:03.190907+00:00"
+  "last_updated": "2026-05-29T14:28:22.346114+00:00"
 }

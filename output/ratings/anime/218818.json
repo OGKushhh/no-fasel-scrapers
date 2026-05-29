@@ -1,10 +1,20 @@
 {
   "content_id": "218818",
   "title": "انمي Mushoku Tensei II: Isekai Ittara Honki Dasu",
-  "year": "2023",
-  "rating": "8.2",
-  "votes": 37498,
-  "source": "imdbapi",
+  "year": "2021",
+  "rating": "8.33",
+  "votes": 977048,
+  "source": "mal",
+  "mal_id": 39535,
+  "mal_rank": 297,
+  "mal_popularity": 84,
+  "mal_studios": [
+    "Studio Bind"
+  ],
+  "mal_title_en": "Mushoku Tensei: Jobless Reincarnation",
+  "mal_title_jp": "無職転生 ～異世界行ったら本気だす～",
+  "mal_season": "winter 2021",
+  "mal_year": "2021",
   "imdb_id": "tt13293588",
-  "last_updated": "2026-05-29T01:10:46.099501+00:00"
+  "last_updated": "2026-05-29T19:10:40.865350+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "281276",
   "title": "انمي Ganglion",
   "year": "2025",
-  "rating": "6.6",
-  "votes": 32,
-  "source": "imdbapi",
+  "rating": "6.43",
+  "votes": 1914,
+  "source": "mal",
+  "mal_id": 62378,
+  "mal_rank": 8639,
+  "mal_popularity": 7563,
+  "mal_studios": [
+    "studio maf"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "ガングリオン",
+  "mal_season": "fall 2025",
+  "mal_year": "2025",
   "imdb_id": "tt38128737",
-  "last_updated": "2026-05-28T23:38:30.764409+00:00"
+  "last_updated": "2026-05-29T14:39:32.955033+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "280668",
   "title": "انمي Kakuriyo no Yadomeshi",
   "year": "2018",
-  "rating": "7.5",
-  "votes": 1617,
-  "source": "imdbapi",
+  "rating": "7.55",
+  "votes": 73304,
+  "source": "mal",
+  "mal_id": 36754,
+  "mal_rank": 2060,
+  "mal_popularity": 1407,
+  "mal_studios": [
+    "Gonzo"
+  ],
+  "mal_title_en": "Kakuriyo -Bed & Breakfast for Spirits-",
+  "mal_title_jp": "かくりよの宿飯",
+  "mal_season": "spring 2018",
+  "mal_year": "2018",
   "imdb_id": "tt8228732",
-  "last_updated": "2026-05-28T23:43:54.339835+00:00"
+  "last_updated": "2026-05-29T14:42:22.495223+00:00"
 }

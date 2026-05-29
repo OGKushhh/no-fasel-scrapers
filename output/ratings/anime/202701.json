@@ -2,9 +2,19 @@
   "content_id": "202701",
   "title": "انمي Mononogatari",
   "year": "2023",
-  "rating": "6.8",
-  "votes": 361,
-  "source": "imdbapi",
+  "rating": "7.27",
+  "votes": 28267,
+  "source": "mal",
+  "mal_id": 50384,
+  "mal_rank": 3600,
+  "mal_popularity": 2734,
+  "mal_studios": [
+    "Bandai Namco Pictures"
+  ],
+  "mal_title_en": "Malevolent Spirits: Mononogatari",
+  "mal_title_jp": "もののがたり",
+  "mal_season": "winter 2023",
+  "mal_year": "2023",
   "imdb_id": "tt26140070",
-  "last_updated": "2026-05-29T01:24:00.079353+00:00"
+  "last_updated": "2026-05-29T19:17:14.778410+00:00"
 }

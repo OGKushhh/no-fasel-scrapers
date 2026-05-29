@@ -2,9 +2,19 @@
   "content_id": "286103",
   "title": "انمي Uma Musume: Pretty Derby",
   "year": "2018",
-  "rating": "7.3",
-  "votes": 894,
-  "source": "imdbapi",
+  "rating": "7.38",
+  "votes": 103471,
+  "source": "mal",
+  "mal_id": 35249,
+  "mal_rank": 2925,
+  "mal_popularity": 1222,
+  "mal_studios": [
+    "P.A. Works"
+  ],
+  "mal_title_en": "Umamusume: Pretty Derby",
+  "mal_title_jp": "ウマ娘 プリティーダービー",
+  "mal_season": "spring 2018",
+  "mal_year": "2018",
   "imdb_id": "tt8253268",
-  "last_updated": "2026-05-28T23:34:23.816857+00:00"
+  "last_updated": "2026-05-29T14:36:43.402534+00:00"
 }

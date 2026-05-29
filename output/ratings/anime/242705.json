@@ -2,9 +2,19 @@
   "content_id": "242705",
   "title": "انمي Touken Ranbu Kai: Kyoden Moyuru Honnouji",
   "year": "2024",
-  "rating": "6.2",
-  "votes": 31,
-  "source": "imdbapi",
+  "rating": "6.11",
+  "votes": 2370,
+  "source": "mal",
+  "mal_id": 51859,
+  "mal_rank": 10490,
+  "mal_popularity": 6237,
+  "mal_studios": [
+    "domerica"
+  ],
+  "mal_title_en": "Touken Ranbu Kai Kyoden",
+  "mal_title_jp": "刀剣乱舞 廻 -虚伝 燃ゆる本能寺-",
+  "mal_season": "spring 2024",
+  "mal_year": "2024",
   "imdb_id": "tt32201743",
-  "last_updated": "2026-05-29T00:36:21.455986+00:00"
+  "last_updated": "2026-05-29T18:52:36.918450+00:00"
 }

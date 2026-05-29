@@ -2,9 +2,19 @@
   "content_id": "281285",
   "title": "انمي Sutetsuyo",
   "year": "2025",
-  "rating": "6.2",
-  "votes": 28,
-  "source": "imdbapi",
+  "rating": "6.56",
+  "votes": 85531,
+  "source": "mal",
+  "mal_id": 61026,
+  "mal_rank": 7857,
+  "mal_popularity": 1573,
+  "mal_studios": [
+    "Sunrise"
+  ],
+  "mal_title_en": "My Status as an Assassin Obviously Exceeds the Hero's",
+  "mal_title_jp": "暗殺者である俺のステータスが勇者よりも明らかに強いのだが",
+  "mal_season": "fall 2025",
+  "mal_year": "2025",
   "imdb_id": "tt3065358",
-  "last_updated": "2026-05-28T23:38:26.943692+00:00"
+  "last_updated": "2026-05-29T14:39:27.780995+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "248539",
   "title": "انمي Shikanoko Nokonoko Koshitantan",
   "year": "2024",
-  "rating": "6.7",
-  "votes": 2019,
-  "source": "imdbapi",
+  "rating": "6.95",
+  "votes": 118968,
+  "source": "mal",
+  "mal_id": 58426,
+  "mal_rank": 5526,
+  "mal_popularity": 1005,
+  "mal_studios": [
+    "Wit Studio"
+  ],
+  "mal_title_en": "My Deer Friend Nokotan",
+  "mal_title_jp": "しかのこのこのここしたんたん",
+  "mal_season": "summer 2024",
+  "mal_year": "2024",
   "imdb_id": "tt32332970",
-  "last_updated": "2026-05-29T00:29:25.373270+00:00"
+  "last_updated": "2026-05-29T18:49:00.130080+00:00"
 }

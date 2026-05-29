@@ -2,9 +2,19 @@
   "content_id": "281068",
   "title": "انمي Alma-chan wa Kazoku ni Naritai",
   "year": "2025",
-  "rating": "6.6",
-  "votes": 229,
-  "source": "imdbapi",
+  "rating": "7.08",
+  "votes": 11930,
+  "source": "mal",
+  "mal_id": 60781,
+  "mal_rank": 4780,
+  "mal_popularity": 4583,
+  "mal_studios": [
+    "Studio Flad"
+  ],
+  "mal_title_en": "Alma-chan Wants to Be a Family!",
+  "mal_title_jp": "アルマちゃんは家族になりたい",
+  "mal_season": "fall 2025",
+  "mal_year": "2025",
   "imdb_id": "tt37532849",
-  "last_updated": "2026-05-28T23:40:48.238778+00:00"
+  "last_updated": "2026-05-29T14:40:43.165068+00:00"
 }

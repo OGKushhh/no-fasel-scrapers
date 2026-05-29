@@ -2,9 +2,19 @@
   "content_id": "255181",
   "title": "انمي Dragon Ball Daima",
   "year": "2024",
-  "rating": "7.8",
-  "votes": 19352,
-  "source": "imdbapi",
+  "rating": "7.57",
+  "votes": 65725,
+  "source": "mal",
+  "mal_id": 56894,
+  "mal_rank": 1956,
+  "mal_popularity": 1892,
+  "mal_studios": [
+    "Toei Animation"
+  ],
+  "mal_title_en": "Dragon Ball Daima",
+  "mal_title_jp": "ドラゴンボール ダイマ",
+  "mal_season": "fall 2024",
+  "mal_year": "2024",
   "imdb_id": "tt29485149",
-  "last_updated": "2026-05-29T00:19:14.019938+00:00"
+  "last_updated": "2026-05-29T15:02:58.771467+00:00"
 }

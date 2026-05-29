@@ -2,9 +2,19 @@
   "content_id": "281141",
   "title": "انمي Natsume Yuujinchou",
   "year": "2008",
-  "rating": "8.1",
-  "votes": 3270,
-  "source": "imdbapi",
+  "rating": "8.3",
+  "votes": 200591,
+  "source": "mal",
+  "mal_id": 4081,
+  "mal_rank": 325,
+  "mal_popularity": 427,
+  "mal_studios": [
+    "Brain's Base"
+  ],
+  "mal_title_en": "Natsume's Book of Friends",
+  "mal_title_jp": "夏目友人帳",
+  "mal_season": "summer 2008",
+  "mal_year": "2008",
   "imdb_id": "tt1352421",
-  "last_updated": "2026-05-28T23:40:03.962681+00:00"
+  "last_updated": "2026-05-29T14:40:17.426385+00:00"
 }

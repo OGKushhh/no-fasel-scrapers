@@ -2,9 +2,19 @@
   "content_id": "202217",
   "title": "انمي The Legend of Heroes: Sen no Kiseki – Northern War",
   "year": "2023",
-  "rating": "5.4",
-  "votes": 126,
-  "source": "imdbapi",
+  "rating": "5.64",
+  "votes": 10504,
+  "source": "mal",
+  "mal_id": 48441,
+  "mal_rank": 12800,
+  "mal_popularity": 4031,
+  "mal_studios": [
+    "Tatsunoko Production"
+  ],
+  "mal_title_en": "The Legend of Heroes: Trails of Cold Steel - Northern War",
+  "mal_title_jp": "The Legend of Heroes 閃の軌跡 Northern War",
+  "mal_season": "winter 2023",
+  "mal_year": "2023",
   "imdb_id": "tt14206996",
-  "last_updated": "2026-05-29T01:27:53.839999+00:00"
+  "last_updated": "2026-05-29T19:19:39.179608+00:00"
 }

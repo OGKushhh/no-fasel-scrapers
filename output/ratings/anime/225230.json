@@ -2,9 +2,19 @@
   "content_id": "225230",
   "title": "انمي Undead Unluck",
   "year": "2023",
-  "rating": "7.4",
-  "votes": 3360,
-  "source": "imdbapi",
+  "rating": "7.75",
+  "votes": 126866,
+  "source": "mal",
+  "mal_id": 52741,
+  "mal_rank": 1339,
+  "mal_popularity": 787,
+  "mal_studios": [
+    "David Production"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "アンデッドアンラック",
+  "mal_season": "fall 2023",
+  "mal_year": "2023",
   "imdb_id": "tt21927720",
-  "last_updated": "2026-05-29T00:55:19.724730+00:00"
+  "last_updated": "2026-05-29T19:03:39.048804+00:00"
 }

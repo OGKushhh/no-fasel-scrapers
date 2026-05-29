@@ -2,9 +2,19 @@
   "content_id": "202224",
   "title": "انمي Nijiyon Animation",
   "year": "2023",
-  "rating": "6.1",
-  "votes": 48,
-  "source": "imdbapi",
+  "rating": "6.81",
+  "votes": 5620,
+  "source": "mal",
+  "mal_id": 53077,
+  "mal_rank": 6358,
+  "mal_popularity": 6313,
+  "mal_studios": [
+    "Sunrise"
+  ],
+  "mal_title_en": "Nijiyon Animation",
+  "mal_title_jp": "にじよんあにめーしょん",
+  "mal_season": "winter 2023",
+  "mal_year": "2023",
   "imdb_id": "tt22171506",
-  "last_updated": "2026-05-29T01:27:46.938657+00:00"
+  "last_updated": "2026-05-29T19:19:33.873194+00:00"
 }

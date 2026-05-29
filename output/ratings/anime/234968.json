@@ -2,9 +2,19 @@
   "content_id": "234968",
   "title": "انمي Gekai Elise",
   "year": "2024",
-  "rating": "6.9",
-  "votes": 972,
-  "source": "imdbapi",
+  "rating": "7.27",
+  "votes": 55822,
+  "source": "mal",
+  "mal_id": 54632,
+  "mal_rank": 3578,
+  "mal_popularity": 2142,
+  "mal_studios": [
+    "Maho Film"
+  ],
+  "mal_title_en": "Doctor Elise: The Royal Lady with the Lamp",
+  "mal_title_jp": "外科医エリーゼ",
+  "mal_season": "winter 2024",
+  "mal_year": "2024",
   "imdb_id": "tt28247170",
-  "last_updated": "2026-05-29T00:45:40.376088+00:00"
+  "last_updated": "2026-05-29T18:58:29.176581+00:00"
 }

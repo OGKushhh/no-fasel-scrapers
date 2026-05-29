@@ -2,9 +2,19 @@
   "content_id": "224433",
   "title": "انمي Megumi no Daigo: Kyuukoku no Orange",
   "year": "2023",
-  "rating": "6.0",
-  "votes": 143,
-  "source": "imdbapi",
+  "rating": "6.75",
+  "votes": 9592,
+  "source": "mal",
+  "mal_id": 53848,
+  "mal_rank": 6705,
+  "mal_popularity": 4637,
+  "mal_studios": [
+    "Brain's Base"
+  ],
+  "mal_title_en": "Firefighter Daigo: Rescuer in Orange",
+  "mal_title_jp": "め組の大吾 救国のオレンジ",
+  "mal_season": "fall 2023",
+  "mal_year": "2023",
   "imdb_id": "tt29201691",
-  "last_updated": "2026-05-29T00:58:39.964065+00:00"
+  "last_updated": "2026-05-29T19:06:27.596448+00:00"
 }

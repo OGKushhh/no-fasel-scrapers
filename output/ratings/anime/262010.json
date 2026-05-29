@@ -2,9 +2,19 @@
   "content_id": "262010",
   "title": "انمي Farmagia",
   "year": "2025",
-  "rating": "4.8",
-  "votes": 138,
-  "source": "imdbapi",
+  "rating": "5.65",
+  "votes": 5568,
+  "source": "mal",
+  "mal_id": 59113,
+  "mal_rank": 12727,
+  "mal_popularity": 5745,
+  "mal_studios": [
+    "Bridge"
+  ],
+  "mal_title_en": "Farmagia",
+  "mal_title_jp": "FARMAGIA（ファーマギア）",
+  "mal_season": "winter 2025",
+  "mal_year": "2025",
   "imdb_id": "tt34621220",
-  "last_updated": "2026-05-29T00:12:00.671106+00:00"
+  "last_updated": "2026-05-29T14:58:40.351544+00:00"
 }

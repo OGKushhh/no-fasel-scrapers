@@ -1,10 +1,21 @@
 {
   "content_id": "219053",
   "title": "انمي Rurouni Kenshin: Meiji Kenkaku Romantan",
-  "year": "2023",
-  "rating": "7.9",
-  "votes": 3189,
-  "source": "imdbapi",
+  "year": "1996",
+  "rating": "8.28",
+  "votes": 248714,
+  "source": "mal",
+  "mal_id": 45,
+  "mal_rank": 350,
+  "mal_popularity": 486,
+  "mal_studios": [
+    "Gallop",
+    "Studio Deen"
+  ],
+  "mal_title_en": "Rurouni Kenshin",
+  "mal_title_jp": "るろうに剣心 -明治剣客浪漫譚-",
+  "mal_season": "winter 1996",
+  "mal_year": "1996",
   "imdb_id": "tt22249034",
-  "last_updated": "2026-05-29T01:08:29.505659+00:00"
+  "last_updated": "2026-05-29T19:09:37.312862+00:00"
 }

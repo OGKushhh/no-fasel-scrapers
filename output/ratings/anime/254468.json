@@ -2,9 +2,19 @@
   "content_id": "254468",
   "title": "انمي Mecha-ude (TV)",
   "year": "2024",
-  "rating": "6.4",
-  "votes": 310,
-  "source": "imdbapi",
+  "rating": "6.79",
+  "votes": 20058,
+  "source": "mal",
+  "mal_id": 53033,
+  "mal_rank": 6457,
+  "mal_popularity": 3222,
+  "mal_studios": [
+    "TriF Studio"
+  ],
+  "mal_title_en": "Mecha-Ude: Mechanical Arms",
+  "mal_title_jp": "メカウデ",
+  "mal_season": "fall 2024",
+  "mal_year": "2024",
   "imdb_id": "tt32526678",
-  "last_updated": "2026-05-29T00:23:02.140623+00:00"
+  "last_updated": "2026-05-29T15:05:24.505425+00:00"
 }

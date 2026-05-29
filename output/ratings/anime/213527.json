@@ -2,9 +2,19 @@
   "content_id": "213527",
   "title": "انمي Kawaisugi Crisis",
   "year": "2023",
-  "rating": "6.4",
-  "votes": 137,
-  "source": "imdbapi",
+  "rating": "6.83",
+  "votes": 15217,
+  "source": "mal",
+  "mal_id": 53163,
+  "mal_rank": 6137,
+  "mal_popularity": 3739,
+  "mal_studios": [
+    "SynergySP"
+  ],
+  "mal_title_en": "Too Cute Crisis",
+  "mal_title_jp": "カワイスギクライシス",
+  "mal_season": "spring 2023",
+  "mal_year": "2023",
   "imdb_id": "tt27450217",
-  "last_updated": "2026-05-29T01:13:56.345955+00:00"
+  "last_updated": "2026-05-29T19:12:17.305885+00:00"
 }

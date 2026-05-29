@@ -2,9 +2,19 @@
   "content_id": "257407",
   "title": "انمي Girls Band Cry",
   "year": "2024",
-  "rating": "7.7",
-  "votes": 779,
-  "source": "imdbapi",
+  "rating": "8.37",
+  "votes": 55617,
+  "source": "mal",
+  "mal_id": 55102,
+  "mal_rank": 255,
+  "mal_popularity": 1905,
+  "mal_studios": [
+    "Toei Animation"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "ガールズバンドクライ",
+  "mal_season": "spring 2024",
+  "mal_year": "2024",
   "imdb_id": "tt31250134",
-  "last_updated": "2026-05-29T00:17:30.065599+00:00"
+  "last_updated": "2026-05-29T15:01:46.402782+00:00"
 }

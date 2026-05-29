@@ -2,9 +2,19 @@
   "content_id": "218846",
   "title": "انمي Okashi na Tensei",
   "year": "2023",
-  "rating": "6.5",
-  "votes": 799,
-  "source": "imdbapi",
+  "rating": "6.7",
+  "votes": 54127,
+  "source": "mal",
+  "mal_id": 52611,
+  "mal_rank": 7031,
+  "mal_popularity": 2219,
+  "mal_studios": [
+    "SynergySP"
+  ],
+  "mal_title_en": "Sweet Reincarnation",
+  "mal_title_jp": "おかしな転生",
+  "mal_season": "summer 2023",
+  "mal_year": "2023",
   "imdb_id": "tt27990718",
-  "last_updated": "2026-05-29T01:09:53.333159+00:00"
+  "last_updated": "2026-05-29T19:10:20.748837+00:00"
 }

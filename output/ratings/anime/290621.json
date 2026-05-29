@@ -2,9 +2,19 @@
   "content_id": "290621",
   "title": "انمي Kirei ni Shitemoraemasu ka.",
   "year": "2026",
-  "rating": "6.3",
-  "votes": 242,
-  "source": "imdbapi",
+  "rating": "6.91",
+  "votes": 13938,
+  "source": "mal",
+  "mal_id": 61782,
+  "mal_rank": 5728,
+  "mal_popularity": 3877,
+  "mal_studios": [
+    "Okuruto Noboru"
+  ],
+  "mal_title_en": "Wash It All Away",
+  "mal_title_jp": "綺麗にしてもらえますか。",
+  "mal_season": "winter 2026",
+  "mal_year": "2026",
   "imdb_id": "tt37196939",
-  "last_updated": "2026-05-28T23:25:52.873040+00:00"
+  "last_updated": "2026-05-29T14:31:41.317366+00:00"
 }

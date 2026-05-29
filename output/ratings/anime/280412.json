@@ -2,9 +2,20 @@
   "content_id": "280412",
   "title": "انمي Sozai Saishuka no Isekai Ryokouki",
   "year": "2025",
-  "rating": "6.0",
-  "votes": 147,
-  "source": "imdbapi",
+  "rating": "6.12",
+  "votes": 37637,
+  "source": "mal",
+  "mal_id": 61174,
+  "mal_rank": 10422,
+  "mal_popularity": 2777,
+  "mal_studios": [
+    "Tatsunoko Production",
+    "SynergySP"
+  ],
+  "mal_title_en": "A Gatherer's Adventure in Isekai",
+  "mal_title_jp": "素材採取家の異世界旅行記",
+  "mal_season": "fall 2025",
+  "mal_year": "2025",
   "imdb_id": "tt37038599",
-  "last_updated": "2026-05-28T23:44:40.354088+00:00"
+  "last_updated": "2026-05-29T14:42:42.898150+00:00"
 }

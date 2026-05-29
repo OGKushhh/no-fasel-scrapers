@@ -2,9 +2,19 @@
   "content_id": "233853",
   "title": "انمي Dungeon Meshi",
   "year": "2024",
-  "rating": "8.1",
-  "votes": 14448,
-  "source": "imdbapi",
+  "rating": "8.59",
+  "votes": 303414,
+  "source": "mal",
+  "mal_id": 52701,
+  "mal_rank": 116,
+  "mal_popularity": 428,
+  "mal_studios": [
+    "Trigger"
+  ],
+  "mal_title_en": "Delicious in Dungeon",
+  "mal_title_jp": "ダンジョン飯",
+  "mal_season": "winter 2024",
+  "mal_year": "2024",
   "imdb_id": "tt21621494",
-  "last_updated": "2026-05-29T00:49:52.817619+00:00"
+  "last_updated": "2026-05-29T19:00:11.100655+00:00"
 }

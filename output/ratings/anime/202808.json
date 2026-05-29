@@ -2,9 +2,19 @@
   "content_id": "202808",
   "title": "انمي Kubo-san wa Mob wo Yurusanai",
   "year": "2023",
-  "rating": "7.1",
-  "votes": 1399,
-  "source": "imdbapi",
+  "rating": "7.55",
+  "votes": 104329,
+  "source": "mal",
+  "mal_id": 51815,
+  "mal_rank": 2062,
+  "mal_popularity": 1092,
+  "mal_studios": [
+    "PINE JAM"
+  ],
+  "mal_title_en": "Kubo Won't Let Me Be Invisible",
+  "mal_title_jp": "久保さんは僕を許さない",
+  "mal_season": "winter 2023",
+  "mal_year": "2023",
   "imdb_id": "tt21844614",
-  "last_updated": "2026-05-29T01:23:27.976076+00:00"
+  "last_updated": "2026-05-29T19:17:04.255245+00:00"
 }

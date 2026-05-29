@@ -2,9 +2,19 @@
   "content_id": "254714",
   "title": "انمي MF Ghost 2nd Season",
   "year": "2024",
-  "rating": "7.8",
-  "votes": 7,
-  "source": "imdbapi",
+  "rating": "7.82",
+  "votes": 25767,
+  "source": "mal",
+  "mal_id": 57559,
+  "mal_rank": 1146,
+  "mal_popularity": 3591,
+  "mal_studios": [
+    "Felix Film"
+  ],
+  "mal_title_en": "MF Ghost Season 2",
+  "mal_title_jp": "MFゴースト 2nd Season",
+  "mal_season": "fall 2024",
+  "mal_year": "2024",
   "imdb_id": "tt39246765",
-  "last_updated": "2026-05-29T00:21:26.256456+00:00"
+  "last_updated": "2026-05-29T15:04:04.260900+00:00"
 }

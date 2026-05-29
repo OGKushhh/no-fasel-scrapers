@@ -2,9 +2,19 @@
   "content_id": "238970",
   "title": "انمي Ninja Kamui",
   "year": "2024",
-  "rating": "7.0",
-  "votes": 8460,
-  "source": "imdbapi",
+  "rating": "6.53",
+  "votes": 78532,
+  "source": "mal",
+  "mal_id": 56285,
+  "mal_rank": 8079,
+  "mal_popularity": 1411,
+  "mal_studios": [
+    "E&H Production"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "",
+  "mal_season": "winter 2024",
+  "mal_year": "2024",
   "imdb_id": "tt28480255",
-  "last_updated": "2026-05-29T00:43:57.161240+00:00"
+  "last_updated": "2026-05-29T18:57:15.653555+00:00"
 }

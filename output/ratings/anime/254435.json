@@ -2,9 +2,19 @@
   "content_id": "254435",
   "title": "انمي Kinoko Inu",
   "year": "2024",
-  "rating": "6.2",
-  "votes": 55,
-  "source": "imdbapi",
+  "rating": "6.9",
+  "votes": 3273,
+  "source": "mal",
+  "mal_id": 58854,
+  "mal_rank": 5780,
+  "mal_popularity": 7533,
+  "mal_studios": [
+    "C-Station"
+  ],
+  "mal_title_en": "Kinokoinu Mushroom Pup",
+  "mal_title_jp": "きのこいぬ",
+  "mal_season": "fall 2024",
+  "mal_year": "2024",
   "imdb_id": "tt33613782",
-  "last_updated": "2026-05-29T00:23:46.260403+00:00"
+  "last_updated": "2026-05-29T15:05:47.973246+00:00"
 }

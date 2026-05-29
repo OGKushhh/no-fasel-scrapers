@@ -2,9 +2,19 @@
   "content_id": "248435",
   "title": "انمي Nige Jouzu no Wakagimi",
   "year": "2024",
-  "rating": "7.3",
-  "votes": 1902,
-  "source": "imdbapi",
+  "rating": "7.79",
+  "votes": 85067,
+  "source": "mal",
+  "mal_id": 54724,
+  "mal_rank": 1228,
+  "mal_popularity": 1353,
+  "mal_studios": [
+    "CloverWorks"
+  ],
+  "mal_title_en": "The Elusive Samurai",
+  "mal_title_jp": "逃げ上手の若君",
+  "mal_season": "summer 2024",
+  "mal_year": "2024",
   "imdb_id": "tt27187054",
-  "last_updated": "2026-05-29T00:31:07.112348+00:00"
+  "last_updated": "2026-05-29T18:49:49.312842+00:00"
 }

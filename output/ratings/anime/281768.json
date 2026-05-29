@@ -2,9 +2,19 @@
   "content_id": "281768",
   "title": "انمي Gnosia",
   "year": "2025",
-  "rating": "7.2",
-  "votes": 761,
-  "source": "imdbapi",
+  "rating": "7.88",
+  "votes": 18441,
+  "source": "mal",
+  "mal_id": 60427,
+  "mal_rank": 1004,
+  "mal_popularity": 3427,
+  "mal_studios": [
+    "domerica"
+  ],
+  "mal_title_en": "Gnosia",
+  "mal_title_jp": "グノーシア",
+  "mal_season": "fall 2025",
+  "mal_year": "2025",
   "imdb_id": "tt34852231",
-  "last_updated": "2026-05-28T23:37:32.569344+00:00"
+  "last_updated": "2026-05-29T14:38:41.324937+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "268657",
   "title": "انمي Kowloon Generic Romance",
   "year": "2025",
-  "rating": "7.1",
-  "votes": 1151,
-  "source": "imdbapi",
+  "rating": "7.34",
+  "votes": 52992,
+  "source": "mal",
+  "mal_id": 60083,
+  "mal_rank": 3116,
+  "mal_popularity": 1699,
+  "mal_studios": [
+    "Arvo Animation"
+  ],
+  "mal_title_en": "Kowloon Generic Romance",
+  "mal_title_jp": "九龍ジェネリックロマンス",
+  "mal_season": "spring 2025",
+  "mal_year": "2025",
   "imdb_id": "tt33999377",
-  "last_updated": "2026-05-29T00:04:52.902576+00:00"
+  "last_updated": "2026-05-29T14:55:12.727639+00:00"
 }

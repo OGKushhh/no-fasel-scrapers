@@ -2,9 +2,19 @@
   "content_id": "246948",
   "title": "انمي Hibike! Euphonium",
   "year": "2015",
-  "rating": "8.0",
-  "votes": 2186,
-  "source": "imdbapi",
+  "rating": "8.03",
+  "votes": 213165,
+  "source": "mal",
+  "mal_id": 27989,
+  "mal_rank": 715,
+  "mal_popularity": 504,
+  "mal_studios": [
+    "Kyoto Animation"
+  ],
+  "mal_title_en": "Sound! Euphonium",
+  "mal_title_jp": "響け！ユーフォニアム",
+  "mal_season": "spring 2015",
+  "mal_year": "2015",
   "imdb_id": "tt4384306",
-  "last_updated": "2026-05-29T00:34:50.577948+00:00"
+  "last_updated": "2026-05-29T18:51:42.204230+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "282931",
   "title": "انمي Hakuouki",
   "year": "2010",
-  "rating": "7.2",
-  "votes": 877,
-  "source": "imdbapi",
+  "rating": "7.36",
+  "votes": 72771,
+  "source": "mal",
+  "mal_id": 6895,
+  "mal_rank": 2979,
+  "mal_popularity": 1565,
+  "mal_studios": [
+    "Studio Deen"
+  ],
+  "mal_title_en": "Hakuoki ~Demon of the Fleeting Blossom~",
+  "mal_title_jp": "薄桜鬼",
+  "mal_season": "spring 2010",
+  "mal_year": "2010",
   "imdb_id": "tt1658978",
-  "last_updated": "2026-05-28T23:36:09.580847+00:00"
+  "last_updated": "2026-05-29T14:37:47.491368+00:00"
 }

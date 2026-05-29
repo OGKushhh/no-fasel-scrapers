@@ -2,9 +2,19 @@
   "content_id": "274327",
   "title": "انمي Silent Witch: Chinmoku no Majo no Kakushigoto",
   "year": "2025",
-  "rating": "7.6",
-  "votes": 2084,
-  "source": "imdbapi",
+  "rating": "8.11",
+  "votes": 110201,
+  "source": "mal",
+  "mal_id": 59459,
+  "mal_rank": 596,
+  "mal_popularity": 1273,
+  "mal_studios": [
+    "Studio Gokumi"
+  ],
+  "mal_title_en": "Secrets of the Silent Witch",
+  "mal_title_jp": "サイレント・ウィッチ 沈黙の魔女の隠しごと",
+  "mal_season": "summer 2025",
+  "mal_year": "2025",
   "imdb_id": "tt33317800",
-  "last_updated": "2026-05-28T23:56:18.687992+00:00"
+  "last_updated": "2026-05-29T14:49:35.663677+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "241892",
   "title": "انمي The Fable",
   "year": "2024",
-  "rating": "7.7",
-  "votes": 1889,
-  "source": "imdbapi",
+  "rating": "8.15",
+  "votes": 41139,
+  "source": "mal",
+  "mal_id": 55911,
+  "mal_rank": 531,
+  "mal_popularity": 2250,
+  "mal_studios": [
+    "Tezuka Productions"
+  ],
+  "mal_title_en": "The Fable",
+  "mal_title_jp": "ザ・ファブル",
+  "mal_season": "spring 2024",
+  "mal_year": "2024",
   "imdb_id": "tt28329410",
-  "last_updated": "2026-05-29T00:40:39.866429+00:00"
+  "last_updated": "2026-05-29T18:55:12.260048+00:00"
 }

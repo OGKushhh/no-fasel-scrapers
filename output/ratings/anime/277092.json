@@ -2,9 +2,19 @@
   "content_id": "277092",
   "title": "انمي Muchuu sa, Kimi ni",
   "year": "2025",
-  "rating": "7.2",
-  "votes": 144,
-  "source": "imdbapi",
+  "rating": "7.33",
+  "votes": 5862,
+  "source": "mal",
+  "mal_id": 60130,
+  "mal_rank": 3190,
+  "mal_popularity": 5706,
+  "mal_studios": [
+    "Doga Kobo"
+  ],
+  "mal_title_en": "Captivated, By You",
+  "mal_title_jp": "夢中さ、きみに。",
+  "mal_season": "summer 2025",
+  "mal_year": "2025",
   "imdb_id": "tt34533412",
-  "last_updated": "2026-05-28T23:48:55.792446+00:00"
+  "last_updated": "2026-05-29T14:45:22.491478+00:00"
 }

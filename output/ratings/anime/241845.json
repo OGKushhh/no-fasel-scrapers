@@ -2,9 +2,19 @@
   "content_id": "241845",
   "title": "انمي Boku no Hero Academia: Memories",
   "year": "2024",
-  "rating": "8.2",
-  "votes": 120837,
-  "source": "imdbapi",
+  "rating": "6.69",
+  "votes": 12616,
+  "source": "mal",
+  "mal_id": 57519,
+  "mal_rank": 7058,
+  "mal_popularity": 4784,
+  "mal_studios": [
+    "Bones"
+  ],
+  "mal_title_en": "My Hero Academia: Memories",
+  "mal_title_jp": "僕のヒーローアカデミア Memories",
+  "mal_season": "spring 2024",
+  "mal_year": "2024",
   "imdb_id": "tt5626028",
-  "last_updated": "2026-05-29T00:40:57.830910+00:00"
+  "last_updated": "2026-05-29T18:55:27.551841+00:00"
 }

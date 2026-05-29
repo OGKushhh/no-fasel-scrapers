@@ -2,9 +2,19 @@
   "content_id": "219157",
   "title": "انمي Nanatsu no Maken ga Shihai suru",
   "year": "2023",
-  "rating": "6.4",
-  "votes": 1096,
-  "source": "imdbapi",
+  "rating": "6.58",
+  "votes": 72570,
+  "source": "mal",
+  "mal_id": 50582,
+  "mal_rank": 7778,
+  "mal_popularity": 1464,
+  "mal_studios": [
+    "J.C.Staff"
+  ],
+  "mal_title_en": "Reign of the Seven Spellblades",
+  "mal_title_jp": "七つの魔剣が支配する",
+  "mal_season": "summer 2023",
+  "mal_year": "2023",
   "imdb_id": "tt27845099",
-  "last_updated": "2026-05-29T01:08:15.227977+00:00"
+  "last_updated": "2026-05-29T19:09:24.423129+00:00"
 }

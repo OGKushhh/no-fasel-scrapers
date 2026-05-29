@@ -2,9 +2,19 @@
   "content_id": "268706",
   "title": "انمي Witch Watch",
   "year": "2025",
-  "rating": "6.8",
-  "votes": 1774,
-  "source": "imdbapi",
+  "rating": "7.37",
+  "votes": 71067,
+  "source": "mal",
+  "mal_id": 59597,
+  "mal_rank": 2963,
+  "mal_popularity": 1313,
+  "mal_studios": [
+    "Bibury Animation Studios"
+  ],
+  "mal_title_en": "Witch Watch",
+  "mal_title_jp": "ウィッチウォッチ",
+  "mal_season": "spring 2025",
+  "mal_year": "2025",
   "imdb_id": "tt33165027",
-  "last_updated": "2026-05-29T00:04:20.187543+00:00"
+  "last_updated": "2026-05-29T14:54:40.088784+00:00"
 }

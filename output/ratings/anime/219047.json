@@ -2,9 +2,20 @@
   "content_id": "219047",
   "title": "انمي Seija Musou: Salaryman, Isekai de Ikinokoru Tame ni Ayumu Michi",
   "year": "2023",
-  "rating": "6.9",
-  "votes": 1718,
-  "source": "imdbapi",
+  "rating": "7.12",
+  "votes": 77281,
+  "source": "mal",
+  "mal_id": 53263,
+  "mal_rank": 4581,
+  "mal_popularity": 1772,
+  "mal_studios": [
+    "Yokohama Animation Lab",
+    "Cloud Hearts"
+  ],
+  "mal_title_en": "The Great Cleric",
+  "mal_title_jp": "聖者無双",
+  "mal_season": "summer 2023",
+  "mal_year": "2023",
   "imdb_id": "tt28101962",
-  "last_updated": "2026-05-29T01:08:36.502486+00:00"
+  "last_updated": "2026-05-29T19:09:42.485733+00:00"
 }

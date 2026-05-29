@@ -2,9 +2,19 @@
   "content_id": "293353",
   "title": "انمي Baki-dou",
   "year": "2026",
-  "rating": "7.3",
-  "votes": 1205,
-  "source": "imdbapi",
+  "rating": "7.51",
+  "votes": 13832,
+  "source": "mal",
+  "mal_id": 58573,
+  "mal_rank": 2228,
+  "mal_popularity": 4492,
+  "mal_studios": [
+    "TMS Entertainment"
+  ],
+  "mal_title_en": "BAKI-DOU: The Invincible Samurai",
+  "mal_title_jp": "刃牙道",
+  "mal_season": "winter 2026",
+  "mal_year": "2026",
   "imdb_id": "tt38201910",
-  "last_updated": "2026-05-28T23:24:31.939058+00:00"
+  "last_updated": "2026-05-29T14:30:58.142316+00:00"
 }

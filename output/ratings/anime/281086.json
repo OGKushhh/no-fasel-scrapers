@@ -2,9 +2,20 @@
   "content_id": "281086",
   "title": "انمي Kikaijikake no Marie",
   "year": "2025",
-  "rating": "6.3",
-  "votes": 409,
-  "source": "imdbapi",
+  "rating": "6.94",
+  "votes": 17171,
+  "source": "mal",
+  "mal_id": 59484,
+  "mal_rank": 5556,
+  "mal_popularity": 3665,
+  "mal_studios": [
+    "Zero-G",
+    "Liber"
+  ],
+  "mal_title_en": "Mechanical Marie",
+  "mal_title_jp": "機械じかけのマリー",
+  "mal_season": "fall 2025",
+  "mal_year": "2025",
   "imdb_id": "tt36912922",
-  "last_updated": "2026-05-28T23:40:30.027403+00:00"
+  "last_updated": "2026-05-29T14:40:27.691016+00:00"
 }

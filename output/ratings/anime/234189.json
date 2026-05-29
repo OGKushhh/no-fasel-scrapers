@@ -1,10 +1,20 @@
 {
   "content_id": "234189",
   "title": "انمي Ao no Exorcist: Shimane Illuminati-hen",
-  "year": "2023",
-  "rating": "6.9",
-  "votes": 657,
-  "source": "imdbapi",
+  "year": "2024",
+  "rating": "7.13",
+  "votes": 60878,
+  "source": "mal",
+  "mal_id": 53889,
+  "mal_rank": 4473,
+  "mal_popularity": 1502,
+  "mal_studios": [
+    "Studio VOLN"
+  ],
+  "mal_title_en": "Blue Exorcist: Shimane Illuminati Saga",
+  "mal_title_jp": "青の祓魔師 島根啓明結社篇",
+  "mal_season": "winter 2024",
+  "mal_year": "2024",
   "imdb_id": "tt30803594",
-  "last_updated": "2026-05-29T00:48:10.894878+00:00"
+  "last_updated": "2026-05-29T18:59:22.834582+00:00"
 }

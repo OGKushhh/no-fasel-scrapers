@@ -2,9 +2,20 @@
   "content_id": "253991",
   "title": "انمي Hitoribocchi no Isekai Kouryaku",
   "year": "2024",
-  "rating": "6.4",
-  "votes": 1261,
-  "source": "imdbapi",
+  "rating": "6.55",
+  "votes": 72775,
+  "source": "mal",
+  "mal_id": 57891,
+  "mal_rank": 7931,
+  "mal_popularity": 1750,
+  "mal_studios": [
+    "Passione",
+    "Hayabusa Film"
+  ],
+  "mal_title_en": "Loner Life in Another World",
+  "mal_title_jp": "ひとりぼっちの異世界攻略",
+  "mal_season": "fall 2024",
+  "mal_year": "2024",
   "imdb_id": "tt32512773",
-  "last_updated": "2026-05-29T00:25:51.874572+00:00"
+  "last_updated": "2026-05-29T18:47:02.406553+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "212594",
   "title": "انمي Yamada-kun to Lv999 no Koi wo Suru",
   "year": "2023",
-  "rating": "7.6",
-  "votes": 6472,
-  "source": "imdbapi",
+  "rating": "7.75",
+  "votes": 292166,
+  "source": "mal",
+  "mal_id": 53126,
+  "mal_rank": 1340,
+  "mal_popularity": 459,
+  "mal_studios": [
+    "Madhouse"
+  ],
+  "mal_title_en": "My Love Story with Yamada-kun at Lv999",
+  "mal_title_jp": "山田くんとLv999の恋をする",
+  "mal_season": "spring 2023",
+  "mal_year": "2023",
   "imdb_id": "tt22297712",
-  "last_updated": "2026-05-29T01:20:21.129036+00:00"
+  "last_updated": "2026-05-29T19:15:43.455238+00:00"
 }

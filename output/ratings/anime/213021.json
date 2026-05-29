@@ -2,9 +2,19 @@
   "content_id": "213021",
   "title": "انمي Boku no Kokoro no Yabai Yatsu",
   "year": "2023",
-  "rating": "8.1",
-  "votes": 6516,
-  "source": "imdbapi",
+  "rating": "8.2",
+  "votes": 232151,
+  "source": "mal",
+  "mal_id": 52578,
+  "mal_rank": 446,
+  "mal_popularity": 598,
+  "mal_studios": [
+    "Shin-Ei Animation"
+  ],
+  "mal_title_en": "The Dangers in My Heart",
+  "mal_title_jp": "僕の心のヤバイやつ",
+  "mal_season": "spring 2023",
+  "mal_year": "2023",
   "imdb_id": "tt21423786",
-  "last_updated": "2026-05-29T01:16:33.386570+00:00"
+  "last_updated": "2026-05-29T19:13:41.810117+00:00"
 }

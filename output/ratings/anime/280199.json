@@ -2,9 +2,19 @@
   "content_id": "280199",
   "title": "انمي Towa no Yuugure",
   "year": "2025",
-  "rating": "6.3",
-  "votes": 554,
-  "source": "imdbapi",
+  "rating": "7.19",
+  "votes": 9801,
+  "source": "mal",
+  "mal_id": 62359,
+  "mal_rank": 4145,
+  "mal_popularity": 5670,
+  "mal_studios": [
+    "P.A. Works"
+  ],
+  "mal_title_en": "Dusk Beyond the End of the World: Think Morning, Count Two",
+  "mal_title_jp": "永久のユウグレ「朝をこころに、一、二と数えよ」",
+  "mal_season": "summer 2025",
+  "mal_year": "2025",
   "imdb_id": "tt37532634",
-  "last_updated": "2026-05-28T23:45:08.863050+00:00"
+  "last_updated": "2026-05-29T14:43:02.020397+00:00"
 }

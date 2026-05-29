@@ -2,9 +2,19 @@
   "content_id": "242535",
   "title": "انمي Karasu wa Aruji wo Erabanai",
   "year": "2024",
-  "rating": "7.7",
-  "votes": 465,
-  "source": "imdbapi",
+  "rating": "8.06",
+  "votes": 19561,
+  "source": "mal",
+  "mal_id": 56980,
+  "mal_rank": 660,
+  "mal_popularity": 3206,
+  "mal_studios": [
+    "Studio Pierrot"
+  ],
+  "mal_title_en": "Yatagarasu: The Raven Does Not Choose Its Master",
+  "mal_title_jp": "烏は主を選ばない",
+  "mal_season": "spring 2024",
+  "mal_year": "2024",
   "imdb_id": "tt32174340",
-  "last_updated": "2026-05-29T00:37:12.969594+00:00"
+  "last_updated": "2026-05-29T18:53:07.638014+00:00"
 }

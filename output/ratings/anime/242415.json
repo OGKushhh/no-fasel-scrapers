@@ -2,9 +2,19 @@
   "content_id": "242415",
   "title": "Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka",
   "year": "2015",
-  "rating": "7.4",
-  "votes": 13668,
-  "source": "imdbapi",
+  "rating": "7.53",
+  "votes": 1017524,
+  "source": "mal",
+  "mal_id": 28121,
+  "mal_rank": 2139,
+  "mal_popularity": 77,
+  "mal_studios": [
+    "J.C.Staff"
+  ],
+  "mal_title_en": "Is It Wrong to Try to Pick Up Girls in a Dungeon?",
+  "mal_title_jp": "ダンジョンに出会いを求めるのは間違っているだろうか",
+  "mal_season": "spring 2015",
+  "mal_year": "2015",
   "imdb_id": "tt4728568",
-  "last_updated": "2026-05-29T00:38:16.210770+00:00"
+  "last_updated": "2026-05-29T18:53:41.491989+00:00"
 }

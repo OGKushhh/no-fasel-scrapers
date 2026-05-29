@@ -2,9 +2,19 @@
   "content_id": "279422",
   "title": "انمي Date A Live",
   "year": "2013",
-  "rating": "6.9",
-  "votes": 5293,
-  "source": "imdbapi",
+  "rating": "7.14",
+  "votes": 625457,
+  "source": "mal",
+  "mal_id": 15583,
+  "mal_rank": 4425,
+  "mal_popularity": 162,
+  "mal_studios": [
+    "AIC PLUS+"
+  ],
+  "mal_title_en": "Date A Live",
+  "mal_title_jp": "デート・ア・ライブ",
+  "mal_season": "spring 2013",
+  "mal_year": "2013",
   "imdb_id": "tt2575684",
-  "last_updated": "2026-05-28T23:47:01.608782+00:00"
+  "last_updated": "2026-05-29T14:44:23.453219+00:00"
 }

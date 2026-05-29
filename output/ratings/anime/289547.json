@@ -2,9 +2,19 @@
   "content_id": "289547",
   "title": "انمي Arne no Jikenbo",
   "year": "2026",
-  "rating": "5.7",
-  "votes": 89,
-  "source": "imdbapi",
+  "rating": "6.34",
+  "votes": 6256,
+  "source": "mal",
+  "mal_id": 60255,
+  "mal_rank": 9163,
+  "mal_popularity": 5103,
+  "mal_studios": [
+    "SILVER LINK."
+  ],
+  "mal_title_en": "The Case Book of Arne",
+  "mal_title_jp": "アルネの事件簿",
+  "mal_season": "winter 2026",
+  "mal_year": "2026",
   "imdb_id": "tt38798044",
-  "last_updated": "2026-05-28T23:29:41.022238+00:00"
+  "last_updated": "2026-05-29T14:34:10.877692+00:00"
 }

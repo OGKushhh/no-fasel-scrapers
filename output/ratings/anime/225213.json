@@ -2,9 +2,19 @@
   "content_id": "225213",
   "title": "انمي Arknights: Fuyukomori Kaerimichi",
   "year": "2023",
-  "rating": "6.6",
-  "votes": 193,
-  "source": "imdbapi",
+  "rating": "7.6",
+  "votes": 20217,
+  "source": "mal",
+  "mal_id": 53881,
+  "mal_rank": 1830,
+  "mal_popularity": 3263,
+  "mal_studios": [
+    "Yostar Pictures"
+  ],
+  "mal_title_en": "Arknights: Perish in Frost",
+  "mal_title_jp": "アークナイツ【冬隠帰路/PERISH IN FROST】",
+  "mal_season": "fall 2023",
+  "mal_year": "2023",
   "imdb_id": "tt29257041",
-  "last_updated": "2026-05-29T00:55:30.566234+00:00"
+  "last_updated": "2026-05-29T19:03:51.179269+00:00"
 }

@@ -2,9 +2,20 @@
   "content_id": "289941",
   "title": "انمي Tensei shitara Dragon no Tamago datta",
   "year": "2026",
-  "rating": "6.2",
-  "votes": 330,
-  "source": "imdbapi",
+  "rating": "6.41",
+  "votes": 20240,
+  "source": "mal",
+  "mal_id": 61207,
+  "mal_rank": 8807,
+  "mal_popularity": 3800,
+  "mal_studios": [
+    "Felix Film",
+    "Ga-Crew"
+  ],
+  "mal_title_en": "Reincarnated as a Dragon Hatchling",
+  "mal_title_jp": "転生したらドラゴンの卵だった",
+  "mal_season": "winter 2026",
+  "mal_year": "2026",
   "imdb_id": "tt38940229",
-  "last_updated": "2026-05-28T23:27:22.183615+00:00"
+  "last_updated": "2026-05-29T14:32:40.809637+00:00"
 }

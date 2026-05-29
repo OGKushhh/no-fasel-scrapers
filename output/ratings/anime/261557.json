@@ -1,10 +1,20 @@
 {
   "content_id": "261557",
   "title": "انمي Mahoutsukai no Yakusoku",
-  "year": "2025",
-  "rating": "5.4",
-  "votes": 112,
-  "source": "imdbapi",
+  "year": "2017",
+  "rating": "8.05",
+  "votes": 426615,
+  "source": "mal",
+  "mal_id": 35062,
+  "mal_rank": 683,
+  "mal_popularity": 183,
+  "mal_studios": [
+    "Wit Studio"
+  ],
+  "mal_title_en": "The Ancient Magus' Bride",
+  "mal_title_jp": "魔法使いの嫁",
+  "mal_season": "fall 2017",
+  "mal_year": "2017",
   "imdb_id": "tt34621467",
-  "last_updated": "2026-05-29T00:13:33.492025+00:00"
+  "last_updated": "2026-05-29T14:59:41.926777+00:00"
 }

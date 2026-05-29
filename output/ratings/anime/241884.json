@@ -1,10 +1,20 @@
 {
   "content_id": "241884",
   "title": "اونا Dragon Raja -The Blazing Dawn",
-  "year": "2024",
-  "rating": "7.0",
-  "votes": 617,
-  "source": "imdbapi",
+  "year": "2022",
+  "rating": "7.33",
+  "votes": 21104,
+  "source": "mal",
+  "mal_id": 44408,
+  "mal_rank": 3187,
+  "mal_popularity": 3075,
+  "mal_studios": [
+    "GARDEN Culture"
+  ],
+  "mal_title_en": "Dragon Raja: The Blazing Dawn",
+  "mal_title_jp": "龙族",
+  "mal_season": "summer 2022",
+  "mal_year": "2022",
   "imdb_id": "tt27442011",
-  "last_updated": "2026-05-29T00:40:50.688632+00:00"
+  "last_updated": "2026-05-29T18:55:22.506529+00:00"
 }

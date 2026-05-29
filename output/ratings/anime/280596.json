@@ -2,9 +2,19 @@
   "content_id": "280596",
   "title": "انمي InuYasha: Kanketsu-hen",
   "year": "2009",
-  "rating": "8.4",
-  "votes": 4088,
-  "source": "imdbapi",
+  "rating": "8.21",
+  "votes": 154132,
+  "source": "mal",
+  "mal_id": 6811,
+  "mal_rank": 434,
+  "mal_popularity": 920,
+  "mal_studios": [
+    "Sunrise"
+  ],
+  "mal_title_en": "InuYasha: The Final Act",
+  "mal_title_jp": "犬夜叉 完結編",
+  "mal_season": "fall 2009",
+  "mal_year": "2009",
   "imdb_id": "tt1534184",
-  "last_updated": "2026-05-28T23:44:29.634458+00:00"
+  "last_updated": "2026-05-29T14:42:36.035513+00:00"
 }

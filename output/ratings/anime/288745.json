@@ -2,9 +2,19 @@
   "content_id": "288745",
   "title": "انمي MF Ghost 3rd Season",
   "year": "2026",
-  "rating": "7.8",
-  "votes": 7,
-  "source": "imdbapi",
+  "rating": "7.82",
+  "votes": 14177,
+  "source": "mal",
+  "mal_id": 60602,
+  "mal_rank": 1147,
+  "mal_popularity": 4447,
+  "mal_studios": [
+    "Felix Film"
+  ],
+  "mal_title_en": "MF Ghost Season 3",
+  "mal_title_jp": "MFゴースト 3rd Season",
+  "mal_season": "winter 2026",
+  "mal_year": "2026",
   "imdb_id": "tt39246765",
-  "last_updated": "2026-05-28T23:32:43.866461+00:00"
+  "last_updated": "2026-05-29T14:35:54.465655+00:00"
 }

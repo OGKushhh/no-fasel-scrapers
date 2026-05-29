@@ -2,9 +2,19 @@
   "content_id": "242174",
   "title": "انمي Kono Subarashii Sekai ni Shukufuku wo! 3",
   "year": "2024",
-  "rating": "7.8",
-  "votes": 7202,
-  "source": "imdbapi",
+  "rating": "8.34",
+  "votes": 242703,
+  "source": "mal",
+  "mal_id": 49458,
+  "mal_rank": 288,
+  "mal_popularity": 456,
+  "mal_studios": [
+    "Drive"
+  ],
+  "mal_title_en": "KonoSuba: God's Blessing on This Wonderful World! 3",
+  "mal_title_jp": "この素晴らしい世界に祝福を！3",
+  "mal_season": "spring 2024",
+  "mal_year": "2024",
   "imdb_id": "tt9239552",
-  "last_updated": "2026-05-29T00:38:41.012991+00:00"
+  "last_updated": "2026-05-29T18:54:02.097208+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "268670",
   "title": "انمي Guilty Gear Strive: Dual Rulers",
   "year": "2025",
-  "rating": "5.5",
-  "votes": 182,
-  "source": "imdbapi",
+  "rating": "5.88",
+  "votes": 7052,
+  "source": "mal",
+  "mal_id": 59070,
+  "mal_rank": 11629,
+  "mal_popularity": 5173,
+  "mal_studios": [
+    "SANZIGEN"
+  ],
+  "mal_title_en": "Guilty Gear Strive: Dual Rulers",
+  "mal_title_jp": "GUILTY GEAR STRIVE: DUAL RULERS",
+  "mal_season": "spring 2025",
+  "mal_year": "2025",
   "imdb_id": "tt35508195",
-  "last_updated": "2026-05-29T00:04:42.302577+00:00"
+  "last_updated": "2026-05-29T14:55:01.151015+00:00"
 }

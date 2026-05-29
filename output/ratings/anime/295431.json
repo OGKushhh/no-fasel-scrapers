@@ -2,9 +2,19 @@
   "content_id": "295431",
   "title": "انمي Maid-san wa Taberu dake",
   "year": "2026",
-  "rating": "6.1",
-  "votes": 48,
-  "source": "imdbapi",
+  "rating": "6.71",
+  "votes": 2316,
+  "source": "mal",
+  "mal_id": 62342,
+  "mal_rank": 6956,
+  "mal_popularity": 5867,
+  "mal_studios": [
+    "EMT Squared"
+  ],
+  "mal_title_en": "The Food Diary of Miss Maid",
+  "mal_title_jp": "メイドさんは食べるだけ",
+  "mal_season": "spring 2026",
+  "mal_year": "2026",
   "imdb_id": "tt38040630",
-  "last_updated": "2026-05-28T23:21:52.216506+00:00"
+  "last_updated": "2026-05-29T14:29:31.701170+00:00"
 }

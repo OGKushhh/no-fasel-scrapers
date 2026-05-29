@@ -2,9 +2,19 @@
   "content_id": "296739",
   "title": "انمي Aishiteru Game wo Owarasetai",
   "year": "2026",
-  "rating": "7.2",
-  "votes": 281,
-  "source": "imdbapi",
+  "rating": "7.28",
+  "votes": 8284,
+  "source": "mal",
+  "mal_id": 61839,
+  "mal_rank": 3480,
+  "mal_popularity": 2996,
+  "mal_studios": [
+    "Felix Film"
+  ],
+  "mal_title_en": "I Want to End This Love Game",
+  "mal_title_jp": "愛してるゲームを終わらせたい",
+  "mal_season": "spring 2026",
+  "mal_year": "2026",
   "imdb_id": "tt39122671",
-  "last_updated": "2026-05-28T23:13:40.933809+00:00"
+  "last_updated": "2026-05-29T14:25:41.434447+00:00"
 }

@@ -1,10 +1,20 @@
 {
   "content_id": "289807",
   "title": "انمي Mato Seihei no Slave 2",
-  "year": "2026",
-  "rating": "6.4",
-  "votes": 2882,
-  "source": "imdbapi",
+  "year": "2024",
+  "rating": "6.89",
+  "votes": 111790,
+  "source": "mal",
+  "mal_id": 50392,
+  "mal_rank": 5834,
+  "mal_popularity": 1026,
+  "mal_studios": [
+    "Seven Arcs"
+  ],
+  "mal_title_en": "Chained Soldier",
+  "mal_title_jp": "魔都精兵のスレイブ",
+  "mal_season": "winter 2024",
+  "mal_year": "2024",
   "imdb_id": "tt16156736",
-  "last_updated": "2026-05-28T23:27:58.616401+00:00"
+  "last_updated": "2026-05-29T14:33:11.550983+00:00"
 }

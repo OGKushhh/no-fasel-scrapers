@@ -2,9 +2,19 @@
   "content_id": "242510",
   "title": "انمي Kuroshitsuji: Kishuku Gakkou-hen",
   "year": "2024",
-  "rating": "7.5",
-  "votes": 676,
-  "source": "imdbapi",
+  "rating": "7.87",
+  "votes": 40307,
+  "source": "mal",
+  "mal_id": 55855,
+  "mal_rank": 1028,
+  "mal_popularity": 2225,
+  "mal_studios": [
+    "CloverWorks"
+  ],
+  "mal_title_en": "Black Butler: Public School Arc",
+  "mal_title_jp": "黒執事 -寄宿学校編-",
+  "mal_season": "spring 2024",
+  "mal_year": "2024",
   "imdb_id": "tt32156334",
-  "last_updated": "2026-05-29T00:37:30.829893+00:00"
+  "last_updated": "2026-05-29T18:53:22.922131+00:00"
 }

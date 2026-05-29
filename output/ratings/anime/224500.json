@@ -2,9 +2,19 @@
   "content_id": "224500",
   "title": "انمي Overtake!",
   "year": "2023",
-  "rating": "5.6",
-  "votes": 412,
-  "source": "imdbapi",
+  "rating": "7.49",
+  "votes": 26869,
+  "source": "mal",
+  "mal_id": 54301,
+  "mal_rank": 2362,
+  "mal_popularity": 2894,
+  "mal_studios": [
+    "TROYCA"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "オーバーテイク！",
+  "mal_season": "fall 2023",
+  "mal_year": "2023",
   "imdb_id": "tt7273546",
-  "last_updated": "2026-05-29T00:57:52.706601+00:00"
+  "last_updated": "2026-05-29T19:05:54.004881+00:00"
 }

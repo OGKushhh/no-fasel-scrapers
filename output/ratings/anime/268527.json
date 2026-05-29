@@ -2,9 +2,19 @@
   "content_id": "268527",
   "title": "انمي Yami Healer",
   "year": "2025",
-  "rating": "6.6",
-  "votes": 1367,
-  "source": "imdbapi",
+  "rating": "6.83",
+  "votes": 81356,
+  "source": "mal",
+  "mal_id": 58359,
+  "mal_rank": 6197,
+  "mal_popularity": 1634,
+  "mal_studios": [
+    "Makaria"
+  ],
+  "mal_title_en": "The Brilliant Healer's New Life in the Shadows",
+  "mal_title_jp": "一瞬で治療していたのに役立たずと追放された天才治癒師、闇ヒーラーとして楽しく生きる",
+  "mal_season": "spring 2025",
+  "mal_year": "2025",
   "imdb_id": "tt32524709",
-  "last_updated": "2026-05-29T00:06:22.041330+00:00"
+  "last_updated": "2026-05-29T14:55:56.313646+00:00"
 }

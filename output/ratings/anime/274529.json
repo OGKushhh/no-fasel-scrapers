@@ -2,9 +2,19 @@
   "content_id": "274529",
   "title": "انمي Nyaight of the Living Cat",
   "year": "2025",
-  "rating": "6.6",
-  "votes": 437,
-  "source": "imdbapi",
+  "rating": "6.34",
+  "votes": 8928,
+  "source": "mal",
+  "mal_id": 58197,
+  "mal_rank": 9194,
+  "mal_popularity": 4497,
+  "mal_studios": [
+    "OLM"
+  ],
+  "mal_title_en": "Nyaight of the Living Cat",
+  "mal_title_jp": "ニャイト・オブ・ザ・リビングキャット",
+  "mal_season": "summer 2025",
+  "mal_year": "2025",
   "imdb_id": "tt31435652",
-  "last_updated": "2026-05-28T23:53:02.325887+00:00"
+  "last_updated": "2026-05-29T14:47:47.406828+00:00"
 }

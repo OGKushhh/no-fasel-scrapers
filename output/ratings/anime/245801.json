@@ -2,9 +2,19 @@
   "content_id": "245801",
   "title": "Love Live! Superstar!! 2nd Season",
   "year": "2022",
-  "rating": "7.2",
-  "votes": 266,
-  "source": "imdbapi",
+  "rating": "7.71",
+  "votes": 17756,
+  "source": "mal",
+  "mal_id": 50203,
+  "mal_rank": 1452,
+  "mal_popularity": 4137,
+  "mal_studios": [
+    "Sunrise"
+  ],
+  "mal_title_en": "Love Live! Superstar!! Season 2",
+  "mal_title_jp": "ラブライブ！スーパースター!!",
+  "mal_season": "summer 2022",
+  "mal_year": "2022",
   "imdb_id": "tt13840232",
-  "last_updated": "2026-05-29T00:35:15.754913+00:00"
+  "last_updated": "2026-05-29T18:52:03.188702+00:00"
 }

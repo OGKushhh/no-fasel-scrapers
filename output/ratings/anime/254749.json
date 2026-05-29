@@ -2,9 +2,19 @@
   "content_id": "254749",
   "title": "انمي Hoshifuru Oukoku no Nina",
   "year": "2024",
-  "rating": "6.6",
-  "votes": 1271,
-  "source": "imdbapi",
+  "rating": "7.42",
+  "votes": 27692,
+  "source": "mal",
+  "mal_id": 57362,
+  "mal_rank": 2674,
+  "mal_popularity": 2991,
+  "mal_studios": [
+    "Signal.MD"
+  ],
+  "mal_title_en": "Nina the Starry Bride",
+  "mal_title_jp": "星降る王国のニナ",
+  "mal_season": "fall 2024",
+  "mal_year": "2024",
   "imdb_id": "tt32178571",
-  "last_updated": "2026-05-29T00:20:47.988436+00:00"
+  "last_updated": "2026-05-29T15:03:49.016589+00:00"
 }

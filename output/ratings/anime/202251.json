@@ -2,9 +2,19 @@
   "content_id": "202251",
   "title": "انمي Isekai Nonbiri Nouka",
   "year": "2023",
-  "rating": "5.1",
-  "votes": 183,
-  "source": "imdbapi",
+  "rating": "7.53",
+  "votes": 151099,
+  "source": "mal",
+  "mal_id": 51462,
+  "mal_rank": 2151,
+  "mal_popularity": 944,
+  "mal_studios": [
+    "Zero-G"
+  ],
+  "mal_title_en": "Farming Life in Another World",
+  "mal_title_jp": "異世界のんびり農家",
+  "mal_season": "winter 2023",
+  "mal_year": "2023",
   "imdb_id": "tt30644058",
-  "last_updated": "2026-05-29T01:27:32.253718+00:00"
+  "last_updated": "2026-05-29T19:19:17.811678+00:00"
 }

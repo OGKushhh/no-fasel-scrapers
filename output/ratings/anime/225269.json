@@ -2,9 +2,19 @@
   "content_id": "225269",
   "title": "انمي Kikansha no Mahou wa Tokubetsu desu",
   "year": "2023",
-  "rating": "6.7",
-  "votes": 1656,
-  "source": "imdbapi",
+  "rating": "7.04",
+  "votes": 85062,
+  "source": "mal",
+  "mal_id": 54852,
+  "mal_rank": 5037,
+  "mal_popularity": 1564,
+  "mal_studios": [
+    "Arvo Animation"
+  ],
+  "mal_title_en": "A Returner's Magic Should Be Special",
+  "mal_title_jp": "帰還者の魔法は特別です",
+  "mal_season": "fall 2023",
+  "mal_year": "2023",
   "imdb_id": "tt28313387",
-  "last_updated": "2026-05-29T00:54:37.811430+00:00"
+  "last_updated": "2026-05-29T19:03:16.795125+00:00"
 }

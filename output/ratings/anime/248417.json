@@ -2,9 +2,19 @@
   "content_id": "248417",
   "title": "انمي Mob kara Hajimaru Tansaku Eiyuutan",
   "year": "2024",
-  "rating": "5.5",
-  "votes": 430,
-  "source": "imdbapi",
+  "rating": "5.81",
+  "votes": 35591,
+  "source": "mal",
+  "mal_id": 57646,
+  "mal_rank": 12001,
+  "mal_popularity": 2661,
+  "mal_studios": [
+    "Gekkou"
+  ],
+  "mal_title_en": "A Nobody's Way Up to an Exploration Hero",
+  "mal_title_jp": "モブから始まる探索英雄譚",
+  "mal_season": "summer 2024",
+  "mal_year": "2024",
   "imdb_id": "tt32332992",
-  "last_updated": "2026-05-29T00:31:17.904695+00:00"
+  "last_updated": "2026-05-29T18:49:59.491479+00:00"
 }

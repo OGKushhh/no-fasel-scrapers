@@ -1,10 +1,20 @@
 {
   "content_id": "202627",
   "title": "انمي Maou Gakuin no Futekigousha 2",
-  "year": "2023",
-  "rating": "7.1",
-  "votes": 7167,
-  "source": "imdbapi",
+  "year": "2024",
+  "rating": "6.49",
+  "votes": 57185,
+  "source": "mal",
+  "mal_id": 48418,
+  "mal_rank": 8303,
+  "mal_popularity": 1334,
+  "mal_studios": [
+    "SILVER LINK."
+  ],
+  "mal_title_en": "The Misfit of Demon King Academy II Part 2",
+  "mal_title_jp": "魔王学院の不適合者 II ～史上最強の魔王の始祖、転生して子孫たちの学校へ通う～ 第2クール",
+  "mal_season": "spring 2024",
+  "mal_year": "2024",
   "imdb_id": "tt12432936",
-  "last_updated": "2026-05-29T01:24:35.717626+00:00"
+  "last_updated": "2026-05-29T19:17:46.961315+00:00"
 }

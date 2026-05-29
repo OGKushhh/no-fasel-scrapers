@@ -2,9 +2,19 @@
   "content_id": "212960",
   "title": "انمي Megami no Café Terrace",
   "year": "2023",
-  "rating": "6.8",
-  "votes": 995,
-  "source": "imdbapi",
+  "rating": "7.33",
+  "votes": 73734,
+  "source": "mal",
+  "mal_id": 52973,
+  "mal_rank": 3190,
+  "mal_popularity": 1642,
+  "mal_studios": [
+    "Tezuka Productions"
+  ],
+  "mal_title_en": "The Café Terrace and Its Goddesses",
+  "mal_title_jp": "女神のカフェテラス",
+  "mal_season": "spring 2023",
+  "mal_year": "2023",
   "imdb_id": "tt22087138",
-  "last_updated": "2026-05-29T01:16:54.911622+00:00"
+  "last_updated": "2026-05-29T19:14:03.351193+00:00"
 }

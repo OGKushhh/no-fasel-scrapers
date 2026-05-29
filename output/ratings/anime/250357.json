@@ -2,9 +2,19 @@
   "content_id": "250357",
   "title": "انمي Re:Zero kara Hajimeru Isekai Seikatsu 3rd Season",
   "year": "2024",
-  "rating": "8.9",
-  "votes": 2297,
-  "source": "imdbapi",
+  "rating": "8.42",
+  "votes": 237139,
+  "source": "mal",
+  "mal_id": 54857,
+  "mal_rank": 212,
+  "mal_popularity": 513,
+  "mal_studios": [
+    "White Fox"
+  ],
+  "mal_title_en": "Re:ZERO -Starting Life in Another World- Season 3",
+  "mal_title_jp": "Re:ゼロから始める異世界生活 3rd season",
+  "mal_season": "fall 2024",
+  "mal_year": "2024",
   "imdb_id": "tt33319868",
-  "last_updated": "2026-05-29T00:26:57.951196+00:00"
+  "last_updated": "2026-05-29T18:47:28.112067+00:00"
 }

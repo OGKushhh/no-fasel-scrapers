@@ -2,9 +2,20 @@
   "content_id": "278576",
   "title": "انمي Yami Shibai 13",
   "year": "2024",
-  "rating": "7.0",
-  "votes": 1100,
-  "source": "imdbapi",
+  "rating": "6.02",
+  "votes": 2065,
+  "source": "mal",
+  "mal_id": 59010,
+  "mal_rank": 10982,
+  "mal_popularity": 9350,
+  "mal_studios": [
+    "ILCA",
+    "ILCASHIPS"
+  ],
+  "mal_title_en": "Theatre of Darkness: Yamishibai 13",
+  "mal_title_jp": "闇芝居 十三期",
+  "mal_season": "summer 2024",
+  "mal_year": "2024",
   "imdb_id": "tt3111906",
-  "last_updated": "2026-05-28T23:48:10.261839+00:00"
+  "last_updated": "2026-05-29T14:45:02.553228+00:00"
 }

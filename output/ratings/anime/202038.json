@@ -2,9 +2,19 @@
   "content_id": "202038",
   "title": "انمي Spy Kyoushitsu",
   "year": "2023",
-  "rating": "5.6",
-  "votes": 636,
-  "source": "imdbapi",
+  "rating": "6.44",
+  "votes": 48724,
+  "source": "mal",
+  "mal_id": 51252,
+  "mal_rank": 8615,
+  "mal_popularity": 1639,
+  "mal_studios": [
+    "feel."
+  ],
+  "mal_title_en": "Spy Classroom",
+  "mal_title_jp": "スパイ教室",
+  "mal_season": "winter 2023",
+  "mal_year": "2023",
   "imdb_id": "tt28254942",
-  "last_updated": "2026-05-29T01:28:04.719953+00:00"
+  "last_updated": "2026-05-29T19:19:49.952486+00:00"
 }

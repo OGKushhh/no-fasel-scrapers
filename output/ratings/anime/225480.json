@@ -2,9 +2,19 @@
   "content_id": "225480",
   "title": "انمي The iDOLM@STER Million Live!",
   "year": "2023",
-  "rating": "7.1",
-  "votes": 36,
-  "source": "imdbapi",
+  "rating": "7.07",
+  "votes": 3522,
+  "source": "mal",
+  "mal_id": 42385,
+  "mal_rank": 4886,
+  "mal_popularity": 6777,
+  "mal_studios": [
+    "Shirogumi"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "アイドルマスター ミリオンライブ！",
+  "mal_season": "fall 2023",
+  "mal_year": "2023",
   "imdb_id": "tt12648404",
-  "last_updated": "2026-05-29T00:53:55.953287+00:00"
+  "last_updated": "2026-05-29T19:02:48.239901+00:00"
 }

@@ -2,9 +2,20 @@
   "content_id": "281092",
   "title": "انمي Potion, Wagami wo Tasukeru",
   "year": "2025",
-  "rating": "6.2",
-  "votes": 67,
-  "source": "imdbapi",
+  "rating": "6.42",
+  "votes": 6505,
+  "source": "mal",
+  "mal_id": 62144,
+  "mal_rank": 8733,
+  "mal_popularity": 5759,
+  "mal_studios": [
+    "Imagica Infos",
+    "Imageworks Studio"
+  ],
+  "mal_title_en": "I Saved Myself with a Potion!: Life in Another World",
+  "mal_title_jp": "ポーション、わが身を助ける",
+  "mal_season": "fall 2025",
+  "mal_year": "2025",
   "imdb_id": "tt38572776",
-  "last_updated": "2026-05-28T23:40:11.070356+00:00"
+  "last_updated": "2026-05-29T14:40:22.579873+00:00"
 }

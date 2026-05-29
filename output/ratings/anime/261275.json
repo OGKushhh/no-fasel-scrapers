@@ -2,9 +2,19 @@
   "content_id": "261275",
   "title": "انمي BanG Dream! Ave Mujica",
   "year": "2025",
-  "rating": "6.8",
-  "votes": 310,
-  "source": "imdbapi",
+  "rating": "8.11",
+  "votes": 15784,
+  "source": "mal",
+  "mal_id": 56653,
+  "mal_rank": 578,
+  "mal_popularity": 4229,
+  "mal_studios": [
+    "SANZIGEN"
+  ],
+  "mal_title_en": "Ave Mujica: The Die is Cast",
+  "mal_title_jp": "BanG Dream! Ave Mujica",
+  "mal_season": "winter 2025",
+  "mal_year": "2025",
   "imdb_id": "tt29135397",
-  "last_updated": "2026-05-29T00:15:40.072629+00:00"
+  "last_updated": "2026-05-29T15:00:50.819960+00:00"
 }

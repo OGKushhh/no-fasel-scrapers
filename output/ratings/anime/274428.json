@@ -2,9 +2,19 @@
   "content_id": "274428",
   "title": "انمي Seishun Buta Yarou wa Santa Claus no Yume wo Minai",
   "year": "2025",
-  "rating": "8.1",
-  "votes": 2458,
-  "source": "imdbapi",
+  "rating": "8.18",
+  "votes": 71837,
+  "source": "mal",
+  "mal_id": 57433,
+  "mal_rank": 494,
+  "mal_popularity": 1296,
+  "mal_studios": [
+    "CloverWorks"
+  ],
+  "mal_title_en": "Rascal Does Not Dream of Santa Claus",
+  "mal_title_jp": "青春ブタ野郎はサンタクロースの夢を見ない",
+  "mal_season": "summer 2025",
+  "mal_year": "2025",
   "imdb_id": "tt33060122",
-  "last_updated": "2026-05-28T23:54:39.131303+00:00"
+  "last_updated": "2026-05-29T14:48:45.205508+00:00"
 }

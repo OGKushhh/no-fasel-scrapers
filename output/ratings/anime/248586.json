@@ -2,9 +2,19 @@
   "content_id": "248586",
   "title": "انمي Isekai Shikkaku",
   "year": "2024",
-  "rating": "6.8",
-  "votes": 1964,
-  "source": "imdbapi",
+  "rating": "7.25",
+  "votes": 101164,
+  "source": "mal",
+  "mal_id": 52367,
+  "mal_rank": 3724,
+  "mal_popularity": 1180,
+  "mal_studios": [
+    "Atelier Pontdarc"
+  ],
+  "mal_title_en": "No Longer Allowed in Another World",
+  "mal_title_jp": "異世界失格",
+  "mal_season": "summer 2024",
+  "mal_year": "2024",
   "imdb_id": "tt31186547",
-  "last_updated": "2026-05-29T00:29:14.712115+00:00"
+  "last_updated": "2026-05-29T18:48:49.957332+00:00"
 }

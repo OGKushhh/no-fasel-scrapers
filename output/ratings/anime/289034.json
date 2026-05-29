@@ -2,9 +2,19 @@
   "content_id": "289034",
   "title": "انمي Jian Lai",
   "year": "2024",
-  "rating": "7.9",
-  "votes": 223,
-  "source": "imdbapi",
+  "rating": "7.87",
+  "votes": 1067,
+  "source": "mal",
+  "mal_id": 59389,
+  "mal_rank": 1020,
+  "mal_popularity": 11643,
+  "mal_studios": [
+    "Cloud Art"
+  ],
+  "mal_title_en": "The Swords",
+  "mal_title_jp": "剑来",
+  "mal_season": "summer 2024",
+  "mal_year": "2024",
   "imdb_id": "tt33132245",
-  "last_updated": "2026-05-28T23:31:49.492520+00:00"
+  "last_updated": "2026-05-29T14:35:23.291420+00:00"
 }

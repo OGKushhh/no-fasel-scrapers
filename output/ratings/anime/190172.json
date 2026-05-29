@@ -2,9 +2,19 @@
   "content_id": "190172",
   "title": "انمي Arknights: Reimei Zensou",
   "year": "2022",
-  "rating": "6.0",
-  "votes": 457,
-  "source": "imdbapi",
+  "rating": "7.07",
+  "votes": 45160,
+  "source": "mal",
+  "mal_id": 50205,
+  "mal_rank": 4835,
+  "mal_popularity": 2013,
+  "mal_studios": [
+    "Yostar Pictures"
+  ],
+  "mal_title_en": "Arknights Animation: Prelude to Dawn",
+  "mal_title_jp": "アークナイツ【黎明前奏/PRELUDE TO DAWN】",
+  "mal_season": "fall 2022",
+  "mal_year": "2022",
   "imdb_id": "tt22443832",
-  "last_updated": "2026-05-29T01:30:45.414780+00:00"
+  "last_updated": "2026-05-29T19:21:03.874990+00:00"
 }

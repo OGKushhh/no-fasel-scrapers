@@ -2,9 +2,19 @@
   "content_id": "202321",
   "title": "انمي Ijiranaide, Nagatoro-san 2nd Attack",
   "year": "2023",
-  "rating": "8.5",
-  "votes": 102,
-  "source": "imdbapi",
+  "rating": "7.44",
+  "votes": 147738,
+  "source": "mal",
+  "mal_id": 50197,
+  "mal_rank": 2589,
+  "mal_popularity": 841,
+  "mal_studios": [
+    "OLM"
+  ],
+  "mal_title_en": "Don't Toy with Me, Miss Nagatoro 2nd Attack",
+  "mal_title_jp": "イジらないで、長瀞さん 2nd Attack",
+  "mal_season": "winter 2023",
+  "mal_year": "2023",
   "imdb_id": "tt27618426",
-  "last_updated": "2026-05-29T01:26:30.100734+00:00"
+  "last_updated": "2026-05-29T19:18:51.679283+00:00"
 }

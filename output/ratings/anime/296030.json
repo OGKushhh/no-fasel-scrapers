@@ -2,9 +2,19 @@
   "content_id": "296030",
   "title": "انمي Nippon Sangoku",
   "year": "2026",
-  "rating": "8.4",
-  "votes": 936,
-  "source": "imdbapi",
+  "rating": "8.48",
+  "votes": 10883,
+  "source": "mal",
+  "mal_id": 63375,
+  "mal_rank": 175,
+  "mal_popularity": 2844,
+  "mal_studios": [
+    "Studio Kafka"
+  ],
+  "mal_title_en": "Nippon Sangoku: The Three Nations of the Crimson Sun",
+  "mal_title_jp": "日本三國",
+  "mal_season": "spring 2026",
+  "mal_year": "2026",
   "imdb_id": "tt40548519",
-  "last_updated": "2026-05-28T23:18:13.963778+00:00"
+  "last_updated": "2026-05-29T14:27:45.019458+00:00"
 }

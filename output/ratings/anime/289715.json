@@ -2,9 +2,19 @@
   "content_id": "289715",
   "title": "انمي Jujutsu Kaisen: Shimetsu Kaiyuu – Zenpen",
   "year": "2026",
-  "rating": "6.6",
-  "votes": 5114,
-  "source": "imdbapi",
+  "rating": "8.62",
+  "votes": 241610,
+  "source": "mal",
+  "mal_id": 57658,
+  "mal_rank": 102,
+  "mal_popularity": 514,
+  "mal_studios": [
+    "MAPPA"
+  ],
+  "mal_title_en": "Jujutsu Kaisen: The Culling Game Part 1",
+  "mal_title_jp": "呪術廻戦 「死滅回游 前編」",
+  "mal_season": "winter 2026",
+  "mal_year": "2026",
   "imdb_id": "tt38121182",
-  "last_updated": "2026-05-28T23:28:20.203081+00:00"
+  "last_updated": "2026-05-29T14:33:27.073709+00:00"
 }

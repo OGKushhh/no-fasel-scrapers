@@ -2,9 +2,19 @@
   "content_id": "289623",
   "title": "انمي Odayaka Kizoku no Kyuuka no Susume",
   "year": "2026",
-  "rating": "5.9",
-  "votes": 227,
-  "source": "imdbapi",
+  "rating": "6.84",
+  "votes": 11963,
+  "source": "mal",
+  "mal_id": 60071,
+  "mal_rank": 6145,
+  "mal_popularity": 4401,
+  "mal_studios": [
+    "SynergySP"
+  ],
+  "mal_title_en": "A Gentle Noble's Vacation Recommendation",
+  "mal_title_jp": "穏やか貴族の休暇のすすめ。",
+  "mal_season": "winter 2026",
+  "mal_year": "2026",
   "imdb_id": "tt36632066",
-  "last_updated": "2026-05-28T23:29:19.652696+00:00"
+  "last_updated": "2026-05-29T14:33:55.533449+00:00"
 }

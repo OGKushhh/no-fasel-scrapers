@@ -2,9 +2,20 @@
   "content_id": "257301",
   "title": "انمي Asatir 2: Mirai no Mukashi Banashi",
   "year": "2024",
-  "rating": "6.6",
-  "votes": 110,
-  "source": "imdbapi",
+  "rating": "6.4",
+  "votes": 227,
+  "source": "mal",
+  "mal_id": 59499,
+  "mal_rank": 8819,
+  "mal_popularity": 14461,
+  "mal_studios": [
+    "Toei Animation",
+    "Manga Productions"
+  ],
+  "mal_title_en": "Future Folktales 2",
+  "mal_title_jp": "アサティール2 未来の昔ばなし",
+  "mal_season": "fall 2024",
+  "mal_year": "2024",
   "imdb_id": "tt11616778",
-  "last_updated": "2026-05-29T00:17:36.994407+00:00"
+  "last_updated": "2026-05-29T15:01:51.388106+00:00"
 }

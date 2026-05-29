@@ -2,9 +2,19 @@
   "content_id": "268517",
   "title": "انمي Wind Breaker Season 2",
   "year": "2025",
-  "rating": "7.9",
-  "votes": 313,
-  "source": "imdbapi",
+  "rating": "7.64",
+  "votes": 108676,
+  "source": "mal",
+  "mal_id": 59160,
+  "mal_rank": 1701,
+  "mal_popularity": 1218,
+  "mal_studios": [
+    "CloverWorks"
+  ],
+  "mal_title_en": "Wind Breaker Season 2",
+  "mal_title_jp": "WIND BREAKER Season 2",
+  "mal_season": "spring 2025",
+  "mal_year": "2025",
   "imdb_id": "tt9124410",
-  "last_updated": "2026-05-29T00:06:32.668470+00:00"
+  "last_updated": "2026-05-29T14:56:07.014340+00:00"
 }

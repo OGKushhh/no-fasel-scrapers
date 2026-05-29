@@ -2,9 +2,19 @@
   "content_id": "218830",
   "title": "انمي Fate/strange Fake: Whispers of Dawn",
   "year": "2023",
-  "rating": "7.6",
-  "votes": 973,
-  "source": "imdbapi",
+  "rating": "8.15",
+  "votes": 67061,
+  "source": "mal",
+  "mal_id": 53127,
+  "mal_rank": 508,
+  "mal_popularity": 2069,
+  "mal_studios": [
+    "A-1 Pictures"
+  ],
+  "mal_title_en": "Fate/strange Fake: Whispers of Dawn",
+  "mal_title_jp": "Fate/strange Fake -Whispers of Dawn-",
+  "mal_season": "summer 2023",
+  "mal_year": "2023",
   "imdb_id": "tt22264336",
-  "last_updated": "2026-05-29T01:10:38.914244+00:00"
+  "last_updated": "2026-05-29T19:10:35.883669+00:00"
 }

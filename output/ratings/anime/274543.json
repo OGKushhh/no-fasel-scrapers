@@ -2,9 +2,19 @@
   "content_id": "274543",
   "title": "انمي Dekin no Mogura",
   "year": "2025",
-  "rating": "6.5",
-  "votes": 248,
-  "source": "imdbapi",
+  "rating": "6.95",
+  "votes": 7085,
+  "source": "mal",
+  "mal_id": 60315,
+  "mal_rank": 5504,
+  "mal_popularity": 5118,
+  "mal_studios": [
+    "Brain's Base"
+  ],
+  "mal_title_en": "Dekin no Mogura: The Earthbound Mole",
+  "mal_title_jp": "出禁のモグラ",
+  "mal_season": "summer 2025",
+  "mal_year": "2025",
   "imdb_id": "tt35995444",
-  "last_updated": "2026-05-28T23:52:34.348634+00:00"
+  "last_updated": "2026-05-29T14:47:37.105585+00:00"
 }

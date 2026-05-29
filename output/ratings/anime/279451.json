@@ -1,10 +1,20 @@
 {
   "content_id": "279451",
   "title": "انمي Date A Live III",
-  "year": "2014",
-  "rating": "6.9",
-  "votes": 5293,
-  "source": "imdbapi",
+  "year": "2019",
+  "rating": "7.2",
+  "votes": 234191,
+  "source": "mal",
+  "mal_id": 36633,
+  "mal_rank": 4036,
+  "mal_popularity": 614,
+  "mal_studios": [
+    "J.C.Staff"
+  ],
+  "mal_title_en": "Date A Live III",
+  "mal_title_jp": "デート・ア・ライブⅢ",
+  "mal_season": "winter 2019",
+  "mal_year": "2019",
   "imdb_id": "tt2575684",
-  "last_updated": "2026-05-28T23:46:54.024458+00:00"
+  "last_updated": "2026-05-29T14:44:13.279724+00:00"
 }

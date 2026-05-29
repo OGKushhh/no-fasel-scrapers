@@ -2,9 +2,19 @@
   "content_id": "296091",
   "title": "انمي Liar Game",
   "year": "2026",
-  "rating": "7.3",
-  "votes": 324,
-  "source": "imdbapi",
+  "rating": "6.36",
+  "votes": 7526,
+  "source": "mal",
+  "mal_id": 62331,
+  "mal_rank": 9083,
+  "mal_popularity": 3144,
+  "mal_studios": [
+    "Madhouse"
+  ],
+  "mal_title_en": "Liar Game",
+  "mal_title_jp": "LIAR GAME",
+  "mal_season": "spring 2026",
+  "mal_year": "2026",
   "imdb_id": "tt39229633",
-  "last_updated": "2026-05-28T23:17:01.699323+00:00"
+  "last_updated": "2026-05-29T14:27:19.558042+00:00"
 }

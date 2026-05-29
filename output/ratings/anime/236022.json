@@ -2,9 +2,21 @@
   "content_id": "236022",
   "title": "انمي Cardfight!! Vanguard: Divinez",
   "year": "2024",
-  "rating": "6.0",
-  "votes": 25,
-  "source": "imdbapi",
+  "rating": "7.17",
+  "votes": 1641,
+  "source": "mal",
+  "mal_id": 54142,
+  "mal_rank": 4229,
+  "mal_popularity": 9589,
+  "mal_studios": [
+    "Kinema Citrus",
+    "Gift-o’-Animation",
+    "Studio Jemi"
+  ],
+  "mal_title_en": "Cardfight!! Vanguard: Divinez",
+  "mal_title_jp": "カードファイト!! ヴァンガード DivineZ",
+  "mal_season": "winter 2024",
+  "mal_year": "2024",
   "imdb_id": "tt32083183",
-  "last_updated": "2026-05-29T00:44:14.801812+00:00"
+  "last_updated": "2026-05-29T18:57:28.501795+00:00"
 }

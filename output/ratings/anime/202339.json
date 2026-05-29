@@ -2,9 +2,19 @@
   "content_id": "202339",
   "title": "انمي Roukin",
   "year": "2023",
-  "rating": "6.7",
-  "votes": 753,
-  "source": "imdbapi",
+  "rating": "6.96",
+  "votes": 58656,
+  "source": "mal",
+  "mal_id": 52461,
+  "mal_rank": 5474,
+  "mal_popularity": 2119,
+  "mal_studios": [
+    "Felix Film"
+  ],
+  "mal_title_en": "Saving 80,000 Gold in Another World for My Retirement",
+  "mal_title_jp": "老後に備えて異世界で８万枚の金貨を貯めます",
+  "mal_season": "winter 2023",
+  "mal_year": "2023",
   "imdb_id": "tt21608762",
-  "last_updated": "2026-05-29T01:25:54.462694+00:00"
+  "last_updated": "2026-05-29T19:18:38.977533+00:00"
 }

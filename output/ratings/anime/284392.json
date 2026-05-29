@@ -2,9 +2,24 @@
   "content_id": "284392",
   "title": "انمي Fujimoto Tatsuki 17-26",
   "year": "2025",
-  "rating": "7.9",
-  "votes": 2833,
-  "source": "imdbapi",
+  "rating": "8.07",
+  "votes": 37538,
+  "source": "mal",
+  "mal_id": 62405,
+  "mal_rank": 647,
+  "mal_popularity": 2592,
+  "mal_studios": [
+    "P.A. Works",
+    "Zexcs",
+    "Lapin Track",
+    "Studio Kafka",
+    "100studio",
+    "Studio Graph77"
+  ],
+  "mal_title_en": "Tatsuki Fujimoto 17-26",
+  "mal_title_jp": "藤本タツキ17-26",
+  "mal_season": "fall 2025",
+  "mal_year": "2025",
   "imdb_id": "tt38491451",
-  "last_updated": "2026-05-28T23:34:49.331446+00:00"
+  "last_updated": "2026-05-29T14:37:03.871283+00:00"
 }

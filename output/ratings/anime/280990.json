@@ -1,10 +1,21 @@
 {
   "content_id": "280990",
   "title": "انمي Spy x Family Season 3",
-  "year": "2022",
-  "rating": "6.9",
-  "votes": 1279,
-  "source": "imdbapi",
+  "year": "2025",
+  "rating": "8.21",
+  "votes": 134521,
+  "source": "mal",
+  "mal_id": 59027,
+  "mal_rank": 441,
+  "mal_popularity": 786,
+  "mal_studios": [
+    "Wit Studio",
+    "CloverWorks"
+  ],
+  "mal_title_en": "Spy x Family Season 3",
+  "mal_title_jp": "SPY×FAMILY Season 3",
+  "mal_season": "fall 2025",
+  "mal_year": "2025",
   "imdb_id": "tt29513272",
-  "last_updated": "2026-05-28T23:42:13.542832+00:00"
+  "last_updated": "2026-05-29T14:41:31.015767+00:00"
 }

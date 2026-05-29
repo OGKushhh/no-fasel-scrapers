@@ -2,9 +2,19 @@
   "content_id": "235419",
   "title": "انمي Snack Basue",
   "year": "2024",
-  "rating": "5.8",
-  "votes": 59,
-  "source": "imdbapi",
+  "rating": "6.49",
+  "votes": 3355,
+  "source": "mal",
+  "mal_id": 55636,
+  "mal_rank": 8323,
+  "mal_popularity": 7090,
+  "mal_studios": [
+    "Studio PuYUKAI"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "スナックバス江",
+  "mal_season": "winter 2024",
+  "mal_year": "2024",
   "imdb_id": "tt29474142",
-  "last_updated": "2026-05-29T00:45:00.837769+00:00"
+  "last_updated": "2026-05-29T18:57:53.892985+00:00"
 }

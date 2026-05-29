@@ -2,9 +2,19 @@
   "content_id": "242560",
   "title": "انمي Kuroshitsuji: Book of Circus",
   "year": "2014",
-  "rating": "8.1",
-  "votes": 2813,
-  "source": "imdbapi",
+  "rating": "8.06",
+  "votes": 233552,
+  "source": "mal",
+  "mal_id": 22145,
+  "mal_rank": 662,
+  "mal_popularity": 602,
+  "mal_studios": [
+    "A-1 Pictures"
+  ],
+  "mal_title_en": "Black Butler: Book of Circus",
+  "mal_title_jp": "黒執事 Book of Circus",
+  "mal_season": "summer 2014",
+  "mal_year": "2014",
   "imdb_id": "tt3639888",
-  "last_updated": "2026-05-29T00:36:42.899143+00:00"
+  "last_updated": "2026-05-29T18:52:52.260643+00:00"
 }

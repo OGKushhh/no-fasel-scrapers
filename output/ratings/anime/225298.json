@@ -2,9 +2,19 @@
   "content_id": "225298",
   "title": "انمي Atarashii Joushi wa Do Tennen",
   "year": "2023",
-  "rating": "7.6",
-  "votes": 620,
-  "source": "imdbapi",
+  "rating": "7.92",
+  "votes": 28990,
+  "source": "mal",
+  "mal_id": 55310,
+  "mal_rank": 892,
+  "mal_popularity": 2910,
+  "mal_studios": [
+    "A-1 Pictures"
+  ],
+  "mal_title_en": "My New Boss Is Goofy",
+  "mal_title_jp": "新しい上司はど天然",
+  "mal_season": "fall 2023",
+  "mal_year": "2023",
   "imdb_id": "tt28919932",
-  "last_updated": "2026-05-29T00:54:09.888337+00:00"
+  "last_updated": "2026-05-29T19:02:58.821239+00:00"
 }

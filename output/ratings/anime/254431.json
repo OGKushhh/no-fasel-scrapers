@@ -2,9 +2,19 @@
   "content_id": "254431",
   "title": "انمي Shin Tennis no Oujisama: U-17 World Cup Semifinal",
   "year": "2024",
-  "rating": "7.0",
-  "votes": 36,
-  "source": "imdbapi",
+  "rating": "6.71",
+  "votes": 2312,
+  "source": "mal",
+  "mal_id": 55570,
+  "mal_rank": 6977,
+  "mal_popularity": 7871,
+  "mal_studios": [
+    "M.S.C"
+  ],
+  "mal_title_en": "The Prince of Tennis II U-17 World Cup Semifinal",
+  "mal_title_jp": "新テニスの王子様 U-17 WORLD CUP SEMIFINAL",
+  "mal_season": "fall 2024",
+  "mal_year": "2024",
   "imdb_id": "tt34510579",
-  "last_updated": "2026-05-29T00:24:05.281153+00:00"
+  "last_updated": "2026-05-29T15:05:53.358517+00:00"
 }

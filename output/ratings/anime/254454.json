@@ -2,9 +2,19 @@
   "content_id": "254454",
   "title": "انمي Dandadan",
   "year": "2024",
-  "rating": "8.3",
-  "votes": 54672,
-  "source": "imdbapi",
+  "rating": "8.41",
+  "votes": 599422,
+  "source": "mal",
+  "mal_id": 57334,
+  "mal_rank": 218,
+  "mal_popularity": 199,
+  "mal_studios": [
+    "Science SARU"
+  ],
+  "mal_title_en": "Dan Da Dan",
+  "mal_title_jp": "ダンダダン",
+  "mal_season": "fall 2024",
+  "mal_year": "2024",
   "imdb_id": "tt30217403",
-  "last_updated": "2026-05-29T00:23:13.050063+00:00"
+  "last_updated": "2026-05-29T15:05:34.980403+00:00"
 }

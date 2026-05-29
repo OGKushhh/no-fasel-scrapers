@@ -2,9 +2,19 @@
   "content_id": "213380",
   "title": "انمي Ousama Ranking: Yuuki no Takarabako",
   "year": "2023",
-  "rating": "6.9",
-  "votes": 687,
-  "source": "imdbapi",
+  "rating": "7.42",
+  "votes": 49227,
+  "source": "mal",
+  "mal_id": 52657,
+  "mal_rank": 2690,
+  "mal_popularity": 1663,
+  "mal_studios": [
+    "Wit Studio"
+  ],
+  "mal_title_en": "Ranking of Kings: The Treasure Chest of Courage",
+  "mal_title_jp": "王様ランキング 勇気の宝箱",
+  "mal_season": "spring 2023",
+  "mal_year": "2023",
   "imdb_id": "tt27504251",
-  "last_updated": "2026-05-29T01:14:03.257502+00:00"
+  "last_updated": "2026-05-29T19:12:23.551661+00:00"
 }

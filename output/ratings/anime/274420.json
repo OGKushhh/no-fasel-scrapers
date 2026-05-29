@@ -2,9 +2,19 @@
   "content_id": "274420",
   "title": "انمي Ame to Kimi to",
   "year": "2025",
-  "rating": "7.2",
-  "votes": 484,
-  "source": "imdbapi",
+  "rating": "7.53",
+  "votes": 19199,
+  "source": "mal",
+  "mal_id": 59619,
+  "mal_rank": 2130,
+  "mal_popularity": 3203,
+  "mal_studios": [
+    "Lesprit"
+  ],
+  "mal_title_en": "With You and the Rain",
+  "mal_title_jp": "雨と君と",
+  "mal_season": "summer 2025",
+  "mal_year": "2025",
   "imdb_id": "tt36143285",
-  "last_updated": "2026-05-28T23:54:46.115326+00:00"
+  "last_updated": "2026-05-29T14:48:50.473943+00:00"
 }

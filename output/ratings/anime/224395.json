@@ -2,9 +2,19 @@
   "content_id": "224395",
   "title": "انمي Sousou no Frieren",
   "year": "2023",
-  "rating": "8.9",
-  "votes": 76736,
-  "source": "imdbapi",
+  "rating": "9.26",
+  "votes": 892357,
+  "source": "mal",
+  "mal_id": 52991,
+  "mal_rank": 1,
+  "mal_popularity": 104,
+  "mal_studios": [
+    "Madhouse"
+  ],
+  "mal_title_en": "Frieren: Beyond Journey's End",
+  "mal_title_jp": "葬送のフリーレン",
+  "mal_season": "fall 2023",
+  "mal_year": "2023",
   "imdb_id": "tt22248376",
-  "last_updated": "2026-05-29T00:58:50.975314+00:00"
+  "last_updated": "2026-05-29T19:06:38.048512+00:00"
 }

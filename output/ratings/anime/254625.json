@@ -2,9 +2,19 @@
   "content_id": "254625",
   "title": "انمي Chi.: Chikyuu no Undou ni Tsuite",
   "year": "2024",
-  "rating": "8.4",
-  "votes": 6902,
-  "source": "imdbapi",
+  "rating": "8.72",
+  "votes": 121317,
+  "source": "mal",
+  "mal_id": 52215,
+  "mal_rank": 57,
+  "mal_popularity": 937,
+  "mal_studios": [
+    "Madhouse"
+  ],
+  "mal_title_en": "Orb: On the Movements of the Earth",
+  "mal_title_jp": "チ。―地球の運動について―",
+  "mal_season": "fall 2024",
+  "mal_year": "2024",
   "imdb_id": "tt33044444",
-  "last_updated": "2026-05-29T00:21:47.151002+00:00"
+  "last_updated": "2026-05-29T15:04:16.811124+00:00"
 }

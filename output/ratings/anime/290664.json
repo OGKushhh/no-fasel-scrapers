@@ -2,9 +2,19 @@
   "content_id": "290664",
   "title": "انمي Prism Rondo",
   "year": "2026",
-  "rating": "8.2",
-  "votes": 2072,
-  "source": "imdbapi",
+  "rating": "8.49",
+  "votes": 21705,
+  "source": "mal",
+  "mal_id": 63019,
+  "mal_rank": 173,
+  "mal_popularity": 3261,
+  "mal_studios": [
+    "Wit Studio"
+  ],
+  "mal_title_en": "Love Through a Prism",
+  "mal_title_jp": "プリズム輪舞曲〈ロンド〉",
+  "mal_season": "winter 2026",
+  "mal_year": "2026",
   "imdb_id": "tt39050141",
-  "last_updated": "2026-05-28T23:25:33.774182+00:00"
+  "last_updated": "2026-05-29T14:31:36.109219+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "242033",
   "title": "انمي Jiisan Baasan Wakagaeru",
   "year": "2024",
-  "rating": "6.7",
-  "votes": 520,
-  "source": "imdbapi",
+  "rating": "7.46",
+  "votes": 53174,
+  "source": "mal",
+  "mal_id": 56230,
+  "mal_rank": 2493,
+  "mal_popularity": 1764,
+  "mal_studios": [
+    "Gekkou"
+  ],
+  "mal_title_en": "Grandpa and Grandma Turn Young Again",
+  "mal_title_jp": "じいさんばあさん若返る",
+  "mal_season": "spring 2024",
+  "mal_year": "2024",
   "imdb_id": "tt28634577",
-  "last_updated": "2026-05-29T00:40:21.725246+00:00"
+  "last_updated": "2026-05-29T18:54:56.451341+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "233715",
   "title": "انمي Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e 3rd Season",
   "year": "2024",
-  "rating": "7.7",
-  "votes": 24530,
-  "source": "imdbapi",
+  "rating": "7.93",
+  "votes": 279313,
+  "source": "mal",
+  "mal_id": 51180,
+  "mal_rank": 889,
+  "mal_popularity": 472,
+  "mal_studios": [
+    "Lerche"
+  ],
+  "mal_title_en": "Classroom of the Elite III",
+  "mal_title_jp": "ようこそ実力至上主義の教室へ 3rd Season",
+  "mal_season": "winter 2024",
+  "mal_year": "2024",
   "imdb_id": "tt7263328",
-  "last_updated": "2026-05-29T00:50:11.494280+00:00"
+  "last_updated": "2026-05-29T19:00:16.128394+00:00"
 }

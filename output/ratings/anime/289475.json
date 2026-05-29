@@ -2,9 +2,19 @@
   "content_id": "289475",
   "title": "انمي Mayonaka Heart Tune",
   "year": "2026",
-  "rating": "7.0",
-  "votes": 629,
-  "source": "imdbapi",
+  "rating": "7.32",
+  "votes": 34058,
+  "source": "mal",
+  "mal_id": 61211,
+  "mal_rank": 3259,
+  "mal_popularity": 2572,
+  "mal_studios": [
+    "Gekkou"
+  ],
+  "mal_title_en": "Tune In to the Midnight Heart",
+  "mal_title_jp": "真夜中ハートチューン",
+  "mal_season": "winter 2026",
+  "mal_year": "2026",
   "imdb_id": "tt38980445",
-  "last_updated": "2026-05-28T23:29:48.213209+00:00"
+  "last_updated": "2026-05-29T14:34:16.093981+00:00"
 }

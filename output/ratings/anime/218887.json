@@ -2,9 +2,20 @@
   "content_id": "218887",
   "title": "انمي Yumemiru Danshi wa Genjitsushugisha",
   "year": "2023",
-  "rating": "6.6",
-  "votes": 1885,
-  "source": "imdbapi",
+  "rating": "6.63",
+  "votes": 107806,
+  "source": "mal",
+  "mal_id": 53632,
+  "mal_rank": 7478,
+  "mal_popularity": 1256,
+  "mal_studios": [
+    "Studio Gokumi",
+    "AXsiZ"
+  ],
+  "mal_title_en": "The Dreaming Boy is a Realist",
+  "mal_title_jp": "夢見る男子は現実主義者",
+  "mal_season": "summer 2023",
+  "mal_year": "2023",
   "imdb_id": "tt28278738",
-  "last_updated": "2026-05-29T01:09:46.080290+00:00"
+  "last_updated": "2026-05-29T19:10:15.733625+00:00"
 }

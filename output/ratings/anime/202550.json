@@ -2,9 +2,19 @@
   "content_id": "202550",
   "title": "انمي Benriya Saitou-san, Isekai ni Iku",
   "year": "2023",
-  "rating": "6.9",
-  "votes": 1607,
-  "source": "imdbapi",
+  "rating": "7.37",
+  "votes": 105307,
+  "source": "mal",
+  "mal_id": 50854,
+  "mal_rank": 2932,
+  "mal_popularity": 1239,
+  "mal_studios": [
+    "C2C"
+  ],
+  "mal_title_en": "Handyman Saitou in Another World",
+  "mal_title_jp": "便利屋斎藤さん、異世界に行く",
+  "mal_season": "winter 2023",
+  "mal_year": "2023",
   "imdb_id": "tt21844644",
-  "last_updated": "2026-05-29T01:25:17.625095+00:00"
+  "last_updated": "2026-05-29T19:18:16.344380+00:00"
 }

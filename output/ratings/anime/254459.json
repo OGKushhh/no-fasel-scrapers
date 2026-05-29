@@ -2,9 +2,19 @@
   "content_id": "254459",
   "title": "انمي Kekkon suru tte, Hontou desu ka",
   "year": "2024",
-  "rating": "6.2",
-  "votes": 1457,
-  "source": "imdbapi",
+  "rating": "7.11",
+  "votes": 52634,
+  "source": "mal",
+  "mal_id": 55887,
+  "mal_rank": 4630,
+  "mal_popularity": 2060,
+  "mal_studios": [
+    "Ashi Productions"
+  ],
+  "mal_title_en": "365 Days to the Wedding",
+  "mal_title_jp": "結婚するって、本当ですか 365 Days To The Wedding",
+  "mal_season": "fall 2024",
+  "mal_year": "2024",
   "imdb_id": "tt27497575",
-  "last_updated": "2026-05-29T00:23:09.166299+00:00"
+  "last_updated": "2026-05-29T15:05:29.655212+00:00"
 }

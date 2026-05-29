@@ -2,9 +2,19 @@
   "content_id": "254798",
   "title": "انمي Natsume Yuujinchou Shichi",
   "year": "2024",
-  "rating": "7.2",
-  "votes": 335,
-  "source": "imdbapi",
+  "rating": "8.58",
+  "votes": 18871,
+  "source": "mal",
+  "mal_id": 55823,
+  "mal_rank": 122,
+  "mal_popularity": 3281,
+  "mal_studios": [
+    "Shuka"
+  ],
+  "mal_title_en": "Natsume's Book of Friends Season 7",
+  "mal_title_jp": "夏目友人帳 漆",
+  "mal_season": "fall 2024",
+  "mal_year": "2024",
   "imdb_id": "tt13210990",
-  "last_updated": "2026-05-29T00:20:19.765170+00:00"
+  "last_updated": "2026-05-29T15:03:27.292364+00:00"
 }

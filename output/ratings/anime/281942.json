@@ -2,9 +2,19 @@
   "content_id": "281942",
   "title": "انمي Isekai Quartet 2",
   "year": "2020",
-  "rating": "7.0",
-  "votes": 1213,
-  "source": "imdbapi",
+  "rating": "7.37",
+  "votes": 153909,
+  "source": "mal",
+  "mal_id": 39988,
+  "mal_rank": 2942,
+  "mal_popularity": 1097,
+  "mal_studios": [
+    "Studio PuYUKAI"
+  ],
+  "mal_title_en": "Isekai Quartet 2",
+  "mal_title_jp": "異世界かるてっと2",
+  "mal_season": "winter 2020",
+  "mal_year": "2020",
   "imdb_id": "tt9193770",
-  "last_updated": "2026-05-28T23:37:17.737427+00:00"
+  "last_updated": "2026-05-29T14:38:25.967282+00:00"
 }

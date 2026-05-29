@@ -2,9 +2,19 @@
   "content_id": "199190",
   "title": "انمي Oniichan wa Oshimai!",
   "year": "2023",
-  "rating": "6.7",
-  "votes": 878,
-  "source": "imdbapi",
+  "rating": "7.66",
+  "votes": 91527,
+  "source": "mal",
+  "mal_id": 51678,
+  "mal_rank": 1626,
+  "mal_popularity": 1458,
+  "mal_studios": [
+    "Studio Bind"
+  ],
+  "mal_title_en": "Onimai: I'm Now Your Sister!",
+  "mal_title_jp": "お兄ちゃんはおしまい！",
+  "mal_season": "winter 2023",
+  "mal_year": "2023",
   "imdb_id": "tt21929424",
-  "last_updated": "2026-05-29T01:29:22.144321+00:00"
+  "last_updated": "2026-05-29T19:20:34.156952+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "202482",
   "title": "انمي UniteUp!",
   "year": "2023",
-  "rating": "6.3",
-  "votes": 54,
-  "source": "imdbapi",
+  "rating": "7.04",
+  "votes": 3764,
+  "source": "mal",
+  "mal_id": 53132,
+  "mal_rank": 5051,
+  "mal_popularity": 6690,
+  "mal_studios": [
+    "CloverWorks"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "UniteUp!",
+  "mal_season": "winter 2023",
+  "mal_year": "2023",
   "imdb_id": "tt25808792",
-  "last_updated": "2026-05-29T01:25:47.417419+00:00"
+  "last_updated": "2026-05-29T19:18:33.369342+00:00"
 }

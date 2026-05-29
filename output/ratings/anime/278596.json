@@ -2,9 +2,19 @@
   "content_id": "278596",
   "title": "انمي Yami Shibai 9",
   "year": "2021",
-  "rating": "7.0",
-  "votes": 1100,
-  "source": "imdbapi",
+  "rating": "5.91",
+  "votes": 5680,
+  "source": "mal",
+  "mal_id": 49110,
+  "mal_rank": 11528,
+  "mal_popularity": 6294,
+  "mal_studios": [
+    "ILCA"
+  ],
+  "mal_title_en": "Theatre of Darkness: Yamishibai 9",
+  "mal_title_jp": "闇芝居 九期",
+  "mal_season": "summer 2021",
+  "mal_year": "2021",
   "imdb_id": "tt3111906",
-  "last_updated": "2026-05-28T23:47:49.102326+00:00"
+  "last_updated": "2026-05-29T14:44:47.074734+00:00"
 }

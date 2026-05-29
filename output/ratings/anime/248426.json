@@ -2,9 +2,19 @@
   "content_id": "248426",
   "title": "انمي Monogatari Series: Off & Monster Season",
   "year": "2024",
-  "rating": "8.2",
-  "votes": 674,
-  "source": "imdbapi",
+  "rating": "8.66",
+  "votes": 40237,
+  "source": "mal",
+  "mal_id": 57864,
+  "mal_rank": 84,
+  "mal_popularity": 2340,
+  "mal_studios": [
+    "Shaft"
+  ],
+  "mal_title_en": "Monogatari Series: Off & Monster Season",
+  "mal_title_jp": "〈物語〉シリーズ オフ&モンスターシーズン",
+  "mal_season": "summer 2024",
+  "mal_year": "2024",
   "imdb_id": "tt30971467",
-  "last_updated": "2026-05-29T00:31:10.933801+00:00"
+  "last_updated": "2026-05-29T18:49:54.415460+00:00"
 }

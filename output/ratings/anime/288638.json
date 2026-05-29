@@ -2,9 +2,19 @@
   "content_id": "288638",
   "title": "انمي Yuusha Party wo Oidasareta Kiyoubinbou",
   "year": "2026",
-  "rating": "6.7",
-  "votes": 1304,
-  "source": "imdbapi",
+  "rating": "6.66",
+  "votes": 66531,
+  "source": "mal",
+  "mal_id": 61128,
+  "mal_rank": 7310,
+  "mal_popularity": 1924,
+  "mal_studios": [
+    "animation studio42"
+  ],
+  "mal_title_en": "Jack-of-All-Trades, Party of None",
+  "mal_title_jp": "勇者パーティを追い出された器用貧乏",
+  "mal_season": "winter 2026",
+  "mal_year": "2026",
   "imdb_id": "tt38648925",
-  "last_updated": "2026-05-28T23:32:57.589369+00:00"
+  "last_updated": "2026-05-29T14:36:05.016035+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "213014",
   "title": "انمي Isekai Shoukan wa Nidome desu",
   "year": "2023",
-  "rating": "5.4",
-  "votes": 760,
-  "source": "imdbapi",
+  "rating": "5.68",
+  "votes": 74172,
+  "source": "mal",
+  "mal_id": 50220,
+  "mal_rank": 12587,
+  "mal_popularity": 1447,
+  "mal_studios": [
+    "Studio Elle"
+  ],
+  "mal_title_en": "Summoned to Another World for a Second Time",
+  "mal_title_jp": "異世界召喚は二度目です",
+  "mal_season": "spring 2023",
+  "mal_year": "2023",
   "imdb_id": "tt27391405",
-  "last_updated": "2026-05-29T01:16:40.422636+00:00"
+  "last_updated": "2026-05-29T19:13:47.125577+00:00"
 }

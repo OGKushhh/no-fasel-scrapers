@@ -2,9 +2,19 @@
   "content_id": "279634",
   "title": "انمي Mo Dao Zu Shi",
   "year": "2018",
-  "rating": "8.4",
-  "votes": 3516,
-  "source": "imdbapi",
+  "rating": "8.42",
+  "votes": 89356,
+  "source": "mal",
+  "mal_id": 37208,
+  "mal_rank": 210,
+  "mal_popularity": 1101,
+  "mal_studios": [
+    "B.CMAY PICTURES"
+  ],
+  "mal_title_en": "The Master of Diabolism",
+  "mal_title_jp": "魔道祖师",
+  "mal_season": "summer 2018",
+  "mal_year": "2018",
   "imdb_id": "tt9005728",
-  "last_updated": "2026-05-28T23:46:31.748418+00:00"
+  "last_updated": "2026-05-29T14:43:47.993085+00:00"
 }

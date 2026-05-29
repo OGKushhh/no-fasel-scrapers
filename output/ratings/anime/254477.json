@@ -2,9 +2,19 @@
   "content_id": "254477",
   "title": "انمي Rurouni Kenshin: Meiji Kenkaku Romantan – Kyoto Douran",
   "year": "2024",
-  "rating": "7.9",
-  "votes": 3189,
-  "source": "imdbapi",
+  "rating": "7.78",
+  "votes": 24515,
+  "source": "mal",
+  "mal_id": 57554,
+  "mal_rank": 1258,
+  "mal_popularity": 3176,
+  "mal_studios": [
+    "LIDENFILMS"
+  ],
+  "mal_title_en": "Rurouni Kenshin: Kyoto Disturbance",
+  "mal_title_jp": "るろうに剣心 -明治剣客浪漫譚- 京都動乱",
+  "mal_season": "fall 2024",
+  "mal_year": "2024",
   "imdb_id": "tt22249034",
-  "last_updated": "2026-05-29T00:22:55.181743+00:00"
+  "last_updated": "2026-05-29T15:05:19.265454+00:00"
 }

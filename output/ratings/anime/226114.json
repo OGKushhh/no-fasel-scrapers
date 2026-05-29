@@ -2,9 +2,19 @@
   "content_id": "226114",
   "title": "انمي Paradox Live the Animation",
   "year": "2023",
-  "rating": "5.7",
-  "votes": 143,
-  "source": "imdbapi",
+  "rating": "6.89",
+  "votes": 10193,
+  "source": "mal",
+  "mal_id": 51956,
+  "mal_rank": 5841,
+  "mal_popularity": 3919,
+  "mal_studios": [
+    "PINE JAM"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "Paradox Live THE ANIMATION",
+  "mal_season": "fall 2023",
+  "mal_year": "2023",
   "imdb_id": "tt29514999",
-  "last_updated": "2026-05-29T00:53:19.573061+00:00"
+  "last_updated": "2026-05-29T19:02:12.045285+00:00"
 }

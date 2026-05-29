@@ -2,9 +2,19 @@
   "content_id": "189934",
   "title": "انمي Romantic Killer",
   "year": "2022",
-  "rating": "7.6",
-  "votes": 4948,
-  "source": "imdbapi",
+  "rating": "7.9",
+  "votes": 159266,
+  "source": "mal",
+  "mal_id": 52865,
+  "mal_rank": 956,
+  "mal_popularity": 952,
+  "mal_studios": [
+    "domerica"
+  ],
+  "mal_title_en": "Romantic Killer",
+  "mal_title_jp": "ロマンティック・キラー",
+  "mal_season": "fall 2022",
+  "mal_year": "2022",
   "imdb_id": "tt21991254",
-  "last_updated": "2026-05-29T01:30:56.338040+00:00"
+  "last_updated": "2026-05-29T19:21:11.621863+00:00"
 }

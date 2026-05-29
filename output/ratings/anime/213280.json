@@ -2,9 +2,19 @@
   "content_id": "213280",
   "title": "انمي Aiyou de Mishi",
   "year": "2023",
-  "rating": "6.8",
-  "votes": 169,
-  "source": "imdbapi",
+  "rating": "7.17",
+  "votes": 5727,
+  "source": "mal",
+  "mal_id": 50429,
+  "mal_rank": 4224,
+  "mal_popularity": 5801,
+  "mal_studios": [
+    "Lingsanwu Animation"
+  ],
+  "mal_title_en": "X&Y",
+  "mal_title_jp": "爱幽的密室",
+  "mal_season": "spring 2023",
+  "mal_year": "2023",
   "imdb_id": "tt27540599",
-  "last_updated": "2026-05-29T01:14:17.396908+00:00"
+  "last_updated": "2026-05-29T19:12:34.988365+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "256130",
   "title": "انمي Ao no Miburo",
   "year": "2024",
-  "rating": "6.7",
-  "votes": 236,
-  "source": "imdbapi",
+  "rating": "6.73",
+  "votes": 7620,
+  "source": "mal",
+  "mal_id": 56647,
+  "mal_rank": 6798,
+  "mal_popularity": 4371,
+  "mal_studios": [
+    "Maho Film"
+  ],
+  "mal_title_en": "Blue Miburo",
+  "mal_title_jp": "青のミブロ",
+  "mal_season": "fall 2024",
+  "mal_year": "2024",
   "imdb_id": "tt30523856",
-  "last_updated": "2026-05-29T00:17:58.136213+00:00"
+  "last_updated": "2026-05-29T15:02:07.130943+00:00"
 }

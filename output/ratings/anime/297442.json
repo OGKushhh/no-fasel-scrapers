@@ -2,9 +2,19 @@
   "content_id": "297442",
   "title": "انمي Yozakura-san Chi no Daisakusen 2nd Season",
   "year": "2026",
-  "rating": "6.8",
-  "votes": 996,
-  "source": "imdbapi",
+  "rating": "7.66",
+  "votes": 2533,
+  "source": "mal",
+  "mal_id": 60055,
+  "mal_rank": 1636,
+  "mal_popularity": 4180,
+  "mal_studios": [
+    "SILVER LINK."
+  ],
+  "mal_title_en": "Mission: Yozakura Family Season 2",
+  "mal_title_jp": "夜桜さんちの大作戦 第2期",
+  "mal_season": "spring 2026",
+  "mal_year": "2026",
   "imdb_id": "tt31131310",
-  "last_updated": "2026-05-28T23:12:23.803281+00:00"
+  "last_updated": "2026-05-29T14:25:13.476947+00:00"
 }

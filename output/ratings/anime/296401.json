@@ -2,9 +2,20 @@
   "content_id": "296401",
   "title": "انمي Diamond no Ace",
   "year": "2013",
-  "rating": "8.1",
-  "votes": 1717,
-  "source": "imdbapi",
+  "rating": "8.12",
+  "votes": 124884,
+  "source": "mal",
+  "mal_id": 18689,
+  "mal_rank": 566,
+  "mal_popularity": 1056,
+  "mal_studios": [
+    "Production I.G",
+    "Madhouse"
+  ],
+  "mal_title_en": "Ace of Diamond",
+  "mal_title_jp": "ダイヤのA[エース]",
+  "mal_season": "fall 2013",
+  "mal_year": "2013",
   "imdb_id": "tt3105422",
-  "last_updated": "2026-05-28T23:14:33.541577+00:00"
+  "last_updated": "2026-05-29T14:26:06.439578+00:00"
 }

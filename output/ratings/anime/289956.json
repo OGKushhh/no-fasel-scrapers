@@ -2,9 +2,19 @@
   "content_id": "289956",
   "title": "انمي Swallowed Star",
   "year": "2020",
-  "rating": "8.3",
-  "votes": 999,
-  "source": "imdbapi",
+  "rating": "8",
+  "votes": 4447,
+  "source": "mal",
+  "mal_id": 44218,
+  "mal_rank": 766,
+  "mal_popularity": 6582,
+  "mal_studios": [
+    "Sparkly Key Animation Studio"
+  ],
+  "mal_title_en": "Swallowed Star",
+  "mal_title_jp": "吞噬星空",
+  "mal_season": "fall 2020",
+  "mal_year": "2020",
   "imdb_id": "tt17050076",
-  "last_updated": "2026-05-28T23:27:15.149006+00:00"
+  "last_updated": "2026-05-29T14:32:35.565445+00:00"
 }

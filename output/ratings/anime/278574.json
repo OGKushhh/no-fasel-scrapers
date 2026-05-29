@@ -2,9 +2,20 @@
   "content_id": "278574",
   "title": "انمي Yami Shibai 12",
   "year": "2024",
-  "rating": "7.0",
-  "votes": 1100,
-  "source": "imdbapi",
+  "rating": "5.88",
+  "votes": 2488,
+  "source": "mal",
+  "mal_id": 57180,
+  "mal_rank": 11657,
+  "mal_popularity": 8373,
+  "mal_studios": [
+    "ILCA",
+    "ILCASHIPS"
+  ],
+  "mal_title_en": "Theatre of Darkness: Yamishibai 12",
+  "mal_title_jp": "闇芝居 十二期",
+  "mal_season": "winter 2024",
+  "mal_year": "2024",
   "imdb_id": "tt3111906",
-  "last_updated": "2026-05-28T23:48:17.195744+00:00"
+  "last_updated": "2026-05-29T14:45:07.496998+00:00"
 }

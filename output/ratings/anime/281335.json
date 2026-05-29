@@ -2,9 +2,19 @@
   "content_id": "281335",
   "title": "انمي One Punch Man 3",
   "year": "2025",
-  "rating": "8.6",
-  "votes": 225464,
-  "source": "imdbapi",
+  "rating": "4.76",
+  "votes": 116810,
+  "source": "mal",
+  "mal_id": 52807,
+  "mal_rank": 14618,
+  "mal_popularity": 605,
+  "mal_studios": [
+    "J.C.Staff"
+  ],
+  "mal_title_en": "One-Punch Man Season 3",
+  "mal_title_jp": "ワンパンマン 3",
+  "mal_season": "fall 2025",
+  "mal_year": "2025",
   "imdb_id": "tt4508902",
-  "last_updated": "2026-05-28T23:38:05.677862+00:00"
+  "last_updated": "2026-05-29T14:39:12.337799+00:00"
 }

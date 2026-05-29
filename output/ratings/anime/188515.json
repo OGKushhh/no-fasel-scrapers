@@ -2,9 +2,20 @@
   "content_id": "188515",
   "title": "انمي Exception",
   "year": "2022",
-  "rating": "6.5",
-  "votes": 1362,
-  "source": "imdbapi",
+  "rating": "6.41",
+  "votes": 2434,
+  "source": "mal",
+  "mal_id": 49163,
+  "mal_rank": 8767,
+  "mal_popularity": 7504,
+  "mal_studios": [
+    "Bakken Record",
+    "5 Inc."
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "エクセプション",
+  "mal_season": "fall 2022",
+  "mal_year": "2022",
   "imdb_id": "tt14825954",
-  "last_updated": "2026-05-29T01:31:33.075819+00:00"
+  "last_updated": "2026-05-29T19:21:50.483224+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "261163",
   "title": "انمي Ameku Takao no Suiri Karte",
   "year": "2025",
-  "rating": "7.3",
-  "votes": 38,
-  "source": "imdbapi",
+  "rating": "7.16",
+  "votes": 37916,
+  "source": "mal",
+  "mal_id": 58600,
+  "mal_rank": 4289,
+  "mal_popularity": 2400,
+  "mal_studios": [
+    "Project No.9"
+  ],
+  "mal_title_en": "Ameku M.D.: Doctor Detective",
+  "mal_title_jp": "天久鷹央の推理カルテ",
+  "mal_season": "winter 2025",
+  "mal_year": "2025",
   "imdb_id": "tt36449967",
-  "last_updated": "2026-05-29T00:16:29.612432+00:00"
+  "last_updated": "2026-05-29T15:01:16.246111+00:00"
 }

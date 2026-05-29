@@ -2,9 +2,19 @@
   "content_id": "248252",
   "title": "انمي Giji Harem",
   "year": "2024",
-  "rating": "7.4",
-  "votes": 1645,
-  "source": "imdbapi",
+  "rating": "7.83",
+  "votes": 97474,
+  "source": "mal",
+  "mal_id": 54968,
+  "mal_rank": 1117,
+  "mal_popularity": 1229,
+  "mal_studios": [
+    "Nomad"
+  ],
+  "mal_title_en": "Pseudo Harem",
+  "mal_title_jp": "疑似ハーレム",
+  "mal_season": "summer 2024",
+  "mal_year": "2024",
   "imdb_id": "tt32552529",
-  "last_updated": "2026-05-29T00:32:47.329319+00:00"
+  "last_updated": "2026-05-29T18:50:40.440265+00:00"
 }

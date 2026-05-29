@@ -1,10 +1,20 @@
 {
   "content_id": "242151",
   "title": "انمي Boukyaku Battery",
-  "year": "2024",
-  "rating": "7.5",
-  "votes": 414,
-  "source": "imdbapi",
+  "year": "2020",
+  "rating": "6.39",
+  "votes": 1164,
+  "source": "mal",
+  "mal_id": 42829,
+  "mal_rank": 8880,
+  "mal_popularity": 9779,
+  "mal_studios": [
+    "MAPPA"
+  ],
+  "mal_title_en": "Oblivion Battery: Jump Festa 2020 Special",
+  "mal_title_jp": "忘却バッテリー",
+  "mal_season": "fall 2020",
+  "mal_year": "2020",
   "imdb_id": "tt31976125",
-  "last_updated": "2026-05-29T00:39:04.014354+00:00"
+  "last_updated": "2026-05-29T18:54:12.620245+00:00"
 }

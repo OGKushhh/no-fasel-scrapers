@@ -2,9 +2,19 @@
   "content_id": "280659",
   "title": "انمي Yano-kun no Futsuu no Hibi",
   "year": "2025",
-  "rating": "7.1",
-  "votes": 452,
-  "source": "imdbapi",
+  "rating": "7.32",
+  "votes": 23439,
+  "source": "mal",
+  "mal_id": 60254,
+  "mal_rank": 3289,
+  "mal_popularity": 3061,
+  "mal_studios": [
+    "Ajia-do"
+  ],
+  "mal_title_en": "Yano-kun's Ordinary Days",
+  "mal_title_jp": "矢野くんの普通の日々",
+  "mal_season": "fall 2025",
+  "mal_year": "2025",
   "imdb_id": "tt36132068",
-  "last_updated": "2026-05-28T23:44:18.863836+00:00"
+  "last_updated": "2026-05-29T14:42:27.045285+00:00"
 }

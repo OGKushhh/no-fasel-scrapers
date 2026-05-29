@@ -3,8 +3,18 @@
   "title": "انمي Fuufu Ijou, Koibito Miman.",
   "year": "2022",
   "rating": "7.6",
-  "votes": 7025,
-  "source": "imdbapi",
+  "votes": 239412,
+  "source": "mal",
+  "mal_id": 50425,
+  "mal_rank": 1838,
+  "mal_popularity": 617,
+  "mal_studios": [
+    "studio MOTHER"
+  ],
+  "mal_title_en": "More than a Married Couple, but Not Lovers.",
+  "mal_title_jp": "夫婦以上、恋人未満。",
+  "mal_season": "fall 2022",
+  "mal_year": "2022",
   "imdb_id": "tt16231800",
-  "last_updated": "2026-05-29T01:32:26.550385+00:00"
+  "last_updated": "2026-05-29T19:22:38.882642+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "242026",
   "title": "انمي Hibike! Euphonium 3",
   "year": "2024",
-  "rating": "8.0",
-  "votes": 2186,
-  "source": "imdbapi",
+  "rating": "8.74",
+  "votes": 39750,
+  "source": "mal",
+  "mal_id": 39894,
+  "mal_rank": 51,
+  "mal_popularity": 2415,
+  "mal_studios": [
+    "Kyoto Animation"
+  ],
+  "mal_title_en": "Sound! Euphonium 3",
+  "mal_title_jp": "響け！ユーフォニアム3",
+  "mal_season": "spring 2024",
+  "mal_year": "2024",
   "imdb_id": "tt4384306",
-  "last_updated": "2026-05-29T00:40:28.817575+00:00"
+  "last_updated": "2026-05-29T18:55:01.626997+00:00"
 }

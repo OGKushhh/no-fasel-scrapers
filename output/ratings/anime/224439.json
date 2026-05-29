@@ -1,10 +1,20 @@
 {
   "content_id": "224439",
   "title": "انمي MF Ghost",
-  "year": "2015",
-  "rating": "7.1",
-  "votes": 256996,
-  "source": "imdbapi",
+  "year": "2023",
+  "rating": "7.58",
+  "votes": 41970,
+  "source": "mal",
+  "mal_id": 50695,
+  "mal_rank": 1920,
+  "mal_popularity": 2541,
+  "mal_studios": [
+    "Felix Film"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "MFゴースト",
+  "mal_season": "fall 2023",
+  "mal_year": "2023",
   "imdb_id": "tt0099653",
-  "last_updated": "2026-05-29T00:58:33.121675+00:00"
+  "last_updated": "2026-05-29T19:06:22.444892+00:00"
 }

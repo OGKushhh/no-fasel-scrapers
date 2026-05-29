@@ -2,9 +2,19 @@
   "content_id": "279438",
   "title": "انمي Date A Live II",
   "year": "2014",
-  "rating": "6.9",
-  "votes": 5293,
-  "source": "imdbapi",
+  "rating": "7.18",
+  "votes": 421638,
+  "source": "mal",
+  "mal_id": 19163,
+  "mal_rank": 4161,
+  "mal_popularity": 352,
+  "mal_studios": [
+    "Production IMS"
+  ],
+  "mal_title_en": "Date A Live II",
+  "mal_title_jp": "デート・ア・ライブⅡ",
+  "mal_season": "spring 2014",
+  "mal_year": "2014",
   "imdb_id": "tt2575684",
-  "last_updated": "2026-05-28T23:46:57.844973+00:00"
+  "last_updated": "2026-05-29T14:44:18.318165+00:00"
 }

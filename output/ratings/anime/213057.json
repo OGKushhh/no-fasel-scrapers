@@ -2,9 +2,19 @@
   "content_id": "213057",
   "title": "انمي Kimetsu no Yaiba: Katanakaji no Sato-hen",
   "year": "2023",
-  "rating": "7.7",
-  "votes": 17465,
-  "source": "imdbapi",
+  "rating": "8.15",
+  "votes": 681880,
+  "source": "mal",
+  "mal_id": 51019,
+  "mal_rank": 523,
+  "mal_popularity": 161,
+  "mal_studios": [
+    "ufotable"
+  ],
+  "mal_title_en": "Demon Slayer: Kimetsu no Yaiba Swordsmith Village Arc",
+  "mal_title_jp": "鬼滅の刃 刀鍛冶の里編",
+  "mal_season": "spring 2023",
+  "mal_year": "2023",
   "imdb_id": "tt26537229",
-  "last_updated": "2026-05-29T01:15:24.232316+00:00"
+  "last_updated": "2026-05-29T19:13:17.404867+00:00"
 }

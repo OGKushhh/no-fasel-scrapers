@@ -2,9 +2,19 @@
   "content_id": "234167",
   "title": "انمي Solo Leveling",
   "year": "2024",
-  "rating": "8.5",
-  "votes": 112394,
-  "source": "imdbapi",
+  "rating": "8.15",
+  "votes": 712633,
+  "source": "mal",
+  "mal_id": 52299,
+  "mal_rank": 528,
+  "mal_popularity": 149,
+  "mal_studios": [
+    "A-1 Pictures"
+  ],
+  "mal_title_en": "Solo Leveling",
+  "mal_title_jp": "俺だけレベルアップな件",
+  "mal_season": "winter 2024",
+  "mal_year": "2024",
   "imdb_id": "tt21209876",
-  "last_updated": "2026-05-29T00:48:46.068095+00:00"
+  "last_updated": "2026-05-29T18:59:37.927370+00:00"
 }

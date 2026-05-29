@@ -2,9 +2,19 @@
   "content_id": "262404",
   "title": "انمي Kono Kaisha ni Suki na Hito ga Imasu",
   "year": "2025",
-  "rating": "7.1",
-  "votes": 812,
-  "source": "imdbapi",
+  "rating": "7.51",
+  "votes": 45929,
+  "source": "mal",
+  "mal_id": 59361,
+  "mal_rank": 2249,
+  "mal_popularity": 1891,
+  "mal_studios": [
+    "Blade"
+  ],
+  "mal_title_en": "I Have a Crush at Work",
+  "mal_title_jp": "この会社に好きな人がいます",
+  "mal_season": "winter 2025",
+  "mal_year": "2025",
   "imdb_id": "tt33349897",
-  "last_updated": "2026-05-29T00:10:10.624078+00:00"
+  "last_updated": "2026-05-29T14:57:37.763216+00:00"
 }

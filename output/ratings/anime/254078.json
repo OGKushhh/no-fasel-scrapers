@@ -2,9 +2,20 @@
   "content_id": "254078",
   "title": "انمي Uzumaki",
   "year": "2024",
-  "rating": "6.4",
-  "votes": 8968,
-  "source": "imdbapi",
+  "rating": "5.66",
+  "votes": 77152,
+  "source": "mal",
+  "mal_id": 40333,
+  "mal_rank": 12716,
+  "mal_popularity": 1166,
+  "mal_studios": [
+    "Akatsuki",
+    "Fugaku"
+  ],
+  "mal_title_en": "Uzumaki: Spiral Into Horror",
+  "mal_title_jp": "うずまき",
+  "mal_season": "fall 2024",
+  "mal_year": "2024",
   "imdb_id": "tt10905902",
-  "last_updated": "2026-05-29T00:25:37.867641+00:00"
+  "last_updated": "2026-05-29T18:46:51.832859+00:00"
 }

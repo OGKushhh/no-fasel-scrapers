@@ -2,9 +2,19 @@
   "content_id": "202327",
   "title": "انمي Tokyo Revengers: Seiya Kessen-hen",
   "year": "2023",
-  "rating": "7.7",
-  "votes": 33618,
-  "source": "imdbapi",
+  "rating": "7.62",
+  "votes": 196060,
+  "source": "mal",
+  "mal_id": 50608,
+  "mal_rank": 1769,
+  "mal_popularity": 624,
+  "mal_studios": [
+    "LIDENFILMS"
+  ],
+  "mal_title_en": "Tokyo Revengers: Christmas Showdown",
+  "mal_title_jp": "東京リベンジャーズ 聖夜決戦編",
+  "mal_season": "winter 2023",
+  "mal_year": "2023",
   "imdb_id": "tt13196080",
-  "last_updated": "2026-05-29T01:25:58.223266+00:00"
+  "last_updated": "2026-05-29T19:18:45.835083+00:00"
 }

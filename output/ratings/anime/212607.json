@@ -2,9 +2,19 @@
   "content_id": "212607",
   "title": "انمي Kaguya-sama wa Kokurasetai: First Kiss wa Owaranai",
   "year": "2022",
-  "rating": "8.5",
-  "votes": 3801,
-  "source": "imdbapi",
+  "rating": "8.71",
+  "votes": 218679,
+  "source": "mal",
+  "mal_id": 52198,
+  "mal_rank": 58,
+  "mal_popularity": 717,
+  "mal_studios": [
+    "A-1 Pictures"
+  ],
+  "mal_title_en": "Kaguya-sama: Love is War -The First Kiss That Never Ends-",
+  "mal_title_jp": "かぐや様は告らせたい -ファーストキッスは終わらない-",
+  "mal_season": "fall 2022",
+  "mal_year": "2022",
   "imdb_id": "tt23770418",
-  "last_updated": "2026-05-29T01:19:54.991678+00:00"
+  "last_updated": "2026-05-29T19:15:32.956008+00:00"
 }

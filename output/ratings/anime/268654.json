@@ -2,9 +2,19 @@
   "content_id": "268654",
   "title": "انمي Shoushimin Series 2nd Season",
   "year": "2025",
-  "rating": "8.6",
-  "votes": 3821,
-  "source": "imdbapi",
+  "rating": "8.09",
+  "votes": 25316,
+  "source": "mal",
+  "mal_id": 59828,
+  "mal_rank": 627,
+  "mal_popularity": 3366,
+  "mal_studios": [
+    "Lapin Track"
+  ],
+  "mal_title_en": "Shoshimin: How to Become Ordinary Season 2",
+  "mal_title_jp": "小市民シリーズ 第2期",
+  "mal_season": "spring 2025",
+  "mal_year": "2025",
   "imdb_id": "tt2922300",
-  "last_updated": "2026-05-29T00:04:59.913596+00:00"
+  "last_updated": "2026-05-29T14:55:18.110251+00:00"
 }

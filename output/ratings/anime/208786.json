@@ -2,9 +2,19 @@
   "content_id": "208786",
   "title": "انمي Mou Ippon!",
   "year": "2023",
-  "rating": "6.8",
-  "votes": 77,
-  "source": "imdbapi",
+  "rating": "7.16",
+  "votes": 9033,
+  "source": "mal",
+  "mal_id": 49376,
+  "mal_rank": 4327,
+  "mal_popularity": 4917,
+  "mal_studios": [
+    "Bakken Record"
+  ],
+  "mal_title_en": "\"Ippon\" again!",
+  "mal_title_jp": "もういっぽん！",
+  "mal_season": "winter 2023",
+  "mal_year": "2023",
   "imdb_id": "tt25816576",
-  "last_updated": "2026-05-29T01:21:12.007496+00:00"
+  "last_updated": "2026-05-29T19:16:07.115305+00:00"
 }

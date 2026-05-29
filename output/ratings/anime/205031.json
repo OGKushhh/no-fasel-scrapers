@@ -2,9 +2,19 @@
   "content_id": "205031",
   "title": "انمي Hirogaru Sky! Precure",
   "year": "2023",
-  "rating": "6.9",
-  "votes": 122,
-  "source": "imdbapi",
+  "rating": "7.75",
+  "votes": 4654,
+  "source": "mal",
+  "mal_id": 53716,
+  "mal_rank": 1321,
+  "mal_popularity": 6478,
+  "mal_studios": [
+    "Toei Animation"
+  ],
+  "mal_title_en": "Soaring Sky! Pretty Cure",
+  "mal_title_jp": "ひろがるスカイ！プリキュア",
+  "mal_season": "winter 2023",
+  "mal_year": "2023",
   "imdb_id": "tt23862502",
-  "last_updated": "2026-05-29T01:21:30.777574+00:00"
+  "last_updated": "2026-05-29T19:16:12.106692+00:00"
 }

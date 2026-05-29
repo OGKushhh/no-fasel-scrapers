@@ -2,9 +2,19 @@
   "content_id": "281186",
   "title": "انمي Natsume Yuujinchou Shi",
   "year": "2012",
-  "rating": "8.1",
-  "votes": 3270,
-  "source": "imdbapi",
+  "rating": "8.64",
+  "votes": 118171,
+  "source": "mal",
+  "mal_id": 11665,
+  "mal_rank": 90,
+  "mal_popularity": 1064,
+  "mal_studios": [
+    "Brain's Base"
+  ],
+  "mal_title_en": "Natsume's Book of Friends Season 4",
+  "mal_title_jp": "夏目友人帳 肆",
+  "mal_season": "winter 2012",
+  "mal_year": "2012",
   "imdb_id": "tt1352421",
-  "last_updated": "2026-05-28T23:39:42.586742+00:00"
+  "last_updated": "2026-05-29T14:40:01.952994+00:00"
 }

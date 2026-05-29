@@ -3,8 +3,18 @@
   "title": "انمي Diamond no Ace: Act II",
   "year": "2019",
   "rating": "8.3",
-  "votes": 453,
-  "source": "imdbapi",
+  "votes": 51762,
+  "source": "mal",
+  "mal_id": 38731,
+  "mal_rank": 321,
+  "mal_popularity": 2369,
+  "mal_studios": [
+    "Madhouse"
+  ],
+  "mal_title_en": "Ace of Diamond Act II",
+  "mal_title_jp": "ダイヤのA[エース] actII",
+  "mal_season": "spring 2019",
+  "mal_year": "2019",
   "imdb_id": "tt10838000",
-  "last_updated": "2026-05-28T23:14:19.087605+00:00"
+  "last_updated": "2026-05-29T14:25:56.580314+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "278580",
   "title": "انمي Yami Shibai 15",
   "year": "2025",
-  "rating": "7.0",
-  "votes": 1100,
-  "source": "imdbapi",
+  "rating": "5.7",
+  "votes": 1312,
+  "source": "mal",
+  "mal_id": 61793,
+  "mal_rank": 12520,
+  "mal_popularity": 10598,
+  "mal_studios": [
+    "ILCA"
+  ],
+  "mal_title_en": "Theatre of Darkness: Yamishibai 15",
+  "mal_title_jp": "闇芝居 十五期",
+  "mal_season": "summer 2025",
+  "mal_year": "2025",
   "imdb_id": "tt3111906",
-  "last_updated": "2026-05-28T23:47:56.161582+00:00"
+  "last_updated": "2026-05-29T14:44:52.110728+00:00"
 }

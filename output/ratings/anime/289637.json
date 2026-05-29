@@ -2,9 +2,19 @@
   "content_id": "289637",
   "title": "انمي 29-sai Dokushin Chuuken Boukensha no Nichijou",
   "year": "2026",
-  "rating": "6.1",
-  "votes": 373,
-  "source": "imdbapi",
+  "rating": "6.6",
+  "votes": 18137,
+  "source": "mal",
+  "mal_id": 61637,
+  "mal_rank": 7613,
+  "mal_popularity": 3838,
+  "mal_studios": [
+    "HORNETS"
+  ],
+  "mal_title_en": "An Adventurer's Daily Grind at Age 29",
+  "mal_title_jp": "29歳独身中堅冒険者の日常",
+  "mal_season": "winter 2026",
+  "mal_year": "2026",
   "imdb_id": "tt38647627",
-  "last_updated": "2026-05-28T23:29:05.501958+00:00"
+  "last_updated": "2026-05-29T14:33:47.716854+00:00"
 }

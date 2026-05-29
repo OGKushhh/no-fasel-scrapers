@@ -2,9 +2,19 @@
   "content_id": "234508",
   "title": "انمي High Card Season 2",
   "year": "2024",
-  "rating": "6.0",
-  "votes": 25,
-  "source": "imdbapi",
+  "rating": "7.13",
+  "votes": 17638,
+  "source": "mal",
+  "mal_id": 54869,
+  "mal_rank": 4495,
+  "mal_popularity": 3530,
+  "mal_studios": [
+    "Studio Hibari"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "HIGH CARD season 2",
+  "mal_season": "winter 2024",
+  "mal_year": "2024",
   "imdb_id": "tt32083183",
-  "last_updated": "2026-05-29T00:46:18.608736+00:00"
+  "last_updated": "2026-05-29T18:58:39.296303+00:00"
 }

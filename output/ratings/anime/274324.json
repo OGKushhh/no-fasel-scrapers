@@ -2,9 +2,19 @@
   "content_id": "274324",
   "title": "انمي Arknights: Rise from Ember",
   "year": "2025",
-  "rating": "6.4",
-  "votes": 201,
-  "source": "imdbapi",
+  "rating": "7.82",
+  "votes": 9999,
+  "source": "mal",
+  "mal_id": 58749,
+  "mal_rank": 1132,
+  "mal_popularity": 4258,
+  "mal_studios": [
+    "Yostar Pictures"
+  ],
+  "mal_title_en": "Arknights: Rise from Ember",
+  "mal_title_jp": "アークナイツ【焔燼曙明/RISE FROM EMBER】",
+  "mal_season": "summer 2025",
+  "mal_year": "2025",
   "imdb_id": "tt36987898",
-  "last_updated": "2026-05-28T23:56:22.422866+00:00"
+  "last_updated": "2026-05-29T14:49:40.909101+00:00"
 }

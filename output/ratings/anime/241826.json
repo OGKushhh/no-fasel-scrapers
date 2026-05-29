@@ -2,9 +2,19 @@
   "content_id": "241826",
   "title": "انمي Nijiyon Animation 2",
   "year": "2024",
-  "rating": "6.1",
-  "votes": 48,
-  "source": "imdbapi",
+  "rating": "6.86",
+  "votes": 3110,
+  "source": "mal",
+  "mal_id": 57623,
+  "mal_rank": 6039,
+  "mal_popularity": 8339,
+  "mal_studios": [
+    "Sunrise"
+  ],
+  "mal_title_en": "Nijiyon Animation 2",
+  "mal_title_jp": "にじよん あにめーしょん2",
+  "mal_season": "spring 2024",
+  "mal_year": "2024",
   "imdb_id": "tt22171506",
-  "last_updated": "2026-05-29T00:41:19.035062+00:00"
+  "last_updated": "2026-05-29T18:55:32.728873+00:00"
 }

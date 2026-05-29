@@ -2,9 +2,19 @@
   "content_id": "218963",
   "title": "انمي Watashi no Shiawase na Kekkon",
   "year": "2023",
-  "rating": "7.5",
-  "votes": 8811,
-  "source": "imdbapi",
+  "rating": "7.68",
+  "votes": 197392,
+  "source": "mal",
+  "mal_id": 51552,
+  "mal_rank": 1563,
+  "mal_popularity": 704,
+  "mal_studios": [
+    "Kinema Citrus"
+  ],
+  "mal_title_en": "My Happy Marriage",
+  "mal_title_jp": "わたしの幸せな結婚",
+  "mal_season": "summer 2023",
+  "mal_year": "2023",
   "imdb_id": "tt19869172",
-  "last_updated": "2026-05-29T01:09:35.329668+00:00"
+  "last_updated": "2026-05-29T19:10:07.993834+00:00"
 }

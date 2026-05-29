@@ -2,9 +2,19 @@
   "content_id": "289146",
   "title": "انمي Ikoku Nikki",
   "year": "2026",
-  "rating": "8.5",
-  "votes": 961,
-  "source": "imdbapi",
+  "rating": "8.76",
+  "votes": 39062,
+  "source": "mal",
+  "mal_id": 58788,
+  "mal_rank": 47,
+  "mal_popularity": 2218,
+  "mal_studios": [
+    "Shuka"
+  ],
+  "mal_title_en": "Journal with Witch",
+  "mal_title_jp": "違国日記",
+  "mal_season": "winter 2026",
+  "mal_year": "2026",
   "imdb_id": "tt32336365",
-  "last_updated": "2026-05-28T23:31:11.071105+00:00"
+  "last_updated": "2026-05-29T14:35:07.765790+00:00"
 }

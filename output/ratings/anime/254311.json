@@ -2,9 +2,19 @@
   "content_id": "254311",
   "title": "انمي Acro Trip",
   "year": "2024",
-  "rating": "6.7",
-  "votes": 120,
-  "source": "imdbapi",
+  "rating": "6.78",
+  "votes": 8983,
+  "source": "mal",
+  "mal_id": 53723,
+  "mal_rank": 6485,
+  "mal_popularity": 5072,
+  "mal_studios": [
+    "Voil"
+  ],
+  "mal_title_en": "Acro Trip",
+  "mal_title_jp": "アクロトリップ",
+  "mal_season": "fall 2024",
+  "mal_year": "2024",
   "imdb_id": "tt32986702",
-  "last_updated": "2026-05-29T00:24:16.104704+00:00"
+  "last_updated": "2026-05-29T15:06:06.076828+00:00"
 }

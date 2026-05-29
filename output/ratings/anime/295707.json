@@ -2,9 +2,19 @@
   "content_id": "295707",
   "title": "انمي Haibara-kun no Tsuyokute Seishun New Game",
   "year": "2026",
-  "rating": "7.0",
-  "votes": 156,
-  "source": "imdbapi",
+  "rating": "6.64",
+  "votes": 5391,
+  "source": "mal",
+  "mal_id": 61943,
+  "mal_rank": 7385,
+  "mal_popularity": 4401,
+  "mal_studios": [
+    "Studio Comet"
+  ],
+  "mal_title_en": "Haibara's Teenage New Game+",
+  "mal_title_jp": "灰原くんの強くて青春ニューゲーム",
+  "mal_season": "spring 2026",
+  "mal_year": "2026",
   "imdb_id": "tt39122622",
-  "last_updated": "2026-05-28T23:20:41.279328+00:00"
+  "last_updated": "2026-05-29T14:29:08.644813+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "213008",
   "title": "انمي Otonari ni Ginga",
   "year": "2023",
-  "rating": "6.6",
-  "votes": 14,
-  "source": "imdbapi",
+  "rating": "7.17",
+  "votes": 72907,
+  "source": "mal",
+  "mal_id": 51705,
+  "mal_rank": 4266,
+  "mal_popularity": 1488,
+  "mal_studios": [
+    "Asahi Production"
+  ],
+  "mal_title_en": "A Galaxy Next Door",
+  "mal_title_jp": "おとなりに銀河",
+  "mal_season": "spring 2023",
+  "mal_year": "2023",
   "imdb_id": "tt26457461",
-  "last_updated": "2026-05-29T01:16:44.230393+00:00"
+  "last_updated": "2026-05-29T19:13:52.503248+00:00"
 }

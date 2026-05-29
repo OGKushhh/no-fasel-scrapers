@@ -2,9 +2,20 @@
   "content_id": "296119",
   "title": "انمي Hidarikiki no Eren",
   "year": "2026",
-  "rating": "7.3",
-  "votes": 19,
-  "source": "imdbapi",
+  "rating": "6.16",
+  "votes": 2044,
+  "source": "mal",
+  "mal_id": 53732,
+  "mal_rank": 10181,
+  "mal_popularity": 5847,
+  "mal_studios": [
+    "Production I.G",
+    "Signal.MD"
+  ],
+  "mal_title_en": "Eren the Southpaw",
+  "mal_title_jp": "左ききのエレン",
+  "mal_season": "spring 2026",
+  "mal_year": "2026",
   "imdb_id": "tt11051342",
-  "last_updated": "2026-05-28T23:16:50.619353+00:00"
+  "last_updated": "2026-05-29T14:27:09.338891+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "254547",
   "title": "انمي DanMachi 5th Season",
   "year": "2024",
-  "rating": "7.4",
-  "votes": 13668,
-  "source": "imdbapi",
+  "rating": "7.9",
+  "votes": 94585,
+  "source": "mal",
+  "mal_id": 57066,
+  "mal_rank": 940,
+  "mal_popularity": 1274,
+  "mal_studios": [
+    "J.C.Staff"
+  ],
+  "mal_title_en": "Is It Wrong to Try to Pick Up Girls in a Dungeon? V",
+  "mal_title_jp": "ダンジョンに出会いを求めるのは間違っているだろうかV 豊穣の女神篇",
+  "mal_season": "fall 2024",
+  "mal_year": "2024",
   "imdb_id": "tt4728568",
-  "last_updated": "2026-05-29T00:22:40.589452+00:00"
+  "last_updated": "2026-05-29T15:05:03.204583+00:00"
 }

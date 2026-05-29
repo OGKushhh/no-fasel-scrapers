@@ -2,9 +2,19 @@
   "content_id": "201971",
   "title": "انمي Tomo-chan wa Onnanoko!",
   "year": "2023",
-  "rating": "7.5",
-  "votes": 5491,
-  "source": "imdbapi",
+  "rating": "7.71",
+  "votes": 271040,
+  "source": "mal",
+  "mal_id": 52305,
+  "mal_rank": 1460,
+  "mal_popularity": 503,
+  "mal_studios": [
+    "Lay-duce"
+  ],
+  "mal_title_en": "Tomo-chan Is a Girl!",
+  "mal_title_jp": "トモちゃんは女の子！",
+  "mal_season": "winter 2023",
+  "mal_year": "2023",
   "imdb_id": "tt21210326",
-  "last_updated": "2026-05-29T01:28:15.740536+00:00"
+  "last_updated": "2026-05-29T19:19:58.785687+00:00"
 }

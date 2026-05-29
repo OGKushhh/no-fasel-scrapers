@@ -2,9 +2,19 @@
   "content_id": "225471",
   "title": "انمي Potion-danomi de Ikinobimasu!",
   "year": "2023",
-  "rating": "6.2",
-  "votes": 478,
-  "source": "imdbapi",
+  "rating": "6.57",
+  "votes": 28859,
+  "source": "mal",
+  "mal_id": 54616,
+  "mal_rank": 7834,
+  "mal_popularity": 3271,
+  "mal_studios": [
+    "Jumondou"
+  ],
+  "mal_title_en": "I Shall Survive Using Potions!",
+  "mal_title_jp": "ポーション頼みで生き延びます!",
+  "mal_season": "fall 2023",
+  "mal_year": "2023",
   "imdb_id": "tt29171927",
-  "last_updated": "2026-05-29T00:54:02.959969+00:00"
+  "last_updated": "2026-05-29T19:02:53.644449+00:00"
 }

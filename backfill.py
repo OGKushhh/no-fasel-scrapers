@@ -58,7 +58,7 @@ MOVIE_FILES = {
 
 # Backfill settings
 MAX_WORKERS = 6
-SAVE_INTERVAL = 50          # save main JSON after this many updates
+SAVE_INTERVAL = 6          # save main JSON after this many updates
 BATCH_DELAY = 2             # seconds between batches
 # ===================================
 
@@ -84,19 +84,22 @@ def get_detail_url_for_item(item_id: str, item_data: dict, is_movie: bool = Fals
     """
     Construct the correct detail page URL for a given item.
     For series: use stored 'SeasonsUrl' if present, else construct from Category + ID.
-    For movies: construct from Category + ID, fallback to ?p=ID.
+    For movies: use ?p=ID (works reliably), ignoring the Category path.
     """
-    # First, try to use SeasonsUrl (stored for series, sometimes for movies too)
+    # First, try to use SeasonsUrl (if present, for any category)
     if "SeasonsUrl" in item_data and item_data["SeasonsUrl"]:
         return item_data["SeasonsUrl"]
     
-    # Fallback: construct from Category field
+    # For movies, use the query parameter (proven to work)
+    if is_movie:
+        return f"https://www.fasel-hd.cam/?p={item_id}"
+    
+    # For non‑movies, fallback to category path
     category_path = item_data.get("Category", "")
     if category_path:
-        # Ensure URL ends with slash
         return f"https://www.fasel-hd.cam/{category_path}/{item_id}/"
     
-    # Last resort – query parameter (works for movies, rarely for series)
+    # Last resort – also works for some movies but not series
     return f"https://www.fasel-hd.cam/?p={item_id}"
 
 def fetch_description(item_id: str, detail_url: str) -> str:

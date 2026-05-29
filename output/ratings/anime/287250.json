@@ -2,9 +2,19 @@
   "content_id": "287250",
   "title": "انمي World Trigger",
   "year": "2014",
-  "rating": "7.4",
-  "votes": 1566,
-  "source": "imdbapi",
+  "rating": "7.59",
+  "votes": 161903,
+  "source": "mal",
+  "mal_id": 24405,
+  "mal_rank": 1900,
+  "mal_popularity": 562,
+  "mal_studios": [
+    "Toei Animation"
+  ],
+  "mal_title_en": "World Trigger",
+  "mal_title_jp": "ワールドトリガー",
+  "mal_season": "fall 2014",
+  "mal_year": "2014",
   "imdb_id": "tt3950102",
-  "last_updated": "2026-05-28T23:33:34.487582+00:00"
+  "last_updated": "2026-05-29T14:36:20.575945+00:00"
 }

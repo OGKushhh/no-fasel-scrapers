@@ -2,9 +2,19 @@
   "content_id": "213577",
   "title": "انمي Edomae Elf",
   "year": "2023",
-  "rating": "6.7",
-  "votes": 217,
-  "source": "imdbapi",
+  "rating": "7.29",
+  "votes": 27519,
+  "source": "mal",
+  "mal_id": 52081,
+  "mal_rank": 3422,
+  "mal_popularity": 2848,
+  "mal_studios": [
+    "C2C"
+  ],
+  "mal_title_en": "Otaku Elf",
+  "mal_title_jp": "江戸前エルフ",
+  "mal_season": "spring 2023",
+  "mal_year": "2023",
   "imdb_id": "tt26895902",
-  "last_updated": "2026-05-29T01:13:37.186059+00:00"
+  "last_updated": "2026-05-29T19:12:11.915625+00:00"
 }

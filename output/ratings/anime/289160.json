@@ -2,9 +2,19 @@
   "content_id": "289160",
   "title": "انمي Majutsushi Kunon wa Mieteiru",
   "year": "2026",
-  "rating": "6.2",
-  "votes": 522,
-  "source": "imdbapi",
+  "rating": "6.56",
+  "votes": 34489,
+  "source": "mal",
+  "mal_id": 60810,
+  "mal_rank": 7884,
+  "mal_popularity": 2855,
+  "mal_studios": [
+    "Platinum Vision"
+  ],
+  "mal_title_en": "Kunon the Sorcerer Can See",
+  "mal_title_jp": "魔術師クノンは見えている",
+  "mal_season": "winter 2026",
+  "mal_year": "2026",
   "imdb_id": "tt38646949",
-  "last_updated": "2026-05-28T23:30:56.898663+00:00"
+  "last_updated": "2026-05-29T14:34:57.431439+00:00"
 }

@@ -2,9 +2,20 @@
   "content_id": "274237",
   "title": "انمي Tsuyokute New Saga",
   "year": "2025",
-  "rating": "6.5",
-  "votes": 853,
-  "source": "imdbapi",
+  "rating": "6.57",
+  "votes": 35052,
+  "source": "mal",
+  "mal_id": 53397,
+  "mal_rank": 7853,
+  "mal_popularity": 2638,
+  "mal_studios": [
+    "Sotsu",
+    "Studio Clutch"
+  ],
+  "mal_title_en": "New Saga",
+  "mal_title_jp": "強くてニューサーガ",
+  "mal_season": "summer 2025",
+  "mal_year": "2025",
   "imdb_id": "tt33050376",
-  "last_updated": "2026-05-28T23:56:56.253366+00:00"
+  "last_updated": "2026-05-29T14:49:59.587955+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "241507",
   "title": "انمي Bartender: Kami no Glass",
   "year": "2024",
-  "rating": "7.1",
-  "votes": 986,
-  "source": "imdbapi",
+  "rating": "7.38",
+  "votes": 53186,
+  "source": "mal",
+  "mal_id": 53407,
+  "mal_rank": 2883,
+  "mal_popularity": 1914,
+  "mal_studios": [
+    "Liber"
+  ],
+  "mal_title_en": "Bartender Glass of God",
+  "mal_title_jp": "バーテンダー 神のグラス",
+  "mal_season": "spring 2024",
+  "mal_year": "2024",
   "imdb_id": "tt29233201",
-  "last_updated": "2026-05-29T00:42:33.910374+00:00"
+  "last_updated": "2026-05-29T18:56:11.423012+00:00"
 }

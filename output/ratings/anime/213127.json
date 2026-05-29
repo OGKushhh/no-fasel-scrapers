@@ -2,9 +2,19 @@
   "content_id": "213127",
   "title": "انمي Ao no Orchestra",
   "year": "2023",
-  "rating": "7.0",
-  "votes": 185,
-  "source": "imdbapi",
+  "rating": "7.22",
+  "votes": 20129,
+  "source": "mal",
+  "mal_id": 51614,
+  "mal_rank": 3905,
+  "mal_popularity": 2940,
+  "mal_studios": [
+    "Nippon Animation"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "青のオーケストラ",
+  "mal_season": "spring 2023",
+  "mal_year": "2023",
   "imdb_id": "tt26450255",
-  "last_updated": "2026-05-29T01:15:06.749222+00:00"
+  "last_updated": "2026-05-29T19:12:58.654225+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "212704",
   "title": "انمي Skip to Loafer",
   "year": "2023",
-  "rating": "7.8",
-  "votes": 3028,
-  "source": "imdbapi",
+  "rating": "8.11",
+  "votes": 161176,
+  "source": "mal",
+  "mal_id": 50416,
+  "mal_rank": 597,
+  "mal_popularity": 809,
+  "mal_studios": [
+    "P.A. Works"
+  ],
+  "mal_title_en": "Skip and Loafer",
+  "mal_title_jp": "スキップとローファー",
+  "mal_season": "spring 2023",
+  "mal_year": "2023",
   "imdb_id": "tt16156718",
-  "last_updated": "2026-05-29T01:19:07.289172+00:00"
+  "last_updated": "2026-05-29T19:15:07.095110+00:00"
 }

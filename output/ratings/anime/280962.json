@@ -2,9 +2,19 @@
   "content_id": "280962",
   "title": "انمي Shabake",
   "year": "2025",
-  "rating": "6.0",
-  "votes": 138,
-  "source": "imdbapi",
+  "rating": "6.5",
+  "votes": 4085,
+  "source": "mal",
+  "mal_id": 60378,
+  "mal_rank": 8253,
+  "mal_popularity": 6163,
+  "mal_studios": [
+    "Bandai Namco Pictures"
+  ],
+  "mal_title_en": "Shabake",
+  "mal_title_jp": "しゃばけ",
+  "mal_season": "fall 2025",
+  "mal_year": "2025",
   "imdb_id": "tt37431548",
-  "last_updated": "2026-05-28T23:42:48.944484+00:00"
+  "last_updated": "2026-05-29T14:41:44.246962+00:00"
 }

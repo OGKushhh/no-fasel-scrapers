@@ -2,9 +2,19 @@
   "content_id": "268209",
   "title": "انمي Kanchigai no Atelier Meister",
   "year": "2025",
-  "rating": "6.5",
-  "votes": 1092,
-  "source": "imdbapi",
+  "rating": "5.79",
+  "votes": 286,
+  "source": "mal",
+  "mal_id": 61411,
+  "mal_rank": 12089,
+  "mal_popularity": 15327,
+  "mal_studios": [
+    "AQUA ARIS"
+  ],
+  "mal_title_en": "The Unaware Atelier Meister Mini Anime",
+  "mal_title_jp": "『勘違いの工房主』ミニアニメ",
+  "mal_season": "spring 2025",
+  "mal_year": "2025",
   "imdb_id": "tt35014218",
-  "last_updated": "2026-05-29T00:08:18.185348+00:00"
+  "last_updated": "2026-05-29T14:56:45.283227+00:00"
 }

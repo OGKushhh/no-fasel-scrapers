@@ -2,9 +2,19 @@
   "content_id": "279395",
   "title": "انمي Princess Connect! Re:Dive",
   "year": "2020",
-  "rating": "6.4",
-  "votes": 788,
-  "source": "imdbapi",
+  "rating": "7.04",
+  "votes": 134241,
+  "source": "mal",
+  "mal_id": 39292,
+  "mal_rank": 5047,
+  "mal_popularity": 891,
+  "mal_studios": [
+    "CygamesPictures"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "プリンセスコネクト！Re:Dive",
+  "mal_season": "spring 2020",
+  "mal_year": "2020",
   "imdb_id": "tt11886236",
-  "last_updated": "2026-05-28T23:47:08.536379+00:00"
+  "last_updated": "2026-05-29T14:44:28.464827+00:00"
 }

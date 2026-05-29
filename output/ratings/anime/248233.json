@@ -2,9 +2,19 @@
   "content_id": "248233",
   "title": "انمي Oshi no Ko 2nd Season",
   "year": "2024",
-  "rating": "6.8",
-  "votes": 472,
-  "source": "imdbapi",
+  "rating": "8.51",
+  "votes": 263379,
+  "source": "mal",
+  "mal_id": 55791,
+  "mal_rank": 163,
+  "mal_popularity": 489,
+  "mal_studios": [
+    "Doga Kobo"
+  ],
+  "mal_title_en": "[Oshi No Ko] Season 2",
+  "mal_title_jp": "【推しの子】第2期",
+  "mal_season": "summer 2024",
+  "mal_year": "2024",
   "imdb_id": "tt12882132",
-  "last_updated": "2026-05-29T00:33:20.520256+00:00"
+  "last_updated": "2026-05-29T18:50:48.000482+00:00"
 }

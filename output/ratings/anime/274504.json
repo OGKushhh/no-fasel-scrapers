@@ -2,9 +2,19 @@
   "content_id": "274504",
   "title": "انمي Busamen Gachi Fighter",
   "year": "2025",
-  "rating": "5.7",
-  "votes": 460,
-  "source": "imdbapi",
+  "rating": "6.31",
+  "votes": 26175,
+  "source": "mal",
+  "mal_id": 60316,
+  "mal_rank": 9339,
+  "mal_popularity": 3385,
+  "mal_studios": [
+    "White Fox"
+  ],
+  "mal_title_en": "Uglymug, Epicfighter",
+  "mal_title_jp": "ブサメンガチファイター",
+  "mal_season": "summer 2025",
+  "mal_year": "2025",
   "imdb_id": "tt36592756",
-  "last_updated": "2026-05-28T23:53:27.700619+00:00"
+  "last_updated": "2026-05-29T14:48:05.739882+00:00"
 }

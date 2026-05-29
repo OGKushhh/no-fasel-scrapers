@@ -2,9 +2,19 @@
   "content_id": "280104",
   "title": "انمي Yami Shibai 5",
   "year": "2017",
-  "rating": "7.0",
-  "votes": 1100,
-  "source": "imdbapi",
+  "rating": "6.33",
+  "votes": 13937,
+  "source": "mal",
+  "mal_id": 35714,
+  "mal_rank": 9274,
+  "mal_popularity": 4739,
+  "mal_studios": [
+    "ILCA"
+  ],
+  "mal_title_en": "Theatre of Darkness: Yamishibai 5",
+  "mal_title_jp": "闇芝居 5期",
+  "mal_season": "summer 2017",
+  "mal_year": "2017",
   "imdb_id": "tt3111906",
-  "last_updated": "2026-05-28T23:45:44.294475+00:00"
+  "last_updated": "2026-05-29T14:43:25.996755+00:00"
 }

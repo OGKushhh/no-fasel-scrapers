@@ -2,9 +2,19 @@
   "content_id": "202245",
   "title": "انمي Hyouken no Majutsushi ga Sekai wo Suberu",
   "year": "2023",
-  "rating": "6.4",
-  "votes": 1825,
-  "source": "imdbapi",
+  "rating": "6.37",
+  "votes": 105087,
+  "source": "mal",
+  "mal_id": 51711,
+  "mal_rank": 9005,
+  "mal_popularity": 1293,
+  "mal_studios": [
+    "Cloud Hearts"
+  ],
+  "mal_title_en": "The Iceblade Sorcerer Shall Rule the World",
+  "mal_title_jp": "冰剣の魔術師が世界を統べる",
+  "mal_season": "winter 2023",
+  "mal_year": "2023",
   "imdb_id": "tt25531288",
-  "last_updated": "2026-05-29T01:27:39.161012+00:00"
+  "last_updated": "2026-05-29T19:19:23.473539+00:00"
 }

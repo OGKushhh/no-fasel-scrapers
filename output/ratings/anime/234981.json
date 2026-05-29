@@ -2,9 +2,19 @@
   "content_id": "234981",
   "title": "انمي Shaman King: Flowers",
   "year": "2024",
-  "rating": "6.5",
-  "votes": 228,
-  "source": "imdbapi",
+  "rating": "6.61",
+  "votes": 8821,
+  "source": "mal",
+  "mal_id": 51673,
+  "mal_rank": 7594,
+  "mal_popularity": 4240,
+  "mal_studios": [
+    "Bridge"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "SHAMAN KING FLOWERS",
+  "mal_season": "winter 2024",
+  "mal_year": "2024",
   "imdb_id": "tt30873755",
-  "last_updated": "2026-05-29T00:45:29.512911+00:00"
+  "last_updated": "2026-05-29T18:58:19.130162+00:00"
 }

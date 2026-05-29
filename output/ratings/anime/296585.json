@@ -2,9 +2,19 @@
   "content_id": "296585",
   "title": "انمي Kuroneko to Majo no Kyoushitsu",
   "year": "2026",
-  "rating": "6.6",
-  "votes": 64,
-  "source": "imdbapi",
+  "rating": "6.61",
+  "votes": 3548,
+  "source": "mal",
+  "mal_id": 62171,
+  "mal_rank": 7581,
+  "mal_popularity": 4684,
+  "mal_studios": [
+    "LIDENFILMS"
+  ],
+  "mal_title_en": "The Classroom of a Black Cat and a Witch",
+  "mal_title_jp": "黒猫と魔女の教室",
+  "mal_season": "spring 2026",
+  "mal_year": "2026",
   "imdb_id": "tt39123043",
-  "last_updated": "2026-05-28T23:13:47.820724+00:00"
+  "last_updated": "2026-05-29T14:25:46.459343+00:00"
 }

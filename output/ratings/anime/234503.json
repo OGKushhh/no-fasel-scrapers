@@ -2,9 +2,19 @@
   "content_id": "234503",
   "title": "انمي Oroka na Tenshi wa Akuma to Odoru",
   "year": "2024",
-  "rating": "6.3",
-  "votes": 800,
-  "source": "imdbapi",
+  "rating": "6.91",
+  "votes": 57464,
+  "source": "mal",
+  "mal_id": 55129,
+  "mal_rank": 5738,
+  "mal_popularity": 1775,
+  "mal_studios": [
+    "Children's Playground Entertainment"
+  ],
+  "mal_title_en": "The Foolish Angel Dances with the Devil",
+  "mal_title_jp": "愚かな天使は悪魔と踊る",
+  "mal_season": "winter 2024",
+  "mal_year": "2024",
   "imdb_id": "tt30495098",
-  "last_updated": "2026-05-29T00:46:25.782398+00:00"
+  "last_updated": "2026-05-29T18:58:44.451056+00:00"
 }

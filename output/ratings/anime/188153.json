@@ -2,9 +2,19 @@
   "content_id": "188153",
   "title": "انمي Bocchi the Rock!",
   "year": "2022",
-  "rating": "8.3",
-  "votes": 8817,
-  "source": "imdbapi",
+  "rating": "8.73",
+  "votes": 481801,
+  "source": "mal",
+  "mal_id": 47917,
+  "mal_rank": 52,
+  "mal_popularity": 290,
+  "mal_studios": [
+    "CloverWorks"
+  ],
+  "mal_title_en": "Bocchi the Rock!",
+  "mal_title_jp": "ぼっち・ざ・ろっく！",
+  "mal_season": "fall 2022",
+  "mal_year": "2022",
   "imdb_id": "tt17158756",
-  "last_updated": "2026-05-29T01:32:51.161500+00:00"
+  "last_updated": "2026-05-29T19:22:59.214122+00:00"
 }

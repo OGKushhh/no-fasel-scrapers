@@ -2,9 +2,19 @@
   "content_id": "188717",
   "title": "انمي Dragon Ball Z",
   "year": "1989",
-  "rating": "8.8",
-  "votes": 103898,
-  "source": "imdbapi",
+  "rating": "8.21",
+  "votes": 908366,
+  "source": "mal",
+  "mal_id": 813,
+  "mal_rank": 429,
+  "mal_popularity": 118,
+  "mal_studios": [
+    "Toei Animation"
+  ],
+  "mal_title_en": "Dragon Ball Z",
+  "mal_title_jp": "ドラゴンボールZ",
+  "mal_season": "spring 1989",
+  "mal_year": "1989",
   "imdb_id": "tt0121220",
-  "last_updated": "2026-05-29T01:31:25.445543+00:00"
+  "last_updated": "2026-05-29T19:21:38.937949+00:00"
 }

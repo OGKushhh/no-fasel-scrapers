@@ -2,9 +2,19 @@
   "content_id": "202529",
   "title": "انمي Nokemono-tachi no Yoru",
   "year": "2023",
-  "rating": "6.1",
-  "votes": 241,
-  "source": "imdbapi",
+  "rating": "6.62",
+  "votes": 15368,
+  "source": "mal",
+  "mal_id": 52274,
+  "mal_rank": 7522,
+  "mal_popularity": 3542,
+  "mal_studios": [
+    "Ashi Productions"
+  ],
+  "mal_title_en": "The Tale of Outcasts",
+  "mal_title_jp": "ノケモノたちの夜",
+  "mal_season": "winter 2023",
+  "mal_year": "2023",
   "imdb_id": "tt25814162",
-  "last_updated": "2026-05-29T01:25:28.420367+00:00"
+  "last_updated": "2026-05-29T19:18:26.850281+00:00"
 }

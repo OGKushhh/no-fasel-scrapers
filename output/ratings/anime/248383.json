@@ -2,9 +2,20 @@
   "content_id": "248383",
   "title": "انمي Kono Sekai wa Fukanzen Sugiru",
   "year": "2024",
-  "rating": "6.1",
-  "votes": 411,
-  "source": "imdbapi",
+  "rating": "6.52",
+  "votes": 19665,
+  "source": "mal",
+  "mal_id": 54835,
+  "mal_rank": 8127,
+  "mal_popularity": 3417,
+  "mal_studios": [
+    "Studio Palette",
+    "100studio"
+  ],
+  "mal_title_en": "Quality Assurance in Another World",
+  "mal_title_jp": "この世界は不完全すぎる",
+  "mal_season": "summer 2024",
+  "mal_year": "2024",
   "imdb_id": "tt32332918",
-  "last_updated": "2026-05-29T00:32:14.865250+00:00"
+  "last_updated": "2026-05-29T18:50:14.938387+00:00"
 }

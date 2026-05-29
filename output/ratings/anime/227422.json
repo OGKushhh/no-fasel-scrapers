@@ -2,9 +2,19 @@
   "content_id": "227422",
   "title": "انمي B-Project: Netsuretsu*Love Call",
   "year": "2023",
-  "rating": "5.4",
-  "votes": 14,
-  "source": "imdbapi",
+  "rating": "6.31",
+  "votes": 1066,
+  "source": "mal",
+  "mal_id": 44081,
+  "mal_rank": 9341,
+  "mal_popularity": 8621,
+  "mal_studios": [
+    "Asahi Production"
+  ],
+  "mal_title_en": "B-Project: Passion*Love Call",
+  "mal_title_jp": "B-PROJECT ～熱烈＊ラブコール～",
+  "mal_season": "fall 2023",
+  "mal_year": "2023",
   "imdb_id": "tt31041138",
-  "last_updated": "2026-05-29T00:52:03.149271+00:00"
+  "last_updated": "2026-05-29T19:01:23.087611+00:00"
 }

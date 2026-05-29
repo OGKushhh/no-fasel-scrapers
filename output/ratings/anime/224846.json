@@ -2,9 +2,19 @@
   "content_id": "224846",
   "title": "انمي Kage no Jitsuryokusha ni Naritakute! 2nd Season",
   "year": "2023",
-  "rating": "7.7",
-  "votes": 14900,
-  "source": "imdbapi",
+  "rating": "8.25",
+  "votes": 302465,
+  "source": "mal",
+  "mal_id": 54595,
+  "mal_rank": 385,
+  "mal_popularity": 468,
+  "mal_studios": [
+    "Nexus"
+  ],
+  "mal_title_en": "The Eminence in Shadow Season 2",
+  "mal_title_jp": "陰の実力者になりたくて！ 2nd Season",
+  "mal_season": "fall 2023",
+  "mal_year": "2023",
   "imdb_id": "tt14115938",
-  "last_updated": "2026-05-29T00:56:58.950377+00:00"
+  "last_updated": "2026-05-29T19:05:04.682205+00:00"
 }

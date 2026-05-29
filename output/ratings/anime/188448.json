@@ -2,9 +2,19 @@
   "content_id": "188448",
   "title": "انمي Cool Doji Danshi",
   "year": "2022",
-  "rating": "7.9",
-  "votes": 68,
-  "source": "imdbapi",
+  "rating": "7.87",
+  "votes": 34930,
+  "source": "mal",
+  "mal_id": 51680,
+  "mal_rank": 1016,
+  "mal_popularity": 2188,
+  "mal_studios": [
+    "Studio Pierrot"
+  ],
+  "mal_title_en": "Play It Cool, Guys",
+  "mal_title_jp": "クールドジ男子",
+  "mal_season": "fall 2022",
+  "mal_year": "2022",
   "imdb_id": "tt27005369",
-  "last_updated": "2026-05-29T01:31:54.690629+00:00"
+  "last_updated": "2026-05-29T19:22:15.076330+00:00"
 }

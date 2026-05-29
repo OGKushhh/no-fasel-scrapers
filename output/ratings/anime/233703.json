@@ -2,9 +2,19 @@
   "content_id": "233703",
   "title": "انمي Ishura",
   "year": "2024",
-  "rating": "6.4",
-  "votes": 1122,
-  "source": "imdbapi",
+  "rating": "6.75",
+  "votes": 42901,
+  "source": "mal",
+  "mal_id": 54449,
+  "mal_rank": 6696,
+  "mal_popularity": 1933,
+  "mal_studios": [
+    "Passione"
+  ],
+  "mal_title_en": "Ishura",
+  "mal_title_jp": "異修羅",
+  "mal_season": "winter 2024",
+  "mal_year": "2024",
   "imdb_id": "tt26713948",
-  "last_updated": "2026-05-29T00:50:22.220131+00:00"
+  "last_updated": "2026-05-29T19:00:26.229184+00:00"
 }

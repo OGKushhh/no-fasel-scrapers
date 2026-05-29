@@ -1,10 +1,20 @@
 {
   "content_id": "279511",
   "title": "انمي IDOLiSH7 Third Beat!",
-  "year": "2018",
-  "rating": "7.0",
-  "votes": 162,
-  "source": "imdbapi",
+  "year": "2021",
+  "rating": "8.25",
+  "votes": 9383,
+  "source": "mal",
+  "mal_id": 45577,
+  "mal_rank": 385,
+  "mal_popularity": 4900,
+  "mal_studios": [
+    "TROYCA"
+  ],
+  "mal_title_en": "IDOLISH7 Third BEAT!",
+  "mal_title_jp": "アイドリッシュセブン Third BEAT!",
+  "mal_season": "summer 2021",
+  "mal_year": "2021",
   "imdb_id": "tt11834102",
-  "last_updated": "2026-05-28T23:46:42.603617+00:00"
+  "last_updated": "2026-05-29T14:43:57.954133+00:00"
 }

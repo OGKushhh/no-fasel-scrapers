@@ -2,9 +2,19 @@
   "content_id": "224513",
   "title": "انمي Boushoku no Berserk",
   "year": "2023",
-  "rating": "6.8",
-  "votes": 2715,
-  "source": "imdbapi",
+  "rating": "6.72",
+  "votes": 131976,
+  "source": "mal",
+  "mal_id": 53439,
+  "mal_rank": 6864,
+  "mal_popularity": 1083,
+  "mal_studios": [
+    "A.C.G.T."
+  ],
+  "mal_title_en": "Berserk of Gluttony",
+  "mal_title_jp": "暴食のベルセルク",
+  "mal_season": "fall 2023",
+  "mal_year": "2023",
   "imdb_id": "tt28685497",
-  "last_updated": "2026-05-29T00:57:44.684757+00:00"
+  "last_updated": "2026-05-29T19:05:43.667590+00:00"
 }

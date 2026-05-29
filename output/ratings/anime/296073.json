@@ -2,9 +2,19 @@
   "content_id": "296073",
   "title": "انمي Tongari Boushi no Atelier",
   "year": "2026",
-  "rating": "8.8",
-  "votes": 3537,
-  "source": "imdbapi",
+  "rating": "8.73",
+  "votes": 51382,
+  "source": "mal",
+  "mal_id": 51553,
+  "mal_rank": 55,
+  "mal_popularity": 918,
+  "mal_studios": [
+    "BUG FILMS"
+  ],
+  "mal_title_en": "Witch Hat Atelier",
+  "mal_title_jp": "とんがり帽子のアトリエ",
+  "mal_season": "spring 2026",
+  "mal_year": "2026",
   "imdb_id": "tt32550889",
-  "last_updated": "2026-05-28T23:17:16.139205+00:00"
+  "last_updated": "2026-05-29T14:27:29.660809+00:00"
 }

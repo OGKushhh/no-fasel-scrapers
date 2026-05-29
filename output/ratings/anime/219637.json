@@ -2,9 +2,19 @@
   "content_id": "219637",
   "title": "انمي Shiguang Dailiren II",
   "year": "2023",
-  "rating": "8.5",
-  "votes": 7283,
-  "source": "imdbapi",
+  "rating": "8.6",
+  "votes": 81305,
+  "source": "mal",
+  "mal_id": 49413,
+  "mal_rank": 114,
+  "mal_popularity": 1599,
+  "mal_studios": [
+    "LAN Studio"
+  ],
+  "mal_title_en": "Link Click Season 2",
+  "mal_title_jp": "时光代理人II",
+  "mal_season": "summer 2023",
+  "mal_year": "2023",
   "imdb_id": "tt14976292",
-  "last_updated": "2026-05-29T01:01:28.720345+00:00"
+  "last_updated": "2026-05-29T19:07:54.967379+00:00"
 }

@@ -2,9 +2,20 @@
   "content_id": "274389",
   "title": "انمي Mizu Zokusei no Mahoutsukai",
   "year": "2025",
-  "rating": "6.9",
-  "votes": 2200,
-  "source": "imdbapi",
+  "rating": "7.06",
+  "votes": 105290,
+  "source": "mal",
+  "mal_id": 60732,
+  "mal_rank": 4934,
+  "mal_popularity": 1392,
+  "mal_studios": [
+    "Typhoon Graphics",
+    "WonderLand"
+  ],
+  "mal_title_en": "The Water Magician",
+  "mal_title_jp": "水属性の魔法使い",
+  "mal_season": "summer 2025",
+  "mal_year": "2025",
   "imdb_id": "tt36592736",
-  "last_updated": "2026-05-28T23:55:21.404343+00:00"
+  "last_updated": "2026-05-29T14:49:16.862995+00:00"
 }

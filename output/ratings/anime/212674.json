@@ -2,9 +2,19 @@
   "content_id": "212674",
   "title": "انمي Kuma Kuma Kuma Bear Punch!",
   "year": "2023",
-  "rating": "6.9",
-  "votes": 888,
-  "source": "imdbapi",
+  "rating": "7.31",
+  "votes": 38735,
+  "source": "mal",
+  "mal_id": 45486,
+  "mal_rank": 3310,
+  "mal_popularity": 2458,
+  "mal_studios": [
+    "EMT Squared"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "くまクマ熊ベアーぱーんち！",
+  "mal_season": "spring 2023",
+  "mal_year": "2023",
   "imdb_id": "tt12415504",
-  "last_updated": "2026-05-29T01:19:11.004135+00:00"
+  "last_updated": "2026-05-29T19:15:13.267885+00:00"
 }

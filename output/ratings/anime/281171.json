@@ -2,9 +2,19 @@
   "content_id": "281171",
   "title": "انمي Natsume Yuujinchou San",
   "year": "2011",
-  "rating": "8.1",
-  "votes": 3270,
-  "source": "imdbapi",
+  "rating": "8.57",
+  "votes": 127550,
+  "source": "mal",
+  "mal_id": 10379,
+  "mal_rank": 126,
+  "mal_popularity": 1036,
+  "mal_studios": [
+    "Brain's Base"
+  ],
+  "mal_title_en": "Natsume's Book of Friends Season 3",
+  "mal_title_jp": "夏目友人帳 参",
+  "mal_season": "summer 2011",
+  "mal_year": "2011",
   "imdb_id": "tt1352421",
-  "last_updated": "2026-05-28T23:39:49.885207+00:00"
+  "last_updated": "2026-05-29T14:40:07.044377+00:00"
 }

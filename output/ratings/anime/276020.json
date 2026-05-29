@@ -2,9 +2,19 @@
   "content_id": "276020",
   "title": "انمي Karaoke Iko!",
   "year": "2025",
-  "rating": "7.3",
-  "votes": 230,
-  "source": "imdbapi",
+  "rating": "7.63",
+  "votes": 9477,
+  "source": "mal",
+  "mal_id": 60131,
+  "mal_rank": 1729,
+  "mal_popularity": 5038,
+  "mal_studios": [
+    "Doga Kobo"
+  ],
+  "mal_title_en": "Let's Go Karaoke!",
+  "mal_title_jp": "カラオケ行こ!",
+  "mal_season": "summer 2025",
+  "mal_year": "2025",
   "imdb_id": "tt34512704",
-  "last_updated": "2026-05-28T23:49:13.730937+00:00"
+  "last_updated": "2026-05-29T14:45:32.401050+00:00"
 }

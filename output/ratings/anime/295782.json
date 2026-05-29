@@ -2,9 +2,19 @@
   "content_id": "295782",
   "title": "انمي Reincarnation no Kaben",
   "year": "2026",
-  "rating": "5.5",
-  "votes": 159,
-  "source": "imdbapi",
+  "rating": "6.04",
+  "votes": 4860,
+  "source": "mal",
+  "mal_id": 59443,
+  "mal_rank": 10866,
+  "mal_popularity": 3693,
+  "mal_studios": [
+    "BENTEN Film"
+  ],
+  "mal_title_en": "Petals of Reincarnation",
+  "mal_title_jp": "リィンカーネーションの花弁",
+  "mal_season": "spring 2026",
+  "mal_year": "2026",
   "imdb_id": "tt38363695",
-  "last_updated": "2026-05-28T23:19:58.068036+00:00"
+  "last_updated": "2026-05-29T14:28:47.948146+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "274757",
   "title": "انمي Mikadono Sanshimai wa Angai, Choroi.",
   "year": "2025",
-  "rating": "7.6",
-  "votes": 1155,
-  "source": "imdbapi",
+  "rating": "7.64",
+  "votes": 53283,
+  "source": "mal",
+  "mal_id": 59207,
+  "mal_rank": 1690,
+  "mal_popularity": 2201,
+  "mal_studios": [
+    "P.A. Works"
+  ],
+  "mal_title_en": "Dealing with Mikadono Sisters Is a Breeze",
+  "mal_title_jp": "帝乃三姉妹は案外、チョロい。",
+  "mal_season": "summer 2025",
+  "mal_year": "2025",
   "imdb_id": "tt36469298",
-  "last_updated": "2026-05-28T23:50:53.610732+00:00"
+  "last_updated": "2026-05-29T14:46:35.689201+00:00"
 }

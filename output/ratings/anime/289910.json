@@ -2,9 +2,19 @@
   "content_id": "289910",
   "title": "انمي Trigun Stargaze",
   "year": "2026",
-  "rating": "6.6",
-  "votes": 380,
-  "source": "imdbapi",
+  "rating": "6.76",
+  "votes": 15151,
+  "source": "mal",
+  "mal_id": 54863,
+  "mal_rank": 6663,
+  "mal_popularity": 2874,
+  "mal_studios": [
+    "Orange"
+  ],
+  "mal_title_en": "Trigun Stargaze",
+  "mal_title_jp": "TRIGUN STARGAZE",
+  "mal_season": "winter 2026",
+  "mal_year": "2026",
   "imdb_id": "tt36294552",
-  "last_updated": "2026-05-28T23:27:40.216840+00:00"
+  "last_updated": "2026-05-29T14:32:56.133284+00:00"
 }

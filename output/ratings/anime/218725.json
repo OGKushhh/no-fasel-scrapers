@@ -2,9 +2,19 @@
   "content_id": "218725",
   "title": "انمي Horimiya: Piece",
   "year": "2023",
-  "rating": "7.8",
-  "votes": 4336,
-  "source": "imdbapi",
+  "rating": "8.13",
+  "votes": 211068,
+  "source": "mal",
+  "mal_id": 54856,
+  "mal_rank": 551,
+  "mal_popularity": 571,
+  "mal_studios": [
+    "CloverWorks"
+  ],
+  "mal_title_en": "Horimiya: The Missing Pieces",
+  "mal_title_jp": "ホリミヤ -piece-",
+  "mal_season": "summer 2023",
+  "mal_year": "2023",
   "imdb_id": "tt28261206",
-  "last_updated": "2026-05-29T01:11:25.866446+00:00"
+  "last_updated": "2026-05-29T19:11:01.451804+00:00"
 }

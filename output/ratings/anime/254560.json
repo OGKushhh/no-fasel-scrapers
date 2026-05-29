@@ -2,9 +2,20 @@
   "content_id": "254560",
   "title": "انمي Kabushikigaisha Magi-Lumière",
   "year": "2024",
-  "rating": "6.6",
-  "votes": 203,
-  "source": "imdbapi",
+  "rating": "7.03",
+  "votes": 12246,
+  "source": "mal",
+  "mal_id": 57360,
+  "mal_rank": 5080,
+  "mal_popularity": 4339,
+  "mal_studios": [
+    "J.C.Staff",
+    "Studio Moe"
+  ],
+  "mal_title_en": "Magilumiere Magical Girls Inc.",
+  "mal_title_jp": "株式会社マジルミエ",
+  "mal_season": "fall 2024",
+  "mal_year": "2024",
   "imdb_id": "tt30476504",
-  "last_updated": "2026-05-29T00:22:33.373381+00:00"
+  "last_updated": "2026-05-29T15:04:58.115158+00:00"
 }

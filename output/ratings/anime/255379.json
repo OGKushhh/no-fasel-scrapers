@@ -2,9 +2,19 @@
   "content_id": "255379",
   "title": "انمي Tsuma, Shougakusei ni Naru.",
   "year": "2024",
-  "rating": "7.2",
-  "votes": 331,
-  "source": "imdbapi",
+  "rating": "7.56",
+  "votes": 25124,
+  "source": "mal",
+  "mal_id": 54726,
+  "mal_rank": 2036,
+  "mal_popularity": 3001,
+  "mal_studios": [
+    "Studio Signpost"
+  ],
+  "mal_title_en": "TsumaSho",
+  "mal_title_jp": "妻、小学生になる。",
+  "mal_season": "fall 2024",
+  "mal_year": "2024",
   "imdb_id": "tt32832434",
-  "last_updated": "2026-05-29T00:18:48.984757+00:00"
+  "last_updated": "2026-05-29T15:02:38.080445+00:00"
 }

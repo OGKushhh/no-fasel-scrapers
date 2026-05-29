@@ -2,9 +2,19 @@
   "content_id": "241418",
   "title": "انمي Shuumatsu Train Doko e Iku?",
   "year": "2024",
-  "rating": "6.9",
-  "votes": 405,
-  "source": "imdbapi",
+  "rating": "6",
+  "votes": 1103,
+  "source": "mal",
+  "mal_id": 59094,
+  "mal_rank": 11060,
+  "mal_popularity": 12074,
+  "mal_studios": [
+    "EMT Squared"
+  ],
+  "mal_title_en": "Train to the End of the World Recap",
+  "mal_title_jp": "終末トレインどこへいく？総集編",
+  "mal_season": "spring 2024",
+  "mal_year": "2024",
   "imdb_id": "tt31975747",
-  "last_updated": "2026-05-29T00:43:09.290178+00:00"
+  "last_updated": "2026-05-29T18:56:32.289180+00:00"
 }

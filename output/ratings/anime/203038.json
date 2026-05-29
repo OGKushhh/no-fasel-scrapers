@@ -2,9 +2,19 @@
   "content_id": "203038",
   "title": "انمي Hikari no Ou",
   "year": "2023",
-  "rating": "8.5",
-  "votes": 108,
-  "source": "imdbapi",
+  "rating": "6.37",
+  "votes": 14251,
+  "source": "mal",
+  "mal_id": 43760,
+  "mal_rank": 9002,
+  "mal_popularity": 3609,
+  "mal_studios": [
+    "Signal.MD"
+  ],
+  "mal_title_en": "The Fire Hunter",
+  "mal_title_jp": "火狩りの王",
+  "mal_season": "winter 2023",
+  "mal_year": "2023",
   "imdb_id": "tt30461056",
-  "last_updated": "2026-05-29T01:23:06.949530+00:00"
+  "last_updated": "2026-05-29T19:16:51.125859+00:00"
 }

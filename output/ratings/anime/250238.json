@@ -2,9 +2,20 @@
   "content_id": "250238",
   "title": "انمي Yeosin Gangnim",
   "year": "2024",
-  "rating": "6.7",
-  "votes": 447,
-  "source": "imdbapi",
+  "rating": "6.59",
+  "votes": 11632,
+  "source": "mal",
+  "mal_id": 57192,
+  "mal_rank": 7737,
+  "mal_popularity": 4632,
+  "mal_studios": [
+    "Studio N",
+    "Cocktail Media"
+  ],
+  "mal_title_en": "True Beauty",
+  "mal_title_jp": "여신강림",
+  "mal_season": "summer 2024",
+  "mal_year": "2024",
   "imdb_id": "tt33054444",
-  "last_updated": "2026-05-29T00:27:16.990490+00:00"
+  "last_updated": "2026-05-29T18:47:33.177685+00:00"
 }

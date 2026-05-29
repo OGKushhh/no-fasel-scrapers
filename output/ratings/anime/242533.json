@@ -2,9 +2,20 @@
   "content_id": "242533",
   "title": "انمي The New Gate",
   "year": "2024",
-  "rating": "6.5",
-  "votes": 1143,
-  "source": "imdbapi",
+  "rating": "6.47",
+  "votes": 70939,
+  "source": "mal",
+  "mal_id": 57100,
+  "mal_rank": 8445,
+  "mal_popularity": 1745,
+  "mal_studios": [
+    "Yokohama Animation Lab",
+    "Cloud Hearts"
+  ],
+  "mal_title_en": "The New Gate",
+  "mal_title_jp": "THE NEW GATE",
+  "mal_season": "spring 2024",
+  "mal_year": "2024",
   "imdb_id": "tt31146105",
-  "last_updated": "2026-05-29T00:37:16.776289+00:00"
+  "last_updated": "2026-05-29T18:53:12.730150+00:00"
 }

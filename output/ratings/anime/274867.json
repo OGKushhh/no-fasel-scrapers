@@ -1,10 +1,20 @@
 {
   "content_id": "274867",
   "title": "انمي Osomatsu-san",
-  "year": "2016",
-  "rating": "7.5",
-  "votes": 549,
-  "source": "imdbapi",
+  "year": "2015",
+  "rating": "7.93",
+  "votes": 70239,
+  "source": "mal",
+  "mal_id": 31174,
+  "mal_rank": 884,
+  "mal_popularity": 1528,
+  "mal_studios": [
+    "Studio Pierrot"
+  ],
+  "mal_title_en": "Mr. Osomatsu",
+  "mal_title_jp": "おそ松さん",
+  "mal_season": "fall 2015",
+  "mal_year": "2015",
   "imdb_id": "tt4838372",
-  "last_updated": "2026-05-28T23:50:03.754768+00:00"
+  "last_updated": "2026-05-29T14:45:57.021677+00:00"
 }

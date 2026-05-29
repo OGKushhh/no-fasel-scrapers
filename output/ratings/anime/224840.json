@@ -2,9 +2,19 @@
   "content_id": "224840",
   "title": "انمي Bullbuster",
   "year": "2023",
-  "rating": "5.9",
-  "votes": 70,
-  "source": "imdbapi",
+  "rating": "6.15",
+  "votes": 4402,
+  "source": "mal",
+  "mal_id": 53633,
+  "mal_rank": 10224,
+  "mal_popularity": 6279,
+  "mal_studios": [
+    "Nut"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "ブルバスター",
+  "mal_season": "fall 2023",
+  "mal_year": "2023",
   "imdb_id": "tt29476307",
-  "last_updated": "2026-05-29T00:57:02.927981+00:00"
+  "last_updated": "2026-05-29T19:05:09.900500+00:00"
 }

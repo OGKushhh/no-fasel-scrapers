@@ -2,9 +2,20 @@
   "content_id": "219993",
   "title": "انمي Yami Shibai 11",
   "year": "2023",
-  "rating": "7.0",
-  "votes": 1100,
-  "source": "imdbapi",
+  "rating": "5.83",
+  "votes": 3147,
+  "source": "mal",
+  "mal_id": 55166,
+  "mal_rank": 11915,
+  "mal_popularity": 7714,
+  "mal_studios": [
+    "ILCA",
+    "yell"
+  ],
+  "mal_title_en": "Theatre of Darkness: Yamishibai 11",
+  "mal_title_jp": "闇芝居 十一期",
+  "mal_season": "summer 2023",
+  "mal_year": "2023",
   "imdb_id": "tt3111906",
-  "last_updated": "2026-05-29T01:01:02.183702+00:00"
+  "last_updated": "2026-05-29T19:07:44.779954+00:00"
 }

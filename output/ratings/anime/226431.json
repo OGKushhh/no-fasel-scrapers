@@ -2,9 +2,20 @@
   "content_id": "226431",
   "title": "انمي Kibou no Chikara: Otona Precure ’23",
   "year": "2023",
-  "rating": "6.0",
-  "votes": 63,
-  "source": "imdbapi",
+  "rating": "6.74",
+  "votes": 2870,
+  "source": "mal",
+  "mal_id": 54716,
+  "mal_rank": 6757,
+  "mal_popularity": 7293,
+  "mal_studios": [
+    "Toei Animation",
+    "Studio Deen"
+  ],
+  "mal_title_en": "Power of Hope ~Precure Full Bloom~",
+  "mal_title_jp": "キボウノチカラ～オトナプリキュア'23～",
+  "mal_season": "fall 2023",
+  "mal_year": "2023",
   "imdb_id": "tt27197973",
-  "last_updated": "2026-05-29T00:52:42.276364+00:00"
+  "last_updated": "2026-05-29T19:01:53.447701+00:00"
 }

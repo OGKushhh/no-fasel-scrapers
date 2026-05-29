@@ -2,9 +2,19 @@
   "content_id": "261741",
   "title": "انمي Mairimashita! Iruma-kun",
   "year": "2019",
-  "rating": "7.6",
-  "votes": 3598,
-  "source": "imdbapi",
+  "rating": "7.74",
+  "votes": 298103,
+  "source": "mal",
+  "mal_id": 39196,
+  "mal_rank": 1358,
+  "mal_popularity": 438,
+  "mal_studios": [
+    "Bandai Namco Pictures"
+  ],
+  "mal_title_en": "Welcome to Demon School! Iruma-kun",
+  "mal_title_jp": "魔入りました！入間くん",
+  "mal_season": "fall 2019",
+  "mal_year": "2019",
   "imdb_id": "tt11034066",
-  "last_updated": "2026-05-29T00:13:09.039176+00:00"
+  "last_updated": "2026-05-29T14:59:22.465193+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "280956",
   "title": "انمي Sanda",
   "year": "2025",
-  "rating": "6.9",
-  "votes": 997,
-  "source": "imdbapi",
+  "rating": "7.44",
+  "votes": 37318,
+  "source": "mal",
+  "mal_id": 59267,
+  "mal_rank": 2605,
+  "mal_popularity": 2260,
+  "mal_studios": [
+    "Science SARU"
+  ],
+  "mal_title_en": "Sanda",
+  "mal_title_jp": "SANDA",
+  "mal_season": "fall 2025",
+  "mal_year": "2025",
   "imdb_id": "tt35127440",
-  "last_updated": "2026-05-28T23:42:52.776670+00:00"
+  "last_updated": "2026-05-29T14:41:49.453187+00:00"
 }

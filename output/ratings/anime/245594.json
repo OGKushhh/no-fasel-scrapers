@@ -2,9 +2,19 @@
   "content_id": "245594",
   "title": "انمي Kimetsu no Yaiba: Hashira Geiko-hen",
   "year": "2024",
-  "rating": "7.3",
-  "votes": 10923,
-  "source": "imdbapi",
+  "rating": "8.02",
+  "votes": 457276,
+  "source": "mal",
+  "mal_id": 55701,
+  "mal_rank": 728,
+  "mal_popularity": 297,
+  "mal_studios": [
+    "ufotable"
+  ],
+  "mal_title_en": "Demon Slayer: Kimetsu no Yaiba Hashira Training Arc",
+  "mal_title_jp": "鬼滅の刃 柱稽古編",
+  "mal_season": "spring 2024",
+  "mal_year": "2024",
   "imdb_id": "tt30395619",
-  "last_updated": "2026-05-29T00:35:30.154487+00:00"
+  "last_updated": "2026-05-29T18:52:13.725381+00:00"
 }

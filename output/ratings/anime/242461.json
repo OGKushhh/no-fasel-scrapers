@@ -2,9 +2,19 @@
   "content_id": "242461",
   "title": "انمي The iDOLM@STER Shiny Colors",
   "year": "2024",
-  "rating": "5.9",
-  "votes": 39,
-  "source": "imdbapi",
+  "rating": "6.17",
+  "votes": 2770,
+  "source": "mal",
+  "mal_id": 54758,
+  "mal_rank": 10159,
+  "mal_popularity": 7000,
+  "mal_studios": [
+    "Polygon Pictures"
+  ],
+  "mal_title_en": "The iDOLM@STER Shiny Colors",
+  "mal_title_jp": "アイドルマスター シャイニーカラーズ",
+  "mal_season": "spring 2024",
+  "mal_year": "2024",
   "imdb_id": "tt31543920",
-  "last_updated": "2026-05-29T00:37:38.014506+00:00"
+  "last_updated": "2026-05-29T18:53:28.051522+00:00"
 }

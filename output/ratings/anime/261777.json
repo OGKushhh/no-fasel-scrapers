@@ -2,9 +2,20 @@
   "content_id": "261777",
   "title": "انمي Himitsu no AiPri",
   "year": "2024",
-  "rating": "4.5",
-  "votes": 14,
-  "source": "imdbapi",
+  "rating": "6.8",
+  "votes": 838,
+  "source": "mal",
+  "mal_id": 57946,
+  "mal_rank": 6395,
+  "mal_popularity": 10090,
+  "mal_studios": [
+    "OLM",
+    "Dongwoo A&E"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "ひみつのアイプリ",
+  "mal_season": "spring 2024",
+  "mal_year": "2024",
   "imdb_id": "tt32158870",
-  "last_updated": "2026-05-29T00:12:55.014558+00:00"
+  "last_updated": "2026-05-29T14:59:12.306962+00:00"
 }

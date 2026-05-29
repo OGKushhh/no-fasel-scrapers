@@ -2,9 +2,19 @@
   "content_id": "274853",
   "title": "انمي Futari Solo Camp",
   "year": "2025",
-  "rating": "6.6",
-  "votes": 294,
-  "source": "imdbapi",
+  "rating": "7.25",
+  "votes": 13610,
+  "source": "mal",
+  "mal_id": 60665,
+  "mal_rank": 3712,
+  "mal_popularity": 3937,
+  "mal_studios": [
+    "SynergySP"
+  ],
+  "mal_title_en": "Solo Camping for Two",
+  "mal_title_jp": "ふたりソロキャンプ",
+  "mal_season": "summer 2025",
+  "mal_year": "2025",
   "imdb_id": "tt36271866",
-  "last_updated": "2026-05-28T23:50:32.236688+00:00"
+  "last_updated": "2026-05-29T14:46:17.767923+00:00"
 }

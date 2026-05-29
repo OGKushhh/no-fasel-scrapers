@@ -2,9 +2,19 @@
   "content_id": "278578",
   "title": "انمي Yami Shibai 14",
   "year": "2025",
-  "rating": "7.0",
-  "votes": 1100,
-  "source": "imdbapi",
+  "rating": "5.79",
+  "votes": 1749,
+  "source": "mal",
+  "mal_id": 60410,
+  "mal_rank": 12108,
+  "mal_popularity": 9668,
+  "mal_studios": [
+    "ILCA"
+  ],
+  "mal_title_en": "Theatre of Darkness: Yamishibai 14",
+  "mal_title_jp": "闇芝居 十四期",
+  "mal_season": "winter 2025",
+  "mal_year": "2025",
   "imdb_id": "tt3111906",
-  "last_updated": "2026-05-28T23:48:03.153387+00:00"
+  "last_updated": "2026-05-29T14:44:57.310878+00:00"
 }

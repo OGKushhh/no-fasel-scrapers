@@ -2,9 +2,19 @@
   "content_id": "212588",
   "title": "انمي Jigokuraku",
   "year": "2023",
-  "rating": "8.1",
-  "votes": 30565,
-  "source": "imdbapi",
+  "rating": "8.09",
+  "votes": 530511,
+  "source": "mal",
+  "mal_id": 46569,
+  "mal_rank": 618,
+  "mal_popularity": 205,
+  "mal_studios": [
+    "MAPPA"
+  ],
+  "mal_title_en": "Hell's Paradise",
+  "mal_title_jp": "地獄楽",
+  "mal_season": "spring 2023",
+  "mal_year": "2023",
   "imdb_id": "tt13911284",
-  "last_updated": "2026-05-29T01:20:28.206153+00:00"
+  "last_updated": "2026-05-29T19:15:48.625005+00:00"
 }

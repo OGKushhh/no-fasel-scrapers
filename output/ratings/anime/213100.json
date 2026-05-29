@@ -2,9 +2,19 @@
   "content_id": "213100",
   "title": "انمي Dead Mount Death Play",
   "year": "2023",
-  "rating": "6.8",
-  "votes": 1893,
-  "source": "imdbapi",
+  "rating": "7.26",
+  "votes": 125129,
+  "source": "mal",
+  "mal_id": 53613,
+  "mal_rank": 3633,
+  "mal_popularity": 977,
+  "mal_studios": [
+    "Geek Toys"
+  ],
+  "mal_title_en": "Dead Mount Death Play",
+  "mal_title_jp": "デッドマウント・デスプレイ",
+  "mal_season": "spring 2023",
+  "mal_year": "2023",
   "imdb_id": "tt27489241",
-  "last_updated": "2026-05-29T01:15:17.305932+00:00"
+  "last_updated": "2026-05-29T19:13:11.138705+00:00"
 }

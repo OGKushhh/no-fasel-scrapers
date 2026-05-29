@@ -2,9 +2,19 @@
   "content_id": "247848",
   "title": "انمي Maougun Saikyou no Majutsushi wa Ningen datta",
   "year": "2024",
-  "rating": "6.2",
-  "votes": 1112,
-  "source": "imdbapi",
+  "rating": "6.41",
+  "votes": 65126,
+  "source": "mal",
+  "mal_id": 57876,
+  "mal_rank": 8791,
+  "mal_popularity": 1742,
+  "mal_studios": [
+    "Studio A-CAT"
+  ],
+  "mal_title_en": "The Strongest Magician in the Demon Lord's Army Was a Human",
+  "mal_title_jp": "魔王軍最強の魔術師は人間だった",
+  "mal_season": "summer 2024",
+  "mal_year": "2024",
   "imdb_id": "tt32333026",
-  "last_updated": "2026-05-29T00:34:21.796102+00:00"
+  "last_updated": "2026-05-29T18:51:21.778623+00:00"
 }

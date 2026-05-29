@@ -1,10 +1,22 @@
 {
   "content_id": "188750",
   "title": "انمي Urusei Yatsura",
-  "year": "2022",
-  "rating": "7.1",
-  "votes": 994,
-  "source": "imdbapi",
+  "year": "1985",
+  "rating": "7.43",
+  "votes": 3397,
+  "source": "mal",
+  "mal_id": 1919,
+  "mal_rank": 2659,
+  "mal_popularity": 7307,
+  "mal_studios": [
+    "Madhouse",
+    "Studio Deen",
+    "Magic Bus"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "うる星やつら",
+  "mal_season": "summer 1985",
+  "mal_year": "1985",
   "imdb_id": "tt16764368",
-  "last_updated": "2026-05-29T01:31:21.548432+00:00"
+  "last_updated": "2026-05-29T19:21:32.802372+00:00"
 }

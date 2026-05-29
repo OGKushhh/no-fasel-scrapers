@@ -2,9 +2,20 @@
   "content_id": "242120",
   "title": "انمي Blue Archive the Animation",
   "year": "2024",
-  "rating": "5.6",
-  "votes": 327,
-  "source": "imdbapi",
+  "rating": "7.01",
+  "votes": 28109,
+  "source": "mal",
+  "mal_id": 54309,
+  "mal_rank": 5180,
+  "mal_popularity": 2849,
+  "mal_studios": [
+    "Yostar Pictures",
+    "Studio CANDY BOX"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "ブルーアーカイブ The Animation",
+  "mal_season": "spring 2024",
+  "mal_year": "2024",
   "imdb_id": "tt30989205",
-  "last_updated": "2026-05-29T00:39:18.081829+00:00"
+  "last_updated": "2026-05-29T18:54:20.465248+00:00"
 }

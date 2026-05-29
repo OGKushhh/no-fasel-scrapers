@@ -2,9 +2,19 @@
   "content_id": "290138",
   "title": "انمي High School! Kimengumi (2026)",
   "year": "2026",
-  "rating": "5.1",
-  "votes": 21,
-  "source": "imdbapi",
+  "rating": "5.68",
+  "votes": 1016,
+  "source": "mal",
+  "mal_id": 62804,
+  "mal_rank": 12583,
+  "mal_popularity": 9999,
+  "mal_studios": [
+    "Seven"
+  ],
+  "mal_title_en": "High School! Kimengumi (2026)",
+  "mal_title_jp": "ハイスクール！奇面組",
+  "mal_season": "winter 2026",
+  "mal_year": "2026",
   "imdb_id": "tt38711470",
-  "last_updated": "2026-05-28T23:26:14.116383+00:00"
+  "last_updated": "2026-05-29T14:31:54.421685+00:00"
 }

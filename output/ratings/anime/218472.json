@@ -2,9 +2,19 @@
   "content_id": "218472",
   "title": "انمي Genjitsu no Yohane: Sunshine in the Mirror",
   "year": "2023",
-  "rating": "6.3",
-  "votes": 90,
-  "source": "imdbapi",
+  "rating": "6.9",
+  "votes": 13477,
+  "source": "mal",
+  "mal_id": 52214,
+  "mal_rank": 5772,
+  "mal_popularity": 3915,
+  "mal_studios": [
+    "Sunrise"
+  ],
+  "mal_title_en": "Yohane the Parhelion: Sunshine in the Mirror",
+  "mal_title_jp": "幻日のヨハネ -SUNSHINE in the MIRROR-",
+  "mal_season": "summer 2023",
+  "mal_year": "2023",
   "imdb_id": "tt27117596",
-  "last_updated": "2026-05-29T01:11:55.569164+00:00"
+  "last_updated": "2026-05-29T19:11:16.753427+00:00"
 }

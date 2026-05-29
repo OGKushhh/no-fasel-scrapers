@@ -2,9 +2,19 @@
   "content_id": "274566",
   "title": "انمي Bad Girl",
   "year": "2025",
-  "rating": "6.2",
-  "votes": 1498,
-  "source": "imdbapi",
+  "rating": "7.12",
+  "votes": 12532,
+  "source": "mal",
+  "mal_id": 59161,
+  "mal_rank": 4541,
+  "mal_popularity": 4187,
+  "mal_studios": [
+    "Bridge"
+  ],
+  "mal_title_en": "Bad Girl",
+  "mal_title_jp": "ばっどがーる",
+  "mal_season": "summer 2025",
+  "mal_year": "2025",
   "imdb_id": "tt35144943",
-  "last_updated": "2026-05-28T23:52:04.649062+00:00"
+  "last_updated": "2026-05-29T14:47:18.765248+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "241661",
   "title": "انمي Hananoi-kun to Koi no Yamai",
   "year": "2024",
-  "rating": "6.6",
-  "votes": 1173,
-  "source": "imdbapi",
+  "rating": "6.78",
+  "votes": 53469,
+  "source": "mal",
+  "mal_id": 55597,
+  "mal_rank": 6504,
+  "mal_popularity": 1867,
+  "mal_studios": [
+    "East Fish Studio"
+  ],
+  "mal_title_en": "A Condition Called Love",
+  "mal_title_jp": "花野井くんと恋の病",
+  "mal_season": "spring 2024",
+  "mal_year": "2024",
   "imdb_id": "tt29899598",
-  "last_updated": "2026-05-29T00:42:02.252704+00:00"
+  "last_updated": "2026-05-29T18:56:06.363689+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "262083",
   "title": "انمي Sorairo Utility (TV)",
   "year": "2025",
-  "rating": "6.4",
-  "votes": 78,
-  "source": "imdbapi",
+  "rating": "7.12",
+  "votes": 7194,
+  "source": "mal",
+  "mal_id": 58066,
+  "mal_rank": 4589,
+  "mal_popularity": 5265,
+  "mal_studios": [
+    "Yostar Pictures"
+  ],
+  "mal_title_en": "Sorairo Utility",
+  "mal_title_jp": "空色ユーティリティ",
+  "mal_season": "winter 2025",
+  "mal_year": "2025",
   "imdb_id": "tt34621563",
-  "last_updated": "2026-05-29T00:11:28.889710+00:00"
+  "last_updated": "2026-05-29T14:58:19.870213+00:00"
 }

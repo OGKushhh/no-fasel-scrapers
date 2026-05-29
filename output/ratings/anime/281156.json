@@ -2,9 +2,19 @@
   "content_id": "281156",
   "title": "انمي Zoku Natsume Yuujinchou",
   "year": "2009",
-  "rating": "8.1",
-  "votes": 3270,
-  "source": "imdbapi",
+  "rating": "8.53",
+  "votes": 134948,
+  "source": "mal",
+  "mal_id": 5300,
+  "mal_rank": 150,
+  "mal_popularity": 1059,
+  "mal_studios": [
+    "Brain's Base"
+  ],
+  "mal_title_en": "Natsume's Book of Friends Season 2",
+  "mal_title_jp": "続 夏目友人帳",
+  "mal_season": "winter 2009",
+  "mal_year": "2009",
   "imdb_id": "tt1352421",
-  "last_updated": "2026-05-28T23:39:56.797754+00:00"
+  "last_updated": "2026-05-29T14:40:12.212524+00:00"
 }

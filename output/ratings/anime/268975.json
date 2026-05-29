@@ -2,9 +2,20 @@
   "content_id": "268975",
   "title": "انمي Kidou Senshi Gundam: GQuuuuuuX",
   "year": "2025",
-  "rating": "6.8",
-  "votes": 833,
-  "source": "imdbapi",
+  "rating": "7.02",
+  "votes": 26077,
+  "source": "mal",
+  "mal_id": 60449,
+  "mal_rank": 5136,
+  "mal_popularity": 3170,
+  "mal_studios": [
+    "Sunrise",
+    "Khara"
+  ],
+  "mal_title_en": "Mobile Suit Gundam: GQuuuuuuX",
+  "mal_title_jp": "機動戦士 Gundam GQuuuuuuX",
+  "mal_season": "spring 2025",
+  "mal_year": "2025",
   "imdb_id": "tt34880941",
-  "last_updated": "2026-05-29T00:02:41.231997+00:00"
+  "last_updated": "2026-05-29T14:53:53.406934+00:00"
 }

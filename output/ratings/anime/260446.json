@@ -2,9 +2,19 @@
   "content_id": "260446",
   "title": "انمي Maou-sama, Retry!",
   "year": "2019",
-  "rating": "6.6",
-  "votes": 1632,
-  "source": "imdbapi",
+  "rating": "6.55",
+  "votes": 148299,
+  "source": "mal",
+  "mal_id": 38297,
+  "mal_rank": 7945,
+  "mal_popularity": 992,
+  "mal_studios": [
+    "EKACHI EPILKA"
+  ],
+  "mal_title_en": "Demon Lord, Retry!",
+  "mal_title_jp": "魔王様、リトライ！",
+  "mal_season": "summer 2019",
+  "mal_year": "2019",
   "imdb_id": "tt10443362",
-  "last_updated": "2026-05-29T00:17:22.342200+00:00"
+  "last_updated": "2026-05-29T15:01:36.558813+00:00"
 }

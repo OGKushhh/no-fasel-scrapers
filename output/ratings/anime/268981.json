@@ -2,9 +2,19 @@
   "content_id": "268981",
   "title": "انمي Uma Musume: Cinderella Gray",
   "year": "2025",
-  "rating": "8.1",
-  "votes": 1122,
-  "source": "imdbapi",
+  "rating": "8.59",
+  "votes": 52510,
+  "source": "mal",
+  "mal_id": 59636,
+  "mal_rank": 119,
+  "mal_popularity": 2347,
+  "mal_studios": [
+    "CygamesPictures"
+  ],
+  "mal_title_en": "Umamusume: Cinderella Gray",
+  "mal_title_jp": "ウマ娘 シンデレラグレイ",
+  "mal_season": "spring 2025",
+  "mal_year": "2025",
   "imdb_id": "tt35437675",
-  "last_updated": "2026-05-29T00:02:34.093278+00:00"
+  "last_updated": "2026-05-29T14:53:48.211755+00:00"
 }

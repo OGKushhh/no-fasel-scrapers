@@ -2,9 +2,19 @@
   "content_id": "274517",
   "title": "انمي Hotel Inhumans",
   "year": "2025",
-  "rating": "6.1",
-  "votes": 193,
-  "source": "imdbapi",
+  "rating": "6.72",
+  "votes": 7527,
+  "source": "mal",
+  "mal_id": 60260,
+  "mal_rank": 6879,
+  "mal_popularity": 5021,
+  "mal_studios": [
+    "Bridge"
+  ],
+  "mal_title_en": "Hotel Inhumans",
+  "mal_title_jp": "ホテル・インヒューマンズ",
+  "mal_season": "summer 2025",
+  "mal_year": "2025",
   "imdb_id": "tt35995459",
-  "last_updated": "2026-05-28T23:53:13.862495+00:00"
+  "last_updated": "2026-05-29T14:47:55.351604+00:00"
 }

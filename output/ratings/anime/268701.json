@@ -2,9 +2,19 @@
   "content_id": "268701",
   "title": "انمي Shin Samurai-den Yaiba",
   "year": "2025",
-  "rating": "6.9",
-  "votes": 539,
-  "source": "imdbapi",
+  "rating": "7.25",
+  "votes": 12136,
+  "source": "mal",
+  "mal_id": 58812,
+  "mal_rank": 3759,
+  "mal_popularity": 3922,
+  "mal_studios": [
+    "Wit Studio"
+  ],
+  "mal_title_en": "Yaiba: Samurai Legend",
+  "mal_title_jp": "真･侍伝 YAIBA",
+  "mal_season": "spring 2025",
+  "mal_year": "2025",
   "imdb_id": "tt33332400",
-  "last_updated": "2026-05-29T00:04:27.074395+00:00"
+  "last_updated": "2026-05-29T14:54:45.273226+00:00"
 }

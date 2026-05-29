@@ -2,9 +2,20 @@
   "content_id": "234320",
   "title": "انمي Kyuujitsu no Warumono-san",
   "year": "2024",
-  "rating": "6.7",
-  "votes": 474,
-  "source": "imdbapi",
+  "rating": "7.26",
+  "votes": 33558,
+  "source": "mal",
+  "mal_id": 54617,
+  "mal_rank": 3653,
+  "mal_popularity": 2264,
+  "mal_studios": [
+    "SynergySP",
+    "Shin-Ei Animation"
+  ],
+  "mal_title_en": "Mr. Villain's Day Off",
+  "mal_title_jp": "休日のわるものさん",
+  "mal_season": "winter 2024",
+  "mal_year": "2024",
   "imdb_id": "tt29467317",
-  "last_updated": "2026-05-29T00:47:35.870002+00:00"
+  "last_updated": "2026-05-29T18:59:04.600505+00:00"
 }

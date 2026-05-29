@@ -2,9 +2,19 @@
   "content_id": "234173",
   "title": "انمي Yubisaki to Renren",
   "year": "2024",
-  "rating": "7.8",
-  "votes": 4762,
-  "source": "imdbapi",
+  "rating": "8.2",
+  "votes": 162419,
+  "source": "mal",
+  "mal_id": 55866,
+  "mal_rank": 460,
+  "mal_popularity": 792,
+  "mal_studios": [
+    "Ajia-do"
+  ],
+  "mal_title_en": "A Sign of Affection",
+  "mal_title_jp": "ゆびさきと恋々",
+  "mal_season": "winter 2024",
+  "mal_year": "2024",
   "imdb_id": "tt30024091",
-  "last_updated": "2026-05-29T00:48:42.165117+00:00"
+  "last_updated": "2026-05-29T18:59:32.974735+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "296284",
   "title": "انمي Himekishi wa Barbaroi no Yome",
   "year": "2026",
-  "rating": "6.7",
-  "votes": 224,
-  "source": "imdbapi",
+  "rating": "6.85",
+  "votes": 8933,
+  "source": "mal",
+  "mal_id": 60028,
+  "mal_rank": 6077,
+  "mal_popularity": 2795,
+  "mal_studios": [
+    "Jumondou"
+  ],
+  "mal_title_en": "The Warrior Princess and the Barbaric King",
+  "mal_title_jp": "姫騎士は蛮族の嫁",
+  "mal_season": "spring 2026",
+  "mal_year": "2026",
   "imdb_id": "tt36593277",
-  "last_updated": "2026-05-28T23:15:51.557261+00:00"
+  "last_updated": "2026-05-29T14:26:36.615215+00:00"
 }

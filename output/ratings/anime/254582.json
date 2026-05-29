@@ -2,9 +2,19 @@
   "content_id": "254582",
   "title": "انمي Sword Art Online Alternative: Gun Gale Online II",
   "year": "2024",
-  "rating": "6.8",
-  "votes": 3319,
-  "source": "imdbapi",
+  "rating": "7.16",
+  "votes": 37391,
+  "source": "mal",
+  "mal_id": 55994,
+  "mal_rank": 4345,
+  "mal_popularity": 2100,
+  "mal_studios": [
+    "A-1 Pictures"
+  ],
+  "mal_title_en": "Sword Art Online Alternative: Gun Gale Online II",
+  "mal_title_jp": "ソードアート・オンライン オルタナティブ ガンゲイル・オンラインⅡ",
+  "mal_season": "fall 2024",
+  "mal_year": "2024",
   "imdb_id": "tt7978710",
-  "last_updated": "2026-05-29T00:22:26.467740+00:00"
+  "last_updated": "2026-05-29T15:04:53.041106+00:00"
 }

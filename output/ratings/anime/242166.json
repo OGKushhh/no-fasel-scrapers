@@ -2,9 +2,19 @@
   "content_id": "242166",
   "title": "انمي Kenka Dokugaku",
   "year": "2024",
-  "rating": "7.1",
-  "votes": 1417,
-  "source": "imdbapi",
+  "rating": "7.32",
+  "votes": 43226,
+  "source": "mal",
+  "mal_id": 58080,
+  "mal_rank": 3249,
+  "mal_popularity": 2448,
+  "mal_studios": [
+    "Okuruto Noboru"
+  ],
+  "mal_title_en": "Viral Hit",
+  "mal_title_jp": "喧嘩独学",
+  "mal_season": "spring 2024",
+  "mal_year": "2024",
   "imdb_id": "tt31975855",
-  "last_updated": "2026-05-29T00:36:35.862924+00:00"
+  "last_updated": "2026-05-29T18:52:47.159883+00:00"
 }

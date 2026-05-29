@@ -2,9 +2,19 @@
   "content_id": "247922",
   "title": "انمي Isekai Suicide Squad",
   "year": "2024",
-  "rating": "6.2",
-  "votes": 2741,
-  "source": "imdbapi",
+  "rating": "6.36",
+  "votes": 51907,
+  "source": "mal",
+  "mal_id": 55848,
+  "mal_rank": 9074,
+  "mal_popularity": 1682,
+  "mal_studios": [
+    "Wit Studio"
+  ],
+  "mal_title_en": "Suicide Squad Isekai",
+  "mal_title_jp": "異世界スーサイド・スクワッド",
+  "mal_season": "summer 2024",
+  "mal_year": "2024",
   "imdb_id": "tt28279848",
-  "last_updated": "2026-05-29T00:34:14.786632+00:00"
+  "last_updated": "2026-05-29T18:51:16.607039+00:00"
 }

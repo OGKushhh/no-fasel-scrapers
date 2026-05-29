@@ -2,9 +2,19 @@
   "content_id": "295776",
   "title": "انمي Kirio Fanclub",
   "year": "2026",
-  "rating": "6.7",
-  "votes": 17,
-  "source": "imdbapi",
+  "rating": "6.31",
+  "votes": 1757,
+  "source": "mal",
+  "mal_id": 59835,
+  "mal_rank": 9355,
+  "mal_popularity": 6353,
+  "mal_studios": [
+    "Satelight"
+  ],
+  "mal_title_en": "Kirio Fan Club",
+  "mal_title_jp": "霧尾ファンクラブ",
+  "mal_season": "spring 2026",
+  "mal_year": "2026",
   "imdb_id": "tt37253585",
-  "last_updated": "2026-05-28T23:20:19.187678+00:00"
+  "last_updated": "2026-05-29T14:28:53.069993+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "246963",
   "title": "انمي 2 Hibike! Euphonium",
   "year": "2016",
-  "rating": "6.8",
-  "votes": 271,
-  "source": "imdbapi",
+  "rating": "8.35",
+  "votes": 137132,
+  "source": "mal",
+  "mal_id": 31988,
+  "mal_rank": 279,
+  "mal_popularity": 1095,
+  "mal_studios": [
+    "Kyoto Animation"
+  ],
+  "mal_title_en": "Sound! Euphonium 2",
+  "mal_title_jp": "響け！ユーフォニアム2",
+  "mal_season": "fall 2016",
+  "mal_year": "2016",
   "imdb_id": "tt5688888",
-  "last_updated": "2026-05-29T00:34:43.466363+00:00"
+  "last_updated": "2026-05-29T18:51:37.148933+00:00"
 }

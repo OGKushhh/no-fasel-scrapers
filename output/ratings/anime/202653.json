@@ -1,10 +1,20 @@
 {
   "content_id": "202653",
   "title": "انمي Eiyuuou, Bu wo Kiwameru Tame Tenseisu",
-  "year": "2023",
-  "rating": "6.2",
-  "votes": 776,
-  "source": "imdbapi",
+  "year": "2022",
+  "rating": "5.8",
+  "votes": 528,
+  "source": "mal",
+  "mal_id": 53619,
+  "mal_rank": 12029,
+  "mal_popularity": 12692,
+  "mal_studios": [
+    "AQUA ARIS"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "英雄王、武を極めるため転生す ミニアニメ",
+  "mal_season": "fall 2022",
+  "mal_year": "2022",
   "imdb_id": "tt25971150",
-  "last_updated": "2026-05-29T01:24:14.779002+00:00"
+  "last_updated": "2026-05-29T19:17:29.254015+00:00"
 }

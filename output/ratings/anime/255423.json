@@ -2,9 +2,19 @@
   "content_id": "255423",
   "title": "انمي Arifureta Shokugyou de Sekai Saikyou Season 3",
   "year": "2024",
-  "rating": "7.0",
-  "votes": 6461,
-  "source": "imdbapi",
+  "rating": "7.03",
+  "votes": 71336,
+  "source": "mal",
+  "mal_id": 52995,
+  "mal_rank": 5063,
+  "mal_popularity": 1366,
+  "mal_studios": [
+    "asread."
+  ],
+  "mal_title_en": "Arifureta: From Commonplace to World's Strongest Season 3",
+  "mal_title_jp": "ありふれた職業で世界最強 season 3",
+  "mal_season": "fall 2024",
+  "mal_year": "2024",
   "imdb_id": "tt10431290",
-  "last_updated": "2026-05-29T00:18:23.298498+00:00"
+  "last_updated": "2026-05-29T15:02:27.843643+00:00"
 }

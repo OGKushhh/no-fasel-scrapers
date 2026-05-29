@@ -2,9 +2,19 @@
   "content_id": "262130",
   "title": "انمي Sakamoto Days",
   "year": "2025",
-  "rating": "7.5",
-  "votes": 16683,
-  "source": "imdbapi",
+  "rating": "7.59",
+  "votes": 239522,
+  "source": "mal",
+  "mal_id": 58939,
+  "mal_rank": 1889,
+  "mal_popularity": 510,
+  "mal_studios": [
+    "TMS Entertainment"
+  ],
+  "mal_title_en": "Sakamoto Days",
+  "mal_title_jp": "SAKAMOTO DAYS",
+  "mal_season": "winter 2025",
+  "mal_year": "2025",
   "imdb_id": "tt17069148",
-  "last_updated": "2026-05-29T00:11:21.101602+00:00"
+  "last_updated": "2026-05-29T14:58:10.075060+00:00"
 }

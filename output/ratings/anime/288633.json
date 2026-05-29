@@ -2,9 +2,19 @@
   "content_id": "288633",
   "title": "انمي Kaguya-sama wa Kokurasetai: Otona e no Kaidan",
   "year": "2025",
-  "rating": "8.6",
-  "votes": 871,
-  "source": "imdbapi",
+  "rating": "8.54",
+  "votes": 51032,
+  "source": "mal",
+  "mal_id": 61903,
+  "mal_rank": 143,
+  "mal_popularity": 2297,
+  "mal_studios": [
+    "A-1 Pictures"
+  ],
+  "mal_title_en": "Kaguya-sama: Love Is War - Stairway to Adulthood",
+  "mal_title_jp": "かぐや様は告らせたい 大人への階段",
+  "mal_season": "fall 2025",
+  "mal_year": "2025",
   "imdb_id": "tt39287518",
-  "last_updated": "2026-05-28T23:33:23.453101+00:00"
+  "last_updated": "2026-05-29T14:36:10.401561+00:00"
 }

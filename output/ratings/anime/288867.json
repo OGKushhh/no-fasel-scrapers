@@ -2,9 +2,19 @@
   "content_id": "288867",
   "title": "انمي Gu Wei Nan Ting",
   "year": "2025",
-  "rating": "7.4",
-  "votes": 13,
-  "source": "imdbapi",
+  "rating": "7.26",
+  "votes": 408,
+  "source": "mal",
+  "mal_id": 62216,
+  "mal_rank": 3638,
+  "mal_popularity": 12106,
+  "mal_studios": [
+    "2:10 Animation"
+  ],
+  "mal_title_en": "The Chosen One",
+  "mal_title_jp": "谷围南亭",
+  "mal_season": "summer 2025",
+  "mal_year": "2025",
   "imdb_id": "tt39104922",
-  "last_updated": "2026-05-28T23:32:29.745878+00:00"
+  "last_updated": "2026-05-29T14:35:44.088585+00:00"
 }

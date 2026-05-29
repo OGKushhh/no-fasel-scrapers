@@ -1,10 +1,20 @@
 {
   "content_id": "279473",
   "title": "انمي IDOLiSH7",
-  "year": "2018",
-  "rating": "7.0",
-  "votes": 162,
-  "source": "imdbapi",
+  "year": "2017",
+  "rating": "6.96",
+  "votes": 1421,
+  "source": "mal",
+  "mal_id": 36289,
+  "mal_rank": null,
+  "mal_popularity": 11319,
+  "mal_studios": [
+    "Bones"
+  ],
+  "mal_title_en": "Daybreak Interlude",
+  "mal_title_jp": "DAYBREAK INTERLUDE",
+  "mal_season": "summer 2017",
+  "mal_year": "2017",
   "imdb_id": "tt11834102",
-  "last_updated": "2026-05-28T23:46:50.238329+00:00"
+  "last_updated": "2026-05-29T14:44:08.361524+00:00"
 }

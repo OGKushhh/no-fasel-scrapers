@@ -2,9 +2,19 @@
   "content_id": "290127",
   "title": "انمي Yami Shibai 16",
   "year": "2026",
-  "rating": "7.0",
-  "votes": 1100,
-  "source": "imdbapi",
+  "rating": "5.85",
+  "votes": 916,
+  "source": "mal",
+  "mal_id": 63087,
+  "mal_rank": 11808,
+  "mal_popularity": 11257,
+  "mal_studios": [
+    "ILCA"
+  ],
+  "mal_title_en": "Theatre of Darkness: Yamishibai 16",
+  "mal_title_jp": "闇芝居 十六期",
+  "mal_season": "winter 2026",
+  "mal_year": "2026",
   "imdb_id": "tt3111906",
-  "last_updated": "2026-05-28T23:26:21.354845+00:00"
+  "last_updated": "2026-05-29T14:31:59.443414+00:00"
 }

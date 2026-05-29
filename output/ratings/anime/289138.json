@@ -2,9 +2,19 @@
   "content_id": "289138",
   "title": "انمي Hanazakari no Kimitachi e",
   "year": "2026",
-  "rating": "6.5",
-  "votes": 400,
-  "source": "imdbapi",
+  "rating": "6.96",
+  "votes": 13318,
+  "source": "mal",
+  "mal_id": 58861,
+  "mal_rank": 5454,
+  "mal_popularity": 4289,
+  "mal_studios": [
+    "Signal.MD"
+  ],
+  "mal_title_en": "Hana-Kimi",
+  "mal_title_jp": "花ざかりの君たちへ",
+  "mal_season": "winter 2026",
+  "mal_year": "2026",
   "imdb_id": "tt38646611",
-  "last_updated": "2026-05-28T23:31:17.956279+00:00"
+  "last_updated": "2026-05-29T14:35:13.070291+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "225196",
   "title": "انمي Hametsu no Oukoku",
   "year": "2023",
-  "rating": "6.2",
-  "votes": 1905,
-  "source": "imdbapi",
+  "rating": "6.24",
+  "votes": 92922,
+  "source": "mal",
+  "mal_id": 54362,
+  "mal_rank": 9743,
+  "mal_popularity": 1228,
+  "mal_studios": [
+    "Yokohama Animation Lab"
+  ],
+  "mal_title_en": "The Kingdoms of Ruin",
+  "mal_title_jp": "はめつのおうこく",
+  "mal_season": "fall 2023",
+  "mal_year": "2023",
   "imdb_id": "tt28774702",
-  "last_updated": "2026-05-29T00:55:51.705062+00:00"
+  "last_updated": "2026-05-29T19:04:08.773077+00:00"
 }

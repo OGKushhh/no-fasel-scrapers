@@ -2,9 +2,19 @@
   "content_id": "202282",
   "title": "انمي Trigun Stampede",
   "year": "2023",
-  "rating": "7.3",
-  "votes": 2939,
-  "source": "imdbapi",
+  "rating": "7.81",
+  "votes": 91319,
+  "source": "mal",
+  "mal_id": 52093,
+  "mal_rank": 1184,
+  "mal_popularity": 1199,
+  "mal_studios": [
+    "Orange"
+  ],
+  "mal_title_en": "Trigun Stampede",
+  "mal_title_jp": "TRIGUN STAMPEDE",
+  "mal_season": "winter 2023",
+  "mal_year": "2023",
   "imdb_id": "tt21216104",
-  "last_updated": "2026-05-29T01:26:37.915091+00:00"
+  "last_updated": "2026-05-29T19:19:00.240031+00:00"
 }

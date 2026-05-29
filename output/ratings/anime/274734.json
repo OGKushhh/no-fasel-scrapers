@@ -1,10 +1,20 @@
 {
   "content_id": "274734",
   "title": "انمي New Panty & Stocking with Garterbelt",
-  "year": "2025",
-  "rating": "7.3",
-  "votes": 3924,
-  "source": "imdbapi",
+  "year": "2010",
+  "rating": "7.74",
+  "votes": 220770,
+  "source": "mal",
+  "mal_id": 8795,
+  "mal_rank": 1360,
+  "mal_popularity": 595,
+  "mal_studios": [
+    "Gainax"
+  ],
+  "mal_title_en": "Panty & Stocking with Garterbelt",
+  "mal_title_jp": "パンティ＆ストッキングwithガーターベルト",
+  "mal_season": "fall 2010",
+  "mal_year": "2010",
   "imdb_id": "tt1727444",
-  "last_updated": "2026-05-28T23:51:11.961864+00:00"
+  "last_updated": "2026-05-29T14:46:48.288008+00:00"
 }

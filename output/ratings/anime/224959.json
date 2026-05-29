@@ -2,9 +2,19 @@
   "content_id": "224959",
   "title": "انمي Under Ninja",
   "year": "2023",
-  "rating": "6.5",
-  "votes": 510,
-  "source": "imdbapi",
+  "rating": "6.88",
+  "votes": 27004,
+  "source": "mal",
+  "mal_id": 49766,
+  "mal_rank": 5924,
+  "mal_popularity": 2776,
+  "mal_studios": [
+    "Tezuka Productions"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "アンダーニンジャ",
+  "mal_season": "fall 2023",
+  "mal_year": "2023",
   "imdb_id": "tt15378218",
-  "last_updated": "2026-05-29T00:56:23.383860+00:00"
+  "last_updated": "2026-05-29T19:04:36.658109+00:00"
 }

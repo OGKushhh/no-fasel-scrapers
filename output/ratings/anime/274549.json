@@ -2,9 +2,19 @@
   "content_id": "274549",
   "title": "انمي Gachiakuta",
   "year": "2025",
-  "rating": "8.0",
-  "votes": 13973,
-  "source": "imdbapi",
+  "rating": "8.22",
+  "votes": 222526,
+  "source": "mal",
+  "mal_id": 59062,
+  "mal_rank": 421,
+  "mal_popularity": 521,
+  "mal_studios": [
+    "Bones Film"
+  ],
+  "mal_title_en": "Gachiakuta",
+  "mal_title_jp": "ガチアクタ",
+  "mal_season": "summer 2025",
+  "mal_year": "2025",
   "imdb_id": "tt32612521",
-  "last_updated": "2026-05-28T23:52:15.459778+00:00"
+  "last_updated": "2026-05-29T14:47:32.138711+00:00"
 }

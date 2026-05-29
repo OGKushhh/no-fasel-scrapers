@@ -2,9 +2,19 @@
   "content_id": "202107",
   "title": "انمي Tsurune: Tsunagari no Issha",
   "year": "2023",
-  "rating": "7.4",
-  "votes": 798,
-  "source": "imdbapi",
+  "rating": "8.12",
+  "votes": 21903,
+  "source": "mal",
+  "mal_id": 52826,
+  "mal_rank": 561,
+  "mal_popularity": 3016,
+  "mal_studios": [
+    "Kyoto Animation"
+  ],
+  "mal_title_en": "Tsurune - The Linking Shot -",
+  "mal_title_jp": "ツルネ ―つながりの一射―",
+  "mal_season": "winter 2023",
+  "mal_year": "2023",
   "imdb_id": "tt8994044",
-  "last_updated": "2026-05-29T01:27:57.572974+00:00"
+  "last_updated": "2026-05-29T19:19:44.491308+00:00"
 }

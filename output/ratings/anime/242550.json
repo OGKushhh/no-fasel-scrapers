@@ -2,9 +2,19 @@
   "content_id": "242550",
   "title": "انمي Kuroshitsuji",
   "year": "2008",
-  "rating": "7.6",
-  "votes": 11214,
-  "source": "imdbapi",
+  "rating": "7.65",
+  "votes": 648342,
+  "source": "mal",
+  "mal_id": 4898,
+  "mal_rank": 1654,
+  "mal_popularity": 128,
+  "mal_studios": [
+    "A-1 Pictures"
+  ],
+  "mal_title_en": "Black Butler",
+  "mal_title_jp": "黒執事",
+  "mal_season": "fall 2008",
+  "mal_year": "2008",
   "imdb_id": "tt1316554",
-  "last_updated": "2026-05-29T00:37:06.039901+00:00"
+  "last_updated": "2026-05-29T18:53:02.512155+00:00"
 }

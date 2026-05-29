@@ -2,9 +2,19 @@
   "content_id": "254005",
   "title": "انمي Maou-sama, Retry! R",
   "year": "2024",
-  "rating": "6.6",
-  "votes": 1632,
-  "source": "imdbapi",
+  "rating": "5.92",
+  "votes": 21664,
+  "source": "mal",
+  "mal_id": 56400,
+  "mal_rank": 11437,
+  "mal_popularity": 3466,
+  "mal_studios": [
+    "Gekkou"
+  ],
+  "mal_title_en": "Demon Lord, Retry! R",
+  "mal_title_jp": "魔王様、リトライ! R",
+  "mal_season": "fall 2024",
+  "mal_year": "2024",
   "imdb_id": "tt10443362",
-  "last_updated": "2026-05-29T00:25:44.786855+00:00"
+  "last_updated": "2026-05-29T18:46:56.924590+00:00"
 }

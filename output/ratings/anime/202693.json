@@ -2,9 +2,19 @@
   "content_id": "202693",
   "title": "انمي High Card",
   "year": "2023",
-  "rating": "6.7",
-  "votes": 667,
-  "source": "imdbapi",
+  "rating": "7.17",
+  "votes": 47823,
+  "source": "mal",
+  "mal_id": 49154,
+  "mal_rank": 4243,
+  "mal_popularity": 1859,
+  "mal_studios": [
+    "Studio Hibari"
+  ],
+  "mal_title_en": "High Card",
+  "mal_title_jp": "HIGH CARD",
+  "mal_season": "winter 2023",
+  "mal_year": "2023",
   "imdb_id": "tt25275610",
-  "last_updated": "2026-05-29T01:24:04.000057+00:00"
+  "last_updated": "2026-05-29T19:17:20.409152+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "280756",
   "title": "انمي Taiyou yori mo Mabushii Hoshi",
   "year": "2025",
-  "rating": "6.9",
-  "votes": 409,
-  "source": "imdbapi",
+  "rating": "7.35",
+  "votes": 15884,
+  "source": "mal",
+  "mal_id": 60969,
+  "mal_rank": 3097,
+  "mal_popularity": 3858,
+  "mal_studios": [
+    "Studio KAI"
+  ],
+  "mal_title_en": "A Star Brighter Than the Sun",
+  "mal_title_jp": "太陽よりも眩しい星",
+  "mal_season": "fall 2025",
+  "mal_year": "2025",
   "imdb_id": "tt36987681",
-  "last_updated": "2026-05-28T23:43:33.028352+00:00"
+  "last_updated": "2026-05-29T14:42:07.432526+00:00"
 }

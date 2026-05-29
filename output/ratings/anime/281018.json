@@ -2,9 +2,19 @@
   "content_id": "281018",
   "title": "انمي Toujima Tanzaburou wa Kamen Rider ni Naritai",
   "year": "2025",
-  "rating": "7.7",
-  "votes": 995,
-  "source": "imdbapi",
+  "rating": "7.81",
+  "votes": 21927,
+  "source": "mal",
+  "mal_id": 61159,
+  "mal_rank": 1182,
+  "mal_popularity": 3120,
+  "mal_studios": [
+    "LIDENFILMS"
+  ],
+  "mal_title_en": "Tojima Wants to Be a Kamen Rider",
+  "mal_title_jp": "東島丹三郎は仮面ライダーになりたい",
+  "mal_season": "fall 2025",
+  "mal_year": "2025",
   "imdb_id": "tt37532319",
-  "last_updated": "2026-05-28T23:41:20.700894+00:00"
+  "last_updated": "2026-05-29T14:41:09.646841+00:00"
 }

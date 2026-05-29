@@ -2,9 +2,19 @@
   "content_id": "202258",
   "title": "انمي Sugar Apple Fairy Tale",
   "year": "2023",
-  "rating": "7.2",
-  "votes": 1232,
-  "source": "imdbapi",
+  "rating": "7.51",
+  "votes": 64100,
+  "source": "mal",
+  "mal_id": 49980,
+  "mal_rank": 2266,
+  "mal_popularity": 1737,
+  "mal_studios": [
+    "J.C.Staff"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "シュガーアップル・フェアリーテイル",
+  "mal_season": "winter 2023",
+  "mal_year": "2023",
   "imdb_id": "tt15538376",
-  "last_updated": "2026-05-29T01:27:25.296873+00:00"
+  "last_updated": "2026-05-29T19:19:12.027346+00:00"
 }

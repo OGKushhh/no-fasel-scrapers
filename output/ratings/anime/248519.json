@@ -2,9 +2,20 @@
   "content_id": "248519",
   "title": "انمي Tsue to Tsurugi no Wistoria",
   "year": "2024",
-  "rating": "7.6",
-  "votes": 5421,
-  "source": "imdbapi",
+  "rating": "7.86",
+  "votes": 204792,
+  "source": "mal",
+  "mal_id": 58059,
+  "mal_rank": 1056,
+  "mal_popularity": 712,
+  "mal_studios": [
+    "Actas",
+    "Bandai Namco Pictures"
+  ],
+  "mal_title_en": "Wistoria: Wand and Sword",
+  "mal_title_jp": "杖と剣のウィストリア",
+  "mal_season": "summer 2024",
+  "mal_year": "2024",
   "imdb_id": "tt31889371",
-  "last_updated": "2026-05-29T00:29:46.369369+00:00"
+  "last_updated": "2026-05-29T18:49:15.710605+00:00"
 }

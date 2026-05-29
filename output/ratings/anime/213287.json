@@ -2,9 +2,19 @@
   "content_id": "213287",
   "title": "انمي The IDOLM@STER Cinderella Girls: U149",
   "year": "2023",
-  "rating": "6.7",
-  "votes": 62,
-  "source": "imdbapi",
+  "rating": "7.81",
+  "votes": 8482,
+  "source": "mal",
+  "mal_id": 51536,
+  "mal_rank": 1182,
+  "mal_popularity": 5570,
+  "mal_studios": [
+    "CygamesPictures"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "アイドルマスター シンデレラガールズ U149",
+  "mal_season": "spring 2023",
+  "mal_year": "2023",
   "imdb_id": "tt26699386",
-  "last_updated": "2026-05-29T01:14:10.237031+00:00"
+  "last_updated": "2026-05-29T19:12:29.160613+00:00"
 }

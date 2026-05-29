@@ -2,9 +2,19 @@
   "content_id": "296371",
   "title": "انمي Hokuto no Ken: Fist of the North Star",
   "year": "2026",
-  "rating": "6.5",
-  "votes": 330,
-  "source": "imdbapi",
+  "rating": "6.38",
+  "votes": 1199,
+  "source": "mal",
+  "mal_id": 56646,
+  "mal_rank": 8937,
+  "mal_popularity": 6461,
+  "mal_studios": [
+    "TMS Entertainment"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "北斗の拳 -FIST OF THE NORTH STAR-",
+  "mal_season": "spring 2026",
+  "mal_year": "2026",
   "imdb_id": "tt29106483",
-  "last_updated": "2026-05-28T23:15:06.574251+00:00"
+  "last_updated": "2026-05-29T14:26:21.469935+00:00"
 }

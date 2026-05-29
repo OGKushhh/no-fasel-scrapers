@@ -2,9 +2,19 @@
   "content_id": "219168",
   "title": "انمي AI no Idenshi",
   "year": "2023",
-  "rating": "6.1",
-  "votes": 191,
-  "source": "imdbapi",
+  "rating": "6.54",
+  "votes": 16528,
+  "source": "mal",
+  "mal_id": 53787,
+  "mal_rank": 7972,
+  "mal_popularity": 3583,
+  "mal_studios": [
+    "Madhouse"
+  ],
+  "mal_title_en": "The Gene of AI",
+  "mal_title_jp": "AIの遺電子",
+  "mal_season": "summer 2023",
+  "mal_year": "2023",
   "imdb_id": "tt28038239",
-  "last_updated": "2026-05-29T01:08:01.341969+00:00"
+  "last_updated": "2026-05-29T19:09:14.038794+00:00"
 }

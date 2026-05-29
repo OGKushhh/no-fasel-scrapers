@@ -2,9 +2,19 @@
   "content_id": "296025",
   "title": "انمي Ghost Concert: Missing Songs",
   "year": "2026",
-  "rating": "5.4",
-  "votes": 27,
-  "source": "imdbapi",
+  "rating": "5.42",
+  "votes": 966,
+  "source": "mal",
+  "mal_id": 62852,
+  "mal_rank": 13496,
+  "mal_popularity": 8708,
+  "mal_studios": [
+    "ENGI"
+  ],
+  "mal_title_en": "Ghost Concert: Missing Songs",
+  "mal_title_jp": "ゴーストコンサート: missing Songs",
+  "mal_season": "spring 2026",
+  "mal_year": "2026",
   "imdb_id": "tt40547056",
-  "last_updated": "2026-05-28T23:18:17.731806+00:00"
+  "last_updated": "2026-05-29T14:27:50.149398+00:00"
 }

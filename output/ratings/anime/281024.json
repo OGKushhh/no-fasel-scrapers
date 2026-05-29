@@ -2,9 +2,19 @@
   "content_id": "281024",
   "title": "انمي Tomodachi no Imouto ga Ore ni dake Uzai",
   "year": "2025",
-  "rating": "6.2",
-  "votes": 583,
-  "source": "imdbapi",
+  "rating": "6.5",
+  "votes": 32195,
+  "source": "mal",
+  "mal_id": 47158,
+  "mal_rank": 8262,
+  "mal_popularity": 2184,
+  "mal_studios": [
+    "Blade"
+  ],
+  "mal_title_en": "My Friend's Little Sister Has It In for Me!",
+  "mal_title_jp": "友達の妹が俺にだけウザい",
+  "mal_season": "fall 2025",
+  "mal_year": "2025",
   "imdb_id": "tt32742508",
-  "last_updated": "2026-05-28T23:41:13.702507+00:00"
+  "last_updated": "2026-05-29T14:41:03.925039+00:00"
 }

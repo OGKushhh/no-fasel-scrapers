@@ -2,9 +2,19 @@
   "content_id": "254611",
   "title": "انمي Ao no Exorcist: Yuki no Hate-hen",
   "year": "2024",
-  "rating": "7.3",
-  "votes": 421,
-  "source": "imdbapi",
+  "rating": "7.49",
+  "votes": 35532,
+  "source": "mal",
+  "mal_id": 58516,
+  "mal_rank": 2333,
+  "mal_popularity": 2312,
+  "mal_studios": [
+    "Studio VOLN"
+  ],
+  "mal_title_en": "Blue Exorcist: Beyond the Snow Saga",
+  "mal_title_jp": "青の祓魔師 雪ノ果篇",
+  "mal_season": "fall 2024",
+  "mal_year": "2024",
   "imdb_id": "tt32460380",
-  "last_updated": "2026-05-29T00:21:57.820906+00:00"
+  "last_updated": "2026-05-29T15:04:27.140221+00:00"
 }

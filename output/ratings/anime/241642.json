@@ -2,9 +2,19 @@
   "content_id": "241642",
   "title": "انمي Wind Breaker",
   "year": "2024",
-  "rating": "7.4",
-  "votes": 9126,
-  "source": "imdbapi",
+  "rating": "7.71",
+  "votes": 239941,
+  "source": "mal",
+  "mal_id": 54900,
+  "mal_rank": 1467,
+  "mal_popularity": 566,
+  "mal_studios": [
+    "CloverWorks"
+  ],
+  "mal_title_en": "Wind Breaker",
+  "mal_title_jp": "WIND BREAKER",
+  "mal_season": "spring 2024",
+  "mal_year": "2024",
   "imdb_id": "tt29605391",
-  "last_updated": "2026-05-29T00:41:55.287618+00:00"
+  "last_updated": "2026-05-29T18:56:01.245171+00:00"
 }

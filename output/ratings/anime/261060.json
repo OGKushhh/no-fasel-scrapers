@@ -1,10 +1,20 @@
 {
   "content_id": "261060",
   "title": "انمي Fate/strange Fake",
-  "year": "2024",
-  "rating": "8.2",
-  "votes": 1967,
-  "source": "imdbapi",
+  "year": "2026",
+  "rating": "8.31",
+  "votes": 62306,
+  "source": "mal",
+  "mal_id": 55830,
+  "mal_rank": 315,
+  "mal_popularity": 1581,
+  "mal_studios": [
+    "A-1 Pictures"
+  ],
+  "mal_title_en": "Fate/strange Fake",
+  "mal_title_jp": "Fate/strange Fake",
+  "mal_season": "winter 2026",
+  "mal_year": "2026",
   "imdb_id": "tt32864316",
-  "last_updated": "2026-05-29T00:16:50.882518+00:00"
+  "last_updated": "2026-05-29T15:01:26.743677+00:00"
 }

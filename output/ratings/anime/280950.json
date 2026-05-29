@@ -2,9 +2,19 @@
   "content_id": "280950",
   "title": "انمي Saihito",
   "year": "2025",
-  "rating": "7.2",
-  "votes": 1489,
-  "source": "imdbapi",
+  "rating": "7.36",
+  "votes": 71164,
+  "source": "mal",
+  "mal_id": 59846,
+  "mal_rank": 3013,
+  "mal_popularity": 1618,
+  "mal_studios": [
+    "LIDENFILMS"
+  ],
+  "mal_title_en": "May I Ask for One Final Thing?",
+  "mal_title_jp": "最後にひとつだけお願いしてもよろしいでしょうか",
+  "mal_season": "fall 2025",
+  "mal_year": "2025",
   "imdb_id": "tt33384856",
-  "last_updated": "2026-05-28T23:42:59.856596+00:00"
+  "last_updated": "2026-05-29T14:41:54.615903+00:00"
 }

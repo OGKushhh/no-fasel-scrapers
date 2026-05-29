@@ -2,9 +2,19 @@
   "content_id": "296290",
   "title": "انمي Kujima Utaeba Ie Hororo",
   "year": "2026",
-  "rating": "7.0",
-  "votes": 35,
-  "source": "imdbapi",
+  "rating": "6.24",
+  "votes": 1072,
+  "source": "mal",
+  "mal_id": 58832,
+  "mal_rank": 9698,
+  "mal_popularity": 7456,
+  "mal_studios": [
+    "Studio Hibari"
+  ],
+  "mal_title_en": "Kujima: Why Sing, When You Can Warble?",
+  "mal_title_jp": "クジマ歌えば家ほろろ",
+  "mal_season": "spring 2026",
+  "mal_year": "2026",
   "imdb_id": "tt39122722",
-  "last_updated": "2026-05-28T23:15:44.505090+00:00"
+  "last_updated": "2026-05-29T14:26:31.705614+00:00"
 }

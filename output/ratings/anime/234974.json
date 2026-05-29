@@ -2,9 +2,19 @@
   "content_id": "234974",
   "title": "انمي Sengoku Youko",
   "year": "2024",
-  "rating": "6.3",
-  "votes": 306,
-  "source": "imdbapi",
+  "rating": "7",
+  "votes": 19699,
+  "source": "mal",
+  "mal_id": 56242,
+  "mal_rank": 5254,
+  "mal_popularity": 2983,
+  "mal_studios": [
+    "White Fox"
+  ],
+  "mal_title_en": "Sengoku Youko",
+  "mal_title_jp": "戦国妖狐 世直し姉弟編",
+  "mal_season": "winter 2024",
+  "mal_year": "2024",
   "imdb_id": "tt30325850",
-  "last_updated": "2026-05-29T00:45:33.332865+00:00"
+  "last_updated": "2026-05-29T18:58:24.251625+00:00"
 }

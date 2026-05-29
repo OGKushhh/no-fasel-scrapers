@@ -1,10 +1,20 @@
 {
   "content_id": "262026",
   "title": "انمي Nihon e Youkoso Elf-san",
-  "year": "2024",
-  "rating": "6.9",
-  "votes": 632,
-  "source": "imdbapi",
+  "year": "2025",
+  "rating": "7.31",
+  "votes": 39280,
+  "source": "mal",
+  "mal_id": 57648,
+  "mal_rank": 3325,
+  "mal_popularity": 2433,
+  "mal_studios": [
+    "Zero-G"
+  ],
+  "mal_title_en": "Welcome to Japan, Ms. Elf!",
+  "mal_title_jp": "日本へようこそエルフさん。",
+  "mal_season": "winter 2025",
+  "mal_year": "2025",
   "imdb_id": "tt30689448",
-  "last_updated": "2026-05-29T00:11:56.859562+00:00"
+  "last_updated": "2026-05-29T14:58:35.381271+00:00"
 }

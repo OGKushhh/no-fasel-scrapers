@@ -2,9 +2,19 @@
   "content_id": "188507",
   "title": "انمي Yama no Susume: Next Summit",
   "year": "2022",
-  "rating": "7.5",
-  "votes": 62,
-  "source": "imdbapi",
+  "rating": "7.71",
+  "votes": 8269,
+  "source": "mal",
+  "mal_id": 48491,
+  "mal_rank": 1467,
+  "mal_popularity": 4757,
+  "mal_studios": [
+    "8bit"
+  ],
+  "mal_title_en": "Encouragement of Climb: Next Summit",
+  "mal_title_jp": "ヤマノススメ Next Summit",
+  "mal_season": "fall 2022",
+  "mal_year": "2022",
   "imdb_id": "tt15372356",
-  "last_updated": "2026-05-29T01:31:40.183515+00:00"
+  "last_updated": "2026-05-29T19:21:56.753911+00:00"
 }

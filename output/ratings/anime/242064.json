@@ -2,9 +2,19 @@
   "content_id": "242064",
   "title": "انمي Yozakura-san Chi no Daisakusen",
   "year": "2024",
-  "rating": "6.8",
-  "votes": 996,
-  "source": "imdbapi",
+  "rating": "7.6",
+  "votes": 51560,
+  "source": "mal",
+  "mal_id": 53865,
+  "mal_rank": 1863,
+  "mal_popularity": 1654,
+  "mal_studios": [
+    "SILVER LINK."
+  ],
+  "mal_title_en": "Mission: Yozakura Family",
+  "mal_title_jp": "夜桜さんちの大作戦",
+  "mal_season": "spring 2024",
+  "mal_year": "2024",
   "imdb_id": "tt31131310",
-  "last_updated": "2026-05-29T00:39:49.350667+00:00"
+  "last_updated": "2026-05-29T18:54:30.674135+00:00"
 }

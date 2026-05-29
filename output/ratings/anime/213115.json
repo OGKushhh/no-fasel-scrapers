@@ -2,9 +2,19 @@
   "content_id": "213115",
   "title": "انمي Kanojo ga Koushaku-tei ni Itta Riyuu",
   "year": "2023",
-  "rating": "7.4",
-  "votes": 2419,
-  "source": "imdbapi",
+  "rating": "7.52",
+  "votes": 93408,
+  "source": "mal",
+  "mal_id": 52308,
+  "mal_rank": 2195,
+  "mal_popularity": 1409,
+  "mal_studios": [
+    "Typhoon Graphics"
+  ],
+  "mal_title_en": "Why Raeliana Ended up at the Duke's Mansion",
+  "mal_title_jp": "彼女が公爵邸に行った理由",
+  "mal_season": "spring 2023",
+  "mal_year": "2023",
   "imdb_id": "tt27484853",
-  "last_updated": "2026-05-29T01:15:13.588874+00:00"
+  "last_updated": "2026-05-29T19:13:05.502574+00:00"
 }

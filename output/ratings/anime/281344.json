@@ -2,9 +2,19 @@
   "content_id": "281344",
   "title": "انمي Ninja to Gokudou",
   "year": "2025",
-  "rating": "6.2",
-  "votes": 221,
-  "source": "imdbapi",
+  "rating": "6.41",
+  "votes": 5182,
+  "source": "mal",
+  "mal_id": 61067,
+  "mal_rank": 8794,
+  "mal_popularity": 5923,
+  "mal_studios": [
+    "Studio Deen"
+  ],
+  "mal_title_en": "Ninja vs. Gokudo",
+  "mal_title_jp": "忍者と極道",
+  "mal_season": "fall 2025",
+  "mal_year": "2025",
   "imdb_id": "tt37038619",
-  "last_updated": "2026-05-28T23:37:54.775889+00:00"
+  "last_updated": "2026-05-29T14:39:01.893079+00:00"
 }

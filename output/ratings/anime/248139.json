@@ -2,9 +2,19 @@
   "content_id": "248139",
   "title": "انمي Shy 2nd Season",
   "year": "2024",
-  "rating": "6.2",
-  "votes": 433,
-  "source": "imdbapi",
+  "rating": "6.95",
+  "votes": 11467,
+  "source": "mal",
+  "mal_id": 57567,
+  "mal_rank": 5528,
+  "mal_popularity": 4502,
+  "mal_studios": [
+    "8bit"
+  ],
+  "mal_title_en": "Shy Season 2",
+  "mal_title_jp": "シャイ 東京奪還編",
+  "mal_season": "summer 2024",
+  "mal_year": "2024",
   "imdb_id": "tt8615966",
-  "last_updated": "2026-05-29T00:33:48.945910+00:00"
+  "last_updated": "2026-05-29T18:51:06.357248+00:00"
 }

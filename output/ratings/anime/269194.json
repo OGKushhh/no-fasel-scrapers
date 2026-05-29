@@ -2,9 +2,19 @@
   "content_id": "269194",
   "title": "انمي Teogonia",
   "year": "2025",
-  "rating": "6.7",
-  "votes": 571,
-  "source": "imdbapi",
+  "rating": "6.89",
+  "votes": 17534,
+  "source": "mal",
+  "mal_id": 58614,
+  "mal_rank": 5856,
+  "mal_popularity": 4046,
+  "mal_studios": [
+    "Asahi Production"
+  ],
+  "mal_title_en": "Teogonia",
+  "mal_title_jp": "神統記 (テオゴニア)",
+  "mal_season": "spring 2025",
+  "mal_year": "2025",
   "imdb_id": "tt32514593",
-  "last_updated": "2026-05-29T00:02:12.653518+00:00"
+  "last_updated": "2026-05-29T14:53:29.674764+00:00"
 }

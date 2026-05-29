@@ -2,9 +2,19 @@
   "content_id": "254596",
   "title": "انمي Mahoutsukai ni Narenakatta Onnanoko no Hanashi",
   "year": "2024",
-  "rating": "6.1",
-  "votes": 67,
-  "source": "imdbapi",
+  "rating": "6.19",
+  "votes": 5878,
+  "source": "mal",
+  "mal_id": 58173,
+  "mal_rank": 10034,
+  "mal_popularity": 5789,
+  "mal_studios": [
+    "J.C.Staff"
+  ],
+  "mal_title_en": "The Stories of Girls Who Couldn't Be Magicians",
+  "mal_title_jp": "魔法使いになれなかった女の子の話",
+  "mal_season": "fall 2024",
+  "mal_year": "2024",
   "imdb_id": "tt32863895",
-  "last_updated": "2026-05-29T00:22:15.655194+00:00"
+  "last_updated": "2026-05-29T15:04:42.545746+00:00"
 }

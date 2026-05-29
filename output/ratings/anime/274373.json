@@ -2,9 +2,19 @@
   "content_id": "274373",
   "title": "انمي Hikaru ga Shinda Natsu",
   "year": "2025",
-  "rating": "7.9",
-  "votes": 7526,
-  "source": "imdbapi",
+  "rating": "8.02",
+  "votes": 114855,
+  "source": "mal",
+  "mal_id": 58913,
+  "mal_rank": 725,
+  "mal_popularity": 929,
+  "mal_studios": [
+    "CygamesPictures"
+  ],
+  "mal_title_en": "The Summer Hikaru Died",
+  "mal_title_jp": "光が死んだ夏",
+  "mal_season": "summer 2025",
+  "mal_year": "2025",
   "imdb_id": "tt33028568",
-  "last_updated": "2026-05-28T23:55:47.538293+00:00"
+  "last_updated": "2026-05-29T14:49:24.829076+00:00"
 }

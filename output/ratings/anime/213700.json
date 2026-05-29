@@ -2,9 +2,19 @@
   "content_id": "213700",
   "title": "انمي Pokemon (2023)",
   "year": "2023",
-  "rating": "7.5",
-  "votes": 1745,
-  "source": "imdbapi",
+  "rating": "7.48",
+  "votes": 10938,
+  "source": "mal",
+  "mal_id": 53876,
+  "mal_rank": 2410,
+  "mal_popularity": 3972,
+  "mal_studios": [
+    "OLM"
+  ],
+  "mal_title_en": "Pokémon Horizons: The Series",
+  "mal_title_jp": "ポケットモンスター(2023)",
+  "mal_season": "spring 2023",
+  "mal_year": "2023",
   "imdb_id": "tt26692417",
-  "last_updated": "2026-05-29T01:13:23.179402+00:00"
+  "last_updated": "2026-05-29T19:12:01.199055+00:00"
 }

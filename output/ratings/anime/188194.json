@@ -2,9 +2,19 @@
   "content_id": "188194",
   "title": "انمي Bleach: Thousand Year Blood War",
   "year": "2022",
-  "rating": "9.0",
-  "votes": 76242,
-  "source": "imdbapi",
+  "rating": "8.98",
+  "votes": 383916,
+  "source": "mal",
+  "mal_id": 41467,
+  "mal_rank": 14,
+  "mal_popularity": 335,
+  "mal_studios": [
+    "Studio Pierrot"
+  ],
+  "mal_title_en": "Bleach: Thousand-Year Blood War",
+  "mal_title_jp": "BLEACH 千年血戦篇",
+  "mal_season": "fall 2022",
+  "mal_year": "2022",
   "imdb_id": "tt14986406",
-  "last_updated": "2026-05-29T01:32:33.434507+00:00"
+  "last_updated": "2026-05-29T19:22:43.939571+00:00"
 }

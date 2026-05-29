@@ -2,9 +2,19 @@
   "content_id": "235410",
   "title": "انمي Saijaku Tamer wa Gomi Hiroi no Tabi wo Hajimemashita",
   "year": "2024",
-  "rating": "7.3",
-  "votes": 1305,
-  "source": "imdbapi",
+  "rating": "7.58",
+  "votes": 69046,
+  "source": "mal",
+  "mal_id": 53590,
+  "mal_rank": 1926,
+  "mal_popularity": 1843,
+  "mal_studios": [
+    "Studio Massket"
+  ],
+  "mal_title_en": "The Weakest Tamer Began a Journey to Pick Up Trash",
+  "mal_title_jp": "最弱テイマーはゴミ拾いの旅を始めました。",
+  "mal_season": "winter 2024",
+  "mal_year": "2024",
   "imdb_id": "tt30644010",
-  "last_updated": "2026-05-29T00:45:07.880921+00:00"
+  "last_updated": "2026-05-29T18:57:59.030801+00:00"
 }

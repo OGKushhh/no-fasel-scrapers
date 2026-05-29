@@ -2,9 +2,19 @@
   "content_id": "188161",
   "title": "انمي Blue Lock",
   "year": "2022",
-  "rating": "8.1",
-  "votes": 32028,
-  "source": "imdbapi",
+  "rating": "8.11",
+  "votes": 501931,
+  "source": "mal",
+  "mal_id": 49596,
+  "mal_rank": 580,
+  "mal_popularity": 233,
+  "mal_studios": [
+    "8bit"
+  ],
+  "mal_title_en": "Blue Lock",
+  "mal_title_jp": "ブルーロック",
+  "mal_season": "fall 2022",
+  "mal_year": "2022",
   "imdb_id": "tt15222080",
-  "last_updated": "2026-05-29T01:32:44.196449+00:00"
+  "last_updated": "2026-05-29T19:22:54.193869+00:00"
 }

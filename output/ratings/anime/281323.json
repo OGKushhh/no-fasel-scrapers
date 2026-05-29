@@ -2,9 +2,19 @@
   "content_id": "281323",
   "title": "انمي 3-nen Z-gumi Ginpachi-sensei",
   "year": "2025",
-  "rating": "7.5",
-  "votes": 517,
-  "source": "imdbapi",
+  "rating": "7.65",
+  "votes": 13734,
+  "source": "mal",
+  "mal_id": 54757,
+  "mal_rank": 1639,
+  "mal_popularity": 3791,
+  "mal_studios": [
+    "Bandai Namco Pictures"
+  ],
+  "mal_title_en": "Gintama - Mr. Ginpachi's Zany Class",
+  "mal_title_jp": "銀魂 3年Z組銀八先生",
+  "mal_season": "fall 2025",
+  "mal_year": "2025",
   "imdb_id": "tt27182605",
-  "last_updated": "2026-05-28T23:38:19.839630+00:00"
+  "last_updated": "2026-05-29T14:39:22.715001+00:00"
 }

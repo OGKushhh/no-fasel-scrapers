@@ -2,9 +2,20 @@
   "content_id": "224557",
   "title": "انمي Migi to Dali",
   "year": "2023",
-  "rating": "7.3",
-  "votes": 772,
-  "source": "imdbapi",
+  "rating": "7.69",
+  "votes": 41919,
+  "source": "mal",
+  "mal_id": 50586,
+  "mal_rank": 1520,
+  "mal_popularity": 2306,
+  "mal_studios": [
+    "Geek Toys",
+    "CompTown"
+  ],
+  "mal_title_en": "Migi & Dali",
+  "mal_title_jp": "ミギとダリ",
+  "mal_season": "fall 2023",
+  "mal_year": "2023",
   "imdb_id": "tt29371814",
-  "last_updated": "2026-05-29T00:57:30.551249+00:00"
+  "last_updated": "2026-05-29T19:05:31.424928+00:00"
 }

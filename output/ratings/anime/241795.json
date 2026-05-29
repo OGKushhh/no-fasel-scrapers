@@ -2,9 +2,20 @@
   "content_id": "241795",
   "title": "انمي Henjin no Salad Bowl",
   "year": "2024",
-  "rating": "6.9",
-  "votes": 398,
-  "source": "imdbapi",
+  "rating": "7.3",
+  "votes": 31616,
+  "source": "mal",
+  "mal_id": 55877,
+  "mal_rank": 3372,
+  "mal_popularity": 2917,
+  "mal_studios": [
+    "SynergySP",
+    "Studio Comet"
+  ],
+  "mal_title_en": "A Salad Bowl of Eccentrics",
+  "mal_title_jp": "変人のサラダボウル",
+  "mal_season": "spring 2024",
+  "mal_year": "2024",
   "imdb_id": "tt31940099",
-  "last_updated": "2026-05-29T00:41:26.054106+00:00"
+  "last_updated": "2026-05-29T18:55:37.836977+00:00"
 }

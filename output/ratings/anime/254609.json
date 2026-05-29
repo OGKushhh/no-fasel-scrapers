@@ -2,9 +2,19 @@
   "content_id": "254609",
   "title": "انمي Blue Lock vs. U-20 Japan",
   "year": "2024",
-  "rating": "8.1",
-  "votes": 32028,
-  "source": "imdbapi",
+  "rating": "7.5",
+  "votes": 180498,
+  "source": "mal",
+  "mal_id": 54865,
+  "mal_rank": 2282,
+  "mal_popularity": 822,
+  "mal_studios": [
+    "8bit"
+  ],
+  "mal_title_en": "Blue Lock Season 2",
+  "mal_title_jp": "ブルーロック VS. U-20 JAPAN",
+  "mal_season": "fall 2024",
+  "mal_year": "2024",
   "imdb_id": "tt15222080",
-  "last_updated": "2026-05-29T00:22:01.514324+00:00"
+  "last_updated": "2026-05-29T15:04:32.331710+00:00"
 }

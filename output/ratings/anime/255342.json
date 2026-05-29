@@ -2,9 +2,19 @@
   "content_id": "255342",
   "title": "انمي Nanatsu no Taizai: Mokushiroku no Yonkishi 2nd Season",
   "year": "2024",
-  "rating": "7.1",
-  "votes": 1812,
-  "source": "imdbapi",
+  "rating": "7.44",
+  "votes": 16148,
+  "source": "mal",
+  "mal_id": 58511,
+  "mal_rank": 2595,
+  "mal_popularity": 3773,
+  "mal_studios": [
+    "Telecom Animation Film"
+  ],
+  "mal_title_en": "The Seven Deadly Sins: Four Knights of the Apocalypse Season 2",
+  "mal_title_jp": "七つの大罪 黙示録の四騎士 第2期",
+  "mal_season": "fall 2024",
+  "mal_year": "2024",
   "imdb_id": "tt20228550",
-  "last_updated": "2026-05-29T00:19:03.124784+00:00"
+  "last_updated": "2026-05-29T15:02:48.409498+00:00"
 }

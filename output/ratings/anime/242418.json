@@ -1,10 +1,20 @@
 {
   "content_id": "242418",
   "title": "Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka II",
-  "year": "2015",
-  "rating": "7.4",
-  "votes": 13668,
-  "source": "imdbapi",
+  "year": "2019",
+  "rating": "7.24",
+  "votes": 520409,
+  "source": "mal",
+  "mal_id": 37347,
+  "mal_rank": 3794,
+  "mal_popularity": 228,
+  "mal_studios": [
+    "J.C.Staff"
+  ],
+  "mal_title_en": "Is It Wrong to Try to Pick Up Girls in a Dungeon? II",
+  "mal_title_jp": "ダンジョンに出会いを求めるのは間違っているだろうかII",
+  "mal_season": "summer 2019",
+  "mal_year": "2019",
   "imdb_id": "tt4728568",
-  "last_updated": "2026-05-29T00:38:09.265679+00:00"
+  "last_updated": "2026-05-29T18:53:36.309615+00:00"
 }
