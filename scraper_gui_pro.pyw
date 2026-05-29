@@ -746,7 +746,7 @@ class ScraperGUI:
 
     def stop_all_scripts(self):
         names = list(self.processes.keys())
-        if not names:
+        if not names and not self.custom_procs:
             self._set_status("Nothing running")
             return
         for name in names:
@@ -756,6 +756,7 @@ class ScraperGUI:
                 self._kill_process(proc, name)
             self.processes.pop(name, None)
             self.output_tabs.pop(name, None)
+            # manual scripts (rating/runtime/mal by ID) have no script_button — still kill them
             self._set_indicator(name, False)
             if name in self.script_buttons:
                 lbl, stop_btn, _ = self.script_buttons[name]
@@ -763,6 +764,13 @@ class ScraperGUI:
                 self._style_stop_btn(stop_btn, False)
         self.backfill_start_btn.configure(state=tk.NORMAL)
         self._style_stop_btn(self.backfill_stop_btn, False)
+        # Also kill any custom processes launched via + Custom button
+        for pid, (proc, text_widget, tab_frame, tab_name) in list(self.custom_procs.items()):
+            if proc and proc.poll() is None:
+                self._stopped_procs.add(proc.pid)
+                self._kill_process(proc, tab_name)
+            self.custom_procs.pop(pid, None)
+            self.after(0, lambda tf=tab_frame, tn=tab_name, p=pid: self._remove_custom_tab(tf, tn, p))
         self._set_status(f"⏹  Stopped {len(names)} process(es)")
 
     def start_backfill(self):
