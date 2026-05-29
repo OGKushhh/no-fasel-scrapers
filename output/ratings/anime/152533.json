@@ -2,9 +2,19 @@
   "content_id": "152533",
   "title": "انمي Engage Kiss",
   "year": "2022",
-  "rating": "6.5",
-  "votes": 1183,
-  "source": "imdbapi",
+  "rating": "6.79",
+  "votes": 107917,
+  "source": "mal",
+  "mal_id": 51417,
+  "mal_rank": 6440,
+  "mal_popularity": 1002,
+  "mal_studios": [
+    "A-1 Pictures"
+  ],
+  "mal_title_en": "Engage Kiss",
+  "mal_title_jp": "Engage Kiss",
+  "mal_season": "summer 2022",
+  "mal_year": "2022",
   "imdb_id": "tt21114720",
-  "last_updated": "2026-05-29T01:42:05.963297+00:00"
+  "last_updated": "2026-05-29T19:28:40.084229+00:00"
 }

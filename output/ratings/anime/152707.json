@@ -2,9 +2,19 @@
   "content_id": "152707",
   "title": "انمي Yofukashi no Uta",
   "year": "2022",
-  "rating": "7.5",
-  "votes": 7438,
-  "source": "imdbapi",
+  "rating": "7.95",
+  "votes": 356809,
+  "source": "mal",
+  "mal_id": 50346,
+  "mal_rank": 848,
+  "mal_popularity": 298,
+  "mal_studios": [
+    "LIDENFILMS"
+  ],
+  "mal_title_en": "Call of the Night",
+  "mal_title_jp": "よふかしのうた",
+  "mal_season": "summer 2022",
+  "mal_year": "2022",
   "imdb_id": "tt15975122",
-  "last_updated": "2026-05-29T01:40:15.083003+00:00"
+  "last_updated": "2026-05-29T19:27:56.180897+00:00"
 }

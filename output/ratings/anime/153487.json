@@ -2,9 +2,20 @@
   "content_id": "153487",
   "title": "انمي Saikin Yatotta Maid ga Ayashii",
   "year": "2022",
-  "rating": "6.4",
-  "votes": 756,
-  "source": "imdbapi",
+  "rating": "6.57",
+  "votes": 47294,
+  "source": "mal",
+  "mal_id": 51837,
+  "mal_rank": 7836,
+  "mal_popularity": 1807,
+  "mal_studios": [
+    "SILVER LINK.",
+    "Blade"
+  ],
+  "mal_title_en": "The Maid I Hired Recently Is Mysterious",
+  "mal_title_jp": "最近雇ったメイドが怪しい",
+  "mal_season": "summer 2022",
+  "mal_year": "2022",
   "imdb_id": "tt21237634",
-  "last_updated": "2026-05-29T01:37:55.785408+00:00"
+  "last_updated": "2026-05-29T19:26:30.323823+00:00"
 }

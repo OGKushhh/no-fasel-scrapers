@@ -2,9 +2,19 @@
   "content_id": "152880",
   "title": "انمي Prima Doll",
   "year": "2022",
-  "rating": "6.7",
-  "votes": 85,
-  "source": "imdbapi",
+  "rating": "7.26",
+  "votes": 11447,
+  "source": "mal",
+  "mal_id": 50917,
+  "mal_rank": 3674,
+  "mal_popularity": 4126,
+  "mal_studios": [
+    "Bibury Animation Studios"
+  ],
+  "mal_title_en": "Prima Doll",
+  "mal_title_jp": "プリマドール",
+  "mal_season": "summer 2022",
+  "mal_year": "2022",
   "imdb_id": "tt21001320",
-  "last_updated": "2026-05-29T01:38:45.492087+00:00"
+  "last_updated": "2026-05-29T19:27:10.075045+00:00"
 }

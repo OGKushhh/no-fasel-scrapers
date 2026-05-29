@@ -2,9 +2,19 @@
   "content_id": "187278",
   "title": "انمي Mob Psycho 100 III",
   "year": "2022",
-  "rating": "8.5",
-  "votes": 67410,
-  "source": "imdbapi",
+  "rating": "8.72",
+  "votes": 449353,
+  "source": "mal",
+  "mal_id": 50172,
+  "mal_rank": 60,
+  "mal_popularity": 251,
+  "mal_studios": [
+    "Bones"
+  ],
+  "mal_title_en": "Mob Psycho 100 III",
+  "mal_title_jp": "モブサイコ100 III",
+  "mal_season": "fall 2022",
+  "mal_year": "2022",
   "imdb_id": "tt5897304",
-  "last_updated": "2026-05-29T01:34:07.594837+00:00"
+  "last_updated": "2026-05-29T19:23:46.400292+00:00"
 }

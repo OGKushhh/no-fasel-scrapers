@@ -2,9 +2,20 @@
   "content_id": "152795",
   "title": "انمي Kumichou Musume to Sewagakari",
   "year": "2022",
-  "rating": "7.3",
-  "votes": 1078,
-  "source": "imdbapi",
+  "rating": "7.74",
+  "votes": 110256,
+  "source": "mal",
+  "mal_id": 49776,
+  "mal_rank": 1355,
+  "mal_popularity": 1077,
+  "mal_studios": [
+    "feel.",
+    "Gaina"
+  ],
+  "mal_title_en": "The Yakuza's Guide to Babysitting",
+  "mal_title_jp": "組長娘と世話係",
+  "mal_season": "summer 2022",
+  "mal_year": "2022",
   "imdb_id": "tt21230432",
-  "last_updated": "2026-05-29T01:39:48.649194+00:00"
+  "last_updated": "2026-05-29T19:27:45.702584+00:00"
 }

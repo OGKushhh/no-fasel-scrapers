@@ -2,9 +2,20 @@
   "content_id": "152654",
   "title": "انمي The Prince of Tennis II: U-17 World Cup",
   "year": "2022",
-  "rating": "7.1",
-  "votes": 160,
-  "source": "imdbapi",
+  "rating": "6.84",
+  "votes": 5951,
+  "source": "mal",
+  "mal_id": 50099,
+  "mal_rank": 6043,
+  "mal_popularity": 5734,
+  "mal_studios": [
+    "M.S.C",
+    "Studio KAI"
+  ],
+  "mal_title_en": "The Prince of Tennis II: U-17 World Cup",
+  "mal_title_jp": "新テニスの王子様 U-17 WORLD CUP",
+  "mal_season": "summer 2022",
+  "mal_year": "2022",
   "imdb_id": "tt15660128",
-  "last_updated": "2026-05-29T01:40:32.765766+00:00"
+  "last_updated": "2026-05-29T19:28:11.471144+00:00"
 }

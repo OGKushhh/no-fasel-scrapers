@@ -2,9 +2,19 @@
   "content_id": "186675",
   "title": "انمي Tatami Time Machine Blues",
   "year": "2022",
-  "rating": "7.5",
-  "votes": 793,
-  "source": "imdbapi",
+  "rating": "8.23",
+  "votes": 16448,
+  "source": "mal",
+  "mal_id": 49590,
+  "mal_rank": 417,
+  "mal_popularity": 3106,
+  "mal_studios": [
+    "Science SARU"
+  ],
+  "mal_title_en": "The Tatami Time Machine Blues",
+  "mal_title_jp": "四畳半タイムマシンブルース",
+  "mal_season": "summer 2022",
+  "mal_year": "2022",
   "imdb_id": "tt15684222",
-  "last_updated": "2026-05-29T01:36:00.729418+00:00"
+  "last_updated": "2026-05-29T19:25:18.059952+00:00"
 }

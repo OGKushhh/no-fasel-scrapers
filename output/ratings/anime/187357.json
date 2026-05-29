@@ -2,9 +2,19 @@
   "content_id": "187357",
   "title": "انمي Do It Yourself!!",
   "year": "2022",
-  "rating": "7.2",
-  "votes": 450,
-  "source": "imdbapi",
+  "rating": "7.49",
+  "votes": 47624,
+  "source": "mal",
+  "mal_id": 48542,
+  "mal_rank": 2333,
+  "mal_popularity": 2063,
+  "mal_studios": [
+    "PINE JAM"
+  ],
+  "mal_title_en": "Do It Yourself!!",
+  "mal_title_jp": "Do It Yourself!! -どぅー・いっと・ゆあせるふ-",
+  "mal_season": "fall 2022",
+  "mal_year": "2022",
   "imdb_id": "tt14323890",
-  "last_updated": "2026-05-29T01:33:36.529970+00:00"
+  "last_updated": "2026-05-29T19:23:20.110440+00:00"
 }

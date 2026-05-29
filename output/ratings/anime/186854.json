@@ -1,10 +1,21 @@
 {
   "content_id": "186854",
   "title": "انمي Strike the Blood",
-  "year": "2022",
-  "rating": "6.8",
-  "votes": 2054,
-  "source": "imdbapi",
+  "year": "2013",
+  "rating": "7.01",
+  "votes": 324198,
+  "source": "mal",
+  "mal_id": 18277,
+  "mal_rank": 5213,
+  "mal_popularity": 365,
+  "mal_studios": [
+    "SILVER LINK.",
+    "Connect"
+  ],
+  "mal_title_en": "Strike the Blood",
+  "mal_title_jp": "ストライク・ザ・ブラッド",
+  "mal_season": "fall 2013",
+  "mal_year": "2013",
   "imdb_id": "tt2789238",
-  "last_updated": "2026-05-29T01:35:57.057319+00:00"
+  "last_updated": "2026-05-29T19:25:12.809330+00:00"
 }

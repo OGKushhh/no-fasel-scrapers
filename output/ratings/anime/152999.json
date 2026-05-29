@@ -2,9 +2,19 @@
   "content_id": "152999",
   "title": "انمي Warau Arsnotoria Sun",
   "year": "2022",
-  "rating": "6.0",
-  "votes": 80,
-  "source": "imdbapi",
+  "rating": "5.88",
+  "votes": 8885,
+  "source": "mal",
+  "mal_id": 51923,
+  "mal_rank": 11657,
+  "mal_popularity": 4548,
+  "mal_studios": [
+    "LIDENFILMS"
+  ],
+  "mal_title_en": "Smile of the Arsnotoria the Animation",
+  "mal_title_jp": "咲う アルスノトリア すんっ！",
+  "mal_season": "summer 2022",
+  "mal_year": "2022",
   "imdb_id": "tt21101866",
-  "last_updated": "2026-05-29T01:38:27.583131+00:00"
+  "last_updated": "2026-05-29T19:26:55.952197+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "187027",
   "title": "انمي Mobile Suit Gundam: The Witch from Mercury",
   "year": "2022",
-  "rating": "7.4",
-  "votes": 1949,
-  "source": "imdbapi",
+  "rating": "7.85",
+  "votes": 94592,
+  "source": "mal",
+  "mal_id": 49828,
+  "mal_rank": 1069,
+  "mal_popularity": 1490,
+  "mal_studios": [
+    "Sunrise"
+  ],
+  "mal_title_en": "Mobile Suit Gundam: The Witch from Mercury",
+  "mal_title_jp": "機動戦士ガンダム 水星の魔女",
+  "mal_season": "fall 2022",
+  "mal_year": "2022",
   "imdb_id": "tt15433166",
-  "last_updated": "2026-05-29T01:34:48.307962+00:00"
+  "last_updated": "2026-05-29T19:24:12.453650+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "186941",
   "title": "انمي Koukyuu no Karasu",
   "year": "2022",
-  "rating": "7.4",
-  "votes": 956,
-  "source": "imdbapi",
+  "rating": "7.53",
+  "votes": 45717,
+  "source": "mal",
+  "mal_id": 50590,
+  "mal_rank": 2155,
+  "mal_popularity": 2055,
+  "mal_studios": [
+    "Bandai Namco Pictures"
+  ],
+  "mal_title_en": "Raven of the Inner Palace",
+  "mal_title_jp": "後宮の烏",
+  "mal_season": "fall 2022",
+  "mal_year": "2022",
   "imdb_id": "tt21197084",
-  "last_updated": "2026-05-29T01:35:39.276117+00:00"
+  "last_updated": "2026-05-29T19:24:43.173953+00:00"
 }

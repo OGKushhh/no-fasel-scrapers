@@ -2,9 +2,19 @@
   "content_id": "152883",
   "title": "انمي Kuro no Shoukanshi",
   "year": "2022",
-  "rating": "7.1",
-  "votes": 2888,
-  "source": "imdbapi",
+  "rating": "7.01",
+  "votes": 149557,
+  "source": "mal",
+  "mal_id": 51064,
+  "mal_rank": 5191,
+  "mal_popularity": 945,
+  "mal_studios": [
+    "Satelight"
+  ],
+  "mal_title_en": "Black Summoner",
+  "mal_title_jp": "黒の召喚士",
+  "mal_season": "summer 2022",
+  "mal_year": "2022",
   "imdb_id": "tt21249100",
-  "last_updated": "2026-05-29T01:38:41.834490+00:00"
+  "last_updated": "2026-05-29T19:27:04.441967+00:00"
 }

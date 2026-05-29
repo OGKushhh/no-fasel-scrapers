@@ -1,10 +1,20 @@
 {
   "content_id": "153488",
   "title": "انمي DanMachi Season 4",
-  "year": "2022",
-  "rating": "7.4",
-  "votes": 13668,
-  "source": "imdbapi",
+  "year": "2020",
+  "rating": "7.47",
+  "votes": 358206,
+  "source": "mal",
+  "mal_id": 40454,
+  "mal_rank": 2431,
+  "mal_popularity": 357,
+  "mal_studios": [
+    "J.C.Staff"
+  ],
+  "mal_title_en": "Is It Wrong to Try to Pick Up Girls in a Dungeon? III",
+  "mal_title_jp": "ダンジョンに出会いを求めるのは間違っているだろうかIII",
+  "mal_season": "fall 2020",
+  "mal_year": "2020",
   "imdb_id": "tt4728568",
-  "last_updated": "2026-05-29T01:37:48.816945+00:00"
+  "last_updated": "2026-05-29T19:26:24.887579+00:00"
 }

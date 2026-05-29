@@ -2,9 +2,19 @@
   "content_id": "154982",
   "title": "انمي Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e",
   "year": "2017",
-  "rating": "7.7",
-  "votes": 24530,
-  "source": "imdbapi",
+  "rating": "7.83",
+  "votes": 923226,
+  "source": "mal",
+  "mal_id": 35507,
+  "mal_rank": 1130,
+  "mal_popularity": 101,
+  "mal_studios": [
+    "Lerche"
+  ],
+  "mal_title_en": "Classroom of the Elite",
+  "mal_title_jp": "ようこそ実力至上主義の教室へ",
+  "mal_season": "summer 2017",
+  "mal_year": "2017",
   "imdb_id": "tt7263328",
-  "last_updated": "2026-05-29T01:36:25.645813+00:00"
+  "last_updated": "2026-05-29T19:25:39.035731+00:00"
 }

@@ -2,9 +2,19 @@
   "content_id": "152814",
   "title": "انمي Extreme Hearts",
   "year": "2022",
-  "rating": "6.6",
-  "votes": 61,
-  "source": "imdbapi",
+  "rating": "6.8",
+  "votes": 5340,
+  "source": "mal",
+  "mal_id": 50999,
+  "mal_rank": 6387,
+  "mal_popularity": 6295,
+  "mal_studios": [
+    "Seven Arcs"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "Extreme Hearts（エクストリームハーツ）",
+  "mal_season": "summer 2022",
+  "mal_year": "2022",
   "imdb_id": "tt18183882",
-  "last_updated": "2026-05-29T01:39:15.620770+00:00"
+  "last_updated": "2026-05-29T19:27:28.208661+00:00"
 }

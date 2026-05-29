@@ -2,9 +2,21 @@
   "content_id": "152523",
   "title": "انمي Cardfight!! Vanguard: will+Dress",
   "year": "2022",
-  "rating": "5.4",
-  "votes": 13,
-  "source": "imdbapi",
+  "rating": "6.9",
+  "votes": 2430,
+  "source": "mal",
+  "mal_id": 49819,
+  "mal_rank": 5762,
+  "mal_popularity": 7953,
+  "mal_studios": [
+    "Kinema Citrus",
+    "Gift-o’-Animation",
+    "Studio Jemi"
+  ],
+  "mal_title_en": "Cardfight!! Vanguard: will+Dress",
+  "mal_title_jp": "カードファイト!! ヴァンガード will+Dress",
+  "mal_season": "summer 2022",
+  "mal_year": "2022",
   "imdb_id": "tt32253498",
-  "last_updated": "2026-05-29T01:42:12.785805+00:00"
+  "last_updated": "2026-05-29T19:28:45.363040+00:00"
 }

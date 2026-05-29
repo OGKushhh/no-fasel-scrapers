@@ -2,9 +2,19 @@
   "content_id": "187485",
   "title": "انمي Akiba Maid Sensou",
   "year": "2022",
-  "rating": "7.3",
-  "votes": 838,
-  "source": "imdbapi",
+  "rating": "7.6",
+  "votes": 79519,
+  "source": "mal",
+  "mal_id": 52193,
+  "mal_rank": 1828,
+  "mal_popularity": 1431,
+  "mal_studios": [
+    "P.A. Works"
+  ],
+  "mal_title_en": "Akiba Maid War",
+  "mal_title_jp": "アキバ冥途戦争",
+  "mal_season": "fall 2022",
+  "mal_year": "2022",
   "imdb_id": "tt21929358",
-  "last_updated": "2026-05-29T01:33:22.474911+00:00"
+  "last_updated": "2026-05-29T19:23:09.986321+00:00"
 }

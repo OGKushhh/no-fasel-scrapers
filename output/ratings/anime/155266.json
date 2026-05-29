@@ -2,9 +2,20 @@
   "content_id": "155266",
   "title": "انمي Tekken: Bloodline",
   "year": "2022",
-  "rating": "6.5",
-  "votes": 5735,
-  "source": "imdbapi",
+  "rating": "6.41",
+  "votes": 21823,
+  "source": "mal",
+  "mal_id": 51347,
+  "mal_rank": 8808,
+  "mal_popularity": 4266,
+  "mal_studios": [
+    "Studio Hibari",
+    "Larx Entertainment"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "Tekken: Bloodline",
+  "mal_season": "summer 2022",
+  "mal_year": "2022",
   "imdb_id": "tt19875850",
-  "last_updated": "2026-05-29T01:36:18.669426+00:00"
+  "last_updated": "2026-05-29T19:25:33.285926+00:00"
 }

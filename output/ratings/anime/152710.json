@@ -2,9 +2,20 @@
   "content_id": "152710",
   "title": "انمي Tokyo Mew Mew New",
   "year": "2022",
-  "rating": "6.1",
-  "votes": 158,
-  "source": "imdbapi",
+  "rating": "6.66",
+  "votes": 12257,
+  "source": "mal",
+  "mal_id": 41589,
+  "mal_rank": 7295,
+  "mal_popularity": 3655,
+  "mal_studios": [
+    "Yumeta Company",
+    "Graphinica"
+  ],
+  "mal_title_en": "Tokyo Mew Mew New",
+  "mal_title_jp": "東京ミュウミュウ にゅ～♡",
+  "mal_season": "summer 2022",
+  "mal_year": "2022",
   "imdb_id": "tt12299696",
-  "last_updated": "2026-05-29T01:39:55.211586+00:00"
+  "last_updated": "2026-05-29T19:27:50.901048+00:00"
 }

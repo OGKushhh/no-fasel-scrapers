@@ -2,9 +2,20 @@
   "content_id": "152667",
   "title": "انمي Shoot Goal to the Future",
   "year": "2022",
-  "rating": "5.5",
-  "votes": 147,
-  "source": "imdbapi",
+  "rating": "5.32",
+  "votes": 6152,
+  "source": "mal",
+  "mal_id": 50379,
+  "mal_rank": 13791,
+  "mal_popularity": 5673,
+  "mal_studios": [
+    "Magic Bus",
+    "EMT Squared"
+  ],
+  "mal_title_en": "Shoot! Goal to the Future",
+  "mal_title_jp": "シュート! Goal to the Future",
+  "mal_season": "summer 2022",
+  "mal_year": "2022",
   "imdb_id": "tt16148546",
-  "last_updated": "2026-05-29T01:40:21.945247+00:00"
+  "last_updated": "2026-05-29T19:28:01.169677+00:00"
 }

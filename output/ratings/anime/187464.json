@@ -2,9 +2,19 @@
   "content_id": "187464",
   "title": "انمي Tensei shitara ken deshita",
   "year": "2022",
-  "rating": "7.3",
-  "votes": 2440,
-  "source": "imdbapi",
+  "rating": "7.5",
+  "votes": 168592,
+  "source": "mal",
+  "mal_id": 49891,
+  "mal_rank": 2321,
+  "mal_popularity": 824,
+  "mal_studios": [
+    "C2C"
+  ],
+  "mal_title_en": "Reincarnated as a Sword",
+  "mal_title_jp": "転生したら剣でした",
+  "mal_season": "fall 2022",
+  "mal_year": "2022",
   "imdb_id": "tt15483602",
-  "last_updated": "2026-05-29T01:33:29.400051+00:00"
+  "last_updated": "2026-05-29T19:23:15.077738+00:00"
 }

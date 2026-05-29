@@ -1,10 +1,20 @@
 {
   "content_id": "186993",
   "title": "انمي Uzaki-chan wa Asobitai! Double",
-  "year": "2022",
-  "rating": "6.8",
-  "votes": 3042,
-  "source": "imdbapi",
+  "year": "2020",
+  "rating": "6.96",
+  "votes": 286964,
+  "source": "mal",
+  "mal_id": 41226,
+  "mal_rank": 5490,
+  "mal_popularity": 479,
+  "mal_studios": [
+    "ENGI"
+  ],
+  "mal_title_en": "Uzaki-chan Wants to Hang Out!",
+  "mal_title_jp": "宇崎ちゃんは遊びたい！",
+  "mal_season": "summer 2020",
+  "mal_year": "2020",
   "imdb_id": "tt12464182",
-  "last_updated": "2026-05-29T01:35:02.391347+00:00"
+  "last_updated": "2026-05-29T19:24:23.515876+00:00"
 }

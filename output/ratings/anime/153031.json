@@ -1,10 +1,20 @@
 {
   "content_id": "153031",
   "title": "انمي Shine Post",
-  "year": null,
-  "rating": "7.7",
-  "votes": 75,
-  "source": "imdbapi",
+  "year": "2022",
+  "rating": "7.57",
+  "votes": 8939,
+  "source": "mal",
+  "mal_id": 50221,
+  "mal_rank": 1983,
+  "mal_popularity": 4700,
+  "mal_studios": [
+    "Studio KAI"
+  ],
+  "mal_title_en": "",
+  "mal_title_jp": "シャインポスト",
+  "mal_season": "summer 2022",
+  "mal_year": "2022",
   "imdb_id": "tt15783416",
-  "last_updated": "2026-05-29T01:38:20.679547+00:00"
+  "last_updated": "2026-05-29T19:26:49.733097+00:00"
 }
