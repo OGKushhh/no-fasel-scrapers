@@ -72,9 +72,14 @@ def process_category(category: str, dry_run: bool):
             same += 1
             continue
 
-        # Guard: if new year is later than existing year, likely wrong IMDb match — skip
+        # Guard: if new year is later than existing year, likely wrong IMDb match
         if current_year and int(start_year) > int(str(current_year)):
-            print(f"  SKIP [{data.get('content_id')}] {data.get('title', '')[:40]} | {current_year} → {start_year} (new year is later, likely wrong match)")
+            print(f"  SUSPECT [{data.get('content_id')}] {data.get('title', '')[:40]} | {current_year} → {start_year} (flagged as suspect match)")
+            if not dry_run:
+                data["match_suspect"] = True
+                data["last_updated"] = datetime.now(timezone.utc).isoformat()
+                with open(rating_file, "w", encoding="utf-8") as f:
+                    json.dump(data, f, indent=2, ensure_ascii=False)
             skipped += 1
             continue
 
