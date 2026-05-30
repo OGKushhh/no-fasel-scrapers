@@ -93,6 +93,127 @@ SORT_CATEGORIES = [
     "arabic-series",
 ]
 
+# ── Tooltips ──────────────────────────────────────────────────────────────────
+TOOLTIPS = {
+    # FaselHD scrapers
+    "FaselHD:Series (all)":     "Scrapes all FaselHD series categories in one run: series, tvshows, asian-series, and anime.",
+    "FaselHD:Series (asian)":   "Scrapes only the Asian series category from FaselHD (asian-series.json).",
+    "FaselHD:Series (tvshows)": "Scrapes only the TV Shows category from FaselHD (tvshows.json).",
+    "FaselHD:Movies (all)":     "Scrapes all FaselHD movie categories: movies, dubbed-movies, hindi, asian-movies, and anime-movies.",
+    "FaselHD:Movies (dubbed)":  "Scrapes only Arabic-dubbed foreign movies from FaselHD (dubbed-movies.json).",
+    "FaselHD:Movies (hindi)":   "Scrapes only Hindi/Bollywood movies from FaselHD (hindi.json).",
+    "FaselHD:Movies (asian)":   "Scrapes only Asian movies from FaselHD (asian-movies.json).",
+    "FaselHD:Movies (anime)":   "Scrapes only anime movies from FaselHD (anime-movies.json).",
+    "FaselHD:Anime":            "Scrapes the FaselHD anime series category (anime.json).",
+    # Akwam
+    "Akwam:Arabic Series":      "Scrapes Arabic series from Akwam (arabic-series.json).",
+    # Episodes
+    "Episodes:Update All":      "Checks all series/anime across every category (50/day limit). Compares stored episode count vs live site count. If counts match it only syncs the main JSON and skips. If different, it deep-fetches and appends the new episodes.",
+    "Episodes:Update Specific": "Prompts for one or more series IDs and fetches their episodes directly. Use when you know exactly which series need updating.",
+    "Episodes:Check New":       "Scans live episode feeds on FaselHD and Akwam /recent (7 pages each). Detects series that have new episodes not yet stored locally. If any are found, automatically launches Update Specific for those IDs.",
+    # Ratings
+    "Ratings:IMDbAPI → TMDb → OMDb": "Fetches ratings using all three sources in order: IMDbAPI first, TMDb second, OMDb as last resort.",
+    "Ratings:TMDb → OMDb":           "Fetches ratings from TMDb first, falls back to OMDb if not found.",
+    "Ratings:IMDbAPI → TMDb":        "Fetches ratings from IMDbAPI first, falls back to TMDb if not found.",
+    "Ratings:TMDb only":             "Fetches ratings from TMDb only with no fallback.",
+    "Ratings:IMDbAPI only":          "Fetches ratings from IMDbAPI only with no fallback.",
+    "Ratings:TMDb‑first":            "Forces TMDb as the primary source regardless of what data already exists.",
+    "Ratings:Custom order":          "Prompts for a custom source order (e.g. imdbapi,omdb) then runs ratings update.",
+    "Ratings:Specific category":     "Prompts for a category file and source order, then updates ratings for that category only.",
+    # Series IMDb Match
+    "Series IMDb Match:All series":        "For series without an IMDb ID: searches IMDbAPI by title, then compares your stored season/episode structure against IMDb's to confirm the match (80% similarity threshold). On success, writes the IMDb ID and fetched rating into the rating file.",
+    "Series IMDb Match:Series only":       "Same as 'All series' but limited to series.json only.",
+    "Series IMDb Match:TV Shows only":     "Same as 'All series' but limited to tvshows.json only.",
+    "Series IMDb Match:Asian Series only": "Same as 'All series' but limited to asian-series.json only.",
+    "Series IMDb Match:Anime only":        "Same as 'All series' but limited to anime.json only.",
+    # MAL
+    "MAL:Anime (all)":        "Enriches both anime.json and anime-movies.json with MyAnimeList data: episode count, runtime, release date, genres (EN + AR), airing status, and MAL rating/rank/popularity. Skips items that already have a mal_id.",
+    "MAL:Anime only":         "Same as 'Anime (all)' but processes anime.json only.",
+    "MAL:Anime Movies only":  "Same as 'Anime (all)' but processes anime-movies.json only.",
+    "MAL:Force re-process":   "Re-runs MAL matching for items that already have a mal_id, overwriting all existing MAL fields.",
+    "MAL:Specific IDs":       "Prompts for one or more content IDs then runs MAL matching only for those specific items.",
+    # Clean & Fix
+    "Clean & Fix:Clean all":                  "Cleans all category JSONs: normalizes genres (hyphen→space), standardizes country names, converts runtime to int, and fixes malformed release dates. Backs up originals to ./baks/ first.",
+    "Clean & Fix:Clean + backfill year":      "Runs full clean, then scans each title for an embedded year (e.g. 'Movie Name 2024') and fills it into ReleaseDate if the field is empty.",
+    "Clean & Fix:Clean + translate genres":   "Runs full clean, then fills missing Arabic genre translations into the GenresAr field.",
+    "Clean & Fix:Backfill year from title":   "Only extracts the release year from title text for entries missing ReleaseDate. Skips all other cleaning steps.",
+    "Clean & Fix:Backfill year from ratings": "For series/anime with an empty ReleaseDate, copies the year from their corresponding rating file. Only affects series categories.",
+    "Clean & Fix:Full clean (all steps)":     "Runs every step: genre/country/runtime/date cleaning + year from title + year from ratings + Arabic genre translations.",
+    # Metadata / Runtime
+    "Metadata:Runtime: all sources":       "Fetches runtime for all content using IMDbAPI, TMDb, and OMDb as cascading fallbacks.",
+    "Metadata:Runtime: IMDbAPI → TMDb":    "Fetches runtime from IMDbAPI first, falls back to TMDb if missing.",
+    "Metadata:Runtime: IMDbAPI only":      "Fetches runtime from IMDbAPI only with no fallback.",
+    "Metadata:Runtime: Custom order":      "Prompts for a custom source order (e.g. tmdb,omdb) then fetches runtime.",
+    "Metadata:Runtime: Specific category": "Prompts for a category and source order, then fetches runtime for that category only.",
+}
+
+MANUAL_TOOLTIPS = {
+    "✏  Set IMDb ID":       "Opens a dialog to manually assign an IMDb ID (tt...) to a specific item in any category. Useful for fixing wrong or missing IMDb matches.",
+    "🎌  Set MAL ID":       "Opens a dialog to manually assign a MyAnimeList ID to a specific anime item. Useful when auto-matching fails.",
+    "⭐  Get Rating by ID": "Prompts for a category and one or more content IDs, then fetches and updates their rating immediately.",
+    "🎌  Get MAL by ID":    "Prompts for one or more anime content IDs and a category file, then fetches and updates their MAL data immediately.",
+    "⏱  Get Runtime by ID":"Prompts for a category and one or more content IDs, then fetches and updates their runtime immediately.",
+}
+
+SORT_TOOLTIP = "Sorts the selected category's JSON dict into a pre-sorted array (newest first by ReleaseDate, then last_scraped as tiebreaker). Output goes to output/sorted/{category}.json."
+
+
+class Tooltip:
+    """Show a floating tooltip after a short hover delay."""
+    DELAY_MS = 500
+    WRAP     = 280
+
+    def __init__(self, widget, text, theme_fn):
+        self._widget   = widget
+        self._text     = text
+        self._theme_fn = theme_fn  # callable → returns current T dict
+        self._job      = None
+        self._tip      = None
+        widget.bind("<Enter>",       self._schedule, add="+")
+        widget.bind("<Leave>",       self._cancel,   add="+")
+        widget.bind("<ButtonPress>", self._cancel,   add="+")
+
+    def _schedule(self, _=None):
+        self._cancel()
+        self._job = self._widget.after(self.DELAY_MS, self._show)
+
+    def _cancel(self, _=None):
+        if self._job:
+            self._widget.after_cancel(self._job)
+            self._job = None
+        if self._tip:
+            try:
+                self._tip.destroy()
+            except Exception:
+                pass
+            self._tip = None
+
+    def _show(self):
+        T = self._theme_fn()
+        w = self._widget
+        x = w.winfo_rootx() + w.winfo_width() + 8
+        y = w.winfo_rooty() + (w.winfo_height() // 2) - 20
+
+        self._tip = tk.Toplevel(w)
+        self._tip.wm_overrideredirect(True)
+        self._tip.wm_geometry(f"+{x}+{y}")
+        self._tip.configure(bg=T["sidebar_border"])
+
+        lbl = tk.Label(
+            self._tip,
+            text=self._text,
+            justify=tk.LEFT,
+            wraplength=self.WRAP,
+            font=("Segoe UI", 10),
+            bg=T["panel"],
+            fg=T["fg"],
+            relief=tk.FLAT,
+            bd=0,
+            padx=10,
+            pady=8,
+        )
+        lbl.pack(padx=1, pady=1)
+
 # ── Colour palettes ──────────────────────────────────────────────────────────
 DARK = dict(
     bg="#0f1117",
@@ -322,10 +443,7 @@ class ScraperGUI:
         self._sidebar_canvas.configure(yscrollcommand=sb_scroll.set)
         self._sidebar_canvas.grid(row=1, column=0, sticky="nsew")
         sb_scroll.grid(row=1, column=1, sticky="ns")
-        self._sidebar_canvas.bind_all(
-            "<MouseWheel>",
-            lambda e: self._sidebar_canvas.yview_scroll(int(-1*(e.delta/120)), "units")
-        )
+        self._sidebar_canvas.bind_all("<MouseWheel>", self._on_sidebar_mousewheel)
 
         self._sidebar_footer = tk.Frame(self.sidebar, height=52)
         self._sidebar_footer.grid(row=2, column=0, columnspan=2, sticky="ew")
@@ -378,7 +496,7 @@ class ScraperGUI:
         for group, scripts in SCRIPT_GROUPS.items():
             self._section_header(group)
             for name, cmd in scripts.items():
-                self._script_row(name, cmd)
+                self._script_row(name, cmd, group=group)
 
         self._section_header("Sort Output")
         self._sort_row()
@@ -388,6 +506,22 @@ class ScraperGUI:
     def _tick_clock(self):
         self._clock_lbl.config(text=datetime.now().strftime("%H:%M:%S"))
         self.root.after(1000, self._tick_clock)
+
+    def _on_sidebar_mousewheel(self, event):
+        """Scroll the sidebar canvas only when the pointer is inside the sidebar."""
+        w = event.widget
+        sidebar_widgets = (
+            self._sidebar_canvas, self.scroll_frame, self.sidebar,
+            self._title_bar, self._sidebar_footer,
+        )
+        while w is not None:
+            if w in sidebar_widgets:
+                self._sidebar_canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
+                return
+            try:
+                w = w.master
+            except Exception:
+                return
 
     def _section_header(self, text):
         f = tk.Frame(self.scroll_frame)
@@ -405,7 +539,7 @@ class ScraperGUI:
             sep.pack(fill=tk.X, padx=12, pady=(1, 0))
             self._section_seps.append(sep)
 
-    def _script_row(self, name, cmd):
+    def _script_row(self, name, cmd, group=""):
         T = self.T
         outer = tk.Frame(self.scroll_frame)
         outer.pack(fill=tk.X, padx=4, pady=1)
@@ -451,6 +585,11 @@ class ScraperGUI:
 
         self.script_buttons[name] = (lbl, stop_btn, outer)
 
+        tip_text = TOOLTIPS.get(f"{group}:{name}") or TOOLTIPS.get(name)
+        if tip_text:
+            for w in (outer, lbl, dot):
+                Tooltip(w, tip_text, lambda: self.T)
+
     def _sort_row(self):
         row = tk.Frame(self.scroll_frame)
         row.pack(fill=tk.X, padx=4, pady=(4, 2))
@@ -483,6 +622,9 @@ class ScraperGUI:
         self.sort_stop_btn.grid(row=0, column=3, padx=(2, 6))
         self.sort_stop_btn.grid_remove()
 
+        for w in (dot, self.sort_combo, self.sort_start_btn):
+            Tooltip(w, SORT_TOOLTIP, lambda: self.T)
+
     def _manual_row(self):
         row = tk.Frame(self.scroll_frame)
         row.pack(fill=tk.X, padx=8, pady=(4, 16))
@@ -494,6 +636,7 @@ class ScraperGUI:
             font=("Segoe UI", 11), padx=10, pady=5,
         )
         self._imdb_btn.pack(fill=tk.X, padx=4, pady=2)
+        Tooltip(self._imdb_btn, MANUAL_TOOLTIPS["✏  Set IMDb ID"], lambda: self.T)
 
         # NEW: Set MAL ID (manual)
         self._set_mal_btn = PillButton(
@@ -502,6 +645,7 @@ class ScraperGUI:
             font=("Segoe UI", 11), padx=10, pady=5,
         )
         self._set_mal_btn.pack(fill=tk.X, padx=4, pady=2)
+        Tooltip(self._set_mal_btn, MANUAL_TOOLTIPS["🎌  Set MAL ID"], lambda: self.T)
 
         # Get Rating by ID (uses update_ratings.py)
         self._rating_by_id_btn = PillButton(
@@ -510,6 +654,7 @@ class ScraperGUI:
             font=("Segoe UI", 11), padx=10, pady=5,
         )
         self._rating_by_id_btn.pack(fill=tk.X, padx=4, pady=2)
+        Tooltip(self._rating_by_id_btn, MANUAL_TOOLTIPS["⭐  Get Rating by ID"], lambda: self.T)
 
         # Get MAL by ID (uses update_mal.py)
         self._mal_by_id_btn = PillButton(
@@ -518,6 +663,7 @@ class ScraperGUI:
             font=("Segoe UI", 11), padx=10, pady=5,
         )
         self._mal_by_id_btn.pack(fill=tk.X, padx=4, pady=2)
+        Tooltip(self._mal_by_id_btn, MANUAL_TOOLTIPS["🎌  Get MAL by ID"], lambda: self.T)
 
         # Get Runtime by ID
         self._runtime_by_id_btn = PillButton(
@@ -526,6 +672,7 @@ class ScraperGUI:
             font=("Segoe UI", 11), padx=10, pady=5,
         )
         self._runtime_by_id_btn.pack(fill=tk.X, padx=4, pady=2)
+        Tooltip(self._runtime_by_id_btn, MANUAL_TOOLTIPS["⏱  Get Runtime by ID"], lambda: self.T)
 
     # -------------------------------------------------------------------------
     # THEME
