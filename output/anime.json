@@ -34827,33 +34827,34 @@
         "Source": "",
         "Genres": [
             "Action",
-            "Fantasy",
             "Drama",
-            "شونين",
-            "عسكري",
-            "Mystery",
-            "قوى خارقة"
+            "Gore",
+            "Military",
+            "Shounen",
+            "Survival",
+            "Suspense"
         ],
         "GenresAr": [
-            "Action",
-            "Fantasy",
-            "Drama",
-            "شونين",
+            "أكشن",
+            "دراما",
+            "دماء وعنف",
             "عسكري",
-            "Mystery",
-            "قوى خارقة"
+            "شونين",
+            "بقاء",
+            "تشويق"
         ],
         "Format": "Bluray",
         "Runtime": 24,
-        "Country": null,
+        "Country": "Japan",
         "Description": "مشاهدة وتحميل انمي Shingeki no Kyojin (Attack on Titan) الموسم الثاني مترجم كامل علي موقع فاصل اعلاني faselHD وتحميل مباشر بجودة عالية الدقة HD مشاهدة انمي Shingeki no Kyojin (Attack on Titan) الموسم الثاني اون لاين",
         "SeasonsUrl": "https://www.fasel-hd.cam/anime/%d8%a3%d9%86%d9%85%d9%8a-attack-titan-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%ab%d8%a7%d9%86%d9%8a",
         "Status": "مكتمل",
         "ViewingLevel": "",
         "Language": "اليابانية",
         "ReleaseDate": "ربيع 2017",
-        "EpisodeDuration": "24د",
-        "last_scraped": "2026-05-06T18:28:08.937686+00:00"
+        "EpisodeDuration": "24 دقيقة",
+        "last_scraped": "2026-05-06T18:28:08.937686+00:00",
+        "AiringSeason": "spring 2017"
     },
     "56351": {
         "Title": "انمي Shingeki no Kyojin (Attack on Titan) الموسم الأول",
