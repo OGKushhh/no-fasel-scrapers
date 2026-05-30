@@ -7,8 +7,9 @@ For each item in anime.json and anime-movies.json:
   2. Search MAL API by base title
   3. Pick the result matching the correct season via sequel chain
   4. If confident match:
-     - Update main JSON: Number Of Episodes, Runtime, ReleaseDate,
-       EpisodeDuration, Country, Genres, GenresAr, Status
+     - Update main JSON: Number Of Episodes, Runtime, EpisodeDuration,
+       Country, Genres, GenresAr, Status, and add AiringSeason (e.g., "spring 2017")
+       (ReleaseDate is NOT overwritten)
      - Write/update ratings/anime/{id}.json: rating, votes, source=mal,
        mal_id, mal_rank, mal_popularity, mal_studios, mal_title_en,
        mal_title_jp, mal_season, mal_year. Preserves existing imdb_id.
@@ -443,7 +444,7 @@ def process_file(file_path: Path, processed: set, force: bool, ids_filter: Optio
             save_progress(progress_key)
             continue
 
-        # ── Update main JSON fields ──────────────────────────────────
+        # ── Update main JSON fields (preserve ReleaseDate) ──────────────────
         num_eps = mal_entry.get("num_episodes")
         if num_eps and num_eps > 0:
             item["Number Of Episodes"] = num_eps
@@ -456,9 +457,15 @@ def process_file(file_path: Path, processed: set, force: bool, ids_filter: Optio
             # Runtime as integer minutes for movies
             item["Runtime"] = round(ep_duration_sec / 60) if ep_duration_sec else item.get("Runtime")
 
-        release_date = format_release_date(mal_entry.get("start_date"))
-        if release_date:
-            item["ReleaseDate"] = release_date
+        # ── AiringSeason from MAL start_season (e.g., "spring 2017") ─────────
+        start_season_obj = mal_entry.get("start_season", {})
+        season_name = start_season_obj.get("season", "")   # "spring", "summer", etc.
+        season_year = start_season_obj.get("year", "")     # 2017
+        if season_name and season_year:
+            item["AiringSeason"] = f"{season_name} {season_year}"
+        elif season_year:
+            item["AiringSeason"] = str(season_year)
+        # If no season info, leave the field out (do not overwrite existing)
 
         # Country — real anime is always Japan
         item["Country"] = "Japan"
@@ -476,7 +483,7 @@ def process_file(file_path: Path, processed: set, force: bool, ids_filter: Optio
 
         modified = True
 
-        # ── Update / write rating file ───────────────────────────────
+        # ── Update / write rating file (same as before) ──────────────────────
         mal_score = mal_entry.get("mean")
         mal_votes = mal_entry.get("num_scoring_users", 0)
         mal_id    = mal_entry.get("id")
@@ -488,7 +495,6 @@ def process_file(file_path: Path, processed: set, force: bool, ids_filter: Optio
                 studios.append(s["name"])
             elif isinstance(s, str):
                 studios.append(s)
-        start_season = mal_entry.get("start_season", {})
 
         rating_data = {
             "content_id": content_id,
@@ -503,7 +509,7 @@ def process_file(file_path: Path, processed: set, force: bool, ids_filter: Optio
             "mal_studios": studios,
             "mal_title_en": alt.get("en") or "",
             "mal_title_jp": alt.get("ja") or "",
-            "mal_season": f"{start_season.get('season', '')} {start_season.get('year', '')}".strip() if start_season else "",
+            "mal_season": f"{season_name} {season_year}".strip() if season_name or season_year else "",
             "mal_year": extract_year(mal_entry.get("start_date")),
             # Preserve existing imdb_id if present
             "imdb_id": existing_rating_data.get("imdb_id"),
