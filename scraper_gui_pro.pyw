@@ -79,11 +79,19 @@ SCRIPT_GROUPS = {
     },
 }
 
-BACKFILL_TASKS = {
-    "All Tasks":    "all",
-    "Movies":       "movies",
-    "Descriptions": "descriptions",
-}
+SORT_CATEGORIES = [
+    "All Categories",
+    "movies",
+    "dubbed-movies",
+    "hindi",
+    "asian-movies",
+    "anime-movies",
+    "anime",
+    "series",
+    "tvshows",
+    "asian-series",
+    "arabic-series",
+]
 
 # ── Colour palettes ──────────────────────────────────────────────────────────
 DARK = dict(
@@ -230,9 +238,9 @@ class ScraperGUI:
         self.custom_procs      = {}
         self.indicators        = {}
         self._stopped_procs    = set()
-        self.backfill_task_var = tk.StringVar(value="All Tasks")
-        self.auto_scroll       = {}
-        self.script_buttons    = {}
+        self.sort_category_var  = tk.StringVar(value="All Categories")
+        self.auto_scroll        = {}
+        self.script_buttons     = {}
 
         self.dark_mode = True
         self.T         = DARK
@@ -372,8 +380,8 @@ class ScraperGUI:
             for name, cmd in scripts.items():
                 self._script_row(name, cmd)
 
-        self._section_header("Backfill")
-        self._backfill_row()
+        self._section_header("Sort Output")
+        self._sort_row()
         self._section_header("Manual")
         self._manual_row()
 
@@ -443,37 +451,37 @@ class ScraperGUI:
 
         self.script_buttons[name] = (lbl, stop_btn, outer)
 
-    def _backfill_row(self):
+    def _sort_row(self):
         row = tk.Frame(self.scroll_frame)
         row.pack(fill=tk.X, padx=4, pady=(4, 2))
         row.columnconfigure(1, weight=1)
-        self._backfill_row_frame = row
+        self._sort_row_frame = row
 
         dot = tk.Label(row, text="●", font=("Segoe UI", 10), width=2)
         dot.grid(row=0, column=0, padx=(6, 0))
-        self.indicators["backfill"] = dot
+        self.indicators["sort"] = dot
 
-        self.backfill_combo = ttk.Combobox(
-            row, textvariable=self.backfill_task_var,
-            values=list(BACKFILL_TASKS.keys()),
+        self.sort_combo = ttk.Combobox(
+            row, textvariable=self.sort_category_var,
+            values=SORT_CATEGORIES,
             state="readonly", font=("Segoe UI", 10),
         )
-        self.backfill_combo.grid(row=0, column=1, sticky="ew", padx=(4, 2), pady=4)
+        self.sort_combo.grid(row=0, column=1, sticky="ew", padx=(4, 2), pady=4)
 
-        self.backfill_start_btn = PillButton(
+        self.sort_start_btn = PillButton(
             row, text="▶",
-            command=self.start_backfill,
+            command=self.start_sort,
             font=("Segoe UI", 10, "bold"), padx=7, pady=2,
         )
-        self.backfill_start_btn.grid(row=0, column=2, padx=2)
+        self.sort_start_btn.grid(row=0, column=2, padx=2)
 
-        self.backfill_stop_btn = PillButton(
+        self.sort_stop_btn = PillButton(
             row, text="⏹  Stop",
-            command=self.stop_backfill,
+            command=self.stop_sort,
             font=("Segoe UI", 10), padx=10, pady=4,
         )
-        self.backfill_stop_btn.grid(row=0, column=3, padx=(2, 6))
-        self.backfill_stop_btn.grid_remove()
+        self.sort_stop_btn.grid(row=0, column=3, padx=(2, 6))
+        self.sort_stop_btn.grid_remove()
 
     def _manual_row(self):
         row = tk.Frame(self.scroll_frame)
@@ -597,21 +605,21 @@ class ScraperGUI:
             running = name in self.processes and self.processes[name].poll() is None
             self._style_stop_btn(stop_btn, running)
 
-        self._backfill_row_frame.configure(bg=T["sidebar"])
-        bf_dot = self.indicators.get("backfill")
-        if bf_dot:
-            bf_dot.configure(bg=T["sidebar"])
-            bf_run = "backfill" in self.processes and self.processes["backfill"].poll() is None
-            bf_dot.configure(fg=T["indicator_run"] if bf_run else T["indicator_idle"])
+        self._sort_row_frame.configure(bg=T["sidebar"])
+        sort_dot = self.indicators.get("sort")
+        if sort_dot:
+            sort_dot.configure(bg=T["sidebar"])
+            sort_run = "sort" in self.processes and self.processes["sort"].poll() is None
+            sort_dot.configure(fg=T["indicator_run"] if sort_run else T["indicator_idle"])
 
-        bf_run = "backfill" in self.processes and self.processes["backfill"].poll() is None
-        self.backfill_start_btn._bg    = T["run"]
-        self.backfill_start_btn._hover = T["run_dim"]
-        self.backfill_start_btn._active= T["run_dim"]
-        self.backfill_start_btn._fg    = T["run_text"]
-        self.backfill_start_btn._lbl.configure(fg=T["run_text"])
-        self.backfill_start_btn._set_color(T["run"])
-        self._style_stop_btn(self.backfill_stop_btn, bf_run)
+        sort_run = "sort" in self.processes and self.processes["sort"].poll() is None
+        self.sort_start_btn._bg    = T["run"]
+        self.sort_start_btn._hover = T["run_dim"]
+        self.sort_start_btn._active= T["run_dim"]
+        self.sort_start_btn._fg    = T["run_text"]
+        self.sort_start_btn._lbl.configure(fg=T["run_text"])
+        self.sort_start_btn._set_color(T["run"])
+        self._style_stop_btn(self.sort_stop_btn, sort_run)
 
         self._custom_btn._bg    = T["accent"]
         self._custom_btn._hover = T["accent_dim"]
@@ -776,8 +784,8 @@ class ScraperGUI:
                 lbl, stop_btn, _ = self.script_buttons[name]
                 lbl.config(fg=self.T["fg"])
                 self._style_stop_btn(stop_btn, False)
-        self.backfill_start_btn.configure(state=tk.NORMAL)
-        self._style_stop_btn(self.backfill_stop_btn, False)
+        self.sort_start_btn.configure(state=tk.NORMAL)
+        self._style_stop_btn(self.sort_stop_btn, False)
         # Also kill any custom processes launched via + Custom button
         for pid, (proc, text_widget, tab_frame, tab_name) in list(self.custom_procs.items()):
             if proc and proc.poll() is None:
@@ -787,48 +795,50 @@ class ScraperGUI:
             self.after(0, lambda tf=tab_frame, tn=tab_name, p=pid: self._remove_custom_tab(tf, tn, p))
         self._set_status(f"⏹  Stopped {len(names)} process(es)")
 
-    def start_backfill(self):
-        if "backfill" in self.processes and self.processes["backfill"].poll() is None:
-            messagebox.showwarning("Already running", "Backfill is already running.")
+    def start_sort(self):
+        if "sort" in self.processes and self.processes["sort"].poll() is None:
+            messagebox.showwarning("Already running", "Sort Output is already running.")
             return
-        task_label = self.backfill_task_var.get()
-        cmd = [PYTHON_EXE, "-u", "backfill.py", "--task", BACKFILL_TASKS[task_label]]
-        tab_name = f"Backfill: {task_label}"
+        cat = self.sort_category_var.get()
+        cmd = [PYTHON_EXE, "-u", "sort_output.py"]
+        if cat != "All Categories":
+            cmd += ["--category", cat]
+        tab_name = f"Sort: {cat}"
 
         proc, text_widget = self._run_subprocess(cmd, tab_name)
         if proc is None:
             return
 
-        self.processes["backfill"]   = proc
-        self.output_tabs["backfill"] = text_widget
-        self.backfill_start_btn.configure(state=tk.DISABLED)
-        self._style_stop_btn(self.backfill_stop_btn, True)
-        self._set_indicator("backfill", True)
-        self._set_status(f"▶  Backfill: {task_label}")
+        self.processes["sort"]   = proc
+        self.output_tabs["sort"] = text_widget
+        self.sort_start_btn.configure(state=tk.DISABLED)
+        self._style_stop_btn(self.sort_stop_btn, True)
+        self._set_indicator("sort", True)
+        self._set_status(f"▶  Sort Output: {cat}")
 
         def _on_done():
             if proc.pid in self._stopped_procs:
                 return
-            self.root.after(0, lambda: self.backfill_start_btn.configure(state=tk.NORMAL))
-            self.root.after(0, lambda: self._style_stop_btn(self.backfill_stop_btn, False))
-            self.root.after(0, lambda: self._set_indicator("backfill", False))
-            self.processes.pop("backfill", None)
-            self.output_tabs.pop("backfill", None)
+            self.root.after(0, lambda: self.sort_start_btn.configure(state=tk.NORMAL))
+            self.root.after(0, lambda: self._style_stop_btn(self.sort_stop_btn, False))
+            self.root.after(0, lambda: self._set_indicator("sort", False))
+            self.processes.pop("sort", None)
+            self.output_tabs.pop("sort", None)
 
         threading.Thread(target=lambda: (proc.wait(), _on_done()), daemon=True).start()
 
-    def stop_backfill(self):
-        proc = self.processes.get("backfill")
+    def stop_sort(self):
+        proc = self.processes.get("sort")
         if not proc or proc.poll() is not None:
             return
         self._stopped_procs.add(proc.pid)
-        self._kill_process(proc, "backfill")
-        self.processes.pop("backfill", None)
-        self.output_tabs.pop("backfill", None)
-        self.backfill_start_btn.configure(state=tk.NORMAL)
-        self._style_stop_btn(self.backfill_stop_btn, False)
-        self._set_indicator("backfill", False)
-        self._set_status("⏹  Backfill stopped")
+        self._kill_process(proc, "sort")
+        self.processes.pop("sort", None)
+        self.output_tabs.pop("sort", None)
+        self.sort_start_btn.configure(state=tk.NORMAL)
+        self._style_stop_btn(self.sort_stop_btn, False)
+        self._set_indicator("sort", False)
+        self._set_status("⏹  Sort Output stopped")
 
     # -------------------------------------------------------------------------
     # CUSTOM COMMAND

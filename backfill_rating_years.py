@@ -28,7 +28,7 @@ RATINGS_DIR = Path("./output/ratings")
 DELAY = 0.5  # seconds between IMDb requests
 
 # Only series categories — movies use release year which is correct
-SERIES_CATEGORIES = ["series", "tvshows", "asian-series", "anime"]
+SERIES_CATEGORIES = ["series", "tvshows", "asian-series"]
 
 
 def process_category(category: str, dry_run: bool):
@@ -100,8 +100,7 @@ def process_category(category: str, dry_run: bool):
 def main():
     parser = argparse.ArgumentParser(description="Backfill correct first-aired year into series rating files")
     parser.add_argument("--dry-run", action="store_true", help="Preview changes without writing")
-    parser.add_argument("--category", type=str, choices=SERIES_CATEGORIES,
-                        help="Process only one category")
+    parser.add_argument("--category", type=str, choices=SERIES_CATEGORIES,                        help="Process only one category")
     args = parser.parse_args()
 
     targets = [args.category] if args.category else SERIES_CATEGORIES
