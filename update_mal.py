@@ -81,22 +81,53 @@ STATUS_AR = {
     "not_yet_aired":    "قادم",
 }
 
-# MAL genre name → Arabic translation (common ones)
 GENRE_AR = {
-    "Action": "أكشن", "Adventure": "مغامرة", "Comedy": "كوميديا",
-    "Drama": "دراما", "Fantasy": "فانتازيا", "Horror": "رعب",
-    "Mystery": "غموض", "Romance": "رومانسية", "Sci-Fi": "خيال علمي",
-    "Slice of Life": "شريحة من الحياة", "Sports": "رياضة",
-    "Supernatural": "خارق للطبيعة", "Thriller": "إثارة",
-    "Mecha": "ميكا", "Music": "موسيقى", "Psychological": "نفسي",
-    "Ecchi": "إيتشي", "Harem": "حريم", "Isekai": "إيسيكاي",
-    "Shounen": "شونين", "Shoujo": "شوجو", "Seinen": "سينين",
-    "Josei": "جوسيي", "Kids": "أطفال", "Historical": "تاريخي",
-    "Military": "عسكري", "School": "مدرسة", "Magic": "سحر",
-    "Demons": "شياطين", "Game": "ألعاب", "Vampire": "مصاصو دماء",
-    "Space": "فضاء", "Martial Arts": "فنون قتالية",
-    "Super Power": "قوى خارقة", "Award Winning": "حائز على جوائز",
-    "Suspense": "تشويق", "Racing": "سباق",
+    # Core
+    "Action": "أكشن", "Adventure": "مغامرة", "Comedy": "كوميديا", "Drama": "دراما",
+    "Fantasy": "فانتازيا", "Horror": "رعب", "Mystery": "غموض", "Romance": "رومانسية",
+    "Sci-Fi": "خيال علمي", "Slice of Life": "شريحة من الحياة", "Sports": "رياضة",
+    "Supernatural": "خارق للطبيعة", "Thriller": "إثارة", "Mecha": "ميكا", "Music": "موسيقى",
+    "Psychological": "نفسي", "Ecchi": "إيتشي", "Harem": "حريم", "Isekai": "إيسيكاي",
+    "Shounen": "شونين", "Shoujo": "شوجو", "Seinen": "سينين", "Josei": "جوسيي",
+    "Kids": "أطفال", "Historical": "تاريخي", "Military": "عسكري", "School": "مدرسة",
+    "Magic": "سحر", "Demons": "شياطين", "Game": "ألعاب", "Vampire": "مصاصو دماء",
+    "Space": "فضاء", "Martial Arts": "فنون قتالية", "Super Power": "قوى خارقة",
+    "Award Winning": "حائز على جوائز", "Suspense": "تشويق", "Racing": "سباق",
+
+    # Survival / Dark
+    "Survival": "بقاء", "Gore": "دماء وعنف", "Dark Fantasy": "فانتازيا مظلمة",
+    "Post-Apocalyptic": "ما بعد الكارثة", "Psychological Thriller": "إثارة نفسية",
+
+    # Parody & Comedy
+    "Parody": "محاكاة ساخرة", "Gag Humor": "فكاهة تهريجية", "Satire": "هجاء",
+
+    # Historical / Cultural
+    "Samurai": "ساموراي", "Ninja": "نينجا", "Wuxia": "ووشيا", "Xianxia": "شيانشيا",
+    "Cultivation": "زراعة الروح", "Steampunk": "بخار بنك", "Cyberpunk": "سايبربانك",
+
+    # Profession / Setting
+    "Cooking": "طبخ", "Gourmet": "طعام فاخر", "Medical": "طبي", "Police": "شرطة",
+    "Detective": "تحري", "Workplace": "مكان عمل", "Showbiz": "استعراض",
+    "Otaku Culture": "ثقافة الأوتاكو", "Visual Arts": "فنون بصرية", "Performances": "عروض",
+    "Idols (Female)": "آيدول (إناث)", "Idols (Male)": "آيدول (ذكور)",
+
+    # Relationships / Gender
+    "Love Polygon": "مثلث حب", "Reverse Harem": "حريم معكوس", "Boys Love": "بويز لاڤ",
+    "Girls Love": "غيرلز لاڤ", "Yuri": "يوري", "Yaoi": "ياوي", "Gender Bender": "تبديل جنسي",
+    "Romantic Subtext": "رومانسية ضمنية", "Adult Cast": "شخصيات بالغة",
+
+    # Unique tropes
+    "Mahou Shoujo": "فتاة ساحرة", "CGDCT": "فتيات لطيفات تفعل أشياء لطيفة",
+    "Childcare": "رعاية أطفال", "Delinquents": "مشاغبون", "Organized Crime": "جريمة منظمة",
+    "Yakuza": "ياكوزا", "High Stakes Game": "لعبة عالية المخاطر", "Strategy Game": "لعبة استراتيجية",
+    "Video Game": "لعبة فيديو", "Time Travel": "سفر عبر الزمن", "Reincarnation": "تقمص",
+    "Anthropomorphic": "مجسم", "Pets": "حيوانات أليفة",
+
+    # Mature / Niche
+    "Erotica": "إثارة جنسية", "Avant Garde": "طليعي", "Political": "سياسي",
+
+    # Other
+    "Educational": "تعليمي",
 }
 
 
