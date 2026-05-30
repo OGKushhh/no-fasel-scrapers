@@ -292,7 +292,27 @@ def find_mal_match(clean_title: str, season: int) -> Optional[dict]:
             titles_to_check.append(syn)
 
         for t in titles_to_check:
-            sim = title_similarity(clean_title, t)
+            # Normalize: remove punctuation, lowercase, strip trailing TV/year metadata
+            def normalize(s):
+                s = re.sub(r',?\s*TV\s*\d{4}', '', s)
+                s = re.sub(r'[^\w\s]', '', s.lower())
+                return s
+            clean_query = normalize(clean_title)
+            clean_candidate = normalize(t)
+
+            # Token overlap score
+            q_tokens = set(clean_query.split())
+            c_tokens = set(clean_candidate.split())
+            if not q_tokens or not c_tokens:
+                sim = 0.0
+            else:
+                sim = len(q_tokens & c_tokens) / max(len(q_tokens), len(c_tokens))
+
+            # Boost for English alternative title that appears in the local title
+            alt_en = alt.get("en", "")
+            if alt_en and alt_en.lower() in clean_title.lower() and sim >= 0.3:
+                sim = min(sim + 0.4, 1.0)   # boost, cap at 1.0
+
             if sim > best_score:
                 best_score = sim
                 best = node
