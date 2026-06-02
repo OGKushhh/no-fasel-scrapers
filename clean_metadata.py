@@ -36,6 +36,12 @@ SERIES_FILES = [
     "anime.json",
 ]
 
+# Files that have MAL rating data with mal_season
+ANIME_FILES = [
+    "anime.json",
+    "anime-movies.json",
+]
+
 # Year extraction bounds.
 # Lower bound: 1920 covers silent-era classics that FaselHD occasionally carries.
 # Upper bound: hard-cap at MAX_YEAR_CAP to block sci-fi plot years in titles
@@ -427,8 +433,7 @@ def backfill_year_from_ratings(file_name: str, ratings_dir: Path = Path("./outpu
     skipped     = 0
     no_rating   = 0
 
-    print(f"
-{'='*60}")
+    print("\n" + "="*60)
     print(f"Ratings year backfill: {file_name}")
     print(f"{'='*60}")
 
@@ -484,6 +489,80 @@ def backfill_year_from_ratings(file_name: str, ratings_dir: Path = Path("./outpu
     return {"file": file_name, "total": total, "skipped": skipped, "backfilled": backfilled, "no_rating": no_rating}
 
 
+
+# ─── Airing season backfill ───────────────────────────────────────────────────
+
+def backfill_airing_season_from_ratings(file_name: str, ratings_dir: Path = Path("./output/ratings")) -> dict:
+    """
+    For every anime/anime-movies entry, copy mal_season from its rating file
+    to AiringSeason in the main JSON (e.g. "spring 2019" -> "Spring 2019").
+    Skips entries that already have AiringSeason set.
+    """
+    file_path = Path(f"./output/{file_name}")
+    if not file_path.exists():
+        logging.warning(f"{file_path} not found, skipping.")
+        return {}
+
+    category_stem = file_name.replace(".json", "")
+
+    with open(file_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    total      = len(data)
+    backfilled = 0
+    skipped    = 0
+    no_season  = 0
+
+    print(f"\n{'='*60}")
+    print(f"AiringSeason backfill: {file_name}")
+    print(f"{'='*60}")
+
+    for content_id, item in data.items():
+        if not isinstance(item, dict):
+            continue
+
+        # Skip if already populated
+        if item.get("AiringSeason"):
+            skipped += 1
+            continue
+
+        rating_file = ratings_dir / category_stem / f"{content_id}.json"
+        if not rating_file.exists():
+            no_season += 1
+            continue
+
+        try:
+            with open(rating_file, "r", encoding="utf-8") as rf:
+                rating_data = json.load(rf)
+        except Exception:
+            no_season += 1
+            continue
+
+        mal_season = (rating_data.get("mal_season") or "").strip()
+        if not mal_season:
+            no_season += 1
+            continue
+
+        # Capitalize season word: "spring 2019" -> "Spring 2019"
+        parts = mal_season.split(None, 1)
+        airing_season = f"{parts[0].capitalize()} {parts[1]}" if len(parts) == 2 else mal_season.capitalize()
+
+        item["AiringSeason"] = airing_season
+        backfilled += 1
+        print(f"  [{content_id}] AiringSeason = {airing_season}")
+
+    if backfilled > 0:
+        backup_file(str(file_path))
+        with open(file_path, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=4, ensure_ascii=False)
+
+    print(f"  Total: {total} | Already set: {skipped} | Backfilled: {backfilled} | No MAL season: {no_season}")
+    if backfilled > 0:
+        print(f"  ✅ Saved {file_path}")
+
+    return {"file": file_name, "total": total, "skipped": skipped, "backfilled": backfilled, "no_season": no_season}
+
+
 # ─── Entry points ─────────────────────────────────────────────────────────────
 
 def main():
@@ -519,6 +598,11 @@ def main():
         "--backfill-from-ratings",
         action="store_true",
         help="For series/anime with empty ReleaseDate, copy year from their ratings file.",
+    )
+    parser.add_argument(
+        "--backfill-airing-season",
+        action="store_true",
+        help="Copy mal_season from ratings files to AiringSeason field in anime/anime-movies JSON.",
     )
     parser.add_argument(
         "--translate-genres",
@@ -570,6 +654,16 @@ def main():
         else:
             for file_name in series_targets:
                 backfill_year_from_ratings(file_name, ratings_dir)
+
+    # ── Step 4: airing season backfill for anime ──────────────────────────────
+    if args.backfill_airing_season:
+        ratings_dir = Path("./output/ratings")
+        anime_targets = [f for f in target_files if f in ANIME_FILES]
+        if not anime_targets:
+            print("No anime files in target list — nothing to backfill.")
+        else:
+            for file_name in anime_targets:
+                backfill_airing_season_from_ratings(file_name, ratings_dir)
 
     logging.info("Metadata cleaning complete.")
 

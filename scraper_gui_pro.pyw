@@ -68,7 +68,8 @@ SCRIPT_GROUPS = {
         "Clean + translate genres":   [PYTHON_EXE, "-u", "clean_metadata.py", "--translate-genres"],
         "Backfill year from title":   [PYTHON_EXE, "-u", "clean_metadata.py", "--backfill-year"],
         "Backfill year from ratings": [PYTHON_EXE, "-u", "clean_metadata.py", "--backfill-from-ratings"],
-        "Full clean (all steps)":     [PYTHON_EXE, "-u", "clean_metadata.py", "--backfill-year", "--backfill-from-ratings", "--translate-genres"],
+        "Backfill airing season":     [PYTHON_EXE, "-u", "clean_metadata.py", "--backfill-airing-season"],
+        "Full clean (all steps)":     [PYTHON_EXE, "-u", "clean_metadata.py", "--backfill-year", "--backfill-from-ratings", "--backfill-airing-season", "--translate-genres"],
     },
     "Metadata": {
         "Runtime: all sources":       [PYTHON_EXE, "-u", "update_runtime.py", "--sources", "imdbapi,tmdb,omdb"],
@@ -138,7 +139,8 @@ TOOLTIPS = {
     "Clean & Fix:Clean + translate genres":   "Runs full clean, then fills missing Arabic genre translations into the GenresAr field.",
     "Clean & Fix:Backfill year from title":   "Only extracts the release year from title text for entries missing ReleaseDate. Skips all other cleaning steps.",
     "Clean & Fix:Backfill year from ratings": "For series/anime with an empty ReleaseDate, copies the year from their corresponding rating file. Only affects series categories.",
-    "Clean & Fix:Full clean (all steps)":     "Runs every step: genre/country/runtime/date cleaning + year from title + year from ratings + Arabic genre translations.",
+    "Clean & Fix:Backfill airing season":     "Copies mal_season from each anime/anime-movies rating file into AiringSeason in the main JSON (e.g. 'spring 2019' → 'Spring 2019'). Only fills entries that are missing AiringSeason. Run after MAL update.",
+    "Clean & Fix:Full clean (all steps)":     "Runs every step: genre/country/runtime/date cleaning + year from title + year from ratings + airing season from MAL + Arabic genre translations.",
     # Metadata / Runtime
     "Metadata:Runtime: all sources":       "Fetches runtime for all content using IMDbAPI, TMDb, and OMDb as cascading fallbacks.",
     "Metadata:Runtime: IMDbAPI → TMDb":    "Fetches runtime from IMDbAPI first, falls back to TMDb if missing.",
