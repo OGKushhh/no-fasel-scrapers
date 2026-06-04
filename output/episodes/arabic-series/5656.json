@@ -1,0 +1,85 @@
+{
+  "content_id": "5656",
+  "category": "arabic-series",
+  "episodes": [
+    {
+      "number": 1,
+      "title": "حلقة 1 : مسلسل ممكن  1",
+      "url": "https://akwam.it/episode/101204/ممكن/الحلقة-1",
+      "sources": [
+        {
+          "quality": "720p",
+          "watch_url": "http://go.akwam.it/watch/179663",
+          "download_url": "http://go.akwam.it/link/179663",
+          "size_mb": 388.9
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "حلقة 2 : مسلسل ممكن  2",
+      "url": "https://akwam.it/episode/101205/ممكن/الحلقة-2",
+      "sources": [
+        {
+          "quality": "720p",
+          "watch_url": "http://go.akwam.it/watch/179664",
+          "download_url": "http://go.akwam.it/link/179664",
+          "size_mb": 332.0
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "حلقة 3 : مسلسل ممكن  3",
+      "url": "https://akwam.it/episode/101274/ممكن/الحلقة-3",
+      "sources": [
+        {
+          "quality": "720p",
+          "watch_url": "http://go.akwam.it/watch/179735",
+          "download_url": "http://go.akwam.it/link/179735",
+          "size_mb": 341.3
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "حلقة 4 : مسلسل ممكن  4",
+      "url": "https://akwam.it/episode/101279/ممكن/الحلقة-4",
+      "sources": [
+        {
+          "quality": "720p",
+          "watch_url": "http://go.akwam.it/watch/179757",
+          "download_url": "http://go.akwam.it/link/179757",
+          "size_mb": 332.6
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "حلقة 5 : مسلسل ممكن  5",
+      "url": "https://akwam.it/episode/101301/ممكن/الحلقة-5",
+      "sources": [
+        {
+          "quality": "720p",
+          "watch_url": "http://go.akwam.it/watch/179780",
+          "download_url": "http://go.akwam.it/link/179780",
+          "size_mb": 329.3
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "حلقة 6 : مسلسل ممكن  6",
+      "url": "https://akwam.it/episode/101317/ممكن/الحلقة-6",
+      "sources": [
+        {
+          "quality": "720p",
+          "watch_url": "http://go.akwam.it/watch/179800",
+          "download_url": "http://go.akwam.it/link/179800",
+          "size_mb": 336.8
+        }
+      ]
+    }
+  ],
+  "last_updated": "2026-06-04T06:23:01"
+}

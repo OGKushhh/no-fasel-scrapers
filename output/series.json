@@ -103138,5 +103138,135 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 8,
         "last_scraped": "2026-05-30T01:43:13.641279+00:00"
+    },
+    "301601": {
+        "Title": "مسلسل Michael Jackson: The Verdict",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/14e10ee16b134112c54d35a772f2ae91-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Documentary",
+            "Documentary"
+        ],
+        "GenresAr": [
+            "Documentary",
+            "وثائقي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يروى لاعبون رئيسيون من داخل قاعة المحكمة محاكمة “مايكل جاكسون”، ويتفحصون إرثه المعقد.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-michael-jackson-verdict",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-06-03",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 0,
+        "last_scraped": "2026-06-04T06:30:06.165999+00:00"
+    },
+    "301580": {
+        "Title": "مسلسل Summer of 36",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/74c1bc1da19e4a8468bac963bccbe4b2-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "History"
+        ],
+        "GenresAr": [
+            "History"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "نيس، 1936. النخبة التي تقضي إجازتها في كوت دازور تشعر بالانزعاج من العمال الذين يستمتعون بإجازتهم الأولى مدفوعة الأجر. تتورط أربع نساء من طبقات مختلفة في جريمة قتل في فندق ريفييرا الفاخر.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-summer-36",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "فرنسي",
+        "ReleaseDate": "2026-05-18",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 6,
+        "last_scraped": "2026-06-04T06:30:27.594035+00:00"
+    },
+    "301492": {
+        "Title": "مسلسل Not Suitable for Work",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/514a3c129978a6c7cc58a25316f94841-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy"
+        ],
+        "GenresAr": [
+            "Comedy"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يتناول المسلسل مرحلة ما بعد الثانوية في حياة الشباب، عبر متابعة خمسة محترفين في العشرينيات، مهووسين بالعمل، يعيشون في حي “موراي هيل” في “مانهاتن”، يركزون على تحقيق النجاح الوظيفي ويجدون وقتاً للسعادة الشخصية.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-not-suitable-work",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-06-04T06:30:46.964041+00:00"
+    },
+    "301475": {
+        "Title": "مسلسل Fish Hooks",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/34540f451ed4106a22eb32c8cfbf4741-400x600.webp",
+        "Source": "",
+        "Genres": [
+            "Adventure",
+            "Animation",
+            "Comedy"
+        ],
+        "GenresAr": [
+            "Adventure",
+            "Animation",
+            "Comedy"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 23,
+        "Country": null,
+        "Description": "تدور أحداثه داخل حوض أسماك عملاق في متجر حيوانات، ويتابع حياة ثلاثة أصدقاء في المدرسة الثانوية وهم: “ميلو”، “أوسكار”، و”بيا”، مستعرضاً مغامراتهم اليومية وتحديات الصداقة والمراهقة بأسلوب كوميدي",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-fish-hooks",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "20102014",
+        "EpisodeDuration": "23د",
+        "Number Of Episodes Text": 16,
+        "last_scraped": "2026-06-04T06:32:14.107087+00:00"
+    },
+    "301378": {
+        "Title": "مسلسل Goldie and Bear",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/0af941700ab67879cd64d43e6d4dde03-400x600.jpeg",
+        "Source": "",
+        "Genres": [
+            "Animation",
+            "Family",
+            "Fantasy"
+        ],
+        "GenresAr": [
+            "Animation",
+            "Family",
+            "Fantasy"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 24,
+        "Country": null,
+        "Description": "تدور أحداثه حول “الفتاة الذهبية” (Goldilocks) والدب الصغير اللذين يصبحان أعز أصدقاء بعد حادثة كسر الكرسي الشهيرة في القصة الكلاسيكية",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-goldie-bear",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "20152018",
+        "EpisodeDuration": "24د",
+        "Number Of Episodes Text": 23,
+        "last_scraped": "2026-06-04T06:33:03.678464+00:00"
     }
 }
