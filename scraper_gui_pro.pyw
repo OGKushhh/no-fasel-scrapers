@@ -1388,7 +1388,9 @@ class ScraperGUI:
     # INTEGRATED SERIES SELECTOR POPUP
     # -------------------------------------------------------------------------
     def open_series_selector(self):
-        """Create a popup to browse episodic series and run update_specific_episodes.py."""
+        """Create a popup to browse episodic series with queue and batch update."""
+        import re  # ensure re is available
+
         # Load all series from episodic JSON files
         episodic_files = [
             "anime.json",
@@ -1417,7 +1419,7 @@ class ScraperGUI:
             messagebox.showinfo("No Data", "No series found in output/")
             return
 
-        # Remove duplicates (same ID in multiple categories? keep first)
+        # Remove duplicates
         seen = set()
         unique = []
         for cid, title, cat in series_list:
@@ -1426,26 +1428,54 @@ class ScraperGUI:
                 unique.append((cid, title, cat))
         unique.sort(key=lambda x: (x[2], x[1].lower()))
 
-        # Create popup window
+        # Create popup
         popup = tk.Toplevel(self.root)
-        popup.title("Select Series to Update Episodes")
-        popup.geometry("700x550")
+        popup.title("Select Series – Queue & Batch Update")
+        popup.geometry("900x600")
         popup.transient(self.root)
-        popup.grab_set()
 
-        # Search entry
-        tk.Label(popup, text="Search (title or ID):", anchor="w").pack(fill=tk.X, padx=10, pady=(10,0))
+        # Main frame with two equal columns
+        main_frame = tk.Frame(popup)
+        main_frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
+        main_frame.columnconfigure(0, weight=1, uniform="col")
+        main_frame.columnconfigure(1, weight=1, uniform="col")
+        main_frame.rowconfigure(0, weight=1)
+
+        # ─── LEFT PANEL ────────────────────────────────────────────────
+        left_frame = tk.LabelFrame(main_frame, text="Browse Series", padx=5, pady=5)
+        left_frame.grid(row=0, column=0, sticky="nsew", padx=5)
+        left_frame.rowconfigure(2, weight=1)
+        left_frame.columnconfigure(0, weight=1)
+
+        tk.Label(left_frame, text="Search (title or ID):", anchor="w").grid(row=0, column=0, sticky="ew", pady=(0,5))
         search_var = tk.StringVar()
-        search_entry = tk.Entry(popup, textvariable=search_var)
-        search_entry.pack(fill=tk.X, padx=10, pady=5)
+        search_entry = tk.Entry(left_frame, textvariable=search_var)
+        search_entry.grid(row=1, column=0, sticky="ew", pady=(0,5))
 
-        # Listbox with scrollbar
-        frame = tk.Frame(popup)
-        frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=5)
-        scrollbar = tk.Scrollbar(frame)
+        # Debounced search (300ms delay)
+        def debounced_filter(*args):
+            if hasattr(search_entry, '_after_id') and search_entry._after_id:
+                search_entry.after_cancel(search_entry._after_id)
+            search_entry._after_id = search_entry.after(300, apply_filter)
+
+        def apply_filter():
+            query = search_var.get().strip().lower()
+            if not query:
+                filtered_items[:] = all_items
+            else:
+                filtered_items[:] = [item for item in all_items if query in item[1].lower() or query in item[0].lower()]
+            refresh()
+
+        search_var.trace("w", debounced_filter)
+
+        listbox_frame = tk.Frame(left_frame)
+        listbox_frame.grid(row=2, column=0, sticky="nsew")
+        listbox_frame.rowconfigure(0, weight=1)
+        listbox_frame.columnconfigure(0, weight=1)
+
+        scrollbar = tk.Scrollbar(listbox_frame)
         scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
-        listbox = tk.Listbox(frame, yscrollcommand=scrollbar.set, selectmode=tk.EXTENDED,
-                             font=("Segoe UI", 10))
+        listbox = tk.Listbox(listbox_frame, yscrollcommand=scrollbar.set, selectmode=tk.EXTENDED, font=("Segoe UI",10))
         listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
         scrollbar.config(command=listbox.yview)
 
@@ -1462,38 +1492,78 @@ class ScraperGUI:
             if not query:
                 filtered_items[:] = all_items
             else:
-                filtered_items[:] = [
-                    item for item in all_items
-                    if query in item[1].lower() or query in item[0].lower()
-                ]
+                filtered_items[:] = [item for item in all_items if query in item[1].lower() or query in item[0].lower()]
             refresh()
 
         search_var.trace("w", filter_list)
         refresh()
 
-        def get_selected_ids():
-            selections = listbox.curselection()
-            return [filtered_items[i][0] for i in selections]
+        # ─── RIGHT PANEL ───────────────────────────────────────────────
+        right_frame = tk.LabelFrame(main_frame, text="Update Queue", padx=5, pady=5)
+        right_frame.grid(row=0, column=1, sticky="nsew", padx=5)
+        right_frame.rowconfigure(0, weight=1)
+        right_frame.columnconfigure(0, weight=1)
 
+        queue_listbox = tk.Listbox(right_frame, font=("Segoe UI",10), selectmode=tk.EXTENDED)
+        queue_listbox.grid(row=0, column=0, sticky="nsew", pady=(0,5))
+
+        btn_frame = tk.Frame(right_frame)
+        btn_frame.grid(row=1, column=0, sticky="ew", pady=5)
+        for i in range(3):
+            btn_frame.columnconfigure(i, weight=1)
+
+        def add_selected():
+            for idx in listbox.curselection():
+                cid, title, cat = filtered_items[idx]
+                # Avoid duplicates
+                if not any(f"(ID: {cid})" in queue_listbox.get(i) for i in range(queue_listbox.size())):
+                    queue_listbox.insert(tk.END, f"[{cat}] {title} (ID: {cid})")
+            listbox.selection_clear(0, tk.END)
+
+        def remove_selected():
+            for idx in reversed(queue_listbox.curselection()):
+                queue_listbox.delete(idx)
+
+        def clear_queue():
+            queue_listbox.delete(0, tk.END)
+
+        tk.Button(btn_frame, text="Add Selected →", command=add_selected).pack(side=tk.LEFT, fill=tk.X, expand=True, padx=2)
+        tk.Button(btn_frame, text="← Remove Selected", command=remove_selected).pack(side=tk.LEFT, fill=tk.X, expand=True, padx=2)
+        tk.Button(btn_frame, text="Clear Queue", command=clear_queue).pack(side=tk.LEFT, fill=tk.X, expand=True, padx=2)
+
+        # ─── UPDATE BUTTON (SAME AS YOUR WORKING VERSION) ──────────────
         def run_update():
-            ids = get_selected_ids()
+            ids = []
+            for i in range(queue_listbox.size()):
+                m = re.search(r'\(ID:\s*(\d+)\)', queue_listbox.get(i))
+                if m:
+                    ids.append(m.group(1))
             if not ids:
-                messagebox.showwarning("No selection", "Please select at least one series.")
+                messagebox.showwarning("Empty Queue", "No series in the queue.")
                 return
             popup.destroy()
-            # Use the GUI's _run_subprocess to capture output
             cmd = [PYTHON_EXE, "-u", "update_specific_episodes.py", "--ids"] + ids
-            self._run_subprocess(cmd, f"Update episodes for {len(ids)} IDs")
+            print(f"DEBUG: Running command: {cmd}")  # Debug line
+            self._run_subprocess(cmd, f"Update episodes for {len(ids)} queued IDs")
 
-        btn_frame = tk.Frame(popup)
-        btn_frame.pack(fill=tk.X, padx=10, pady=10)
-        tk.Button(btn_frame, text="Update Episodes", command=run_update, width=20).pack(side=tk.LEFT, padx=4)
-        tk.Button(btn_frame, text="Cancel", command=popup.destroy, width=10).pack(side=tk.RIGHT, padx=4)
+        tk.Button(right_frame, text="▶ Update Queue", command=run_update,
+                  bg="#22c55e", fg="white", font=("Segoe UI",11,"bold"), padx=10, pady=5).grid(row=2, column=0, sticky="ew", pady=5)
 
-        def on_double_click(event):
-            if listbox.curselection():
-                run_update()
-        listbox.bind("<Double-Button-1>", on_double_click)
+        # Double-click shortcuts
+        listbox.bind("<Double-Button-1>", lambda e: add_selected())
+        queue_listbox.bind("<Double-Button-1>", lambda e: remove_selected())
+
+        # Cancel button
+        tk.Button(popup, text="Cancel", command=popup.destroy, width=15).pack(side=tk.BOTTOM, pady=10)
+
+        # ─── CENTER THE POPUP ──────────────────────────────────────────
+        popup.update_idletasks()
+        w = popup.winfo_width()
+        h = popup.winfo_height()
+        x = self.root.winfo_x() + (self.root.winfo_width() // 2) - (w // 2)
+        y = self.root.winfo_y() + (self.root.winfo_height() // 2) - (h // 2)
+        popup.geometry(f"{w}x{h}+{x}+{y}")
+        popup.grab_set()
 
 
 if __name__ == "__main__":

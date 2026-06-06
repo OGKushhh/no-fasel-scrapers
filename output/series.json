@@ -10445,7 +10445,8 @@
         "ReleaseDate": "2025",
         "EpisodeDuration": "",
         "Number Of Episodes Text": 6,
-        "last_scraped": "2026-05-28T02:09:46.044505+00:00"
+        "last_scraped": "2026-05-28T02:09:46.044505+00:00",
+        "Number Of Episodes": 12
     },
     "271001": {
         "Title": "مسلسل The Royals",
@@ -24994,7 +24995,8 @@
         "ReleaseDate": "2025",
         "EpisodeDuration": "",
         "Number Of Episodes Text": 0,
-        "last_scraped": "2026-05-28T02:09:46.044505+00:00"
+        "last_scraped": "2026-05-28T02:09:46.044505+00:00",
+        "Number Of Episodes": 55
     },
     "239695": {
         "Title": "مسلسل House of Gods",
@@ -59408,7 +59410,7 @@
         "EpisodeDuration": "30د",
         "Number Of Episodes Text": 10,
         "last_scraped": "2026-05-03T11:44:19.236164+00:00",
-        "Number Of Episodes": 44
+        "Number Of Episodes": 47
     },
     "128592": {
         "Title": "مسلسل September Mornings",
