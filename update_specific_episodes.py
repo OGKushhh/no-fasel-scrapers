@@ -215,6 +215,76 @@ def update_fasel_series_by_id(
     dry_run: bool = False,
     workers: int = DEFAULT_WORKERS,
 ) -> bool:
+    # ── ANIME: detail_url is already the season page, fetch directly ──
+    if category == "anime":
+        print(f"  🎌 Anime mode: fetching episodes directly from {detail_url}")
+        resp = get_website_safe(detail_url)
+        if not resp:
+            return False
+        soup = BeautifulSoup(resp.text, "html.parser")
+        episode_urls = extract_episodes_from_season_page(soup)
+        total_current = len(episode_urls)
+
+        stored_count = get_stored_count_fasel(category, series_id)
+
+        if stored_count == total_current and stored_count > 0:
+            print(f"  ⏭️ Episode count unchanged ({total_current}), syncing main JSON")
+            json_path = Path(FASEL_CATEGORIES[category])
+            if json_path.exists():
+                with open(json_path, "r", encoding="utf-8") as f:
+                    main_data = json.load(f)
+                if series_id in main_data:
+                    main_data[series_id]["Number Of Episodes"] = total_current
+                    with open(json_path, "w", encoding="utf-8") as f:
+                        json.dump(main_data, f, indent=4, ensure_ascii=False)
+            return False
+
+        print(f"  🔄 Episode count changed: {stored_count} → {total_current}, updating...")
+        if dry_run:
+            print("  [DRY RUN] Would update episodes and main JSON")
+            return True
+
+        # Update main JSON count
+        json_path = Path(FASEL_CATEGORIES[category])
+        if json_path.exists():
+            with open(json_path, "r", encoding="utf-8") as f:
+                main_data = json.load(f)
+            if series_id in main_data:
+                main_data[series_id]["Number Of Episodes"] = total_current
+                with open(json_path, "w", encoding="utf-8") as f:
+                    json.dump(main_data, f, indent=4, ensure_ascii=False)
+
+        existing = get_cached_episodes("fasel", category, series_id)
+        existing_seasons = existing.get("seasons", {})
+        changed = False
+
+        # For anime, we always store as season 1 (each ID is one season)
+        season_num_str = "1"
+        stored_episodes = existing_seasons.get(season_num_str, [])
+        if isinstance(stored_episodes, dict):
+            stored_episodes = stored_episodes.get("episodes", [])
+        stored_urls = [_ep_to_url(e) for e in stored_episodes if _ep_to_url(e)]
+        new_urls = [u for u in episode_urls if u not in stored_urls]
+
+        if new_urls:
+            print(f"  🆕 +{len(new_urls)} new episodes")
+            all_urls = stored_urls + new_urls
+            existing_seasons[season_num_str] = all_urls
+            changed = True
+        elif not stored_urls and episode_urls:
+            print(f"  📦 Storing {len(episode_urls)} episodes")
+            existing_seasons[season_num_str] = episode_urls
+            changed = True
+
+        if changed:
+            existing["seasons"] = existing_seasons
+            save_fasel_episodes(category, series_id, existing)
+            set_cached_episodes("fasel", category, series_id, existing)
+            update_fasel_status(category, series_id, detail_url)
+            return True
+        return False
+
+    # ── Original logic for non‑anime categories (series, tvshows, asian-series) ──
     seasons_hub_url = get_seasons_url_from_detail(detail_url)
     if not seasons_hub_url:
         return False

@@ -11,6 +11,8 @@ import time
 import tkinter as tk
 from tkinter import ttk, scrolledtext, messagebox, simpledialog
 import shlex
+import json
+from pathlib import Path
 from datetime import datetime
 
 # ========== CONFIGURATION ==========
@@ -155,6 +157,7 @@ MANUAL_TOOLTIPS = {
     "⭐  Get Rating by ID": "Prompts for a category and one or more content IDs, then fetches and updates their rating immediately.",
     "🎌  Get MAL by ID":    "Prompts for one or more anime content IDs and a category file, then fetches and updates their MAL data immediately.",
     "⏱  Get Runtime by ID":"Prompts for a category and one or more content IDs, then fetches and updates their runtime immediately.",
+    "📋  Select Series":    "Open a popup to browse all episodic series, search, and select multiple IDs to update episodes.",
 }
 
 SORT_TOOLTIP = "Sorts the selected category's JSON dict into a pre-sorted array (newest first by ReleaseDate, then last_scraped as tiebreaker). Output goes to output/sorted/{category}.json."
@@ -640,7 +643,7 @@ class ScraperGUI:
         self._imdb_btn.pack(fill=tk.X, padx=4, pady=2)
         Tooltip(self._imdb_btn, MANUAL_TOOLTIPS["✏  Set IMDb ID"], lambda: self.T)
 
-        # NEW: Set MAL ID (manual)
+        # Set MAL ID
         self._set_mal_btn = PillButton(
             row, text="🎌  Set MAL ID",
             command=self.open_mal_setter_dialog,
@@ -649,7 +652,7 @@ class ScraperGUI:
         self._set_mal_btn.pack(fill=tk.X, padx=4, pady=2)
         Tooltip(self._set_mal_btn, MANUAL_TOOLTIPS["🎌  Set MAL ID"], lambda: self.T)
 
-        # Get Rating by ID (uses update_ratings.py)
+        # Get Rating by ID
         self._rating_by_id_btn = PillButton(
             row, text="⭐  Get Rating by ID",
             command=self.open_rating_by_id,
@@ -658,7 +661,7 @@ class ScraperGUI:
         self._rating_by_id_btn.pack(fill=tk.X, padx=4, pady=2)
         Tooltip(self._rating_by_id_btn, MANUAL_TOOLTIPS["⭐  Get Rating by ID"], lambda: self.T)
 
-        # Get MAL by ID (uses update_mal.py)
+        # Get MAL by ID
         self._mal_by_id_btn = PillButton(
             row, text="🎌  Get MAL by ID",
             command=self.open_mal_by_id,
@@ -675,6 +678,15 @@ class ScraperGUI:
         )
         self._runtime_by_id_btn.pack(fill=tk.X, padx=4, pady=2)
         Tooltip(self._runtime_by_id_btn, MANUAL_TOOLTIPS["⏱  Get Runtime by ID"], lambda: self.T)
+
+        # NEW: Select Series popup (integrated, not external script)
+        self._select_series_btn = PillButton(
+            row, text="📋  Select Series",
+            command=self.open_series_selector,
+            font=("Segoe UI", 11), padx=10, pady=5,
+        )
+        self._select_series_btn.pack(fill=tk.X, padx=4, pady=2)
+        Tooltip(self._select_series_btn, MANUAL_TOOLTIPS["📋  Select Series"], lambda: self.T)
 
     # -------------------------------------------------------------------------
     # THEME
@@ -785,9 +797,8 @@ class ScraperGUI:
         self._stop_all_btn._set_color(T["stop"])
 
         idle_bg = T["hover"]
-        # Apply theme to all manual buttons
         for btn in [self._imdb_btn, self._set_mal_btn, self._rating_by_id_btn,
-                    self._mal_by_id_btn, self._runtime_by_id_btn]:
+                    self._mal_by_id_btn, self._runtime_by_id_btn, self._select_series_btn]:
             btn._bg    = idle_bg
             btn._hover = T["accent"]
             btn._active= T["accent_dim"]
@@ -927,7 +938,6 @@ class ScraperGUI:
                 self._kill_process(proc, name)
             self.processes.pop(name, None)
             self.output_tabs.pop(name, None)
-            # manual scripts (rating/runtime/mal by ID) have no script_button — still kill them
             self._set_indicator(name, False)
             if name in self.script_buttons:
                 lbl, stop_btn, _ = self.script_buttons[name]
@@ -935,7 +945,6 @@ class ScraperGUI:
                 self._style_stop_btn(stop_btn, False)
         self.sort_start_btn.configure(state=tk.NORMAL)
         self._style_stop_btn(self.sort_stop_btn, False)
-        # Also kill any custom processes launched via + Custom button
         for pid, (proc, text_widget, tab_frame, tab_name) in list(self.custom_procs.items()):
             if proc and proc.poll() is None:
                 self._stopped_procs.add(proc.pid)
@@ -1020,9 +1029,7 @@ class ScraperGUI:
 
     def _watch_custom(self, proc, tab_frame, tab_name):
         proc.wait()
-        # Do NOT remove the tab automatically. Let the user close it via the close button.
         if proc.pid not in self._stopped_procs:
-            # Optionally update the tab title to indicate it's finished
             for i in range(self.notebook.index("end")):
                 try:
                     if self.notebook.tab(i, "text").strip() == tab_name:
@@ -1276,7 +1283,7 @@ class ScraperGUI:
             self.output_tabs[key] = text_widget
 
     # -------------------------------------------------------------------------
-    # NEW: MANUAL MAL ID SETTER
+    # MANUAL MAL ID SETTER
     # -------------------------------------------------------------------------
     def open_mal_setter_dialog(self):
         categories = [
@@ -1376,6 +1383,117 @@ class ScraperGUI:
             key = f"MAL IDs {ids[0]}"
             self.processes[key]   = proc
             self.output_tabs[key] = text_widget
+
+    # -------------------------------------------------------------------------
+    # INTEGRATED SERIES SELECTOR POPUP
+    # -------------------------------------------------------------------------
+    def open_series_selector(self):
+        """Create a popup to browse episodic series and run update_specific_episodes.py."""
+        # Load all series from episodic JSON files
+        episodic_files = [
+            "anime.json",
+            "series.json",
+            "tvshows.json",
+            "asian-series.json",
+            "arabic-series.json",
+        ]
+        series_list = []
+        for filename in episodic_files:
+            filepath = Path(SCRIPTS_DIR) / "output" / filename
+            if not filepath.exists():
+                continue
+            try:
+                with open(filepath, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+            except Exception:
+                continue
+            category = filename.replace(".json", "")
+            if isinstance(data, dict):
+                for cid, info in data.items():
+                    title = info.get("Title", "Unknown")
+                    series_list.append((str(cid), title, category))
+
+        if not series_list:
+            messagebox.showinfo("No Data", "No series found in output/")
+            return
+
+        # Remove duplicates (same ID in multiple categories? keep first)
+        seen = set()
+        unique = []
+        for cid, title, cat in series_list:
+            if (cid, cat) not in seen:
+                seen.add((cid, cat))
+                unique.append((cid, title, cat))
+        unique.sort(key=lambda x: (x[2], x[1].lower()))
+
+        # Create popup window
+        popup = tk.Toplevel(self.root)
+        popup.title("Select Series to Update Episodes")
+        popup.geometry("700x550")
+        popup.transient(self.root)
+        popup.grab_set()
+
+        # Search entry
+        tk.Label(popup, text="Search (title or ID):", anchor="w").pack(fill=tk.X, padx=10, pady=(10,0))
+        search_var = tk.StringVar()
+        search_entry = tk.Entry(popup, textvariable=search_var)
+        search_entry.pack(fill=tk.X, padx=10, pady=5)
+
+        # Listbox with scrollbar
+        frame = tk.Frame(popup)
+        frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=5)
+        scrollbar = tk.Scrollbar(frame)
+        scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        listbox = tk.Listbox(frame, yscrollcommand=scrollbar.set, selectmode=tk.EXTENDED,
+                             font=("Segoe UI", 10))
+        listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        scrollbar.config(command=listbox.yview)
+
+        all_items = unique
+        filtered_items = all_items[:]
+
+        def refresh():
+            listbox.delete(0, tk.END)
+            for cid, title, cat in filtered_items:
+                listbox.insert(tk.END, f"[{cat}] {title} (ID: {cid})")
+
+        def filter_list(*args):
+            query = search_var.get().strip().lower()
+            if not query:
+                filtered_items[:] = all_items
+            else:
+                filtered_items[:] = [
+                    item for item in all_items
+                    if query in item[1].lower() or query in item[0].lower()
+                ]
+            refresh()
+
+        search_var.trace("w", filter_list)
+        refresh()
+
+        def get_selected_ids():
+            selections = listbox.curselection()
+            return [filtered_items[i][0] for i in selections]
+
+        def run_update():
+            ids = get_selected_ids()
+            if not ids:
+                messagebox.showwarning("No selection", "Please select at least one series.")
+                return
+            popup.destroy()
+            # Use the GUI's _run_subprocess to capture output
+            cmd = [PYTHON_EXE, "-u", "update_specific_episodes.py", "--ids"] + ids
+            self._run_subprocess(cmd, f"Update episodes for {len(ids)} IDs")
+
+        btn_frame = tk.Frame(popup)
+        btn_frame.pack(fill=tk.X, padx=10, pady=10)
+        tk.Button(btn_frame, text="Update Episodes", command=run_update, width=20).pack(side=tk.LEFT, padx=4)
+        tk.Button(btn_frame, text="Cancel", command=popup.destroy, width=10).pack(side=tk.RIGHT, padx=4)
+
+        def on_double_click(event):
+            if listbox.curselection():
+                run_update()
+        listbox.bind("<Double-Button-1>", on_double_click)
 
 
 if __name__ == "__main__":

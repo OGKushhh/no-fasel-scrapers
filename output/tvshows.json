@@ -3692,5 +3692,29 @@
         "EpisodeDuration": "",
         "Number Of Episodes Text": 5,
         "last_scraped": "2026-05-23T14:59:26.284501+00:00"
+    },
+    "301323": {
+        "Title": "برنامج 24 in 24: Last Chef Standing",
+        "Category": "tvshows",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/49b862916179114ed540e9371c67c7f2-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "تحديات"
+        ],
+        "GenresAr": [
+            "تحديات"
+        ],
+        "Format": "1080p Web-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يواجه 24 طاهياً تحديات مستمرة على مدار 24 ساعة للفوز بجائزة قدرها 50,000 دولار.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/tvseasons/%d8%a8%d8%b1%d9%86%d8%a7%d9%85%d8%ac-24-24-last-chef-standing",
+        "Status": "منتهي",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2024",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 9,
+        "last_scraped": "2026-06-05T23:38:43.309394+00:00"
     }
 }

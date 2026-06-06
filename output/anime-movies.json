@@ -404,9 +404,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Animation",
-            "Action",
-            "Comedy"
+            "أنميشن",
+            "أكشن",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 104,
@@ -425,8 +425,8 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Adventure"
+            "أنميشن",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 120,
@@ -446,9 +446,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Animation",
-            "Action",
-            "Comedy"
+            "أنميشن",
+            "أكشن",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 110,
@@ -468,9 +468,9 @@
             "Family"
         ],
         "GenresAr": [
-            "Animation",
-            "Drama",
-            "Family"
+            "أنميشن",
+            "دراما",
+            "عائلي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 91,
@@ -490,8 +490,8 @@
             "شونين"
         ],
         "GenresAr": [
-            "Animation",
-            "Sport",
+            "أنميشن",
+            "رياضي",
             "شونين"
         ],
         "Format": "1080p WEB-DL",
@@ -526,9 +526,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Action",
-            "Adventure"
+            "أنميشن",
+            "أكشن",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 87,
@@ -548,9 +548,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Family",
-            "Adventure"
+            "أنميشن",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 70,
@@ -570,9 +570,9 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Animation",
+            "أنميشن",
             "الخيال العلمي",
-            "Mystery"
+            "غموض"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 1,
@@ -591,7 +591,7 @@
             "الخيال العلمي"
         ],
         "GenresAr": [
-            "Animation",
+            "أنميشن",
             "الخيال العلمي"
         ],
         "Format": "1080p WEB-DL",
@@ -612,9 +612,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Animation",
-            "Sport",
-            "Comedy"
+            "أنميشن",
+            "رياضي",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 124,
@@ -634,8 +634,8 @@
             "فانتزى"
         ],
         "GenresAr": [
-            "Animation",
-            "Drama",
+            "أنميشن",
+            "دراما",
             "فانتزى"
         ],
         "Format": "Bluray",
@@ -668,7 +668,7 @@
             "Fantasy"
         ],
         "GenresAr": [
-            "Fantasy"
+            "فانتازيا"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 89,
@@ -688,9 +688,9 @@
             "Action"
         ],
         "GenresAr": [
-            "Animation",
-            "Crime",
-            "Action"
+            "أنميشن",
+            "جريمة",
+            "أكشن"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 120,
@@ -710,9 +710,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Action",
-            "Adventure"
+            "أنميشن",
+            "أكشن",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 109,
@@ -732,9 +732,9 @@
             "Music"
         ],
         "GenresAr": [
-            "Animation",
-            "Drama",
-            "Music"
+            "أنميشن",
+            "دراما",
+            "موسيقى"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 120,
@@ -767,8 +767,8 @@
             "Action"
         ],
         "GenresAr": [
-            "Animation",
-            "Action"
+            "أنميشن",
+            "أكشن"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 90,
@@ -787,8 +787,8 @@
             "Action"
         ],
         "GenresAr": [
-            "Animation",
-            "Action"
+            "أنميشن",
+            "أكشن"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 53,
@@ -806,7 +806,7 @@
             "Animation"
         ],
         "GenresAr": [
-            "Animation"
+            "أنميشن"
         ],
         "Format": "Bluray",
         "Runtime": 102,
@@ -825,8 +825,8 @@
             "Fantasy"
         ],
         "GenresAr": [
-            "Animation",
-            "Fantasy"
+            "أنميشن",
+            "فانتازيا"
         ],
         "Format": "Bluray",
         "Runtime": 98,
@@ -845,8 +845,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Animation",
-            "Drama"
+            "أنميشن",
+            "دراما"
         ],
         "Format": "BDRip",
         "Runtime": 83,
@@ -866,9 +866,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Action",
-            "Adventure"
+            "أنميشن",
+            "أكشن",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 122,
@@ -900,7 +900,7 @@
             "Animation"
         ],
         "GenresAr": [
-            "Animation"
+            "أنميشن"
         ],
         "Format": "BDRip",
         "Runtime": 116,
@@ -944,9 +944,9 @@
             "Action"
         ],
         "GenresAr": [
-            "Animation",
-            "Crime",
-            "Action"
+            "أنميشن",
+            "جريمة",
+            "أكشن"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 90,
@@ -964,7 +964,7 @@
             "Animation"
         ],
         "GenresAr": [
-            "Animation"
+            "أنميشن"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 110,
@@ -983,8 +983,8 @@
             "Action"
         ],
         "GenresAr": [
-            "Animation",
-            "Action"
+            "أنميشن",
+            "أكشن"
         ],
         "Format": "Bluray",
         "Runtime": 115,
@@ -1004,9 +1004,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Animation",
-            "Fantasy",
-            "Drama"
+            "أنميشن",
+            "فانتازيا",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 98,
@@ -1026,9 +1026,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Drama",
-            "Adventure"
+            "أنميشن",
+            "دراما",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 95,

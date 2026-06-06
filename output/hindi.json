@@ -151,8 +151,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Thriller",
-            "Romance"
+            "إثارة",
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 143,
@@ -686,7 +686,7 @@
             "Action"
         ],
         "GenresAr": [
-            "Action"
+            "أكشن"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -836,7 +836,7 @@
             "Romance"
         ],
         "GenresAr": [
-            "Romance"
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -872,7 +872,7 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Comedy"
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -892,9 +892,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 142,
@@ -913,8 +913,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Drama"
+            "أكشن",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -934,9 +934,9 @@
             "History"
         ],
         "GenresAr": [
-            "Thriller",
-            "Crime",
-            "History"
+            "إثارة",
+            "جريمة",
+            "تاريخي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -955,8 +955,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance"
+            "دراما",
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 150,
@@ -1026,9 +1026,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Comedy"
+            "أكشن",
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 140,
@@ -1066,9 +1066,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Thriller",
-            "Horror",
-            "Comedy"
+            "إثارة",
+            "رعب",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -1106,9 +1106,9 @@
             "Sport"
         ],
         "GenresAr": [
-            "Drama",
-            "Biography",
-            "Sport"
+            "دراما",
+            "سيرة ذاتية",
+            "رياضي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -1127,8 +1127,8 @@
             "Family"
         ],
         "GenresAr": [
-            "Romance",
-            "Family"
+            "رومانسية",
+            "عائلي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 134,
@@ -1148,9 +1148,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Drama"
+            "أكشن",
+            "إثارة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -1204,7 +1204,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -1223,8 +1223,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Thriller",
-            "Drama"
+            "إثارة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 92,
@@ -1262,9 +1262,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "Bluray",
         "Runtime": 161,
@@ -1284,9 +1284,9 @@
             "Biography"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Biography"
+            "أكشن",
+            "دراما",
+            "سيرة ذاتية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 167,
@@ -1358,7 +1358,7 @@
             "Horror"
         ],
         "GenresAr": [
-            "Horror"
+            "رعب"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -1376,7 +1376,7 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Comedy"
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -1395,8 +1395,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -1415,8 +1415,8 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller"
+            "أكشن",
+            "إثارة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 165,
@@ -1453,8 +1453,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Romance",
-            "Comedy"
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 142,
@@ -1491,8 +1491,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Drama"
+            "أكشن",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -1512,9 +1512,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Drama"
+            "أكشن",
+            "إثارة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -1566,9 +1566,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 149,
@@ -1602,8 +1602,8 @@
             "Sci fi"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
+            "أكشن",
+            "إثارة",
             "Sci fi"
         ],
         "Format": "1080p WEB-DL",
@@ -1623,8 +1623,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Animation",
-            "Drama"
+            "أنميشن",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -1644,9 +1644,9 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Thriller",
-            "Drama",
-            "Mystery"
+            "إثارة",
+            "دراما",
+            "غموض"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -1664,7 +1664,7 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Comedy"
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 145,
@@ -1684,9 +1684,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Adventure"
+            "أكشن",
+            "إثارة",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 170,
@@ -1704,7 +1704,7 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Comedy"
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -1760,9 +1760,9 @@
             "Romance"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Romance"
+            "أكشن",
+            "إثارة",
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 160,
@@ -1780,7 +1780,7 @@
             "Romance"
         ],
         "GenresAr": [
-            "Romance"
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 150,
@@ -1800,9 +1800,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 149,
@@ -1857,8 +1857,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance"
+            "دراما",
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 162,
@@ -1876,7 +1876,7 @@
             "Action"
         ],
         "GenresAr": [
-            "Action"
+            "أكشن"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 170,
@@ -1896,9 +1896,9 @@
             "Fantasy"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Fantasy"
+            "أكشن",
+            "دراما",
+            "فانتازيا"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 183,
@@ -1935,8 +1935,8 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller"
+            "أكشن",
+            "إثارة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -1954,7 +1954,7 @@
             "Action"
         ],
         "GenresAr": [
-            "Action"
+            "أكشن"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -1973,8 +1973,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Drama"
+            "أكشن",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -1994,9 +1994,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Thriller",
-            "Drama",
-            "Comedy"
+            "إثارة",
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -2014,7 +2014,7 @@
             "Horror"
         ],
         "GenresAr": [
-            "Horror"
+            "رعب"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -2033,8 +2033,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Drama"
+            "أكشن",
+            "دراما"
         ],
         "Format": "N/A",
         "Runtime": null,
@@ -2054,9 +2054,9 @@
             "Fantasy"
         ],
         "GenresAr": [
-            "Action",
-            "Romance",
-            "Fantasy"
+            "أكشن",
+            "رومانسية",
+            "فانتازيا"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -2094,9 +2094,9 @@
             "Sport"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy",
-            "Sport"
+            "دراما",
+            "كوميدي",
+            "رياضي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -2114,7 +2114,7 @@
             "Action"
         ],
         "GenresAr": [
-            "Action"
+            "أكشن"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -2132,7 +2132,7 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Comedy"
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 63,
@@ -2151,8 +2151,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance"
+            "دراما",
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -2186,9 +2186,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Drama"
+            "أكشن",
+            "إثارة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -2208,9 +2208,9 @@
             "History"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "History"
+            "أكشن",
+            "دراما",
+            "تاريخي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 150,
@@ -2248,9 +2248,9 @@
             "Fantasy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Fantasy"
+            "دراما",
+            "رومانسية",
+            "فانتازيا"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 140,
@@ -2288,9 +2288,9 @@
             "Crime"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Crime"
+            "أكشن",
+            "إثارة",
+            "جريمة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 154,
@@ -2310,9 +2310,9 @@
             "Romance"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Romance"
+            "أكشن",
+            "دراما",
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 168,
@@ -2330,7 +2330,7 @@
             "Action"
         ],
         "GenresAr": [
-            "Action"
+            "أكشن"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 150,
@@ -2349,8 +2349,8 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller"
+            "أكشن",
+            "إثارة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 166,
@@ -2368,7 +2368,7 @@
             "Action"
         ],
         "GenresAr": [
-            "Action"
+            "أكشن"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 133,
@@ -2387,8 +2387,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Thriller",
-            "Drama"
+            "إثارة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -2408,9 +2408,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Drama"
+            "أكشن",
+            "إثارة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 139,
@@ -2429,8 +2429,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 156,
@@ -2450,9 +2450,9 @@
             "Family"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy",
-            "Family"
+            "دراما",
+            "كوميدي",
+            "عائلي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 168,
@@ -2472,9 +2472,9 @@
             "Crime"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Crime"
+            "أكشن",
+            "إثارة",
+            "جريمة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 179,
@@ -2492,7 +2492,7 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Thriller"
+            "إثارة"
         ],
         "Format": "Bluray",
         "Runtime": 107,
@@ -2529,8 +2529,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 127,
@@ -2550,9 +2550,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Adventure"
+            "أكشن",
+            "إثارة",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -2590,9 +2590,9 @@
             "History"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "History"
+            "أكشن",
+            "دراما",
+            "تاريخي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 161,
@@ -2610,7 +2610,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 155,
@@ -2628,7 +2628,7 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Thriller"
+            "إثارة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 134,
@@ -2646,7 +2646,7 @@
             "Sport"
         ],
         "GenresAr": [
-            "Sport"
+            "رياضي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -2665,8 +2665,8 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller"
+            "أكشن",
+            "إثارة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 156,
@@ -2686,9 +2686,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Adventure"
+            "أكشن",
+            "دراما",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -2708,9 +2708,9 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Mystery"
+            "أكشن",
+            "إثارة",
+            "غموض"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 156,
@@ -2728,7 +2728,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -2748,9 +2748,9 @@
             "History"
         ],
         "GenresAr": [
-            "Drama",
-            "Biography",
-            "History"
+            "دراما",
+            "سيرة ذاتية",
+            "تاريخي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 146,
@@ -2769,8 +2769,8 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller"
+            "أكشن",
+            "إثارة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 150,
@@ -2789,8 +2789,8 @@
             "Crime"
         ],
         "GenresAr": [
-            "Action",
-            "Crime"
+            "أكشن",
+            "جريمة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -2841,8 +2841,8 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller"
+            "أكشن",
+            "إثارة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 150,
@@ -2862,9 +2862,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 160,
@@ -2884,9 +2884,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Adventure"
+            "أكشن",
+            "دراما",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 150,
@@ -2906,9 +2906,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Romance",
-            "Comedy"
+            "أكشن",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -2928,9 +2928,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Thriller",
-            "Crime",
-            "Drama"
+            "إثارة",
+            "جريمة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 150,
@@ -2968,9 +2968,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Drama"
+            "أكشن",
+            "إثارة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 159,
@@ -2989,7 +2989,7 @@
             "Short"
         ],
         "GenresAr": [
-            "Drama",
+            "دراما",
             "Short"
         ],
         "Format": "1080p WEB-DL",
@@ -3010,9 +3010,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Comedy"
+            "أكشن",
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 163,
@@ -3030,7 +3030,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 122,
@@ -3049,8 +3049,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance"
+            "دراما",
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 118,
@@ -3069,8 +3069,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Horror",
-            "Comedy"
+            "رعب",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 158,
@@ -3088,7 +3088,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 150,
@@ -3107,8 +3107,8 @@
             "Documentary"
         ],
         "GenresAr": [
-            "Drama",
-            "Documentary"
+            "دراما",
+            "وثائقي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -3128,9 +3128,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Drama"
+            "أكشن",
+            "إثارة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 153,
@@ -3149,8 +3149,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Drama"
+            "أكشن",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 144,
@@ -3169,8 +3169,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Drama"
+            "أكشن",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 156,
@@ -3190,9 +3190,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Adventure"
+            "أكشن",
+            "دراما",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 156,
@@ -3212,9 +3212,9 @@
             "Fantasy"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Fantasy"
+            "أكشن",
+            "دراما",
+            "فانتازيا"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 152,
@@ -3233,8 +3233,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 135,
@@ -3253,8 +3253,8 @@
             "Family"
         ],
         "GenresAr": [
-            "Drama",
-            "Family"
+            "دراما",
+            "عائلي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 177,
@@ -3274,9 +3274,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Thriller",
-            "Crime",
-            "Drama"
+            "إثارة",
+            "جريمة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 170,
@@ -3296,9 +3296,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 142,
@@ -3316,7 +3316,7 @@
             "Action"
         ],
         "GenresAr": [
-            "Action"
+            "أكشن"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 158,
@@ -3348,7 +3348,7 @@
             "Action"
         ],
         "GenresAr": [
-            "Action"
+            "أكشن"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 142,
@@ -3368,9 +3368,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Drama"
+            "أكشن",
+            "إثارة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 147,
@@ -3390,9 +3390,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Drama"
+            "أكشن",
+            "إثارة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 176,
@@ -3412,9 +3412,9 @@
             "Sport"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy",
-            "Sport"
+            "دراما",
+            "كوميدي",
+            "رياضي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 112,
@@ -3434,9 +3434,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 150,
@@ -3456,9 +3456,9 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Crime",
-            "Drama",
-            "Mystery"
+            "جريمة",
+            "دراما",
+            "غموض"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 126,
@@ -3478,9 +3478,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "Bluray",
         "Runtime": 115,
@@ -3500,8 +3500,8 @@
             "Sci fi"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
+            "أكشن",
+            "إثارة",
             "Sci fi"
         ],
         "Format": "1080p WEB-DL",
@@ -3520,7 +3520,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 125,
@@ -3538,7 +3538,7 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Thriller"
+            "إثارة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -3558,9 +3558,9 @@
             "Family"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Family"
+            "أنميشن",
+            "كوميدي",
+            "عائلي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 120,
@@ -3579,8 +3579,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Thriller",
-            "Drama"
+            "إثارة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 145,
@@ -3598,7 +3598,7 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Thriller"
+            "إثارة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -3617,8 +3617,8 @@
             "Biography"
         ],
         "GenresAr": [
-            "Drama",
-            "Biography"
+            "دراما",
+            "سيرة ذاتية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 134,
@@ -3638,9 +3638,9 @@
             "Biography"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Biography"
+            "أكشن",
+            "دراما",
+            "سيرة ذاتية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 142,
@@ -3660,9 +3660,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Adventure"
+            "أكشن",
+            "دراما",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 180,
@@ -3682,9 +3682,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Drama"
+            "أكشن",
+            "إثارة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 150,
@@ -3703,8 +3703,8 @@
             "Biography"
         ],
         "GenresAr": [
-            "Drama",
-            "Biography"
+            "دراما",
+            "سيرة ذاتية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 153,
@@ -3724,9 +3724,9 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Crime",
-            "Drama",
-            "Mystery"
+            "جريمة",
+            "دراما",
+            "غموض"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 132,
@@ -3744,7 +3744,7 @@
             "Documentary"
         ],
         "GenresAr": [
-            "Documentary"
+            "وثائقي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -3764,9 +3764,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Comedy",
-            "Adventure"
+            "أكشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 145,
@@ -3786,9 +3786,9 @@
             "Sport"
         ],
         "GenresAr": [
-            "Drama",
-            "Biography",
-            "Sport"
+            "دراما",
+            "سيرة ذاتية",
+            "رياضي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 139,
@@ -3808,9 +3808,9 @@
             "Romance"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Romance"
+            "أكشن",
+            "دراما",
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 126,
@@ -3829,8 +3829,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Romance",
-            "Comedy"
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 109,
@@ -3850,9 +3850,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Crime",
-            "Drama",
-            "Comedy"
+            "جريمة",
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -3872,9 +3872,9 @@
             "Biography"
         ],
         "GenresAr": [
-            "Crime",
-            "Drama",
-            "Biography"
+            "جريمة",
+            "دراما",
+            "سيرة ذاتية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 131,
@@ -3893,8 +3893,8 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller"
+            "أكشن",
+            "إثارة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -3914,9 +3914,9 @@
             "History"
         ],
         "GenresAr": [
-            "Drama",
-            "Biography",
-            "History"
+            "دراما",
+            "سيرة ذاتية",
+            "تاريخي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 181,
@@ -3935,8 +3935,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 118,
@@ -3956,9 +3956,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 138,
@@ -3977,8 +3977,8 @@
             "Horror"
         ],
         "GenresAr": [
-            "Thriller",
-            "Horror"
+            "إثارة",
+            "رعب"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 132,
@@ -3998,9 +3998,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Drama"
+            "أكشن",
+            "إثارة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 130,
@@ -4020,9 +4020,9 @@
             "Family"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Family"
+            "دراما",
+            "رومانسية",
+            "عائلي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 155,
@@ -4042,9 +4042,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Drama"
+            "أكشن",
+            "إثارة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 158,
@@ -4081,8 +4081,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 122,
@@ -4100,7 +4100,7 @@
             "Biography"
         ],
         "GenresAr": [
-            "Biography"
+            "سيرة ذاتية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -4120,9 +4120,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -4160,9 +4160,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Adventure"
+            "أكشن",
+            "إثارة",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 166,
@@ -4199,8 +4199,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Thriller",
-            "Drama"
+            "إثارة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 142,
@@ -4220,9 +4220,9 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Thriller",
-            "Drama",
-            "Mystery"
+            "إثارة",
+            "دراما",
+            "غموض"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 144,
@@ -4241,8 +4241,8 @@
             "Biography"
         ],
         "GenresAr": [
-            "Drama",
-            "Biography"
+            "دراما",
+            "سيرة ذاتية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 147,
@@ -4261,8 +4261,8 @@
             "Crime"
         ],
         "GenresAr": [
-            "Action",
-            "Crime"
+            "أكشن",
+            "جريمة"
         ],
         "Format": "Bluray",
         "Runtime": 129,
@@ -4282,9 +4282,9 @@
             "Documentary"
         ],
         "GenresAr": [
-            "Comedy",
+            "كوميدي",
             "Short",
-            "Documentary"
+            "وثائقي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -4304,9 +4304,9 @@
             "Family"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Family"
+            "أكشن",
+            "دراما",
+            "عائلي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -4325,8 +4325,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 160,
@@ -4346,9 +4346,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Adventure"
+            "أكشن",
+            "دراما",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 157,
@@ -4366,7 +4366,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 134,
@@ -4386,9 +4386,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Adventure"
+            "أكشن",
+            "جريمة",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 119,
@@ -4408,9 +4408,9 @@
             "Romance"
         ],
         "GenresAr": [
-            "Thriller",
-            "Drama",
-            "Romance"
+            "إثارة",
+            "دراما",
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 121,
@@ -4428,7 +4428,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 121,
@@ -4448,9 +4448,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Adventure"
+            "أكشن",
+            "إثارة",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 154,
@@ -4470,9 +4470,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Comedy"
+            "أكشن",
+            "إثارة",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 155,
@@ -4490,7 +4490,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 88,
@@ -4508,7 +4508,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 146,
@@ -4526,7 +4526,7 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Thriller"
+            "إثارة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -4564,9 +4564,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -4604,9 +4604,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Drama"
+            "أكشن",
+            "إثارة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 156,
@@ -4625,8 +4625,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Drama"
+            "أكشن",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 125,
@@ -4644,7 +4644,7 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Thriller"
+            "إثارة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 116,
@@ -4680,7 +4680,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 127,
@@ -4700,9 +4700,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Musical",
-            "Drama",
-            "Comedy"
+            "موسيقي",
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 141,
@@ -4722,9 +4722,9 @@
             "Biography"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Biography"
+            "أكشن",
+            "دراما",
+            "سيرة ذاتية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 134,
@@ -4743,8 +4743,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance"
+            "دراما",
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 102,
@@ -4762,7 +4762,7 @@
             "Family"
         ],
         "GenresAr": [
-            "Family"
+            "عائلي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 112,
@@ -4782,9 +4782,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Adventure"
+            "أكشن",
+            "دراما",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 146,
@@ -4802,7 +4802,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 139,
@@ -4820,7 +4820,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 153,
@@ -4839,8 +4839,8 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller"
+            "أكشن",
+            "إثارة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -4859,8 +4859,8 @@
             "Fantasy"
         ],
         "GenresAr": [
-            "Action",
-            "Fantasy"
+            "أكشن",
+            "فانتازيا"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 156,
@@ -4880,9 +4880,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 134,
@@ -4901,8 +4901,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 156,
@@ -4922,9 +4922,9 @@
             "Biography"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Biography"
+            "أكشن",
+            "جريمة",
+            "سيرة ذاتية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 157,
@@ -4943,8 +4943,8 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Adventure"
+            "أكشن",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 151,
@@ -4963,8 +4963,8 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller"
+            "أكشن",
+            "إثارة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 137,
@@ -4983,8 +4983,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 114,
@@ -5004,9 +5004,9 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Crime",
-            "Drama",
-            "Mystery"
+            "جريمة",
+            "دراما",
+            "غموض"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 139,
@@ -5026,9 +5026,9 @@
             "Fantasy"
         ],
         "GenresAr": [
-            "Drama",
-            "Family",
-            "Fantasy"
+            "دراما",
+            "عائلي",
+            "فانتازيا"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 134,
@@ -5047,8 +5047,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Drama"
+            "أكشن",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -5085,8 +5085,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Drama"
+            "أكشن",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 159,
@@ -5120,9 +5120,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Adventure"
+            "أكشن",
+            "جريمة",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 144,
@@ -5142,9 +5142,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Adventure"
+            "أكشن",
+            "دراما",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 179,
@@ -5163,8 +5163,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Thriller",
-            "Drama"
+            "إثارة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 157,
@@ -5184,9 +5184,9 @@
             "Romance"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Romance"
+            "أكشن",
+            "دراما",
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -5205,8 +5205,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Thriller",
-            "Comedy"
+            "إثارة",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -5225,8 +5225,8 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller"
+            "أكشن",
+            "إثارة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 117,
@@ -5246,9 +5246,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -5267,8 +5267,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance"
+            "دراما",
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -5287,8 +5287,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Thriller",
-            "Drama"
+            "إثارة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 122,
@@ -5308,9 +5308,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Adventure"
+            "أكشن",
+            "دراما",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 164,
@@ -5329,8 +5329,8 @@
             "Crime"
         ],
         "GenresAr": [
-            "Thriller",
-            "Crime"
+            "إثارة",
+            "جريمة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 116,
@@ -5350,9 +5350,9 @@
             "Romance"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Romance"
+            "أكشن",
+            "دراما",
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 146,
@@ -5371,8 +5371,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 171,
@@ -5392,9 +5392,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 129,
@@ -5413,8 +5413,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 102,
@@ -5434,9 +5434,9 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Mystery"
+            "أكشن",
+            "دراما",
+            "غموض"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 145,
@@ -5456,9 +5456,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Adventure"
+            "أكشن",
+            "جريمة",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 144,
@@ -5477,8 +5477,8 @@
             "History"
         ],
         "GenresAr": [
-            "Drama",
-            "History"
+            "دراما",
+            "تاريخي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 124,
@@ -5497,8 +5497,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 107,
@@ -5518,9 +5518,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Crime",
-            "Drama",
-            "Comedy"
+            "جريمة",
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 115,
@@ -5539,8 +5539,8 @@
             "Biography"
         ],
         "GenresAr": [
-            "Drama",
-            "Biography"
+            "دراما",
+            "سيرة ذاتية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 133,
@@ -5559,8 +5559,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Romance",
-            "Comedy"
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 150,
@@ -5580,9 +5580,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Adventure"
+            "أكشن",
+            "دراما",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 156,
@@ -5602,9 +5602,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Comedy"
+            "أكشن",
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 142,
@@ -5624,9 +5624,9 @@
             "Romance"
         ],
         "GenresAr": [
-            "Musical",
-            "Drama",
-            "Romance"
+            "موسيقي",
+            "دراما",
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 121,
@@ -5646,9 +5646,9 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Drama",
-            "Horror",
-            "Mystery"
+            "دراما",
+            "رعب",
+            "غموض"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 93,
@@ -5667,8 +5667,8 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller"
+            "أكشن",
+            "إثارة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 110,
@@ -5688,9 +5688,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Thriller",
-            "Crime",
-            "Drama"
+            "إثارة",
+            "جريمة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 110,
@@ -5709,8 +5709,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Drama"
+            "أكشن",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 139,
@@ -5730,9 +5730,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Comedy"
+            "أكشن",
+            "جريمة",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 109,
@@ -5750,7 +5750,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -5768,7 +5768,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 105,
@@ -5786,7 +5786,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -5805,8 +5805,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Drama"
+            "أكشن",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 155,
@@ -5826,9 +5826,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Adventure"
+            "أكشن",
+            "دراما",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 148,
@@ -5848,9 +5848,9 @@
             "History"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "History"
+            "أكشن",
+            "دراما",
+            "تاريخي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 158,
@@ -5870,9 +5870,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Thriller",
+            "إثارة",
             "Sci fi",
-            "Comedy"
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 125,
@@ -5892,9 +5892,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Thriller",
-            "Drama",
-            "Comedy"
+            "إثارة",
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 165,
@@ -5913,8 +5913,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance"
+            "دراما",
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 141,
@@ -5934,9 +5934,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Adventure"
+            "أكشن",
+            "إثارة",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 146,
@@ -5955,8 +5955,8 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller"
+            "أكشن",
+            "إثارة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 138,
@@ -5975,8 +5975,8 @@
             "Fantasy"
         ],
         "GenresAr": [
-            "Comedy",
-            "Fantasy"
+            "كوميدي",
+            "فانتازيا"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 121,
@@ -5995,8 +5995,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 134,
@@ -6014,7 +6014,7 @@
             "Action"
         ],
         "GenresAr": [
-            "Action"
+            "أكشن"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 121,
@@ -6034,9 +6034,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 150,
@@ -6055,8 +6055,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 139,
@@ -6074,7 +6074,7 @@
             "Romance"
         ],
         "GenresAr": [
-            "Romance"
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 135,
@@ -6094,9 +6094,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Thriller",
-            "Crime",
-            "Drama"
+            "إثارة",
+            "جريمة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 110,
@@ -6115,8 +6115,8 @@
             "Biography"
         ],
         "GenresAr": [
-            "Drama",
-            "Biography"
+            "دراما",
+            "سيرة ذاتية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 157,
@@ -6136,9 +6136,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Comedy"
+            "أكشن",
+            "جريمة",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -6158,9 +6158,9 @@
             "Crime"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Crime"
+            "أكشن",
+            "إثارة",
+            "جريمة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 136,
@@ -6180,9 +6180,9 @@
             "History"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "History"
+            "أكشن",
+            "دراما",
+            "تاريخي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 129,
@@ -6201,8 +6201,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Romance",
-            "Comedy"
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -6220,7 +6220,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 136,
@@ -6238,7 +6238,7 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Comedy"
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 144,
@@ -6257,8 +6257,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Crime",
-            "Comedy"
+            "جريمة",
+            "كوميدي"
         ],
         "Format": "WEB-DL",
         "Runtime": 153,
@@ -6276,7 +6276,7 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Comedy"
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 94,
@@ -6296,8 +6296,8 @@
             "Sci fi"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
+            "أكشن",
+            "إثارة",
             "Sci fi"
         ],
         "Format": "1080p WEB-DL",
@@ -6316,7 +6316,7 @@
             "Action"
         ],
         "GenresAr": [
-            "Action"
+            "أكشن"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 144,
@@ -6336,9 +6336,9 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Thriller",
-            "Drama",
-            "Mystery"
+            "إثارة",
+            "دراما",
+            "غموض"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 153,
@@ -6357,8 +6357,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Thriller",
-            "Drama"
+            "إثارة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 127,
@@ -6378,9 +6378,9 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Crime",
-            "Drama",
-            "Mystery"
+            "جريمة",
+            "دراما",
+            "غموض"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 140,
@@ -6399,8 +6399,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 128,
@@ -6419,8 +6419,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Thriller",
-            "Drama"
+            "إثارة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 121,
@@ -6438,7 +6438,7 @@
             "Romance"
         ],
         "GenresAr": [
-            "Romance"
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 146,
@@ -6456,7 +6456,7 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Comedy"
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -6476,9 +6476,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 154,
@@ -6498,9 +6498,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Drama"
+            "أكشن",
+            "إثارة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 137,
@@ -6518,7 +6518,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 107,
@@ -6538,9 +6538,9 @@
             "Horror"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Horror"
+            "أكشن",
+            "إثارة",
+            "رعب"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 122,
@@ -6559,8 +6559,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 124,
@@ -6578,7 +6578,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "WEB-DL",
         "Runtime": 113,
@@ -6598,9 +6598,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Drama"
+            "أكشن",
+            "إثارة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 155,
@@ -6620,9 +6620,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 150,
@@ -6642,9 +6642,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Horror",
-            "Fantasy",
-            "Adventure"
+            "رعب",
+            "فانتازيا",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 105,
@@ -6664,7 +6664,7 @@
         ],
         "GenresAr": [
             "Short",
-            "Documentary"
+            "وثائقي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 41,
@@ -6683,8 +6683,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Thriller",
-            "Drama"
+            "إثارة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 155,
@@ -6703,8 +6703,8 @@
             "Horror"
         ],
         "GenresAr": [
-            "Thriller",
-            "Horror"
+            "إثارة",
+            "رعب"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 140,
@@ -6724,9 +6724,9 @@
             "Family"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy",
-            "Family"
+            "دراما",
+            "كوميدي",
+            "عائلي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 130,
@@ -6746,9 +6746,9 @@
             "Music"
         ],
         "GenresAr": [
-            "Drama",
-            "History",
-            "Music"
+            "دراما",
+            "تاريخي",
+            "موسيقى"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 119,
@@ -6768,9 +6768,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Drama"
+            "أكشن",
+            "إثارة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 145,
@@ -6790,9 +6790,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 157,
@@ -6811,8 +6811,8 @@
             "Crime"
         ],
         "GenresAr": [
-            "Thriller",
-            "Crime"
+            "إثارة",
+            "جريمة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 122,
@@ -6832,9 +6832,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Crime",
-            "Drama",
-            "Comedy"
+            "جريمة",
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 129,
@@ -6854,9 +6854,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Fantasy",
-            "Adventure"
+            "أكشن",
+            "فانتازيا",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 167,
@@ -6894,9 +6894,9 @@
             "Fantasy"
         ],
         "GenresAr": [
-            "Drama",
-            "Mystery",
-            "Fantasy"
+            "دراما",
+            "غموض",
+            "فانتازيا"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 132,
@@ -6914,7 +6914,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 152,
@@ -6934,9 +6934,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 122,
@@ -6954,7 +6954,7 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Thriller"
+            "إثارة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -6974,9 +6974,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 159,
@@ -6995,8 +6995,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Romance",
-            "Comedy"
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 39,
@@ -7015,8 +7015,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Action",
-            "Romance"
+            "أكشن",
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 145,
@@ -7036,9 +7036,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Adventure"
+            "أكشن",
+            "دراما",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 117,
@@ -7056,7 +7056,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 2,
@@ -7076,9 +7076,9 @@
             "Romance"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Romance"
+            "أكشن",
+            "إثارة",
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 120,
@@ -7098,9 +7098,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 144,
@@ -7120,9 +7120,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Horror",
-            "Comedy",
-            "Adventure"
+            "رعب",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 121,
@@ -7142,9 +7142,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Thriller",
-            "Drama",
-            "Comedy"
+            "إثارة",
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 133,
@@ -7163,8 +7163,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance"
+            "دراما",
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 148,
@@ -7184,9 +7184,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Drama"
+            "أكشن",
+            "إثارة",
+            "دراما"
         ],
         "Format": "WEBRip",
         "Runtime": 157,
@@ -7205,8 +7205,8 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller"
+            "أكشن",
+            "إثارة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 175,
@@ -7226,9 +7226,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "WEBRip",
         "Runtime": 104,
@@ -7248,9 +7248,9 @@
             "Fantasy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy",
-            "Fantasy"
+            "دراما",
+            "كوميدي",
+            "فانتازيا"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 206,
@@ -7270,9 +7270,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Comedy"
+            "أكشن",
+            "جريمة",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 147,
@@ -7291,8 +7291,8 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Drama",
-            "Mystery"
+            "دراما",
+            "غموض"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 122,
@@ -7312,9 +7312,9 @@
             "History"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "History"
+            "أكشن",
+            "دراما",
+            "تاريخي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 135,
@@ -7333,8 +7333,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Horror",
-            "Comedy"
+            "رعب",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 143,
@@ -7353,8 +7353,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Romance",
-            "Comedy"
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 138,
@@ -7374,9 +7374,9 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Thriller",
-            "Crime",
-            "Mystery"
+            "إثارة",
+            "جريمة",
+            "غموض"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 162,
@@ -7395,8 +7395,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -7415,8 +7415,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 125,
@@ -7436,9 +7436,9 @@
             "Family"
         ],
         "GenresAr": [
-            "Drama",
-            "Sport",
-            "Family"
+            "دراما",
+            "رياضي",
+            "عائلي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -7457,8 +7457,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Drama"
+            "أكشن",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 187,
@@ -7477,8 +7477,8 @@
             "Sport"
         ],
         "GenresAr": [
-            "Drama",
-            "Sport"
+            "دراما",
+            "رياضي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 170,
@@ -7497,8 +7497,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance"
+            "دراما",
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -7518,9 +7518,9 @@
             "Western"
         ],
         "GenresAr": [
-            "Thriller",
-            "Crime",
-            "Western"
+            "إثارة",
+            "جريمة",
+            "غربي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 108,
@@ -7540,9 +7540,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Adventure"
+            "أكشن",
+            "جريمة",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 179,
@@ -7562,9 +7562,9 @@
             "Biography"
         ],
         "GenresAr": [
-            "Crime",
-            "Drama",
-            "Biography"
+            "جريمة",
+            "دراما",
+            "سيرة ذاتية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 152,
@@ -7584,9 +7584,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Drama"
+            "أكشن",
+            "إثارة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 151,
@@ -7604,7 +7604,7 @@
             "Romance"
         ],
         "GenresAr": [
-            "Romance"
+            "رومانسية"
         ],
         "Format": "HDrip",
         "Runtime": 158,
@@ -7623,8 +7623,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance"
+            "دراما",
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 112,
@@ -7644,9 +7644,9 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Crime",
-            "Drama",
-            "Mystery"
+            "جريمة",
+            "دراما",
+            "غموض"
         ],
         "Format": "720p HD",
         "Runtime": 118,
@@ -7666,9 +7666,9 @@
             "History"
         ],
         "GenresAr": [
-            "Drama",
-            "Biography",
-            "History"
+            "دراما",
+            "سيرة ذاتية",
+            "تاريخي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 162,
@@ -7688,9 +7688,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Comedy"
+            "أكشن",
+            "جريمة",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 130,
@@ -7710,9 +7710,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Comedy",
-            "Adventure"
+            "أكشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 158,
@@ -7732,9 +7732,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Crime",
-            "Drama",
-            "Comedy"
+            "جريمة",
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 115,
@@ -7753,8 +7753,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Musical",
-            "Romance"
+            "موسيقي",
+            "رومانسية"
         ],
         "Format": "WEBRip",
         "Runtime": 141,
@@ -7774,9 +7774,9 @@
             "Biography"
         ],
         "GenresAr": [
-            "Thriller",
-            "Crime",
-            "Biography"
+            "إثارة",
+            "جريمة",
+            "سيرة ذاتية"
         ],
         "Format": "N/A",
         "Runtime": 140,
@@ -7796,9 +7796,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Drama"
+            "أكشن",
+            "إثارة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 103,
@@ -7816,7 +7816,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 75,
@@ -7835,8 +7835,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Romance",
-            "Comedy"
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 140,
@@ -7854,7 +7854,7 @@
             "Horror"
         ],
         "GenresAr": [
-            "Horror"
+            "رعب"
         ],
         "Format": "WEB-DL",
         "Runtime": null,
@@ -7873,8 +7873,8 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller"
+            "أكشن",
+            "إثارة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 116,
@@ -7908,9 +7908,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Drama"
+            "أكشن",
+            "إثارة",
+            "دراما"
         ],
         "Format": "WEB-DL",
         "Runtime": 117,
@@ -7929,8 +7929,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 132,
@@ -7950,9 +7950,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": null,
@@ -7972,9 +7972,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy",
-            "Adventure"
+            "دراما",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": null,
@@ -7994,9 +7994,9 @@
             "Family"
         ],
         "GenresAr": [
-            "Drama",
-            "Sport",
-            "Family"
+            "دراما",
+            "رياضي",
+            "عائلي"
         ],
         "Format": "Bluray",
         "Runtime": null,
@@ -8016,9 +8016,9 @@
             "Romance"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Romance"
+            "أكشن",
+            "دراما",
+            "رومانسية"
         ],
         "Format": "WEB-DL",
         "Runtime": 148,
@@ -8038,9 +8038,9 @@
             "Crime"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Crime"
+            "أكشن",
+            "إثارة",
+            "جريمة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 145,
@@ -8059,8 +8059,8 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Thriller",
-            "Mystery"
+            "إثارة",
+            "غموض"
         ],
         "Format": "WEB-DL",
         "Runtime": 100,
@@ -8078,7 +8078,7 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Thriller"
+            "إثارة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 120,
@@ -8096,7 +8096,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 120,
@@ -8130,9 +8130,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Comedy"
+            "أكشن",
+            "جريمة",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 152,
@@ -8152,9 +8152,9 @@
             "Family"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy",
-            "Family"
+            "دراما",
+            "كوميدي",
+            "عائلي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 148,
@@ -8172,7 +8172,7 @@
             "Action"
         ],
         "GenresAr": [
-            "Action"
+            "أكشن"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 120,
@@ -8191,8 +8191,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Romance",
-            "Comedy"
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 141,
@@ -8212,9 +8212,9 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Crime",
-            "Drama",
-            "Mystery"
+            "جريمة",
+            "دراما",
+            "غموض"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 135,
@@ -8234,9 +8234,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Comedy"
+            "أكشن",
+            "جريمة",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 157,
@@ -8257,10 +8257,10 @@
             "Romance"
         ],
         "GenresAr": [
-            "Musical",
-            "Action",
-            "Drama",
-            "Romance"
+            "موسيقي",
+            "أكشن",
+            "دراما",
+            "رومانسية"
         ],
         "Format": "DVDRip",
         "Runtime": 165,
@@ -8280,9 +8280,9 @@
             "Family"
         ],
         "GenresAr": [
-            "Drama",
-            "Sport",
-            "Family"
+            "دراما",
+            "رياضي",
+            "عائلي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 107,
@@ -8301,8 +8301,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 142,
@@ -8323,10 +8323,10 @@
             "Fantasy"
         ],
         "GenresAr": [
-            "Thriller",
-            "Romance",
-            "Mystery",
-            "Fantasy"
+            "إثارة",
+            "رومانسية",
+            "غموض",
+            "فانتازيا"
         ],
         "Format": "WEBRip",
         "Runtime": 130,
@@ -8346,9 +8346,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 153,
@@ -8368,9 +8368,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "WEBRip",
         "Runtime": 117,
@@ -8390,9 +8390,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 144,
@@ -8412,9 +8412,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 139,
@@ -8432,7 +8432,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -8452,9 +8452,9 @@
             "Fantasy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy",
-            "Fantasy"
+            "دراما",
+            "كوميدي",
+            "فانتازيا"
         ],
         "Format": "Bluray",
         "Runtime": 155,
@@ -8473,8 +8473,8 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Adventure"
+            "أكشن",
+            "مغامرة"
         ],
         "Format": "WEBRip",
         "Runtime": 175,
@@ -8493,8 +8493,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Musical",
-            "Romance"
+            "موسيقي",
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -8512,7 +8512,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 98,
@@ -8531,8 +8531,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Drama"
+            "أكشن",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 145,
@@ -8551,8 +8551,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Thriller",
-            "Drama"
+            "إثارة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 151,
@@ -8571,8 +8571,8 @@
             "Music"
         ],
         "GenresAr": [
-            "Drama",
-            "Music"
+            "دراما",
+            "موسيقى"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 127,
@@ -8591,8 +8591,8 @@
             "Crime"
         ],
         "GenresAr": [
-            "Action",
-            "Crime"
+            "أكشن",
+            "جريمة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 135,
@@ -8611,8 +8611,8 @@
             "Documentary"
         ],
         "GenresAr": [
-            "Biography",
-            "Documentary"
+            "سيرة ذاتية",
+            "وثائقي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 58,
@@ -8631,8 +8631,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance"
+            "دراما",
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 142,
@@ -8652,9 +8652,9 @@
             "Romance"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Romance"
+            "أكشن",
+            "دراما",
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 147,
@@ -8674,9 +8674,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Musical",
-            "Romance",
-            "Comedy"
+            "موسيقي",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 106,
@@ -8694,7 +8694,7 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Comedy"
+            "كوميدي"
         ],
         "Format": "HDrip",
         "Runtime": 100,
@@ -8713,8 +8713,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Horror",
-            "Comedy"
+            "رعب",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 134,
@@ -8733,8 +8733,8 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Thriller",
-            "Mystery"
+            "إثارة",
+            "غموض"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 91,
@@ -8753,8 +8753,8 @@
             "Biography"
         ],
         "GenresAr": [
-            "Drama",
-            "Biography"
+            "دراما",
+            "سيرة ذاتية"
         ],
         "Format": "HDrip",
         "Runtime": 154,
@@ -8773,8 +8773,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 114,
@@ -8792,7 +8792,7 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Comedy"
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 153,
@@ -8813,10 +8813,10 @@
             "Fantasy"
         ],
         "GenresAr": [
-            "Musical",
-            "Action",
-            "Thriller",
-            "Fantasy"
+            "موسيقي",
+            "أكشن",
+            "إثارة",
+            "فانتازيا"
         ],
         "Format": "WEB-DL",
         "Runtime": 180,
@@ -8835,8 +8835,8 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller"
+            "أكشن",
+            "إثارة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 153,
@@ -8855,8 +8855,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 119,
@@ -8878,11 +8878,11 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "War",
-            "Fantasy",
-            "Adventure"
+            "أكشن",
+            "دراما",
+            "حرب",
+            "فانتازيا",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 102,
@@ -8903,10 +8903,10 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Thriller",
-            "Crime",
-            "Drama",
-            "Mystery"
+            "إثارة",
+            "جريمة",
+            "دراما",
+            "غموض"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 120,
@@ -8926,9 +8926,9 @@
             "Crime"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Crime"
+            "أكشن",
+            "إثارة",
+            "جريمة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 146,
@@ -8947,8 +8947,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "WEB-DL",
         "Runtime": 98,
@@ -8968,9 +8968,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 106,
@@ -8990,9 +8990,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy",
-            "Adventure"
+            "دراما",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 129,
@@ -9012,9 +9012,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Biography",
-            "Comedy"
+            "دراما",
+            "سيرة ذاتية",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 109,
@@ -9033,8 +9033,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Crime",
-            "Drama"
+            "جريمة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 125,
@@ -9053,8 +9053,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance"
+            "دراما",
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 106,
@@ -9072,7 +9072,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 95,
@@ -9091,7 +9091,7 @@
             "Sci fi"
         ],
         "GenresAr": [
-            "Action",
+            "أكشن",
             "Sci fi"
         ],
         "Format": "WEBRip",
@@ -9111,8 +9111,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Romance",
-            "Comedy"
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 138,
@@ -9131,8 +9131,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance"
+            "دراما",
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 99,
@@ -9152,9 +9152,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Thriller",
-            "Drama",
-            "Comedy"
+            "إثارة",
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 108,
@@ -9173,8 +9173,8 @@
             "Biography"
         ],
         "GenresAr": [
-            "Drama",
-            "Biography"
+            "دراما",
+            "سيرة ذاتية"
         ],
         "Format": "WEB-DL",
         "Runtime": 120,
@@ -9192,7 +9192,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 130,
@@ -9211,8 +9211,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Drama"
+            "أكشن",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 150,
@@ -9232,9 +9232,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 144,
@@ -9255,10 +9255,10 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama",
-            "Comedy"
+            "أكشن",
+            "جريمة",
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 149,
@@ -9277,8 +9277,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Horror",
-            "Comedy"
+            "رعب",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 140,
@@ -9297,8 +9297,8 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Drama",
-            "Mystery"
+            "دراما",
+            "غموض"
         ],
         "Format": "WEB-DL",
         "Runtime": 124,
@@ -9316,7 +9316,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 135,
@@ -9336,9 +9336,9 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Drama",
-            "Horror",
-            "Mystery"
+            "دراما",
+            "رعب",
+            "غموض"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 90,
@@ -9357,8 +9357,8 @@
             "Family"
         ],
         "GenresAr": [
-            "Drama",
-            "Family"
+            "دراما",
+            "عائلي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -9376,7 +9376,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "WEB-DL",
         "Runtime": 80,
@@ -9396,9 +9396,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Crime",
-            "Drama",
-            "Comedy"
+            "جريمة",
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 133,
@@ -9418,9 +9418,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy",
-            "Adventure"
+            "دراما",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 140,
@@ -9440,9 +9440,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Comedy"
+            "أكشن",
+            "دراما",
+            "كوميدي"
         ],
         "Format": "WEB-DL",
         "Runtime": 149,
@@ -9462,9 +9462,9 @@
             "Crime"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Crime"
+            "أكشن",
+            "إثارة",
+            "جريمة"
         ],
         "Format": "WEB-DL",
         "Runtime": 160,
@@ -9482,7 +9482,7 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Comedy"
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 120,
@@ -9501,8 +9501,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "WEB-DL",
         "Runtime": 136,
@@ -9520,7 +9520,7 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Comedy"
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 119,
@@ -9539,8 +9539,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Drama"
+            "أكشن",
+            "دراما"
         ],
         "Format": "WEB-DL",
         "Runtime": 141,
@@ -9559,8 +9559,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Romance",
-            "Comedy"
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -9578,7 +9578,7 @@
             "Romance"
         ],
         "GenresAr": [
-            "Romance"
+            "رومانسية"
         ],
         "Format": "WEB-DL",
         "Runtime": 144,
@@ -9597,8 +9597,8 @@
             "Horror"
         ],
         "GenresAr": [
-            "Thriller",
-            "Horror"
+            "إثارة",
+            "رعب"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 120,
@@ -9618,9 +9618,9 @@
             "Biography"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Biography"
+            "أكشن",
+            "دراما",
+            "سيرة ذاتية"
         ],
         "Format": "Bluray",
         "Runtime": 148,
@@ -9639,8 +9639,8 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller"
+            "أكشن",
+            "إثارة"
         ],
         "Format": "WEB-DL",
         "Runtime": 147,
@@ -9659,8 +9659,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "WEB-DL",
         "Runtime": 145,
@@ -9678,7 +9678,7 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Comedy"
+            "كوميدي"
         ],
         "Format": "WEB-DL",
         "Runtime": 149,
@@ -9700,11 +9700,11 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Crime",
-            "Drama",
-            "Mystery"
+            "أكشن",
+            "إثارة",
+            "جريمة",
+            "دراما",
+            "غموض"
         ],
         "Format": "WEB-DL",
         "Runtime": 125,
@@ -9724,9 +9724,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Romance",
-            "Comedy"
+            "أكشن",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 119,
@@ -9745,8 +9745,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 114,
@@ -9766,9 +9766,9 @@
             "Music"
         ],
         "GenresAr": [
-            "Romance",
-            "Comedy",
-            "Music"
+            "رومانسية",
+            "كوميدي",
+            "موسيقى"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 128,
@@ -9788,9 +9788,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Drama"
+            "أكشن",
+            "إثارة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 130,
@@ -9810,9 +9810,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Thriller",
-            "Crime",
-            "Drama"
+            "إثارة",
+            "جريمة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 77,
@@ -9832,9 +9832,9 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Thriller",
-            "Drama",
-            "Mystery"
+            "إثارة",
+            "دراما",
+            "غموض"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 98,
@@ -9853,8 +9853,8 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller"
+            "أكشن",
+            "إثارة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 140,
@@ -9875,8 +9875,8 @@
         ],
         "GenresAr": [
             "Sci fi",
-            "Horror",
-            "Fantasy"
+            "رعب",
+            "فانتازيا"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 119,
@@ -9894,7 +9894,7 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Comedy"
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 110,
@@ -9913,8 +9913,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Drama"
+            "أكشن",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 133,
@@ -9932,7 +9932,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 95,
@@ -9952,9 +9952,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Thriller",
-            "Crime",
-            "Drama"
+            "إثارة",
+            "جريمة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 98,
@@ -9974,9 +9974,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "DVDRip",
         "Runtime": 145,
@@ -9995,8 +9995,8 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller"
+            "أكشن",
+            "إثارة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 133,
@@ -10014,7 +10014,7 @@
             "Biography"
         ],
         "GenresAr": [
-            "Biography"
+            "سيرة ذاتية"
         ],
         "Format": "WEB-DL",
         "Runtime": 112,
@@ -10032,7 +10032,7 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Comedy"
+            "كوميدي"
         ],
         "Format": "WEBRip",
         "Runtime": null,
@@ -10052,9 +10052,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "WEBRip",
         "Runtime": null,
@@ -10074,9 +10074,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Thriller",
-            "Crime",
-            "Drama"
+            "إثارة",
+            "جريمة",
+            "دراما"
         ],
         "Format": "WEB-DL",
         "Runtime": 149,
@@ -10094,7 +10094,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "WEB-DL",
         "Runtime": null,
@@ -10113,8 +10113,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "WEB-DL",
         "Runtime": 119,
@@ -10150,7 +10150,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "WEB-DL",
         "Runtime": 147,
@@ -10169,8 +10169,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Musical",
-            "Drama"
+            "موسيقي",
+            "دراما"
         ],
         "Format": "WEB-DL",
         "Runtime": null,
@@ -10188,7 +10188,7 @@
             "Horror"
         ],
         "GenresAr": [
-            "Horror"
+            "رعب"
         ],
         "Format": "WEB-DL",
         "Runtime": 94,
@@ -10206,7 +10206,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "WEB-DL",
         "Runtime": 132,
@@ -10224,7 +10224,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "WEB-DL",
         "Runtime": 111,
@@ -10243,8 +10243,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "WEB-DL",
         "Runtime": 96,
@@ -10263,8 +10263,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "WEB-DL",
         "Runtime": 124,
@@ -10283,8 +10283,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Comedy"
+            "أكشن",
+            "كوميدي"
         ],
         "Format": "WEB-DL",
         "Runtime": 130,
@@ -10302,7 +10302,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "WEB-DL",
         "Runtime": 114,
@@ -10322,9 +10322,9 @@
             "Fantasy"
         ],
         "GenresAr": [
-            "Drama",
-            "Horror",
-            "Fantasy"
+            "دراما",
+            "رعب",
+            "فانتازيا"
         ],
         "Format": "WEB-DL",
         "Runtime": 107,
@@ -10342,7 +10342,7 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Comedy"
+            "كوميدي"
         ],
         "Format": "WEB-DL",
         "Runtime": 108,
@@ -10361,8 +10361,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Thriller",
-            "Drama"
+            "إثارة",
+            "دراما"
         ],
         "Format": "WEB-DL",
         "Runtime": 120,
@@ -10381,8 +10381,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "WEB-DL",
         "Runtime": 143,
@@ -10401,8 +10401,8 @@
             "Crime"
         ],
         "GenresAr": [
-            "Action",
-            "Crime"
+            "أكشن",
+            "جريمة"
         ],
         "Format": "WEB-DL",
         "Runtime": 135,
@@ -10421,8 +10421,8 @@
             "History"
         ],
         "GenresAr": [
-            "Drama",
-            "History"
+            "دراما",
+            "تاريخي"
         ],
         "Format": "WEB-DL",
         "Runtime": 130,
@@ -10440,7 +10440,7 @@
             "Romance"
         ],
         "GenresAr": [
-            "Romance"
+            "رومانسية"
         ],
         "Format": "WEB-DL",
         "Runtime": 154,
@@ -10460,9 +10460,9 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Thriller",
-            "Crime",
-            "Mystery"
+            "إثارة",
+            "جريمة",
+            "غموض"
         ],
         "Format": "WEB-DL",
         "Runtime": 144,
@@ -10480,7 +10480,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "WEB-DL",
         "Runtime": 142,
@@ -10499,8 +10499,8 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller"
+            "أكشن",
+            "إثارة"
         ],
         "Format": "Bluray",
         "Runtime": 143,
@@ -10519,8 +10519,8 @@
             "Crime"
         ],
         "GenresAr": [
-            "Thriller",
-            "Crime"
+            "إثارة",
+            "جريمة"
         ],
         "Format": "WEB-DL",
         "Runtime": 134,
@@ -10538,7 +10538,7 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Thriller"
+            "إثارة"
         ],
         "Format": "WEB-DL",
         "Runtime": 106,
@@ -10556,7 +10556,7 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Thriller"
+            "إثارة"
         ],
         "Format": "HDrip",
         "Runtime": 141,
@@ -10588,7 +10588,7 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Comedy"
+            "كوميدي"
         ],
         "Format": "WEB-DL",
         "Runtime": 111,
@@ -10607,8 +10607,8 @@
             "Music"
         ],
         "GenresAr": [
-            "Drama",
-            "Music"
+            "دراما",
+            "موسيقى"
         ],
         "Format": "WEB-DL",
         "Runtime": 146,
@@ -10628,9 +10628,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "WEB-DL",
         "Runtime": 103,
@@ -10650,9 +10650,9 @@
             "History"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "History"
+            "أكشن",
+            "دراما",
+            "تاريخي"
         ],
         "Format": "WEB-DL",
         "Runtime": 165,
@@ -10672,9 +10672,9 @@
             "Biography"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Biography"
+            "أكشن",
+            "دراما",
+            "سيرة ذاتية"
         ],
         "Format": "WEB-DL",
         "Runtime": 135,
@@ -10693,8 +10693,8 @@
             "Family"
         ],
         "GenresAr": [
-            "Drama",
-            "Family"
+            "دراما",
+            "عائلي"
         ],
         "Format": "Bluray",
         "Runtime": 165,
@@ -10712,7 +10712,7 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Thriller"
+            "إثارة"
         ],
         "Format": "WEB-DL",
         "Runtime": 120,
@@ -10732,9 +10732,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Comedy"
+            "أكشن",
+            "دراما",
+            "كوميدي"
         ],
         "Format": "WEB-DL",
         "Runtime": 170,
@@ -10753,8 +10753,8 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller"
+            "أكشن",
+            "إثارة"
         ],
         "Format": "FullHD",
         "Runtime": 140,
@@ -10772,7 +10772,7 @@
             "Action"
         ],
         "GenresAr": [
-            "Action"
+            "أكشن"
         ],
         "Format": "FullHD",
         "Runtime": 159,
@@ -10790,7 +10790,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "WEB-DL",
         "Runtime": 120,
@@ -10809,8 +10809,8 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Thriller",
-            "Mystery"
+            "إثارة",
+            "غموض"
         ],
         "Format": "WEB-DL",
         "Runtime": 101,
@@ -10830,9 +10830,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "Bluray",
         "Runtime": 113,
@@ -10851,8 +10851,8 @@
             "Biography"
         ],
         "GenresAr": [
-            "Drama",
-            "Biography"
+            "دراما",
+            "سيرة ذاتية"
         ],
         "Format": "WEBRip",
         "Runtime": 147,
@@ -10871,8 +10871,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Action",
-            "Romance"
+            "أكشن",
+            "رومانسية"
         ],
         "Format": "WEBRip",
         "Runtime": 150,
@@ -10892,9 +10892,9 @@
             "Music"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Music"
+            "أكشن",
+            "إثارة",
+            "موسيقى"
         ],
         "Format": "Bluray",
         "Runtime": 154,
@@ -10913,8 +10913,8 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller"
+            "أكشن",
+            "إثارة"
         ],
         "Format": "WEB-DL",
         "Runtime": 170,
@@ -10933,8 +10933,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance"
+            "دراما",
+            "رومانسية"
         ],
         "Format": "WEB-DL",
         "Runtime": 143,
@@ -10954,9 +10954,9 @@
             "History"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "History"
+            "أكشن",
+            "دراما",
+            "تاريخي"
         ],
         "Format": "WEB-DL",
         "Runtime": 171,
@@ -10976,9 +10976,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "WEB-DL",
         "Runtime": 134,
@@ -10998,9 +10998,9 @@
             "Family"
         ],
         "GenresAr": [
-            "Crime",
-            "Drama",
-            "Family"
+            "جريمة",
+            "دراما",
+            "عائلي"
         ],
         "Format": "N/A",
         "Runtime": 120,
@@ -11019,8 +11019,8 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller"
+            "أكشن",
+            "إثارة"
         ],
         "Format": "WEB-DL",
         "Runtime": 125,
@@ -11039,8 +11039,8 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller"
+            "أكشن",
+            "إثارة"
         ],
         "Format": "WEB-DL",
         "Runtime": 120,
@@ -11059,8 +11059,8 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller"
+            "أكشن",
+            "إثارة"
         ],
         "Format": "WEB-DL",
         "Runtime": 141,
@@ -11078,7 +11078,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "WEB-DL",
         "Runtime": 112,
@@ -11098,9 +11098,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Drama"
+            "أكشن",
+            "إثارة",
+            "دراما"
         ],
         "Format": "WEBRip",
         "Runtime": 146,
@@ -11120,9 +11120,9 @@
             "Romance"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Romance"
+            "أكشن",
+            "دراما",
+            "رومانسية"
         ],
         "Format": "WEB-DL",
         "Runtime": 153,
@@ -11141,8 +11141,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Romance",
-            "Comedy"
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "HDrip",
         "Runtime": 131,
@@ -11161,8 +11161,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance"
+            "دراما",
+            "رومانسية"
         ],
         "Format": "WEB-DL",
         "Runtime": 172,
@@ -11182,9 +11182,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "WEB-DL",
         "Runtime": 145,
@@ -11204,9 +11204,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "WEBRip",
         "Runtime": 140,
@@ -11226,9 +11226,9 @@
             "Crime"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Crime"
+            "أكشن",
+            "إثارة",
+            "جريمة"
         ],
         "Format": "WEB-DL",
         "Runtime": 147,
@@ -11247,8 +11247,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance"
+            "دراما",
+            "رومانسية"
         ],
         "Format": "WEBRip",
         "Runtime": 115,
@@ -11267,8 +11267,8 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller"
+            "أكشن",
+            "إثارة"
         ],
         "Format": "WEB-DL",
         "Runtime": 131,
@@ -11288,9 +11288,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "WEB-DL",
         "Runtime": 156,
@@ -11310,9 +11310,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Drama"
+            "أكشن",
+            "إثارة",
+            "دراما"
         ],
         "Format": "WEBRip",
         "Runtime": 141,
@@ -11331,8 +11331,8 @@
             "Sport"
         ],
         "GenresAr": [
-            "Drama",
-            "Sport"
+            "دراما",
+            "رياضي"
         ],
         "Format": "WEB-DL",
         "Runtime": 160,
@@ -11352,9 +11352,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 138,
@@ -11373,8 +11373,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Comedy"
+            "أكشن",
+            "كوميدي"
         ],
         "Format": "WEBRip",
         "Runtime": 135,
@@ -11393,8 +11393,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Horror",
-            "Comedy"
+            "رعب",
+            "كوميدي"
         ],
         "Format": "WEBRip",
         "Runtime": 128,
@@ -11414,9 +11414,9 @@
             "History"
         ],
         "GenresAr": [
-            "Thriller",
-            "Drama",
-            "History"
+            "إثارة",
+            "دراما",
+            "تاريخي"
         ],
         "Format": "WEBRip",
         "Runtime": 123,
@@ -11435,8 +11435,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Drama"
+            "أكشن",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 172,
@@ -11454,7 +11454,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "WEBRip",
         "Runtime": 116,
@@ -11474,9 +11474,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Crime",
-            "Drama",
-            "Comedy"
+            "جريمة",
+            "دراما",
+            "كوميدي"
         ],
         "Format": "WEB-DL",
         "Runtime": 109,
@@ -11494,7 +11494,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "WEBRip",
         "Runtime": null,
@@ -11514,9 +11514,9 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Crime",
-            "Drama",
-            "Mystery"
+            "جريمة",
+            "دراما",
+            "غموض"
         ],
         "Format": "WEB-DL",
         "Runtime": 121,
@@ -11534,7 +11534,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "Bluray",
         "Runtime": 189,
@@ -11554,9 +11554,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "WEBRip",
         "Runtime": 120,
@@ -11576,9 +11576,9 @@
             "Music"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Music"
+            "دراما",
+            "رومانسية",
+            "موسيقى"
         ],
         "Format": "Bluray",
         "Runtime": 153,
@@ -11598,9 +11598,9 @@
             "War"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "War"
+            "أكشن",
+            "دراما",
+            "حرب"
         ],
         "Format": "HDrip",
         "Runtime": 148,
@@ -11620,9 +11620,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Comedy",
-            "Adventure"
+            "أكشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "DVDRip",
         "Runtime": 137,
@@ -11642,9 +11642,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "WEB-DL",
         "Runtime": 164,
@@ -11663,8 +11663,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 124,
@@ -11684,9 +11684,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Drama",
-            "Family",
-            "Adventure"
+            "دراما",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "WEBRip",
         "Runtime": 104,
@@ -11706,7 +11706,7 @@
         ],
         "GenresAr": [
             "Short",
-            "Documentary"
+            "وثائقي"
         ],
         "Format": "WEBRip",
         "Runtime": 26,
@@ -11726,9 +11726,9 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Crime",
-            "Horror",
-            "Mystery"
+            "جريمة",
+            "رعب",
+            "غموض"
         ],
         "Format": "WEBRip",
         "Runtime": 121,
@@ -11748,9 +11748,9 @@
             "Romance"
         ],
         "GenresAr": [
-            "Crime",
-            "Drama",
-            "Romance"
+            "جريمة",
+            "دراما",
+            "رومانسية"
         ],
         "Format": "WEBRip",
         "Runtime": 113,
@@ -11770,9 +11770,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy",
-            "Adventure"
+            "دراما",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "WEBRip",
         "Runtime": 124,
@@ -11792,9 +11792,9 @@
             "Sport"
         ],
         "GenresAr": [
-            "Drama",
-            "Biography",
-            "Sport"
+            "دراما",
+            "سيرة ذاتية",
+            "رياضي"
         ],
         "Format": "Bluray",
         "Runtime": 220,
@@ -11813,8 +11813,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Drama"
+            "أكشن",
+            "دراما"
         ],
         "Format": "HD",
         "Runtime": 170,
@@ -11832,7 +11832,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "Bluray",
         "Runtime": 106,
@@ -11851,8 +11851,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "WEB-DL",
         "Runtime": 122,
@@ -11870,7 +11870,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "WEBRip",
         "Runtime": 97,
@@ -11889,8 +11889,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "WEBRip",
         "Runtime": 102,
@@ -11908,7 +11908,7 @@
             "Family"
         ],
         "GenresAr": [
-            "Family"
+            "عائلي"
         ],
         "Format": "WEBRip",
         "Runtime": 130,
@@ -11928,9 +11928,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Crime",
-            "Drama",
-            "Comedy"
+            "جريمة",
+            "دراما",
+            "كوميدي"
         ],
         "Format": "WEB-DL",
         "Runtime": 105,
@@ -11949,8 +11949,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Drama"
+            "أكشن",
+            "دراما"
         ],
         "Format": "WEBRip",
         "Runtime": 185,
@@ -11969,8 +11969,8 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Adventure"
+            "أكشن",
+            "مغامرة"
         ],
         "Format": "N/A",
         "Runtime": 165,
@@ -11990,9 +11990,9 @@
             "Sport"
         ],
         "GenresAr": [
-            "Drama",
-            "History",
-            "Sport"
+            "دراما",
+            "تاريخي",
+            "رياضي"
         ],
         "Format": "WEB-DL",
         "Runtime": 131,
@@ -12011,8 +12011,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Romance",
-            "Comedy"
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "HDrip",
         "Runtime": 125,
@@ -12032,9 +12032,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Thriller",
-            "Crime",
-            "Comedy"
+            "إثارة",
+            "جريمة",
+            "كوميدي"
         ],
         "Format": "WEBRip",
         "Runtime": 139,
@@ -12052,7 +12052,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "WEB-DL",
         "Runtime": 112,
@@ -12072,9 +12072,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Comedy"
+            "أكشن",
+            "جريمة",
+            "كوميدي"
         ],
         "Format": "WEBRip",
         "Runtime": 155,
@@ -12094,9 +12094,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Drama"
+            "أكشن",
+            "إثارة",
+            "دراما"
         ],
         "Format": "DVDRip",
         "Runtime": 105,
@@ -12115,8 +12115,8 @@
             "Music"
         ],
         "GenresAr": [
-            "Drama",
-            "Music"
+            "دراما",
+            "موسيقى"
         ],
         "Format": "DVDRip",
         "Runtime": 119,
@@ -12135,8 +12135,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Romance",
-            "Comedy"
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 119,
@@ -12155,8 +12155,8 @@
             "Biography"
         ],
         "GenresAr": [
-            "Drama",
-            "Biography"
+            "دراما",
+            "سيرة ذاتية"
         ],
         "Format": "WEB-DL",
         "Runtime": 116,
@@ -12176,9 +12176,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "Bluray",
         "Runtime": 128,
@@ -12198,9 +12198,9 @@
             "Fantasy"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Fantasy"
+            "أكشن",
+            "دراما",
+            "فانتازيا"
         ],
         "Format": "Bluray",
         "Runtime": 166,
@@ -12220,9 +12220,9 @@
             "Sport"
         ],
         "GenresAr": [
-            "Drama",
-            "History",
-            "Sport"
+            "دراما",
+            "تاريخي",
+            "رياضي"
         ],
         "Format": "WEBRip",
         "Runtime": 153,
@@ -12241,8 +12241,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Drama"
+            "أكشن",
+            "دراما"
         ],
         "Format": "WEBRip",
         "Runtime": 160,
@@ -12261,8 +12261,8 @@
             "Biography"
         ],
         "GenresAr": [
-            "Drama",
-            "Biography"
+            "دراما",
+            "سيرة ذاتية"
         ],
         "Format": "WEBRip",
         "Runtime": 161,
@@ -12281,8 +12281,8 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller"
+            "أكشن",
+            "إثارة"
         ],
         "Format": "WEBRip",
         "Runtime": 155,
@@ -12302,9 +12302,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Adventure"
+            "أكشن",
+            "دراما",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 197,
@@ -12323,8 +12323,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 155,
@@ -12342,7 +12342,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "Bluray",
         "Runtime": 100,
@@ -12362,9 +12362,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "WEB-DL",
         "Runtime": 159,
@@ -12383,8 +12383,8 @@
             "Biography"
         ],
         "GenresAr": [
-            "Drama",
-            "Biography"
+            "دراما",
+            "سيرة ذاتية"
         ],
         "Format": "Bluray",
         "Runtime": 140,
@@ -12404,9 +12404,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "DVDRip",
         "Runtime": 140,
@@ -12426,9 +12426,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Drama"
+            "أكشن",
+            "إثارة",
+            "دراما"
         ],
         "Format": "WEBRip",
         "Runtime": 140,
@@ -12447,8 +12447,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance"
+            "دراما",
+            "رومانسية"
         ],
         "Format": "WEB-DL",
         "Runtime": 115,
@@ -12468,9 +12468,9 @@
             "History"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "History"
+            "أكشن",
+            "دراما",
+            "تاريخي"
         ],
         "Format": "WEBRip",
         "Runtime": 129,
@@ -12490,9 +12490,9 @@
             "Crime"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Crime"
+            "أكشن",
+            "إثارة",
+            "جريمة"
         ],
         "Format": "WEB-DL",
         "Runtime": 159,
@@ -12511,8 +12511,8 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller"
+            "أكشن",
+            "إثارة"
         ],
         "Format": "Bluray",
         "Runtime": 144,
@@ -12532,9 +12532,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 149,
@@ -12554,9 +12554,9 @@
             "Sport"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Sport"
+            "أكشن",
+            "دراما",
+            "رياضي"
         ],
         "Format": "DVDRip",
         "Runtime": 155,
@@ -12575,8 +12575,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "WEB-DL",
         "Runtime": 102,
@@ -12596,9 +12596,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "HDrip",
         "Runtime": 158,
@@ -12618,9 +12618,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Thriller",
-            "Crime",
-            "Drama"
+            "إثارة",
+            "جريمة",
+            "دراما"
         ],
         "Format": "HDrip",
         "Runtime": 131,
@@ -12638,7 +12638,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "WEBRip",
         "Runtime": 120,
@@ -12658,9 +12658,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Comedy"
+            "أكشن",
+            "جريمة",
+            "كوميدي"
         ],
         "Format": "WEB-DL",
         "Runtime": 170,
@@ -12680,9 +12680,9 @@
             "History"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "History"
+            "دراما",
+            "رومانسية",
+            "تاريخي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 163,
@@ -12702,9 +12702,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "720p HD",
         "Runtime": 136,
@@ -12723,8 +12723,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Romance",
-            "Comedy"
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "WEBRip",
         "Runtime": 133,
@@ -12744,9 +12744,9 @@
             "Music"
         ],
         "GenresAr": [
-            "Drama",
-            "Family",
-            "Music"
+            "دراما",
+            "عائلي",
+            "موسيقى"
         ],
         "Format": "WEBRip",
         "Runtime": 150,
@@ -12765,8 +12765,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance"
+            "دراما",
+            "رومانسية"
         ],
         "Format": "HDrip",
         "Runtime": 135,
@@ -12786,9 +12786,9 @@
             "Documentary"
         ],
         "GenresAr": [
-            "Crime",
-            "Mystery",
-            "Documentary"
+            "جريمة",
+            "غموض",
+            "وثائقي"
         ],
         "Format": "WEBRip",
         "Runtime": 83,
@@ -12808,9 +12808,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Adventure"
+            "أكشن",
+            "إثارة",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 161,
@@ -12830,9 +12830,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Comedy"
+            "أكشن",
+            "دراما",
+            "كوميدي"
         ],
         "Format": "BRRip",
         "Runtime": 155,
@@ -12852,9 +12852,9 @@
             "Sport"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Sport"
+            "أكشن",
+            "دراما",
+            "رياضي"
         ],
         "Format": "Bluray",
         "Runtime": 109,
@@ -12874,9 +12874,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "Bluray",
         "Runtime": 143,
@@ -12896,9 +12896,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "HDrip",
         "Runtime": 122,
@@ -12917,8 +12917,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Drama"
+            "أكشن",
+            "دراما"
         ],
         "Format": "WEBRip",
         "Runtime": 144,
@@ -12936,7 +12936,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "WEBRip",
         "Runtime": 164,
@@ -12956,9 +12956,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Comedy"
+            "أكشن",
+            "دراما",
+            "كوميدي"
         ],
         "Format": "N/A",
         "Runtime": 163,
@@ -12977,8 +12977,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "WEBRip",
         "Runtime": 88,
@@ -12997,8 +12997,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "HDrip",
         "Runtime": 150,
@@ -13017,8 +13017,8 @@
             "Music"
         ],
         "GenresAr": [
-            "Drama",
-            "Music"
+            "دراما",
+            "موسيقى"
         ],
         "Format": "HDrip",
         "Runtime": 143,
@@ -13036,7 +13036,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "DVDRip",
         "Runtime": 122,
@@ -13055,8 +13055,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "WEB-DL",
         "Runtime": 102,
@@ -13076,9 +13076,9 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Thriller",
-            "Horror",
-            "Mystery"
+            "إثارة",
+            "رعب",
+            "غموض"
         ],
         "Format": "HDrip",
         "Runtime": 143,
@@ -13097,8 +13097,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Thriller",
-            "Drama"
+            "إثارة",
+            "دراما"
         ],
         "Format": "WEBRip",
         "Runtime": 130,
@@ -13117,8 +13117,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Thriller",
-            "Drama"
+            "إثارة",
+            "دراما"
         ],
         "Format": "WEBRip",
         "Runtime": 140,
@@ -13138,9 +13138,9 @@
             "Fantasy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Fantasy"
+            "دراما",
+            "رومانسية",
+            "فانتازيا"
         ],
         "Format": "WEBRip",
         "Runtime": 171,
@@ -13158,7 +13158,7 @@
             "Documentary"
         ],
         "GenresAr": [
-            "Documentary"
+            "وثائقي"
         ],
         "Format": "WEBRip",
         "Runtime": 69,
@@ -13177,8 +13177,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "WEBRip",
         "Runtime": 96,
@@ -13198,9 +13198,9 @@
             "Music"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Music"
+            "أكشن",
+            "دراما",
+            "موسيقى"
         ],
         "Format": "WEBRip",
         "Runtime": 133,
@@ -13220,9 +13220,9 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Crime",
-            "Drama",
-            "Mystery"
+            "جريمة",
+            "دراما",
+            "غموض"
         ],
         "Format": "Bluray",
         "Runtime": 163,
@@ -13242,9 +13242,9 @@
             "Family"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy",
-            "Family"
+            "دراما",
+            "كوميدي",
+            "عائلي"
         ],
         "Format": "WEBRip",
         "Runtime": 125,
@@ -13264,9 +13264,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "WEBRip",
         "Runtime": 108,
@@ -13286,9 +13286,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "BRRip",
         "Runtime": 120,
@@ -13308,9 +13308,9 @@
             "War"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "War"
+            "أكشن",
+            "دراما",
+            "حرب"
         ],
         "Format": "BRRip",
         "Runtime": 105,
@@ -13330,9 +13330,9 @@
             "Family"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy",
-            "Family"
+            "دراما",
+            "كوميدي",
+            "عائلي"
         ],
         "Format": "BRRip",
         "Runtime": 150,
@@ -13350,7 +13350,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "BRRip",
         "Runtime": 101,
@@ -13370,9 +13370,9 @@
             "Music"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Music"
+            "دراما",
+            "رومانسية",
+            "موسيقى"
         ],
         "Format": "BDRip",
         "Runtime": 187,
@@ -13392,9 +13392,9 @@
             "Music"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy",
-            "Music"
+            "دراما",
+            "كوميدي",
+            "موسيقى"
         ],
         "Format": "BRRip",
         "Runtime": 177,
@@ -13414,9 +13414,9 @@
             "Music"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy",
-            "Music"
+            "دراما",
+            "كوميدي",
+            "موسيقى"
         ],
         "Format": "DVDRip",
         "Runtime": 108,
@@ -13436,9 +13436,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 129,
@@ -13458,9 +13458,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "BRRip",
         "Runtime": 173,
@@ -13480,9 +13480,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 110,
@@ -13502,9 +13502,9 @@
             "Fantasy"
         ],
         "GenresAr": [
-            "Action",
-            "Comedy",
-            "Fantasy"
+            "أكشن",
+            "كوميدي",
+            "فانتازيا"
         ],
         "Format": "Bluray",
         "Runtime": 145,
@@ -13523,8 +13523,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Crime",
-            "Drama"
+            "جريمة",
+            "دراما"
         ],
         "Format": "BRRip",
         "Runtime": 150,
@@ -13544,9 +13544,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Thriller",
-            "Crime",
-            "Drama"
+            "إثارة",
+            "جريمة",
+            "دراما"
         ],
         "Format": "DVDRip",
         "Runtime": 143,
@@ -13566,9 +13566,9 @@
             "Music"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy",
-            "Music"
+            "دراما",
+            "كوميدي",
+            "موسيقى"
         ],
         "Format": "BRRip",
         "Runtime": 186,
@@ -13588,9 +13588,9 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Mystery"
+            "أكشن",
+            "إثارة",
+            "غموض"
         ],
         "Format": "BRRip",
         "Runtime": 139,
@@ -13610,9 +13610,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "DVDRip",
         "Runtime": 152,
@@ -13631,8 +13631,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Action",
-            "Romance"
+            "أكشن",
+            "رومانسية"
         ],
         "Format": "Bluray",
         "Runtime": 130,
@@ -13652,9 +13652,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "BRRip",
         "Runtime": 139,
@@ -13673,8 +13673,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "WEBRip",
         "Runtime": 106,
@@ -13694,9 +13694,9 @@
             "Fantasy"
         ],
         "GenresAr": [
-            "Action",
-            "Comedy",
-            "Fantasy"
+            "أكشن",
+            "كوميدي",
+            "فانتازيا"
         ],
         "Format": "Bluray",
         "Runtime": 151,
@@ -13716,9 +13716,9 @@
             "Music"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy",
-            "Music"
+            "دراما",
+            "كوميدي",
+            "موسيقى"
         ],
         "Format": "BRRip",
         "Runtime": 122,
@@ -13738,9 +13738,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Comedy"
+            "أكشن",
+            "دراما",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 158,
@@ -13760,9 +13760,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Thriller",
-            "Crime",
-            "Drama"
+            "إثارة",
+            "جريمة",
+            "دراما"
         ],
         "Format": "Bluray",
         "Runtime": 127,
@@ -13782,9 +13782,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Crime",
-            "Drama",
-            "Adventure"
+            "جريمة",
+            "دراما",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 133,
@@ -13804,9 +13804,9 @@
             "Sport"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Sport"
+            "أكشن",
+            "دراما",
+            "رياضي"
         ],
         "Format": "Bluray",
         "Runtime": 109,
@@ -13825,8 +13825,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 123,
@@ -13844,7 +13844,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "Bluray",
         "Runtime": 106,
@@ -13863,8 +13863,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Romance",
-            "Comedy"
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 89,
@@ -13882,7 +13882,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "Bluray",
         "Runtime": 127,
@@ -13901,8 +13901,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 107,
@@ -13921,8 +13921,8 @@
             "History"
         ],
         "GenresAr": [
-            "Drama",
-            "History"
+            "دراما",
+            "تاريخي"
         ],
         "Format": "DVDRip",
         "Runtime": 101,
@@ -13942,9 +13942,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "BRRip",
         "Runtime": 128,
@@ -13964,9 +13964,9 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Crime",
-            "Drama",
-            "Mystery"
+            "جريمة",
+            "دراما",
+            "غموض"
         ],
         "Format": "Bluray",
         "Runtime": 128,
@@ -13985,8 +13985,8 @@
             "Crime"
         ],
         "GenresAr": [
-            "Thriller",
-            "Crime"
+            "إثارة",
+            "جريمة"
         ],
         "Format": "Bluray",
         "Runtime": 142,
@@ -14006,9 +14006,9 @@
             "Horror"
         ],
         "GenresAr": [
-            "Thriller",
-            "Crime",
-            "Horror"
+            "إثارة",
+            "جريمة",
+            "رعب"
         ],
         "Format": "Bluray",
         "Runtime": 105,
@@ -14028,9 +14028,9 @@
             "History"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "History"
+            "أكشن",
+            "دراما",
+            "تاريخي"
         ],
         "Format": "Bluray",
         "Runtime": 130,
@@ -14050,9 +14050,9 @@
             "Romance"
         ],
         "GenresAr": [
-            "Thriller",
-            "Drama",
-            "Romance"
+            "إثارة",
+            "دراما",
+            "رومانسية"
         ],
         "Format": "Bluray",
         "Runtime": 125,
@@ -14070,7 +14070,7 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Comedy"
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 117,
@@ -14090,9 +14090,9 @@
             "History"
         ],
         "GenresAr": [
-            "Action",
-            "Biography",
-            "History"
+            "أكشن",
+            "سيرة ذاتية",
+            "تاريخي"
         ],
         "Format": "Bluray",
         "Runtime": 175,
@@ -14110,7 +14110,7 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Comedy"
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 129,
@@ -14130,9 +14130,9 @@
             "Crime"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Crime"
+            "أكشن",
+            "إثارة",
+            "جريمة"
         ],
         "Format": "Bluray",
         "Runtime": 160,
@@ -14152,9 +14152,9 @@
             "Music"
         ],
         "GenresAr": [
-            "Drama",
-            "Family",
-            "Music"
+            "دراما",
+            "عائلي",
+            "موسيقى"
         ],
         "Format": "Bluray",
         "Runtime": 177,
@@ -14173,8 +14173,8 @@
             "Horror"
         ],
         "GenresAr": [
-            "Thriller",
-            "Horror"
+            "إثارة",
+            "رعب"
         ],
         "Format": "Bluray",
         "Runtime": 146,
@@ -14193,8 +14193,8 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Drama",
-            "Mystery"
+            "دراما",
+            "غموض"
         ],
         "Format": "BRRip",
         "Runtime": 145,
@@ -14213,8 +14213,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Comedy"
+            "أكشن",
+            "كوميدي"
         ],
         "Format": "HDrip",
         "Runtime": 145,
@@ -14234,9 +14234,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Comedy",
-            "Adventure"
+            "أكشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 161,
@@ -14255,8 +14255,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "BRRip",
         "Runtime": 133,
@@ -14276,9 +14276,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy",
-            "Adventure"
+            "دراما",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "DVDRip",
         "Runtime": 146,
@@ -14298,9 +14298,9 @@
             "Romance"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Romance"
+            "أكشن",
+            "دراما",
+            "رومانسية"
         ],
         "Format": "DVDRip",
         "Runtime": 123,
@@ -14320,9 +14320,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "DVDRip",
         "Runtime": 126,
@@ -14342,9 +14342,9 @@
             "Romance"
         ],
         "GenresAr": [
-            "Thriller",
-            "Drama",
-            "Romance"
+            "إثارة",
+            "دراما",
+            "رومانسية"
         ],
         "Format": "BRRip",
         "Runtime": 168,
@@ -14364,9 +14364,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Adventure"
+            "أكشن",
+            "جريمة",
+            "مغامرة"
         ],
         "Format": "DVDRip",
         "Runtime": 119,
@@ -14385,8 +14385,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Romance",
-            "Comedy"
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "DVDRip",
         "Runtime": 116,
@@ -14406,9 +14406,9 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Thriller",
-            "Drama",
-            "Mystery"
+            "إثارة",
+            "دراما",
+            "غموض"
         ],
         "Format": "DVDRip",
         "Runtime": 112,
@@ -14428,9 +14428,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "DVDRip",
         "Runtime": 128,
@@ -14450,9 +14450,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Comedy",
-            "Adventure"
+            "أكشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 153,
@@ -14471,8 +14471,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Action",
-            "Romance"
+            "أكشن",
+            "رومانسية"
         ],
         "Format": "Bluray",
         "Runtime": 140,
@@ -14491,8 +14491,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance"
+            "دراما",
+            "رومانسية"
         ],
         "Format": "Bluray",
         "Runtime": 193,
@@ -14512,9 +14512,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Drama"
+            "أكشن",
+            "إثارة",
+            "دراما"
         ],
         "Format": "DVDRip",
         "Runtime": 154,
@@ -14533,8 +14533,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Thriller",
-            "Drama"
+            "إثارة",
+            "دراما"
         ],
         "Format": "HDrip",
         "Runtime": 130,
@@ -14554,9 +14554,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Adventure"
+            "أكشن",
+            "إثارة",
+            "مغامرة"
         ],
         "Format": "WEB-DL",
         "Runtime": 136,
@@ -14575,8 +14575,8 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Horror",
-            "Mystery"
+            "رعب",
+            "غموض"
         ],
         "Format": "DVDRip",
         "Runtime": 117,
@@ -14595,8 +14595,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "HDrip",
         "Runtime": null,
@@ -14616,9 +14616,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "Bluray",
         "Runtime": 148,
@@ -14638,9 +14638,9 @@
             "History"
         ],
         "GenresAr": [
-            "Crime",
-            "Drama",
-            "History"
+            "جريمة",
+            "دراما",
+            "تاريخي"
         ],
         "Format": "Bluray",
         "Runtime": 132,
@@ -14660,9 +14660,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 139,
@@ -14682,9 +14682,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Comedy"
+            "أكشن",
+            "جريمة",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 152,
@@ -14704,9 +14704,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Adventure"
+            "أكشن",
+            "إثارة",
+            "مغامرة"
         ],
         "Format": "DVDRip",
         "Runtime": 129,
@@ -14726,9 +14726,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Adventure"
+            "أكشن",
+            "جريمة",
+            "مغامرة"
         ],
         "Format": "DVDRip",
         "Runtime": 158,
@@ -14748,9 +14748,9 @@
             "Crime"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Crime"
+            "أكشن",
+            "إثارة",
+            "جريمة"
         ],
         "Format": "HDrip",
         "Runtime": 120,
@@ -14770,9 +14770,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Comedy"
+            "أكشن",
+            "دراما",
+            "كوميدي"
         ],
         "Format": "DVDRip",
         "Runtime": 140,
@@ -14792,9 +14792,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Thriller",
-            "Drama",
-            "Comedy"
+            "إثارة",
+            "دراما",
+            "كوميدي"
         ],
         "Format": "DVDRip",
         "Runtime": 121,
@@ -14813,8 +14813,8 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Thriller",
-            "Adventure"
+            "إثارة",
+            "مغامرة"
         ],
         "Format": "HDrip",
         "Runtime": 108,
@@ -14832,7 +14832,7 @@
             "Horror"
         ],
         "GenresAr": [
-            "Horror"
+            "رعب"
         ],
         "Format": "DVDRip",
         "Runtime": 120,
@@ -14852,9 +14852,9 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Drama",
-            "Horror",
-            "Mystery"
+            "دراما",
+            "رعب",
+            "غموض"
         ],
         "Format": "DVDRip",
         "Runtime": 93,
@@ -14872,7 +14872,7 @@
             "Action"
         ],
         "GenresAr": [
-            "Action"
+            "أكشن"
         ],
         "Format": "HDrip",
         "Runtime": null,
@@ -14892,9 +14892,9 @@
             "Romance"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Romance"
+            "أكشن",
+            "دراما",
+            "رومانسية"
         ],
         "Format": "Bluray",
         "Runtime": 152,
@@ -14914,9 +14914,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "DVDRip",
         "Runtime": 123,
@@ -14936,9 +14936,9 @@
             "War"
         ],
         "GenresAr": [
-            "Drama",
-            "History",
-            "War"
+            "دراما",
+            "تاريخي",
+            "حرب"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 154,
@@ -14958,9 +14958,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "Bluray",
         "Runtime": 140,
@@ -14979,8 +14979,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance"
+            "دراما",
+            "رومانسية"
         ],
         "Format": "WEBRip",
         "Runtime": 167,
@@ -15000,9 +15000,9 @@
             "Music"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy",
-            "Music"
+            "دراما",
+            "كوميدي",
+            "موسيقى"
         ],
         "Format": "Bluray",
         "Runtime": 150,
@@ -15022,9 +15022,9 @@
             "Fantasy"
         ],
         "GenresAr": [
-            "Drama",
-            "Horror",
-            "Fantasy"
+            "دراما",
+            "رعب",
+            "فانتازيا"
         ],
         "Format": "Bluray",
         "Runtime": 140,
@@ -15044,9 +15044,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Comedy"
+            "أكشن",
+            "دراما",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 162,
@@ -15066,9 +15066,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Comedy"
+            "أكشن",
+            "دراما",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 180,
@@ -15088,9 +15088,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Comedy"
+            "أكشن",
+            "جريمة",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 146,
@@ -15109,8 +15109,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance"
+            "دراما",
+            "رومانسية"
         ],
         "Format": "HDrip",
         "Runtime": 174,
@@ -15130,9 +15130,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 152,
@@ -15152,9 +15152,9 @@
             "Crime"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Crime"
+            "أكشن",
+            "إثارة",
+            "جريمة"
         ],
         "Format": "Bluray",
         "Runtime": 148,
@@ -15174,9 +15174,9 @@
             "Crime"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Crime"
+            "أكشن",
+            "إثارة",
+            "جريمة"
         ],
         "Format": "BRRip",
         "Runtime": 171,
@@ -15197,8 +15197,8 @@
         ],
         "GenresAr": [
             "Sci fi",
-            "Drama",
-            "Fantasy"
+            "دراما",
+            "فانتازيا"
         ],
         "Format": "Bluray",
         "Runtime": 123,
@@ -15218,9 +15218,9 @@
             "Sport"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Sport"
+            "أكشن",
+            "دراما",
+            "رياضي"
         ],
         "Format": "Bluray",
         "Runtime": 156,
@@ -15239,8 +15239,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance"
+            "دراما",
+            "رومانسية"
         ],
         "Format": "Bluray",
         "Runtime": 140,
@@ -15260,9 +15260,9 @@
             "Music"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Music"
+            "دراما",
+            "رومانسية",
+            "موسيقى"
         ],
         "Format": "HDrip",
         "Runtime": 133,
@@ -15282,9 +15282,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 146,
@@ -15304,9 +15304,9 @@
             "Crime"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Crime"
+            "أكشن",
+            "إثارة",
+            "جريمة"
         ],
         "Format": "DVDRip",
         "Runtime": 150,
@@ -15326,9 +15326,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "BRRip",
         "Runtime": 149,
@@ -15348,9 +15348,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 128,
@@ -15370,9 +15370,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 143,
@@ -15392,9 +15392,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Comedy"
+            "أكشن",
+            "جريمة",
+            "كوميدي"
         ],
         "Format": "DVDRip",
         "Runtime": 169,
@@ -15414,9 +15414,9 @@
             "Biography"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Biography"
+            "أكشن",
+            "دراما",
+            "سيرة ذاتية"
         ],
         "Format": "HDrip",
         "Runtime": 176,
@@ -15435,8 +15435,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance"
+            "دراما",
+            "رومانسية"
         ],
         "Format": "Bluray",
         "Runtime": 130,
@@ -15455,8 +15455,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance"
+            "دراما",
+            "رومانسية"
         ],
         "Format": "Bluray",
         "Runtime": 126,
@@ -15476,9 +15476,9 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Thriller",
-            "Drama",
-            "Mystery"
+            "إثارة",
+            "دراما",
+            "غموض"
         ],
         "Format": "Bluray",
         "Runtime": 136,
@@ -15497,8 +15497,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Drama"
+            "أكشن",
+            "دراما"
         ],
         "Format": "Bluray",
         "Runtime": 127,
@@ -15517,8 +15517,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy"
+            "دراما",
+            "كوميدي"
         ],
         "Format": "WEB-DL",
         "Runtime": 117,
@@ -15538,9 +15538,9 @@
             "History"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "History"
+            "أكشن",
+            "دراما",
+            "تاريخي"
         ],
         "Format": "Bluray",
         "Runtime": 116,
@@ -15558,7 +15558,7 @@
             "Action"
         ],
         "GenresAr": [
-            "Action"
+            "أكشن"
         ],
         "Format": "Bluray",
         "Runtime": 164,
@@ -15578,9 +15578,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 132,
@@ -15600,9 +15600,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Comedy",
-            "Adventure"
+            "أكشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "DVDRip",
         "Runtime": 161,
@@ -15621,8 +15621,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Action",
-            "Romance"
+            "أكشن",
+            "رومانسية"
         ],
         "Format": "Bluray",
         "Runtime": 135,
@@ -15642,9 +15642,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Comedy",
-            "Adventure"
+            "أكشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "HDrip",
         "Runtime": 124,
@@ -15664,9 +15664,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 150,
@@ -15685,8 +15685,8 @@
             "Biography"
         ],
         "GenresAr": [
-            "Drama",
-            "Biography"
+            "دراما",
+            "سيرة ذاتية"
         ],
         "Format": "DVDRip",
         "Runtime": 114,
@@ -15705,8 +15705,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance"
+            "دراما",
+            "رومانسية"
         ],
         "Format": "Bluray",
         "Runtime": 104,
@@ -15725,8 +15725,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance"
+            "دراما",
+            "رومانسية"
         ],
         "Format": "WEB-DL",
         "Runtime": 30,
@@ -15746,9 +15746,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Adventure"
+            "أكشن",
+            "جريمة",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 127,
@@ -15768,9 +15768,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Comedy"
+            "أكشن",
+            "دراما",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 171,
@@ -15790,9 +15790,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Fantasy",
-            "Adventure"
+            "أكشن",
+            "فانتازيا",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 152,
@@ -15812,9 +15812,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Fantasy",
-            "Adventure"
+            "أكشن",
+            "فانتازيا",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 154,
@@ -15834,9 +15834,9 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Crime",
-            "Drama",
-            "Mystery"
+            "جريمة",
+            "دراما",
+            "غموض"
         ],
         "Format": "Bluray",
         "Runtime": 140,
@@ -15856,9 +15856,9 @@
             "History"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "History"
+            "أكشن",
+            "دراما",
+            "تاريخي"
         ],
         "Format": "Bluray",
         "Runtime": 170,
@@ -15878,9 +15878,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Comedy"
+            "أكشن",
+            "جريمة",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 180,
@@ -15900,9 +15900,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Adventure"
+            "أكشن",
+            "دراما",
+            "مغامرة"
         ],
         "Format": "WEB-DL",
         "Runtime": 169,
@@ -15922,9 +15922,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "Bluray",
         "Runtime": 139,
@@ -15944,9 +15944,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "Bluray",
         "Runtime": 142,
@@ -15966,9 +15966,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "Bluray",
         "Runtime": 129,
@@ -15987,8 +15987,8 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Thriller",
-            "Mystery"
+            "إثارة",
+            "غموض"
         ],
         "Format": "Bluray",
         "Runtime": 119,
@@ -16008,9 +16008,9 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Thriller",
-            "Drama",
-            "Mystery"
+            "إثارة",
+            "دراما",
+            "غموض"
         ],
         "Format": "Bluray",
         "Runtime": 122,
@@ -16030,9 +16030,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Adventure"
+            "أكشن",
+            "جريمة",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 132,
@@ -16052,9 +16052,9 @@
             "Music"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Music"
+            "أكشن",
+            "دراما",
+            "موسيقى"
         ],
         "Format": "DVDRip",
         "Runtime": 140,
@@ -16073,8 +16073,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Crime",
-            "Drama"
+            "جريمة",
+            "دراما"
         ],
         "Format": "HDrip",
         "Runtime": 187,
@@ -16094,9 +16094,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Comedy"
+            "أكشن",
+            "دراما",
+            "كوميدي"
         ],
         "Format": "HDrip",
         "Runtime": 140,
@@ -16116,9 +16116,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Adventure"
+            "أكشن",
+            "دراما",
+            "مغامرة"
         ],
         "Format": "HDrip",
         "Runtime": 155,
@@ -16138,9 +16138,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 135,
@@ -16160,9 +16160,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Thriller",
-            "Crime",
-            "Drama"
+            "إثارة",
+            "جريمة",
+            "دراما"
         ],
         "Format": "Bluray",
         "Runtime": 136,
@@ -16182,9 +16182,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "DVDRip",
         "Runtime": 128,
@@ -16218,9 +16218,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "DVDRip",
         "Runtime": 150,
@@ -16238,7 +16238,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "Bluray",
         "Runtime": 122,
@@ -16257,8 +16257,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance"
+            "دراما",
+            "رومانسية"
         ],
         "Format": "Bluray",
         "Runtime": 181,
@@ -16278,9 +16278,9 @@
             "Romance"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Romance"
+            "أكشن",
+            "دراما",
+            "رومانسية"
         ],
         "Format": "Bluray",
         "Runtime": 156,
@@ -16300,9 +16300,9 @@
             "History"
         ],
         "GenresAr": [
-            "Drama",
-            "Biography",
-            "History"
+            "دراما",
+            "سيرة ذاتية",
+            "تاريخي"
         ],
         "Format": "Bluray",
         "Runtime": 131,
@@ -16321,8 +16321,8 @@
             "Music"
         ],
         "GenresAr": [
-            "Drama",
-            "Music"
+            "دراما",
+            "موسيقى"
         ],
         "Format": "Bluray",
         "Runtime": 155,
@@ -16342,9 +16342,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy",
-            "Adventure"
+            "دراما",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 151,
@@ -16364,9 +16364,9 @@
             "Music"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Music"
+            "دراما",
+            "رومانسية",
+            "موسيقى"
         ],
         "Format": "Bluray",
         "Runtime": 216,
@@ -16400,9 +16400,9 @@
             "Family"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Family"
+            "دراما",
+            "رومانسية",
+            "عائلي"
         ],
         "Format": "Bluray",
         "Runtime": null,
@@ -16422,9 +16422,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Biography",
-            "Adventure"
+            "أكشن",
+            "سيرة ذاتية",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 213,
@@ -16444,9 +16444,9 @@
             "Music"
         ],
         "GenresAr": [
-            "Action",
-            "Comedy",
-            "Music"
+            "أكشن",
+            "كوميدي",
+            "موسيقى"
         ],
         "Format": "Bluray",
         "Runtime": 145,
@@ -16480,9 +16480,9 @@
             "Music"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy",
-            "Music"
+            "دراما",
+            "كوميدي",
+            "موسيقى"
         ],
         "Format": "Bluray",
         "Runtime": 150,
@@ -16502,9 +16502,9 @@
             "Music"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Music"
+            "دراما",
+            "رومانسية",
+            "موسيقى"
         ],
         "Format": "Bluray",
         "Runtime": 155,
@@ -16524,9 +16524,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 144,
@@ -16546,9 +16546,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Adventure"
+            "أكشن",
+            "جريمة",
+            "مغامرة"
         ],
         "Format": "DVDRip",
         "Runtime": 172,
@@ -16568,9 +16568,9 @@
             "Crime"
         ],
         "GenresAr": [
-            "Action",
-            "Thriller",
-            "Crime"
+            "أكشن",
+            "إثارة",
+            "جريمة"
         ],
         "Format": "Bluray",
         "Runtime": 152,
@@ -16590,9 +16590,9 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Mystery"
+            "أكشن",
+            "دراما",
+            "غموض"
         ],
         "Format": "Bluray",
         "Runtime": 183,
@@ -16611,8 +16611,8 @@
             "Music"
         ],
         "GenresAr": [
-            "Romance",
-            "Music"
+            "رومانسية",
+            "موسيقى"
         ],
         "Format": "Bluray",
         "Runtime": 185,
@@ -16632,9 +16632,9 @@
             "Music"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Music"
+            "دراما",
+            "رومانسية",
+            "موسيقى"
         ],
         "Format": "Bluray",
         "Runtime": 210,
@@ -16654,9 +16654,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Comedy"
+            "دراما",
+            "رومانسية",
+            "كوميدي"
         ],
         "Format": "WEB-DL",
         "Runtime": 143,
@@ -16676,9 +16676,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "Bluray",
         "Runtime": 161,
@@ -16698,9 +16698,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "HDrip",
         "Runtime": 139,
@@ -16719,8 +16719,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance"
+            "دراما",
+            "رومانسية"
         ],
         "Format": "Bluray",
         "Runtime": 135,
@@ -16740,9 +16740,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Adventure"
+            "أكشن",
+            "دراما",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 142,
@@ -16761,8 +16761,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance"
+            "دراما",
+            "رومانسية"
         ],
         "Format": "DVDRip",
         "Runtime": 155,
@@ -16782,9 +16782,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Drama",
-            "History",
-            "Adventure"
+            "دراما",
+            "تاريخي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 130,
@@ -16804,9 +16804,9 @@
             "Biography"
         ],
         "GenresAr": [
-            "Thriller",
-            "Drama",
-            "Biography"
+            "إثارة",
+            "دراما",
+            "سيرة ذاتية"
         ],
         "Format": "Bluray",
         "Runtime": 122,
@@ -16826,9 +16826,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Drama",
-            "Family",
-            "Adventure"
+            "دراما",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 170,
@@ -16848,9 +16848,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "DVDRip",
         "Runtime": 103,
@@ -16870,9 +16870,9 @@
             "Drama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama"
+            "أكشن",
+            "جريمة",
+            "دراما"
         ],
         "Format": "Bluray",
         "Runtime": 161,
@@ -16891,8 +16891,8 @@
             "Music"
         ],
         "GenresAr": [
-            "Drama",
-            "Music"
+            "دراما",
+            "موسيقى"
         ],
         "Format": "Bluray",
         "Runtime": 135,
@@ -16912,9 +16912,9 @@
             "Fantasy"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy",
-            "Fantasy"
+            "دراما",
+            "كوميدي",
+            "فانتازيا"
         ],
         "Format": "Bluray",
         "Runtime": 153,
@@ -16934,9 +16934,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance",
-            "Adventure"
+            "دراما",
+            "رومانسية",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 120,
@@ -16956,9 +16956,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy",
-            "Adventure"
+            "دراما",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 170,
@@ -17272,12 +17272,12 @@
         "Source": "",
         "Genres": [
             "Action",
-            "خيال-علمي",
+            "خيال علمي",
             "Adventure"
         ],
         "GenresAr": [
             "اكشن",
-            "خيال-علمي",
+            "خيال علمي",
             "Adventure"
         ],
         "Format": "1080p WEB-DL",

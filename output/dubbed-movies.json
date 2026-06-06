@@ -32,9 +32,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 92,
@@ -54,9 +54,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": null,
@@ -78,11 +78,11 @@
             "Family"
         ],
         "GenresAr": [
-            "Musical",
-            "Animation",
-            "Romance",
-            "Comedy",
-            "Family"
+            "موسيقي",
+            "أنميشن",
+            "رومانسية",
+            "كوميدي",
+            "عائلي"
         ],
         "Format": "Bluray",
         "Runtime": 75,
@@ -104,11 +104,11 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Musical",
-            "Animation",
-            "Comedy",
-            "Family",
-            "Adventure"
+            "موسيقي",
+            "أنميشن",
+            "كوميدي",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 69,
@@ -129,10 +129,10 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Drama",
-            "Family",
-            "Adventure"
+            "أنميشن",
+            "دراما",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 83,
@@ -154,11 +154,11 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Family",
-            "Fantasy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "عائلي",
+            "فانتازيا",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 78,
@@ -180,11 +180,11 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Family",
-            "Fantasy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "عائلي",
+            "فانتازيا",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 95,
@@ -206,11 +206,11 @@
             "Family"
         ],
         "GenresAr": [
-            "Musical",
-            "Animation",
-            "Drama",
-            "Romance",
-            "Family"
+            "موسيقي",
+            "أنميشن",
+            "دراما",
+            "رومانسية",
+            "عائلي"
         ],
         "Format": "Bluray",
         "Runtime": 91,
@@ -232,11 +232,11 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Animation",
-            "Family",
-            "Fantasy",
-            "Adventure"
+            "أكشن",
+            "أنميشن",
+            "عائلي",
+            "فانتازيا",
+            "مغامرة"
         ],
         "Format": "WEB-DL",
         "Runtime": 80,
@@ -257,10 +257,10 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Animation",
-            "Family",
-            "Adventure"
+            "أكشن",
+            "أنميشن",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 115,
@@ -281,10 +281,10 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Musical",
-            "Animation",
-            "Family",
-            "Adventure"
+            "موسيقي",
+            "أنميشن",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 72,
@@ -306,11 +306,11 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Musical",
-            "Animation",
-            "Comedy",
-            "Family",
-            "Adventure"
+            "موسيقي",
+            "أنميشن",
+            "كوميدي",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 77,
@@ -333,12 +333,12 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Musical",
-            "Animation",
-            "Drama",
-            "Romance",
-            "Family",
-            "Adventure"
+            "موسيقي",
+            "أنميشن",
+            "دراما",
+            "رومانسية",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 81,
@@ -360,11 +360,11 @@
             "Fantasy"
         ],
         "GenresAr": [
-            "Musical",
-            "Animation",
-            "Drama",
-            "Family",
-            "Fantasy"
+            "موسيقي",
+            "أنميشن",
+            "دراما",
+            "عائلي",
+            "فانتازيا"
         ],
         "Format": "Bluray",
         "Runtime": 75,
@@ -386,11 +386,11 @@
             "Fantasy"
         ],
         "GenresAr": [
-            "Musical",
-            "Animation",
-            "Romance",
-            "Family",
-            "Fantasy"
+            "موسيقي",
+            "أنميشن",
+            "رومانسية",
+            "عائلي",
+            "فانتازيا"
         ],
         "Format": "Bluray",
         "Runtime": 83,
@@ -413,12 +413,12 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Musical",
-            "Animation",
-            "Drama",
-            "Romance",
-            "Family",
-            "Adventure"
+            "موسيقي",
+            "أنميشن",
+            "دراما",
+            "رومانسية",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 72,
@@ -440,11 +440,11 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Family",
-            "Fantasy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "عائلي",
+            "فانتازيا",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 90,
@@ -467,12 +467,12 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Romance",
-            "Comedy",
-            "Family",
-            "Fantasy",
-            "Adventure"
+            "أنميشن",
+            "رومانسية",
+            "كوميدي",
+            "عائلي",
+            "فانتازيا",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 93,
@@ -495,12 +495,12 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Romance",
-            "Comedy",
-            "Family",
-            "Fantasy",
-            "Adventure"
+            "أنميشن",
+            "رومانسية",
+            "كوميدي",
+            "عائلي",
+            "فانتازيا",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 93,
@@ -522,11 +522,11 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Family",
-            "Fantasy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "عائلي",
+            "فانتازيا",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 93,
@@ -547,10 +547,10 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Family",
-            "Fantasy",
-            "Adventure"
+            "أنميشن",
+            "عائلي",
+            "فانتازيا",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 86,
@@ -572,11 +572,11 @@
             "Fantasy"
         ],
         "GenresAr": [
-            "Musical",
-            "Animation",
-            "Romance",
-            "Family",
-            "Fantasy"
+            "موسيقي",
+            "أنميشن",
+            "رومانسية",
+            "عائلي",
+            "فانتازيا"
         ],
         "Format": "Bluray",
         "Runtime": 75,
@@ -598,11 +598,11 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Drama",
-            "Family",
-            "Western",
-            "Adventure"
+            "أنميشن",
+            "دراما",
+            "عائلي",
+            "غربي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 83,
@@ -622,9 +622,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Family",
-            "Adventure"
+            "أنميشن",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 88,
@@ -646,11 +646,11 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Musical",
-            "Animation",
-            "Comedy",
-            "Family",
-            "Adventure"
+            "موسيقي",
+            "أنميشن",
+            "كوميدي",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 78,
@@ -673,12 +673,12 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Drama",
-            "Romance",
-            "Comedy",
-            "Family",
-            "Adventure"
+            "أنميشن",
+            "دراما",
+            "رومانسية",
+            "كوميدي",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 76,
@@ -700,11 +700,11 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Musical",
-            "Animation",
-            "Romance",
-            "Family",
-            "Adventure"
+            "موسيقي",
+            "أنميشن",
+            "رومانسية",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 69,
@@ -726,11 +726,11 @@
             "Family"
         ],
         "GenresAr": [
-            "Animation",
+            "أنميشن",
             "Sci fi",
-            "Drama",
-            "Comedy",
-            "Family"
+            "دراما",
+            "كوميدي",
+            "عائلي"
         ],
         "Format": "Bluray",
         "Runtime": 68,
@@ -754,13 +754,13 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
+            "أنميشن",
             "Sci fi",
-            "Drama",
-            "Comedy",
-            "Family",
-            "Fantasy",
-            "Adventure"
+            "دراما",
+            "كوميدي",
+            "عائلي",
+            "فانتازيا",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 85,
@@ -781,10 +781,10 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Family",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 93,
@@ -805,10 +805,10 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Family",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 89,
@@ -829,10 +829,10 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Family",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 86,
@@ -856,13 +856,13 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Animation",
-            "Thriller",
+            "أكشن",
+            "أنميشن",
+            "إثارة",
             "Sci fi",
-            "Comedy",
-            "Family",
-            "Adventure"
+            "كوميدي",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 94,
@@ -884,11 +884,11 @@
             "Family"
         ],
         "GenresAr": [
-            "Musical",
-            "Action",
-            "Animation",
-            "Comedy",
-            "Family"
+            "موسيقي",
+            "أكشن",
+            "أنميشن",
+            "كوميدي",
+            "عائلي"
         ],
         "Format": "Bluray",
         "Runtime": 79,
@@ -911,12 +911,12 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Musical",
-            "Animation",
-            "War",
-            "Family",
-            "Fantasy",
-            "Adventure"
+            "موسيقي",
+            "أنميشن",
+            "حرب",
+            "عائلي",
+            "فانتازيا",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 88,
@@ -937,10 +937,10 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Family",
-            "Fantasy",
-            "Adventure"
+            "أنميشن",
+            "عائلي",
+            "فانتازيا",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 72,
@@ -962,11 +962,11 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Musical",
-            "Animation",
-            "Family",
-            "Fantasy",
-            "Adventure"
+            "موسيقي",
+            "أنميشن",
+            "عائلي",
+            "فانتازيا",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 77,
@@ -989,12 +989,12 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Romance",
-            "Comedy",
-            "Family",
-            "Fantasy",
-            "Adventure"
+            "أنميشن",
+            "رومانسية",
+            "كوميدي",
+            "عائلي",
+            "فانتازيا",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 74,
@@ -1016,11 +1016,11 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Family",
-            "Fantasy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "عائلي",
+            "فانتازيا",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 85,
@@ -1043,12 +1043,12 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
+            "أنميشن",
             "Sci fi",
-            "Comedy",
-            "Sport",
-            "Family",
-            "Adventure"
+            "كوميدي",
+            "رياضي",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 106,
@@ -1069,10 +1069,10 @@
             "Family"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Sport",
-            "Family"
+            "أنميشن",
+            "كوميدي",
+            "رياضي",
+            "عائلي"
         ],
         "Format": "Bluray",
         "Runtime": 117,
@@ -1094,11 +1094,11 @@
             "Fantasy"
         ],
         "GenresAr": [
-            "Musical",
-            "Animation",
-            "Romance",
-            "Family",
-            "Fantasy"
+            "موسيقي",
+            "أنميشن",
+            "رومانسية",
+            "عائلي",
+            "فانتازيا"
         ],
         "Format": "Bluray",
         "Runtime": 74,
@@ -1120,11 +1120,11 @@
             "Fantasy"
         ],
         "GenresAr": [
-            "Musical",
-            "Animation",
-            "Romance",
-            "Family",
-            "Fantasy"
+            "موسيقي",
+            "أنميشن",
+            "رومانسية",
+            "عائلي",
+            "فانتازيا"
         ],
         "Format": "Bluray",
         "Runtime": 74,
@@ -1146,11 +1146,11 @@
             "Music"
         ],
         "GenresAr": [
-            "Musical",
-            "Animation",
-            "Family",
-            "Fantasy",
-            "Music"
+            "موسيقي",
+            "أنميشن",
+            "عائلي",
+            "فانتازيا",
+            "موسيقى"
         ],
         "Format": "Bluray",
         "Runtime": 125,
@@ -1173,12 +1173,12 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Musical",
-            "Animation",
-            "Comedy",
-            "Family",
-            "Fantasy",
-            "Adventure"
+            "موسيقي",
+            "أنميشن",
+            "كوميدي",
+            "عائلي",
+            "فانتازيا",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 102,
@@ -1202,13 +1202,13 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Musical",
-            "Animation",
-            "Romance",
-            "Comedy",
-            "Family",
-            "Fantasy",
-            "Adventure"
+            "موسيقي",
+            "أنميشن",
+            "رومانسية",
+            "كوميدي",
+            "عائلي",
+            "فانتازيا",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 93,
@@ -1230,11 +1230,11 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Animation",
-            "Family",
-            "Fantasy",
-            "Adventure"
+            "أكشن",
+            "أنميشن",
+            "عائلي",
+            "فانتازيا",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 102,
@@ -1256,11 +1256,11 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Animation",
-            "Family",
-            "Fantasy",
-            "Adventure"
+            "أكشن",
+            "أنميشن",
+            "عائلي",
+            "فانتازيا",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 98,
@@ -1282,11 +1282,11 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Family",
-            "Fantasy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "عائلي",
+            "فانتازيا",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 97,
@@ -1308,11 +1308,11 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Musical",
-            "Animation",
-            "Comedy",
-            "Family",
-            "Adventure"
+            "موسيقي",
+            "أنميشن",
+            "كوميدي",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 74,
@@ -1333,10 +1333,10 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Family",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 79,
@@ -1358,11 +1358,11 @@
             "Fantasy"
         ],
         "GenresAr": [
-            "Musical",
-            "Animation",
-            "Romance",
-            "Family",
-            "Fantasy"
+            "موسيقي",
+            "أنميشن",
+            "رومانسية",
+            "عائلي",
+            "فانتازيا"
         ],
         "Format": "Bluray",
         "Runtime": 84,
@@ -1383,10 +1383,10 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Family",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "WEB-DL",
         "Runtime": 91,
@@ -1410,13 +1410,13 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Musical",
-            "Animation",
-            "Romance",
-            "Comedy",
-            "Family",
-            "Fantasy",
-            "Adventure"
+            "موسيقي",
+            "أنميشن",
+            "رومانسية",
+            "كوميدي",
+            "عائلي",
+            "فانتازيا",
+            "مغامرة"
         ],
         "Format": "TVRip",
         "Runtime": 73,
@@ -1437,10 +1437,10 @@
             "Fantasy"
         ],
         "GenresAr": [
-            "Musical",
-            "Animation",
-            "Family",
-            "Fantasy"
+            "موسيقي",
+            "أنميشن",
+            "عائلي",
+            "فانتازيا"
         ],
         "Format": "Bluray",
         "Runtime": 76,
@@ -1460,9 +1460,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 95,
@@ -1485,12 +1485,12 @@
             "Music"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Family",
-            "Western",
-            "Adventure",
-            "Music"
+            "أنميشن",
+            "كوميدي",
+            "عائلي",
+            "غربي",
+            "مغامرة",
+            "موسيقى"
         ],
         "Format": "WEB-DL",
         "Runtime": 76,
@@ -1513,12 +1513,12 @@
             "Music"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Family",
-            "Fantasy",
-            "Adventure",
-            "Music"
+            "أنميشن",
+            "كوميدي",
+            "عائلي",
+            "فانتازيا",
+            "مغامرة",
+            "موسيقى"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -1538,8 +1538,8 @@
             "Short"
         ],
         "GenresAr": [
-            "Drama",
-            "Comedy",
+            "دراما",
+            "كوميدي",
             "Short"
         ],
         "Format": "HD",
@@ -1560,9 +1560,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 100,
@@ -1582,9 +1582,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Animation",
-            "Adventure"
+            "أكشن",
+            "أنميشن",
+            "مغامرة"
         ],
         "Format": "WEB-DL",
         "Runtime": 117,
@@ -1603,8 +1603,8 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Drama",
-            "Adventure"
+            "دراما",
+            "مغامرة"
         ],
         "Format": "WEBRip",
         "Runtime": 104,
@@ -1624,9 +1624,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Animation",
-            "Adventure"
+            "أكشن",
+            "أنميشن",
+            "مغامرة"
         ],
         "Format": "WEB-DL",
         "Runtime": 118,
@@ -1646,9 +1646,9 @@
             "Family"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Family"
+            "أنميشن",
+            "كوميدي",
+            "عائلي"
         ],
         "Format": "BRRip",
         "Runtime": 97,
@@ -1668,9 +1668,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "WEBRip",
         "Runtime": 90,
@@ -1690,9 +1690,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 108,
@@ -1726,9 +1726,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Animation",
-            "Adventure"
+            "أكشن",
+            "أنميشن",
+            "مغامرة"
         ],
         "Format": "WEB-DL",
         "Runtime": 105,
@@ -1748,9 +1748,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Family",
-            "Adventure"
+            "أنميشن",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 50,
@@ -1770,8 +1770,8 @@
             "Short"
         ],
         "GenresAr": [
-            "Action",
-            "Animation",
+            "أكشن",
+            "أنميشن",
             "Short"
         ],
         "Format": "WEBRip",
@@ -1792,9 +1792,9 @@
             "Family"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Family"
+            "أنميشن",
+            "كوميدي",
+            "عائلي"
         ],
         "Format": "Bluray",
         "Runtime": null,
@@ -1813,8 +1813,8 @@
             "Biography"
         ],
         "GenresAr": [
-            "Drama",
-            "Biography"
+            "دراما",
+            "سيرة ذاتية"
         ],
         "Format": "WEB-DL",
         "Runtime": 116,
@@ -1834,9 +1834,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Animation",
-            "Adventure"
+            "أكشن",
+            "أنميشن",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 90,
@@ -1856,9 +1856,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 90,
@@ -1878,9 +1878,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 86,
@@ -1900,9 +1900,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "WEB-DL",
         "Runtime": 102,
@@ -1922,9 +1922,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
+            "أنميشن",
             "Short",
-            "Adventure"
+            "مغامرة"
         ],
         "Format": "WEBRip",
         "Runtime": 23,
@@ -1944,9 +1944,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Animation",
-            "Adventure"
+            "أكشن",
+            "أنميشن",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 97,
@@ -1966,9 +1966,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "HDTV",
         "Runtime": 43,
@@ -1988,9 +1988,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 89,
@@ -2010,9 +2010,9 @@
             "Family"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Family"
+            "أنميشن",
+            "كوميدي",
+            "عائلي"
         ],
         "Format": "Bluray",
         "Runtime": 112,
@@ -2032,9 +2032,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 113,
@@ -2054,9 +2054,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 92,
@@ -2076,9 +2076,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Family",
-            "Adventure"
+            "أنميشن",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 103,
@@ -2098,9 +2098,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 94,
@@ -2120,9 +2120,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Family",
-            "Adventure"
+            "أنميشن",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 101,
@@ -2142,9 +2142,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 90,
@@ -2164,9 +2164,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 84,
@@ -2187,10 +2187,10 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Animation",
+            "أكشن",
+            "أنميشن",
             "Short",
-            "Adventure"
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 24,
@@ -2210,9 +2210,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "HD",
         "Runtime": 78,
@@ -2233,10 +2233,10 @@
             "Fantasy"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Family",
-            "Fantasy"
+            "أنميشن",
+            "كوميدي",
+            "عائلي",
+            "فانتازيا"
         ],
         "Format": "Bluray",
         "Runtime": 88,
@@ -2256,9 +2256,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 79,
@@ -2277,8 +2277,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy"
+            "أنميشن",
+            "كوميدي"
         ],
         "Format": "HD",
         "Runtime": 90,
@@ -2298,9 +2298,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 91,
@@ -2320,9 +2320,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Action",
-            "Animation",
-            "Comedy"
+            "أكشن",
+            "أنميشن",
+            "كوميدي"
         ],
         "Format": "Bluray",
         "Runtime": 95,
@@ -2342,9 +2342,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Drama",
-            "Adventure"
+            "أنميشن",
+            "دراما",
+            "مغامرة"
         ],
         "Format": "HD",
         "Runtime": 81,
@@ -2364,9 +2364,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "HD",
         "Runtime": 69,
@@ -2386,9 +2386,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 92,
@@ -2408,9 +2408,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 110,
@@ -2430,9 +2430,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Animation",
-            "Adventure"
+            "أكشن",
+            "أنميشن",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 84,
@@ -2452,9 +2452,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "HD",
         "Runtime": 42,
@@ -2474,9 +2474,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "N/A",
         "Runtime": 100,
@@ -2496,9 +2496,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "HD",
         "Runtime": 74,
@@ -2518,9 +2518,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 81,
@@ -2540,9 +2540,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "HD",
         "Runtime": 76,
@@ -2562,9 +2562,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Animation",
-            "Adventure"
+            "أكشن",
+            "أنميشن",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 70,
@@ -2584,9 +2584,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Animation",
-            "Adventure"
+            "أكشن",
+            "أنميشن",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 95,
@@ -2606,9 +2606,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 90,
@@ -2628,9 +2628,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 93,
@@ -2650,9 +2650,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Drama",
-            "Adventure"
+            "أنميشن",
+            "دراما",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 94,
@@ -2672,9 +2672,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Fantasy",
-            "Adventure"
+            "أنميشن",
+            "فانتازيا",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 83,
@@ -2694,9 +2694,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 71,
@@ -2716,9 +2716,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
+            "أنميشن",
             "Short",
-            "Adventure"
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 8,
@@ -2738,9 +2738,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 85,
@@ -2760,9 +2760,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Animation",
-            "Adventure"
+            "أكشن",
+            "أنميشن",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 87,
@@ -2782,9 +2782,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "DVDRip",
         "Runtime": 80,
@@ -2804,9 +2804,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "DVDRip",
         "Runtime": 69,
@@ -2826,9 +2826,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "DVDRip",
         "Runtime": 72,
@@ -2848,9 +2848,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Family",
-            "Adventure"
+            "أنميشن",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "HD",
         "Runtime": 98,
@@ -2871,10 +2871,10 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Family",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 96,
@@ -2894,9 +2894,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 88,
@@ -2916,9 +2916,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Family",
-            "Adventure"
+            "أنميشن",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "HD",
         "Runtime": 80,
@@ -2938,9 +2938,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Family",
-            "Adventure"
+            "أنميشن",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 81,
@@ -2960,9 +2960,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Family",
-            "Adventure"
+            "أنميشن",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 119,
@@ -2982,9 +2982,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 87,
@@ -3004,9 +3004,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 86,
@@ -3026,9 +3026,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 95,
@@ -3048,9 +3048,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "HD",
         "Runtime": 64,
@@ -3070,9 +3070,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Animation",
-            "Adventure"
+            "أكشن",
+            "أنميشن",
+            "مغامرة"
         ],
         "Format": "HD",
         "Runtime": 80,
@@ -3092,9 +3092,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Family",
-            "Adventure"
+            "أنميشن",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 75,
@@ -3114,9 +3114,9 @@
             "Family"
         ],
         "GenresAr": [
-            "Animation",
-            "Drama",
-            "Family"
+            "أنميشن",
+            "دراما",
+            "عائلي"
         ],
         "Format": "HD",
         "Runtime": 70,
@@ -3136,9 +3136,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Animation",
-            "Adventure"
+            "أكشن",
+            "أنميشن",
+            "مغامرة"
         ],
         "Format": "HD",
         "Runtime": 79,
@@ -3158,9 +3158,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 97,
@@ -3180,9 +3180,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 84,
@@ -3202,9 +3202,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 89,
@@ -3224,9 +3224,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "DVDRip",
         "Runtime": null,
@@ -3246,9 +3246,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Animation",
-            "Adventure"
+            "أكشن",
+            "أنميشن",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 102,
@@ -3268,9 +3268,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "HD",
         "Runtime": 74,
@@ -3290,9 +3290,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Animation",
-            "Adventure"
+            "أكشن",
+            "أنميشن",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 94,
@@ -3312,9 +3312,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 96,
@@ -3334,9 +3334,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 97,
@@ -3356,9 +3356,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 76,
@@ -3378,9 +3378,9 @@
             "War"
         ],
         "GenresAr": [
-            "Animation",
-            "Drama",
-            "War"
+            "أنميشن",
+            "دراما",
+            "حرب"
         ],
         "Format": "Bluray",
         "Runtime": 89,
@@ -3400,9 +3400,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 100,
@@ -3422,9 +3422,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 81,
@@ -3444,9 +3444,9 @@
             "Family"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Family"
+            "أنميشن",
+            "كوميدي",
+            "عائلي"
         ],
         "Format": "Bluray",
         "Runtime": 80,
@@ -3466,9 +3466,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 92,
@@ -3488,9 +3488,9 @@
             "Family"
         ],
         "GenresAr": [
-            "Action",
-            "Comedy",
-            "Family"
+            "أكشن",
+            "كوميدي",
+            "عائلي"
         ],
         "Format": "HD",
         "Runtime": 68,
@@ -3510,9 +3510,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 85,
@@ -3532,9 +3532,9 @@
             "Family"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Family"
+            "أنميشن",
+            "كوميدي",
+            "عائلي"
         ],
         "Format": "Bluray",
         "Runtime": 58,
@@ -3554,9 +3554,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 95,
@@ -3576,9 +3576,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Animation",
-            "Adventure"
+            "أكشن",
+            "أنميشن",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 83,
@@ -3598,9 +3598,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "HD",
         "Runtime": 79,
@@ -3621,10 +3621,10 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Family",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 97,
@@ -3644,9 +3644,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Comedy",
-            "Adventure"
+            "أكشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 85,
@@ -3666,9 +3666,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 107,
@@ -3688,9 +3688,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 90,
@@ -3710,9 +3710,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 91,
@@ -3732,9 +3732,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Drama",
-            "Adventure"
+            "أنميشن",
+            "دراما",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 89,
@@ -3754,9 +3754,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 7,
@@ -3776,9 +3776,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 89,
@@ -3798,9 +3798,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 94,
@@ -3820,9 +3820,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Drama",
-            "Adventure"
+            "أنميشن",
+            "دراما",
+            "مغامرة"
         ],
         "Format": "HD",
         "Runtime": 47,
@@ -3842,9 +3842,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 100,
@@ -3864,9 +3864,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "DVDRip",
         "Runtime": 82,
@@ -3886,9 +3886,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "HD",
         "Runtime": 75,
@@ -3908,9 +3908,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "HD",
         "Runtime": 90,
@@ -3930,9 +3930,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "HD",
         "Runtime": 90,
@@ -3952,9 +3952,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 76,
@@ -3974,9 +3974,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 103,
@@ -3996,9 +3996,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 92,
@@ -4018,9 +4018,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 81,
@@ -4040,9 +4040,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 93,
@@ -4062,9 +4062,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 98,
@@ -4084,9 +4084,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 92,
@@ -4106,9 +4106,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Animation",
-            "Adventure"
+            "أكشن",
+            "أنميشن",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 95,
@@ -4128,9 +4128,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Animation",
-            "Adventure"
+            "أكشن",
+            "أنميشن",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 91,
@@ -4150,9 +4150,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Action",
-            "Animation",
-            "Adventure"
+            "أكشن",
+            "أنميشن",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 92,
@@ -4172,9 +4172,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "DVDRip",
         "Runtime": 78,
@@ -4194,9 +4194,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 94,
@@ -4216,9 +4216,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Family",
-            "Adventure"
+            "أنميشن",
+            "عائلي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 102,
@@ -4238,9 +4238,9 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
-            "Adventure"
+            "أنميشن",
+            "كوميدي",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 96,
@@ -4259,8 +4259,8 @@
             "Adventure"
         ],
         "GenresAr": [
-            "Animation",
-            "Adventure"
+            "أنميشن",
+            "مغامرة"
         ],
         "Format": "Bluray",
         "Runtime": 107,
