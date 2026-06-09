@@ -103329,5 +103329,91 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 3,
         "last_scraped": "2026-06-05T23:31:55.905175+00:00"
+    },
+    "301946": {
+        "Title": "مسلسل Alice and Steve",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/8696a886b67d19b16f1903e4fbb60693-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy",
+            "Drama",
+            "Romance"
+        ],
+        "GenresAr": [
+            "Comedy",
+            "Drama",
+            "Romance"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "تدور القصة حول أليس، التي تُصاب بصدمة عندما يبدأ صديقها المقرب ستيف علاقة عاطفية مع ابنتها إيزي. ومع خوفها من خسارة أعز أصدقائها وابنتها في الوقت نفسه، تحاول أليس تخريب هذه العلاقة بكل الطرق.لكن ستيف لا يستسلم بسهولة، ومع تصاعد التوتر بينهما تتحول الصداقة القديمة إلى صراع وعداء متزايد.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-alice-steve",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 6,
+        "last_scraped": "2026-06-09T02:13:44.036307+00:00"
+    },
+    "301933": {
+        "Title": "مسلسل Code of Silence",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/2f5718b4a939a77f2c522062fbbfba6c-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Crime",
+            "Drama",
+            "Melodrama",
+            "Thriller"
+        ],
+        "GenresAr": [
+            "Crime",
+            "Drama",
+            "Melodrama",
+            "Thriller"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "أليسون وودز، متعهدة طعام صماء، تعمل على إعالة والدتها ونفسها. تطلب الشرطة من أليسون قراءة المحادثات مع مجرمين خطرين. تبدأ أليسون في الوقوع في حب أحد المشتبه بهم، لكنها لن تتخلى عن الاستثمار…",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-code-silence",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2025-07-24",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 6,
+        "last_scraped": "2026-06-09T02:13:56.696349+00:00"
+    },
+    "301794": {
+        "Title": "مسلسل Short Circuit",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/c5d83c837435d835582e6214e1933b12-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Animation",
+            "Comedy",
+            "Short"
+        ],
+        "GenresAr": [
+            "Animation",
+            "Comedy",
+            "Short"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 7,
+        "Country": null,
+        "Description": "سلسلة من الأفلام القصيرة المتحركة المستقلة من إنتاج استوديوهات والت ديزني للرسوم المتحركة.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-short-circuit",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2018",
+        "EpisodeDuration": "7د",
+        "Number Of Episodes Text": 22,
+        "last_scraped": "2026-06-09T02:14:10.903517+00:00"
     }
 }
