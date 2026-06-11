@@ -13360,7 +13360,8 @@
         "ReleaseDate": "2025",
         "EpisodeDuration": "",
         "Number Of Episodes Text": 6,
-        "last_scraped": "2026-05-28T02:09:46.044505+00:00"
+        "last_scraped": "2026-05-28T02:09:46.044505+00:00",
+        "Number Of Episodes": 12
     },
     "265229": {
         "Title": "مسلسل Court of Gold",
@@ -52009,7 +52010,7 @@
         "EpisodeDuration": "52د",
         "Number Of Episodes Text": 10,
         "last_scraped": "2026-05-03T08:56:08.311210+00:00",
-        "Number Of Episodes": 34
+        "Number Of Episodes": 37
     },
     "144572": {
         "Title": "مسلسل Dr. Death: The Undoctored Story",
@@ -53095,7 +53096,8 @@
         "ReleaseDate": "2024",
         "EpisodeDuration": "30د",
         "Number Of Episodes Text": 12,
-        "last_scraped": "2026-05-03T09:17:54.007982+00:00"
+        "last_scraped": "2026-05-03T09:17:54.007982+00:00",
+        "Number Of Episodes": 42
     },
     "219402": {
         "Title": "مسلسل The Afterparty",
@@ -95133,7 +95135,8 @@
         "ReleaseDate": "2025",
         "EpisodeDuration": "23د",
         "Number Of Episodes Text": 10,
-        "last_scraped": "2026-05-04T05:39:05.601011+00:00"
+        "last_scraped": "2026-05-04T05:39:05.601011+00:00",
+        "Number Of Episodes": 84
     },
     "66726": {
         "Title": "مسلسل Planet Earth",
@@ -102791,7 +102794,8 @@
         "ReleaseDate": "2026",
         "EpisodeDuration": "45د",
         "Number Of Episodes Text": 10,
-        "last_scraped": "2026-05-21T18:54:52.632436+00:00"
+        "last_scraped": "2026-05-21T18:54:52.632436+00:00",
+        "Number Of Episodes": 5
     },
     "300373": {
         "Title": "مسلسل Mating Season",
@@ -103214,7 +103218,8 @@
         "ReleaseDate": "2026",
         "EpisodeDuration": "",
         "Number Of Episodes Text": 8,
-        "last_scraped": "2026-06-04T06:30:46.964041+00:00"
+        "last_scraped": "2026-06-04T06:30:46.964041+00:00",
+        "Number Of Episodes": 5
     },
     "301475": {
         "Title": "مسلسل Fish Hooks",
@@ -103415,5 +103420,85 @@
         "EpisodeDuration": "7د",
         "Number Of Episodes Text": 22,
         "last_scraped": "2026-06-09T02:14:10.903517+00:00"
+    },
+    "302161": {
+        "Title": "مسلسل The Little Mermaid",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/edcfe39342a069c3992d9886ef2bbbca-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Adventure",
+            "Animation",
+            "Comedy"
+        ],
+        "GenresAr": [
+            "Adventure",
+            "Animation",
+            "Comedy"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 23,
+        "Country": null,
+        "Description": "يتبع يوميات آرييل مع والدها الملك تريتون، وسرطان البحر سيباستيان، والسمكة فلوندر، وتتضمن الحلقات مواجهتها لأشرار ومخلوقات بحرية غريبة",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-little-mermaid",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "19921994",
+        "EpisodeDuration": "23د",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-06-11T12:15:15.052611+00:00"
+    },
+    "302034": {
+        "Title": "مسلسل Every Year After",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/9d451a93eb78dcace3e1a2f303a0cc28-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Romance"
+        ],
+        "GenresAr": [
+            "Drama",
+            "Romance"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "صديقان حميمان يستكشفان السؤال الدائم: ماذا لو كان حبك الأول مقدراً له أن يكون توأم روحك؟ قصة رومانسية آسرة عن إمكانيات الحب الخالدة.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-every-year",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-06-11T12:15:28.513712+00:00"
+    },
+    "301991": {
+        "Title": "مسلسل Norway: The Dark Horse",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/99f946704f7efbb63c4b387959ebea4c-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Documentary",
+            "Sport"
+        ],
+        "GenresAr": [
+            "Documentary",
+            "Sport"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "بعد 26 عامًا من الغياب عن البطولات الكبرى، بدت آمال “النرويج” في التأهل إلى كأس العالم 2026 شبه معدومة. لكن ما حدث لاحقًا أعاد الأمل من جديد، كما يروي هذا الفيلم الوثائقي.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-norway-dark-horse",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "Norwegian",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 2,
+        "last_scraped": "2026-06-11T12:15:44.460026+00:00"
     }
 }

@@ -233,7 +233,8 @@
         "ReleaseDate": "2025",
         "EpisodeDuration": "",
         "Number Of Episodes Text": 10,
-        "last_scraped": "2026-05-03T11:43:12.604367+00:00"
+        "last_scraped": "2026-05-03T11:43:12.604367+00:00",
+        "Number Of Episodes": 24
     },
     "285643": {
         "Title": "برنامج Just Makeup",
@@ -3715,6 +3716,7 @@
         "ReleaseDate": "2024",
         "EpisodeDuration": "",
         "Number Of Episodes Text": 9,
-        "last_scraped": "2026-06-05T23:38:43.309394+00:00"
+        "last_scraped": "2026-06-05T23:38:43.309394+00:00",
+        "Number Of Episodes": 20
     }
 }
