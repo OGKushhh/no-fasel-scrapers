@@ -26,7 +26,8 @@
         "Language": "English",
         "ReleaseDate": "2026-04-29",
         "EpisodeDuration": "minد",
-        "Number Of Episodes Text": 10
+        "Number Of Episodes Text": 10,
+        "Number Of Episodes": 9
     },
     "298220": {
         "Title": "مسلسل Pernille",
@@ -58393,7 +58394,8 @@
         "ReleaseDate": "2025",
         "EpisodeDuration": "60د",
         "Number Of Episodes Text": 10,
-        "last_scraped": "2026-05-03T11:13:04.843585+00:00"
+        "last_scraped": "2026-05-03T11:13:04.843585+00:00",
+        "Number Of Episodes": 41
     },
     "141040": {
         "Title": "مسلسل Johnny Test",
@@ -68654,7 +68656,8 @@
         "ReleaseDate": "2023",
         "EpisodeDuration": "53د",
         "Number Of Episodes Text": 10,
-        "last_scraped": "2026-05-03T16:27:28.465109+00:00"
+        "last_scraped": "2026-05-03T16:27:28.465109+00:00",
+        "Number Of Episodes": 50
     },
     "103081": {
         "Title": "مسلسل The Big Flower Fight",
@@ -72856,7 +72859,8 @@
         "ReleaseDate": "2025",
         "EpisodeDuration": "42د",
         "Number Of Episodes Text": 10,
-        "last_scraped": "2026-05-03T18:10:04.624169+00:00"
+        "last_scraped": "2026-05-03T18:10:04.624169+00:00",
+        "Number Of Episodes": 356
     },
     "255551": {
         "Title": "مسلسل FBI: Most Wanted",
@@ -87095,7 +87099,7 @@
         "EpisodeDuration": "50د",
         "Number Of Episodes Text": 10,
         "last_scraped": "2026-05-04T00:39:23.199472+00:00",
-        "Number Of Episodes": 21
+        "Number Of Episodes": 26
     },
     "49924": {
         "Title": "مسلسل This Close",
@@ -103305,7 +103309,8 @@
         "ReleaseDate": "2026-06-05",
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 10,
-        "last_scraped": "2026-06-05T23:31:43.231882+00:00"
+        "last_scraped": "2026-06-05T23:31:43.231882+00:00",
+        "Number Of Episodes": 3
     },
     "301644": {
         "Title": "مسلسل The Witness",
@@ -103444,7 +103449,7 @@
         "Status": "مكتمل",
         "ViewingLevel": "",
         "Language": "English",
-        "ReleaseDate": "19921994",
+        "ReleaseDate": "1992-1994",
         "EpisodeDuration": "23د",
         "Number Of Episodes Text": 8,
         "last_scraped": "2026-06-11T12:15:15.052611+00:00"
