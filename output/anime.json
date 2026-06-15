@@ -53767,5 +53767,35 @@
         "ReleaseDate": "2026-05-27",
         "EpisodeDuration": "minد",
         "last_scraped": "2026-06-05T23:48:46.620520+00:00"
+    },
+    "301877": {
+        "Title": "انمي Mahouka Koukou no Rettousei",
+        "Category": "anime",
+        "Type": "Series",
+        "Number Of Episodes": 26,
+        "Number Of Episodes Text": 26,
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/f0e355c1c6a6eb100025c540a9ca9a5c.jpg?resize=400%2C600",
+        "Source": "",
+        "Genres": [
+            "خارق للطبيعة",
+            "Fantasy",
+            "سحر"
+        ],
+        "GenresAr": [
+            "خارق للطبيعة",
+            "فانتازيا",
+            "سحر"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 24,
+        "Country": null,
+        "Description": "يتقاتل الأشقاء تاتسويا وميوكي ضد بعضهما البعض عندما يسجلان في مدرسة ماجيك الثانوية.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-mahouka-koukou-no-rettousei",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "اليابانية",
+        "ReleaseDate": "2014",
+        "EpisodeDuration": "24د",
+        "last_scraped": "2026-06-13T16:29:06.638535+00:00"
     }
 }

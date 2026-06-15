@@ -103351,9 +103351,9 @@
             "Romance"
         ],
         "GenresAr": [
-            "Comedy",
-            "Drama",
-            "Romance"
+            "كوميدي",
+            "دراما",
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -103380,10 +103380,10 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Crime",
-            "Drama",
+            "جريمة",
+            "دراما",
             "Melodrama",
-            "Thriller"
+            "إثارة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -103409,8 +103409,8 @@
             "Short"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy",
+            "أنميشن",
+            "كوميدي",
             "Short"
         ],
         "Format": "1080p WEB-DL",
@@ -103437,9 +103437,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Adventure",
-            "Animation",
-            "Comedy"
+            "مغامرة",
+            "أنميشن",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 23,
@@ -103464,8 +103464,8 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Romance"
+            "دراما",
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -103490,8 +103490,8 @@
             "Sport"
         ],
         "GenresAr": [
-            "Documentary",
-            "Sport"
+            "وثائقي",
+            "رياضي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -103505,5 +103505,175 @@
         "EpisodeDuration": "",
         "Number Of Episodes Text": 2,
         "last_scraped": "2026-06-11T12:15:44.460026+00:00"
+    },
+    "302812": {
+        "Title": "مسلسل Lizzie McGuire",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/5701e4c8c4647433619d79af5f25dc84-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy",
+            "Drama",
+            "Family",
+            "Melodrama"
+        ],
+        "GenresAr": [
+            "كوميدي",
+            "دراما",
+            "عائلي",
+            "Melodrama"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 22,
+        "Country": null,
+        "Description": "ليزي ماكغواير، تلميذة خرقاء في المرحلة المتوسطة، تتنقل عبر قضايا المراهقة بينما تستمتع بسنواتها المراهقة مع أصدقاء حقيقيين، وأخ أصغر مزعج، وأبوين محبين.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-lizzie-mcguire",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2001-01-12",
+        "EpisodeDuration": "22 minد",
+        "Number Of Episodes Text": 34,
+        "last_scraped": "2026-06-15T10:15:09.007767+00:00"
+    },
+    "302742": {
+        "Title": "مسلسل Glee",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/ce06bb64c4833cf416a6d4e204d2300e-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy",
+            "Drama",
+            "Melodrama",
+            "Music",
+            "Musical"
+        ],
+        "GenresAr": [
+            "كوميدي",
+            "دراما",
+            "Melodrama",
+            "موسيقى",
+            "موسيقي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 50,
+        "Country": null,
+        "Description": "تحاول مجموعة من المنبوذين الطموحين الهروب من الواقع القاسي للمدرسة الثانوية من خلال الانضمام إلى نادي الفرح الذي يرأسه مدرس إسباني شغوف.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-glee",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2009-05-19",
+        "EpisodeDuration": "50 minد",
+        "Number Of Episodes Text": 13,
+        "last_scraped": "2026-06-15T10:16:36.308844+00:00"
+    },
+    "302597": {
+        "Title": "مسلسل Cougar Town",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/f0e37cb4ceab77c73b45b9c2a487cb81.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy",
+            "Romance"
+        ],
+        "GenresAr": [
+            "كوميدي",
+            "رومانسية"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يتبع مغامرات وعلاقات مجموعة من الجيران الذين يعيشون في جلفهافن، فلوريدا.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-cougar-town",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2009-09-23",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 13,
+        "last_scraped": "2026-06-15T10:18:55.280263+00:00"
+    },
+    "302417": {
+        "Title": "مسلسل Bia",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/ae47d6e27032daa4bf0d1a3977a77e6b-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Action",
+            "Comedy",
+            "Drama"
+        ],
+        "GenresAr": [
+            "أكشن",
+            "كوميدي",
+            "دراما"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 35,
+        "Country": null,
+        "Description": "بيا تعشق الرسم والتلوين. تقضي هي وصديقتاها المقربتان وقتهما في “فاندوم”، وهو مكانٌ يُحبّذون فيه، إلى جانب المؤثرين، لاستعراض مواهبهم. في المقابل، تُعدّ “لايكس” شبكةً لا يسعى رئيسها التنفيذي إلا للشهرة والمال.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-bia",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "Spanish, Portuguese",
+        "ReleaseDate": "2019-2020",
+        "EpisodeDuration": "35د",
+        "Number Of Episodes Text": 60,
+        "last_scraped": "2026-06-15T10:19:53.032109+00:00"
+    },
+    "302210": {
+        "Title": "مسلسل The Polygamist",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/1aef881367a9c0f2711298046c385473-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama"
+        ],
+        "GenresAr": [
+            "دراما"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "تجسّد “جويس”، أيقونة مواقع التواصل الاجتماعي، صورة مثالية للزواج السعيد… إلى أن تقلب خيانات زوجها الفاضحة حياتها رأسًا على عقب وتدفعها إلى انهيار عاطفي.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-the-polygamist",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "N/A",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 22,
+        "last_scraped": "2026-06-15T10:20:22.356997+00:00"
+    },
+    "302193": {
+        "Title": "مسلسل Raakh",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/3cb60a311bb750b6f00c8991766492e1-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Crime",
+            "Drama",
+            "Melodrama",
+            "Mystery"
+        ],
+        "GenresAr": [
+            "جريمة",
+            "دراما",
+            "Melodrama",
+            "غموض"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يختفي مراهقين، مما يؤدي إلى تدمير عائلة متماسكة وإثارة قلق المدينة. يبدأ ضابط حازم عملية بحث على مستوى البلاد، ويغرق في عالم مظلم من الوحشية والشر البشري.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-raakh",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "الهنديو",
+        "ReleaseDate": "2026-06-12",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-06-15T10:20:51.017197+00:00"
     }
 }
