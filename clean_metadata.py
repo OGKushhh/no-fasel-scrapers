@@ -87,6 +87,8 @@ EN_TO_AR_GENRE = {
     "Talk-Show": "برامج حوارية",
     "Game-Show": "برامج مسابقات",
     "Musical": "موسيقي",
+    "Melodrama": "ميلودراما",
+    "Political": "سياسي",
 }
 
 

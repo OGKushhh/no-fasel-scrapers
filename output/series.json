@@ -27,7 +27,7 @@
         "ReleaseDate": "2026-04-29",
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 10,
-        "Number Of Episodes": 9
+        "Number Of Episodes": 10
     },
     "298220": {
         "Title": "مسلسل Pernille",
@@ -37276,7 +37276,7 @@
         "Status": "",
         "ViewingLevel": "",
         "Language": "الانجليزية",
-        "ReleaseDate": "",
+        "ReleaseDate": "1973",
         "EpisodeDuration": "60د",
         "Number Of Episodes Text": 5,
         "last_scraped": "2026-05-03T03:23:19.782673+00:00"
@@ -52011,7 +52011,7 @@
         "EpisodeDuration": "52د",
         "Number Of Episodes Text": 10,
         "last_scraped": "2026-05-03T08:56:08.311210+00:00",
-        "Number Of Episodes": 37
+        "Number Of Episodes": 38
     },
     "144572": {
         "Title": "مسلسل Dr. Death: The Undoctored Story",
@@ -53098,7 +53098,7 @@
         "EpisodeDuration": "30د",
         "Number Of Episodes Text": 12,
         "last_scraped": "2026-05-03T09:17:54.007982+00:00",
-        "Number Of Episodes": 42
+        "Number Of Episodes": 45
     },
     "219402": {
         "Title": "مسلسل The Afterparty",
@@ -59956,7 +59956,8 @@
         "ReleaseDate": "2025",
         "EpisodeDuration": "50د",
         "Number Of Episodes Text": 8,
-        "last_scraped": "2026-05-03T12:14:46.163643+00:00"
+        "last_scraped": "2026-05-03T12:14:46.163643+00:00",
+        "Number Of Episodes": 40
     },
     "127035": {
         "Title": "مسلسل Modus",
@@ -81747,7 +81748,7 @@
         "Status": "مكتمل",
         "ViewingLevel": "TV-MA",
         "Language": "البولنديه",
-        "ReleaseDate": "",
+        "ReleaseDate": "1983",
         "EpisodeDuration": "60د",
         "Number Of Episodes Text": 8,
         "last_scraped": "2026-05-03T21:49:29.372594+00:00"
@@ -95265,7 +95266,7 @@
         "Status": "مكتمل",
         "ViewingLevel": "+16",
         "Language": "الانجليزيه",
-        "ReleaseDate": "",
+        "ReleaseDate": "2009",
         "EpisodeDuration": "55د",
         "Number Of Episodes Text": 10,
         "last_scraped": "2026-05-04T05:45:20.929829+00:00"
@@ -102799,7 +102800,7 @@
         "EpisodeDuration": "45د",
         "Number Of Episodes Text": 10,
         "last_scraped": "2026-05-21T18:54:52.632436+00:00",
-        "Number Of Episodes": 5
+        "Number Of Episodes": 6
     },
     "300373": {
         "Title": "مسلسل Mating Season",
@@ -103223,7 +103224,7 @@
         "EpisodeDuration": "",
         "Number Of Episodes Text": 8,
         "last_scraped": "2026-06-04T06:30:46.964041+00:00",
-        "Number Of Episodes": 5
+        "Number Of Episodes": 7
     },
     "301475": {
         "Title": "مسلسل Fish Hooks",
@@ -103529,12 +103530,13 @@
         "Description": "ليزي ماكغواير، تلميذة خرقاء في المرحلة المتوسطة، تتنقل عبر قضايا المراهقة بينما تستمتع بسنواتها المراهقة مع أصدقاء حقيقيين، وأخ أصغر مزعج، وأبوين محبين.",
         "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-lizzie-mcguire",
         "Status": "مكتمل",
-        "ViewingLevel": "",
+        "ViewingLevel": "TV-G",
         "Language": "English",
-        "ReleaseDate": "2001-01-12",
+        "ReleaseDate": "2001",
         "EpisodeDuration": "22 minد",
         "Number Of Episodes Text": 34,
-        "last_scraped": "2026-06-15T10:15:09.007767+00:00"
+        "last_scraped": "2026-06-15T10:15:09.007767+00:00",
+        "Number Of Episodes": 65
     },
     "302742": {
         "Title": "مسلسل Glee",
@@ -103675,5 +103677,33 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 8,
         "last_scraped": "2026-06-15T10:20:51.017197+00:00"
+    },
+    "302928": {
+        "Title": "مسلسل A.N.T. Farm",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/3cae71d5417dea24438e9d69b48fbc3b-400x600.webp",
+        "Source": "",
+        "Genres": [
+            "Comedy",
+            "Drama",
+            "Family"
+        ],
+        "GenresAr": [
+            "كوميدي",
+            "دراما",
+            "عائلي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 23,
+        "Country": null,
+        "Description": "تدور الأحداث حول (تشينا باركس) التي تدخل برنامج مواهب اسمه المواهب الطبيعية المتقدمة، في المدرسة الثانوية المحلية التي تتبعها.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-n-t-farm",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2011",
+        "EpisodeDuration": "23د",
+        "Number Of Episodes Text": 18,
+        "last_scraped": "2026-06-17T12:40:10.481930+00:00"
     }
 }

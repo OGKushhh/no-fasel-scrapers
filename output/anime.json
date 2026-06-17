@@ -53354,7 +53354,7 @@
         "Status": "+17",
         "ViewingLevel": "",
         "Language": "",
-        "ReleaseDate": "",
+        "ReleaseDate": "2011",
         "EpisodeDuration": "",
         "last_scraped": "2026-05-06T20:38:06.514323+00:00"
     },
@@ -53797,5 +53797,37 @@
         "ReleaseDate": "2014",
         "EpisodeDuration": "24د",
         "last_scraped": "2026-06-13T16:29:06.638535+00:00"
+    },
+    "302413": {
+        "Title": "اونا Biao Ren Er: Blades of the Guardians الموسم الثاني",
+        "Category": "anime",
+        "Type": "Series",
+        "Number Of Episodes": 1,
+        "Number Of Episodes Text": 8,
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/405931fcca0d11d6c294e982215ed8fa-400x600.jpg?resize=400%2C600",
+        "Source": "",
+        "Genres": [
+            "Historical",
+            "Action",
+            "Action",
+            "History"
+        ],
+        "GenresAr": [
+            "Historical",
+            "Action",
+            "اكشن",
+            "History"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 27,
+        "Country": null,
+        "Description": "في السنة الثالثة من عهد داي، اندلعت الاضطرابات على الحدود. قام الإمبراطور يانغ من Sui بجولة شمالية لتخويف الحدود الغربية. بتكليف من صديق قديم، اصطحب المرافق Dao Ma زعيم المتمردين Zhi Shilang إلى Chang’an لتحقيق هدفه المتمثل في إنقاذ العالم من الفوضى. ومع ذلك، تبعته عين واحدة حاقدة عن كثب. وظهرت أحداث الماضي وأزمات الحاضر؛ في هذا العالم الفوضوي، انظر كيف يثير داو ما عاصفة دموية في عالم القتال!",
+        "SeasonsUrl": "https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-biao-ren-er",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "اليابانية",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "27 minد",
+        "last_scraped": "2026-06-17T13:24:11.512179+00:00"
     }
 }

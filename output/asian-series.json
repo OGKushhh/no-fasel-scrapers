@@ -3258,7 +3258,7 @@
             "Political"
         ],
         "GenresAr": [
-            "Melodrama",
+            "ميلودراما",
             "Political"
         ],
         "Format": "1080p WEB-DL",
@@ -18617,7 +18617,7 @@
         "Status": "مكتمل",
         "ViewingLevel": "",
         "Language": "الكورية",
-        "ReleaseDate": "",
+        "ReleaseDate": "2013",
         "EpisodeDuration": "65د",
         "Number Of Episodes Text": 16,
         "last_scraped": "2026-05-06T23:22:50.659383+00:00"
@@ -36980,7 +36980,8 @@
         "ReleaseDate": "2026-03-10",
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 12,
-        "last_scraped": "2026-05-17T22:57:39.276607+00:00"
+        "last_scraped": "2026-05-17T22:57:39.276607+00:00",
+        "Number Of Episodes": 12
     },
     "299170": {
         "Title": "مسلسل Azure Spring",
