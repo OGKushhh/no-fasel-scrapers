@@ -12,9 +12,17 @@ import sys
 from pathlib import Path
 
 # ========== CONFIGURATION ==========
-SOURCE_DIR = Path("./output")
-TARGET_DIR = Path("../AbdoBest/data")
+SCRIPT_DIR = Path(__file__).parent.resolve()          # directory of this script
+
+# Absolute path to the Git repository (AbdoBest folder inside the same repo)
 GIT_REPO_DIR = Path(r"C:\Users\abdo\Documents\GitHub\no-fasel-scrapers\AbdoBest")
+
+# Source is "output" next to this script
+SOURCE_DIR = SCRIPT_DIR / "output"
+
+# Target is "data" inside the AbdoBest folder
+TARGET_DIR = GIT_REPO_DIR / "data"
+
 GIT_COMMIT_MSG = "content update"
 
 # Files/folders to exclude (exact names or patterns)
@@ -25,8 +33,8 @@ EXCLUDE_NAMES = {
     "image-indices.json",
     "baks",
 }
-EXCLUDE_PREFIXES = ("last_page_",)  # any file starting with this
-EXCLUDE_SUFFIXES = (".txt",)        # any .txt file (progress files)
+EXCLUDE_PREFIXES = ("last_page_",)   # any file starting with this
+EXCLUDE_SUFFIXES = (".txt",)         # any .txt file (progress files)
 # ===================================
 
 def should_exclude(path: Path) -> bool:
