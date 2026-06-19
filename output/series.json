@@ -103705,5 +103705,169 @@
         "EpisodeDuration": "23د",
         "Number Of Episodes Text": 18,
         "last_scraped": "2026-06-17T12:40:10.481930+00:00"
+    },
+    "303545": {
+        "Title": "مسلسل Oasis",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/5eeae6c295f6272c466732e0422b248a-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Mystery"
+        ],
+        "GenresAr": [
+            "Mystery"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "“الواحة” هو منتجع العطلات الأكثر فخامة في البلاد. جنة للعائلات الثرية مع شواطئ خاصة ومرافق لكبار الشخصيات وأمن لا يمكن اختراقه. المكان المناسب لأفضل صيف على الإطلاق. ولكن كل شيء ينهار عندما تقوم الشرطة…",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-oasis",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-06-19",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-06-19T13:43:15.023365+00:00"
+    },
+    "303536": {
+        "Title": "مسلسل The Season",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/477e0a51b7272fdaaaaf523b5ec38319-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Melodrama"
+        ],
+        "GenresAr": [
+            "Drama",
+            "Melodrama"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "تجد مجموعة من الأصدقاء في عالم القوارب الفاخر في “هونج كونج” أن إجازتهم الصيفية تنزلق إلى الخيانة وألعاب القوة مع ظهور أجندات خفية.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-the-season",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-06-17",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 6,
+        "last_scraped": "2026-06-19T13:46:01.136555+00:00"
+    },
+    "303455": {
+        "Title": "مسلسل Angel",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/478693bdd4ba58744c83feb9b36b43aa-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Action",
+            "Adventure",
+            "Drama",
+            "Genres-action",
+            "Melodrama"
+        ],
+        "GenresAr": [
+            "Action",
+            "Adventure",
+            "Drama",
+            "Genres-action",
+            "Melodrama"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 44,
+        "Country": null,
+        "Description": "ينتقل الملاك مصاص الدماء، الملعون بالروح، إلى لوس أنجلوس ويساعد الأشخاص الذين يعانون من مشاكل خارقة للطبيعة أثناء سعيه لخلاصه.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-angel",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "1999-10-05",
+        "EpisodeDuration": "44 minد",
+        "Number Of Episodes Text": 22,
+        "last_scraped": "2026-06-19T13:47:28.942635+00:00"
+    },
+    "303522": {
+        "Title": "مسلسل Royal Pains",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/f837f8b7d2b127ea9b3e444664f52732-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy",
+            "Drama",
+            "Melodrama"
+        ],
+        "GenresAr": [
+            "Comedy",
+            "Drama",
+            "Melodrama"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 45,
+        "Country": null,
+        "Description": "ينتهي الأمر بطبيب طوارئ لامع، فقد مصداقيته بشكل غير عادل، بالعمل مع شقيقه الأصغر في هامبتونز كطبيب بواب للأثرياء والنخبة المتطرفة.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-royal-pains",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2009-06-04",
+        "EpisodeDuration": "45 minد",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-06-19T13:49:33.150532+00:00"
+    },
+    "303084": {
+        "Title": "مسلسل I Will Find You",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/d934f5ffa482d621cf26f1e37f122a4a-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Crime",
+            "Drama",
+            "Melodrama",
+            "Mystery"
+        ],
+        "GenresAr": [
+            "Crime",
+            "Drama",
+            "Melodrama",
+            "Mystery"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 40,
+        "Country": null,
+        "Description": "يتلقى أب مسجون بتهمة قتل ابنه أدلة تشير إلى أن طفله قد يكون على قيد الحياة، مما يجبره على الهروب وكشف الحقيقة.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-will-find",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-06-18",
+        "EpisodeDuration": "40 minد",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-06-19T13:49:47.614694+00:00"
+    },
+    "303242": {
+        "Title": "مسلسل The King of Queens",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/684c8f72bc43d64fd7cb6c9803059345-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy"
+        ],
+        "GenresAr": [
+            "Comedy"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 22,
+        "Country": null,
+        "Description": "يمتلك الساعي دوج هيفرنان حياة جيدة فلديه زوجته الجميلة كاري، وجهاز تلفزيون كبير وأصدقاء كثيرون، ولكن تعاني الأسرة من والد كاري آرثر اللذان ينتقلان للعيش معهم.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-king-queens",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "1998",
+        "EpisodeDuration": "22د",
+        "Number Of Episodes Text": 13,
+        "last_scraped": "2026-06-19T13:52:23.861720+00:00"
     }
 }
