@@ -103765,14 +103765,14 @@
             "Action",
             "Adventure",
             "Drama",
-            "Genres-action",
+            "Genres action",
             "Melodrama"
         ],
         "GenresAr": [
             "Action",
             "Adventure",
             "Drama",
-            "Genres-action",
+            "Genres action",
             "Melodrama"
         ],
         "Format": "1080p WEB-DL",
@@ -103869,5 +103869,29 @@
         "EpisodeDuration": "22د",
         "Number Of Episodes Text": 13,
         "last_scraped": "2026-06-19T13:52:23.861720+00:00"
+    },
+    "303619": {
+        "Title": "مسلسل Penny on M.A.R.S.",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/ddbc0d32a3ffa158cfa7c9e3540532d8-400x600.webp",
+        "Source": "",
+        "Genres": [
+            "Family"
+        ],
+        "GenresAr": [
+            "Family"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 22,
+        "Country": null,
+        "Description": "بيني فتاة لديها موهبة كبيرة وشغف كبير للغناء، قررت التسجيل في أشهر مدرسة للفنون المسرحية شغفها سيشجعها على القتال من أجل أحلامها إلى جانب أفضل صديق لها وهو كاميلا.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-penny-m-r-s",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2018-2020",
+        "EpisodeDuration": "22د",
+        "Number Of Episodes Text": 13,
+        "last_scraped": "2026-06-20T12:30:21.289568+00:00"
     }
 }
