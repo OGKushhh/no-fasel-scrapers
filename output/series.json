@@ -16499,7 +16499,8 @@
         "ReleaseDate": "2024",
         "EpisodeDuration": "",
         "Number Of Episodes Text": 10,
-        "last_scraped": "2026-05-28T02:09:46.044505+00:00"
+        "last_scraped": "2026-05-28T02:09:46.044505+00:00",
+        "Number Of Episodes": 20
     },
     "258916": {
         "Title": "مسلسل Senna",
@@ -45895,7 +45896,8 @@
         "ReleaseDate": "2024",
         "EpisodeDuration": "60د",
         "Number Of Episodes Text": 8,
-        "last_scraped": "2026-05-03T06:33:57.043986+00:00"
+        "last_scraped": "2026-05-03T06:33:57.043986+00:00",
+        "Number Of Episodes": 19
     },
     "155349": {
         "Title": "مسلسل The Beatles: Get Back",
@@ -103224,7 +103226,7 @@
         "EpisodeDuration": "",
         "Number Of Episodes Text": 8,
         "last_scraped": "2026-06-04T06:30:46.964041+00:00",
-        "Number Of Episodes": 7
+        "Number Of Episodes": 9
     },
     "301475": {
         "Title": "مسلسل Fish Hooks",
