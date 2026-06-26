@@ -6235,7 +6235,8 @@
         "ReleaseDate": "2024",
         "EpisodeDuration": "",
         "Number Of Episodes Text": 13,
-        "last_scraped": "2026-05-28T02:09:46.044505+00:00"
+        "last_scraped": "2026-05-28T02:09:46.044505+00:00",
+        "Number Of Episodes": 26
     },
     "281507": {
         "Title": "مسلسل Boots",
@@ -47138,7 +47139,7 @@
         "EpisodeDuration": "",
         "Number Of Episodes Text": 10,
         "last_scraped": "2026-05-03T07:04:01.571016+00:00",
-        "Number Of Episodes": 39
+        "Number Of Episodes": 47
     },
     "226633": {
         "Title": "مسلسل Transplant",
@@ -103895,5 +103896,85 @@
         "EpisodeDuration": "22د",
         "Number Of Episodes Text": 13,
         "last_scraped": "2026-06-20T12:30:21.289568+00:00"
+    },
+    "303913": {
+        "Title": "مسلسل Behind the Attraction",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/30bfdf9e7e56585a4e53347ad285d19b-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Documentary",
+            "History"
+        ],
+        "GenresAr": [
+            "Documentary",
+            "History"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "استكشف تاريخ كيفية ظهور معالم ديزني السياحية الشهيرة، وكيف تغيرت بمرور الوقت، وكيف لا يزال المعجبون مهووسين بها.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-behind-attraction",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 0,
+        "last_scraped": "2026-06-26T03:50:14.961730+00:00"
+    },
+    "303876": {
+        "Title": "مسلسل The American Experiment",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/ef97d1a7c2c845d623e0096dd46c6fda-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Documentary",
+            "History"
+        ],
+        "GenresAr": [
+            "Documentary",
+            "History"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "من أجل الحياة والحرّية والسعي لتحقيق السعادة. يتتبع هذا المسلسل الوثائقي التاريخي الشامل كيف أسهمت المُثل العليا لمؤسسي أمريكا في نهضة الأمة.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-american-experiment",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 5,
+        "last_scraped": "2026-06-26T03:50:43.092810+00:00"
+    },
+    "304028": {
+        "Title": "مسلسل Soy Luna",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/0e0c2d19298f15791b573df4d590d2e3-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy",
+            "Family",
+            "Music"
+        ],
+        "GenresAr": [
+            "Comedy",
+            "Family",
+            "Music"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 48,
+        "Country": null,
+        "Description": "حول لونا فالينتي، وهي فتاة مكسيكية تنتقل إلى الأرجنتين وتجد حبها للتزلج على العجلات",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-soy-luna",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "Spanish",
+        "ReleaseDate": "2016",
+        "EpisodeDuration": "48د",
+        "Number Of Episodes Text": 80,
+        "last_scraped": "2026-06-26T03:51:28.232040+00:00"
     }
 }
