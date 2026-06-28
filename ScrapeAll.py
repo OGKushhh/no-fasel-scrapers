@@ -1,16 +1,32 @@
+#!/usr/bin/env python3
+"""
+ScrapeAll.py – Full pipeline: scrape FaselHD → clean (with genre translation) → sort → sync & push.
+Run daily (cron / Task Scheduler) to keep data fresh.
+
+Steps:
+  1. FaselMoviesScraper.py   – all movie categories
+  2. FaselAnimeScraper.py    – anime series
+  3. FaselSeriesScraper.py   – series, tvshows, asian-series
+  4. clean_metadata.py --translate-genres  – clean + fill Arabic genre translations
+  5. sort_output.py          – convert dicts to sorted arrays for the app
+  6. sync_to_abdobest.py     – copy changed files to AbdoBest/data + git push
+"""
+
 import os
 import subprocess
 from time import perf_counter
-from datetime import date, datetime
+from datetime import datetime
 
 start_time = perf_counter()
-
 os.makedirs("./output", exist_ok=True)
 
-def run_script(script_name, description=""):
-    """Run a Python script, return True if success, False if failed."""
-    print(f"\n▶️ Running {script_name} ... {description}")
-    result = subprocess.run(["python", script_name])
+def run_script(script_name, args=None, description=""):
+    """Run a Python script with optional args. Return True if success."""
+    cmd = ["python", script_name]
+    if args:
+        cmd.extend(args)
+    print(f"\n▶️ Running: {' '.join(cmd)} ... {description}")
+    result = subprocess.run(cmd)
     if result.returncode != 0:
         print(f"❌ {script_name} failed (exit code {result.returncode})")
         with open("./output/failed_scripts.log", "a") as f:
@@ -19,75 +35,53 @@ def run_script(script_name, description=""):
     print(f"✅ {script_name} finished successfully")
     return True
 
-print("==========================================")
-print("Starting FaselHD scraping pipeline")
-print("==========================================")
+print("=" * 60)
+print("🚀 Pipeline: Scrape FaselHD → Clean (translate) → Sort → Sync")
+print("=" * 60)
 
-# ------------------------------------------------------------------
-# STEP 1 – Scrape new content (metadata only, no ratings)
-# ------------------------------------------------------------------
+failures = []
+
+# ── Phase 1: Scrape all FaselHD content ──────────────────────────────
 print("\n[Phase 1] Scraping fresh metadata from FaselHD")
-scripts = [
+for script in [
     "FaselMoviesScraper.py",
     "FaselAnimeScraper.py",
     "FaselSeriesScraper.py",
-]
-
-failures = []
-for script in scripts:
+]:
     if not run_script(script):
         failures.append(script)
 
-# ------------------------------------------------------------------
-# STEP 2 – Fetch ratings (TMDb primary, OMDb fallback)
-# ------------------------------------------------------------------
-print("\n[Phase 2] Fetching/updating ratings (TMDb → OMDb)")
-if not run_script("update_ratings.py"):
-    failures.append("update_ratings.py")
-
-# ------------------------------------------------------------------
-# STEP 3 – Update episodes and series status
-# ------------------------------------------------------------------
-print("\n[Phase 3] Checking for new episodes and updating status")
-if not run_script("update_episodes.py"):
-    failures.append("update_episodes.py")
-
-# ------------------------------------------------------------------
-# STEP 4 – (Optional) Clean metadata (normalise genres, country, runtime)
-# ------------------------------------------------------------------
-print("\n[Phase 4] Running post‑processing clean (optional)")
+# ── Phase 2: Clean metadata AND translate missing Arabic genres ──────
+print("\n[Phase 2] Cleaning metadata + translating Arabic genres")
 if os.path.exists("clean_metadata.py"):
-    run_script("clean_metadata.py", "(normalises genres, country, runtime)")
+    if not run_script("clean_metadata.py", ["--translate-genres"], description="(cleaning + genre translation)"):
+        failures.append("clean_metadata.py")
 else:
     print("⚠️ clean_metadata.py not found – skipping")
 
-# ------------------------------------------------------------------
-# STEP 5 – Build lightweight search index
-# ------------------------------------------------------------------
-print("\n[Phase 5] Generating all-content.json index")
-if os.path.exists("AllContentIndexer.py"):
-    run_script("AllContentIndexer.py")
+# ── Phase 3: Sort output (dict → array, newest first) ────────────────
+print("\n[Phase 3] Sorting output JSONs")
+if os.path.exists("sort_output.py"):
+    if not run_script("sort_output.py", description="(all categories)"):
+        failures.append("sort_output.py")
 else:
-    print("⚠️ AllContentIndexer.py not found – skipping")
+    print("⚠️ sort_output.py not found – skipping")
 
-# ------------------------------------------------------------------
-# (Optional) One‑time backfill – comment out after first run
-# ------------------------------------------------------------------
-# print("\n[Phase 6] Backfilling missing metadata (one‑time, skip later)")
-# if os.path.exists("backfill_metadata.py"):
-#     run_script("backfill_metadata.py", "fills missing fields from TMDb")
-# else:
-#     print("⚠️ backfill_metadata.py not found – skipping")
+# ── Phase 4: Sync to AbdoBest and Git push ────────────────────────────
+print("\n[Phase 4] Syncing changed files to AbdoBest/data and pushing to git")
+if os.path.exists("sync_to_abdobest.py"):
+    if not run_script("sync_to_abdobest.py", description="(copy + git add/commit/push)"):
+        failures.append("sync_to_abdobest.py")
+else:
+    print("⚠️ sync_to_abdobest.py not found – skipping")
 
-# ------------------------------------------------------------------
-# Finalise
-# ------------------------------------------------------------------
+# ── Finalise ────────────────────────────────────────────────────────────
 end_time = perf_counter()
 
 with open("./output/last-scraped.txt", "w") as fp:
-    fp.write(date.today().strftime("%Y-%m-%d"))
+    fp.write(datetime.now().strftime("%Y-%m-%d"))
 
-print("\n" + "="*50)
+print("\n" + "=" * 60)
 if failures:
     print(f"⚠️ Some scripts failed: {', '.join(failures)}")
     print(f"Check ./output/failed_scripts.log for details.")
