@@ -103977,5 +103977,141 @@
         "Number Of Episodes Text": 80,
         "last_scraped": "2026-06-26T03:51:28.232040+00:00",
         "Number Of Episodes": 220
+    },
+    "304750": {
+        "Title": "مسلسل Elle",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/8c5dc51ca22e2bd374773cffc227d32c-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy",
+            "Drama",
+            "Melodrama"
+        ],
+        "GenresAr": [
+            "Comedy",
+            "Drama",
+            "Melodrama"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 45,
+        "Country": null,
+        "Description": "يتبع رحلة Elle Woods خلال المدرسة الثانوية، واستكشاف التجارب التكوينية التي ساهمت في تحويلها إلى شخصية “Legally Blonde” الشهيرة والواثقة.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-elle",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-07-01",
+        "EpisodeDuration": "45 minد",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-07-01T17:29:06.458638+00:00"
+    },
+    "304741": {
+        "Title": "مسلسل Worst Neighbor Ever",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/67e0472c6cf60777dcb0701aa4de40ee-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Documentary",
+            "Documentary"
+        ],
+        "GenresAr": [
+            "Documentary",
+            "وثائقي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "هل تعتقد أنك تعرف جيرانك؟ فكر مرة أخرى. يعرض فيلم “أسوأ جار على الإطلاق” روايات مباشرة عن العنف والترهيب والمضايقة بين الجيران.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-worst-neighbor-ever",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-07-01",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 4,
+        "last_scraped": "2026-07-01T17:29:21.513839+00:00"
+    },
+    "304558": {
+        "Title": "مسلسل The Doomies",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/66a58a2b721148700ff01bde1547058e-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Adventure",
+            "Animation",
+            "Comedy"
+        ],
+        "GenresAr": [
+            "Adventure",
+            "Animation",
+            "Comedy"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يتبع أفضل الأصدقاء بوبي ورومي الذين يفتحون بوابة إلى عالم آخر عن طريق الخطأ، ويحولون مدينتهم الساحلية إلى نقطة ساخنة لمخلوقات الموت المرعبة، ويجب عليهم القتال مع الوحوش الحقيقية والداخلية.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-the-doomies",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-06-26",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 22,
+        "last_scraped": "2026-07-01T17:29:36.078714+00:00"
+    },
+    "304550": {
+        "Title": "مسلسل 50 Seconds: The Fernando Báez Sosa Case",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/d2264371ce60ad66acd9e655f492bf54-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Crime",
+            "Documentary",
+            "Documentary"
+        ],
+        "GenresAr": [
+            "Crime",
+            "Documentary",
+            "وثائقي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "تستكشف هذه السلسلة الوثائقية مقتل فرناندو بايز سوسا عام 2020، والذي تم تصويره بالفيديو وهو يضربه بشكل مميت على يد مجموعة من الشباب، مما صدم الأرجنتين.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-50-seconds-fernando-baez-sosa-case",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "الاسبانية",
+        "ReleaseDate": "2025-11-13",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 3,
+        "last_scraped": "2026-07-01T17:29:51.017452+00:00"
+    },
+    "304538": {
+        "Title": "مسلسل Life, Larry and the Pursuit of Unhappiness: An Almost History of America",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/3e15ea431665104d29320a83e4ef8597-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy",
+            "History"
+        ],
+        "GenresAr": [
+            "Comedy",
+            "History"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "اسكتشات كوميدية تستكشف لحظات تاريخية مختلفة، بأربعة اسكتشات مختلفة في كل حلقة.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-life-larry-pursuit-unhappiness-almost-history-america",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-06-26",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 7,
+        "last_scraped": "2026-07-01T17:30:05.451463+00:00"
     }
 }

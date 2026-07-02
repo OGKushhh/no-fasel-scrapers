@@ -3759,5 +3759,25 @@
         "EpisodeDuration": "",
         "Number Of Episodes Text": 4,
         "last_scraped": "2026-06-20T16:31:04.259517+00:00"
+    },
+    "303724": {
+        "Title": "برنامج The Last Woodsmen",
+        "Category": "tvshows",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/06/14fcb5ecdc5bd96fc5a03f589eba1199-400x600.jpg",
+        "Source": "",
+        "Genres": [],
+        "GenresAr": [],
+        "Format": "1080p Web-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يُخاطر جاريد دوغلاس، وهو حطّاب مخضرم، بكل شيء من أجل حصاد أكبر الأخشاب في العالم. خطأ واحد في هذه الصناعة عالية المخاطر قد يُكلّف عشرات الآلاف من الدولارات، أو حتى حياة.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/tvseasons/%d8%a8%d8%b1%d9%86%d8%a7%d9%85%d8%ac-last-woodsmen",
+        "Status": "منتهي",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2024",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-07-01T17:56:55.905006+00:00"
     }
 }
