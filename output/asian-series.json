@@ -197,7 +197,8 @@
         "ReleaseDate": "2026-04-14",
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 10,
-        "last_scraped": "2026-05-28T07:27:20.168703+00:00"
+        "last_scraped": "2026-05-28T07:27:20.168703+00:00",
+        "Number Of Episodes": 9
     },
     "297822": {
         "Title": "مسلسل Sold out on You",
@@ -37233,7 +37234,8 @@
         "ReleaseDate": "2026-05-30",
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 12,
-        "last_scraped": "2026-06-05T22:27:22.154538+00:00"
+        "last_scraped": "2026-06-05T22:27:22.154538+00:00",
+        "Number Of Episodes": 11
     },
     "301167": {
         "Title": "مسلسل Kumusta",
@@ -37345,7 +37347,8 @@
         "ReleaseDate": "2026-06-26",
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 10,
-        "last_scraped": "2026-07-01T17:41:49.370258+00:00"
+        "last_scraped": "2026-07-01T17:41:49.370258+00:00",
+        "Number Of Episodes": 4
     },
     "304153": {
         "Title": "مسلسل Notes from the Last Row",
@@ -37401,7 +37404,8 @@
         "ReleaseDate": "2026-06-22",
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 12,
-        "last_scraped": "2026-07-01T17:42:16.850089+00:00"
+        "last_scraped": "2026-07-01T17:42:16.850089+00:00",
+        "Number Of Episodes": 4
     },
     "302075": {
         "Title": "مسلسلThe Evil Lawyer",
@@ -37464,5 +37468,93 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 10,
         "last_scraped": "2026-07-01T17:42:45.076363+00:00"
+    },
+    "304966": {
+        "Title": "مسلسل The Husband",
+        "Category": "asian-series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/35a6a23b5574493169688022420683fb-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Romance",
+            "Thriller"
+        ],
+        "GenresAr": [
+            "Romance",
+            "Thriller"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "كانغ تاي جو، جراح أعصاب سابق يعمل الآن كمدير مستشفى ويكافح لمواجهة مجرم خطير من أجل إنقاذ زوجته التي تم اختطافها قبل طلاقهما.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/asian_seasons/the-husband",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-07-04",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 12,
+        "last_scraped": "2026-07-05T06:12:45.574264+00:00"
+    },
+    "304955": {
+        "Title": "مسلسل Love in Sync",
+        "Category": "asian-series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/a675a0621a4f983626ed1822f133adda-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy",
+            "Drama",
+            "Fantasy",
+            "Fantasysouth-korea",
+            "Melodrama"
+        ],
+        "GenresAr": [
+            "Comedy",
+            "Drama",
+            "Fantasy",
+            "Fantasysouth-korea",
+            "Melodrama"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "قصة رومانسية عن التحول العاطفي تتكشف عندما تجتمع امرأة تنكر التعاطف ورجل يتحمل عبء التعاطف لمشاركة مشاعر بعضهما البعض.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/asian_seasons/love-in-sync",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-07-04",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-07-05T06:12:57.767251+00:00"
+    },
+    "304805": {
+        "Title": "مسلسل Human Vapor",
+        "Category": "asian-series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/74854d885df24c8f83caf05245f82085-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Crime",
+            "Drama",
+            "Horror",
+            "Melodrama"
+        ],
+        "GenresAr": [
+            "Crime",
+            "Drama",
+            "Horror",
+            "Melodrama"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يكتسب الرجل القدرة على التحول إلى حالة غازية ويستخدم قواه في عمليات السطو على البنوك.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-human-vapor",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "اليابانية",
+        "ReleaseDate": "2026-07-02",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-07-05T06:13:09.651437+00:00"
     }
 }
