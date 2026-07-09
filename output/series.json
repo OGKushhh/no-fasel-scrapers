@@ -24377,7 +24377,7 @@
         "EpisodeDuration": "30د",
         "Number Of Episodes Text": 12,
         "last_scraped": "2026-05-28T02:09:46.044505+00:00",
-        "Number Of Episodes": 13
+        "Number Of Episodes": 14
     },
     "240929": {
         "Title": "مسلسل 3 Body Problem",
@@ -44234,7 +44234,7 @@
         "EpisodeDuration": "60د",
         "Number Of Episodes Text": 8,
         "last_scraped": "2026-05-03T05:59:30.685060+00:00",
-        "Number Of Episodes": 19
+        "Number Of Episodes": 20
     },
     "186967": {
         "Title": "مسلسل Phantom Pups",
@@ -45902,7 +45902,7 @@
         "EpisodeDuration": "60د",
         "Number Of Episodes Text": 8,
         "last_scraped": "2026-05-03T06:33:57.043986+00:00",
-        "Number Of Episodes": 21
+        "Number Of Episodes": 22
     },
     "155349": {
         "Title": "مسلسل The Beatles: Get Back",
@@ -69337,7 +69337,8 @@
         "ReleaseDate": "2024",
         "EpisodeDuration": "30د",
         "Number Of Episodes Text": 8,
-        "last_scraped": "2026-05-03T16:44:29.282462+00:00"
+        "last_scraped": "2026-05-03T16:44:29.282462+00:00",
+        "Number Of Episodes": 33
     },
     "277201": {
         "Title": "مسلسل Upload",
@@ -102808,7 +102809,7 @@
         "EpisodeDuration": "45د",
         "Number Of Episodes Text": 10,
         "last_scraped": "2026-05-21T18:54:52.632436+00:00",
-        "Number Of Episodes": 8
+        "Number Of Episodes": 9
     },
     "300373": {
         "Title": "مسلسل Mating Season",
@@ -104121,5 +104122,169 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 7,
         "last_scraped": "2026-07-01T17:30:05.451463+00:00"
+    },
+    "305279": {
+        "Title": "مسلسل Legend of the Three Caballeros",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/6e725265f40a578ba62572458e21e33e-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Action",
+            "Adventure",
+            "Animation"
+        ],
+        "GenresAr": [
+            "Action",
+            "Adventure",
+            "Animation"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 22,
+        "Country": null,
+        "Description": "يتابع مغامرات بطوط، خوسيه كاريوكا، وبانشيتو بيستولز. ورث الثلاثة أطلسًا سحريًا واكتشفوا أنهم أحفاد مغامرين أسطوريين، ليخوضوا رحلة حول العالم لإنقاذ الأرض",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-legend-three-caballeros",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2018",
+        "EpisodeDuration": "22د",
+        "Number Of Episodes Text": 13,
+        "last_scraped": "2026-07-09T03:12:40.723150+00:00"
+    },
+    "305209": {
+        "Title": "مسلسل Hercules",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/9bc9645496a0e8093ae8cc0ca40d2feb-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Action",
+            "Adventure",
+            "Animation"
+        ],
+        "GenresAr": [
+            "Action",
+            "Adventure",
+            "Animation"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "تدور احداث المسلسل حول مغامرات “هرقل” في فترة المراهقة أثناء تدربه ليصبح بطلاً، بمساعدة أصدقائه “إيكاروس” و”كاساندرا” ومدربه “فيل”، ومواجهة عمه الشرير “هاديس”",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-hercules",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "19981999",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 65,
+        "last_scraped": "2026-07-09T03:12:54.158796+00:00"
+    },
+    "305176": {
+        "Title": "مسلسل Im Not Afraid",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/b990c01cc4679278c39390dfb8eb0968-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama"
+        ],
+        "GenresAr": [
+            "Drama"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "عندما يواجه صبي في العاشرة مشهدًا مرعبًا، تنكشف له حقائق قاسية عن مرارة الحياة وصراع البقاء ودوامة اليأس في بلدة تتأرجح على حافة الانهيار.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-im-not-afraid",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "Spanish",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-07-09T03:13:07.776375+00:00"
+    },
+    "305159": {
+        "Title": "مسلسل Salcedo Leather and Boogaloo",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/5ba1e11e16d0a0b8c89a1ab297204bd8-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama"
+        ],
+        "GenresAr": [
+            "Drama"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "نادرًا ما ينبهر “مارتين سالسيدو” بأحد أو يُفتن به… لكن كل شيء يتغيّر مع وصول “فيرونيكا” إلى “كيبرا” وتصاعد وتيرة الاحتفال والكحول والمخاطر.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-salcedo-leather-boogaloo",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "Spanish",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 12,
+        "last_scraped": "2026-07-09T03:13:20.678065+00:00"
+    },
+    "304817": {
+        "Title": "مسلسل Isakapatnam",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/9f303112d88328cac7e546b9bc87afe5-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Action",
+            "Crime",
+            "Drama",
+            "Genres-action",
+            "Melodrama"
+        ],
+        "GenresAr": [
+            "Action",
+            "Crime",
+            "Drama",
+            "Genres-action",
+            "Melodrama"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "في تسعينيات القرن الماضي، يواجه إيساكاباتنام، أقوى رجل في مدينة ساحلية وحشية، ثلاثة تهديدات: امرأة تسعى إلى العدالة، ورجل متضارب، ورجل عادي انتقامي مصمم جميعًا على تفكيك إمبراطوريته.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-isakapatnam",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "الهندية",
+        "ReleaseDate": "2026-07-02",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 7,
+        "last_scraped": "2026-07-09T03:13:33.177019+00:00"
+    },
+    "304794": {
+        "Title": "مسلسل Super Subbu",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/05a612d45611b9c5b9c11d34937a18de-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy",
+            "Drama",
+            "Melodrama"
+        ],
+        "GenresAr": [
+            "Comedy",
+            "Drama",
+            "Melodrama"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "Subbu، شاب يعاني من سلسلة من الحظ السيئ وتتغير حياته عندما يصبح سرًا مدرسًا للبالغين في التربية الجنسية في قرية ماخيبور الريفية، حيث يوازن بين توقعات والده الصارمة بينما يسعى وراء أحلامه ورومانسيته.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-super-subbu",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "تيلجو",
+        "ReleaseDate": "2026-07-02",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 7,
+        "last_scraped": "2026-07-09T03:13:46.915790+00:00"
     }
 }
