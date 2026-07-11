@@ -50,6 +50,17 @@ EPISODES_BASE = Path("./output/episodes")
 
 
 # ─────────────────────────────────────────────────────────────────────
+# Utility: extract the numeric Akwam episode ID from a URL, regardless
+# of which domain (akwam.it, akwam.com.co, ...) it's currently on.
+# Used to detect "same episode, different domain" instead of treating
+# a domain change as a brand-new episode.
+# ─────────────────────────────────────────────────────────────────────
+def _akwam_episode_id(url: str) -> str:
+    m = re.search(r'/episode/(\d+)/', url or "")
+    return m.group(1) if m else (url or "")
+
+
+# ─────────────────────────────────────────────────────────────────────
 # Utility: normalise a Fasel episode entry to a plain URL string.
 # The scraper used to write {"url": ..., "sources": [...]} by mistake.
 # ─────────────────────────────────────────────────────────────────────
@@ -126,10 +137,12 @@ def update_main_json_episode_count(category: str, series_id: str, new_count: int
         return
     if category in FASEL_CATEGORIES:
         data[series_id]["Number Of Episodes"] = new_count
+        indent = 4
     else:
         data[series_id]["episode_count"] = new_count
+        indent = 2  # matches AkwamArabicSeries.py's save_series() formatting
     with open(json_path, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=4, ensure_ascii=False)
+        json.dump(data, f, indent=indent, ensure_ascii=False)
 
 
 def update_status_in_main_json(category: str, series_id: str, new_status: str):
@@ -353,7 +366,7 @@ def save_akwam_episodes(category: str, series_id: str, data: dict):
     path = EPISODES_BASE / category / f"{series_id}.json"
     path.parent.mkdir(parents=True, exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=4, ensure_ascii=False)
+        json.dump(data, f, indent=2, ensure_ascii=False)  # matches AkwamArabicSeries.py's save_episodes()
     if DEBUG:
         print(f"  💾 Saved Akwam episodes for {category}/{series_id}")
 
@@ -378,12 +391,20 @@ def update_akwam_series(category: str, series_id: str, detail_url: str) -> bool:
 
     existing = load_akwam_episodes(category, series_id)
     existing_episodes = existing.get("episodes", [])
-    existing_urls = {ep["url"] for ep in existing_episodes}
-    new_episodes = []
+    existing_by_id = {}
+    for idx, ep in enumerate(existing_episodes):
+        existing_by_id[_akwam_episode_id(ep.get("url", ""))] = idx
 
+    changed = False
     for ep in metadata.get("episodes", []):
-        if ep["url"] in existing_urls:
-            continue
+        eid = _akwam_episode_id(ep["url"])
+        idx = existing_by_id.get(eid)
+        if idx is not None:
+            stored_ep = existing_episodes[idx]
+            # Already have this episode on the current domain with a real number -> skip
+            if stored_ep.get("url") == ep["url"] and stored_ep.get("number") is not None:
+                continue
+
         ep_resp = get_website_safe(ep["url"])
         if ep_resp:
             ep_soup = BeautifulSoup(ep_resp.text, "html.parser")
@@ -391,20 +412,25 @@ def update_akwam_series(category: str, series_id: str, detail_url: str) -> bool:
         else:
             sources = []
         ep_num = None
-        num_match = re.search(r'الحلقة\s+(\d+)', ep["title"])
+        num_match = re.search(r'(\d+)', ep["title"])
         if num_match:
             ep_num = int(num_match.group(1))
-        new_episodes.append({
+        ep_data = {
             "number": ep_num,
             "title": ep["title"],
             "url": ep["url"],
             "sources": sources,
-        })
+        }
+        if idx is None:
+            existing_episodes.append(ep_data)
+        else:
+            existing_episodes[idx] = ep_data  # refresh stale/broken entry in place
+        changed = True
         time.sleep(REQUEST_DELAY / 2)
 
-    if new_episodes:
-        print(f"  🆕 Found {len(new_episodes)} new episodes")
-        existing["episodes"] = existing_episodes + new_episodes
+    if changed:
+        print(f"  🆕 Updated episodes for {series_id}")
+        existing["episodes"] = existing_episodes
         save_akwam_episodes(category, series_id, existing)
         return True
     return False
