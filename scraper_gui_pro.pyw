@@ -1412,7 +1412,7 @@ class ScraperGUI:
             category = filename.replace(".json", "")
             if isinstance(data, dict):
                 for cid, info in data.items():
-                    title = info.get("Title", "Unknown")
+                    title = info.get("Title") or info.get("title") or "Unknown"
                     series_list.append((str(cid), title, category))
 
         if not series_list:
