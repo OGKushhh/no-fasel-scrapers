@@ -104122,7 +104122,8 @@
         "ReleaseDate": "2026-06-26",
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 7,
-        "last_scraped": "2026-07-01T17:30:05.451463+00:00"
+        "last_scraped": "2026-07-01T17:30:05.451463+00:00",
+        "Number Of Episodes": 3
     },
     "305279": {
         "Title": "مسلسل Legend of the Three Caballeros",
@@ -104287,5 +104288,169 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 7,
         "last_scraped": "2026-07-09T03:13:46.915790+00:00"
+    },
+    "305944": {
+        "Title": "مسلسل The Westies",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/410479a25c148ca6deeea23bb09ac58a-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Crime",
+            "Drama"
+        ],
+        "GenresAr": [
+            "Crime",
+            "Drama"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "خلال الثمانينات بحي هيلز كيتشن، تسعى عصابة ويستيز لفرض نفوذها والاستفادة من أرباح مشروع بناء مركز جافيتس، رغم تفوق المافيا الإيطالية عددًا ونفوذًا. ومع اعتماد العصابة على العنف وسيلة للبقاء، تتصاعد الخلافات بين الأجيال داخلها.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-the-westies",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-07-13T15:33:49.280068+00:00"
+    },
+    "305875": {
+        "Title": "مسلسل Mickey Mouse Funhouse",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/74bd525d94bde4b2e938f934baa5ab76-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Action",
+            "Animation",
+            "Short"
+        ],
+        "GenresAr": [
+            "Action",
+            "Animation",
+            "Short"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يتبع المسلسل مغامرات ميكي ماوس وأصدقائه أثناء سفرهم إلى عوالم مختلفة برفقة “فاني”، وهو منزل سحري يتحدث ويتحول إلى أشكال متنوعة",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-mickey-mouse-funhouse",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2021",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 30,
+        "last_scraped": "2026-07-13T15:34:50.010976+00:00"
+    },
+    "305700": {
+        "Title": "مسلسل Ghostforce",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/37fbd0a2ef7db94a96ab6bcf7b3a9831-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Action",
+            "Adventure",
+            "Animation"
+        ],
+        "GenresAr": [
+            "Action",
+            "Adventure",
+            "Animation"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "تدور أحداثه حول ثلاثة طلاب في المدرسة الثانوية (ليف، آندي، ومايك) يتحولون سراً إلى فريق أبطال خارقين لمحاربة وإلقاء القبض على الأشباح التي تثير الفوضى في مدينة نيويورك، بمساعدة كائن غامض يدعى غلوبو ومبتكرات علمية من معلمتهم الآنسة جونز",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-ghostforce",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English, French",
+        "ReleaseDate": "2021",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 26,
+        "last_scraped": "2026-07-13T15:35:11.941101+00:00"
+    },
+    "305633": {
+        "Title": "مسلسل Go, Dog. Go!",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/c4b5addb6ab7d3c4438f55a35f691963-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Animation",
+            "Family"
+        ],
+        "GenresAr": [
+            "Animation",
+            "Family"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 24,
+        "Country": null,
+        "Description": "تبحث الجروة “تاغ” الواسعة الحيلة والمبتكِرة عن المغامرة مع صديقها المفضّل “سكوتش” في حلّ المشكلات، ومساعدة مواطني “مدينة المخالب” أثناء ذلك.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-go-dog-go",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English, Ukrainian",
+        "ReleaseDate": "2021",
+        "EpisodeDuration": "24د",
+        "Number Of Episodes Text": 14,
+        "last_scraped": "2026-07-13T15:36:55.537088+00:00"
+    },
+    "305547": {
+        "Title": "مسلسل Dew Drop Diaries",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/df3be790f29209bf274c88b2f555d672-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Adventure",
+            "Animation",
+            "Comedy"
+        ],
+        "GenresAr": [
+            "Adventure",
+            "Animation",
+            "Comedy"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "تستمتع ثلاث جنيات تحت التدريب بالاهتمام بالأطفال الذين في رعايتهن، بدءًا من البحث عن أغراضهم المفقودة ووصولًا لترتيب الفوضى التي يحدثونها، بينما يحاولن تعلّم الطيران.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-dew-drop-diaries",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2023",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 12,
+        "last_scraped": "2026-07-13T15:39:35.900832+00:00"
+    },
+    "305407": {
+        "Title": "مسلسل Little House on the Prairie",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/42f5f44076cae0fc53a07f5162797acc-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Family",
+            "Romance"
+        ],
+        "GenresAr": [
+            "Drama",
+            "Family",
+            "Romance"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "تبني عائلة “إنغالز” المترابطة حياة جديدة على الحدود الغربية النائية، حيث يمتزج جمال الطبيعة الخلّاب بصراع البقاء القاسي.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-little-house-prairie",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2025",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-07-13T15:39:51.177920+00:00"
     }
 }
