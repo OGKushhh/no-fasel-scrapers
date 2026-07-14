@@ -37647,5 +37647,31 @@
         "Number Of Episodes Text": 120,
         "last_scraped": "2026-07-10T03:37:20.233128+00:00",
         "Number Of Episodes": 5
+    },
+    "305994": {
+        "Title": "مسلسل Dream to You",
+        "Category": "asian-series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/0e048616832fb148a1fcbd7e812e50ac-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy",
+            "Romance"
+        ],
+        "GenresAr": [
+            "Comedy",
+            "Romance"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "فيلم كوميدي رومانسي تدور أحداثه حول الصحفي “لي جاي”، الذي يتحول من مراهق شجاع إلى شاب في العشرينات من عمره يشعر بخيبة الأمل إلى أن يصبح في الثلاثينيات من عمره، والمخرج السينمائي “سو بن”، الذي يتحرر من خطط والديه لتحقيق حلمه بحلول الثلاثينيات من عمره.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-dream-to-you",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-07-13",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 0,
+        "last_scraped": "2026-07-14T07:56:16.264136+00:00"
     }
 }
