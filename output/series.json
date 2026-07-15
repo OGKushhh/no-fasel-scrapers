@@ -17721,7 +17721,8 @@
         "ReleaseDate": "2024",
         "EpisodeDuration": "45د",
         "Number Of Episodes Text": 11,
-        "last_scraped": "2026-05-28T02:09:46.044505+00:00"
+        "last_scraped": "2026-05-28T02:09:46.044505+00:00",
+        "Number Of Episodes": 21
     },
     "257094": {
         "Title": "مسلسل Good Times",
@@ -24378,7 +24379,7 @@
         "EpisodeDuration": "30د",
         "Number Of Episodes Text": 12,
         "last_scraped": "2026-05-28T02:09:46.044505+00:00",
-        "Number Of Episodes": 14
+        "Number Of Episodes": 15
     },
     "240929": {
         "Title": "مسلسل 3 Body Problem",
@@ -32633,7 +32634,8 @@
         "ReleaseDate": "2025",
         "EpisodeDuration": "50د",
         "Number Of Episodes Text": 7,
-        "last_scraped": "2026-05-28T02:09:46.044505+00:00"
+        "last_scraped": "2026-05-28T02:09:46.044505+00:00",
+        "Number Of Episodes": 22
     },
     "257483": {
         "Title": "مسلسل Rap Sh!t",
@@ -50512,7 +50514,8 @@
         "ReleaseDate": "2024",
         "EpisodeDuration": "60د",
         "Number Of Episodes Text": 10,
-        "last_scraped": "2026-05-03T08:15:00.613231+00:00"
+        "last_scraped": "2026-05-03T08:15:00.613231+00:00",
+        "Number Of Episodes": 38
     },
     "238817": {
         "Title": "مسلسل Tokyo Vice",
@@ -69339,7 +69342,7 @@
         "EpisodeDuration": "30د",
         "Number Of Episodes Text": 8,
         "last_scraped": "2026-05-03T16:44:29.282462+00:00",
-        "Number Of Episodes": 33
+        "Number Of Episodes": 34
     },
     "277201": {
         "Title": "مسلسل Upload",
@@ -82963,7 +82966,8 @@
         "ReleaseDate": "2025",
         "EpisodeDuration": "45د",
         "Number Of Episodes Text": 13,
-        "last_scraped": "2026-05-03T22:37:18.085844+00:00"
+        "last_scraped": "2026-05-03T22:37:18.085844+00:00",
+        "Number Of Episodes": 122
     },
     "190508": {
         "Title": "مسلسل Manifest",
@@ -102810,7 +102814,7 @@
         "EpisodeDuration": "45د",
         "Number Of Episodes Text": 10,
         "last_scraped": "2026-05-21T18:54:52.632436+00:00",
-        "Number Of Episodes": 9
+        "Number Of Episodes": 10
     },
     "300373": {
         "Title": "مسلسل Mating Season",
@@ -104452,5 +104456,65 @@
         "EpisodeDuration": "",
         "Number Of Episodes Text": 8,
         "last_scraped": "2026-07-13T15:39:51.177920+00:00"
+    },
+    "306131": {
+        "Title": "مسلسل Ride or Die",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/8e29544f4686b1c30edf788b38b735c8-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Genres-action"
+        ],
+        "GenresAr": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Genres-action"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "اكتشف اثنان من أفضل الأصدقاء، جوديث وديبي، أن جوديث قاتلة سرًا. بعد حدوث خطأ في إحدى الضربات، يهربون بينما يتم استهدافهم من قبل عدو غامض، مما يجبرهم على مواجهة الأسرار بينهم.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-ride-die",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-07-15",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-07-15T15:23:50.354702+00:00"
+    },
+    "306095": {
+        "Title": "مسلسل Lucky",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/b64bd8ddcec2a294322237143e7a3b34-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Crime",
+            "Drama",
+            "Melodrama",
+            "Thriller"
+        ],
+        "GenresAr": [
+            "Crime",
+            "Drama",
+            "Melodrama",
+            "Thriller"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "تضطر مجرمة تم إصلاحها إلى مواجهة ماضيها والعودة إلى الأنشطة غير المشروعة للحصول على وظيفة أخيرة، على أمل تأمين حريتها وترك حياتها السابقة وراءها إلى الأبد.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-lucky",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-07-15",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 7,
+        "last_scraped": "2026-07-15T15:24:04.216915+00:00"
     }
 }

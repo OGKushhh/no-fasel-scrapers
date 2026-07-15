@@ -4448,7 +4448,7 @@
         "EpisodeDuration": "",
         "Number Of Episodes Text": 12,
         "last_scraped": "2026-05-28T07:27:20.168703+00:00",
-        "Number Of Episodes": 14
+        "Number Of Episodes": 16
     },
     "274362": {
         "Title": "مسلسل Law and the City",
@@ -37409,7 +37409,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 12,
         "last_scraped": "2026-07-01T17:42:16.850089+00:00",
-        "Number Of Episodes": 6
+        "Number Of Episodes": 8
     },
     "302075": {
         "Title": "مسلسلThe Evil Lawyer",
@@ -37589,7 +37589,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 32,
         "last_scraped": "2026-07-10T03:36:35.957810+00:00",
-        "Number Of Episodes": 4
+        "Number Of Episodes": 8
     },
     "305375": {
         "Title": "مسلسل Avengers Social Club",
@@ -37646,7 +37646,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 120,
         "last_scraped": "2026-07-10T03:37:20.233128+00:00",
-        "Number Of Episodes": 5
+        "Number Of Episodes": 6
     },
     "305994": {
         "Title": "مسلسل Dream to You",
@@ -37673,5 +37673,61 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 0,
         "last_scraped": "2026-07-14T07:56:16.264136+00:00"
+    },
+    "306002": {
+        "Title": "مسلسل Road to Success",
+        "Category": "asian-series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/8386e2c4efaf48b57218f260d65d430d-1-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Melodrama"
+        ],
+        "GenresAr": [
+            "Drama",
+            "Melodrama"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "الدراما مقتبسة من رواية تحمل نفس العنوان عن المنافسة الرياضية الشبابية والعاطفية للمؤلف تشانغ إي من مدينة جينجيانغ للأدب. يعود طالب الدكتوراه لين وانشينغ فجأة إلى مسقط رأسه ويتولى وظيفة رياضي…",
+        "SeasonsUrl": "https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-road-success",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-07-05",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 32,
+        "last_scraped": "2026-07-15T15:42:20.062610+00:00"
+    },
+    "305936": {
+        "Title": "مسلسل The Apartment Job",
+        "Category": "asian-series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/5e6ecef694c8c7ce44399a8a696df00f-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy",
+            "Crime",
+            "Drama",
+            "Melodrama"
+        ],
+        "GenresAr": [
+            "Comedy",
+            "Crime",
+            "Drama",
+            "Melodrama"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "مشاهدة وتحميل جميع مواسم مسلسل The Apartment Job كامل HD مترجم بجودة عالية علي موقع فاصل اعلاني FaselHD اون لاين مسلسل The Apartment Job مترجم اونلاين",
+        "SeasonsUrl": "https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-apartment-job",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-07-11",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 12,
+        "last_scraped": "2026-07-15T15:42:32.385237+00:00"
     }
 }

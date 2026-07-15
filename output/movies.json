@@ -279794,5 +279794,70 @@
         "ReleaseDate": "2026",
         "Language": "",
         "last_scraped": "2026-07-13T16:02:13.526345+00:00"
+    },
+    "306124": {
+        "Title": "فيلم The Souffleur 2026 مترجم",
+        "Category": "movies",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/0ec701963ca0875ad4f6a854c1ea9bff-400x600.jpg?resize=400%2C600",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Comedy"
+        ],
+        "GenresAr": [
+            "دراما",
+            "كوميدي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 78,
+        "Country": "Argentina",
+        "Description": "يكافح لوسيوس جلانتز، مدير فندق مخضرم في فيينا، لإنقاذ مؤسسته المحبوبة من خطة سمسار عقارات ماكرة لهدمها، مما يؤدي إلى صراع الإرادات الذي يؤثر حتى على وصفة سوفليه الشهيرة في الفندق.",
+        "ReleaseDate": "2026",
+        "Language": "",
+        "last_scraped": "2026-07-15T15:11:09.308832+00:00"
+    },
+    "306034": {
+        "Title": "فيلم Backrooms 2026 مترجم",
+        "Category": "movies",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/e6b4588f6290df9a881b1a5e97a2898b-400x600.jpg?resize=400%2C600",
+        "Source": "",
+        "Genres": [
+            "Thriller",
+            "خيال-علمي",
+            "Horror"
+        ],
+        "GenresAr": [
+            "اثارة",
+            "خيال-علمي",
+            "رعب"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 110,
+        "Country": "Canada",
+        "Description": "بعد أن يختفي مريض المعالج في بُعد يتجاوز الواقع، يجب عليها المغامرة في المجهول لإنقاذه.",
+        "ReleaseDate": "2026",
+        "Language": "",
+        "last_scraped": "2026-07-15T15:11:09.403365+00:00"
+    },
+    "306009": {
+        "Title": "فيلم A Very Venice Romance 2024 مترجم",
+        "Category": "movies",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/4d4e5f973c96355559ad452dc1881d52-400x600.jpg?resize=400%2C600",
+        "Source": "",
+        "Genres": [
+            "Romance",
+            "Comedy"
+        ],
+        "GenresAr": [
+            "رومانسي",
+            "كوميدي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 83,
+        "Country": "Bulgaria",
+        "Description": "تبحث “إيمي” عن طاهٍ للمساعدة في توجيه المشروع الذي تعمل فيه. تحاول استمالة طاهٍ إيطالي، لكنه يرفضها، فتلتحق بمدرسة الطبخ الخاصة به لمحاولة إقناعه.",
+        "ReleaseDate": "2024",
+        "Language": "",
+        "last_scraped": "2026-07-15T15:11:09.467353+00:00"
     }
 }
