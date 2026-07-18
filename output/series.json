@@ -24154,7 +24154,7 @@
         "EpisodeDuration": "45د",
         "Number Of Episodes Text": 8,
         "last_scraped": "2026-05-28T02:09:46.044505+00:00",
-        "Number Of Episodes": 12
+        "Number Of Episodes": 13
     },
     "296727": {
         "Title": "مسلسل Crooks",
@@ -34494,7 +34494,7 @@
         "EpisodeDuration": "",
         "Number Of Episodes Text": 10,
         "last_scraped": "2026-05-28T02:09:46.044505+00:00",
-        "Number Of Episodes": 22
+        "Number Of Episodes": 23
     },
     "214878": {
         "Title": "مسلسل Murder Masterminds",
@@ -89318,7 +89318,8 @@
         "ReleaseDate": "2025",
         "EpisodeDuration": "60د",
         "Number Of Episodes Text": 12,
-        "last_scraped": "2026-05-04T01:40:11.661025+00:00"
+        "last_scraped": "2026-05-04T01:40:11.661025+00:00",
+        "Number Of Episodes": 87
     },
     "42157": {
         "Title": "مسلسل Law and Order True Crime",
@@ -103327,7 +103328,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 10,
         "last_scraped": "2026-06-05T23:31:43.231882+00:00",
-        "Number Of Episodes": 7
+        "Number Of Episodes": 8
     },
     "301644": {
         "Title": "مسلسل The Witness",
@@ -103731,7 +103732,7 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Mystery"
+            "غموض"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -103756,8 +103757,8 @@
             "Melodrama"
         ],
         "GenresAr": [
-            "Drama",
-            "Melodrama"
+            "دراما",
+            "ميلودراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -103785,11 +103786,11 @@
             "Melodrama"
         ],
         "GenresAr": [
-            "Action",
-            "Adventure",
-            "Drama",
+            "أكشن",
+            "مغامرة",
+            "دراما",
             "Genres action",
-            "Melodrama"
+            "ميلودراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 44,
@@ -103815,9 +103816,9 @@
             "Melodrama"
         ],
         "GenresAr": [
-            "Comedy",
-            "Drama",
-            "Melodrama"
+            "كوميدي",
+            "دراما",
+            "ميلودراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 45,
@@ -103844,10 +103845,10 @@
             "Mystery"
         ],
         "GenresAr": [
-            "Crime",
-            "Drama",
-            "Melodrama",
-            "Mystery"
+            "جريمة",
+            "دراما",
+            "ميلودراما",
+            "غموض"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 40,
@@ -103871,7 +103872,7 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Comedy"
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 22,
@@ -103895,7 +103896,7 @@
             "Family"
         ],
         "GenresAr": [
-            "Family"
+            "عائلي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 22,
@@ -103920,8 +103921,8 @@
             "History"
         ],
         "GenresAr": [
-            "Documentary",
-            "History"
+            "وثائقي",
+            "تاريخي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -103947,8 +103948,8 @@
             "History"
         ],
         "GenresAr": [
-            "Documentary",
-            "History"
+            "وثائقي",
+            "تاريخي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -103974,9 +103975,9 @@
             "Music"
         ],
         "GenresAr": [
-            "Comedy",
-            "Family",
-            "Music"
+            "كوميدي",
+            "عائلي",
+            "موسيقى"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 48,
@@ -104003,9 +104004,9 @@
             "Melodrama"
         ],
         "GenresAr": [
-            "Comedy",
-            "Drama",
-            "Melodrama"
+            "كوميدي",
+            "دراما",
+            "ميلودراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 45,
@@ -104057,9 +104058,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Adventure",
-            "Animation",
-            "Comedy"
+            "مغامرة",
+            "أنميشن",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -104112,8 +104113,8 @@
             "History"
         ],
         "GenresAr": [
-            "Comedy",
-            "History"
+            "كوميدي",
+            "تاريخي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -104140,9 +104141,9 @@
             "Animation"
         ],
         "GenresAr": [
-            "Action",
-            "Adventure",
-            "Animation"
+            "أكشن",
+            "مغامرة",
+            "أنميشن"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 22,
@@ -104168,9 +104169,9 @@
             "Animation"
         ],
         "GenresAr": [
-            "Action",
-            "Adventure",
-            "Animation"
+            "أكشن",
+            "مغامرة",
+            "أنميشن"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -104180,7 +104181,7 @@
         "Status": "مكتمل",
         "ViewingLevel": "",
         "Language": "English",
-        "ReleaseDate": "19981999",
+        "ReleaseDate": "1998-1999",
         "EpisodeDuration": "",
         "Number Of Episodes Text": 65,
         "last_scraped": "2026-07-09T03:12:54.158796+00:00"
@@ -104194,7 +104195,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -104218,7 +104219,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -104242,15 +104243,15 @@
             "Action",
             "Crime",
             "Drama",
-            "Genres-action",
+            "Genres action",
             "Melodrama"
         ],
         "GenresAr": [
-            "Action",
-            "Crime",
-            "Drama",
-            "Genres-action",
-            "Melodrama"
+            "أكشن",
+            "جريمة",
+            "دراما",
+            "Genres action",
+            "ميلودراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -104276,9 +104277,9 @@
             "Melodrama"
         ],
         "GenresAr": [
-            "Comedy",
-            "Drama",
-            "Melodrama"
+            "كوميدي",
+            "دراما",
+            "ميلودراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -104303,8 +104304,8 @@
             "Drama"
         ],
         "GenresAr": [
-            "Crime",
-            "Drama"
+            "جريمة",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -104330,8 +104331,8 @@
             "Short"
         ],
         "GenresAr": [
-            "Action",
-            "Animation",
+            "أكشن",
+            "أنميشن",
             "Short"
         ],
         "Format": "1080p WEB-DL",
@@ -104358,9 +104359,9 @@
             "Animation"
         ],
         "GenresAr": [
-            "Action",
-            "Adventure",
-            "Animation"
+            "أكشن",
+            "مغامرة",
+            "أنميشن"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -104385,8 +104386,8 @@
             "Family"
         ],
         "GenresAr": [
-            "Animation",
-            "Family"
+            "أنميشن",
+            "عائلي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 24,
@@ -104412,9 +104413,9 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Adventure",
-            "Animation",
-            "Comedy"
+            "مغامرة",
+            "أنميشن",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -104440,9 +104441,9 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Family",
-            "Romance"
+            "دراما",
+            "عائلي",
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -104466,13 +104467,13 @@
             "Action",
             "Adventure",
             "Comedy",
-            "Genres-action"
+            "Genres action"
         ],
         "GenresAr": [
-            "Action",
-            "Adventure",
-            "Comedy",
-            "Genres-action"
+            "أكشن",
+            "مغامرة",
+            "كوميدي",
+            "Genres action"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -104499,10 +104500,10 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Crime",
-            "Drama",
-            "Melodrama",
-            "Thriller"
+            "جريمة",
+            "دراما",
+            "ميلودراما",
+            "إثارة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -104516,5 +104517,61 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 7,
         "last_scraped": "2026-07-15T15:24:04.216915+00:00"
+    },
+    "306203": {
+        "Title": "مسلسل The Map of Longing",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/a6e05d3bceda4aa5a225383d4b6909a1-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Melodrama",
+            "Romance"
+        ],
+        "GenresAr": [
+            "دراما",
+            "ميلودراما",
+            "رومانسية"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "بعد أن فقدت شقيقتها لوسي بسبب سرطان الدم، وجدت “غريتا” لعبة ابتكرتها “لوسي” تسمى “El Mapa de los anhelos”. من خلال هذه الرحلة ولقاء ويل، تتعلم كيفية معالجة الحزن والعثور على نفسها.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-map-longing",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-07-17",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 6,
+        "last_scraped": "2026-07-17T13:58:28.778035+00:00"
+    },
+    "306169": {
+        "Title": "مسلسل The Hawk",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/c997fead6f0a9f2e78134cc0ea31fccc-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy",
+            "Sport",
+            "Sports"
+        ],
+        "GenresAr": [
+            "كوميدي",
+            "رياضي",
+            "Sports"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يتبع لوني هوكينز، أفضل لاعب غولف لعام 2004، وهو يكافح لاستعادة سحره في وقت متأخر من حياته المهنية، ويرفض الاعتقاد بأنه على بعد ضربة واحدة من أعظم عودة للجولف.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-the-hawk",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-07-16",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 10,
+        "last_scraped": "2026-07-17T13:58:40.518709+00:00"
     }
 }

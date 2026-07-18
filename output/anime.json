@@ -693,7 +693,7 @@
         "Title": "انمي Kami no Shizuku",
         "Category": "anime",
         "Type": "Series",
-        "Number Of Episodes": 9,
+        "Number Of Episodes": 15,
         "Number Of Episodes Text": 24,
         "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/04/3177fdde3aea9a3afec359e215d9b617-400x600.jpg?resize=400%2C600",
         "Source": "",
@@ -1465,7 +1465,7 @@
         "Title": "انمي Tensei shitara Slime Datta Ken 4th Season",
         "Category": "anime",
         "Type": "Series",
-        "Number Of Episodes": 4,
+        "Number Of Episodes": 15,
         "Number Of Episodes Text": 0,
         "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/04/e71607d1c33919a692d9881e932b0a02-400x600.jpg?resize=400%2C600",
         "Source": "",
@@ -54031,7 +54031,7 @@
             "Action",
             "Action",
             "History",
-            "فنون-قتالية",
+            "فنون قتالية",
             "Adventure"
         ],
         "GenresAr": [
@@ -54039,7 +54039,7 @@
             "Action",
             "اكشن",
             "History",
-            "فنون-قتالية",
+            "فنون قتالية",
             "Adventure"
         ],
         "Format": "1080p WEB-DL",
@@ -54065,12 +54065,12 @@
         "Genres": [
             "Action",
             "Action",
-            "فنون-قتالية"
+            "فنون قتالية"
         ],
         "GenresAr": [
             "Action",
             "اكشن",
-            "فنون-قتالية"
+            "فنون قتالية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 22,
@@ -54099,8 +54099,8 @@
         ],
         "GenresAr": [
             "Historical",
-            "History",
-            "Drama"
+            "تاريخي",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 23,
@@ -54180,7 +54180,7 @@
         ],
         "GenresAr": [
             "Sports",
-            "Sport"
+            "رياضي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 23,
@@ -54208,7 +54208,7 @@
         ],
         "GenresAr": [
             "Sports",
-            "Sport"
+            "رياضي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 23,
@@ -54236,7 +54236,7 @@
         ],
         "GenresAr": [
             "Sports",
-            "Sport"
+            "رياضي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 23,
@@ -54264,7 +54264,7 @@
         ],
         "GenresAr": [
             "Sports",
-            "Sport"
+            "رياضي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 24,
@@ -54292,15 +54292,15 @@
             "History",
             "Horror",
             "Mystery",
-            "قوى-خارقة"
+            "قوى خارقة"
         ],
         "GenresAr": [
             "Historical",
             "Supernatural",
-            "History",
-            "Horror",
-            "Mystery",
-            "قوى-خارقة"
+            "تاريخي",
+            "رعب",
+            "غموض",
+            "قوى خارقة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 4,
@@ -54327,7 +54327,7 @@
             "Action",
             "Action",
             "History",
-            "فنون-قتالية",
+            "فنون قتالية",
             "Adventure"
         ],
         "GenresAr": [
@@ -54335,7 +54335,7 @@
             "Action",
             "اكشن",
             "History",
-            "فنون-قتالية",
+            "فنون قتالية",
             "Adventure"
         ],
         "Format": "1080p WEB-DL",
@@ -54363,7 +54363,7 @@
             "Action",
             "Action",
             "History",
-            "فنون-قتالية",
+            "فنون قتالية",
             "Adventure"
         ],
         "GenresAr": [
@@ -54371,7 +54371,7 @@
             "Action",
             "اكشن",
             "History",
-            "فنون-قتالية",
+            "فنون قتالية",
             "Adventure"
         ],
         "Format": "1080p WEB-DL",
@@ -54399,7 +54399,7 @@
             "Action",
             "Action",
             "History",
-            "فنون-قتالية",
+            "فنون قتالية",
             "Adventure"
         ],
         "GenresAr": [
@@ -54407,7 +54407,7 @@
             "Action",
             "اكشن",
             "History",
-            "فنون-قتالية",
+            "فنون قتالية",
             "Adventure"
         ],
         "Format": "1080p WEB-DL",
@@ -54456,7 +54456,7 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Comedy"
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 0,
@@ -54511,13 +54511,13 @@
         "Genres": [
             "School",
             "Supernatural",
-            "قوى-خارقة",
+            "قوى خارقة",
             "مدرسي"
         ],
         "GenresAr": [
             "School",
             "Supernatural",
-            "قوى-خارقة",
+            "قوى خارقة",
             "مدرسي"
         ],
         "Format": "1080p WEB-DL",
@@ -54544,7 +54544,7 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Comedy"
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 11,
@@ -54570,7 +54570,7 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Comedy"
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 0,
@@ -54598,9 +54598,9 @@
             "Music"
         ],
         "GenresAr": [
-            "Animation",
-            "Musical",
-            "Music"
+            "أنميشن",
+            "موسيقي",
+            "موسيقى"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 24,
@@ -54668,7 +54668,7 @@
         "Title": "انمي Kore Kaite Shine",
         "Category": "anime",
         "Type": "Series",
-        "Number Of Episodes": 1,
+        "Number Of Episodes": 3,
         "Number Of Episodes Text": 12,
         "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/4ae6db06bd827a3a3e0452a52dc92b4a-400x600.jpg?resize=400%2C600",
         "Source": "",
@@ -54676,7 +54676,7 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Comedy"
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 0,
@@ -54694,7 +54694,7 @@
         "Title": "انمي Uchi no Otouto-domo ga Sumimasen",
         "Category": "anime",
         "Type": "Series",
-        "Number Of Episodes": 1,
+        "Number Of Episodes": 3,
         "Number Of Episodes Text": 24,
         "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/168e435a4f1c7c4c2a253a1cbbb17d6e-400x600.jpg?resize=400%2C600",
         "Source": "",
@@ -54702,7 +54702,7 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Comedy"
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 23,
@@ -54779,7 +54779,7 @@
         ],
         "GenresAr": [
             "School",
-            "Comedy",
+            "كوميدي",
             "مدرسي"
         ],
         "Format": "1080p WEB-DL",
@@ -54807,14 +54807,14 @@
             "Supernatural",
             "History",
             "عسكري",
-            "قوى-خارقة"
+            "قوى خارقة"
         ],
         "GenresAr": [
             "Historical",
             "Supernatural",
-            "History",
+            "تاريخي",
             "عسكري",
-            "قوى-خارقة"
+            "قوى خارقة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 0,
@@ -54870,13 +54870,13 @@
             "Supernatural",
             "Action",
             "Action",
-            "قوى-خارقة"
+            "قوى خارقة"
         ],
         "GenresAr": [
             "Supernatural",
             "Action",
             "اكشن",
-            "قوى-خارقة"
+            "قوى خارقة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 0,
@@ -54933,8 +54933,8 @@
         ],
         "GenresAr": [
             "ايتشي",
-            "Drama",
-            "Adventure"
+            "دراما",
+            "مغامرة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 0,
@@ -54952,7 +54952,7 @@
         "Title": "انمي Bai Ri Cheng Wang",
         "Category": "anime",
         "Type": "Series",
-        "Number Of Episodes": 2,
+        "Number Of Episodes": 8,
         "Number Of Episodes Text": 25,
         "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/8477e87e6ea908f23485530817e96b20-400x600.jpg?resize=400%2C600",
         "Source": "",
@@ -55012,21 +55012,21 @@
         "Title": "انمي Thunder 3",
         "Category": "anime",
         "Type": "Series",
-        "Number Of Episodes": 1,
+        "Number Of Episodes": 2,
         "Number Of Episodes Text": 0,
         "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/d964e6105dc79fb9f6d07e68a5467f3f-400x600.jpg?resize=400%2C600",
         "Source": "",
         "Genres": [
             "Supernatural",
-            "Sci-fi",
+            "Sci fi",
             "Mystery",
-            "قوى-خارقة"
+            "قوى خارقة"
         ],
         "GenresAr": [
             "Supernatural",
-            "Sci-fi",
-            "Mystery",
-            "قوى-خارقة"
+            "Sci fi",
+            "غموض",
+            "قوى خارقة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 0,
@@ -55044,7 +55044,7 @@
         "Title": "انمي Youjo Senki II",
         "Category": "anime",
         "Type": "Series",
-        "Number Of Episodes": 1,
+        "Number Of Episodes": 2,
         "Number Of Episodes Text": 12,
         "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/97f5ec45b4327996c03dc8663e56abd3-400x600.jpg?resize=400%2C600",
         "Source": "",
@@ -55134,7 +55134,7 @@
         "Title": "انمي Katainaka no Ossan, Kensei ni Naru II",
         "Category": "anime",
         "Type": "Series",
-        "Number Of Episodes": 1,
+        "Number Of Episodes": 2,
         "Number Of Episodes Text": 0,
         "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/807164b0b56f33128f1a9082034f118a-400x600.jpg?resize=400%2C600",
         "Source": "",
@@ -55221,7 +55221,7 @@
             "Suspense",
             "Action",
             "Action",
-            "Sci-fi",
+            "Sci fi",
             "Mystery",
             "نفسي"
         ],
@@ -55230,7 +55230,7 @@
             "Suspense",
             "Action",
             "اكشن",
-            "Sci-fi",
+            "Sci fi",
             "Mystery",
             "نفسي"
         ],
@@ -55261,7 +55261,7 @@
             "Action",
             "History",
             "Drama",
-            "قوى-خارقة",
+            "قوى خارقة",
             "Adventure"
         ],
         "GenresAr": [
@@ -55271,7 +55271,7 @@
             "اكشن",
             "History",
             "Drama",
-            "قوى-خارقة",
+            "قوى خارقة",
             "Adventure"
         ],
         "Format": "1080p WEB-DL",
@@ -55295,15 +55295,15 @@
         "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/ecafedcf5686bd02804f74d4704ba995-400x600.jpg?resize=400%2C600",
         "Source": "",
         "Genres": [
-            "Girls-love",
+            "Girls love",
             "School",
             "Comedy",
             "مدرسي"
         ],
         "GenresAr": [
-            "Girls-love",
+            "Girls love",
             "School",
-            "Comedy",
+            "كوميدي",
             "مدرسي"
         ],
         "Format": "1080p WEB-DL",
@@ -55363,7 +55363,7 @@
         ],
         "GenresAr": [
             "School",
-            "Comedy",
+            "كوميدي",
             "مدرسي"
         ],
         "Format": "1080p WEB-DL",
@@ -55390,7 +55390,7 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Comedy"
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 0,
@@ -55416,7 +55416,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 0,
@@ -55442,7 +55442,7 @@
             "Drama"
         ],
         "GenresAr": [
-            "Drama"
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 0,
@@ -55553,8 +55553,8 @@
         ],
         "GenresAr": [
             "Historical",
-            "History",
-            "Drama"
+            "تاريخي",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 0,
@@ -55583,7 +55583,7 @@
         ],
         "GenresAr": [
             "School",
-            "Comedy",
+            "كوميدي",
             "مدرسي"
         ],
         "Format": "1080p WEB-DL",
@@ -55611,8 +55611,8 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Animation",
-            "Comedy"
+            "أنميشن",
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 0,
@@ -55635,14 +55635,14 @@
         "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/882a33b29ab07ae762b11be825c02c48-400x600.jpg?resize=400%2C600",
         "Source": "",
         "Genres": [
-            "Sci-fi",
+            "Sci fi",
             "عسكري",
             "Comedy"
         ],
         "GenresAr": [
-            "Sci-fi",
+            "Sci fi",
             "عسكري",
-            "Comedy"
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 0,
@@ -55671,8 +55671,8 @@
         ],
         "GenresAr": [
             "Historical",
-            "History",
-            "Drama"
+            "تاريخي",
+            "دراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 0,
@@ -55690,7 +55690,7 @@
         "Title": "انمي Ryoumin 0-nin Start no Henkyou Ryoushu-sama",
         "Category": "anime",
         "Type": "Series",
-        "Number Of Episodes": 1,
+        "Number Of Episodes": 3,
         "Number Of Episodes Text": 0,
         "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/2939ad086f4bd36cae720b7d554132c6-400x600.jpg?resize=400%2C600",
         "Source": "",
@@ -55762,7 +55762,7 @@
         "Title": "انمي Koko wa Ore ni Makasete Saki ni Ike to Itte kara 10-nen ga Tattara Densetsu ni Natteita.",
         "Category": "anime",
         "Type": "Series",
-        "Number Of Episodes": 1,
+        "Number Of Episodes": 3,
         "Number Of Episodes Text": 0,
         "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/678f7f02d56e11fcce7072f0c7030d6d-400x600.jpg?resize=400%2C600",
         "Source": "",
@@ -55835,7 +55835,7 @@
         ],
         "GenresAr": [
             "School",
-            "Comedy",
+            "كوميدي",
             "مدرسي"
         ],
         "Format": "1080p WEB-DL",
@@ -55909,7 +55909,7 @@
         ],
         "GenresAr": [
             "School",
-            "Comedy",
+            "كوميدي",
             "مدرسي"
         ],
         "Format": "1080p WEB-DL",
@@ -55935,15 +55935,15 @@
         "Genres": [
             "School",
             "Supernatural",
-            "قوى-خارقة",
+            "قوى خارقة",
             "Comedy",
             "مدرسي"
         ],
         "GenresAr": [
             "School",
             "Supernatural",
-            "قوى-خارقة",
-            "Comedy",
+            "قوى خارقة",
+            "كوميدي",
             "مدرسي"
         ],
         "Format": "1080p WEB-DL",
@@ -55992,7 +55992,7 @@
             "Comedy"
         ],
         "GenresAr": [
-            "Comedy"
+            "كوميدي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 0,
@@ -56005,5 +56005,35 @@
         "ReleaseDate": "2026",
         "EpisodeDuration": "Unknownد",
         "last_scraped": "2026-07-13T15:55:59.336386+00:00"
+    },
+    "306271": {
+        "Title": "انمي Nige Jouzu no Wakagimi 2nd Season",
+        "Category": "anime",
+        "Type": "Series",
+        "Number Of Episodes": 1,
+        "Number Of Episodes Text": 12,
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/9b068694cf0ba2b42ef83d7334dbde31-400x600.jpg?resize=400%2C600",
+        "Source": "",
+        "Genres": [
+            "Animation",
+            "Drama",
+            "Adventure"
+        ],
+        "GenresAr": [
+            "أنميشن",
+            "دراما",
+            "مغامرة"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 24,
+        "Country": null,
+        "Description": "الموسم الثاني من مسلسل Nige Jouzu no Wakagimi.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-nige-jouzu-no-wakagimi-2nd-season",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "Japanese",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "24 دقيقةد",
+        "last_scraped": "2026-07-17T19:31:14.112463+00:00"
     }
 }
