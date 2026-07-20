@@ -23853,7 +23853,8 @@
         "ReleaseDate": "2025",
         "EpisodeDuration": "22د",
         "Number Of Episodes Text": 10,
-        "last_scraped": "2026-05-28T02:09:46.044505+00:00"
+        "last_scraped": "2026-05-28T02:09:46.044505+00:00",
+        "Number Of Episodes": 278
     },
     "242861": {
         "Title": "مسلسل Our Living World",
@@ -45905,7 +45906,7 @@
         "EpisodeDuration": "60د",
         "Number Of Episodes Text": 8,
         "last_scraped": "2026-05-03T06:33:57.043986+00:00",
-        "Number Of Episodes": 22
+        "Number Of Episodes": 24
     },
     "155349": {
         "Title": "مسلسل The Beatles: Get Back",
@@ -95156,7 +95157,7 @@
         "EpisodeDuration": "23د",
         "Number Of Episodes Text": 10,
         "last_scraped": "2026-05-04T05:39:05.601011+00:00",
-        "Number Of Episodes": 84
+        "Number Of Episodes": 90
     },
     "66726": {
         "Title": "مسلسل Planet Earth",
