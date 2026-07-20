@@ -1455,7 +1455,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 50,
         "last_scraped": "2026-05-28T07:27:20.168703+00:00",
-        "Number Of Episodes": 47
+        "Number Of Episodes": 49
     },
     "291589": {
         "Title": "مسلسل Ninja ni Kekkon wa Muzukashi",
@@ -37352,7 +37352,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 10,
         "last_scraped": "2026-07-01T17:41:49.370258+00:00",
-        "Number Of Episodes": 7
+        "Number Of Episodes": 8
     },
     "304153": {
         "Title": "مسلسل Notes from the Last Row",
@@ -37497,7 +37497,8 @@
         "ReleaseDate": "2026-07-04",
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 12,
-        "last_scraped": "2026-07-05T06:12:45.574264+00:00"
+        "last_scraped": "2026-07-05T06:12:45.574264+00:00",
+        "Number Of Episodes": 6
     },
     "304955": {
         "Title": "مسلسل Love in Sync",
@@ -37530,7 +37531,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 8,
         "last_scraped": "2026-07-05T06:12:57.767251+00:00",
-        "Number Of Episodes": 4
+        "Number Of Episodes": 6
     },
     "304805": {
         "Title": "مسلسل Human Vapor",
@@ -37646,7 +37647,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 120,
         "last_scraped": "2026-07-10T03:37:20.233128+00:00",
-        "Number Of Episodes": 8
+        "Number Of Episodes": 10
     },
     "305994": {
         "Title": "مسلسل Dream to You",
@@ -37728,7 +37729,8 @@
         "ReleaseDate": "2026-07-11",
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 12,
-        "last_scraped": "2026-07-15T15:42:32.385237+00:00"
+        "last_scraped": "2026-07-15T15:42:32.385237+00:00",
+        "Number Of Episodes": 4
     },
     "306226": {
         "Title": "مسلسل 25 Years of You",
@@ -37787,5 +37789,35 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 8,
         "last_scraped": "2026-07-17T14:43:53.993474+00:00"
+    },
+    "306342": {
+        "Title": "مسلسل Spooky in Love",
+        "Category": "asian-series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/a9230c36fa0c9a2252fc8e0ab05da7af-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy",
+            "Fantasy",
+            "Fantasysouth-korea",
+            "Horror"
+        ],
+        "GenresAr": [
+            "Comedy",
+            "Fantasy",
+            "Fantasysouth-korea",
+            "Horror"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "دراما رومانسية استقصائية تدور أحداثها حول وريثة فندق يمكنها رؤية الأشباح ومدعي عام عاطفي يتعاونان في شراكة فوضوية.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-spooky-love",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-07-18",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 12,
+        "last_scraped": "2026-07-20T13:48:18.872366+00:00"
     }
 }
