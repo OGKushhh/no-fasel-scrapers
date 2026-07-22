@@ -8497,7 +8497,8 @@
         "ReleaseDate": "2026",
         "EpisodeDuration": "55د",
         "Number Of Episodes Text": 5,
-        "last_scraped": "2026-05-28T02:09:46.044505+00:00"
+        "last_scraped": "2026-05-28T02:09:46.044505+00:00",
+        "Number Of Episodes": 15
     },
     "275727": {
         "Title": "مسلسل Hurricane Katrina: Race Against Time",
@@ -104574,5 +104575,29 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 10,
         "last_scraped": "2026-07-17T13:58:40.518709+00:00"
+    },
+    "306412": {
+        "Title": "مسلسل Meet the Chimps",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/4ca3f294a2eb6d71b39edca5c2cd145c-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Documentary"
+        ],
+        "GenresAr": [
+            "Documentary"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 40,
+        "Country": null,
+        "Description": "يوثق الحياة الاجتماعية المعقدة والمثيرة لقرود الشمبانزي، بما في ذلك بناء الصداقات، والمنافسة على الزعامة، والرومانسية، وحتى الخلافات اليومية",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-meet-chimps",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2020",
+        "EpisodeDuration": "40د",
+        "Number Of Episodes Text": 6,
+        "last_scraped": "2026-07-21T18:05:13.014217+00:00"
     }
 }

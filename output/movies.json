@@ -279598,7 +279598,7 @@
             "دراما",
             "Adventure"
         ],
-        "Format": "N/A",
+        "Format": "1080p WEB-DL",
         "Runtime": null,
         "Country": "USA",
         "Description": "يتصارع روبن هود مع ماضيه بعد حياة مليئة بالجريمة والقتل، ويجد نفسه مصابًا بجروح خطيرة بعد معركة اعتقد أنها ستكون الأخيرة له. في يد امرأة غامضة، يُعرض عليه فرصة للخلاص.",
@@ -280176,5 +280176,51 @@
         "ReleaseDate": "2026",
         "Language": "",
         "last_scraped": "2026-07-20T10:27:24.165061+00:00"
+    },
+    "306405": {
+        "Title": "فيلم Disclosure Day 2026 مترجم",
+        "Category": "movies",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/6bcd8f1ede8f1ff1b92168f1b3a9428f-400x600.jpg?resize=400%2C600",
+        "Source": "",
+        "Genres": [
+            "Action",
+            "Drama",
+            "Mystery"
+        ],
+        "GenresAr": [
+            "اكشن",
+            "دراما",
+            "غموض"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 145,
+        "Country": "Canada",
+        "Description": "إذا اكتشفت أننا لسنا وحدنا، إذا أظهر لك شخص ما، وأثبت لك ذلك، فهل سيخيفك ذلك؟",
+        "ReleaseDate": "2026",
+        "Language": "",
+        "last_scraped": "2026-07-21T17:57:37.766556+00:00"
+    },
+    "306400": {
+        "Title": "فيلم The Mandalorian and Grogu 2026 مترجم",
+        "Category": "movies",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/75252577bb3c97ddecf869a70fa63e06-400x600.jpg?resize=400%2C600",
+        "Source": "",
+        "Genres": [
+            "Action",
+            "Family",
+            "Adventure"
+        ],
+        "GenresAr": [
+            "اكشن",
+            "Family",
+            "Adventure"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 132,
+        "Country": "United States",
+        "Description": "كان ماندالوريان دين جارين، الذي كان صائد جوائز وحيدًا، وتلميذه غروغو ينطلقان في مغامرة جديدة مثيرة في حرب النجوم.",
+        "ReleaseDate": "2026",
+        "Language": "",
+        "last_scraped": "2026-07-21T17:57:37.883165+00:00"
     }
 }
