@@ -24381,7 +24381,7 @@
         "EpisodeDuration": "30د",
         "Number Of Episodes Text": 12,
         "last_scraped": "2026-05-28T02:09:46.044505+00:00",
-        "Number Of Episodes": 15
+        "Number Of Episodes": 16
     },
     "240929": {
         "Title": "مسلسل 3 Body Problem",
@@ -69344,7 +69344,7 @@
         "EpisodeDuration": "30د",
         "Number Of Episodes Text": 8,
         "last_scraped": "2026-05-03T16:44:29.282462+00:00",
-        "Number Of Episodes": 34
+        "Number Of Episodes": 35
     },
     "277201": {
         "Title": "مسلسل Upload",
@@ -104518,7 +104518,8 @@
         "ReleaseDate": "2026-07-15",
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 7,
-        "last_scraped": "2026-07-15T15:24:04.216915+00:00"
+        "last_scraped": "2026-07-15T15:24:04.216915+00:00",
+        "Number Of Episodes": 3
     },
     "306203": {
         "Title": "مسلسل The Map of Longing",
@@ -104599,5 +104600,29 @@
         "EpisodeDuration": "40د",
         "Number Of Episodes Text": 6,
         "last_scraped": "2026-07-21T18:05:13.014217+00:00"
+    },
+    "306430": {
+        "Title": "مسلسل Growing Up Animal",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/07168cb0fb61f9b432dbfc13ee7f7b77-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Documentary"
+        ],
+        "GenresAr": [
+            "Documentary"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 47,
+        "Country": null,
+        "Description": "يروي المغامرة الاستثنائية لصغار الحيوانات منذ وجودهم في الرحم وحتى خطواتهم الأولى نحو الاستقلال",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-growing-animal",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2021",
+        "EpisodeDuration": "47د",
+        "Number Of Episodes Text": 6,
+        "last_scraped": "2026-07-22T12:15:37.172336+00:00"
     }
 }
