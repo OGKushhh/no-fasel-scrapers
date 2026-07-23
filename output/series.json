@@ -11162,7 +11162,8 @@
         "ReleaseDate": "2025",
         "EpisodeDuration": "",
         "Number Of Episodes Text": 10,
-        "last_scraped": "2026-05-28T02:09:46.044505+00:00"
+        "last_scraped": "2026-05-28T02:09:46.044505+00:00",
+        "Number Of Episodes": 18
     },
     "269493": {
         "Title": "مسلسل #1 Happy Family USA",
@@ -22229,14 +22230,15 @@
         "Runtime": 45,
         "Country": null,
         "Description": "يقدم الأخوان التوأم والنجمان توم وبيل كوليتز لمحة عن حياتهما الخاصة في لوس أنجلوس وألمانيا في هذا المسلسل الواقعي المضحك والحميم.",
-        "SeasonsUrl": "https://web42912x.faselhdx.bid/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-kaulitz-kaulitz",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-kaulitz-kaulitz",
         "Status": "مكتمل",
         "ViewingLevel": "",
         "Language": "الالمانية",
         "ReleaseDate": "2025",
         "EpisodeDuration": "45د",
         "Number Of Episodes Text": 8,
-        "last_scraped": "2026-05-28T02:09:46.044505+00:00"
+        "last_scraped": "2026-05-28T02:09:46.044505+00:00",
+        "Number Of Episodes": 24
     },
     "295814": {
         "Title": "مسلسل Gangs of Galicia",
@@ -22255,7 +22257,7 @@
         "Runtime": 45,
         "Country": null,
         "Description": "يصل محامٍ جديد ليستقر في بلدة كامبادوس الصغيرة. اسمها آنا ولا يمر وجودها دون أن يلاحظها أحد، بما في ذلك دانيال، ابن تاجر مخدرات كبير.",
-        "SeasonsUrl": "https://web42912x.faselhdx.bid/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-gangs-galicia",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-gangs-galicia",
         "Status": "مكتمل",
         "ViewingLevel": "TV-MA",
         "Language": "الاسبانية",
@@ -22279,7 +22281,7 @@
         "Runtime": 45,
         "Country": null,
         "Description": "يتبع فريق Dallas Cowboys Cheerleaders لعام 2023-24 اختبارات الأداء والمعسكر التدريبي، وأخيرًا انتهت نهاية موسم Cowboys كما هو متوقع في جولة NFC Wild Card.",
-        "SeasonsUrl": "https://web42912x.faselhdx.bid/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-americas-sweethearts-dallas-cowboys-cheerleaders",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-americas-sweethearts-dallas-cowboys-cheerleaders",
         "Status": "مكتمل",
         "ViewingLevel": "",
         "Language": "English",
@@ -22303,7 +22305,7 @@
         "Runtime": 45,
         "Country": null,
         "Description": "استكشافًا لحركة دينية مثالية بقيادة جيم جونز، تصاعد مجتمعها الطوباوي في غيانا إلى حدث إصابات جماعية خلف 918 قتيلًا. يتم سردها من خلال الناجين، وتغوص في الساعات الأخيرة التي تسبق هذا الفصل المظلم.",
-        "SeasonsUrl": "https://web42912x.faselhdx.bid/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-cult-massacre-one-day-jonestown",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-cult-massacre-one-day-jonestown",
         "Status": "مكتمل",
         "ViewingLevel": "",
         "Language": "English",
@@ -49552,7 +49554,8 @@
         "ReleaseDate": "2025",
         "EpisodeDuration": "60د",
         "Number Of Episodes Text": 10,
-        "last_scraped": "2026-05-03T07:53:30.234319+00:00"
+        "last_scraped": "2026-05-03T07:53:30.234319+00:00",
+        "Number Of Episodes": 31
     },
     "149020": {
         "Title": "مسلسل Meltdown: Three Mile Island",
@@ -72875,7 +72878,7 @@
         "EpisodeDuration": "42د",
         "Number Of Episodes Text": 10,
         "last_scraped": "2026-05-03T18:10:04.624169+00:00",
-        "Number Of Episodes": 356
+        "Number Of Episodes": 362
     },
     "255551": {
         "Title": "مسلسل FBI: Most Wanted",
@@ -104320,7 +104323,8 @@
         "ReleaseDate": "2026",
         "EpisodeDuration": "",
         "Number Of Episodes Text": 8,
-        "last_scraped": "2026-07-13T15:33:49.280068+00:00"
+        "last_scraped": "2026-07-13T15:33:49.280068+00:00",
+        "Number Of Episodes": 3
     },
     "305875": {
         "Title": "مسلسل Mickey Mouse Funhouse",
@@ -104586,7 +104590,7 @@
             "Documentary"
         ],
         "GenresAr": [
-            "Documentary"
+            "وثائقي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 40,
@@ -104610,7 +104614,7 @@
             "Documentary"
         ],
         "GenresAr": [
-            "Documentary"
+            "وثائقي"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 47,
@@ -104624,5 +104628,79 @@
         "EpisodeDuration": "47د",
         "Number Of Episodes Text": 6,
         "last_scraped": "2026-07-22T12:15:37.172336+00:00"
+    },
+    "306526": {
+        "Title": "مسلسل Pompeii: Out of Time with Tom Hiddleston",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/d830f10c574b5f77c0ec6c89bd34b692-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Documentary",
+            "Drama"
+        ],
+        "GenresAr": [
+            "وثائقي",
+            "دراما"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يقوم الممثل توم هيدلستون (المعروف بدور “لوكي”) بدور أشبه بـ “محقق الزمن” ، حيث يستكشف الآثار، ويطّلع على السجلات الأثرية، ويتتبع الأشخاص الذين نجوا بالفعل من تلك الكارثة",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-pompeii-time-tom-hiddleston",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "N/A",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 3,
+        "last_scraped": "2026-07-23T18:08:08.192516+00:00"
+    },
+    "306467": {
+        "Title": "مسلسل My Daughters Father",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/71f4c976a707252e91ff8459fb7de6ef-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama"
+        ],
+        "GenresAr": [
+            "دراما"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "لإنقاذ حياة ابنتها، تبحث طبيبة عن متبرع كُلية، لتكتشف علاقة سرية خطيرة وفحص حمض نووي يهدد بهدم استقرار عائلتين إلى الأبد.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-daughters-father",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "Spanish",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 10,
+        "last_scraped": "2026-07-23T18:08:25.422052+00:00"
+    },
+    "306454": {
+        "Title": "مسلسل Elite Force",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/9ff1da3b729260ae9980fc1495b741e4-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Action"
+        ],
+        "GenresAr": [
+            "أكشن"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "في أعقاب هجوم غير مسبوق على “وحدة تدخّل الدرك الوطني”، يتولى ضابط رفيع الرتبة كان يستعدّ لمغادرة الميدان مهمة خطيرة تعيده إلى ماضٍ لم يندثر.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-elite-force",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "French",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 6,
+        "last_scraped": "2026-07-23T18:08:39.235184+00:00"
     }
 }

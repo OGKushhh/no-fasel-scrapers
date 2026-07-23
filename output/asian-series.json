@@ -37591,7 +37591,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 32,
         "last_scraped": "2026-07-10T03:36:35.957810+00:00",
-        "Number Of Episodes": 16
+        "Number Of Episodes": 20
     },
     "305375": {
         "Title": "مسلسل Avengers Social Club",
@@ -37648,7 +37648,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 120,
         "last_scraped": "2026-07-10T03:37:20.233128+00:00",
-        "Number Of Episodes": 10
+        "Number Of Episodes": 11
     },
     "305994": {
         "Title": "مسلسل Dream to You",
@@ -37800,14 +37800,14 @@
         "Genres": [
             "Comedy",
             "Fantasy",
-            "Fantasysouth-korea",
+            "Fantasysouth korea",
             "Horror"
         ],
         "GenresAr": [
-            "Comedy",
-            "Fantasy",
-            "Fantasysouth-korea",
-            "Horror"
+            "كوميدي",
+            "فانتازيا",
+            "Fantasysouth korea",
+            "رعب"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
