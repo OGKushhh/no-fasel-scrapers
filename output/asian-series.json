@@ -37353,7 +37353,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 10,
         "last_scraped": "2026-07-01T17:41:49.370258+00:00",
-        "Number Of Episodes": 9
+        "Number Of Episodes": 10
     },
     "304153": {
         "Title": "مسلسل Notes from the Last Row",
@@ -37499,7 +37499,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 12,
         "last_scraped": "2026-07-05T06:12:45.574264+00:00",
-        "Number Of Episodes": 6
+        "Number Of Episodes": 7
     },
     "304955": {
         "Title": "مسلسل Love in Sync",
@@ -37532,7 +37532,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 8,
         "last_scraped": "2026-07-05T06:12:57.767251+00:00",
-        "Number Of Episodes": 6
+        "Number Of Episodes": 7
     },
     "304805": {
         "Title": "مسلسل Human Vapor",
@@ -37732,7 +37732,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 12,
         "last_scraped": "2026-07-15T15:42:32.385237+00:00",
-        "Number Of Episodes": 4
+        "Number Of Episodes": 5
     },
     "306226": {
         "Title": "مسلسل 25 Years of You",
@@ -37821,7 +37821,8 @@
         "ReleaseDate": "2026-07-18",
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 12,
-        "last_scraped": "2026-07-20T13:48:18.872366+00:00"
+        "last_scraped": "2026-07-20T13:48:18.872366+00:00",
+        "Number Of Episodes": 3
     },
     "306508": {
         "Title": "مسلسل Overdo",

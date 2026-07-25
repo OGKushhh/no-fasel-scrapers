@@ -104133,7 +104133,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 7,
         "last_scraped": "2026-07-01T17:30:05.451463+00:00",
-        "Number Of Episodes": 4
+        "Number Of Episodes": 5
     },
     "305279": {
         "Title": "مسلسل Legend of the Three Caballeros",
@@ -104702,5 +104702,57 @@
         "EpisodeDuration": "",
         "Number Of Episodes Text": 6,
         "last_scraped": "2026-07-23T18:08:39.235184+00:00"
+    },
+    "306609": {
+        "Title": "مسلسل Musafir Café",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/5f9a3c66e5b89b48b1022f9cf3228f99-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Romance"
+        ],
+        "GenresAr": [
+            "Romance"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يحسّ “تشاندر” بمشاعر جارفة تجاه “سودها”. وبعد مرور سنوات، يؤسس حياة جديدة بين التلال مع “بريتي”، لكن ذكريات الماضي تأبى أن تتركه وشأنه.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-musafir-cafe",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "Hindi",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-07-25T22:12:38.019447+00:00"
+    },
+    "306587": {
+        "Title": "مسلسل Stuart Fails to Save the Universe",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/752104dd6b2852218cec215caa830af7-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy",
+            "Fantasy",
+            "Sci-fi"
+        ],
+        "GenresAr": [
+            "Comedy",
+            "Fantasy",
+            "Sci-fi"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "بعد أن يتسبب “ستيوارت بلوم” عن طريق الخطأ في إنشاء أكوان متعددة جديدة، يجد نفسه مضطرباً ومكلفاً بإنقاذ الكون وإصلاح ما دمره",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-stuart-fails-save-universe",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 10,
+        "last_scraped": "2026-07-25T22:12:55.150848+00:00"
     }
 }

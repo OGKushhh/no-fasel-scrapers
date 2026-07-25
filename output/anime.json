@@ -56035,5 +56035,39 @@
         "ReleaseDate": "2026",
         "EpisodeDuration": "24 دقيقةد",
         "last_scraped": "2026-07-17T19:31:14.112463+00:00"
+    },
+    "306654": {
+        "Title": "انمي Bleach: Sennen Kessen-hen – Kashin-tan",
+        "Category": "anime",
+        "Type": "Series",
+        "Number Of Episodes": 1,
+        "Number Of Episodes Text": 10,
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/acede47c359692be796f168b15fb60c8-400x600.jpg?resize=400%2C600",
+        "Source": "",
+        "Genres": [
+            "Supernatural",
+            "Action",
+            "Action",
+            "قوى-خارقة",
+            "Adventure"
+        ],
+        "GenresAr": [
+            "Supernatural",
+            "Action",
+            "اكشن",
+            "قوى-خارقة",
+            "Adventure"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 0,
+        "Country": null,
+        "Description": "الجزء الأخير من بليتش: Sennen Kessen-hen.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-bleach-sennen-kessen-hen-kashin-tan",
+        "Status": "",
+        "ViewingLevel": "",
+        "Language": "اليابانية",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "Unknownد",
+        "last_scraped": "2026-07-25T22:22:52.229215+00:00"
     }
 }

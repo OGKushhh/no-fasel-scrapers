@@ -388,7 +388,13 @@ class PillButton(tk.Frame):
             w.bind("<ButtonRelease-1>",    self._on_release)
 
     def _set_color(self, color):
-        self.configure(bg=color)
+        # NOTE: deliberately bypass self.configure()/PillButton.configure() —
+        # that override treats bg= as a semantic "change the idle color"
+        # call and stores it in self._bg. Routing hover/press paints through
+        # it would permanently overwrite self._bg with the hover color after
+        # the very first hover, so leaving the button would "reset" to the
+        # (corrupted) hover color forever, leaving it stuck lit.
+        tk.Frame.configure(self, bg=color)
         self._lbl.configure(bg=color)
 
     def _on_enter(self, _=None):
