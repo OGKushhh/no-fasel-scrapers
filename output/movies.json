@@ -280344,5 +280344,47 @@
         "ReleaseDate": "2026",
         "Language": "",
         "last_scraped": "2026-07-23T17:59:52.195462+00:00"
+    },
+    "306595": {
+        "Title": "فيلم The Dink 2026 مترجم",
+        "Category": "movies",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/d7b9dee4b84238512af9a55d94ad8e46-400x600.jpg?resize=400%2C600",
+        "Source": "",
+        "Genres": [
+            "Sport",
+            "Comedy"
+        ],
+        "GenresAr": [
+            "Sport",
+            "كوميدي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 102,
+        "Country": "United States",
+        "Description": "يحاول لاعب تنس محترف إنقاذ النادي من خلال لعب كرة المخلل على مضض لكسب احترام والده.",
+        "ReleaseDate": "2026",
+        "Language": "",
+        "last_scraped": "2026-07-25T00:06:56.979699+00:00"
+    },
+    "306565": {
+        "Title": "فيلم A Toxic Love Story 2026 مترجم",
+        "Category": "movies",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/4b0245dd4c0f975fe3c21314b9e7417f-400x600.jpg?resize=400%2C600",
+        "Source": "",
+        "Genres": [
+            "Crime",
+            "Documentary"
+        ],
+        "GenresAr": [
+            "جريمة",
+            "Documentary"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": "United Kingdom",
+        "Description": "تتصاعد سلسلة من رسائل البريد الإلكتروني التهديدية إلى مؤامرة انتقامية تشمل ضابطًا أمريكيًا متزوجًا حديثًا وصديقته السابقة في هذا الفيلم الوثائقي عن الجريمة الحقيقية.",
+        "ReleaseDate": "2026",
+        "Language": "",
+        "last_scraped": "2026-07-25T00:06:57.127296+00:00"
     }
 }
