@@ -151,6 +151,61 @@ TOOLTIPS = {
     "Metadata:Runtime: Specific category": "Prompts for a category and source order, then fetches runtime for that category only.",
 }
 
+# ── Tooltips (Arabic) ────────────────────────────────────────────────────────
+TOOLTIPS_AR = {
+    # FaselHD scrapers
+    "FaselHD:Series (all)":     "يجلب كل تصنيفات المسلسلات من FaselHD دفعة واحدة: series وtvshows وasian-series وanime.",
+    "FaselHD:Series (asian)":   "يجلب فقط تصنيف المسلسلات الآسيوية من FaselHD (asian-series.json).",
+    "FaselHD:Series (tvshows)": "يجلب فقط تصنيف البرامج التلفزيونية من FaselHD (tvshows.json).",
+    "FaselHD:Movies (all)":     "يجلب كل تصنيفات الأفلام من FaselHD: movies وdubbed-movies وhindi وasian-movies وanime-movies.",
+    "FaselHD:Movies (dubbed)":  "يجلب فقط الأفلام الأجنبية المدبلجة للعربية من FaselHD (dubbed-movies.json).",
+    "FaselHD:Movies (hindi)":   "يجلب فقط الأفلام الهندية/البوليوود من FaselHD (hindi.json).",
+    "FaselHD:Movies (asian)":   "يجلب فقط الأفلام الآسيوية من FaselHD (asian-movies.json).",
+    "FaselHD:Movies (anime)":   "يجلب فقط أفلام الأنمي من FaselHD (anime-movies.json).",
+    "FaselHD:Anime":            "يجلب تصنيف مسلسلات الأنمي من FaselHD (anime.json).",
+    # Akwam
+    "Akwam:Arabic Series":      "يجلب المسلسلات العربية من Akwam (arabic-series.json).",
+    # Episodes
+    "Episodes:Update All":      "يفحص كل المسلسلات والأنمي في جميع التصنيفات (بحد 50 يوميًا). يقارن عدد الحلقات المخزّن بعدد الحلقات الفعلي على الموقع. إذا تطابق العدد يكتفي بمزامنة ملف الـJSON الرئيسي، وإذا اختلف يجلب الحلقات الجديدة ويضيفها.",
+    "Episodes:Update Specific": "يطلب منك معرّف مسلسل واحد أو أكثر ويجلب حلقاتها مباشرة. استخدمه عندما تعرف بالضبط أي مسلسلات تحتاج تحديث.",
+    "Episodes:Check New":       "يفحص صفحات الحلقات الجديدة على FaselHD وAkwam (/recent، 7 صفحات لكل موقع). يكتشف المسلسلات التي فيها حلقات جديدة غير مخزّنة، ثم يشغّل تلقائيًا 'تحديث محدد' لتلك المسلسلات.",
+    # Ratings
+    "Ratings:IMDbAPI → TMDb → OMDb": "يجلب التقييمات من الثلاث مصادر بالترتيب: IMDbAPI أولًا، ثم TMDb، وأخيرًا OMDb.",
+    "Ratings:TMDb → OMDb":           "يجلب التقييمات من TMDb أولًا، وإذا لم يجدها يجرّب OMDb.",
+    "Ratings:IMDbAPI → TMDb":        "يجلب التقييمات من IMDbAPI أولًا، وإذا لم يجدها يجرّب TMDb.",
+    "Ratings:TMDb only":             "يجلب التقييمات من TMDb فقط بدون أي بديل.",
+    "Ratings:IMDbAPI only":          "يجلب التقييمات من IMDbAPI فقط بدون أي بديل.",
+    "Ratings:TMDb‑first":            "يفرض TMDb كمصدر أساسي بغض النظر عن البيانات الموجودة مسبقًا.",
+    "Ratings:Custom order":          "يطلب منك ترتيب مصادر مخصّص (مثلًا imdbapi,omdb) ثم يشغّل تحديث التقييمات.",
+    "Ratings:Specific category":     "يطلب منك ملف تصنيف وترتيب مصادر، ثم يحدّث التقييمات لهذا التصنيف فقط.",
+    # Series IMDb Match
+    "Series IMDb Match:All series":        "للمسلسلات بدون معرّف IMDb: يبحث في IMDbAPI بالعنوان، ثم يقارن بنية المواسم والحلقات المخزّنة عندك مع بنية IMDb للتأكد من التطابق (بنسبة تشابه 80%). عند النجاح يكتب معرّف IMDb والتقييم في ملف التقييمات.",
+    "Series IMDb Match:Series only":       "نفس عملية 'كل المسلسلات' لكن مقتصرة على series.json فقط.",
+    "Series IMDb Match:TV Shows only":     "نفس عملية 'كل المسلسلات' لكن مقتصرة على tvshows.json فقط.",
+    "Series IMDb Match:Asian Series only": "نفس عملية 'كل المسلسلات' لكن مقتصرة على asian-series.json فقط.",
+    "Series IMDb Match:Anime only":        "نفس عملية 'كل المسلسلات' لكن مقتصرة على anime.json فقط.",
+    # MAL
+    "MAL:Anime (all)":        "يثري anime.json وanime-movies.json ببيانات MyAnimeList: عدد الحلقات، المدة، تاريخ الإصدار، الأنواع (عربي وإنجليزي)، حالة البث، وتقييم/ترتيب/شعبية MAL. يتخطى العناصر التي لديها mal_id مسبقًا.",
+    "MAL:Anime only":         "نفس عملية 'الأنمي (الكل)' لكن على anime.json فقط.",
+    "MAL:Anime Movies only":  "نفس عملية 'الأنمي (الكل)' لكن على anime-movies.json فقط.",
+    "MAL:Force re-process":   "يعيد تشغيل مطابقة MAL للعناصر التي لديها mal_id مسبقًا، ويستبدل كل حقول MAL الموجودة.",
+    "MAL:Specific IDs":       "يطلب منك معرّف محتوى واحد أو أكثر ثم يشغّل مطابقة MAL لهذه العناصر فقط.",
+    # Clean & Fix
+    "Clean & Fix:Clean all":                  "ينظّف كل ملفات JSON للتصنيفات: يوحّد صيغة الأنواع (شرطة → مسافة)، يوحّد أسماء الدول، يحوّل المدة إلى رقم صحيح، ويصلح تواريخ الإصدار الخاطئة. يعمل نسخة احتياطية من الأصل في ./baks/ أولًا.",
+    "Clean & Fix:Clean + backfill year":      "يشغّل التنظيف الكامل، ثم يفحص كل عنوان بحثًا عن سنة مضمّنة فيه (مثل 'اسم الفيلم 2024') ويملأها في ReleaseDate إذا كان الحقل فارغًا.",
+    "Clean & Fix:Clean + translate genres":   "يشغّل التنظيف الكامل، ثم يملأ الترجمات العربية الناقصة للأنواع في حقل GenresAr.",
+    "Clean & Fix:Backfill year from title":   "يستخرج فقط سنة الإصدار من نص العنوان للعناصر التي ينقصها ReleaseDate. يتخطى باقي خطوات التنظيف.",
+    "Clean & Fix:Backfill year from ratings": "للمسلسلات/الأنمي التي ينقصها ReleaseDate، ينسخ السنة من ملف التقييم المطابق. يؤثر فقط على تصنيفات المسلسلات.",
+    "Clean & Fix:Backfill airing season":     "ينسخ mal_season من كل ملف تقييم أنمي/أفلام أنمي إلى AiringSeason في ملف JSON الرئيسي (مثلًا 'spring 2019' → 'Spring 2019'). يملأ فقط العناصر التي ينقصها AiringSeason. شغّله بعد تحديث MAL.",
+    "Clean & Fix:Full clean (all steps)":     "يشغّل كل الخطوات: تنظيف الأنواع/الدول/المدة/التواريخ + استخراج السنة من العنوان + استخراج السنة من التقييمات + موسم البث من MAL + ترجمة الأنواع للعربية.",
+    # Metadata / Runtime
+    "Metadata:Runtime: all sources":       "يجلب مدة العرض لكل المحتوى باستخدام IMDbAPI وTMDb وOMDb كبدائل متتالية.",
+    "Metadata:Runtime: IMDbAPI → TMDb":    "يجلب المدة من IMDbAPI أولًا، وإذا لم توجد يجرّب TMDb.",
+    "Metadata:Runtime: IMDbAPI only":      "يجلب المدة من IMDbAPI فقط بدون أي بديل.",
+    "Metadata:Runtime: Custom order":      "يطلب منك ترتيب مصادر مخصّص (مثلًا tmdb,omdb) ثم يجلب المدة.",
+    "Metadata:Runtime: Specific category": "يطلب منك تصنيف وترتيب مصادر، ثم يجلب المدة لهذا التصنيف فقط.",
+}
+
 MANUAL_TOOLTIPS = {
     "✏  Set IMDb ID":       "Opens a dialog to manually assign an IMDb ID (tt...) to a specific item in any category. Useful for fixing wrong or missing IMDb matches.",
     "🎌  Set MAL ID":       "Opens a dialog to manually assign a MyAnimeList ID to a specific anime item. Useful when auto-matching fails.",
@@ -160,18 +215,34 @@ MANUAL_TOOLTIPS = {
     "📋  Select Series":    "Open a popup to browse all episodic series, search, and select multiple IDs to update episodes.",
 }
 
+MANUAL_TOOLTIPS_AR = {
+    "✏  Set IMDb ID":       "يفتح نافذة لتعيين معرّف IMDb (tt...) يدويًا لعنصر معيّن في أي تصنيف. مفيد لتصحيح تطابقات IMDb الخاطئة أو الناقصة.",
+    "🎌  Set MAL ID":       "يفتح نافذة لتعيين معرّف MyAnimeList يدويًا لعنصر أنمي معيّن. مفيد عند فشل المطابقة التلقائية.",
+    "⭐  Get Rating by ID": "يطلب منك تصنيف ومعرّف محتوى واحد أو أكثر، ثم يجلب ويحدّث التقييم فورًا.",
+    "🎌  Get MAL by ID":    "يطلب منك معرّف محتوى أنمي واحد أو أكثر وملف تصنيف، ثم يجلب ويحدّث بيانات MAL فورًا.",
+    "⏱  Get Runtime by ID":"يطلب منك تصنيف ومعرّف محتوى واحد أو أكثر، ثم يجلب ويحدّث المدة فورًا.",
+    "📋  Select Series":    "يفتح نافذة لتصفح كل المسلسلات ذات الحلقات، والبحث، واختيار عدة معرّفات لتحديث حلقاتها.",
+}
+
 SORT_TOOLTIP = "Sorts the selected category's JSON dict into a pre-sorted array (newest first by ReleaseDate, then last_scraped as tiebreaker). Output goes to output/sorted/{category}.json."
+SORT_TOOLTIP_AR = "يرتّب قاموس JSON للتصنيف المختار إلى مصفوفة مرتّبة مسبقًا (الأحدث أولًا حسب ReleaseDate، ثم last_scraped كفاصل عند التساوي). الناتج يُحفظ في output/sorted/{category}.json."
 
 
 class Tooltip:
-    """Show a floating tooltip after a short hover delay."""
+    """Show a floating tooltip after a short hover delay.
+
+    `text` may be a plain string, or a callable with no args that returns
+    the text to show at the moment the tooltip is displayed (used so the
+    tooltip can switch language live via a toggle button).
+    """
     DELAY_MS = 500
     WRAP     = 280
 
-    def __init__(self, widget, text, theme_fn):
+    def __init__(self, widget, text, theme_fn, lang_fn=None):
         self._widget   = widget
-        self._text     = text
+        self._text_fn  = text if callable(text) else (lambda: text)
         self._theme_fn = theme_fn  # callable → returns current T dict
+        self._lang_fn  = lang_fn or (lambda: "en")  # callable → "en" | "ar"
         self._job      = None
         self._tip      = None
         widget.bind("<Enter>",       self._schedule, add="+")
@@ -195,6 +266,10 @@ class Tooltip:
 
     def _show(self):
         T = self._theme_fn()
+        text = self._text_fn()
+        if not text:
+            return
+        is_ar = self._lang_fn() == "ar"
         w = self._widget
         x = w.winfo_rootx() + w.winfo_width() + 8
         y = w.winfo_rooty() + (w.winfo_height() // 2) - 20
@@ -206,8 +281,9 @@ class Tooltip:
 
         lbl = tk.Label(
             self._tip,
-            text=self._text,
-            justify=tk.LEFT,
+            text=text,
+            justify=(tk.RIGHT if is_ar else tk.LEFT),
+            anchor=("e" if is_ar else "w"),
             wraplength=self.WRAP,
             font=("Segoe UI", 10),
             bg=T["panel"],
@@ -217,7 +293,7 @@ class Tooltip:
             padx=10,
             pady=8,
         )
-        lbl.pack(padx=1, pady=1)
+        lbl.pack(padx=1, pady=1, fill=tk.X)
 
 # ── Colour palettes ──────────────────────────────────────────────────────────
 DARK = dict(
@@ -303,6 +379,8 @@ class PillButton(tk.Frame):
             self._lbl.config(width=width)
         self._lbl.pack(fill=tk.BOTH, expand=True)
 
+        self._leave_job = None
+
         for w in (self, self._lbl):
             w.bind("<Enter>",              self._on_enter)
             w.bind("<Leave>",              self._on_leave)
@@ -314,11 +392,32 @@ class PillButton(tk.Frame):
         self._lbl.configure(bg=color)
 
     def _on_enter(self, _=None):
+        # Cancel any pending "leave" check — the pointer just crossed from
+        # the frame onto the label (or vice versa), it never actually left.
+        if self._leave_job:
+            self.after_cancel(self._leave_job)
+            self._leave_job = None
         if self._enabled:
             self._set_color(self._hover)
 
     def _on_leave(self, _=None):
-        self._set_color(self._bg)
+        # Don't un-highlight immediately: the frame and label share the
+        # exact same bounds, so leaving one for the other fires a Leave
+        # event even though the pointer is still over the button. Defer
+        # briefly and check where the pointer actually is.
+        if self._leave_job:
+            self.after_cancel(self._leave_job)
+        self._leave_job = self.after(30, self._check_leave)
+
+    def _check_leave(self):
+        self._leave_job = None
+        try:
+            x, y = self.winfo_pointerxy()
+            under = self.winfo_containing(x, y)
+        except Exception:
+            under = None
+        if under not in (self, self._lbl):
+            self._set_color(self._bg)
 
     def _on_press(self, _=None):
         if self._enabled:
@@ -370,6 +469,8 @@ class ScraperGUI:
 
         self.dark_mode = True
         self.T         = DARK
+
+        self.lang      = "en"   # "en" | "ar" — tooltip language
 
         self._section_labels = []
         self._section_seps   = []
@@ -423,11 +524,18 @@ class ScraperGUI:
         )
         self._title_lbl.grid(row=0, column=0, sticky="w", padx=14, pady=14)
 
+        self._lang_btn = tk.Label(
+            self._title_bar, text="AR",
+            font=("Segoe UI", 10, "bold"), cursor="hand2",
+        )
+        self._lang_btn.grid(row=0, column=1, padx=(0, 4))
+        self._lang_btn.bind("<Button-1>", lambda _: self.toggle_language())
+
         self._theme_btn = tk.Label(
             self._title_bar, text="◐",
             font=("Segoe UI", 16), cursor="hand2",
         )
-        self._theme_btn.grid(row=0, column=1, padx=12)
+        self._theme_btn.grid(row=0, column=2, padx=12)
         self._theme_btn.bind("<Button-1>", lambda _: self.toggle_dark_mode())
 
         self._sidebar_canvas = tk.Canvas(
@@ -590,10 +698,10 @@ class ScraperGUI:
 
         self.script_buttons[name] = (lbl, stop_btn, outer)
 
-        tip_text = TOOLTIPS.get(f"{group}:{name}") or TOOLTIPS.get(name)
-        if tip_text:
+        tip_key = f"{group}:{name}" if f"{group}:{name}" in TOOLTIPS else name
+        if TOOLTIPS.get(tip_key):
             for w in (outer, lbl, dot):
-                Tooltip(w, tip_text, lambda: self.T)
+                Tooltip(w, lambda k=tip_key: self._tip_text(k), lambda: self.T, lambda: self.lang)
 
     def _sort_row(self):
         row = tk.Frame(self.scroll_frame)
@@ -628,7 +736,7 @@ class ScraperGUI:
         self.sort_stop_btn.grid_remove()
 
         for w in (dot, self.sort_combo, self.sort_start_btn):
-            Tooltip(w, SORT_TOOLTIP, lambda: self.T)
+            Tooltip(w, self._sort_tip_text, lambda: self.T, lambda: self.lang)
 
     def _manual_row(self):
         row = tk.Frame(self.scroll_frame)
@@ -641,7 +749,7 @@ class ScraperGUI:
             font=("Segoe UI", 11), padx=10, pady=5,
         )
         self._imdb_btn.pack(fill=tk.X, padx=4, pady=2)
-        Tooltip(self._imdb_btn, MANUAL_TOOLTIPS["✏  Set IMDb ID"], lambda: self.T)
+        Tooltip(self._imdb_btn, lambda: self._manual_tip_text("✏  Set IMDb ID"), lambda: self.T, lambda: self.lang)
 
         # Set MAL ID
         self._set_mal_btn = PillButton(
@@ -650,7 +758,7 @@ class ScraperGUI:
             font=("Segoe UI", 11), padx=10, pady=5,
         )
         self._set_mal_btn.pack(fill=tk.X, padx=4, pady=2)
-        Tooltip(self._set_mal_btn, MANUAL_TOOLTIPS["🎌  Set MAL ID"], lambda: self.T)
+        Tooltip(self._set_mal_btn, lambda: self._manual_tip_text("🎌  Set MAL ID"), lambda: self.T, lambda: self.lang)
 
         # Get Rating by ID
         self._rating_by_id_btn = PillButton(
@@ -659,7 +767,7 @@ class ScraperGUI:
             font=("Segoe UI", 11), padx=10, pady=5,
         )
         self._rating_by_id_btn.pack(fill=tk.X, padx=4, pady=2)
-        Tooltip(self._rating_by_id_btn, MANUAL_TOOLTIPS["⭐  Get Rating by ID"], lambda: self.T)
+        Tooltip(self._rating_by_id_btn, lambda: self._manual_tip_text("⭐  Get Rating by ID"), lambda: self.T, lambda: self.lang)
 
         # Get MAL by ID
         self._mal_by_id_btn = PillButton(
@@ -668,7 +776,7 @@ class ScraperGUI:
             font=("Segoe UI", 11), padx=10, pady=5,
         )
         self._mal_by_id_btn.pack(fill=tk.X, padx=4, pady=2)
-        Tooltip(self._mal_by_id_btn, MANUAL_TOOLTIPS["🎌  Get MAL by ID"], lambda: self.T)
+        Tooltip(self._mal_by_id_btn, lambda: self._manual_tip_text("🎌  Get MAL by ID"), lambda: self.T, lambda: self.lang)
 
         # Get Runtime by ID
         self._runtime_by_id_btn = PillButton(
@@ -677,7 +785,7 @@ class ScraperGUI:
             font=("Segoe UI", 11), padx=10, pady=5,
         )
         self._runtime_by_id_btn.pack(fill=tk.X, padx=4, pady=2)
-        Tooltip(self._runtime_by_id_btn, MANUAL_TOOLTIPS["⏱  Get Runtime by ID"], lambda: self.T)
+        Tooltip(self._runtime_by_id_btn, lambda: self._manual_tip_text("⏱  Get Runtime by ID"), lambda: self.T, lambda: self.lang)
 
         # NEW: Select Series popup (integrated, not external script)
         self._select_series_btn = PillButton(
@@ -686,7 +794,7 @@ class ScraperGUI:
             font=("Segoe UI", 11), padx=10, pady=5,
         )
         self._select_series_btn.pack(fill=tk.X, padx=4, pady=2)
-        Tooltip(self._select_series_btn, MANUAL_TOOLTIPS["📋  Select Series"], lambda: self.T)
+        Tooltip(self._select_series_btn, lambda: self._manual_tip_text("📋  Select Series"), lambda: self.T, lambda: self.lang)
 
     # -------------------------------------------------------------------------
     # THEME
@@ -746,6 +854,7 @@ class ScraperGUI:
             w.configure(bg=T["sidebar"])
 
         self._title_lbl.configure(bg=T["sidebar"], fg=T["fg"])
+        self._lang_btn.configure(bg=T["sidebar"], fg=T["fg_muted"])
         self._theme_btn.configure(bg=T["sidebar"], fg=T["fg_muted"])
         self._divider.configure(bg=T["sidebar_border"])
 
@@ -835,6 +944,29 @@ class ScraperGUI:
         self.dark_mode = not self.dark_mode
         self.T = DARK if self.dark_mode else LIGHT
         self._apply_theme()
+
+    # -------------------------------------------------------------------------
+    # LANGUAGE (tooltip text)
+    # -------------------------------------------------------------------------
+    def toggle_language(self):
+        self.lang = "ar" if self.lang == "en" else "en"
+        if hasattr(self, "_lang_btn"):
+            self._lang_btn.config(text="AR" if self.lang == "en" else "EN")
+
+    def _tip_text(self, key):
+        """Look up a SCRIPT_GROUPS tooltip by key, honoring current language."""
+        if self.lang == "ar":
+            return TOOLTIPS_AR.get(key) or TOOLTIPS.get(key, "")
+        return TOOLTIPS.get(key, "")
+
+    def _manual_tip_text(self, key):
+        """Look up a manual-action tooltip by key, honoring current language."""
+        if self.lang == "ar":
+            return MANUAL_TOOLTIPS_AR.get(key) or MANUAL_TOOLTIPS.get(key, "")
+        return MANUAL_TOOLTIPS.get(key, "")
+
+    def _sort_tip_text(self):
+        return SORT_TOOLTIP_AR if self.lang == "ar" else SORT_TOOLTIP
 
     # -------------------------------------------------------------------------
     # SCRIPT CONTROL

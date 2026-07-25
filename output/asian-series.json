@@ -37353,7 +37353,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 10,
         "last_scraped": "2026-07-01T17:41:49.370258+00:00",
-        "Number Of Episodes": 8
+        "Number Of Episodes": 9
     },
     "304153": {
         "Title": "مسلسل Notes from the Last Row",
@@ -37591,7 +37591,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 32,
         "last_scraped": "2026-07-10T03:36:35.957810+00:00",
-        "Number Of Episodes": 20
+        "Number Of Episodes": 24
     },
     "305375": {
         "Title": "مسلسل Avengers Social Club",
@@ -37648,7 +37648,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 120,
         "last_scraped": "2026-07-10T03:37:20.233128+00:00",
-        "Number Of Episodes": 11
+        "Number Of Episodes": 12
     },
     "305994": {
         "Title": "مسلسل Dream to You",
@@ -37758,7 +37758,8 @@
         "ReleaseDate": "2026-07-11",
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 10,
-        "last_scraped": "2026-07-17T14:43:41.092015+00:00"
+        "last_scraped": "2026-07-17T14:43:41.092015+00:00",
+        "Number Of Episodes": 2
     },
     "306213": {
         "Title": "مسلسل The East Palace",
@@ -37821,5 +37822,33 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 12,
         "last_scraped": "2026-07-20T13:48:18.872366+00:00"
+    },
+    "306508": {
+        "Title": "مسلسل Overdo",
+        "Category": "asian-series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/f4b95fc9fdc888f9605cf02dd88bc1fe-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Melodrama",
+            "Romance"
+        ],
+        "GenresAr": [
+            "Drama",
+            "Melodrama",
+            "Romance"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "في شنغهاي خلال جمهورية الصين، تعرض كينغي مورونغ، الابن الأصغر لأحد أمراء الحرب، للإيذاء من قبل والده بالتبني لأنه تم نقله عن طريق الخطأ. عندما هرب عندما كان مراهقًا، أنقذه سوسو رين، لكن عائلته…",
+        "SeasonsUrl": "https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-overdo",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-07-19",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 33,
+        "last_scraped": "2026-07-24T23:57:29.601508+00:00"
     }
 }
