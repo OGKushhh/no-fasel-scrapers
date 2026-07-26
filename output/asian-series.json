@@ -37591,7 +37591,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 32,
         "last_scraped": "2026-07-10T03:36:35.957810+00:00",
-        "Number Of Episodes": 24
+        "Number Of Episodes": 26
     },
     "305375": {
         "Title": "مسلسل Avengers Social Club",
@@ -37732,7 +37732,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 12,
         "last_scraped": "2026-07-15T15:42:32.385237+00:00",
-        "Number Of Episodes": 5
+        "Number Of Episodes": 6
     },
     "306226": {
         "Title": "مسلسل 25 Years of You",
@@ -37835,9 +37835,9 @@
             "Romance"
         ],
         "GenresAr": [
-            "Drama",
-            "Melodrama",
-            "Romance"
+            "دراما",
+            "ميلودراما",
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -37850,6 +37850,7 @@
         "ReleaseDate": "2026-07-19",
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 33,
-        "last_scraped": "2026-07-24T23:57:29.601508+00:00"
+        "last_scraped": "2026-07-24T23:57:29.601508+00:00",
+        "Number Of Episodes": 4
     }
 }

@@ -33153,7 +33153,8 @@
         "ReleaseDate": "2025",
         "EpisodeDuration": "45د",
         "Number Of Episodes Text": 8,
-        "last_scraped": "2026-05-28T02:09:46.044505+00:00"
+        "last_scraped": "2026-05-28T02:09:46.044505+00:00",
+        "Number Of Episodes": 15
     },
     "217795": {
         "Title": "مسلسل The Full Monty",
@@ -104324,7 +104325,7 @@
         "EpisodeDuration": "",
         "Number Of Episodes Text": 8,
         "last_scraped": "2026-07-13T15:33:49.280068+00:00",
-        "Number Of Episodes": 3
+        "Number Of Episodes": 4
     },
     "305875": {
         "Title": "مسلسل Mickey Mouse Funhouse",
@@ -104712,7 +104713,7 @@
             "Romance"
         ],
         "GenresAr": [
-            "Romance"
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -104735,12 +104736,12 @@
         "Genres": [
             "Comedy",
             "Fantasy",
-            "Sci-fi"
+            "Sci fi"
         ],
         "GenresAr": [
-            "Comedy",
-            "Fantasy",
-            "Sci-fi"
+            "كوميدي",
+            "فانتازيا",
+            "Sci fi"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
