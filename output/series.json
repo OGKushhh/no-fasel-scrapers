@@ -45910,7 +45910,7 @@
         "EpisodeDuration": "60د",
         "Number Of Episodes Text": 8,
         "last_scraped": "2026-05-03T06:33:57.043986+00:00",
-        "Number Of Episodes": 24
+        "Number Of Episodes": 25
     },
     "155349": {
         "Title": "مسلسل The Beatles: Get Back",
@@ -95162,7 +95162,7 @@
         "EpisodeDuration": "23د",
         "Number Of Episodes Text": 10,
         "last_scraped": "2026-05-04T05:39:05.601011+00:00",
-        "Number Of Episodes": 90
+        "Number Of Episodes": 71
     },
     "66726": {
         "Title": "مسلسل Planet Earth",
@@ -104755,5 +104755,35 @@
         "EpisodeDuration": "",
         "Number Of Episodes Text": 10,
         "last_scraped": "2026-07-25T22:12:55.150848+00:00"
+    },
+    "306748": {
+        "Title": "مسلسل Furious",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/035adbd540dfeccc108b38443611eac1-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Crime",
+            "Drama",
+            "Melodrama",
+            "Thriller"
+        ],
+        "GenresAr": [
+            "Crime",
+            "Drama",
+            "Melodrama",
+            "Thriller"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 52,
+        "Country": null,
+        "Description": "عميلة مكتب التحقيقات الفيدرالي أليس بلاك تبحث عن قاتلة متسلسلة غامضة ودقيقة. يسير كلاهما في طريقهما الخاص نحو العدالة، وبينما تبدأ حياتهما بالتشابك، يبدأ الخط الفاصل بين الصواب والخطأ في التلاشي.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-furious",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-07-27",
+        "EpisodeDuration": "52 minد",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-07-28T00:16:19.223937+00:00"
     }
 }
