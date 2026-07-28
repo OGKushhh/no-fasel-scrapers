@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """
 update_runtime.py – Convert runtime to integer minutes using multiple sources.
-Supports --sources imdbapi,tmdb,omdb (any order), --category, and --ids.
+Supports --sources imdbapi,tmdb,omdb (any order), --category, --ids, and --batch-size.
 Parses existing runtime strings first, then tries API sources.
+Features retry logic for progress file and batch writing to main JSONs.
 """
 
 import json
@@ -12,7 +13,6 @@ import time
 import argparse
 from pathlib import Path
 from typing import Optional, Tuple, Set
-from datetime import datetime, timezone
 
 sys.path.insert(0, str(Path(__file__).parent))
 from Common import fetch_imdbapi_by_id, OMDB_BASE_URL, OMDB_API_KEY, fetch_runtime_from_tmdb
@@ -52,9 +52,18 @@ def load_progress() -> Set[Tuple[str, str]]:
                         processed.add((parts[0], parts[1]))
     return processed
 
-def save_progress(category: str, content_id: str):
-    with open(PROGRESS_FILE, "a") as f:
-        f.write(f"{category}|{content_id}\n")
+def save_progress(category: str, content_id: str, retries=5, delay=0.2):
+    """Write progress with retries to avoid transient file locking on Windows."""
+    for attempt in range(retries):
+        try:
+            with open(PROGRESS_FILE, "a") as f:
+                f.write(f"{category}|{content_id}\n")
+            return  # success
+        except PermissionError:
+            if attempt < retries - 1:
+                time.sleep(delay)
+            else:
+                print(f"  WARNING: Could not write progress for {category}|{content_id} (file locked)")
 
 def parse_runtime_string(runtime_str) -> Optional[int]:
     if runtime_str is None:
@@ -115,8 +124,16 @@ def fetch_runtime_omdb(imdb_id: str) -> Optional[int]:
 def fetch_runtime_tmdb(imdb_id: str) -> Optional[int]:
     return fetch_runtime_from_tmdb(imdb_id)
 
-def process_file(file_path: Path, content_type: str, processed_set: Set[Tuple[str, str]], sources: list, data: dict = None):
-    print(f"\n[FILE] Processing {file_path.name} (sources: {sources})")
+def write_json_safe(file_path: Path, data: dict):
+    """Write JSON to disk with an atomic-ish approach (write to temp, then rename)."""
+    temp_file = file_path.with_suffix(file_path.suffix + ".tmp")
+    with open(temp_file, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=4, ensure_ascii=False)
+    temp_file.replace(file_path)
+
+def process_file(file_path: Path, content_type: str, processed_set: Set[Tuple[str, str]],
+                 sources: list, batch_size: int, data: dict = None):
+    print(f"\n[FILE] Processing {file_path.name} (sources: {sources}, batch_size={batch_size})")
     if data is None:
         try:
             with open(file_path, "r", encoding="utf-8") as f:
@@ -130,6 +147,8 @@ def process_file(file_path: Path, content_type: str, processed_set: Set[Tuple[st
         return
 
     modified = False
+    batch_count = 0
+
     for content_id, item in data.items():
         if not isinstance(item, dict):
             continue
@@ -191,14 +210,26 @@ def process_file(file_path: Path, content_type: str, processed_set: Set[Tuple[st
         if runtime_minutes:
             item["runtime_minutes"] = runtime_minutes
             modified = True
+            batch_count += 1
+            # If we reached batch size, flush to disk
+            if batch_count >= batch_size:
+                write_json_safe(file_path, data)
+                print(f"  FLUSHED {file_path.name} after {batch_count} updates")
+                batch_count = 0
         else:
             print(f"  SKIP {content_id}: no runtime available")
         save_progress(file_path.name, content_id)
 
+    # Final flush if any modifications remain
+    if batch_count > 0:
+        write_json_safe(file_path, data)
+        print(f"  FLUSHED {file_path.name} (final batch of {batch_count} updates)")
+        modified = True
+
     if modified:
-        with open(file_path, "w", encoding="utf-8") as f:
-            json.dump(data, f, indent=4, ensure_ascii=False)
-        print(f"  UPDATED {file_path.name}")
+        print(f"  UPDATED {file_path.name} (all changes saved)")
+    else:
+        print(f"  No changes for {file_path.name}")
 
 def main():
     parser = argparse.ArgumentParser(description="Update runtime (convert to minutes) using multiple sources")
@@ -206,6 +237,8 @@ def main():
                         help="Comma-separated sources in priority order (imdbapi, tmdb, omdb). Default: imdbapi,tmdb,omdb")
     parser.add_argument("--category", type=str, help="Process only a specific category file (e.g., movies.json)")
     parser.add_argument("--ids", nargs="+", help="Space‑separated list of content IDs to process (e.g., 12345 67890)")
+    parser.add_argument("--batch-size", type=int, default=10,
+                        help="Number of updates after which to flush the main JSON to disk (default: 10)")
     args = parser.parse_args()
 
     sources = [s.strip() for s in args.sources.split(",")]
@@ -215,7 +248,7 @@ def main():
             print(f"ERROR: Invalid source '{s}'. Choose from {valid}")
             sys.exit(1)
 
-    print(f"Starting runtime update with sources: {sources}")
+    print(f"Starting runtime update with sources: {sources}, batch size: {args.batch_size}")
     processed = load_progress()
 
     for filename, media_type in CONTENT_FILES.items():
@@ -233,9 +266,9 @@ def main():
             if not filtered_data:
                 print(f"WARNING: None of the requested IDs found in {filename}")
                 continue
-            process_file(file_path, media_type, processed, sources, data=filtered_data)
+            process_file(file_path, media_type, processed, sources, args.batch_size, data=filtered_data)
         else:
-            process_file(file_path, media_type, processed, sources)
+            process_file(file_path, media_type, processed, sources, args.batch_size)
 
     print("\nDone.")
 
