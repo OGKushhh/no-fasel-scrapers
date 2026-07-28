@@ -4448,7 +4448,7 @@
         "EpisodeDuration": "",
         "Number Of Episodes Text": 12,
         "last_scraped": "2026-05-28T07:27:20.168703+00:00",
-        "Number Of Episodes": 18
+        "Number Of Episodes": 20
     },
     "274362": {
         "Title": "مسلسل Law and the City",
@@ -37410,7 +37410,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 12,
         "last_scraped": "2026-07-01T17:42:16.850089+00:00",
-        "Number Of Episodes": 11
+        "Number Of Episodes": 12
     },
     "302075": {
         "Title": "مسلسلThe Evil Lawyer",
@@ -37675,7 +37675,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 0,
         "last_scraped": "2026-07-14T07:56:16.264136+00:00",
-        "Number Of Episodes": 5
+        "Number Of Episodes": 6
     },
     "306002": {
         "Title": "مسلسل Road to Success",
@@ -37852,5 +37852,61 @@
         "Number Of Episodes Text": 33,
         "last_scraped": "2026-07-24T23:57:29.601508+00:00",
         "Number Of Episodes": 6
+    },
+    "306775": {
+        "Title": "مسلسل Life’s Punchline",
+        "Category": "asian-series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/0795d2ff5a32b6ed6a0e47b1004b12e5-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Melodrama"
+        ],
+        "GenresAr": [
+            "دراما",
+            "ميلودراما"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "مشاهدة وتحميل جميع مواسم مسلسل Life's Punchline كامل HD مترجم بجودة عالية علي موقع فاصل اعلاني FaselHD اون لاين مسلسل Life's Punchline مترجم اونلاين",
+        "SeasonsUrl": "https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-lifes-punchline",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-06-03",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 10,
+        "last_scraped": "2026-07-28T22:15:35.810928+00:00"
+    },
+    "306714": {
+        "Title": "مسلسل Love on the Menu",
+        "Category": "asian-series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/57029957e2b3ae6f76b8d07c361e986f-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy",
+            "Drama",
+            "Family",
+            "Melodrama"
+        ],
+        "GenresAr": [
+            "كوميدي",
+            "دراما",
+            "عائلي",
+            "ميلودراما"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "بعد مرور ثماني سنوات على انفصال مؤلم، يلتقي طاهٍ يخفي ثروته بحبيبته السابقة، المالك المتفاني لمتجر الأطباق الجانبية. بعد لم شملهم، يجب عليهم مواجهة مطالب عائلاتهم الفوضوية ومعالجة مشاعرهم التي لم يتم حلها…",
+        "SeasonsUrl": "https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-love-menu",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-07-25",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 50,
+        "last_scraped": "2026-07-28T22:15:59.786729+00:00"
     }
 }
