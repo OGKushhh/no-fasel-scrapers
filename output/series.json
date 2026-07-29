@@ -24383,7 +24383,7 @@
         "EpisodeDuration": "30د",
         "Number Of Episodes Text": 12,
         "last_scraped": "2026-05-28T02:09:46.044505+00:00",
-        "Number Of Episodes": 16
+        "Number Of Episodes": 17
     },
     "240929": {
         "Title": "مسلسل 3 Body Problem",
@@ -69348,7 +69348,7 @@
         "EpisodeDuration": "30د",
         "Number Of Episodes Text": 8,
         "last_scraped": "2026-05-03T16:44:29.282462+00:00",
-        "Number Of Episodes": 35
+        "Number Of Episodes": 36
     },
     "277201": {
         "Title": "مسلسل Upload",
@@ -104524,7 +104524,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 7,
         "last_scraped": "2026-07-15T15:24:04.216915+00:00",
-        "Number Of Episodes": 3
+        "Number Of Episodes": 4
     },
     "306203": {
         "Title": "مسلسل The Map of Longing",
@@ -104785,5 +104785,93 @@
         "EpisodeDuration": "52 minد",
         "Number Of Episodes Text": 8,
         "last_scraped": "2026-07-28T00:16:19.223937+00:00"
+    },
+    "306833": {
+        "Title": "مسلسل Proyecto Final",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/452f5ce5427dfd680d30df36c66d4a85-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Melodrama"
+        ],
+        "GenresAr": [
+            "Drama",
+            "Melodrama"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "تدور أحداث الفيلم حول تمارا، وهي مراهقة تصبح هدفًا لإساءة معاملة مجهولة المصدر عبر الإنترنت في مدرستها الجديدة، وتطور علاقة مثيرة للقلق مع معذبها مع اشتداد المضايقات.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-proyecto-final",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "الاسبانية",
+        "ReleaseDate": "2026-07-29",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 20,
+        "last_scraped": "2026-07-29T17:31:08.873921+00:00"
+    },
+    "306821": {
+        "Title": "مسلسل Wrath",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/5475a87450bae39afecf87a3be8e520f-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Crime",
+            "Drama",
+            "Melodrama",
+            "Sport",
+            "Sports"
+        ],
+        "GenresAr": [
+            "Crime",
+            "Drama",
+            "Melodrama",
+            "Sport",
+            "Sports"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "إنه يتعمق في عالم الفنون القتالية المختلطة لتصوير رحلة مقاتل شاب بحثًا عن هويته.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-wrath",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "por",
+        "ReleaseDate": "2026-07-29",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 5,
+        "last_scraped": "2026-07-29T17:31:20.776935+00:00"
+    },
+    "306813": {
+        "Title": "مسلسل The Idaho Murders: College Nightmare",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/47ad4a8931047c9b34e87621a959865a-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Crime",
+            "Documentary",
+            "History",
+            "Documentary"
+        ],
+        "GenresAr": [
+            "Crime",
+            "Documentary",
+            "History",
+            "وثائقي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يروي قصة واحدة من أكثر قضايا القتل تقشعر لها الأبدان في الذاكرة الحديثة – تكريمًا لحياة الشباب الأربعة الذين أُزهقوا أثناء تتبع كل خطوة من ليلة القتل إلى اعتقال المشتبه به في نهاية المطاف.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-idaho-murders-college-nightmare",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-07-29",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 3,
+        "last_scraped": "2026-07-29T17:31:31.631688+00:00"
     }
 }
