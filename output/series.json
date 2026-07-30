@@ -39233,7 +39233,8 @@
         "ReleaseDate": "2024",
         "EpisodeDuration": "60د",
         "Number Of Episodes Text": 8,
-        "last_scraped": "2026-05-03T04:05:48.408241+00:00"
+        "last_scraped": "2026-05-03T04:05:48.408241+00:00",
+        "Number Of Episodes": 25
     },
     "204756": {
         "Title": "مسلسل Gunther’s Millions",
@@ -49556,7 +49557,7 @@
         "EpisodeDuration": "60د",
         "Number Of Episodes Text": 10,
         "last_scraped": "2026-05-03T07:53:30.234319+00:00",
-        "Number Of Episodes": 31
+        "Number Of Episodes": 32
     },
     "149020": {
         "Title": "مسلسل Meltdown: Three Mile Island",
@@ -104873,5 +104874,89 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 3,
         "last_scraped": "2026-07-29T17:31:31.631688+00:00"
+    },
+    "306984": {
+        "Title": "مسلسل Two Years Later",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/747aafc700d68eac22644de4fa84bc95-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Melodrama"
+        ],
+        "GenresAr": [
+            "Drama",
+            "Melodrama"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "تنتهي المغازلات اليومية بالحافلة بين إميلي وريان بفيروس كورونا. بعد عامين، يجتمعون مرة أخرى ويشرعون في ثمانية مواعيد لاختبار مدى التوافق مع الزواج، ويواجهون تحديات شخصية ووجهات نظر مختلفة أثناء العثور على اتصال حقيقي.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-two-years-later",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-06-04",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-07-30T21:01:20.652106+00:00"
+    },
+    "306963": {
+        "Title": "مسلسل Death Inc",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/b2a1144e6e18f9b6103f9d4033cb1085-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy"
+        ],
+        "GenresAr": [
+            "Comedy"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "بعد وفاة المؤسس، تتحدى أرملته التوقعات من خلال الاستيلاء على بيت الجنازة ضد خطط الرجل الأيمن، وتواجه منافسة وصراعات داخلية وقضية #Metoo التي تهدد إرث الشركة.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-death-inc",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "الاسبانية",
+        "ReleaseDate": "2025-07-31",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 6,
+        "last_scraped": "2026-07-30T21:01:54.630016+00:00"
+    },
+    "306884": {
+        "Title": "مسلسل The Bombing of Pan Am 103",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/07/81d9b0788c85fbb312e6e4ed8594b873-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Action",
+            "Documentary",
+            "Drama",
+            "Genres-action",
+            "Melodrama",
+            "Documentary"
+        ],
+        "GenresAr": [
+            "Action",
+            "Documentary",
+            "Drama",
+            "Genres-action",
+            "Melodrama",
+            "وثائقي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "مستوحى من الأحداث المحيطة بتفجير لوكربي عام 1988. ستركز لوكربي على التحقيق في الحادث الذي وقع على جانبي المحيط الأطلسي والأثر المدمر الذي خلفه على البلدة الصغيرة والعائلات التي فقدت أحباءها.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-bombing-pan-103",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-07-30",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 6,
+        "last_scraped": "2026-07-30T21:02:06.654768+00:00"
     }
 }
