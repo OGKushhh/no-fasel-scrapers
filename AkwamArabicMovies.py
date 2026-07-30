@@ -249,7 +249,7 @@ def parse_detail_page(soup, movie_id, listing_data):
         "added_on":      added_on,
         "genres":        genres,
         "description":   description,
-        "links":         links,
+        "sources":       links,                       # 🔥 RENAMED from "links"
         "url":           listing_data.get("url", ""),
         "category":      "arabic-movies",
         "section":       SECTION_ID,
