@@ -37499,7 +37499,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 12,
         "last_scraped": "2026-07-05T06:12:45.574264+00:00",
-        "Number Of Episodes": 7
+        "Number Of Episodes": 9
     },
     "304955": {
         "Title": "مسلسل Love in Sync",
@@ -37648,7 +37648,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 120,
         "last_scraped": "2026-07-10T03:37:20.233128+00:00",
-        "Number Of Episodes": 17
+        "Number Of Episodes": 18
     },
     "305994": {
         "Title": "مسلسل Dream to You",
@@ -37732,7 +37732,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 12,
         "last_scraped": "2026-07-15T15:42:32.385237+00:00",
-        "Number Of Episodes": 6
+        "Number Of Episodes": 7
     },
     "306226": {
         "Title": "مسلسل 25 Years of You",
@@ -37759,7 +37759,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 10,
         "last_scraped": "2026-07-17T14:43:41.092015+00:00",
-        "Number Of Episodes": 2
+        "Number Of Episodes": 3
     },
     "306213": {
         "Title": "مسلسل The East Palace",
@@ -37822,7 +37822,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 12,
         "last_scraped": "2026-07-20T13:48:18.872366+00:00",
-        "Number Of Episodes": 4
+        "Number Of Episodes": 5
     },
     "306508": {
         "Title": "مسلسل Overdo",
@@ -37919,8 +37919,8 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Crime",
-            "Thriller"
+            "جريمة",
+            "إثارة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 70,
@@ -37943,16 +37943,16 @@
         "Genres": [
             "Action",
             "Drama",
-            "Genres-action",
+            "Genres action",
             "Melodrama",
             "Thriller"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "Genres-action",
-            "Melodrama",
-            "Thriller"
+            "أكشن",
+            "دراما",
+            "Genres action",
+            "ميلودراما",
+            "إثارة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,

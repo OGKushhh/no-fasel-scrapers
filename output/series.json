@@ -104136,7 +104136,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 7,
         "last_scraped": "2026-07-01T17:30:05.451463+00:00",
-        "Number Of Episodes": 5
+        "Number Of Episodes": 6
     },
     "305279": {
         "Title": "مسلسل Legend of the Three Caballeros",
@@ -104960,5 +104960,29 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 6,
         "last_scraped": "2026-07-30T21:02:06.654768+00:00"
+    },
+    "307054": {
+        "Title": "مسلسل Fightland",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/08/6b26c50c8a4c339186dc27b68de6cf58-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama"
+        ],
+        "GenresAr": [
+            "دراما"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "بطل ملاكمة يُطلق سراحه من السجن ويعود إلى لندن للانتقام من العائلة التي خانته.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-fightland",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "N/A",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-08-01T23:24:15.271739+00:00"
     }
 }
