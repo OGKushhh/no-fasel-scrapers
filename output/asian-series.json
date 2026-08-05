@@ -10422,7 +10422,7 @@
         "EpisodeDuration": "60د",
         "Number Of Episodes Text": 8,
         "last_scraped": "2026-05-28T07:27:20.168703+00:00",
-        "Number Of Episodes": 12
+        "Number Of Episodes": 14
     },
     "235665": {
         "Title": "مسلسل Argon",
@@ -37649,7 +37649,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 120,
         "last_scraped": "2026-07-10T03:37:20.233128+00:00",
-        "Number Of Episodes": 20
+        "Number Of Episodes": 21
     },
     "305994": {
         "Title": "مسلسل Dream to You",
@@ -37676,7 +37676,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 0,
         "last_scraped": "2026-07-14T07:56:16.264136+00:00",
-        "Number Of Episodes": 7
+        "Number Of Episodes": 8
     },
     "306002": {
         "Title": "مسلسل Road to Success",
@@ -37852,7 +37852,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 33,
         "last_scraped": "2026-07-24T23:57:29.601508+00:00",
-        "Number Of Episodes": 15
+        "Number Of Episodes": 17
     },
     "306775": {
         "Title": "مسلسل Life’s Punchline",
@@ -37998,6 +37998,33 @@
         "ReleaseDate": "2026-08-03",
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 12,
-        "last_scraped": "2026-08-03T20:29:31.956972+00:00"
+        "last_scraped": "2026-08-03T20:29:31.956972+00:00",
+        "Number Of Episodes": 2
+    },
+    "307323": {
+        "Title": "مسلسل GTO",
+        "Category": "asian-series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/08/562e83d52929bf2b6a0b0dc5f513df51-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Melodrama"
+        ],
+        "GenresAr": [
+            "دراما",
+            "ميلودراما"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يصبح عضو العصابة السابق “إيكيتشي أونيزوكا” مدرسًا ويواجه فئة من الطلاب المضطربين الذين يطردون معلميهم بعيدًا. إنه يعمل على مساعدة هؤلاء المراهقين المكافحين على إيجاد طريقهم أثناء تحدي نظام المدرسة.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-gto",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "اليابانية",
+        "ReleaseDate": "2026-07-20",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 11,
+        "last_scraped": "2026-08-05T22:10:25.773770+00:00"
     }
 }

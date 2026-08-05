@@ -15955,7 +15955,8 @@
         "ReleaseDate": "2024",
         "EpisodeDuration": "",
         "Number Of Episodes Text": 8,
-        "last_scraped": "2026-05-28T02:09:46.044505+00:00"
+        "last_scraped": "2026-05-28T02:09:46.044505+00:00",
+        "Number Of Episodes": 15
     },
     "259771": {
         "Title": "مسلسل Uonderbois",
@@ -24385,7 +24386,7 @@
         "EpisodeDuration": "30د",
         "Number Of Episodes Text": 12,
         "last_scraped": "2026-05-28T02:09:46.044505+00:00",
-        "Number Of Episodes": 17
+        "Number Of Episodes": 18
     },
     "240929": {
         "Title": "مسلسل 3 Body Problem",
@@ -27431,7 +27432,8 @@
         "ReleaseDate": "2025",
         "EpisodeDuration": "45د",
         "Number Of Episodes Text": 8,
-        "last_scraped": "2026-05-28T02:09:46.044505+00:00"
+        "last_scraped": "2026-05-28T02:09:46.044505+00:00",
+        "Number Of Episodes": 24
     },
     "230829": {
         "Title": "مسلسل Under Pressure: The U.S. Women’s World Cup Team",
@@ -67038,7 +67040,8 @@
         "ReleaseDate": "2023",
         "EpisodeDuration": "30د",
         "Number Of Episodes Text": 12,
-        "last_scraped": "2026-05-03T15:54:33.456534+00:00"
+        "last_scraped": "2026-05-03T15:54:33.456534+00:00",
+        "Number Of Episodes": 35
     },
     "106354": {
         "Title": "مسلسل We Hunt Together",
@@ -69352,7 +69355,7 @@
         "EpisodeDuration": "30د",
         "Number Of Episodes Text": 8,
         "last_scraped": "2026-05-03T16:44:29.282462+00:00",
-        "Number Of Episodes": 36
+        "Number Of Episodes": 37
     },
     "277201": {
         "Title": "مسلسل Upload",
@@ -104528,7 +104531,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 7,
         "last_scraped": "2026-07-15T15:24:04.216915+00:00",
-        "Number Of Episodes": 4
+        "Number Of Episodes": 5
     },
     "306203": {
         "Title": "مسلسل The Map of Longing",
@@ -104987,5 +104990,59 @@
         "EpisodeDuration": "",
         "Number Of Episodes Text": 8,
         "last_scraped": "2026-08-01T23:24:15.271739+00:00"
+    },
+    "307330": {
+        "Title": "مسلسل Sterling Point",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/08/16ef7ee83c260b2d6aef761d733afc91-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Mystery"
+        ],
+        "GenresAr": [
+            "دراما",
+            "غموض"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "حول المراهقة آني جاكوبسون وشقيقها التوأم اللذين يرثان جزيرة غامضة في كندا من جدهما المنقطع عنهما",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-sterling-point",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-08-05T22:06:05.898718+00:00"
+    },
+    "307239": {
+        "Title": "مسلسل Good Luck Charlie",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/08/70f2632b05049446fb9a7d14bbfc4390.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy",
+            "Drama",
+            "Family"
+        ],
+        "GenresAr": [
+            "كوميدي",
+            "دراما",
+            "عائلي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 22,
+        "Country": null,
+        "Description": "يحاول بوب وإيمي التأقلم مع مولودتهم الجديدة (تشارلي)، وهي الطفلة الرابعة لهم، ليوكلا مهمة اﻹهتمام بها ورعايتها لأخوتها الثلاثة، والذين يقوموا بإبتكار طرق جديدة لرعاية الصغيرة في إطار من المواقف الكوميدية",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-good-luck-charlie",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2010-2014",
+        "EpisodeDuration": "22د",
+        "Number Of Episodes Text": 21,
+        "last_scraped": "2026-08-05T22:06:54.029437+00:00"
     }
 }

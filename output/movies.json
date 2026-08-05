@@ -280855,7 +280855,7 @@
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 95,
-        "Country": "United States",
+        "Country": "USA",
         "Description": "تكافح امرأة شابة لإخفاء الذهب الذي سرقته من الخارجين عن القانون العنيفين الذين سيطروا على موقعها النائي، متفوقين عليهم وسط شتاء مميت حيث يصبح البقاء على قيد الحياة لعبة من المكر والخيانة.",
         "ReleaseDate": "2026",
         "Language": "",
@@ -280897,7 +280897,7 @@
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 103,
-        "Country": "United States",
+        "Country": "USA",
         "Description": "جندي أمريكي جريح محاصر خلف الخطوط الألمانية خلال معركة الانتفاخ.",
         "ReleaseDate": "2026",
         "Language": "",
@@ -280921,5 +280921,66 @@
         "ReleaseDate": "2025",
         "Language": "",
         "last_scraped": "2026-08-04T21:38:56.752257+00:00"
+    },
+    "307382": {
+        "Title": "فيلم Lockbox 2026 مترجم",
+        "Category": "movies",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/08/8ca10dd926cfad0976d740151ca6592b-400x600.jpg?resize=400%2C600",
+        "Source": "",
+        "Genres": [
+            "Horror"
+        ],
+        "GenresAr": [
+            "رعب"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 105,
+        "Country": "Canada",
+        "Description": "امرأة تضع كل شيء على المحك للدفاع عن ابن عمها الغامض من كيان آخر خطير مصمم على تعقبه.",
+        "ReleaseDate": "2026",
+        "Language": "",
+        "last_scraped": "2026-08-05T22:31:58.782133+00:00"
+    },
+    "307380": {
+        "Title": "فيلم Inside the Trustor Scandal 2026 مترجم",
+        "Category": "movies",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/08/f08cfa265196177dcae748a92cf7ebd8-400x600.jpg?resize=400%2C600",
+        "Source": "",
+        "Genres": [
+            "History",
+            "Crime",
+            "Documentary"
+        ],
+        "GenresAr": [
+            "History",
+            "جريمة",
+            "Documentary"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": "Sweden",
+        "Description": "لم تتم رؤية الممول يواكيم بوسنر منذ أن قام بتدبير عملية استحواذ احتيالية على الشركة في عام 1997. والآن يتقدم ليروي قصته.",
+        "ReleaseDate": "2026",
+        "Language": "",
+        "last_scraped": "2026-08-05T22:31:58.843419+00:00"
+    },
+    "307377": {
+        "Title": "فيلم Big Chicken: A Fast Food Conspiracy 2026 مترجم",
+        "Category": "movies",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/08/024f45ca35ea788009ddc82d9e2f0c26-400x600.jpg?resize=400%2C600",
+        "Source": "",
+        "Genres": [
+            "Documentary"
+        ],
+        "GenresAr": [
+            "وثائقي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 96,
+        "Country": "UK",
+        "Description": "ينطلق الممثل الكوميدي مو جيليجان في رحلة جريئة مدتها 28 يومًا عبر المملكة المتحدة والولايات المتحدة، ويأكل الدجاج المقلي فقط لاستكشاف الرغبة الشديدة والصناعة التي تغذيها.",
+        "ReleaseDate": "2026",
+        "Language": "",
+        "last_scraped": "2026-08-05T22:31:58.901695+00:00"
     }
 }

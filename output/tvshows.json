@@ -3822,5 +3822,25 @@
         "EpisodeDuration": "",
         "Number Of Episodes Text": 0,
         "last_scraped": "2026-07-15T15:31:00.075507+00:00"
+    },
+    "307358": {
+        "Title": "برنامج Let’s Marry Harry",
+        "Category": "tvshows",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/08/2fbca5ad515ad075042898f3ee769f9a.jpg",
+        "Source": "",
+        "Genres": [],
+        "GenresAr": [],
+        "Format": "1080p Web-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "مع وقوف “أليكس كوبر” (Call Her Daddy) وأصدقائه المقربين إلى جانبه، هل ينجح “هاري جاوزي” (البحث عن الشريك المثالي) في العثور على حب حقيقي وتأسيس حياة زوجية مستقرة؟",
+        "SeasonsUrl": "https://www.fasel-hd.cam/tvseasons/%d8%a8%d8%b1%d9%86%d8%a7%d9%85%d8%ac-lets-marry-harry",
+        "Status": "منتهي",
+        "ViewingLevel": "",
+        "Language": "N/A",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-08-05T22:23:31.270229+00:00"
     }
 }
