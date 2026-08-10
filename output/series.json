@@ -105045,5 +105045,33 @@
         "EpisodeDuration": "22د",
         "Number Of Episodes Text": 21,
         "last_scraped": "2026-08-05T22:06:54.029437+00:00"
+    },
+    "307398": {
+        "Title": "مسلسل The Shards",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/08/7cc182b37e6d2450f0c657bffd4a4607-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Mystery",
+            "Thriller"
+        ],
+        "GenresAr": [
+            "Drama",
+            "Mystery",
+            "Thriller"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "تدور الأحداث في لوس أنجلوس عام 1981، حيث تتابع مجموعة من طلاب المدرسة الثانوية المنتمين إلى عائلات ثرية خلال مرحلة المراهقة، بينما تتغير حياتهم مع انتشار جرائم قاتل متسلسل يثير الرعب في أنحاء المدينة.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-the-shards",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "N/A",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 9,
+        "last_scraped": "2026-08-07T14:07:25.941440+00:00"
     }
 }
