@@ -7327,7 +7327,7 @@
         "ReleaseDate": "2025",
         "EpisodeDuration": "25د",
         "Number Of Episodes Text": 5,
-        "Number Of Episodes": 10,
+        "Number Of Episodes": 15,
         "last_scraped": "2026-05-28T02:09:46.044505+00:00"
     },
     "278096": {
@@ -21251,7 +21251,8 @@
         "ReleaseDate": "2024",
         "EpisodeDuration": "45د",
         "Number Of Episodes Text": 10,
-        "last_scraped": "2026-05-28T02:09:46.044505+00:00"
+        "last_scraped": "2026-05-28T02:09:46.044505+00:00",
+        "Number Of Episodes": 11
     },
     "249640": {
         "Title": "مسلسل Artfully Designed",
@@ -24386,7 +24387,7 @@
         "EpisodeDuration": "30د",
         "Number Of Episodes Text": 12,
         "last_scraped": "2026-05-28T02:09:46.044505+00:00",
-        "Number Of Episodes": 18
+        "Number Of Episodes": 19
     },
     "240929": {
         "Title": "مسلسل 3 Body Problem",
@@ -52883,7 +52884,8 @@
         "ReleaseDate": "2025",
         "EpisodeDuration": "50د",
         "Number Of Episodes Text": 8,
-        "last_scraped": "2026-05-03T09:15:02.043944+00:00"
+        "last_scraped": "2026-05-03T09:15:02.043944+00:00",
+        "Number Of Episodes": 27
     },
     "142674": {
         "Title": "مسلسل Suspicion",
@@ -67042,7 +67044,7 @@
         "EpisodeDuration": "30د",
         "Number Of Episodes Text": 12,
         "last_scraped": "2026-05-03T15:54:33.456534+00:00",
-        "Number Of Episodes": 35
+        "Number Of Episodes": 36
     },
     "106354": {
         "Title": "مسلسل We Hunt Together",
@@ -69356,7 +69358,7 @@
         "EpisodeDuration": "30د",
         "Number Of Episodes Text": 8,
         "last_scraped": "2026-05-03T16:44:29.282462+00:00",
-        "Number Of Episodes": 37
+        "Number Of Episodes": 38
     },
     "277201": {
         "Title": "مسلسل Upload",
@@ -104532,7 +104534,7 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 7,
         "last_scraped": "2026-07-15T15:24:04.216915+00:00",
-        "Number Of Episodes": 5
+        "Number Of Episodes": 6
     },
     "306203": {
         "Title": "مسلسل The Map of Longing",
