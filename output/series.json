@@ -105059,9 +105059,9 @@
             "Thriller"
         ],
         "GenresAr": [
-            "Drama",
-            "Mystery",
-            "Thriller"
+            "دراما",
+            "غموض",
+            "إثارة"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -105075,5 +105075,231 @@
         "EpisodeDuration": "",
         "Number Of Episodes Text": 9,
         "last_scraped": "2026-08-07T14:07:25.941440+00:00"
+    },
+    "307989": {
+        "Title": "مسلسل Lanterns",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/08/35867e6806b9b14d3bded656871127a9-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Action",
+            "Adventure",
+            "Crime"
+        ],
+        "GenresAr": [
+            "أكشن",
+            "مغامرة",
+            "جريمة"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يتبع العمل قصة المجند الجديد (جون ستيوارت) وأسطورة اللانترنز (هال جوردان)، وهما شرطيان يجدان نفسيهما منخرطين في لغز مظلم على كوكب الأرض، أثناء تحقيقهما في جريمة قتل وقعت في قلب الولايات المتحدة.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-lanterns",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-08-19T01:42:41.251273+00:00"
+    },
+    "307904": {
+        "Title": "مسلسل Umthetho",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/08/8f72dff9fa52ebe5620e14b786271e12-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Crime",
+            "Drama",
+            "Melodrama",
+            "Thriller"
+        ],
+        "GenresAr": [
+            "جريمة",
+            "دراما",
+            "ميلودراما",
+            "إثارة"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "وللحفاظ على شقيقهما الأصغر على قيد الحياة، تصبح المدعية العامة عميلة مزدوجة في عصابة شقيقها الأكبر المسجون.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-umthetho",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-08-14",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 7,
+        "last_scraped": "2026-08-19T01:42:53.349506+00:00"
+    },
+    "307891": {
+        "Title": "مسلسل Moria",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/08/889147d97e4c5edfb62ed54ab2b9af31-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Biography",
+            "Drama",
+            "Melodrama"
+        ],
+        "GenresAr": [
+            "سيرة ذاتية",
+            "دراما",
+            "ميلودراما"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "ترتفع شهرة موريا المفرطة والمبدعة في نهاية كل مرحلة من حياتها، مما يترك العالم يتساءل، أين تبدأ آنا ماريا كازانوفا، وأين تنتهي موريا كازان؟",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-moria",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-08-14",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-08-19T01:43:04.992739+00:00"
+    },
+    "307787": {
+        "Title": "مسلسل My Brilliant Career",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/08/62e9bc26ea10aa6465e3a4020d00cecc-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Melodrama"
+        ],
+        "GenresAr": [
+            "دراما",
+            "ميلودراما"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "في أستراليا عام 1900، تحلم فتاة مزرعة عنيدة بالكتابة بينما تتعارض توقعات المجتمع والأسرة مع رغبتها الشديدة في الاستقلال والحرية الإبداعية.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-brilliant-career",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-08-13",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 6,
+        "last_scraped": "2026-08-19T01:43:17.156077+00:00"
+    },
+    "307754": {
+        "Title": "مسلسل Conversations with a Killer: The Charles Manson Tapes",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/08/5b33ae8e2f9038ecd4c2bdcaf6d0e85e-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Crime",
+            "Documentary",
+            "Documentary"
+        ],
+        "GenresAr": [
+            "Crime",
+            "Documentary",
+            "وثائقي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يتبع صعود زعيم الطائفة تشارلز مانسون، وجرائم القتل التي ارتكبتها عائلة مانسون عام 1969، ومحاكمة عام 1971 من خلال تسجيلات السجن غير المنشورة، والروايات المباشرة، والمقابلات.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-conversations-killer-charles-manson-tapes",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-08-12",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 3,
+        "last_scraped": "2026-08-19T01:43:43.134899+00:00"
+    },
+    "307717": {
+        "Title": "مسلسل The House That Dragons Built",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/08/0c40da15a3c5ef72da02cdd2daf4ec4c-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Documentary",
+            "Documentary"
+        ],
+        "GenresAr": [
+            "Documentary",
+            "وثائقي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "نظرة من وراء الكواليس على سلسلة HBO الرائجة House of the Dragon (2022).",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-house-dragons-built",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2022-08-21",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-08-19T01:44:19.068959+00:00"
+    },
+    "307662": {
+        "Title": "مسلسل Mourinho",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/08/ceceb848a95ec65fc6efe3554626dfb9-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Biography",
+            "Documentary",
+            "Sport",
+            "Sports",
+            "Documentary"
+        ],
+        "GenresAr": [
+            "Biography",
+            "Documentary",
+            "Sport",
+            "Sports",
+            "وثائقي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "نظرة من وراء الكواليس على مسيرة جوزيه مورينيو الأسطورية وصعوده ليصبح أحد مدربي كرة القدم الأكثر شهرة وإثارة للجدل على أعلى مستويات الرياضة.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-mourinho",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-08-11",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 3,
+        "last_scraped": "2026-08-19T01:45:01.797920+00:00"
+    },
+    "307578": {
+        "Title": "مسلسل Anna Pigeon",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/08/2830713ee98ff010663b1e774aabe65e-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Crime",
+            "Drama",
+            "Melodrama"
+        ],
+        "GenresAr": [
+            "جريمة",
+            "دراما",
+            "ميلودراما"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "غادرت حارسة الحديقة آنا بيجون الحياة في المدينة بعد مأساة شخصية. وهي الآن توجه آلامها إلى التحقيق في الجرائم في المتنزهات الوطنية، وهي مصممة على حل القضايا على الرغم من أي عقبات.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-anna-pigeon",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-08-07",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 10,
+        "last_scraped": "2026-08-19T01:45:14.087588+00:00"
     }
 }

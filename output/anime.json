@@ -56131,5 +56131,65 @@
         "ReleaseDate": "2016",
         "EpisodeDuration": "24د",
         "last_scraped": "2026-08-05T22:26:56.600519+00:00"
+    },
+    "307888": {
+        "Title": "انمي Shiguang Dailiren III",
+        "Category": "anime",
+        "Type": "Series",
+        "Number Of Episodes": 2,
+        "Number Of Episodes Text": 12,
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/08/e1303719c8e3d35092bab70d8cbfea04.jpg?resize=400%2C600",
+        "Source": "",
+        "Genres": [
+            "Animation",
+            "Crime",
+            "Drama"
+        ],
+        "GenresAr": [
+            "أنميشن",
+            "جريمة",
+            "دراما"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 24,
+        "Country": null,
+        "Description": "تتمة احداث الموسم السابق",
+        "SeasonsUrl": "https://www.fasel-hd.cam/anime/%d8%a7%d9%86%d9%85%d9%8a-shiguang-dailiren-iii",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "Chinese, English, Japanese, Russian, Mandarin, French, Portuguese, Arabic, Italian",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "24د",
+        "last_scraped": "2026-08-19T02:07:00.045971+00:00"
+    },
+    "307457": {
+        "Title": "مسلسل Alley Cats الموسم الاول",
+        "Category": "anime",
+        "Type": "Series",
+        "Number Of Episodes": 6,
+        "Number Of Episodes Text": 6,
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/08/da4bdf757a750da7f42eb2fa7b96b627-400x600.jpg?resize=400%2C600",
+        "Source": "",
+        "Genres": [
+            "Animation",
+            "Short",
+            "Comedy"
+        ],
+        "GenresAr": [
+            "أنميشن",
+            "Short",
+            "كوميدي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 0,
+        "Country": null,
+        "Description": "يتبع التجارب والمحن التي تتعرض لها مجموعة من القطط البريطانية الوحشية من جميع مناحي المجتمع، الذين يبحثون عن الرفقة أثناء اجترار الحياة اليومية.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/anime/%d9%85%d8%b3%d9%84%d8%b3%d9%84-alley-cats-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%85-%d8%a7%d9%84%d8%a7%d9%88%d9%84",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "اليابانية",
+        "ReleaseDate": "2026-08-07",
+        "EpisodeDuration": "minد",
+        "last_scraped": "2026-08-19T02:07:00.192849+00:00"
     }
 }

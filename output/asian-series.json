@@ -38038,9 +38038,9 @@
             "War"
         ],
         "GenresAr": [
-            "Action",
-            "Drama",
-            "War"
+            "أكشن",
+            "دراما",
+            "حرب"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -38066,7 +38066,7 @@
         ],
         "GenresAr": [
             "Law",
-            "Mystery"
+            "غموض"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": 54,
@@ -38091,8 +38091,8 @@
             "Melodrama"
         ],
         "GenresAr": [
-            "Drama",
-            "Melodrama"
+            "دراما",
+            "ميلودراما"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -38115,14 +38115,14 @@
         "Genres": [
             "Action",
             "Comedy",
-            "Genres-action",
+            "Genres action",
             "Romance"
         ],
         "GenresAr": [
-            "Action",
-            "Comedy",
-            "Genres-action",
-            "Romance"
+            "أكشن",
+            "كوميدي",
+            "Genres action",
+            "رومانسية"
         ],
         "Format": "1080p WEB-DL",
         "Runtime": null,
@@ -38136,5 +38136,77 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 12,
         "last_scraped": "2026-08-07T14:40:31.957248+00:00"
+    },
+    "307920": {
+        "Title": "مسلسل Under the Rainbow",
+        "Category": "asian-series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/08/c4a087c6de30528415a1145f8d7aae6f-400x600.jpg",
+        "Source": "",
+        "Genres": [],
+        "GenresAr": [],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "أعلنت الحكومة عن خطة إعادة تطوير منطقة Choi Hung Estate. تم بناء هذا العقار السكني الشهير منذ أكثر من 60 عامًا، وهو بمثابة ذاكرة جماعية لأجيال قليلة من سكان هونغ كونغ. تنسج هذه الدراما سبع قصص مؤثرة تحدث في Choi Hung Estate. تصور القصص المشاعر والندم المختلفة، وتعكس مشاعر سكان هونغ كونغ العاطفية تجاه العقارات السكنية العامة. يذكر كل واحد منهم المشاهدين بأن العقار الأيقوني يقترب من نهايته مع تقاطع الشخصيات.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-under-the-rainbow",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-07-29",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 0,
+        "last_scraped": "2026-08-19T01:49:07.949703+00:00"
+    },
+    "307772": {
+        "Title": "مسلسل A Trap Called Desire",
+        "Category": "asian-series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/08/42c5a33cd9cd713c84621edfe2e27b7c-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Crime",
+            "Mystery"
+        ],
+        "GenresAr": [
+            "جريمة",
+            "غموض"
+        ],
+        "Format": "N/A",
+        "Runtime": 40,
+        "Country": null,
+        "Description": "بعد اتهامها زورًا بالقتل، تفقد “كو إيون سول” كل شيء وتُسرق منها حياتها. عاقدة العزم على تبرئة اسمها، واستعادة مستقبلها، والانتقام من المسؤولين، فإنها تشرع في سعي لا هوادة فيه لكشف الحقيقة وراء الاتهام الباطل الذي دمر حياتها تقف في طريقها تشو مي ران. إنها تبدو دافئة ومخلصة، لكن هذا مجرد السطح. وفي الأسفل، أمضت سنوات في أخذ ما ليس لها بهدوء، وعلى استعداد لسرقة سعادة شخص آخر ومستقبله إذا جعلها أقرب إلى ما تريد. لقد بنت حياتها بأكملها على الأكاذيب، ولن تسمح لـ إيون سيول بهدمها. بينما تتعمق Eun Seol في التعمق أكثر، تلتقي مرة أخرى مع Cha Seok Jin، حبها الأول، وتاريخ يمتد لعقد من الزمان لم يتركه أي منهما وراءه بالكامل. تعود الجروح القديمة إلى الظهور، وتبدأ الأسرار المخفية منذ فترة طويلة في الانهيار، وتجد نفسها في صراع مع كانغ هاي را، الوريثة الوحيدة لمجموعة Cheongma Group القوية. عالقة في شبكة من الخيانة والدوافع الخفية، يجب على “إيون سيول” أن تكافح من أجل استعادة مستقبلها وإظهار الحقيقة إلى النور.",
+        "SeasonsUrl": "https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-trap-called-desire",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "Korean",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "40 دقيقةد",
+        "Number Of Episodes Text": 100,
+        "last_scraped": "2026-08-19T01:49:32.865920+00:00"
+    },
+    "307602": {
+        "Title": "مسلسل Until the T-Shirt Dries",
+        "Category": "asian-series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/08/39c79ad5dcf23a28047fdec62621486a-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Melodrama"
+        ],
+        "GenresAr": [
+            "دراما",
+            "ميلودراما"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "مشاهدة وتحميل جميع مواسم مسلسل Until the T-Shirt Dries كامل HD مترجم بجودة عالية علي موقع فاصل اعلاني FaselHD اون لاين مسلسل Until the T-Shirt Dries مترجم اونلاين",
+        "SeasonsUrl": "https://www.fasel-hd.cam/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-t-shirt-dries",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "اليابانية",
+        "ReleaseDate": "2026-07-10",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 10,
+        "last_scraped": "2026-08-19T01:49:48.991002+00:00"
     }
 }
