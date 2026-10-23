@@ -53,7 +53,7 @@ REQUEST_DELAY = 2.0                # seconds between page requests
 JITTER = 0.5                       # random ± seconds
 MAX_RETRIES = 3
 BACKOFF_FACTOR = 2
-IMPERSONATIONS = ["chrome", "chrome110", "chrome124", "edge101", "safari15_5"]
+IMPERSONATIONS = ["chrome131", "chrome133a", "safari17_2_1", "safari18_0"]
 
 FASEL_BASE_URL = "https://www.fasel-hd.co/"
 
@@ -176,6 +176,24 @@ def get_website_safe(webpage_url: str, max_retries: int = MAX_RETRIES) -> Option
             try:
                 r = curl_requests.get(webpage_url, impersonate=imp, timeout=30)
                 if r.status_code == 200:
+                    # Cloudflare challenge detection — challenge pages return
+                    # HTTP 200 but the body is the interstitial "Just a moment…"
+                    # HTML, not the page we asked for. Without this check,
+                    # get_number_of_pages() parses the challenge HTML, finds
+                    # no pagination, returns 1, and the scraper silently loads
+                    # existing on-disk data and reports it as a successful run.
+                    body = r.text
+                    if ("cf-browser-verification" in body
+                            or "challenge-platform" in body
+                            or "Just a moment" in body
+                            or "cf_chl_opt" in body
+                            or "/cdn-cgi/challenge-platform/" in body):
+                        if DEBUG:
+                            print(f"curl_cffi got 200 but body is Cloudflare "
+                                  f"challenge page (impersonate={imp}) — treating as failure")
+                        if attempt < max_retries - 1:
+                            time.sleep(BACKOFF_FACTOR ** attempt)
+                        continue
                     fake = requests.Response()
                     fake.status_code = 200
                     fake._content = r.content
