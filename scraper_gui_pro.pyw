@@ -213,6 +213,7 @@ MANUAL_TOOLTIPS = {
     "🎌  Get MAL by ID":    "Prompts for one or more anime content IDs and a category file, then fetches and updates their MAL data immediately.",
     "⏱  Get Runtime by ID":"Prompts for a category and one or more content IDs, then fetches and updates their runtime immediately.",
     "📋  Select Series":    "Open a popup to browse all episodic series, search, and select multiple IDs to update episodes.",
+    "🌐  Change Fasel Domain": "Walks every *.json file under output/ recursively and rewrites every legacy Fasel URL host (fasel-hd.cam, faselhd.com, faselhd.tv, etc.) to a new primary that you type. Atomic per-file writes, with backup tarball before any file is touched. Poster CDN (static.faselhdcdn.com) is never touched.",
 }
 
 MANUAL_TOOLTIPS_AR = {
@@ -222,6 +223,7 @@ MANUAL_TOOLTIPS_AR = {
     "🎌  Get MAL by ID":    "يطلب منك معرّف محتوى أنمي واحد أو أكثر وملف تصنيف، ثم يجلب ويحدّث بيانات MAL فورًا.",
     "⏱  Get Runtime by ID":"يطلب منك تصنيف ومعرّف محتوى واحد أو أكثر، ثم يجلب ويحدّث المدة فورًا.",
     "📋  Select Series":    "يفتح نافذة لتصفح كل المسلسلات ذات الحلقات، والبحث، واختيار عدة معرّفات لتحديث حلقاتها.",
+    "🌐  Change Fasel Domain": "يستبدل كل نطاق Fasel قديم في كل ملفات JSON تحت output/ بالنطاق الجديد الذي تكتبه. كتابة ذرّية لكل ملف، مع نسخة احتياطية قبل أي تعديل. لا يُلمس نطاق صور الملصقات (static.faselhdcdn.com).",
 }
 
 SORT_TOOLTIP = "Sorts the selected category's JSON dict into a pre-sorted array (newest first by ReleaseDate, then last_scraped as tiebreaker). Output goes to output/sorted/{category}.json."
@@ -802,6 +804,17 @@ class ScraperGUI:
         self._select_series_btn.pack(fill=tk.X, padx=4, pady=2)
         Tooltip(self._select_series_btn, lambda: self._manual_tip_text("📋  Select Series"), lambda: self.T, lambda: self.lang)
 
+        # NEW: Change Fasel Domain — bulk-rewrites every legacy Fasel URL
+        # host on disk to a new primary. Walks output/ recursively.
+        # Requires bulk_domain_changer.py next to this script.
+        self._fasel_domain_btn = PillButton(
+            row, text="🌐  Change Fasel Domain",
+            command=self.open_fasel_domain_dialog,
+            font=("Segoe UI", 11), padx=10, pady=5,
+        )
+        self._fasel_domain_btn.pack(fill=tk.X, padx=4, pady=2)
+        Tooltip(self._fasel_domain_btn, lambda: self._manual_tip_text("🌐  Change Fasel Domain"), lambda: self.T, lambda: self.lang)
+
     # -------------------------------------------------------------------------
     # THEME
     # -------------------------------------------------------------------------
@@ -913,7 +926,8 @@ class ScraperGUI:
 
         idle_bg = T["hover"]
         for btn in [self._imdb_btn, self._set_mal_btn, self._rating_by_id_btn,
-                    self._mal_by_id_btn, self._runtime_by_id_btn, self._select_series_btn]:
+                    self._mal_by_id_btn, self._runtime_by_id_btn,
+                    self._select_series_btn, self._fasel_domain_btn]:
             btn._bg    = idle_bg
             btn._hover = T["accent"]
             btn._active= T["accent_dim"]
@@ -1695,6 +1709,236 @@ class ScraperGUI:
         tk.Button(popup, text="Cancel", command=popup.destroy, width=15).pack(side=tk.BOTTOM, pady=10)
 
         # ─── CENTER THE POPUP ──────────────────────────────────────────
+        popup.update_idletasks()
+        w = popup.winfo_width()
+        h = popup.winfo_height()
+        x = self.root.winfo_x() + (self.root.winfo_width() // 2) - (w // 2)
+        y = self.root.winfo_y() + (self.root.winfo_height() // 2) - (h // 2)
+        popup.geometry(f"{w}x{h}+{x}+{y}")
+        popup.grab_set()
+
+
+    # -------------------------------------------------------------------------
+    # FASEL DOMAIN CHANGER (bulk rewrite of every JSON file on disk)
+    # -------------------------------------------------------------------------
+    def open_fasel_domain_dialog(self):
+        """Walks every *.json under output/ and rewrites every legacy
+        Fasel URL host to a new primary that the user types. Atomic
+        per-file writes, with backup tarball before any file is touched.
+
+        Runs the rewrite on a background thread — tkinter can't block
+        the main loop for 5–15 s on a large metadata dir. Requires
+        bulk_domain_changer.py next to this script (lazy import so the
+        GUI still runs if the module isn't there yet).
+        """
+        try:
+            from bulk_domain_changer import apply_rewrite, detect_legacy_host
+        except ImportError:
+            messagebox.showerror(
+                "Module missing",
+                "bulk_domain_changer.py is not next to scraper_gui_pro.pyw.\n"
+                "Copy it into the same folder and retry.",
+            )
+            return
+
+        metadata_dir = Path(SCRIPTS_DIR) / "output"
+        backup_dir   = metadata_dir / "backups"
+
+        popup = tk.Toplevel(self.root)
+        popup.title("Change Fasel Domain")
+        popup.geometry("540x360")
+        popup.resizable(False, False)
+        popup.configure(bg=self.T["bg"])
+
+        # ─── Current domain (auto-detected) ──────────────────────────────
+        cur_frame = tk.Frame(popup, padx=16, pady=12, bg=self.T["bg"])
+        cur_frame.pack(fill=tk.X)
+        cur_frame.columnconfigure(1, weight=1)
+        tk.Label(cur_frame, text="Current:",
+                 font=("Segoe UI", 10, "bold"),
+                 bg=self.T["bg"], fg=self.T["fg"]).grid(row=0, column=0, sticky="w")
+        cur_var = tk.StringVar(value="Detecting…")
+        tk.Label(cur_frame, textvariable=cur_var,
+                 font=("Consolas", 10), anchor="w",
+                 bg=self.T["bg"], fg=self.T["fg"]).grid(
+                     row=0, column=1, sticky="w", padx=8)
+
+        def detect_current():
+            def work():
+                try:
+                    files = sorted(metadata_dir.rglob("*.json"))
+                    if not files:
+                        self.root.after(0,
+                            lambda: cur_var.set(f"(no JSON files in {metadata_dir})"))
+                        return
+                    host = None
+                    for f in files[:100]:
+                        host = detect_legacy_host(f)
+                        if host:
+                            break
+                    self.root.after(0,
+                        lambda: cur_var.set(host or "(none detected)"))
+                except Exception as e:
+                    self.root.after(0, lambda: cur_var.set(f"error: {e}"))
+            threading.Thread(target=work, daemon=True).start()
+        detect_current()
+
+        # ─── New domain input ─────────────────────────────────────────────
+        new_frame = tk.Frame(popup, padx=16, pady=4, bg=self.T["bg"])
+        new_frame.pack(fill=tk.X)
+        new_frame.columnconfigure(1, weight=1)
+        tk.Label(new_frame, text="New:",
+                 font=("Segoe UI", 10, "bold"),
+                 bg=self.T["bg"], fg=self.T["fg"]).grid(row=0, column=0, sticky="w")
+        new_var = tk.StringVar(value="")  # empty — user types the new domain
+        entry = tk.Entry(
+            new_frame, textvariable=new_var,
+            font=("Consolas", 11),
+            bg=self.T["text_bg"], fg=self.T["text_fg"],
+            insertbackground=self.T["text_fg"],
+            relief=tk.SOLID, borderwidth=1,
+            highlightthickness=1,
+            highlightcolor=self.T["accent"],
+            highlightbackground=self.T["sidebar_border"],
+        )
+        entry.grid(row=0, column=1, sticky="ew", padx=8, ipady=4)
+        # Placeholder hint — shown when entry is empty, hidden when user types
+        hint_text = "e.g. fasel-hd.co  (bare host — no scheme, no www.)"
+        hint_lbl = tk.Label(new_frame, text=hint_text,
+                            font=("Consolas", 10),
+                            bg=self.T["text_bg"], fg=self.T["fg_muted"],
+                            anchor="w")
+        # Place hint INSIDE the entry's cell (column=1) on top of the entry
+        hint_lbl.place(in_=entry, relx=0.02, rely=0.5, y=0, anchor="w")
+
+        def _on_entry_focusin(_evt):
+            if not new_var.get():
+                hint_lbl.place(in_=entry, relx=0.02, rely=0.5, y=0, anchor="w")
+        def _on_entry_focusout(_evt):
+            hint_lbl.place_forget() if new_var.get() else \
+                hint_lbl.place(in_=entry, relx=0.02, rely=0.5, y=0, anchor="w")
+        def _on_entry_key(_evt):
+            hint_lbl.place_forget() if new_var.get() else \
+                hint_lbl.place(in_=entry, relx=0.02, rely=0.5, y=0, anchor="w")
+        entry.bind("<FocusIn>",  _on_entry_focusin)
+        entry.bind("<FocusOut>", _on_entry_focusout)
+        entry.bind("<Key>",      _on_entry_key)
+
+        # Pre-select the entry so the user can start typing immediately
+        entry.focus_set()
+
+        # ─── Buttons ──────────────────────────────────────────────────────
+        btn_frame = tk.Frame(popup, padx=16, pady=8, bg=self.T["bg"])
+        btn_frame.pack(fill=tk.X)
+        preview_btn = PillButton(btn_frame, text="🔍  Preview",
+                                 font=("Segoe UI", 10, "bold"),
+                                 padx=10, pady=5, bg="#3b82f6")
+        preview_btn.pack(side=tk.LEFT, padx=(0, 6))
+        apply_btn   = PillButton(btn_frame, text="✓  Apply",
+                                 font=("Segoe UI", 10, "bold"),
+                                 padx=10, pady=5, bg="#22c55e")
+        apply_btn.pack(side=tk.LEFT)
+        close_btn   = PillButton(btn_frame, text="Close",
+                                 font=("Segoe UI", 10),
+                                 padx=10, pady=5, bg="#6b7280")
+        close_btn.pack(side=tk.RIGHT)
+
+        # ─── Progress ────────────────────────────────────────────────────
+        prog_frame = tk.Frame(popup, padx=16, pady=4, bg=self.T["bg"])
+        prog_frame.pack(fill=tk.BOTH, expand=True)
+        prog = ttk.Progressbar(prog_frame, length=500, mode="determinate")
+        prog.pack(fill=tk.X)
+        status_var = tk.StringVar(value="Idle.")
+        tk.Label(prog_frame, textvariable=status_var,
+                 font=("Consolas", 10), anchor="w",
+                 bg=self.T["bg"], fg=self.T["fg"]).pack(
+                     fill=tk.X, pady=(4, 0))
+
+        def set_running(running):
+            for b in (preview_btn, apply_btn):
+                b.configure(state="disabled" if running else "normal")
+            if not running:
+                prog["value"] = 0
+
+        def run(dry_run):
+            domain = new_var.get().strip().lower()
+            if not domain:
+                messagebox.showerror("Error", "Enter a new domain first.",
+                                     parent=popup)
+                return
+            if "://" in domain or domain.startswith("www."):
+                messagebox.showerror(
+                    "Error",
+                    "Must be a bare host like 'fasel-hd.co' — no scheme, no www.",
+                    parent=popup)
+                return
+            if not dry_run and not messagebox.askyesno(
+                "Confirm",
+                f"Rewrite every legacy Fasel URL on disk to '{domain}'?\n\n"
+                f"A backup tarball will be created in\n{backup_dir}\n"
+                f"before any file is touched.\n"
+                f"This will scan all *.json files under\n{metadata_dir}.",
+                parent=popup):
+                return
+
+            set_running(True)
+            status_var.set(f"{'Preview' if dry_run else 'Apply'} starting ({domain})…")
+
+            def on_progress(*, scanned, total, modified, rewritten):
+                pct = (scanned / total * 100) if total else 0
+                # Marshal to main thread — tkinter is NOT thread-safe,
+                # widget methods can't be called from a worker thread.
+                self.root.after(0, lambda: (
+                    prog.config(maximum=total, value=scanned),
+                    status_var.set(
+                        f"{scanned}/{total} scanned | {modified} modified | "
+                        f"{rewritten} URLs rewritten"
+                    ),
+                ))
+
+            def work():
+                try:
+                    result = apply_rewrite(
+                        metadata_dir=metadata_dir,
+                        new_domain=domain,
+                        dry_run=dry_run,
+                        backup_dir=None if dry_run else backup_dir,
+                        on_progress=on_progress,
+                    )
+                    if dry_run:
+                        msg = (
+                            f"Would rewrite {result.urls_rewritten} URLs "
+                            f"across {result.files_modified} files "
+                            f"(out of {result.files_scanned} scanned).\n"
+                            f"Detected current: {result.from_host or '(none)'}"
+                        )
+                    else:
+                        msg = (
+                            f"Rewrote {result.urls_rewritten} URLs "
+                            f"in {result.files_modified} files.\n"
+                            f"Backup: {result.backup_path}\n"
+                            f"Took {result.duration_ms / 1000:.1f}s"
+                        )
+                    self.root.after(0, lambda: (
+                        set_running(False),
+                        status_var.set(msg),
+                        messagebox.showinfo("Done", msg, parent=popup),
+                        detect_current(),  # refresh the "Current" line
+                    ))
+                except Exception as e:
+                    self.root.after(0, lambda: (
+                        set_running(False),
+                        status_var.set(f"error: {e}"),
+                        messagebox.showerror("Error", str(e), parent=popup),
+                    ))
+
+            threading.Thread(target=work, daemon=True).start()
+
+        preview_btn.configure(command=lambda: run(True))
+        apply_btn.configure(  command=lambda: run(False))
+        close_btn.configure(  command=popup.destroy)
+
+        # ─── Center the popup on the main window ────────────────────────
         popup.update_idletasks()
         w = popup.winfo_width()
         h = popup.winfo_height()
