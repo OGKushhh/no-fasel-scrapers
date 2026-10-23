@@ -53,7 +53,7 @@ REQUEST_DELAY = 2.0                # seconds between page requests
 JITTER = 0.5                       # random ± seconds
 MAX_RETRIES = 3
 BACKOFF_FACTOR = 2
-IMPERSONATIONS = ["chrome131", "chrome133a", "safari17_2_1", "safari18_0"]
+IMPERSONATIONS = ["chrome131", "chrome133a", "safari17_0"]
 
 FASEL_BASE_URL = "https://www.fasel-hd.co/"
 
@@ -144,24 +144,67 @@ def extract_domain(url: str) -> str:
 # ----------------------------------------------------------------------
 #  Core fetching function (synchronous, thread‑safe: Scrapling + curl_cffi)
 # ----------------------------------------------------------------------
+def _is_cloudflare_challenge(html: str) -> bool:
+    """Detect Cloudflare's interstitial "Just a moment…" challenge page.
+
+    CF returns HTTP 200 with this challenge HTML, not the page you asked for.
+    Without this check, scrapers that follow `get_website_safe()` parse the
+    challenge HTML, find no real content (no pagination, no .blockMovie divs,
+    etc.), and silently load existing on-disk data — looks like success but
+    actually scraped nothing.
+    """
+    if not html:
+        return False
+    return any(marker in html for marker in (
+        "cf-browser-verification",
+        "challenge-platform",
+        "Just a moment",
+        "cf_chl_opt",
+        "/cdn-cgi/challenge-platform/",
+        "Checking if the site connection is secure",  # CF "Are you human?" variant
+    ))
+
+
 def get_website_safe(webpage_url: str, max_retries: int = MAX_RETRIES) -> Optional[Response]:
     """Fetch a page using Scrapling (stealth) or fallback to curl_cffi."""
     if SCRAPLING_AVAILABLE:
         for attempt in range(max_retries):
             try:
+                # Two-step Cloudflare bypass (ported from the old FaselHD/nfshd.py
+                # that actually worked). The key parameter is `solve_cloudflare=True`
+                # — without it, Scrapling opens a browser but never solves the
+                # Cloudflare challenge, so every request hits 307→403.
+                #
+                # Strategy: try WITHOUT solve_cloudflare first (fast path —
+                # if the browser context still has CF cookies from a previous
+                # solve, this just works in ~1s). Only solve CF on retry if
+                # the fast path returned a non-200 or a Cloudflare challenge page.
+                solve = (attempt > 0)  # only solve on retry
+                if DEBUG and solve:
+                    print(f"Scrapling attempt {attempt+1}: solving Cloudflare...")
                 resp = StealthyFetcher.fetch(
                     webpage_url,
                     headless=True,
-                    wait_for_selector=".blockMovie, .postDiv, body",
-                    timeout=60000
+                    solve_cloudflare=solve,
+                    block_ads=True,
+                    disable_resources=True,
+                    wait_selector=".blockMovie, .postDiv, body",
+                    retries=2,
+                    retry_delay=3,
+                    timeout=60000,
                 )
                 if resp and resp.status == 200:
                     html = resp.body.decode('utf-8') if hasattr(resp, 'body') else resp.text
-                    if html:
+                    # Verify the response is NOT a Cloudflare challenge page
+                    # (Scrapling should have solved it, but double-check)
+                    if html and not _is_cloudflare_challenge(html):
                         fake = requests.Response()
                         fake.status_code = 200
                         fake._content = html.encode('utf-8')
                         return fake
+                    elif DEBUG:
+                        print(f"Scrapling returned 200 but body is still "
+                              f"Cloudflare challenge — will retry with solve=True")
             except Exception as e:
                 if DEBUG:
                     print(f"Scrapling error (attempt {attempt+1}): {e}")
@@ -183,11 +226,7 @@ def get_website_safe(webpage_url: str, max_retries: int = MAX_RETRIES) -> Option
                     # no pagination, returns 1, and the scraper silently loads
                     # existing on-disk data and reports it as a successful run.
                     body = r.text
-                    if ("cf-browser-verification" in body
-                            or "challenge-platform" in body
-                            or "Just a moment" in body
-                            or "cf_chl_opt" in body
-                            or "/cdn-cgi/challenge-platform/" in body):
+                    if _is_cloudflare_challenge(body):
                         if DEBUG:
                             print(f"curl_cffi got 200 but body is Cloudflare "
                                   f"challenge page (impersonate={imp}) — treating as failure")
