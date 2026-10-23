@@ -55,7 +55,7 @@ MAX_RETRIES = 3
 BACKOFF_FACTOR = 2
 IMPERSONATIONS = ["chrome", "chrome110", "chrome124", "edge101", "safari15_5"]
 
-FASEL_BASE_URL = "https://www.fasel-hd.cam/"
+FASEL_BASE_URL = "https://www.fasel-hd.co/"
 
 # For other sites (leave as is)
 CIMA_NOW_SELECTOR = ("class name", "owl-head.owl-loaded.owl-drag")
