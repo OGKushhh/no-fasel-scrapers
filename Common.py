@@ -165,53 +165,129 @@ def _is_cloudflare_challenge(html: str) -> bool:
     ))
 
 
+# ----------------------------------------------------------------------
+#  Per-thread StealthySession — each thread gets its own browser context
+# ----------------------------------------------------------------------
+# Why per-thread sessions (Option B) instead of a shared session or a
+# worker-thread queue:
+#
+#   scrapling's StealthySession is backed by Playwright, which uses
+#   greenlets bound to the CREATING thread. A session created on thread A
+#   cannot be called from thread B — it throws "Cannot switch to a different
+#   thread". This means:
+#   - One shared session + lock = serialized, no parallelism (slow)
+#   - One shared session + worker-thread queue = serialized, complex (slow)
+#   - Per-thread sessions = natural parallelism, simple code
+#
+# With per-thread sessions via threading.local(), each worker thread in
+# FaselMoviesScraper's ThreadPoolExecutor(max_workers=6) gets its own
+# StealthySession. Each thread:
+#   1. Lazily creates its session on first call to get_website_safe()
+#   2. Solves CF on the first fetch (~5-10s)
+#   3. Reuses cached cookies on subsequent fetches (~1-2s each)
+#
+# Cost: ~6 chromium processes (~600 MB RAM on a 6-worker scraper).
+# Benefit: true parallelism — 6 fetches in parallel instead of 1 at a time.
+# This is the right tradeoff for a desktop scraper.
+# ----------------------------------------------------------------------
+import threading
+_thread_local = threading.local()
+
+
+def _get_cf_session():
+    """Get the StealthySession for the CURRENT thread. Each thread gets
+    its own — Playwright's greenlets are thread-bound, so this is the
+    only way to use a persistent session from multiple threads.
+
+    Created lazily on first call. Stays open for the thread's lifetime.
+    CF is solved once per thread (on the first fetch), then cookies are
+    reused on subsequent fetches.
+    """
+    session = getattr(_thread_local, "session", None)
+    if session is None and SCRAPLING_AVAILABLE:
+        try:
+            from scrapling.fetchers import StealthySession
+            session = StealthySession(
+                headless=True,
+                block_ads=True,
+                disable_resources=True,
+                solve_cloudflare=True,
+                wait_selector="body",
+                network_idle=False,
+                wait=0,
+                timeout=30000,
+                google_search=False,
+            )
+            session.__enter__()
+            _thread_local.session = session
+        except Exception as e:
+            if DEBUG:
+                print(f"Failed to create StealthySession for thread "
+                      f"{threading.get_ident()}: {e}")
+            _thread_local.session = None
+    return getattr(_thread_local, "session", None)
+
+
+def _close_cf_session():
+    """Close the StealthySession for the CURRENT thread. Called via
+    atexit on script exit — only closes the main thread's session (atexit
+    runs on the main thread). Worker thread sessions are GC'd when those
+    threads exit, and any orphaned chromium processes are killed by the
+    OS when the Python process dies."""
+    session = getattr(_thread_local, "session", None)
+    if session is not None:
+        try:
+            session.__exit__(None, None, None)
+        except Exception:
+            pass
+        _thread_local.session = None
+
+
+# Auto-cleanup on script exit — covers all paths (normal completion,
+# Ctrl+C, unhandled exception). The GUI's Stop All button also kills
+# the subprocess, which triggers this atexit handler automatically.
+import atexit as _atexit
+_atexit.register(_close_cf_session)
+
+
 def get_website_safe(webpage_url: str, max_retries: int = MAX_RETRIES) -> Optional[Response]:
-    """Fetch a page using Scrapling (stealth) or fallback to curl_cffi."""
-    if SCRAPLING_AVAILABLE:
+    """Fetch a page using the current thread's persistent StealthySession
+    (CF solved once per thread on first call, cookies reused on
+    subsequent calls). Falls back to curl_cffi if the session fails.
+
+    Thread-safe by design — each thread has its own session, no shared
+    state, no lock needed. The 6 worker threads in FaselMoviesScraper's
+    ThreadPoolExecutor can all call this in parallel."""
+    session = _get_cf_session()
+    if session is not None:
         for attempt in range(max_retries):
             try:
-                # Two-step Cloudflare bypass (ported from the old FaselHD/nfshd.py
-                # that actually worked). The key parameter is `solve_cloudflare=True`
-                # — without it, Scrapling opens a browser but never solves the
-                # Cloudflare challenge, so every request hits 307→403.
-                #
-                # Strategy: try WITHOUT solve_cloudflare first (fast path —
-                # if the browser context still has CF cookies from a previous
-                # solve, this just works in ~1s). Only solve CF on retry if
-                # the fast path returned a non-200 or a Cloudflare challenge page.
-                solve = (attempt > 0)  # only solve on retry
-                if DEBUG and solve:
-                    print(f"Scrapling attempt {attempt+1}: solving Cloudflare...")
-                resp = StealthyFetcher.fetch(
-                    webpage_url,
-                    headless=True,
-                    solve_cloudflare=solve,
-                    block_ads=True,
-                    disable_resources=True,
-                    wait_selector=".blockMovie, .postDiv, body",
-                    retries=2,
-                    retry_delay=3,
-                    timeout=60000,
-                )
+                if DEBUG and attempt > 0:
+                    print(f"StealthySession attempt {attempt+1}...")
+                # Direct call — no queue, no Future, no worker thread.
+                # session.fetch() runs on THIS thread (the same thread
+                # that called __enter__()), so no greenlet binding issue.
+                resp = session.fetch(webpage_url)
                 if resp and resp.status == 200:
-                    html = resp.body.decode('utf-8') if hasattr(resp, 'body') else resp.text
+                    html = resp.body.decode("utf-8") if hasattr(resp, "body") else resp.text
                     # Verify the response is NOT a Cloudflare challenge page
-                    # (Scrapling should have solved it, but double-check)
+                    # (session should have solved it, but double-check —
+                    # cached cookies can expire mid-run)
                     if html and not _is_cloudflare_challenge(html):
                         fake = requests.Response()
                         fake.status_code = 200
-                        fake._content = html.encode('utf-8')
+                        fake._content = html.encode("utf-8")
                         return fake
                     elif DEBUG:
-                        print(f"Scrapling returned 200 but body is still "
-                              f"Cloudflare challenge — will retry with solve=True")
+                        print(f"StealthySession returned 200 but body is still "
+                              f"Cloudflare challenge — will retry")
             except Exception as e:
                 if DEBUG:
-                    print(f"Scrapling error (attempt {attempt+1}): {e}")
+                    print(f"StealthySession error (attempt {attempt+1}): {e}")
             if attempt < max_retries - 1:
                 time.sleep(BACKOFF_FACTOR ** attempt)
         if DEBUG:
-            print("Scrapling failed, falling back to curl_cffi")
+            print("StealthySession failed, falling back to curl_cffi")
 
     if CURL_CFFI_AVAILABLE:
         for attempt in range(max_retries):
