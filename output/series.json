@@ -105102,7 +105102,8 @@
         "ReleaseDate": "2026",
         "EpisodeDuration": "",
         "Number Of Episodes Text": 8,
-        "last_scraped": "2026-08-19T01:42:41.251273+00:00"
+        "last_scraped": "2026-08-19T01:42:41.251273+00:00",
+        "Number Of Episodes": 6
     },
     "307904": {
         "Title": "مسلسل Umthetho",
@@ -106413,5 +106414,1337 @@
         "EpisodeDuration": "",
         "Number Of Episodes Text": 4,
         "last_scraped": "2026-10-24T14:30:59.215463+00:00"
+    },
+    "312600": {
+        "Title": "مسلسل Surviving Earth",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/7ed7e41111c8469585d35507f39616b3-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Documentary"
+        ],
+        "GenresAr": [
+            "وثائقي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يستكشف عالماً مفقوداً نابضاً بالحياة، مليئاً بالمخلوقات الغريبة والمذهلة والمناظر الطبيعية الخلابة.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-surviving-earth",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "N/A",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-11-10T20:33:14.546012+00:00"
+    },
+    "312438": {
+        "Title": "مسلسل You’re Killing Me",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/3b2930eb8f037fcac7e95c8898ccd025-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Crime",
+            "Drama",
+            "Mystery"
+        ],
+        "GenresAr": [
+            "جريمة",
+            "دراما",
+            "غموض"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "تجمع جريمة قتل روائية شهيرة وصانعة بودكاست من جيل زد في ثنائي تحر غير متوقع. ومع تزايد الضحايا، يتوجب عليهما توحيد صفوفهما قبل أن يكتب القاتل الفصل الأخير.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-youre-killing-me",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 6,
+        "last_scraped": "2026-11-10T20:33:52.789873+00:00"
+    },
+    "312396": {
+        "Title": "مسلسل The Fall of El Mayo",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/d191c240510ef4ad4d1450ced1a9e521-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Crime",
+            "Documentary"
+        ],
+        "GenresAr": [
+            "جريمة",
+            "وثائقي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يروي هذا العمل قصة “إل مايو زامبادا”، زعيم تجارة المخدرات وشريك “إل تشابو غوزمان” السرّي في عصابة “سينالوا”، كاشفًا عن تفاصيل القبض عليه واللغز المحيط بالشخصية التي غدرت به.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-the-fall-of-el-mayo",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 3,
+        "last_scraped": "2026-11-10T20:34:28.865234+00:00"
+    },
+    "312368": {
+        "Title": "مسلسل A Couple of Lies",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/f8445aa77c8cf4109f57a1edb2d3da80-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Thriller"
+        ],
+        "GenresAr": [
+            "دراما",
+            "إثارة"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يتحول تبادل منزلين يبدو مثاليًّا بين “صقلية” و”ستوكهولم” إلى أزمة حين يلجأ ثنائيان ثريان إلى حلول متطرفة لحماية أنفسهم، وأسرارهم.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-a-couple-of-lies",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "Swedish",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 4,
+        "last_scraped": "2026-11-10T20:35:05.909609+00:00"
+    },
+    "312346": {
+        "Title": "مسلسل Hell Motel",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/d6975b68980af0e13ed048ee2527362f-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Horror",
+            "Mystery"
+        ],
+        "GenresAr": [
+            "دراما",
+            "رعب",
+            "غموض"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "10 هواة جرائم حقيقية يُدعون إلى نُزل شهد جريمة جماعية شيطانية منذ 30 عامًا… فهل يعود الماضي لينتقم؟",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-hell-motel",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2025",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-11-10T20:35:15.245653+00:00"
+    },
+    "312326": {
+        "Title": "مسلسل VisionQuest",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/439e7a848ecfbb69e60ead3643b6cc0d-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Action"
+        ],
+        "GenresAr": [
+            "أكشن"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "في ظل وجود مكافأة على رأسه، يتوجب على “ڤيجن” مواجهة طبيعته ومقاومة نفوذ “أولترون” ليتمكن من البقاء على قيد الحياة.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-visionquest",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-11-10T20:35:24.842530+00:00"
+    },
+    "312311": {
+        "Title": "مسلسل The Mob",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/cbfd879de892913714771547eb014149-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Game show",
+            "Reality tv"
+        ],
+        "GenresAr": [
+            "Game show",
+            "Reality tv"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يتنافس المشاهير في تحديات مستوحاة من عالم الجريمة المنظمة في فيلا إيطالية للفوز بجائزة قدرها 250 ألف دولار. وينتخبون زعيماً يتحكم في عمليات الإقصاء وتوزيع الجوائز. وبما أن السلطة تتطلب الولاء، فعلى المتسابقين أن يقرروا ما إذا كانوا سيدعمون الزعيم أم سيطيحون به.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-the-mob",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "N/A",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-11-10T20:35:47.923977+00:00"
+    },
+    "312013": {
+        "Title": "مسلسل Palacio",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/d67c2709f421d404cb3f2e33f015df52-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "History",
+            "Thriller"
+        ],
+        "GenresAr": [
+            "دراما",
+            "تاريخي",
+            "إثارة"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 50,
+        "Country": null,
+        "Description": "يتبع الأحداث التي وقعت خلال حصار قصر العدل الكولومبي عام 1985 من قبل مجموعة حرب العصابات M-19.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-palacio",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "Spanish",
+        "ReleaseDate": "2026-11-06",
+        "EpisodeDuration": "50د",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-11-10T20:35:57.018175+00:00"
+    },
+    "311992": {
+        "Title": "مسلسل The New Stanford Prison Experiment",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/93f73f6b0080e3c32ea9c975127c3f08-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Reality tv"
+        ],
+        "GenresAr": [
+            "Reality tv"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 50,
+        "Country": null,
+        "Description": "يدخل ثلاثون متطوعًا إلى منشأة سجن حقيقية ويتم تعيينهم عشوائيًا لأدوار كحراس أو سجناء لاختبار ما إذا كان الأشخاص العاديون يتوافقون مع ديناميكيات السلطة المخصصة لهم أو يحافظون على تعاطفهم وفرديتهم.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-the-new-stanford-prison-experiment",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-10-21",
+        "EpisodeDuration": "50د",
+        "Number Of Episodes Text": 6,
+        "last_scraped": "2026-11-10T20:36:06.142419+00:00"
+    },
+    "311971": {
+        "Title": "مسلسل The Greatest",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/c67c622df6566995a46ef73ffe26e1e4-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Biography",
+            "Drama",
+            "Sport"
+        ],
+        "GenresAr": [
+            "سيرة ذاتية",
+            "دراما",
+            "رياضي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يسرد حياة علي، أعلى مستوياته/أدنى مستوياته المهنية، الانتصارات/النضال داخل/خارج الحلبة. يستكشف علاقاته الشخصية كأب، زوج، أخ، ابن، خلف الشخصية العامة. يصور اللحظات الحاسمة التي شكلت شخصية أسطورة الملاكمة الشهيرة…",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-the-greatest",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "",
+        "ReleaseDate": "2026-11-04",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-11-10T20:36:15.351791+00:00"
+    },
+    "311943": {
+        "Title": "مسلسل Surveillant",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/d95d521e48750260344253e2fec35dd7-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy",
+            "Drama"
+        ],
+        "GenresAr": [
+            "كوميدي",
+            "دراما"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "تدير كورين ميلارد مركز احتجاز شينواز، وتتصرف كأم مفرطة في حماية النزلاء وحراسها الأخرقين. عندما يُسجن ابنها المنفصل هناك، يجب عليها الموازنة بين إعادة التواصل معه ومع واجباتها.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-surveillant",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-09-16",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-11-10T20:36:24.941375+00:00"
+    },
+    "311932": {
+        "Title": "مسلسل Shaque: Trust No One",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/103c5ef49d0a7dfeb0e831cb15637551-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Crime",
+            "Mystery",
+            "Thriller"
+        ],
+        "GenresAr": [
+            "جريمة",
+            "غموض",
+            "إثارة"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 40,
+        "Country": null,
+        "Description": "أم تتلقى سنوياً صوراً لطفلها المفقود. وبعد تسع سنوات من البحث، تكتشف أن حقيقة الاختطاف ليست بعيدة، ولكنها مخفية بين أقرب دائرتها.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-shaque-trust-no-one",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "Hindi",
+        "ReleaseDate": "2026-09-24",
+        "EpisodeDuration": "40د",
+        "Number Of Episodes Text": 7,
+        "last_scraped": "2026-11-10T20:36:35.029285+00:00"
+    },
+    "311885": {
+        "Title": "مسلسل Phony",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/3db3470ee5dcfc1598e14d728ebf3655-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy",
+            "Drama",
+            "Mystery"
+        ],
+        "GenresAr": [
+            "كوميدي",
+            "دراما",
+            "غموض"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 30,
+        "Country": null,
+        "Description": "بعد الاستيقاظ من حادث سيارة غريب، يكتشف سوني أن والدته قد تم استبدالها بمحتال.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-phony",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-10-20",
+        "EpisodeDuration": "30د",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-11-10T20:36:44.365161+00:00"
+    },
+    "311881": {
+        "Title": "مسلسل My Sad Dead",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/84ce90815b99410d90313aa234ad4eab-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Fantasy",
+            "Horror"
+        ],
+        "GenresAr": [
+            "دراما",
+            "فانتازيا",
+            "رعب"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 50,
+        "Country": null,
+        "Description": "تواجه طبيبة منعزلة تتمتع بقدرات خارقة للطبيعة اضطرابًا عندما تزورها ابنة أختها الصغيرة، مما يقدم نهجًا مختلفًا وأكثر قوة لموهبتهما المشتركة في التواصل مع الأرواح.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-my-sad-dead",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "Spanish",
+        "ReleaseDate": "2026-09-24",
+        "EpisodeDuration": "50د",
+        "Number Of Episodes Text": 4,
+        "last_scraped": "2026-11-10T20:36:53.658208+00:00"
+    },
+    "311861": {
+        "Title": "مسلسل Miss Governor",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/49390621453aba36eea45cf6c682ca55-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy"
+        ],
+        "GenresAr": [
+            "كوميدي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 20,
+        "Country": null,
+        "Description": "بينما تحاول التألق في السياسة، يجب على أول حاكمة سوداء لولاية ميسيسيبي إدارة عائلتها المهووسة والتغلب على رئيس عالق في الماضي.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-miss-governor",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2025-05-22",
+        "EpisodeDuration": "20د",
+        "Number Of Episodes Text": 16,
+        "last_scraped": "2026-11-10T20:37:02.759174+00:00"
+    },
+    "311837": {
+        "Title": "مسلسل Kill Jackie",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/cefc0b995b8d72317805fb34d2ce54b3-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Action",
+            "Comedy",
+            "Crime",
+            "Action"
+        ],
+        "GenresAr": [
+            "Action",
+            "Comedy",
+            "Crime",
+            "اكشن"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 45,
+        "Country": null,
+        "Description": "يعيش تاجر الكوكايين السابق جاكي برايس في بيع الأعمال الفنية بشكل فاخر من خلال المخططات الضريبية. بعد 20 عامًا من عدم الكشف عن هويتها، تنتهي حياتها الهادئة عندما يتم استئجار The Seven Demons، نخبة القتلة، لقتلها.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-kill-jackie",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-10-02",
+        "EpisodeDuration": "45د",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-11-10T20:37:12.141383+00:00"
+    },
+    "311824": {
+        "Title": "مسلسل Inside the Circle",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/67085eae9414f6e1c5837cfdd415684f-400x600.jpg",
+        "Source": "",
+        "Genres": [],
+        "GenresAr": [],
+        "Format": "1080p WEB-DL",
+        "Runtime": 45,
+        "Country": null,
+        "Description": "يتم القبض على أربعة أصدقاء مدى الحياة في شبكة من الابتزاز عندما يهدد مقطع فيديو مسرب بكشف الأسرار التي قد تدمر صداقتهم.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-inside-the-circle",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "Spanish",
+        "ReleaseDate": "2026-10-07",
+        "EpisodeDuration": "45د",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-11-10T20:37:21.730331+00:00"
+    },
+    "311801": {
+        "Title": "مسلسل Habeas Corpus",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/778f64e2555c8634568dc54de86e8cbe-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama"
+        ],
+        "GenresAr": [
+            "دراما"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 60,
+        "Country": null,
+        "Description": "يحاول أستاذ قانون مشهور وفريق من الطلاب إثبات براءة رجل مُدان، لكن الطالب الأكثر ذكاءً يرتبط سرًا بماضيه.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-habeas-corpus",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "Portuguese",
+        "ReleaseDate": "2026-09-23",
+        "EpisodeDuration": "60د",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-11-10T20:37:31.107365+00:00"
+    },
+    "311790": {
+        "Title": "مسلسل Fading Grandeur",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/d4e9b5a4a85bb1fadd39e7f236caa9f7-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy",
+            "Drama"
+        ],
+        "GenresAr": [
+            "كوميدي",
+            "دراما"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 30,
+        "Country": null,
+        "Description": "لياندرو، ماركيز مهووس بالحصول على لقب غراندي إسبانيا من الملك. يجب على النبيل المتدهور أن يبيع قصر عائلته لدفع تكاليف حفل زفاف ابنته. عندما يظهر المشتري المحتمل، يحاول إغواءها.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-fading-grandeur",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "Spanish",
+        "ReleaseDate": "2026-10-23",
+        "EpisodeDuration": "30د",
+        "Number Of Episodes Text": 6,
+        "last_scraped": "2026-11-10T20:37:40.209975+00:00"
+    },
+    "311781": {
+        "Title": "مسلسل El problema final",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/3edde95ec874aeac59c909942d993959-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Crime",
+            "Drama",
+            "History"
+        ],
+        "GenresAr": [
+            "جريمة",
+            "دراما",
+            "تاريخي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 45,
+        "Country": null,
+        "Description": "في عام 1959، تقطعت السبل بـ 13 شخصًا على جزيرة صغيرة بالقرب من مايوركا أثناء عاصفة. في فندقهم الصغير، تم العثور على السائحة الإنجليزية إليسا ماندر ميتة. عندما يبدو الانتحار غير محتمل، يقوم الممثل المتقاعد باسيل، بمجرد ظهور شارلوك هولمز على الشاشة، بالتحقيق…",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-el-problema-final",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "Spanish",
+        "ReleaseDate": "2026-09-25",
+        "EpisodeDuration": "45د",
+        "Number Of Episodes Text": 4,
+        "last_scraped": "2026-11-10T20:37:49.791970+00:00"
+    },
+    "311707": {
+        "Title": "مسلسل Carrie",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/91d115a4a369060c336e11d93014d249-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Horror"
+        ],
+        "GenresAr": [
+            "دراما",
+            "رعب"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 52,
+        "Country": null,
+        "Description": "بعد وفاة والدها المفاجئة، التحقت المراهقة كاري وايت، التي ربتها والدتها المفرطة في الحماية، بالمدرسة الثانوية العامة، حيث تواجه فضيحة تنمر فيروسية وتكتشف قوى التحريك الذهني الغامضة.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-carrie",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-10-07",
+        "EpisodeDuration": "52د",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-11-10T20:37:59.284539+00:00"
+    },
+    "311697": {
+        "Title": "مسلسل Campus Drivers",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/a63bcf4e97ec90ac6db4faabb61cae18-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Romance"
+        ],
+        "GenresAr": [
+            "دراما",
+            "رومانسية"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "تدخل “لويس” جامعة “بيلروز” مع حبها “ماكس”، لكن حزن القلب يقودها إلى “لين”، مبتكر التطبيق الأكثر رواجًا في الحرم الجامعي. بعد أن أُجبروا على تعايش غير متوقع، تصطدم عوالمهم، مما أثار انجذابًا لا يمكن تجاهله.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-campus-drivers",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "French",
+        "ReleaseDate": "2026-11-06",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 6,
+        "last_scraped": "2026-11-10T20:38:08.651569+00:00"
+    },
+    "311655": {
+        "Title": "مسلسل SWAT Exiles",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/5d1c53af6cc97f261aaaa82d615872c8-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Crime"
+        ],
+        "GenresAr": [
+            "جريمة"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يُجبر الرقيب في وحدة التدخل السريع دانيال هوندو على التقاعد بعد حادثة إطلاق نار مميتة وضعت مستقبله على المحك، لكنه يعود من جديد بعد تكليفه بتشكيل وحدة تكتيكية تضم عناصر موهوبة نُبذت سابقًا.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-swat-exiles",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "N/A",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 10,
+        "last_scraped": "2026-11-10T20:38:18.041380+00:00"
+    },
+    "311629": {
+        "Title": "مسلسل Below",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/fb7ed770864ecb7c50fb9f95a298e360-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Horror",
+            "Mystery"
+        ],
+        "GenresAr": [
+            "دراما",
+            "رعب",
+            "غموض"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "عندما يرهب مخلوق بحري غامض بلدة نائية، يجب على الصياد أن يقاتل لحماية عائلته ومجتمعه وأسلوب حياته.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-below",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-10-08",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 6,
+        "last_scraped": "2026-11-10T20:38:27.172574+00:00"
+    },
+    "311614": {
+        "Title": "مسلسل Nocturne",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/24a255f66fc94fbb8e54e85237f934e2-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Crime",
+            "Drama",
+            "Thriller"
+        ],
+        "GenresAr": [
+            "جريمة",
+            "دراما",
+            "إثارة"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "حول محقق سابق ينتقل إلى بلدة هادئة ليهرب من ماضيه وبحثًا عن بداية جديدة، لكن ظهور قاتل متسلسل خطير تقلب حياته",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-nocturne",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 10,
+        "last_scraped": "2026-11-10T20:40:18.765384+00:00"
+    },
+    "311608": {
+        "Title": "مسلسل Lego One Piece",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/88042edbbe808d8b445fd0effb508d15-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Action",
+            "Adventure",
+            "Animation"
+        ],
+        "GenresAr": [
+            "أكشن",
+            "مغامرة",
+            "أنميشن"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يخوض قراصنة “قبّعة القش” غمار أعالي البحار في عرض خاص من LEGO مكوّن من جزأين! انضم إلى “لوفي” و”نامي” و”يوسوب” وبقية الطاقم في رحلتهم الملحمية المعاد تصورها بالكامل خطوةً بخطوة.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-lego-one-piece",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 2,
+        "last_scraped": "2026-11-10T20:40:45.180966+00:00"
+    },
+    "311505": {
+        "Title": "مسلسل Tyson",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/90592e6fa038b57ed98bdfdc9c909b90-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Documentary"
+        ],
+        "GenresAr": [
+            "وثائقي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يستكشف هذا المسلسل الوثائقي المثير، المكوّن من أربعة أجزاء، تفاصيل الحياة العاصفة لـ”مايك تايسون”، أحد أكثر الشخصيات إثارةً للرهبة والدهشة في تاريخ الرياضة.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-tyson",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 4,
+        "last_scraped": "2026-11-10T20:41:17.308195+00:00"
+    },
+    "311473": {
+        "Title": "مسلسل A Different World",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/e661fb9e8c01c72699200a855c7fe741-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy",
+            "Drama"
+        ],
+        "GenresAr": [
+            "كوميدي",
+            "دراما"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "تدخل ديبورا واين سنتها الأولى في كلية هيلمان، الجامعة الأم لوالديها في HBCU، حيث يجب عليها الهروب من ظلهم وبناء إرثها الخاص.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-a-different-world",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-09-24",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 10,
+        "last_scraped": "2026-11-10T20:41:28.193299+00:00"
+    },
+    "311465": {
+        "Title": "مسلسل The Trap",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/4980201734b9ae08519d9c1e1cb87a5e-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Thriller"
+        ],
+        "GenresAr": [
+            "إثارة"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "عاشت الكاتبة “ليزا كونراد” حبيسة منزلها لعقد من الزمن بعد مقتل أختها. وعندما تظن أنها لمحت القاتل على شاشة التلفزيون، تقرر تنفيذ خطة محفوفة بالمخاطر.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-the-trap",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "German",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 6,
+        "last_scraped": "2026-11-10T20:41:37.598466+00:00"
+    },
+    "311421": {
+        "Title": "مسلسل The One About Matthew Perry",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/a98ed849e1f6d0c5ce92eb66b05e82cd-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Biography",
+            "Documentary"
+        ],
+        "GenresAr": [
+            "سيرة ذاتية",
+            "وثائقي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يؤرخ هذا المسلسل الوثائقي نجاح نجم مسلسل Friends المحبوب في “هوليوود” ومناصرته الصريحة للقضايا التي يؤمن بها ووفاته المأساوية، وفقًا لروايات معارفه المقربين.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-the-one-about-matthew-perry",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 3,
+        "last_scraped": "2026-11-10T20:41:46.915635+00:00"
+    },
+    "311335": {
+        "Title": "مسلسل The Arena",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/2074ad74799d43c1e4f4864733ee2754-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Reality tv"
+        ],
+        "GenresAr": [
+            "Reality tv"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يتولى “سيريل غان” و”سيدريك دومبي” و”بينوا سان دوني” إخضاع 38 مقاتلًا هاويًا لاختبارات قاسية ونزالات داخل القفص للتنافس على مبلغ 100 ألف يورو وعقد احترافي في فنون القتال المختلطة.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-larene",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "French",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 10,
+        "last_scraped": "2026-11-10T20:41:56.701622+00:00"
+    },
+    "311285": {
+        "Title": "مسلسل The Gift of Deceit",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/784ea02f17d2445273b3a91fe60e31c9-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama"
+        ],
+        "GenresAr": [
+            "دراما"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "تكشف سرقة تحف فنية تُقدّر بعدة ملايين من الدولارات أسرارًا خطرة، بينما تشحن الخلافات بين أمّ مسيطرة وابنتها ومحتالة محنّكة.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-the-gift-of-deceit",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "N/A",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 10,
+        "last_scraped": "2026-11-10T20:42:05.976623+00:00"
+    },
+    "311228": {
+        "Title": "مسلسل Taken: Natalee Holloway",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/9a5ac4b023a86c1fd7addde09ac79daa-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Crime",
+            "Documentary",
+            "Documentary"
+        ],
+        "GenresAr": [
+            "Crime",
+            "Documentary",
+            "وثائقي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 40,
+        "Country": null,
+        "Description": "يستكشف اختفاء ناتالي هولواي البالغة من العمر 18 عامًا في عام 2005 أثناء رحلة التخرج إلى أروبا وبحث والدتها بيث الذي دام عقدين من الزمن عن الإجابات والعدالة.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-taken-natalee-holloway",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-11-04",
+        "EpisodeDuration": "40د",
+        "Number Of Episodes Text": 3,
+        "last_scraped": "2026-11-10T20:42:17.053511+00:00"
+    },
+    "311217": {
+        "Title": "مسلسل Minimum Wage",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/cb3215c97a28c30026bb0bb70a39086a-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy"
+        ],
+        "GenresAr": [
+            "كوميدي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يواجه مراهقون صعوبات في إدارة مطعم بيتزا محلي، بينما يوازنون بين الدراسة ومديرهم الانفعالي ورواتبهم المتدنية، في مسلسل مستوحى من مقاطع وسائل التواصل الاجتماعي القصيرة الناجحة.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-minimum-wage",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 14,
+        "last_scraped": "2026-11-10T20:42:33.923631+00:00"
+    },
+    "311109": {
+        "Title": "مسلسل Swipe Right on the Devil",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/7f96e02cadc515a27d283ac465dd89d5-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Documentary",
+            "Documentary"
+        ],
+        "GenresAr": [
+            "Documentary",
+            "وثائقي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": 45,
+        "Country": null,
+        "Description": "بعد اختفاء سيدني لوف البالغ من العمر 24 عامًا بعد موعد مع Tinder، تنكشف قضية الشخص المفقود في عالم مظلم من التلاعب والسحر والسيطرة على العقل – مما يصدم حتى عملاء مكتب التحقيقات الفيدرالي ويصبح قصة تحذيرية لا تُنسى.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-swipe-right-on-the-devil",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-10-22",
+        "EpisodeDuration": "45د",
+        "Number Of Episodes Text": 3,
+        "last_scraped": "2026-11-10T20:42:43.734916+00:00"
+    },
+    "311048": {
+        "Title": "مسلسل Small Prophets",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/80fc046a9f91ecb52d0f291a82e3a9f7-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy",
+            "Drama",
+            "Fantasy"
+        ],
+        "GenresAr": [
+            "كوميدي",
+            "دراما",
+            "فانتازيا"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "غريب الأطوار مايكل سليب، الذي اختفى شريكه المحبوب، Clea، منذ سبع سنوات، يشرع في إنشاء Homunculi – أرواح تنبؤية سحرية يمكنها التنبؤ بالمستقبل.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-small-prophets",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-10-07",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 6,
+        "last_scraped": "2026-11-10T20:42:53.197354+00:00"
+    },
+    "311009": {
+        "Title": "مسلسل Love Is Blind: Netherlands",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/667997350543e3b22f414cf93b0f4141-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Reality tv",
+            "Romance"
+        ],
+        "GenresAr": [
+            "Reality tv",
+            "رومانسية"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "تحط تجربة المواعدة الشهيرة رحالها في “هولندا”، حيث يتواعد العُزّاب ويقعون في الحب ويعقدون خطبتهم، وكل ذلك قبل أن يلتقوا وجهًا لوجه.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-love-is-blind-netherlands",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "Dutch",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 10,
+        "last_scraped": "2026-11-10T20:43:02.463903+00:00"
+    },
+    "310942": {
+        "Title": "مسلسل I Would Rather Die",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/1a36940a01f0162e12193389e0f64bff-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Adventure",
+            "Comedy",
+            "Horror"
+        ],
+        "GenresAr": [
+            "مغامرة",
+            "كوميدي",
+            "رعب"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "تحاول مجموعة من المراهقين إنقاذ مدينتهم من غزو الزومبي بعد أن تعرض آرتشي، الخاسر الرسمي في المدرسة، للعض من قبل أحدهم.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-i-would-rather-die",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "Spanish",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-11-10T20:43:12.712902+00:00"
+    },
+    "310880": {
+        "Title": "مسلسل Hollywood Arts",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/d20f7f8464219f922620ec031feb2a40-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy",
+            "Drama",
+            "Musical"
+        ],
+        "GenresAr": [
+            "كوميدي",
+            "دراما",
+            "موسيقي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "في إطار من الكوميديا والدراما، تدور أحداث المسلسل حول (ترينا فيجا)، والتي تعود للتدريس في أبرز مدرسة للفنون الأدائية في هوليوود، التي كانت طالبة فيها ذات يوم.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-hollywood-arts",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 12,
+        "last_scraped": "2026-11-10T20:43:21.846922+00:00"
+    },
+    "310867": {
+        "Title": "مسلسل Friends Sex and Games",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/80374ffd01a224b0ba04a73e6923e5dd-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama"
+        ],
+        "GenresAr": [
+            "دراما"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "تدور أحداث العمل في إطار من الدراما، حيث يلتقي صديقان قديمان من أيام الدراسة مجددًا بالصدفة، فتبدأ لعبة يتبادل خلالها أربعة أزواج شركاءهم لليلة واحدة.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-friends-sex-and-games",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "German",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-11-10T20:43:31.557579+00:00"
+    },
+    "310841": {
+        "Title": "مسلسل Crystal Lake",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/95ae428a0fec745af1e3b2e5781929e6-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Horror",
+            "Thriller"
+        ],
+        "GenresAr": [
+            "دراما",
+            "رعب",
+            "إثارة"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "تعيش باميلا في حزن بعد فقدان ابنها جيسون فورهيز خلال مخيم صيفي، حيث تتمسك بأمل أن ابنها، الذي لم يُعثر على جثته، ما زال على قيد الحياة، لكن يعود ماضي باميلا لمطاردتها ويُجبرها على القتال من أجل البقاء.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-crystal-lake",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-11-10T20:43:40.801167+00:00"
+    },
+    "310769": {
+        "Title": "مسلسل Coven Academy",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/98eb394fc477b29565178d40b19e97f0-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy",
+            "Drama",
+            "Family"
+        ],
+        "GenresAr": [
+            "كوميدي",
+            "دراما",
+            "عائلي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "في إطار من الرعب والفنتازيا، تتبع العمل قصة مجموعة من الساحرات الشابات، واللاتي تتحدن في سبيل الدفاع عن نيو أورلينز في مواجهة قوة شريرة تقترب منها.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-coven-academy",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 21,
+        "last_scraped": "2026-11-10T20:43:50.086538+00:00"
+    },
+    "310726": {
+        "Title": "مسلسل War",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/01d04b4c097301fd89a3881207ffd835-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Thriller"
+        ],
+        "GenresAr": [
+            "دراما",
+            "إثارة"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "تتصادم اثنتان من أبرز مكاتب المحاماة في لندن بسبب قضية طلاق صادمة تهز الأوساط القانونية، بينما يخوض كبار المحامين في (كاثكارتس) و(تايلور آند بيرن) معركة شرسة لإثبات تفوقهم.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-war",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2025",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-11-10T20:43:59.982319+00:00"
+    },
+    "310708": {
+        "Title": "مسلسل Treasure Island",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/7284bee7da4b98265cf1c510f102add5-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Adventure",
+            "Drama"
+        ],
+        "GenresAr": [
+            "مغامرة",
+            "دراما"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يعثر (جيم هوكينز) على خريطة كنز، لكن تصرفات والدته (بيس) تعرضهما للخطر. وعلى متن سفينة هيسبانيولا، يواجهان تهديدات القرصان (جون سيلفر) والعميل (آرون جراهام)، بينما تتبدل التحالفات ويصبح البقاء على قيد الحياة على المحك.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-treasure-island",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 6,
+        "last_scraped": "2026-11-10T20:44:09.631235+00:00"
+    },
+    "310659": {
+        "Title": "مسلسل Newlyweds",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/34dd4d5520b33e267b1c2fc5d450b1f5-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy",
+            "Romance"
+        ],
+        "GenresAr": [
+            "كوميدي",
+            "رومانسية"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يتناول المسلسل قصة حب تنشأ في مرحلة متأخرة من العمر بين امرأة عفوية وأستاذ جامعي متحفظ، وينتهي بهما الأمر إلى الزواج على نحو متسرع بعد فترة قصيرة من التعارف.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-newlyweds",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "N/A",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 13,
+        "last_scraped": "2026-11-10T20:44:19.096260+00:00"
+    },
+    "310571": {
+        "Title": "مسلسل NCIS: New York",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/ccdd54ece68a56275130335edb6efbd3-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Action",
+            "Crime",
+            "Drama"
+        ],
+        "GenresAr": [
+            "أكشن",
+            "جريمة",
+            "دراما"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يعود العميل الخاص “سام هانا” إلى مسقط رأسه في مدينة نيويورك ليلتحق بمكتب الخدمة الجنائية البحرية (NCIS) الميداني، حيث يتعاون مع عميل متمرد يُدعى “نيك شايفر” لقيادة فريق جديد مُكلَّف بمهام بالغة الأهمية تهدف إلى حماية واحدة من أكثر المدن والموانئ حيويةً في العالم.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-ncis-new-york",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 20,
+        "last_scraped": "2026-11-10T20:44:28.603002+00:00"
+    },
+    "310549": {
+        "Title": "مسلسل Eternally Yours",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/2e27bdb367db0c66a1e49527270dd869-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy",
+            "Fantasy"
+        ],
+        "GenresAr": [
+            "كوميدي",
+            "فانتازيا"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يكافح زوجان من مصاصي الدماء متزوجان منذ 500 عام لتقبل صديق ابنتهما البشري.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-eternally-yours",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-11-10T20:44:38.036935+00:00"
+    },
+    "310399": {
+        "Title": "مسلسل Brothers",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/42b04ebca169e379adac354d5f741f3a-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy"
+        ],
+        "GenresAr": [
+            "كوميدي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "كان ماثيو وودي صديقين مقربين لسنوات، لكن سرًا عائليًا صادمًا يشير إلى أن علاقتهما قد تكون أقرب.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-brothers",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-09-23",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 0,
+        "last_scraped": "2026-11-10T20:44:47.284904+00:00"
+    },
+    "310391": {
+        "Title": "مسلسل Awkwafina: The Unlikely Cook",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/ce86be8d165d87c164de552daaccf6f4-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Documentary",
+            "Reality tv",
+            "Documentary"
+        ],
+        "GenresAr": [
+            "Documentary",
+            "Reality tv",
+            "وثائقي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يتبع Awkwafina وهي تشرع في رحلة شخصية عميقة عبر البلاد لاستكشاف المطبخ الأمريكي الآسيوي المعاصر، بدءًا من إرث عائلتها، على الرغم من نشأتها في شركة عائلية ولكنها غير قادرة على طهي…",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-awkwafina-unlikely-cook",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-11-06",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 0,
+        "last_scraped": "2026-11-10T20:47:41.878788+00:00"
+    },
+    "310291": {
+        "Title": "مسلسل Anaesthesia",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/36d58781ab345ebf25e16594e0c24a7e-400x588.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama"
+        ],
+        "GenresAr": [
+            "دراما"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "بعد عملية جراحية جريئة ولكن غير ناجحة، يستبدل طبيب موهوب عيادة مرموقة بمستشفى محلي بينما يحاول إعادة حياته إلى المسار الصحيح.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-anaesthesia",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "Polish",
+        "ReleaseDate": "2026-11-04",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-11-10T20:48:14.201170+00:00"
+    },
+    "310290": {
+        "Title": "مسلسل Chilean Mine Rescue: Race Against Time",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/7f2ac763514725e5e68d611b49e9c63e-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Documentary"
+        ],
+        "GenresAr": [
+            "وثائقي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يتابع الفيلم قصة 33 عامل منجم محاصرين على عمق يزيد عن نصف ميل تحت الأرض في شمال تشيلي لمدة 69 يوماً، بينما يسارع رجال الإنقاذ لإنقاذهم ويكافحون من أجل البقاء.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-chilean-mine-rescue-race-time",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 3,
+        "last_scraped": "2026-11-10T20:48:27.105839+00:00"
     }
 }
