@@ -107746,5 +107746,135 @@
         "EpisodeDuration": "",
         "Number Of Episodes Text": 3,
         "last_scraped": "2026-11-10T20:48:27.105839+00:00"
+    },
+    "313637": {
+        "Title": "مسلسل ChiaroScuro",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/4f0738b1a24d9ac5161e8b2df3bc6f34-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy",
+            "Crime",
+            "Drama"
+        ],
+        "GenresAr": [
+            "كوميدي",
+            "جريمة",
+            "دراما"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "حين يُعثر على جثة في متحف بمدينة “روما”، يتعيّن على خبير فنّي تسخير حدسه ومهاراته لمساعدة الشرطة في حلّ لغز يرتبط بماضيه الخاص.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-chiaroscuro",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "Italian",
+        "ReleaseDate": "2025",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-11-11T19:28:11.782591+00:00"
+    },
+    "313622": {
+        "Title": "مسلسل Alicia’s Law",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/fad448623ba337cb389e7f56fecc1c10-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama"
+        ],
+        "GenresAr": [
+            "دراما"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "عندما تنهار حياتها التي بنتها بعناية، تعود “أليسيا” إلى ممارسة القانون مجددًا، وتكتشف أنّ إعادة بناء مسيرتها تعني أيضًا إعادة تعريف ذاتها.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-alicias-law",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "Spanish",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 20,
+        "last_scraped": "2026-11-11T19:28:25.059320+00:00"
+    },
+    "313610": {
+        "Title": "مسلسل The Body",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/0e45a55828671e96dc7dfe1b916b07e8-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Horror",
+            "Thriller"
+        ],
+        "GenresAr": [
+            "دراما",
+            "رعب",
+            "إثارة"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "في ليلة الهالوين، تجد فرقة رقص نسائية نفسها غارقة في مشاعر الذنب الديني والرغبات المحرّمة ورؤى الأشباح، حين تنقلب طقوس انضمام عضوة جديدة إلى جحيم حقيقي.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-the-body",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 8,
+        "last_scraped": "2026-11-11T19:28:37.861564+00:00"
+    },
+    "312628": {
+        "Title": "مسلسل Get Huge: Looksmaxxing to Death",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/5ce0f7e873a9d619249463669117c9cb-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Crime",
+            "Documentary"
+        ],
+        "GenresAr": [
+            "جريمة",
+            "وثائقي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "صورة لا هوادة فيها للرجولة في عصر المؤثرين، حيث تتلاقى عمليات القرصنة البيولوجية المتطرفة والأداء عبر الإنترنت وسلسلة من الوفيات المشبوهة.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-get-huge-looksmaxxing-to-death",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 3,
+        "last_scraped": "2026-11-11T19:28:51.148660+00:00"
+    },
+    "312612": {
+        "Title": "مسلسل Locker Diaries: Zombies",
+        "Category": "series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/b84540523db6461c4bc0bc9dd292010e-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy"
+        ],
+        "GenresAr": [
+            "كوميدي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "ألقِ نظرة خاطفة على الأحداث الدرامية التي تجري في ممرات مدرستي شاديسيد وسانيسيد، واكتشف المغامرات السرية التي تتكشف.",
+        "SeasonsUrl": "https://www.fasel-hd.co/seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-locker-diaries-zombies",
+        "Status": "مكتمل",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 11,
+        "last_scraped": "2026-11-11T19:29:04.246819+00:00"
     }
 }
