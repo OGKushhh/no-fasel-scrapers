@@ -4475,7 +4475,8 @@
         "ReleaseDate": "2025",
         "EpisodeDuration": "70 دقيقةد",
         "Number Of Episodes Text": 12,
-        "last_scraped": "2026-05-28T07:27:20.168703+00:00"
+        "last_scraped": "2026-05-28T07:27:20.168703+00:00",
+        "Number Of Episodes": 12
     },
     "273905": {
         "Title": "مسلسل Watashi no Otto to Kekkon Shite",
@@ -38681,7 +38682,8 @@
         "ReleaseDate": "2026-10-21",
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 29,
-        "last_scraped": "2026-11-11T18:55:25.295053+00:00"
+        "last_scraped": "2026-11-11T18:55:25.295053+00:00",
+        "Number Of Episodes": 19
     },
     "313370": {
         "Title": "مسلسل Mission: Mompossible",
@@ -39544,5 +39546,81 @@
         "EpisodeDuration": "minد",
         "Number Of Episodes Text": 8,
         "last_scraped": "2026-11-11T19:07:31.891064+00:00"
+    },
+    "313911": {
+        "Title": "مسلسل Happy Anding",
+        "Category": "asian-series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/0a26defcd270aa67e4f7d5eba1b14fea-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Comedy"
+        ],
+        "GenresAr": [
+            "كوميدي"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "قصة ثلاثة فنانين كوميديين مجهولين يركضون نحو أحلامهم وامرأة انهارت حياتها لتنهض من جديد وتجد حلمها.",
+        "SeasonsUrl": "https://www.fasel-hd.co/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-happy-anding",
+        "Status": "",
+        "ViewingLevel": "",
+        "Language": "Korean",
+        "ReleaseDate": "2026-11-11",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 12,
+        "last_scraped": "2026-11-14T13:00:06.571956+00:00"
+    },
+    "313798": {
+        "Title": "مسلسل Miracles of the ER",
+        "Category": "asian-series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/fb0b6fe6fa428de430aed46de57731ed-400x600.jpg",
+        "Source": "",
+        "Genres": [
+            "Drama",
+            "Melodrama"
+        ],
+        "GenresAr": [
+            "دراما",
+            "ميلودراما"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يقوم تشو تشينج جون، نائب مدير طب الطوارئ، بإحضار خريج متوسط ​​إلى فريقه المتميز. يواجهون، جنبًا إلى جنب مع الدكتور هي يا هوا، أزمات طبية مستمرة ومعضلات أخلاقية وصراعات داخلية على السلطة في المستشفى.",
+        "SeasonsUrl": "https://www.fasel-hd.co/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-miracles-of-the-er",
+        "Status": "مستمر",
+        "ViewingLevel": "",
+        "Language": "English",
+        "ReleaseDate": "2026-11-12",
+        "EpisodeDuration": "minد",
+        "Number Of Episodes Text": 0,
+        "last_scraped": "2026-11-14T13:00:44.982508+00:00"
+    },
+    "313788": {
+        "Title": "مسلسل What a Boss Wants",
+        "Category": "asian-series",
+        "Image Source": "https://static.faselhdcdn.com/wp-content/uploads/2026/11/7bad7773df71582ef625638bce8fe9c7-400x600.webp",
+        "Source": "",
+        "Genres": [
+            "Comedy",
+            "Romance"
+        ],
+        "GenresAr": [
+            "كوميدي",
+            "رومانسية"
+        ],
+        "Format": "1080p WEB-DL",
+        "Runtime": null,
+        "Country": null,
+        "Description": "يكمن الأمل الوحيد لرئيس تنفيذي مكافح لتغيير مساره المهني في مغني مستقل – لكن لم يتوقع أي منهما أن يقع في حب الآخر.",
+        "SeasonsUrl": "https://www.fasel-hd.co/asian_seasons/%d9%85%d8%b3%d9%84%d8%b3%d9%84-what-a-boss-wants",
+        "Status": "",
+        "ViewingLevel": "",
+        "Language": "Korean",
+        "ReleaseDate": "",
+        "EpisodeDuration": "",
+        "Number Of Episodes Text": 12,
+        "last_scraped": "2026-11-14T13:01:27.607730+00:00"
     }
 }
